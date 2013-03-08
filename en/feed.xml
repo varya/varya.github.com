@@ -1,0 +1,28 @@
+---
+title : Atom Feed
+page_type: feed
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>kizu.ru</title>
+    <link href="{{ site.production_url }}/en/feed.xml" rel="self"/>
+    <link href="{{ site.production_url }}/en/"/>
+    <updated>{{ site.time | date_to_xmlschema }}</updated>
+    <id>{{ site.production_url }}</id>
+    <author>
+        <name>Roman Komarov</name>
+        <email>kizmarh@ya.ru</email>
+    </author>
+
+    {% for post in site.posts %}{% if post.categories contains 'en' %}{% unless post.invisible %}
+    <entry>
+        <title>{{ post.title }}</title>
+        <link href="{{ site.production_url }}{{ post.url }}"/>
+        <updated>{{ post.date | date_to_xmlschema }}</updated>
+        <id>{{ site.production_url }}{{ post.id }}</id>
+        {% capture link_handles_input %}{{ post.content }}{% endcapture %}{% include link_handles.html %}
+        {% capture demo_handles_link %}{{ post.url }}{% endcapture %}{% capture demo_handles_input %}{{ link_handles_result }}{% endcapture %}{% include demo_handles.html %}
+        <content type="html">{{ demo_handles_result | xml_escape }}</content>
+    </entry>
+    {% endunless %}{% endif %}{% endfor %}
+</feed>

@@ -1,0 +1,126 @@
+auto: true
+safe: true
+server: true
+markdown: kramdown
+pygments: true
+permalink: /:categories/:title
+exclude: [stylobate, all.styl, style.styl, style_ie.styl, font_regular.styl]
+
+production_url : http://toivonen.github.com
+
+github_repo: "toivonen/toivonen.github.com"
+
+link_handles:
+    - prefix: "@"
+      handle: "https://twitter.com/"
+    - prefix: "gh:"
+      handle: "https://github.com/"
+
+# flat_categories:
+#    - "fun"
+#    - "issues"
+
+prose:
+    rooturl: "_posts"
+    metadata:
+        "_posts": |
+
+            title: Набросок статьи
+
+            categories: drafts
+
+            layout: post
+
+            invisible: true
+
+        "_posts/ru/issues": |
+
+            title: Без заголовка
+
+            categories: issues
+
+            layout: post
+
+        "_posts/en": |
+
+            title: Draft of an article
+
+            categories: en drafts
+
+            layout: post
+
+            invisible: true
+
+        "_posts/en/issues": |
+
+            title: No subject
+
+            categories: en issues
+
+            layout: post
+
+loc:
+
+    issues:
+        ru: "Посты"
+        en: "Posts"
+
+        _in_:
+            ru: "Постах"
+            en: "Posts"
+
+#    projects:
+#        ru: "Проекты"
+#        en: "Projects"
+#
+#        _in_:
+#            ru: "Проектах"
+#            en: "Projects"
+#
+#    old:
+#        ru: "Старое"
+#        en: "Old"
+#
+#        _in_:
+#            ru: "Старом"
+#            en: "Old"
+
+    name:
+        ru: "Варя Степанова"
+        en: "Varvara Stepanova"
+    twitter_name:
+        ru: "toivonens"
+        en: "toivonens"
+    twitter_follow:
+        ru: "Читайте меня в твиттере"
+        en: "Follow me on twitter"
+    published:
+        ru: "Опубликовано"
+        en: "Published on"
+    in:
+        ru: "в"
+        en: "in"
+    feedback_text1:
+        ru: "Если вы заметили ошибку или хотите чем-то дополнить статью, вы всегда можете или"
+        en: "If you've spotted a typo or a mistake, or wish to add something on, you could either"
+    feedback_issue:
+        ru: "написать мне об этом"
+        en: "write me about this"
+    feedback_text2:
+        ru: "на Гитхабе, или"
+        en: "on GitHub, either"
+    feedback_edit:
+        ru: "отредактировать статью"
+        en: "edit this article"
+    feedback_text3:
+        ru: "с помощью"
+        en: "with"
+    feedback_for:
+        ru: "Отзыв на"
+        en: "Feedback for"
+    laquo:
+        ru: "«"
+        en: "“"
+    raquo:
+        ru: "»"
+        en: "”"
