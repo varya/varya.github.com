@@ -74,6 +74,55 @@ body {
   padding: 6rem 0 6rem;
   margin: 0;
 }
+
+body {
+    background-image: -webkit-linear-gradient(90deg,
+            transparent 10%,
+            rgba(255,0,0, .055) 10%, rgba(255,0,0, .055) 11%,
+            rgba(255,0,0, .04) 11%, rgba(255,0,0, .04) 19%,
+            rgba(255,0,0, .055) 19%, rgba(255,0,0, .055) 20%,
+            transparent 20%, transparent 30%,
+            rgba(225,255,0, .1) 30%, rgba(225,255,0, .1) 31%,
+            rgba(225,255,0, .07) 31%, rgba(225,255,0, .07) 39%,
+            rgba(225,255,0, .1) 39%, rgba(225,255,0, .1) 40%,
+            transparent 40%, transparent 50%,
+            rgba(51,204,0, .07) 50%, rgba(51,204,0, .07) 51%,
+            rgba(51,204,0, .05) 51%, rgba(51,204,0, .05) 59%,
+            rgba(51,204,0, .07) 59%, rgba(51,204,0, .07) 60%,
+            transparent 60%, transparent 70%,
+            rgba(102,0,204, .07) 70%, rgba(102,0,204, .07) 71%,
+            rgba(102,0,204, .05) 71%, rgba(102,0,204, .05) 79%,
+            rgba(102,0,204, .07) 79%, rgba(102,0,204, .07) 80%,
+            transparent 80%, transparent 90%,
+            rgba(204,102,0, .07) 90%, rgba(204,102,0, .07) 91%,
+            rgba(204,102,0, .05) 91%, rgba(204,102,0, .05) 99%,
+            rgba(204,102,0, .07) 99%, rgba(204,102,0, .07) 100%
+        ),
+        -webkit-linear-gradient(0deg,
+            transparent 10%,
+            rgba(255,0,0, .055) 10%, rgba(255,0,0, .055) 11%,
+            rgba(255,0,0, .04) 11%, rgba(255,0,0, .04) 19%,
+            rgba(255,0,0, .055) 19%, rgba(255,0,0, .055) 20%,
+            transparent 20%, transparent 30%,
+            rgba(225,255,0, .1) 30%, rgba(225,255,0, .1) 31%,
+            rgba(225,255,0, .07) 31%, rgba(225,255,0, .07) 39%,
+            rgba(225,255,0, .1) 39%, rgba(225,255,0, .1) 40%,
+            transparent 40%, transparent 50%,
+            rgba(51,204,0, .07) 50%, rgba(51,204,0, .07) 51%,
+            rgba(51,204,0, .05) 51%, rgba(51,204,0, .05) 59%,
+            rgba(51,204,0, .07) 59%, rgba(51,204,0, .07) 60%,
+            transparent 60%, transparent 70%,
+            rgba(102,0,204, .07) 70%, rgba(102,0,204, .07) 71%,
+            rgba(102,0,204, .05) 71%, rgba(102,0,204, .05) 79%,
+            rgba(102,0,204, .07) 79%, rgba(102,0,204, .07) 80%,
+            transparent 80%, transparent 90%,
+            rgba(204,102,0, .07) 90%, rgba(204,102,0, .07) 91%,
+            rgba(204,102,0, .05) 91%, rgba(204,102,0, .05) 99%,
+            rgba(204,102,0, .07) 99%, rgba(204,102,0, .07) 100%
+        );
+    background-size: 100px 100px;
+}
+
 body:before,
 body:after {
   content: "";
@@ -85,7 +134,6 @@ body:after {
   z-index: 9;
   padding: 1rem 0.5rem 0 1rem;
   padding: 1rem 2.5vw 0 5vw;
-  background: #fbfaf4;
 }
 .page_post .main {
   padding-top: 2.5rem;
