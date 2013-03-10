@@ -4,7 +4,7 @@ title: Varvara Stepanova
 ---
 {% include setup.md %}
 
-[Blog](en/issues/)
+[Blog](en/issues/) • [Articles and talks](en/content)
 {:.nav}
 
 Hi! My name is Varya.
