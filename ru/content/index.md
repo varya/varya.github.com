@@ -24,6 +24,10 @@ dev](https://vimeo.com/53219242)<br/>
 JavaScript, сделан обзор инструментов.<br/>
 Также доступно в виде [статьи "What you can borrow from Yandex frontend
 dev"](http://bem.info/articles/yandex-frontend-dev/).
+ * [БЭМ и JavaScript: Сборник
+рецептов](http://events.yandex-team.ru/events/yasubbotnik/msk-sep-2012/talks/324/)<br/>
+Презентация JavaScript по БЭМ на Яндекс.Субботнике 8 сентября 2012 в Москве.
+Разбор задач из реальной жизни настоящих проектов Яндекса.
  * [A New Frontend Methodology:
 BEM](http://coding.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/)<br/>
 Первая статья о [БЭМ](http://bem.info) на английском языке.
