@@ -23,6 +23,9 @@ Here it's explained at length what is BEM in terms of CSS. BEM-styled JavaScript
 is also emntioned as well as some nice tools for frontend development.<br/>
 This content is also available as an [article "What you can borrow from Yandex frontend
 dev"](http://bem.info/articles/yandex-frontend-dev/).
+ * [Frontend evolution at Yandex](https://vimeo.com/51897014)<br/>
+Full 7-year evilution of BEM in 10 minutes. This is in the talk at Fronteers Jam
+Session, October 2012 in Amsterdam.
  * [A New Frontend Methodology:
 BEM](http://coding.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/)<br/>
 The first article about BEM in English.

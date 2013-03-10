@@ -24,6 +24,8 @@ dev](https://vimeo.com/53219242)<br/>
 JavaScript, сделан обзор инструментов.<br/>
 Также доступно в виде [статьи "What you can borrow from Yandex frontend
 dev"](http://bem.info/articles/yandex-frontend-dev/).
+ * [Frontend evolution at Yandex](https://vimeo.com/51897014)<br/>
+История БЭМ за 10 минут! Презентация на Fronteers Jam Session в октябре 2012.
  * [БЭМ и JavaScript: Сборник
 рецептов](http://events.yandex-team.ru/events/yasubbotnik/msk-sep-2012/talks/324/)<br/>
 Презентация JavaScript по БЭМ на Яндекс.Субботнике 8 сентября 2012 в Москве.
@@ -31,6 +33,9 @@ dev"](http://bem.info/articles/yandex-frontend-dev/).
  * [A New Frontend Methodology:
 BEM](http://coding.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/)<br/>
 Первая статья о [БЭМ](http://bem.info) на английском языке.
+ * [История одной кнопки](https://vimeo.com/40928087)<br/>
+Презентация на конференции РИТ 2012. Подробный рассказ об CSS и JavaScript
+реализации маленького контрола.
  * [Как использовать БЭМ вне Яндекса](https://vimeo.com/37533949)<br/>
 Выступление на Яндекс.Субботнике в Челябинске 25 февраля 2012 года. Любая
 команда может воспользоваться преимуществами БЭМ и улучшить свою работу. В
