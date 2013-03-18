@@ -15,7 +15,7 @@ Karelia); currently living in
 According to official papers, my name is `Varvara Stepanova`, although most people call me just `Varya`.
 
 At Yandex, I have been working with the [BEM](http://bem.info/) team for almost 4 years.
-Our mission is to open source the full technology stack that powers the Yandex UI framework.<br/>
+Our mission is to open source the full technology stack that powers the Yandex UI framework.
 
 Besides the actual development of components, libraries and tools, I frequent as a speaker at tech
 conferences, usually advocating the BEM methodology. I write articles in English and Russian, as well as
