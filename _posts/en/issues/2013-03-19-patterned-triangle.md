@@ -20,7 +20,7 @@ difficulties of choice. He has [two girls to
 ask](http://toivonen.github.com/bem-love/desktop.bundles/choose-the-one/choose-the-one.html).
 Suddenly there is a **challenge for you**.
 
-Let's thinkif it's possible to attrack a boy with a booooooring one-colour
+Let's think if it's possible to attract a boy with a booooooring one-colour
 dress? Seems like no.<br/>
 So, the girls in the page are in need of nice patterned dresses. Any ideas on
 how to code a patterned triangle in CSS?
