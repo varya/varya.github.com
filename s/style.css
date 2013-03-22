@@ -47,7 +47,7 @@ html {
   margin: 0;
   overflow-y: scroll;
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   color: rgba(37,34,14,0.92);
   text-shadow: 0 1px #fff;
   -webkit-text-size-adjust: 100%;
@@ -63,7 +63,7 @@ body {
   position: relative;
   z-index: 1;
   min-width: 22rem;
-  font: 23px/2rem Verdana, Tahoma,  Georgia, serif;
+  font: 17px/2rem Verdana, Tahoma,  Georgia, serif;
   padding: 6rem 0 6rem;
   margin: 0;
 }
