@@ -10,16 +10,17 @@
     <title>{{ page.title }}</title>
 </head>
 <body class="page__body">
-	{{ content }}
-	<script>
-/* Lazy loading the fonts */
-var h = document.getElementsByTagName('head')[0];
-var link = document.createElement('link');
-link.href = '/s/font.css';
-link.type = 'text/css';
-link.rel = 'stylesheet';
-h.appendChild(link);
-	</script>
-	{% include metrika.html %}
+    {{ content }}
+    <script>
+        (function(d, h, l){
+            h = d.getElementsByTagName('head')[0];
+            l = d.createElement('link');
+            l.href = '/blocks/font/font.css';
+            l.type = 'text/css';
+            l.rel = 'stylesheet';
+            h.appendChild(l);
+        })(document);
+    </script>
+    {% include metrika.html %}
 </body>
 </html>
