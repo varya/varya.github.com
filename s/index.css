@@ -1,5 +1,6 @@
 /* Index CSS files */
 @import url("../blocks/page/page.css");
 @import url("../blocks/header/header.css");
+@import url("../blocks/layout/layout.css");
 @import url("../blocks/menu-horiz/menu-horiz.css");
 @import url("../blocks/navigation/navigation.css");

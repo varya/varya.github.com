@@ -1,0 +1,35 @@
+.layout
+{
+    width: 900px;
+    margin: 0 auto;
+
+    padding: .5em;
+
+    background: #f6f3ee;
+
+    position: relative;
+}
+
+.layout::before
+{
+    content: '';
+    height: 100%;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    background:
+        -webkit-linear-gradient(180deg, rgba(0,0,0, .1) 0, transparent 100%);
+}
+
+.layout::after
+{
+    content: '';
+    height: 100%;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    right: -20px;
+    background:
+        -webkit-linear-gradient(0deg, rgba(0,0,0, .1) 0, transparent 100%);
+}
