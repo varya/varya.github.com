@@ -1,0 +1,13 @@
+.menu-horiz
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.menu-horiz__item
+{
+    display: inline-block;
+    float: right;
+}
