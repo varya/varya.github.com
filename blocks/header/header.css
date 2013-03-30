@@ -1,0 +1,19 @@
+.header
+{
+
+    text-align: center;
+    background: #7d1935;
+
+    color: #fafaed;
+}
+
+.header__logo
+{
+    font-family: Corda-Light;
+    font-weight: normal;
+    font-style: normal;
+
+    font-size: 2em;
+
+    color: #f6f3ee;
+}
