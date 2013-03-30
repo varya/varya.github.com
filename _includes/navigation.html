@@ -1,0 +1,9 @@
+<ul class="menu navigation">
+{% for n in site.navigation %}
+    <li class="menu__item">
+    <a href="/{{ lang }}/{{ n.key }}/">
+            {{ n.name | map: lang }}
+        </a>
+    </li>
+{% endfor %}
+</ul>
