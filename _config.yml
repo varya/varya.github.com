@@ -59,6 +59,17 @@ prose:
 
             layout: post
 
+navigation:
+
+- key: issues
+  name:
+        en: "Blog"
+        ru: "Блог"
+- key: content
+  name:
+        en: "Articles and talks"
+        ru: "Статьи и презентации"
+
 loc:
 
     issues:
