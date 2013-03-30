@@ -4,9 +4,6 @@ title: Varvara Stepanova
 ---
 {% include setup.md %}
 
-[Blog](en/issues/) • [Articles and talks](en/content)
-{:.nav}
-
 I am a front-end developer originally from the Utmost North
 ([Petrozavodsk](http://maps.yandex.com/-/CVR3nIPf),
 Karelia); currently living in
