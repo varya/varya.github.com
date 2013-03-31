@@ -3,8 +3,7 @@
     width: 900px;
     margin: 0 auto;
 
-    font: 1em Verdana;
-    font: 1.2em 'Poiret One', cursive;
+    font: 1.2em 'Poiret One', Verdana, cursive;
 
     text-align: center;
 }
