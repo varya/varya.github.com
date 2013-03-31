@@ -2,9 +2,6 @@
 {
 
     text-align: center;
-    background: #7d1935;
-
-    color: #fafaed;
 }
 
 .header__logo
@@ -13,7 +10,7 @@
     font-weight: normal;
     font-style: normal;
 
-    font-size: 2em;
+    font-size: 3em;
 
-    color: #f6f3ee;
+    color: #40728d;
 }
