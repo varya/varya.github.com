@@ -1,4 +1,4 @@
-.navigation
+.bookmark
 {
     float: left;
     -webkit-transform: rotate(-90deg) translateX(-100%);
@@ -24,21 +24,21 @@
     border-radius: 1em 0 0 1em;
 }
 
-.navigation .menu-horiz__item
+.bookmark .menu-horiz__item
 {
     margin: .5em 1em;
 }
 
-.navigation .menu-horiz__item:last-child
+.bookmark .menu-horiz__item:last-child
 {
     margin-left: 1.5em;
 }
-.navigation .menu-horiz__item:first-child
+.bookmark .menu-horiz__item:first-child
 {
     margin-right: 1.5em;
 }
 
-.navigation .link
+.bookmark .link
 {
     color: #fff;
     text-decoration: none;
