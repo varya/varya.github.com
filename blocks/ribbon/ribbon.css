@@ -1,0 +1,14 @@
+.ribbon
+{
+    background: #7d1935;
+
+    color: #fafaed;
+
+    padding: 0.25em;
+}
+
+.ribbon .link
+{
+    color: #fafaed;
+    text-decoration: none;
+}
