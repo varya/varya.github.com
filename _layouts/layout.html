@@ -12,13 +12,20 @@
 <body class="page__body">
 {{ content }}
 <script>
-(function(d, h, l){
+(function(d){
+
+function addFont(url, h, l) {
 h = d.getElementsByTagName('head')[0];
 l = d.createElement('link');
-l.href = '/blocks/font/font.css';
+l.href = url;
 l.type = 'text/css';
 l.rel = 'stylesheet';
 h.appendChild(l);
+}
+
+addFont('/blocks/font/font.css');
+addFont('http://fonts.googleapis.com/css?family=Poiret+One|Noto+Serif&subset=latin,cyrillic-ext,cyrillic');
+
 })(document);
 </script>
 {% include metrika.html %}
