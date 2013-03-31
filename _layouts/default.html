@@ -9,9 +9,11 @@ layout: layout
 			<sup>{% unless page.url contains "/issues/restart" %}<a class="link link_wrapper" href="/{{ lang_prefix }}issues/restart/">{% endunless %}β{% unless page.url contains "/issues/restart" %}</a>{% endunless %}</sup>
         </h1>-->
 	</header>
+    <div class="ribbon">
+        {% include navigation.html %}
+    </div>
 
     <div class="layout">
-    {% include navigation.html %}
 
 	{{ content }}
     </div>
