@@ -1,0 +1,25 @@
+.navigation
+{
+    width: 900px;
+    margin: 0 auto;
+
+    font: 1em Verdana;
+    font: 1.2em 'Poiret One', cursive;
+
+    text-align: center;
+}
+
+.navigation .menu-horiz__item
+{
+    margin: 0 1em;
+}
+
+.navigation .menu-horiz__item:first-child
+{
+    margin-left: 0;
+}
+
+.navigation .menu-horiz__item:last-child
+{
+    margin-right: 0;
+}
