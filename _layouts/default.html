@@ -21,7 +21,7 @@ layout: layout
 
 	<footer class="footer">
 		<p class="copy">
-			{% if page.page_type != "index" %}<a class="link  link_text  link_wrapper" href="http://kizu.ru/{{ lang_prefix }}">
+			{% if page.page_type != "index" %}<a class="link  link_text  link_wrapper" href="http://toivonen.github.com/{{ lang_prefix }}">
 				© {{ site.time | date: "%Y" }}
 				<span class="link__inner">{{ site.loc.name | map: lang }}</span>.
 			</a>{% else %}© {{ site.time | date: "%Y" }} {{ site.loc.name | map: lang }}.{% endif %}
