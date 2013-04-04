@@ -17,17 +17,18 @@
             -webkit-linear-gradient(top,#990041, #CC1965);*/
 background-color:#CC1965;
 background:
--webkit-linear-gradient(10deg,rgba(204, 51, 115, .1), rgba(204, 51, 115, .3) 50%, transparent 51%, transparent 100%),
--webkit-linear-gradient(15deg,rgba(204, 0, 86, .3),rgba(204, 0, 86, .1) 50%, transparent 51%, transparent 100%), 
--webkit-linear-gradient(-10deg,rgba(204, 25, 101, .1),rgba(204, 25, 101, .3) 50%, transparent 51%, transparent 100%),
--webkit-linear-gradient(-5deg,rgba(204, 0, 86, .3),rgba(204, 0, 86, .2) 50%, transparent 51%, transparent 100%),
--webkit-linear-gradient(10deg,rgba(204, 0, 86, .3),rgba(204, 0, 86, .2) 50%, transparent 51%, transparent 100%),
--webkit-linear-gradient(15deg,rgba(229, 51, 126, .1),rgba(229, 51, 126, .3) 50%, transparent 51%, transparent 100%),
--webkit-linear-gradient(-9deg,rgba(229, 51, 126, .3),rgba(229, 51, 126, .1) 50%, transparent 51%, transparent 100%),
--webkit-linear-gradient(10deg,rgba(204, 25, 101, .1),rgba(204, 25, 101, .4) 50%, transparent 51%, transparent 100%),
- 
-rgba(204, 25, 101, 1);
-background-size:53px, 37px,43px, 13px, 23px,17px,29px,27px,100%;
+-webkit-linear-gradient(10deg,transparent 0%, rgba(178, 0, 75, .1) 25%, rgba(178, 0, 75, .3) 75%, transparent 75%, transparent 100%),
+-webkit-linear-gradient(80deg,rgba(178, 0, 75, .15), rgba(178, 0, 75, .1) 50%, transparent 100%),
+-webkit-linear-gradient(-25deg,transparent 0%, rgba(178, 0, 75, .2) 50%, transparent 100%),
+-webkit-linear-gradient(10deg,rgba(178, 0, 75, .2), rgba(178, 0, 75, .1) 50%, transparent 100%) 10px 5px,
+-webkit-linear-gradient(top,#990041, #CC1965);
+
+background-size:
+    3px 2px,
+    18px 12px,
+    130px 70px,
+    26px 11px,
+    100%;
       display: inline-block;
 }
 .ribbon:before, .ribbon:after {
@@ -61,7 +62,7 @@ background-size:53px, 37px,43px, 13px, 23px,17px,29px,27px,100%;
 .ribbon__i
 {
         border-style: dashed;
-        border-color: #7F0036;
+        border-color: rgba(204, 51, 115, .6);
         border-width: 1px 1px 1px 0;
         margin: 5px 4px 4px;
 }
