@@ -3,5 +3,10 @@ layout: default
 page_type: index
 ---
 <div class="main" role="main">
+    {% if page.header %}
+    <div class="ribbon">
+        <h2 class="ribbon__i">{{ page.header }}</h2>
+    </div>
+    {% endif %}
     {% capture link_handles_input %}{{ content }}{% endcapture %}{% include link_handles.html %}{{ link_handles_result }}
 </div>
