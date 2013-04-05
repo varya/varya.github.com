@@ -13,3 +13,9 @@
 
     padding: 0 1em 1em;
 }
+
+.layout h1,
+.layout h2
+{
+    font-size: 1.2em;
+}
