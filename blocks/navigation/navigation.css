@@ -1,9 +1,9 @@
 .navigation
 {
-    width: 900px;
+    width: 100%;
     margin: 0 auto;
 
-    font: 1.2em 'Poiret One', Verdana, cursive;
+    font-size: 1.2em;
 
     text-align: center;
 }
