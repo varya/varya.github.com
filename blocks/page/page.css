@@ -7,15 +7,11 @@
     font: 18px/1.5 'Noto Serif', Palatino Linotype, Palatino, serif;
 
     background:
-        -webkit-radial-gradient(rgba(246,243,238, .7) 10px, transparent 10px),
-        -webkit-radial-gradient(rgba(246,243,238, .8) 10px, transparent 10px) 10px 10px,
-        -webkit-radial-gradient(rgba(246,243,238, .7) 0px, transparent 20px);
-    background:
-        radial-gradient(rgba(246,243,238, .7) 10px, transparent 10px),
-        radial-gradient(rgba(246,243,238, .8) 10px, transparent 10px) 10px 10px,
-        radial-gradient(rgba(246,243,238, .7) 0px, transparent 20px);
-    background-color: #DDDBD7;
-    background-size: 20px 20px;
+        -webkit-linear-gradient(-90deg, #006dd5 0, #009bee 500px);
+
+    background-color: #009bee;
+
+    text-align: center;
 }
 
 /*.page__body-i
