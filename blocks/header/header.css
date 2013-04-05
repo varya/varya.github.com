@@ -1,16 +1,22 @@
 .header
 {
+    width: 900px;
 
-    text-align: center;
+    margin: 2em auto 0 auto;
+
+    text-align: right;
 }
 
 .header__logo
 {
-    font-family: Corda-Light;
+    font-family: SorbonneNormal1470;
     font-weight: normal;
     font-style: normal;
 
     font-size: 3em;
 
-    color: #40728d;
+    color: #fff;
+
+    float: left;
+    margin: 0 0 0 2em;
 }
