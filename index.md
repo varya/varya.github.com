@@ -1,6 +1,7 @@
 ---
 layout: index
 title: Varvara Stepanova
+header: About me
 ---
 {% include setup.md %}
 
