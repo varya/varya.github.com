@@ -3,7 +3,11 @@ layout: default
 page_type: listing
 ---
 <div class="main" role="main">
-    <h2>{{ page.title }}</h2>
+    {% if page.title %}
+    <div class="ribbon">
+        <h1 class="ribbon__i">{{ page.title }}</h1>
+    </div>
+    {% endif %}
     {{ content }}
     {% include list_posts.html %}
 </div>
