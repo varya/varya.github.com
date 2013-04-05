@@ -3,33 +3,13 @@
     width: 900px;
     margin: 0 auto;
 
-    padding: .5em;
+    text-align: left;
 
     background: #f6f3ee;
 
     position: relative;
-}
 
-.layout::before
-{
-    content: '';
-    height: 100%;
-    width: 20px;
-    position: absolute;
-    top: 0;
-    left: -20px;
-    background:
-        -webkit-linear-gradient(180deg, rgba(0,0,0, .1) 0, transparent 100%);
-}
+    border-radius: .5em 0 .5em .5em;
 
-.layout::after
-{
-    content: '';
-    height: 100%;
-    width: 20px;
-    position: absolute;
-    top: 0;
-    right: -20px;
-    background:
-        -webkit-linear-gradient(0deg, rgba(0,0,0, .1) 0, transparent 100%);
+    padding: 0 1em 1em;
 }
