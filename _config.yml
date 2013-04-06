@@ -112,8 +112,8 @@ loc:
         ru: "в"
         en: "in"
     feedback_text1:
-        ru: "Если вы заметили ошибку или хотите чем-то дополнить статью, вы всегда можете или"
-        en: "If you've spotted a typo or a mistake, or wish to add something on, you could either"
+        ru: "Если вы заметили ошибку или хотите чем-то дополнить статью, вы всегда можете "
+        en: "If you've spotted a typo or a mistake, or wish to add something on, you could "
     feedback_issue:
         ru: "написать мне об этом"
         en: "write me about this"
