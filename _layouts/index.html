@@ -2,11 +2,16 @@
 layout: default
 page_type: index
 ---
-<div class="main" role="main">
+<div class="article" role="main">
+
     {% if page.header %}
-    <div class="ribbon">
-        <h2 class="ribbon__i text__h1">{{ page.header }}</h2>
+    <div class="article__body box__body">
+        <h1 class="article__header">{{ page.header }}</h1>
     </div>
     {% endif %}
+
+    <div class="article__text box__island">
     {% capture link_handles_input %}{{ content }}{% endcapture %}{% include link_handles.html %}{{ link_handles_result }}
+    </div>
+
 </div>

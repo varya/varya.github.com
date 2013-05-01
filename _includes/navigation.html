@@ -1,9 +1,22 @@
-<ul class="menu-horiz navigation">
-{% for n in site.navigation %}
-    <li class="menu-horiz__item">
-    <a href="/{{ lang }}/{{ n.key }}/" class="link">
+<div class="b-menu-vert">
+<ul class="b-menu-vert__layout">
+    <h3 class="b-menu-vert__title box__title">On this site</h3>
+    {% for n in site.navigation %}
+    <li class="b-menu-vert__layout-unit">
+    <div class="b-menu-vert__item">
+    {% if n.key == 'about' %}
+        {% capture url %}/{{lang}}/{% endcapture %}
+        {% if lang == 'en' %}
+            {% assign url = '/' %}
+        {% endif %}
+    {% else %}
+        {% capture url %}/{{lang}}/{{ n.key }}/{% endcapture %}
+    {% endif %}
+    <a href="{{ url }}" class="b-link">
             {{ n.name | map: lang }}
         </a>
+    </div>
     </li>
-{% endfor %}
+    {% endfor %}
 </ul>
+</div>

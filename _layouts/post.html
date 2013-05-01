@@ -3,24 +3,34 @@ layout: default
 page_type: post
 ---
 {% capture setup %}{% include setup.md %}{% endcapture %}
-<article class="main text" role="main">
-    <header>{% if page.invisible %}<p style="color: red;"><strong>This page is a draft, it's not published yet, so please don't share links to it to anyone, ok?</strong></p>{% endif %}
+<div class="article" role="main">
+
     {% if page.title %}
-    <div class="ribbon">
-        <h1 class="ribbon__i text__h1">{{ page.title }}</h1>
+    <div class="article__body box__body">
+        <h1 class="article__header">{{ page.title }}</h1>
+        {% if page.date %}<span class="article__detailes author vcard">
+            {{ site.loc | map: "published" | map: lang }} {% assign published_time = page.date %}{% include published_format.html %}
+            {% assign list_categories = page.categories %}{% include list_categories.html %}
+        </span>{% endif %}
     </div>
     {% endif %}
-    </header>
 
+    <div class="article__text box__island">
+    {% if page.invisible %}<p style="color: red;"><strong>This page is a draft, it's not published yet, so please don't share links to it to anyone, ok?</strong></p>{% endif %}
     {% capture link_handles_input %}{{ content }}{% endcapture %}{% include link_handles.html %}
     {% capture demo_handles_input %}{{ link_handles_result }}{% endcapture %}{% include demo_handles.html %}{{ demo_handles_result }}
+    </div>
 
-    {% if page.date %}<p class="published">
-        {{ site.loc | map: "published" | map: lang }} {% assign published_time = page.date %}{% include published_format.html %}
-        {% assign list_categories = page.categories %}{% include list_categories.html %}
-    </p>{% endif %}
-    <aside class="feedback">
+    <div class="related">
+        <div class="related__body box__body">
+            <h4 class="related__header">By the way</h4>
+        </div>
+        <div class="related__text box__island">
         {% assign get_filename_input = page.url %}{% include get_filename.html %}{% capture feeback_title %}{{ site.loc | map: 'feedback_for' | map: lang }} {{ site.loc | map: 'laquo' | map: lang }}{{ page.title }}{{ site.loc | map: 'raquo' | map: lang }}{% endcapture %}
         {{ site.loc | map: "feedback_text1" | map: lang }} <a class="link" href="https://github.com/toivonen/toivonen.github.com/issues/new?title={{ feeback_title | cgi_escape }}">{{ site.loc | map: "feedback_issue" | map: lang }}</a><!-- {{ site.loc | map: "feedback_text2" | map: lang }} <a class="link" href="http://edit.toivonen.github.com/#{{ site.github_repo }}/edit/master/{{ get_filename_output }}">{{ site.loc | map: "feedback_edit" | map: lang }}</a> {{ site.loc | map: "feedback_text3" | map: lang }} prose.io-->.
-    </aside>
-</article>
+        </div>
+    </div>
+
+</div>
+
+
