@@ -4,7 +4,7 @@ server: true
 markdown: kramdown
 pygments: true
 permalink: /:categories/:title
-exclude: [stylobate]
+exclude: ['.bem', 'GNUmakefile']
 
 production_url : http://toivonen.github.com
 
@@ -69,6 +69,10 @@ navigation:
   name:
         en: "Articles and talks"
         ru: "Статьи и презентации"
+- key: about
+  name:
+        en: "About me"
+        ru: "Обо мне"
 
 loc:
 
