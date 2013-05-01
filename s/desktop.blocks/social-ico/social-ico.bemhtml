@@ -1,0 +1,39 @@
+block social-ico {
+
+    content: [
+        { elem: 'rss' },
+        { elem: 'twitter' },
+        { elem: 'github' },
+        { elem: 'facebook' },
+        { elem: 'linkedin' }
+    ]
+
+    this.elem {
+
+        tag: 'a'
+
+        mix: { elem: 'ico' }
+
+    }
+
+    elem twitter, attrs: {
+        href: 'https://twitter.com/toivonens',
+        target: '_blank'
+    }
+
+    elem facebook, attrs: {
+        href: 'http://www.facebook.com/varvara.stepanova.9',
+        target: '_blank'
+    }
+
+    elem linkedin, attrs: {
+        href: 'http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b',
+        target: '_blank'
+    }
+
+    elem github, attrs: {
+        href: 'https://github.com/toivonen',
+        target: '_blank'
+    }
+
+}
