@@ -1,6 +1,8 @@
 <div class="b-menu-vert">
 <ul class="b-menu-vert__layout">
-    <h3 class="b-menu-vert__title box__title">On this site</h3>
+    {% if title %}
+    <h3 class="b-menu-vert__title box__title">{{ title }}</h3>
+    {% endif %}
     {% for n in site.navigation %}
     <li class="b-menu-vert__layout-unit">
     <div class="b-menu-vert__item">

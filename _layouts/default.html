@@ -19,6 +19,7 @@ layout: layout
 	        {{ content }}
         </section>
         <nav class="sidebar">
+            {% capture title %}{{ site.loc.on_site | map: lang }}{% endcapture %}
             {% include navigation.html %}
             <div class="github i-bem"
                 onclick="return { 'github' : { 'user' : 'toivonen' } }">
@@ -35,6 +36,7 @@ layout: layout
     <div class="footer__outer">
         <footer class="footer">
             <div class="footer__left">
+                {% assign title = '' %}
                 {% include navigation.html %}
             </div>
             <div class="footer__center">
