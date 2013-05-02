@@ -252,11 +252,11 @@ var BEMHTML = function() {
             return "footer";
             return;
         }
-        if (!!this.elem === false && this.block === "footer" && !(this["__$anflg"] !== 511492516) === false && this._mode === "default") {
+        if (!!this.elem === false && this.block === "footer" && !(this["__$anflg"] !== 299690496) === false && this._mode === "default") {
             {
                 "";
                 var __r76 = this["__$anflg"];
-                this["__$anflg"] = 511492516;
+                this["__$anflg"] = 299690496;
                 {
                     "";
                     var __r77 = this.ctx;
@@ -682,7 +682,7 @@ var BEMHTML = function() {
             return "body";
             return;
         }
-        if (!!this.elem === false && this.block === "b-page" && !(this["__$anflg"] !== 877991130) === false && this._mode === "default") {
+        if (!!this.elem === false && this.block === "b-page" && !(this["__$anflg"] !== 44331565) === false && this._mode === "default") {
             {
                 var _$mctx = this.ctx, _$mdtype = ("", __r52 = this._mode, this._mode = "doctype", __r53 = apply.call(__this), this._mode = __r52, "", __r53), _$mxUA = ("", __r54 = this._mode, this._mode = "xUACompatible", __r55 = apply.call(__this), this._mode = __r54, "", __r55), _$mbuf = [ _$mdtype, {
                     elem: "root",
@@ -707,7 +707,7 @@ var BEMHTML = function() {
                 {
                     "";
                     var __r56 = this["__$anflg"];
-                    this["__$anflg"] = 877991130;
+                    this["__$anflg"] = 44331565;
                     {
                         "";
                         var __r57 = this.ctx;
