@@ -66,6 +66,17 @@
     
 /* Users/toivonen/Work/toivonen.github.com/s/desktop.blocks/grid/grid.css: end */ /**/
 
+/* Users/toivonen/Work/toivonen.github.com/s/desktop.blocks/text/text.css: begin */ /**/
+    code
+    {
+        font-family: Monaco;
+        background: #f2eae2;
+        padding: .1em .25em;
+    }
+    
+    
+/* Users/toivonen/Work/toivonen.github.com/s/desktop.blocks/text/text.css: end */ /**/
+
 /* Users/toivonen/Work/toivonen.github.com/s/desktop.blocks/header/header.css: begin */ /**/
     .header
     {

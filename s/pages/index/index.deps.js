@@ -89,6 +89,9 @@ exports.deps = [
         "block": "grid"
     },
     {
+        "block": "text"
+    },
+    {
         "block": "b-page",
         "elem": "meta"
     },
