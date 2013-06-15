@@ -6,6 +6,10 @@ title: Articles and talks
 
 ---
 
+ * [The thinking behind BEM](https://vimeo.com/66474705)<br/>
+The talk at [Front-Trends 2013](http://2013.front-trends.com/)  gives a birds-eye
+view of the sometimes surprising ideas behind BEM, and the benefits they offer
+developers.
  * [Maintainable Frontend Development with
 BEM](http://hasgeek.tv/metarefresh/2013/496-maintainable-frontend-development-with-bem)<br/>
 This is a talk given at [Metarefresh](http://metarefresh.in/2013/) on 23

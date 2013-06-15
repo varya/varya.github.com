@@ -6,6 +6,10 @@ title: Статьи и презентации
 
 ---
 
+ * [The thinking behind BEM](https://vimeo.com/66474705)<br/>
+Выступление на [Front-Trends 2013](http://2013.front-trends.com/) о необычных
+технических решениях БЭМ-стека и о том, какую пользу они могут принести
+разработчикам.
  * [Maintainable Frontend Development with
 BEM](http://hasgeek.tv/metarefresh/2013/496-maintainable-frontend-development-with-bem)<br/>
 Выступление на конференции [Metarefresh 2013](http://metarefresh.in/2013/) в
