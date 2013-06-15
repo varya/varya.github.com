@@ -173,6 +173,9 @@ exports.deps = [
         "block": "prompting"
     },
     {
+        "block": "languages"
+    },
+    {
         "block": "social-ico"
     },
     {

@@ -562,6 +562,31 @@
     
 /* Users/toivonen/Work/toivonen.github.com/s/desktop.blocks/prompting/prompting.css: end */ /**/
 
+/* Users/toivonen/Work/toivonen.github.com/s/desktop.blocks/languages/languages.css: begin */ /**/
+    .languages
+    {
+        display: block;
+        padding: 0;
+        margin: .5em 0 0;
+        list-style: none;
+        float: right;
+    }
+    .languages__lang
+    {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+    }
+    .languages__kludge
+    {
+        color: #666;
+    }
+    
+/* Users/toivonen/Work/toivonen.github.com/s/desktop.blocks/languages/languages.css: end */ /**/
+
 /* Users/toivonen/Work/toivonen.github.com/s/desktop.blocks/social-ico/social-ico.css: begin */ /**/
     /* Icons: http://www.iconarchive.com/show/simple-icons-by-danleech.1.html */
     .social-ico__ico

@@ -75,6 +75,9 @@
                     block: 'prompting',
                     content: [
                         {
+                            block: 'languages'
+                        },
+                        {
                             block: 'social-ico',
                             url: '#'
                         }

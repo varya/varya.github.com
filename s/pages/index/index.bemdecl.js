@@ -60,6 +60,9 @@ exports.blocks = [
         "name": "prompting"
     },
     {
+        "name": "languages"
+    },
+    {
         "name": "social-ico"
     },
     {
