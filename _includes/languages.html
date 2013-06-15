@@ -1,0 +1,57 @@
+{% assign lang_en_url = '' %}
+{% assign lang_ru_url = '' %}
+
+{% if page.path == 'index.md' %}
+    {% assign lang_ru_url = '/ru' %}
+    {% assign lang_en_url = '' %}
+{% elsif page.path == 'ru/index.md' %}
+    {% assign lang_ru_url = '' %}
+    {% assign lang_en_url = '/' %}
+{% elsif page_has_translation %}
+    {% if lang == 'en' %}
+        {% capture lang_ru_url %}{{ page.url | replace:'/en/','/ru/' | remove:'index.html' }}{% endcapture %}
+        {% assign lang_en_url = '' %}
+    {% else %}
+        {% assign lang_ru_url = '' %}
+        {% capture lang_en_url %}{{ page.url | replace:'/ru/','/en/' | remove:'index.html' }}{% endcapture %}
+    {% endif %}
+{% else %}
+    {% if lang == 'en' %}
+        {% assign lang_ru_url = '/ru/' %}
+    {% else %}
+        {% assign lang_en_url = '/' %}
+    {% endif %}
+{% endif %}
+
+<ul class="languages">
+    <li class="languages__lang
+        {%if lang == 'en'%}languages__lang_state_current{% endif %}" data-short="en">
+        {% if lang_en_url != '' %}
+            <a href="{{lang_en_url}}"
+            {% if page_has_translation != true and lang != 'en' %}
+                class="languages__kludge"
+                title="There is no translation for this page but you can visit another English page."
+            {% endif %}
+            >
+        {% endif %}
+        en
+        {% if lang_en_url != '' %}
+            </a>
+        {% endif %}
+    </li>
+    <li class="languages__lang
+        {%if lang == 'ru'%} languages__lang_state_current{% endif %}" data-short="ru">
+        {% if lang_ru_url != '' %}
+            <a href="{{lang_ru_url}}"
+            {% if page_has_translation != true and lang != 'ru' %}
+                class="languages__kludge"
+                title="Эта страница не переведена, но вы можете перейти к другой странице на русском языке."
+            {% endif %}
+            >
+        {% endif %}
+        ru
+        {% if lang_ru_url != '' %}
+            </a>
+        {% endif %}
+    </li>
+</ul>
