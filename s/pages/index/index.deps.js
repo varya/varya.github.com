@@ -117,6 +117,9 @@ exports.deps = [
         "block": "box"
     },
     {
+        "block": "comments"
+    },
+    {
         "block": "related"
     },
     {

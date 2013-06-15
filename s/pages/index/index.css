@@ -261,6 +261,20 @@
     
 /* Users/toivonen/Work/toivonen.github.com/s/desktop.blocks/box/box.css: end */ /**/
 
+/* Users/toivonen/Work/toivonen.github.com/s/desktop.blocks/comments/comments.css: begin */ /**/
+    .comments
+    {
+        margin-top: 2em;
+    }
+    
+    .comments__header
+    {
+        margin: 0;
+        font-size: 1.5em;
+    }
+    
+/* Users/toivonen/Work/toivonen.github.com/s/desktop.blocks/comments/comments.css: end */ /**/
+
 /* Users/toivonen/Work/toivonen.github.com/s/desktop.blocks/related/related.css: begin */ /**/
     .related
     {

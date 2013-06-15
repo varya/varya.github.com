@@ -26,6 +26,9 @@ exports.blocks = [
         "name": "article"
     },
     {
+        "name": "comments"
+    },
+    {
         "name": "related"
     },
     {
