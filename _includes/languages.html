@@ -25,11 +25,14 @@
 
 <ul class="languages">
     <li class="languages__lang
-        {%if lang == 'en'%}languages__lang_state_current{% endif %}
-        {% if page_has_translation != true %}languages__lang_state_kludge{% endif %}
-        " data-short="en">
+        {%if lang == 'en'%}languages__lang_state_current{% endif %}" data-short="en">
         {% if lang_en_url != '' %}
-            <a href="{{lang_en_url}}">
+            <a href="{{lang_en_url}}"
+            {% if page_has_translation != true and lang != 'en' %}
+                class="languages__kludge"
+                title="There is no translation for this page but you can visit another English page."
+            {% endif %}
+            >
         {% endif %}
         en
         {% if lang_en_url != '' %}
@@ -37,11 +40,14 @@
         {% endif %}
     </li>
     <li class="languages__lang
-        {%if lang == 'ru'%} languages__lang_state_current{% endif %}
-        {% if page_has_translation != true %}languages__lang_state_kludge{% endif %}
-        " data-short="ru">
+        {%if lang == 'ru'%} languages__lang_state_current{% endif %}" data-short="ru">
         {% if lang_ru_url != '' %}
-            <a href="{{lang_ru_url}}">
+            <a href="{{lang_ru_url}}"
+            {% if page_has_translation != true and lang != 'ru' %}
+                class="languages__kludge"
+                title="Эта страница не переведена, но вы можете перейти к другой странице на русском языке."
+            {% endif %}
+            >
         {% endif %}
         ru
         {% if lang_ru_url != '' %}
