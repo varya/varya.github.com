@@ -1,8 +1,8 @@
 .languages
 {
     display: block;
-    padding: .5em 0 0;
-    margin: 0;
+    padding: 0;
+    margin: .5em 0 0;
     list-style: none;
     float: right;
 }
@@ -14,4 +14,8 @@
     display: inline-block;
     width: 24px;
     height: 24px;
+}
+.languages__kludge
+{
+    color: #666;
 }
