@@ -20,6 +20,11 @@ link_handles:
     - prefix: "gh:"
       handle: "https://github.com/"
 
+comments :
+  provider : disqus
+  disqus :
+    short_name : varya
+
 # flat_categories:
 #    - "fun"
 #    - "issues"
