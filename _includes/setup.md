@@ -13,8 +13,10 @@
     {% assign lang_prefix = "ru/" %}
 {% endif %}
 
+{% comment %}
 Looking if the page have a translation
 Borrowed from https://github.com/kizu/kizu.github.com
+{% endcomment %}
 
     {% if lang == 'en' %}
         {% capture expected_translation_id %}{{ page.id | replace:'/en/','/' }}{% endcapture %}
