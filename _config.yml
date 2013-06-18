@@ -10,7 +10,7 @@ exclude: ['.bem', 'GNUmakefile']
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables",     "with_toc_data"]
 
-production_url : http://toivonen.github.com
+production_url : http://varya.me
 
 github_repo: "toivonen/toivonen.github.com"
 
