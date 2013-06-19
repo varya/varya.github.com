@@ -40,3 +40,18 @@ function showLogin() {
   } else return true;
 }
 ```
+
+
+Yahoo [Best Practises for Speeding Up Your Web
+Site](http://developer.yahoo.com/performance/rules.html) suggests about
+components:
+!!TODO: read!!
+
+* Mark a component with a special CSS class ``js``.
+* Pass data in DOM attributes. (Arrays and hashes in `onclick`).
+* Insert `<script>` tag just before `<body>`.
+* Load components code separately or in bundles.
+* Create instances of component classes.
+
+Sharing data with events. Lintener, ... and Dispatcher  (mediator pattern?)
+Explanation by Dima http://www.artlebedev.ru/tools/technogrette/js/observable/
