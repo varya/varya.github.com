@@ -134,9 +134,156 @@ $('input[name="password"]').myInput({
 ```
 
 3 parts of controls:
-* HTML
-* JavaScript code of a component
-* JavaScript code linking an element with a behavior
+1. HTML
+2. JavaScript code of a component
+3. JavaScript code linking an element with a behavior
+
+The third part is usually imperative and here it can be optimized. So, the
+components have to know where to be applied.
+
+Linking JavaScript to HTML:
+
+```
+<input class="myInput" name="login" value=""/>
+```
+
+```
+$.fn.myInput = function() {
+  // ...
+};
+$(function() {
+  $('.myInput').myInput()
+});
+```
+
+Lazy initialization:
+
+```
+$.fn.myInput = function() { /* ... */ };
+$(function() {
+  $('body').on('change', '.myInput', function() { $(this).myInput() });
+});
+```
+Problem is that `change` doesn't run on every change. So, lazy init won't work.
+
+###Parametrizing instances
+
+Hidden divs, custom attributes.
+
+#### data attributes
+```
+<input
+ class="myInput"
+ data-validator="login"
+ name="login"
+ value=""/>
+```
+
+```
+$.fn.myInput = function() {
+ this.data('validator') === 'login' // Supported by many frameworks
+};
+```
+
+#### onclick
+```
+<input
+ class="myInput"
+ onclick="return {
+ validator: 'login'
+ }"
+ name="login"
+ value=""/>
+```
+The hash booleanized as `true` so click work normally. It returns native
+JavaScript object. And you can use not only key-value pairs but more complex
+things.
+```
+$.fn.myInput = function() {
+ this[0].onclick().validator === 'login'
+};
+```
+
+Functions can be used for custom things:
+```
+<input
+ class="myInput"
+ onclick="return {
+ validator: function() { ... }
+ }"
+ name="login"
+ value=""/>
+```
+
+For dozens of controls per page it's not useful to unitialize every class. So,
+marking all the conponents comes in:
+```
+<input
+  class="myInput js"
+  data-component="myInput"
+  data-validator="login"
+  name="login"
+  value=""/>
+```
+One of its parametres is it's component name.
+```
+$(function() {
+  $('.js').each(function() {
+  var$this = $(this);
+  $this[$this.data('component')]();
+  })
+})
+```
+
+With dinamically changed pages it's not enough to init components just ones after
+`domReady`.
+```
+$.fn.myInit = function() {
+ this.find('.js').each(function() {
+ var$this = $(this);
+ $this[$this.data('component')]();
+ });
+ return this;
+})
+```
+Similarly fr destroying objects:
+```
+$.fn.myPlugin = function() { returnthis.each(function() {
+ var$this = $(this), data = $this.data('myPlugin');
+ if (!data) {
+ // init...
+$this.data('myPlugin', {
+ destroy: function() { /* ... */ }
+ });
+ }
+}};
+```
+```
+$.fn.myDestroy = function() {
+ this.find('.js').each(function() {
+ var$this = $(this),
+ name = $this.data('component');
+ $this.data(name).destroy();
+ });
+ return this.remove();
+})
+```
+
+Usually common methods are wrapped with a framework.
+#### jQuery UI
+```
+$.widget('my.component', {
+  _create: function() { /* ... */ },
+destroy: function() { /* ... */ }
+myMethod: function() { /* ... */ },
+});
+```
+
+## Additional information
+* Building
+* Loading script code
+* Complex connections between components
+* Data binding (interface can be automatically changed after model changing)
 
 
 Yahoo [Best Practises for Speeding Up Your Web
