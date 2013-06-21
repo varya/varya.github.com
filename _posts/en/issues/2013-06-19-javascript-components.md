@@ -53,6 +53,18 @@ id="login-form">` in HTML.
 * there is no predefined actions, everything works only *after* a user does
 * something. (TODO: examples of predefined actions needed)
 
+```
+"By reducing your global footprint to a single name, you significantly reduce
+the chance of bad interactions with other applications, widgets, or libraries." 
+- Douglas Crockford
+```
+
+http://www.slideshare.net/cheilmann/javascript-best-practices-1041724
+```
+You run the danger of your code being overwritten by any other JavaScript added
+to the page after yours.
+```
+
 How to run predefined actions?
 
 1. Use `window onload`. Drawbacks of this: `onload` happens too late because of
@@ -141,6 +153,9 @@ $('input[name="password"]').myInput({
 The third part is usually imperative and here it can be optimized. So, the
 components have to know where to be applied.
 
+Separate JavaScript functionality
+http://coding.smashingmagazine.com/2008/09/16/jquery-examples-and-best-practices/
+
 Linking JavaScript to HTML:
 
 ```
@@ -165,6 +180,8 @@ $(function() {
 });
 ```
 Problem is that `change` doesn't run on every change. So, lazy init won't work.
+Lazy initialization is similar to lazy loading
+https://github.com/stevekwan/best-practices/blob/master/javascript/best-practices.md#lazy-load-assets-that-arent-immediately-required
 
 ###Parametrizing instances
 
@@ -297,5 +314,29 @@ components:
 * Load components code separately or in bundles.
 * Create instances of component classes.
 
+http://net.tutsplus.com/tutorials/javascript-ajax/24-javascript-best-practices-for-beginners/
+```
+Place Scripts at the Bottom of Your Page
+This tip has already been recommended in the previous article in this series. As
+it’s highly appropriate though, I’ll paste in the information.
+
+Remember — the primary goal is to make the page load as quickly as possible for
+the user. When loading a script, the browser can’t continue on until the entire
+file has been loaded. Thus, the user will have to wait longer before noticing
+any progress.
+If you have JS files whose only purpose is to add functionality — for example,
+after a button is clicked — go ahead and place those files at the bottom, just
+before the closing body tag. This is absolutely a best practice.
+```
+
 Sharing data with events. Lintener, ... and Dispatcher  (mediator pattern?)
 Explanation by Dima http://www.artlebedev.ru/tools/technogrette/js/observable/
+
+
+
+http://www.slideshare.net/cheilmann/javascript-best-practices-1041724
+```
+At a later stage you can also expose these when usuing the revealling module
+pattern to create an API to extend the main functionality.
+Good code should be easy to build upon withour rewriting the core.
+```
