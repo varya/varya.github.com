@@ -9,6 +9,52 @@ layout: post
 invisible: true
 
 ---
+This article features some problems that JavaScript developers often face to
+when bringing a web interface into life, some possible solutions to these
+problems and the explanations of my choice among those solutions.
+
+## What is client-side JavaScript for?
+Adding JavaScript to a page empowers an interface with interactivity. Every page
+component represented with a piece of HTML and corresponding CSS can also be
+equiped with JavaScript describing its behavior; usually this are some reaction
+on user's doings.
+
+### JavaScript component structure
+TODO: change the title
+* HTML/CSS
+* JavaScript
+* linking
+
+## Linking JS component with HTML
+### Old school
+### With running JavaScript
+### CSS class
+declarative way
+TODO: change the title
+
+## How to start fast
+### Loading scripts
+Scripts in head
+Scripts right before `</body>`
+Scripts in '<head>' and right before '</body>'
+
+### Initializing components
+Place scripts right after each component
+`window onload`
+`domReady`
+
+## Organizing code
+TODO: change title
+global variables
+
+## Parametrizing components
+In general + example
+### data attributes
+### onclick
+
+## Component core
+
+
 After presentation
 http://events.yandex.ru/events/yasubbotnik/msk-jul-2012/talks/302/
 
