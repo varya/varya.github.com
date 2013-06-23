@@ -252,11 +252,11 @@ var BEMHTML = function() {
             return "footer";
             return;
         }
-        if (!!this.elem === false && this.block === "footer" && !(this["__$anflg"] !== 299690496) === false && this._mode === "default") {
+        if (!!this.elem === false && this.block === "footer" && !(this["__$anflg"] !== 734374245) === false && this._mode === "default") {
             {
                 "";
                 var __r76 = this["__$anflg"];
-                this["__$anflg"] = 299690496;
+                this["__$anflg"] = 734374245;
                 {
                     "";
                     var __r77 = this.ctx;
@@ -272,58 +272,6 @@ var BEMHTML = function() {
                 this["__$anflg"] = __r76;
                 "";
             }
-            return;
-        }
-        if (this.block === "social-ico" && this.elem === "github" && this._mode === "attrs") {
-            return {
-                href: "https://github.com/toivonen",
-                target: "_blank"
-            };
-            return;
-        }
-        if (this.block === "social-ico" && this.elem === "linkedin" && this._mode === "attrs") {
-            return {
-                href: "http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b",
-                target: "_blank"
-            };
-            return;
-        }
-        if (this.block === "social-ico" && this.elem === "facebook" && this._mode === "attrs") {
-            return {
-                href: "http://www.facebook.com/varvara.stepanova.9",
-                target: "_blank"
-            };
-            return;
-        }
-        if (this.block === "social-ico" && this.elem === "twitter" && this._mode === "attrs") {
-            return {
-                href: "https://twitter.com/toivonens",
-                target: "_blank"
-            };
-            return;
-        }
-        if (this.block === "social-ico" && !this.elem === false && this._mode === "mix") {
-            return {
-                elem: "ico"
-            };
-            return;
-        }
-        if (this.block === "social-ico" && !this.elem === false && this._mode === "tag") {
-            return "a";
-            return;
-        }
-        if (!!this.elem === false && this.block === "social-ico" && this._mode === "content") {
-            return [ {
-                elem: "rss"
-            }, {
-                elem: "twitter"
-            }, {
-                elem: "github"
-            }, {
-                elem: "facebook"
-            }, {
-                elem: "linkedin"
-            } ];
             return;
         }
         if (!!this.elem === false && this.block === "prompting" && this._mode === "tag") {
@@ -682,7 +630,7 @@ var BEMHTML = function() {
             return "body";
             return;
         }
-        if (!!this.elem === false && this.block === "b-page" && !(this["__$anflg"] !== 44331565) === false && this._mode === "default") {
+        if (!!this.elem === false && this.block === "b-page" && !(this["__$anflg"] !== 873125668) === false && this._mode === "default") {
             {
                 var _$mctx = this.ctx, _$mdtype = ("", __r52 = this._mode, this._mode = "doctype", __r53 = apply.call(__this), this._mode = __r52, "", __r53), _$mxUA = ("", __r54 = this._mode, this._mode = "xUACompatible", __r55 = apply.call(__this), this._mode = __r54, "", __r55), _$mbuf = [ _$mdtype, {
                     elem: "root",
@@ -707,7 +655,7 @@ var BEMHTML = function() {
                 {
                     "";
                     var __r56 = this["__$anflg"];
-                    this["__$anflg"] = 44331565;
+                    this["__$anflg"] = 873125668;
                     {
                         "";
                         var __r57 = this.ctx;
