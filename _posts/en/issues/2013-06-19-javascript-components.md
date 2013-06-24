@@ -9,25 +9,91 @@ layout: post
 invisible: true
 
 ---
-This article features some problems that JavaScript developers often face to
-when bringing a web interface into life, some possible solutions to these
+This article features some problems that developers often face to
+when writing JavaScript for a client side, some possible solutions to these
 problems and the explanations of my choice among those solutions.
 
 ## What is client-side JavaScript for?
-Adding JavaScript to a page empowers an interface with interactivity. Every page
-component represented with a piece of HTML and corresponding CSS can also be
-equiped with JavaScript describing its behavior; usually this are some reaction
-on user's doings.
+TODO: change title<br/>
+I am going to write about client-side JavaScript only, the code run under a
+browser that empowers an interface with interactivity.
 
-### JavaScript component structure
-TODO: change the title
-* HTML/CSS
-* JavaScript
-* linking
+A piece of interface is reprecented with some HTML (and obviously styled with
+CSS). Also it can be equiped with JavaScript usually describing how to react on
+user's doings.
 
-## Linking JS component with HTML
-### Old school
+So, when developing a pice of interface, we write:
+
+1. HTML/CSS
+2. JavaScript
+3. Some code to link 2 to 1.<br/>
+   This code says which part of HTML on a page corresponds to a JavaScript
+   component.
+
+## A few ways to matchmake
+Thus, the so-called "linking" describes that a piece of JavaScript matches a
+special piece of HTML. This can be done differently.
+
+### Linking with events attributes. The old school way.
+Since in most cases running JavaScript is a reaction on some events firing,
+there is a natural way to declare in HTML what the reaction should be. These are
+the [intrinsic events
+attributes](http://www.w3.org/TR/html401/interact/scripts.html#events).
+
+For example, if you need a hidden `<div>` with an authorization form to be shown
+when a user clicks on a "log in" link, this can be done with a JavaScript
+function. Then, call it in an event `onclick` attribute.
+
+```
+<a href="/login-page" onclick="return showLogin()">log in</a>
+<div id="login-form">
+    <form name="login" ... >
+    ...
+    </form>
+</div>
+```
+
+```
+dom = document.getElementById ? true : false;
+
+function showLogin() {
+  if ( dom && document.forms['login'] ) {
+    document.getElementById('login-form').style.display = 'block';
+    return false;
+  } else return true;
+}
+```
+
+That works fine, except of using global variables and some constraint with
+choosing a script loading strategy, which will be descanted below. Also in this
+case you cannot code any predefined action; everything happens after user
+actions.<br/>
+I personally don't like this method because it leaves JavaScript implants in
+HTML code, which is to describe document structure, not page behavior.
+
 ### With running JavaScript
+Therefore, the better way would be to stack everything related to JavaScript
+into the page `.js` file.
+
+Here and after I will write jQuery code to save your time and my letters. If you
+better like another library, just catch the idea.
+
+```
+$.fn.myPlugin = function() {
+  this.fadeIn(
+    'normal',
+    function() { ... }
+  );
+}
+
+...
+
+$('#element').myPlugin();
+```
+
+With plugins you can describe behavioural pattern and then apply it to the
+elements needed.
+
 ### CSS class
 declarative way
 TODO: change the title
