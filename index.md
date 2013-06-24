@@ -13,8 +13,8 @@ Karelia); currently living in
 According to official papers, my name is `Varvara Stepanova`, although most people call me just `Varya`.
 
 I have been working for Yandex, the Russian lead search engine, for 5 yeas. The
-last for I am a member of the [BEM](http://bem.info/).
-Our mission is to open source the full technology stack that powers the Yandex UI framework.
+last 4 I am a member of the [BEM](http://bem.info/) team.
+Our mission is to open source the full technological stack that powers the Yandex UI framework.
 
 Besides the actual development of components, libraries and tools, I frequent as a speaker at tech
 conferences, usually advocating the BEM methodology. I write articles in English and Russian, as well as
