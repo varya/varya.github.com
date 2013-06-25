@@ -208,7 +208,7 @@ Data attribute is a brainchild of HTML5, so carry a doctype when using them.
 
 As a widespread solution with many libraries providing helpers for them, data
 attributes make parametrizing not difficult. Although the limitation of being
-able to use plain types of data only can affect the plugin architecture.
+able to use key-value pairs only can affect the plugin architecture.
 
 ### onclick
 An elegant way is to provide data for a JavaScript component using natural
@@ -265,7 +265,7 @@ JavaScript components, each with its own bunch of parameters.
     value=""/>
 ```
 
-## How to start fast
+## Start fast
 ### Initializing components
 Applying plugins to elements is only possible when the page is loaded and your
 library can look for these elements in the document.
@@ -333,92 +333,29 @@ second placed before `</body>` imbues all the magic tricks.
 
 ## Organizing code
 TODO: change title
-global variables
 
-## Component core
+### Cover up
+In this article, swiched from calling `showLogin` function to jQuery plugins
+there were made some improvements in linking components to HTML code. But not
+only. Giving JavaScript responsibility for the page behavior, it aslo enables to
+step forward with avoiding global variables in the code.
 
+This is true not only about JavaScript. The ids, form names and input name (all
+the things that can be named in HTML) are also a kind of global object.
 
-After presentation
-http://events.yandex.ru/events/yasubbotnik/msk-jul-2012/talks/302/
+The usual advice is to avoid it.
 
-Adding JavaScript ot HTML empowers interface.
+> By reducing your global footprint to a single name, you significantly reduce
+> the chance of bad interactions with other applications, widgets, or libraries.
+> Douglas Crockford
 
-Not all the methods are covered here, but some the most interesting.
+TODO: code
 
-Topic:
+### Doublecheck you don't doubledo
+Initializing components can take time and resources. So, when first initialized,
+the result can be saved and then reused. jQuery provides a nice `data` method
+suitable for that.
 
- * for a developer,
- * about JavaScript,
- * about client-side components.
-
-Example of interface: a link to authorizing page.
-Improvement: no separate page but popup (layer) with authorizing form.
-
-```
-<a href="/login-page" onclick="return showLogin()">
-```
-Also there is a hidden `div` with a webform inside.
-
-```
-dom = document.getElementById ? true : false;
-
-function showLogin() {
-  if ( dom && document.forms['login'] ) {
-    document.getElementById('login-form').style.display = 'block';
-    return false;
-  } else return true;
-}
-```
-This is quite old code. We needed to chekc if we there was DOM and if it was
-possible to use `getElementById`. If something goes wrong, the function returns
-`true` which cases usual link behaviour.
-+:
-* there is cool degradation for non-javascript versions.
--:
-* many global variables
-`showLogin` function in JavaSript, `<form name="login">` and `<div
-id="login-form">` in HTML.
-* script must be preloaded (`<script>` placed in `<head>`)
-* there is no predefined actions, everything works only *after* a user does
-* something. (TODO: examples of predefined actions needed)
-
-```
-"By reducing your global footprint to a single name, you significantly reduce
-the chance of bad interactions with other applications, widgets, or libraries." 
-- Douglas Crockford
-```
-
-http://www.slideshare.net/cheilmann/javascript-best-practices-1041724
-```
-You run the danger of your code being overwritten by any other JavaScript added
-to the page after yours.
-```
-
-How to run predefined actions?
-
-1. Use `window onload`. Drawbacks of this: `onload` happens too late because of
-pictures.
-2. Place `<script>` in HTML right after the element it corresponds to. This
-doesn't work properly if DOM changing is needed.
-3. `domReady`. TODO: find links and explanations.
-
-jQuery Plugins
-
-```
-$.fn.myPlugin = function() {
-  this.fadeIn(
-    'normal',
-    function() { ... }
-  );
-}
-
-...
-
-$('#element').myPlugin();
-```
-
-* It's recommended to save JS object (initialized) in `.data['myPlugin']` to
-avoid unnecessary re-initialization.
 ```
 $.fn.myPlugin = function() { return this.each(function() {
   var $this = $(this),
@@ -429,7 +366,13 @@ $.fn.myPlugin = function() { return this.each(function() {
   }
 }};
 ```
-* Control deactiovation (TODO: check the word) needed.
+
+### Beyond the element
+If the corresponding block has been removed from a page, it's component's
+responsibility to clean up. Event listeners, constant background calculations
+and even layout changes can happen. When being deactivated, a component has to
+place things back with `destroy` method.
+
 ```
 $.fn.myPlugin = function() { return this.each(function() {
   var $this = $(this),
@@ -442,63 +385,17 @@ $.fn.myPlugin = function() { return this.each(function() {
   }
 }};
 ```
-There are two different places in code: the first one describes the control, the
-second uses. The plugin is not enough to fucnton. Every element condsidered to
-use the plugin has to be informed about that.<br/>
-It is possible to use different options per instance:
-```
-$('#element').myPlugin({
-  // options
-});
-```
 
-Control: input with error checker.
-```
-<input name="login" value=""/>
-```
+### Lazy initialization
 
-```
-$.fn.myInput = function() {
-  // ...
-};
-$('input[name="login"]').myInput();
-```
+## Component core
 
-For different types of inputs:
-```
-$('input[name="login"]').myInput({
-  validator: 'login'
-});
-$('input[name="password"]').myInput({
-  validator: 'password'
-});
-```
 
-3 parts of controls:
-1. HTML
-2. JavaScript code of a component
-3. JavaScript code linking an element with a behavior
+## Credits
+After presentation
+http://events.yandex.ru/events/yasubbotnik/msk-jul-2012/talks/302/
 
-The third part is usually imperative and here it can be optimized. So, the
-components have to know where to be applied.
 
-Separate JavaScript functionality
-http://coding.smashingmagazine.com/2008/09/16/jquery-examples-and-best-practices/
-
-Linking JavaScript to HTML:
-
-```
-<input class="myInput" name="login" value=""/>
-```
-
-```
-$.fn.myInput = function() {
-  // ...
-};
-$(function() {
-  $('.myInput').myInput()
-});
-```
 
 Lazy initialization:
 
@@ -512,74 +409,7 @@ Problem is that `change` doesn't run on every change. So, lazy init won't work.
 Lazy initialization is similar to lazy loading
 https://github.com/stevekwan/best-practices/blob/master/javascript/best-practices.md#lazy-load-assets-that-arent-immediately-required
 
-###Parametrizing instances
 
-Hidden divs, custom attributes.
-
-#### data attributes
-```
-<input
- class="myInput"
- data-validator="login"
- name="login"
- value=""/>
-```
-
-```
-$.fn.myInput = function() {
- this.data('validator') === 'login' // Supported by many frameworks
-};
-```
-
-#### onclick
-```
-<input
- class="myInput"
- onclick="return {
- validator: 'login'
- }"
- name="login"
- value=""/>
-```
-The hash booleanized as `true` so click work normally. It returns native
-JavaScript object. And you can use not only key-value pairs but more complex
-things.
-```
-$.fn.myInput = function() {
- this[0].onclick().validator === 'login'
-};
-```
-
-Functions can be used for custom things:
-```
-<input
- class="myInput"
- onclick="return {
- validator: function() { ... }
- }"
- name="login"
- value=""/>
-```
-
-For dozens of controls per page it's not useful to unitialize every class. So,
-marking all the conponents comes in:
-```
-<input
-  class="myInput js"
-  data-component="myInput"
-  data-validator="login"
-  name="login"
-  value=""/>
-```
-One of its parametres is it's component name.
-```
-$(function() {
-  $('.js').each(function() {
-  var$this = $(this);
-  $this[$this.data('component')]();
-  })
-})
-```
 
 With dinamically changed pages it's not enough to init components just ones after
 `domReady`.
