@@ -16,8 +16,8 @@ I have been working for Yandex, the Russian lead search engine, for 5 yeas. The
 last 4 I am a member of the [BEM](http://bem.info/) team.
 Our mission is to open source the full technological stack that powers the Yandex UI framework.
 
-Besides the actual development of components, libraries and tools, I frequent as a speaker at tech
-conferences, usually advocating the BEM methodology. I write articles in English and Russian, as well as
+Besides the actual development of components, libraries and tools, I frequently speak at tech
+conferences, usually explaining the BEM methodology. I write articles in English and Russian, as well as
 tutorials and training projects to help developers perform their first dive into
 BEM.
 There are some links on the [content](en/content/) page for your browsing pleasure.
