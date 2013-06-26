@@ -10,10 +10,10 @@ I am a front-end developer originally from the Utmost North
 Karelia); currently living in
 [Moscow](http://images.yandex.com/yandsearch?text=Moscow), Russia and working for
 [Yandex](http://www.yandex.com/).<br/>
-According to official papers, my name is `Varvara Stepanova`, although most people call me just `Varya`.
+According to official papers, my name is `Varvara Stepanova`, although most people just call me `Varya`.
 
-I have been working for Yandex, the Russian lead search engine, for 5 yeas. The
-last 4 I am a member of the [BEM](http://bem.info/) team.
+I have been working for Yandex, the leading Russian search engine, for 5 yeas. The
+last 4 of which I have been a member of the [BEM](http://bem.info/) team.
 Our mission is to open source the full technological stack that powers the Yandex UI framework.
 
 Besides the actual development of components, libraries and tools, I frequently speak at tech
