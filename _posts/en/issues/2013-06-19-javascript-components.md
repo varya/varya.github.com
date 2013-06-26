@@ -13,8 +13,7 @@ This article features some problems that developers often face to
 when writing JavaScript for a client side, some possible solutions to these
 problems and the explanations of my choice among those solutions.
 
-## What is client-side JavaScript for?
-TODO: change title<br/>
+## Client side magic
 I am going to write about client-side JavaScript only, the code runs under a
 browser and empowers an interface with interactivity.
 
@@ -331,8 +330,7 @@ interfaces. If that's crucial for your page functioning, divide the script file
 into 2. The first one linked in `<head>` provides major functionality. Then the
 second placed before `</body>` imbues all the magic tricks.
 
-## Organizing code
-TODO: change title
+## Common best practises
 
 ### Cover up
 In this article, swiched from calling `showLogin` function to jQuery plugins
@@ -348,8 +346,6 @@ The usual advice is to avoid it.
 > By reducing your global footprint to a single name, you significantly reduce
 > the chance of bad interactions with other applications, widgets, or libraries.
 > Douglas Crockford
-
-TODO: code
 
 ### Doublecheck you don't doubledo
 Initializing components can take time and resources. So, when first initialized,
@@ -386,116 +382,68 @@ $.fn.myPlugin = function() { return this.each(function() {
 }};
 ```
 
-### Lazy initialization
+### Initializing by request
+With dinamically changed pages it's not enough to initialize components just ones after
+`domReady`. There has to be some code to run every time you append new block
+onto a page, which turns HTML fragment into a functioning component.
 
-## Component core
-
-
-## Credits
-After presentation
-http://events.yandex.ru/events/yasubbotnik/msk-jul-2012/talks/302/
-
-
-
-Lazy initialization:
-
-```
-$.fn.myInput = function() { /* ... */ };
-$(function() {
-  $('body').on('change', '.myInput', function() { $(this).myInput() });
-});
-```
-Problem is that `change` doesn't run on every change. So, lazy init won't work.
-Lazy initialization is similar to lazy loading
-https://github.com/stevekwan/best-practices/blob/master/javascript/best-practices.md#lazy-load-assets-that-arent-immediately-required
-
-
-
-With dinamically changed pages it's not enough to init components just ones after
-`domReady`.
 ```
 $.fn.myInit = function() {
- this.find('.js').each(function() {
- var$this = $(this);
- $this[$this.data('component')]();
- });
- return this;
-})
-```
-Similarly fr destroying objects:
-```
-$.fn.myPlugin = function() { returnthis.each(function() {
- var$this = $(this), data = $this.data('myPlugin');
- if (!data) {
- // init...
-$this.data('myPlugin', {
- destroy: function() { /* ... */ }
- });
- }
-}};
-```
-```
-$.fn.myDestroy = function() {
- this.find('.js').each(function() {
- var$this = $(this),
- name = $this.data('component');
- $this.data(name).destroy();
- });
- return this.remove();
+    this.find('.js').each(function() {
+        var $this = $(this);
+        $this[$this.data('component')]();
+    });
+    return this;
 })
 ```
 
-Usually common methods are wrapped with a framework.
-#### jQuery UI
+A special method to destroy being removed components has similar sense.
+
+```
+$.fn.myDestroy = function() {
+    this.find('.js').each(function() {
+        var $this = $(this),
+            name = $this.data('component');
+        $this.data(name).destroy();
+    });
+    return this.remove();
+})
+```
+
+### Lazy initialization
+One more trick is [lazy
+initialization](http://en.wikipedia.org/wiki/Lazy_initialization) of the
+components. The idea is similar
+to [lazy
+loading](https://github.com/stevekwan/best-practices/blob/master/javascript/best-practices.md#lazy-load-assets-that-arent-immediately-required)
+and merely means do as less as possible beforehand.
+
+In general, the component can be initialized right after a user started to use
+it. So, all the necessary predefined actions won't be run in advance and won't
+slow down page rendering and the other components. Objects corresponding to
+never-used components won't be created, which saves memory.
+
+## Component core
+Many code practises above would be repeated again and again when implementing
+many components. As you can guess, all the common things can be wrapped with a
+framework representing the core code for the components.
+
+jQuery UI widgets demostrate a kind of this. When created a new widget, you use
+API and get embbeded functionality.
+
 ```
 $.widget('my.component', {
-  _create: function() { /* ... */ },
-destroy: function() { /* ... */ }
-myMethod: function() { /* ... */ },
+    _create: function() { /* ... */ },
+    destroy: function() { /* ... */ }
+    myMethod: function() { /* ... */ },
 });
 ```
 
-## Additional information
-* Building
-* Loading script code
-* Complex connections between components
-* Data binding (interface can be automatically changed after model changing)
-
-
-Yahoo [Best Practises for Speeding Up Your Web
-Site](http://developer.yahoo.com/performance/rules.html) suggests about
-components:
-!!TODO: read!!
-
-* Mark a component with a special CSS class ``js``.
-* Pass data in DOM attributes. (Arrays and hashes in `onclick`).
-* Insert `<script>` tag just before `<body>`.
-* Load components code separately or in bundles.
-* Create instances of component classes.
-
-http://net.tutsplus.com/tutorials/javascript-ajax/24-javascript-best-practices-for-beginners/
-```
-Place Scripts at the Bottom of Your Page
-This tip has already been recommended in the previous article in this series. As
-it’s highly appropriate though, I’ll paste in the information.
-
-Remember — the primary goal is to make the page load as quickly as possible for
-the user. When loading a script, the browser can’t continue on until the entire
-file has been loaded. Thus, the user will have to wait longer before noticing
-any progress.
-If you have JS files whose only purpose is to add functionality — for example,
-after a button is clicked — go ahead and place those files at the bottom, just
-before the closing body tag. This is absolutely a best practice.
-```
-
-Sharing data with events. Lintener, ... and Dispatcher  (mediator pattern?)
-Explanation by Dima http://www.artlebedev.ru/tools/technogrette/js/observable/
-
-
-
-http://www.slideshare.net/cheilmann/javascript-best-practices-1041724
-```
-At a later stage you can also expose these when usuing the revealling module
-pattern to create an API to extend the main functionality.
-Good code should be easy to build upon withour rewriting the core.
-```
+## Credits
+Before I wrapped up, let me 
+thank to [Sergey Berezhnoy](https://github.com/veged) also known as
+[@veged](https://twitter.com/veged) for his presentation about creating
+JavaScript components. The Russian speaking readers, you can enjoy the video! [
+Сергей Бережной, Яндекс
+Разные способы создания клиентских
+js-компонентов](http://events.yandex.ru/events/yasubbotnik/msk-jul-2012/talks/302/)
