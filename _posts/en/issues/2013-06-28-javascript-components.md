@@ -1,6 +1,6 @@
 ---
 
-title: Kinds of JavaScript components
+title: JavaScript component solutions
 
 categories: en issues
 
