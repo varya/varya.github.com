@@ -9,17 +9,17 @@ layout: post
 invisible: true
 
 ---
-This article features some problems that developers often face to
-when writing JavaScript for a client side, some possible solutions to these
-problems and the explanations of my choice among those solutions.
+This article features common problems that developers often face
+when writing JavaScript for the client side; possible solutions to these
+problems and explanations of my choices.
 
 ## Client side magic
 I am going to write about client-side JavaScript only, the code runs under a
 browser and empowers an interface with interactivity.
 
-A piece of interface is reprecented with some HTML (and obviously styled with
+A piece of interface is represented with some HTML (and obviously styled with
 CSS). Also it can be equiped with JavaScript usually describing how to react on
-user's doings.
+user's actions.
 
 So, when developing a piece of interface, we write:
 
@@ -30,13 +30,13 @@ So, when developing a piece of interface, we write:
    component.
 
 ## A few ways to matchmake
-Thus, the so-called "linking" describes that a piece of JavaScript matches a
-special piece of HTML. This can be done differently.
+Thus, the so-called "linking" joins designated piece of JavaScript to its
+corresponding piece of HTML. This can be done in different ways.
 
 ### Linking with events attributes. The old school way.
-Since in most cases running JavaScript is a reaction to some events firing,
-there is a natural way to declare in HTML what the reaction should be. These are
-the [intrinsic events
+Since, in most cases running JavaScript is a reaction to some events firing,
+there is an obvious way to declare in HTML what the reaction should be. These are
+the [intrinsic event
 attributes](http://www.w3.org/TR/html401/interact/scripts.html#events).
 
 For example, if you need a hidden `<div>` with an authorization form to be shown
@@ -63,19 +63,19 @@ function showLogin() {
 }
 ```
 
-That works fine, except of using global variables and some constraint with
+That works fine, except  it uese global variables and demonstrate constraint with
 choosing a script loading strategy, which will be descanted below. Also in this
 case you cannot code any predefined action; everything happens after a user
 does something.<br/>
 I personally don't like this method because it leaves JavaScript implants in
-HTML code, which is to describe document structure, not page behavior.
+HTML code, whose main purpose to describe the document structure, not page behavior.
 
 ### Moving JavaScript into JavaScript
-Therefore, the better way would be to stack everything related to JavaScript
+Therefore, a better way would be to stack everything related to JavaScript
 into the page `.js` file.
 
-Here and after I will write jQuery code to save your time and some letters. If you
-better like another library, just catch the idea.
+From here I will write jQuery code to save time and some letters. If you prefer
+another library, just get teh gist.
 
 ```
 $.fn.myPlugin = function() {
