@@ -497,7 +497,8 @@ BEM.DOM.decl(
 ```
 
 ## From now on
-JavaScript component fundametals also cover problems like
+JavaScript component fundametals also cover problems like following.
+
 * loading by request
 * building page `.js` files
 * dependency system
