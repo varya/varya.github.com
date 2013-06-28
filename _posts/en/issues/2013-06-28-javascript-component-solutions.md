@@ -507,10 +507,10 @@ by Steven Sanderson you can choose the one you like and have a quick look under
 the hood.
 
 ## Credits
-Before I wrapped up, let me 
-thank to [Sergey Berezhnoy](https://github.com/veged) also known as
+Before I wrap up, let me 
+thank [Sergey Berezhnoy](https://github.com/veged) also known as
 [@veged](https://twitter.com/veged) for his presentation about creating
-JavaScript components. The Russian speaking readers, you can enjoy the video! [
+JavaScript components. Russian speaking readers can also enjoy the video! [
 Сергей Бережной, Яндекс
 Разные способы создания клиентских
 js-компонентов](http://events.yandex.ru/events/yasubbotnik/msk-jul-2012/talks/302/)
