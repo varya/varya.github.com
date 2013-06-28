@@ -6,8 +6,6 @@ categories: en issues
 
 layout: post
 
-invisible: true
-
 ---
 This article features common problems that developers often face, or maybe used
 to face before the current open source era, when writing JavaScript for the
