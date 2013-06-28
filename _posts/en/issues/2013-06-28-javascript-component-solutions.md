@@ -420,24 +420,23 @@ $.fn.myDestroy = function() {
 
 ### Lazy initialization
 One more trick is a [lazy
-initialization](http://en.wikipedia.org/wiki/Lazy_initialization) of the
-components. The idea is similar
-to [lazy
+initialization](http://en.wikipedia.org/wiki/Lazy_initialization) of components.
+The idea is similar to [lazy
 loading](https://github.com/stevekwan/best-practices/blob/master/javascript/best-practices.md#lazy-load-assets-that-arent-immediately-required)
 and merely means do as less as possible beforehand.
 
 Instead of initializing all the components when `domReady` fires, you can do
-this separately for every components at the time the particular components needs
-that. Usually that's right after a user started to use
-it and respective events triggered. So, all the necessary predefined actions
+this separately for every component at the time the particular component needs
+that. Usually that's after a user started to interact with
+it and the respective events triggered. So, all the necessary predefined actions
 won't be run in advance and won't
-slow down page rendering and the other components. Objects corresponding to
-never-used components won't be created, which saves memory.
+slow down page rendering and the work of other components. Objects corresponding
+to never-used components won't be created, which saves memory.
 
 ## Component core
 Many code practises above would be repeated again and again when implementing
-a lot of components. As you can guess, all the common things can be wrapped with a
-framework representing the core code for the components.
+a lot of components. As you can guess, all the common things can be wrapped with
+a framework representing the core code for the components.
 
 One of the examples of this is jQuery UI. As many other frameworks it provides
 API to create your own JavaScript components.
@@ -494,13 +493,20 @@ BEM.DOM.decl(
 ```
 
 ## From now on
-JavaScript component fundametals also cover problems like following.
+A number of JavaScript frameworks and libraries were created last years.
+Generally they contain the solutions to the problems listed and also cover
+others, like:
 
 * loading by request
 * building page `.js` files
 * dependency system
 * complex component relations and data sharing
 * data binding
+
+With comparing articles like [Rich JavaScript Applications – the Seven
+Frameworks](http://blog.stevensanderson.com/2012/08/01/rich-javascript-applications-the-seven-frameworks-throne-of-js-2012/)
+by Steven Sanderson you can choose the one you like and have a quick look under
+the hood.
 
 ## Credits
 Before I wrapped up, let me 
