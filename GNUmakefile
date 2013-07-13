@@ -7,7 +7,7 @@ do_git = \
 		cd $${REPO_PATH} && git fetch --prune && cd - && break; \
 	else \
 		echo "Cloning $(3)"; \
-		git clone $(1) -b $(2) $(join s/libs/, $(3)); \
+		git clone $(1) -b $(2) $${REPO_PATH}; \
 	fi;
 
 all:: css
