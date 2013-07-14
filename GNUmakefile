@@ -19,7 +19,7 @@ libs/bem-core:
 	$(call do_git, git@github.com:bem/bem-core.git, v1, $(@F))
 
 libs/bouwdoos:
-	$(call do_git, git@github.com:bem/bem-core.git, v1, $(@F))
+	$(call do_git, git@github.com:toivonen/bouwdoos.git, v1, $(@F))
 
 .PHONY: css
 css:: $(patsubst %.css,%.min.css, $(shell find s -name '*.css' -not -name '*.min.css'))
