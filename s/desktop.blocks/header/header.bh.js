@@ -6,7 +6,7 @@ module.exports = function(bh) {
             .content([
                 {
                     elem: 'left',
-                    mix: {
+                    mix: [{
                         block: 'candies',
                         js: {
                             size: {
@@ -15,15 +15,15 @@ module.exports = function(bh) {
                             },
                             reverse: true
                         }
-                    }
+                    }]
                 },
                 {
                     block: 'logo',
-                    mix: { block: 'header', elem: 'center' }
+                    mix: [{ block: 'header', elem: 'center' }]
                 },
                 {
                     elem: 'right',
-                    mix: {
+                    mix: [{
                         block: 'candies',
                         js: {
                             size: {
@@ -31,7 +31,7 @@ module.exports = function(bh) {
                                 min: 12
                             }
                         }
-                    }
+                    }]
                 }
             ]);
     });
