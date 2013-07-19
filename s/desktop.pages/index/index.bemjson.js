@@ -103,7 +103,7 @@
             ]
         },
         { block: 'custom-fonts' },
-        { block: 'i-jquery', elem: 'core' },
-        { elem: 'js', url: 'index.min.js' }
+        { block: 'jquery', elem: 'core' },
+        { elem: 'js', url: 'index.js' }
     ]
 })
