@@ -1,48 +1,52 @@
 /** @requires BEM */
 /** @requires BEM.DOM */
 
-(function(undefined) {
+modules.define('i-bem__dom', function(provide, DOM) {
 
-BEM.DOM.decl('candies', {
+DOM.decl('candies', {
 
     onSetMod : {
 
-        'js' : function() {
-            var width = this.domElem.width(),
-                p = this.params,
-                candies = [],
-                i = 0,
-                colorIndex = this.__self.stopPoint,
-                initSize = 6,
-                rt = 6,
-                newSize = function(max, min) {
-                    return Math.round(Math.random()*(max - min) + min);
-                }
+        'js' : {
 
-            while(width > 2*rt) {
+            'inited' : function() {
 
-                if (initSize < p.size.min) {
-                    size = newSize(initSize, initSize);
-                    initSize = initSize + 2;
-                } else {
-                    size = newSize(p.size.max, p.size.min);
-                }
-                if (size > width - 2*rt) size = width - 2*rt;
-                bt = Math.round(Math.sin(i/2.5 + 1.5)*p.size.max*0.9/2);
-                //bt = Math.round(Math.sin(i/2.5)*p.size.max*0.9/Math.sqrt(i));
+                var width = this.domElem.width(),
+                    p = this.params,
+                    candies = [],
+                    i = 0,
+                    colorIndex = this.__self.stopPoint,
+                    initSize = 6,
+                    rt = 6,
+                    newSize = function(max, min) {
+                        return Math.round(Math.random()*(max - min) + min);
+                    }
 
-                lastSize = size;
-                width = width - size - rt;
-                candies.push('<b alt="' + i + '" class="candies_i" style="width:' + size + 'px; height:' + size + 'px; background:#' + this.__self.colors[colorIndex] +';margin: auto ' + rt + 'px ' + bt + 'px 0"></b>');
-                i++;
-                colorIndex++;
-                if (!this.__self.colors[colorIndex]) {
-                    colorIndex = 0;
+                while(width > 2*rt) {
+
+                    if (initSize < p.size.min) {
+                        size = newSize(initSize, initSize);
+                        initSize = initSize + 2;
+                    } else {
+                        size = newSize(p.size.max, p.size.min);
+                    }
+                    if (size > width - 2*rt) size = width - 2*rt;
+                    bt = Math.round(Math.sin(i/2.5 + 1.5)*p.size.max*0.9/2);
+                    //bt = Math.round(Math.sin(i/2.5)*p.size.max*0.9/Math.sqrt(i));
+
+                    lastSize = size;
+                    width = width - size - rt;
+                    candies.push('<b alt="' + i + '" class="candies_i" style="width:' + size + 'px; height:' + size + 'px; background:#' + this.__self.colors[colorIndex] +';margin: auto ' + rt + 'px ' + bt + 'px 0"></b>');
+                    i++;
+                    colorIndex++;
+                    if (!this.__self.colors[colorIndex]) {
+                        colorIndex = 0;
+                    }
                 }
+                this.__self.stopPoint = colorIndex;
+                if (p.reverse) { candies.reverse(); }
+                this.domElem.append('<b>' + candies.join('') + '</b>');
             }
-            this.__self.stopPoint = colorIndex;
-            if (p.reverse) { candies.reverse(); }
-            this.domElem.append('<b>' + candies.join('') + '</b>');
         }
 
     }
@@ -104,4 +108,6 @@ BEM.DOM.decl('candies', {
 
 });
 
-})();
+provide(DOM);
+
+});
