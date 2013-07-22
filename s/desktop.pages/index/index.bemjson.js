@@ -8,9 +8,9 @@
         { elem: 'meta', attrs: { name: 'keywords', content: '' }}
     ],
     content:[
-        /*{
+        {
             block: 'header'
-        },*/
+        },
 /*        {
             block: 'layout',
             content: [
