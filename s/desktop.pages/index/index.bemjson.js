@@ -8,10 +8,10 @@
         { elem: 'meta', attrs: { name: 'keywords', content: '' }}
     ],
     content:[
-        {
+        /*{
             block: 'header'
-        },
-        {
+        },*/
+/*        {
             block: 'layout',
             content: [
                 {
@@ -101,9 +101,9 @@
                     elem: 'right'
                 }
             ]
-        },
+        },*/
         { block: 'custom-fonts' },
-        { block: 'jquery', elem: 'core' },
+/*        { block: 'jquery', elem: 'core' },*/
         { elem: 'js', url: 'index.js' }
     ]
 })
