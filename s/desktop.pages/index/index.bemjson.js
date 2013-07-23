@@ -11,12 +11,12 @@
         {
             block: 'header'
         },
-/*        {
+        {
             block: 'layout',
             content: [
                 {
                     block: 'main',
-                    content: [
+/*                    content: [
                         {
                             block: 'article',
                             title: 'The Case of The Wonderful Button',
@@ -29,13 +29,13 @@
                             block: 'related',
                             content: 'xxx'
                         }
-                    ]
+                    ]*/
                 },
                 {
                     block: 'sidebar',
-                    content: [
+                    /*content: [
                         {
-                            block: 'b-menu-vert',
+                            block: 'menu-vert',
                             content: [
                                 {
                                     elem: 'title',
@@ -72,7 +72,7 @@
                             block: 'github',
                             js: { user: 'toivonen' }
                         }
-                    ]
+                    ]*/
                 },
                 {
                     block: 'prompting',
@@ -101,7 +101,7 @@
                     elem: 'right'
                 }
             ]
-        },*/
+        },
         { block: 'custom-fonts' },
         { block: 'jquery', elem: 'core' },
         { elem: 'js', url: 'index.js' }
