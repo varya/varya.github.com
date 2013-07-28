@@ -14,7 +14,7 @@ module.exports = function(config) {
             require('enb/techs/html-from-bemjson'),
              [ require('enb/techs/js'), { sourceSuffixes: ['vanilla.js', 'js'], target: '?.pre.js'} ],
             [ require('enb-modules/techs/prepend-modules'), { target: '?.js', source: '?.pre.js' } ],
-            require('enb/techs/css'),
+            require('enb/techs/css-stylus'),
             [ require('enb/techs/borschik'), { sourceTarget: '?.js', destTarget: '?.min.js', minify: true } ],
             [ require('enb/techs/borschik'), { sourceTarget: '?.css', destTarget: '?.min.css', minify: true } ]
             ])
