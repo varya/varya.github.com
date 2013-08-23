@@ -1,2 +1,3 @@
 **/*
 !**/*.bemjson.js
+!**/*.min.css
