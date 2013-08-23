@@ -39,13 +39,13 @@
                             content: [
                                 {
                                     elem: 'title',
-                                    mix: { block: 'box', elem: 'title'},
+                                    mix: [{ block: 'box', elem: 'title'}],
                                     content: 'On this site'
                                 },
                                 {
                                     elem: 'item',
                                     content: {
-                                        block: 'b-link',
+                                        block: 'link',
                                         url: '#',
                                         content: 'Blog'
                                     }
@@ -53,7 +53,7 @@
                                 {
                                     elem: 'item',
                                     content: {
-                                        block: 'b-link',
+                                        block: 'link',
                                         url: '#',
                                         content: 'Articles and talks'
                                     }
@@ -61,7 +61,7 @@
                                 {
                                     elem: 'item',
                                     content: {
-                                        block: 'b-link',
+                                        block: 'link',
                                         url: '#',
                                         content: 'About me'
                                     }
