@@ -1,25 +1,28 @@
-block footer {
+module.exports = function(bh) {
 
-    default: {
-        applyNext(
-            this.ctx = {
-                block: 'footer',
-                elem: 'outer',
-                content: this.ctx
-            }
-        )
-    }
+    bh.match('footer', function(ctx, json) {
+        return {
+            block: 'footer',
+            elem: 'outer',
+            content: json
+        }
+    });
 
-    tag: 'footer'
+    bh.match('footer', function(ctx){
 
-    elem left, content: [
-        {
-            block: 'b-menu-vert',
+        ctx.tag('footer');
+
+    });
+
+    bh.match('footer__left', function(ctx){
+
+        ctx.content({
+            block: 'menu-vert',
             content: [
                 {
                     elem: 'item',
                     content: {
-                        block: 'b-link',
+                        block: 'link',
                         url: '#',
                         content: 'Blog'
                     }
@@ -27,7 +30,7 @@ block footer {
                 {
                     elem: 'item',
                     content: {
-                        block: 'b-link',
+                        block: 'link',
                         url: '#',
                         content: 'Articles and talks'
                     }
@@ -35,15 +38,14 @@ block footer {
                 {
                     elem: 'item',
                     content: {
-                        block: 'b-link',
+                        block: 'link',
                         url: '#',
                         content: 'About me'
                     }
                 }
             ]
-        }
-    ]
-    elem center, content: 'xxx'
-    elem right, content: 'O'
+        });
+
+    });
 
 }

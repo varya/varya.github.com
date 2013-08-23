@@ -1,9 +1,9 @@
 /** @requires BEM */
 /** @requires BEM.DOM */
 
-(function(undefined) {
+modules.define('i-bem__dom', function(provide, DOM) {
 
-BEM.DOM.decl('github', {
+DOM.decl('github', {
 
     onSetMod : {
 
@@ -22,4 +22,4 @@ BEM.DOM.decl('github', {
 
 });
 
-})();
+});

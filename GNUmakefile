@@ -7,7 +7,7 @@ do_git = \
 		cd $${REPO_PATH} && git fetch --prune && cd - && break; \
 	else \
 		echo "Cloning $(3)"; \
-		git clone $(1) -b $(2) $(join s/libs/, $(3)); \
+		git clone $(1) -b $(2) $${REPO_PATH}; \
 	fi;
 
 all:: css
@@ -19,7 +19,7 @@ libs/bem-core:
 	$(call do_git, git@github.com:bem/bem-core.git, v1, $(@F))
 
 libs/bouwdoos:
-	$(call do_git, git@github.com:bem/bem-core.git, v1, $(@F))
+	$(call do_git, git@github.com:toivonen/bouwdoos.git, v1, $(@F))
 
 .PHONY: css
 css:: $(patsubst %.css,%.min.css, $(shell find s -name '*.css' -not -name '*.min.css'))
