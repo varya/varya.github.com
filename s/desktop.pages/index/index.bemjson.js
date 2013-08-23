@@ -33,7 +33,7 @@
                 },
                 {
                     block: 'sidebar',
-                    /*content: [
+                    content: [
                         {
                             block: 'menu-vert',
                             content: [
@@ -67,12 +67,12 @@
                                     }
                                 }
                             ]
-                        },
+                       /* },
                         {
                             block: 'github',
-                            js: { user: 'toivonen' }
+                            js: { user: 'toivonen' }*/
                         }
-                    ]*/
+                    ]
                 },
                 {
                     block: 'prompting',
