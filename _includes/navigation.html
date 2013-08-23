@@ -1,11 +1,9 @@
-<div class="b-menu-vert">
-<ul class="b-menu-vert__layout">
+<ul class="menu-vert">
     {% if title %}
-    <h3 class="b-menu-vert__title box__title">{{ title }}</h3>
+    <h3 class="menu-vert__title box__title">{{ title }}</h3>
     {% endif %}
     {% for n in site.navigation %}
-    <li class="b-menu-vert__layout-unit">
-    <div class="b-menu-vert__item">
+    <li class="b-menu-vert__item">
     {% if n.key == 'about' %}
         {% capture url %}/{{lang}}/{% endcapture %}
         {% if lang == 'en' %}
@@ -14,11 +12,9 @@
     {% else %}
         {% capture url %}/{{lang}}/{{ n.key }}/{% endcapture %}
     {% endif %}
-    <a href="{{ url }}" class="b-link">
+    <a href="{{ url }}" class="link">
             {{ n.name | map: lang }}
         </a>
-    </div>
     </li>
     {% endfor %}
 </ul>
-</div>
