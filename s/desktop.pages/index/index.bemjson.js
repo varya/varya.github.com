@@ -16,7 +16,7 @@
             content: [
                 {
                     block: 'main',
-/*                    content: [
+                    content: [
                         {
                             block: 'article',
                             title: 'The Case of The Wonderful Button',
@@ -29,7 +29,7 @@
                             block: 'related',
                             content: 'xxx'
                         }
-                    ]*/
+                    ]
                 },
                 {
                     block: 'sidebar',
