@@ -5,7 +5,7 @@ header: About me
 ---
 {% include setup.md %}
 
-I am a front-end developer originally from the Utmost North
+I am a front-end developer originally from the Utmost North 
 ([Petrozavodsk](http://maps.yandex.com/-/CVR3nIPf),
 Karelia); currently living in
 [Moscow](http://images.yandex.com/yandsearch?text=Moscow), Russia and working for
