@@ -67,10 +67,10 @@
                                     }
                                 }
                             ]
-                       /* },
+                        },
                         {
                             block: 'github',
-                            js: { user: 'toivonen' }*/
+                            js: { user: 'toivonen' }
                         }
                     ]
                 },
