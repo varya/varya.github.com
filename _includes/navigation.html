@@ -3,6 +3,8 @@
     <h3 class="menu-vert__title box__title">{{ title }}</h3>
     {% endif %}
     {% for n in site.navigation %}
+    {% capture text %}{{ n.name | map: lang }}{% endcapture %}
+    {% if text != '' %}
     <li class="b-menu-vert__item">
     {% if n.key == 'about' %}
         {% capture url %}/{{lang}}/{% endcapture %}
@@ -10,11 +12,10 @@
             {% assign url = '/' %}
         {% endif %}
     {% else %}
-        {% capture url %}/{{lang}}/{{ n.key }}/{% endcapture %}
+        {% capture url %}{% if n.url %}{{ n.url }}{% else %}/{{lang}}/{{ n.key }}/{% endif %}{% endcapture %}
     {% endif %}
-    <a href="{{ url }}" class="link">
-            {{ n.name | map: lang }}
-        </a>
+    <a href="{{ url }}" class="link">{{ text }}</a>
     </li>
+    {% endif %}
     {% endfor %}
 </ul>

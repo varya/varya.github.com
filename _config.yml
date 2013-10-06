@@ -78,6 +78,10 @@ navigation:
   name:
         en: "Articles and talks"
         ru: "Статьи и презентации"
+- key: daily
+  url: "http://varya-daily.tumblr.com/"
+  name:
+        ru: "Про жизнь"
 - key: about
   name:
         en: "About me"
