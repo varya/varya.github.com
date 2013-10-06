@@ -12,7 +12,7 @@ redcarpet:
 
 production_url : http://varya.me
 
-github_repo: "toivonen/toivonen.github.com"
+github_repo: "varya/varya.github.com"
 
 link_handles:
     - prefix: "@"
