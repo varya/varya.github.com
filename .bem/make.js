@@ -55,7 +55,8 @@ module.exports = function(make) {
                 .setDefaultTechs('bemjson.js')
                 .setBundleBuildLevels([
                     'bem-core',
-                    'bem-components'
+                    'bem-components',
+                    'bouwdoos'
                 ].reduce(function(levels, lib) {
                     return levels.concat([
                         environ.getLibPath(lib, 'common.blocks'),
