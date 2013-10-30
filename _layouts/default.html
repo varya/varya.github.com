@@ -4,10 +4,10 @@ layout: layout
 	{% capture setup %}{% include setup.md %}{% endcapture %}
 	<header class="header">
         <div class="header__left candies i-bem"
-             onclick="return { 'candies' : { 'size' : { 'max' : 28, 'min' : 12 }, 'reverse' : true } }"></div>
+             data-bem="return { 'candies' : { 'size' : { 'max' : 28, 'min' : 12 }, 'reverse' : true } }"></div>
         <logo class="logo header__center">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
         <div class="header__right candies i-bem"
-             onclick="return { 'candies' : { 'size' : { 'max' : 28, 'min' : 12 } } }"></div>
+             data-bem="return { 'candies' : { 'size' : { 'max' : 28, 'min' : 12 } } }"></div>
 		<!--<h1 class="title">
 			{% if page.page_type != "index" %}<a href="/{{ lang_prefix }}">{% endif %}{{ site.loc.name | map: lang }}{% if page.page_type != "index" %}</a>{% endif %}
 			<sup>{% unless page.url contains "/issues/restart" %}<a class="link link_wrapper" href="/{{ lang_prefix }}issues/restart/">{% endunless %}β{% unless page.url contains "/issues/restart" %}</a>{% endunless %}</sup>
@@ -23,7 +23,7 @@ layout: layout
             {% capture title %}{{ site.loc.on_site | map: lang }}{% endcapture %}
             {% include navigation.html %}
             <div class="github i-bem"
-                onclick="return { 'github' : { 'user' : 'varya' } }">
+                data-bem="return { 'github' : { 'user' : 'varya' } }">
                 <div class="github__header"></div>
                 <div class="github__body"></div>
             </div>
