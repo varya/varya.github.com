@@ -7,15 +7,13 @@
     "url": "git://github.com/bem/project-stub.git"
   },
   "engines": {
-    "node": "0.6 | 0.7 | 0.8 | 0.9"
+    "node": "0.6 | 0.8 | 0.10"
   },
   "dependencies": {
-      "ometajs": "~3.1.15",
-      "borschik": "~0.2.8",
-      "csso": "~1.3.5",
-      "enb" : "~0.8.19",
-      "bh" : ">=0.1.14",
-      "enb-modules" : ">=0.0.10"
+    "bem": "git://github.com/bem/bem-tools.git#7b07045b17ff",
+    "bem-environ": "~1.3.1",
+    "bem-techs-core": "~0.3.0",
+    "bower-npm-install": "~0.5.1"
   },
   "devDependencies": {},
   "private": true

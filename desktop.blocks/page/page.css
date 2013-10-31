@@ -1,0 +1,22 @@
+.page__body
+{
+    margin: 0;
+    text-align: center;
+
+    background-color: #f6f6f6;
+    background-image:
+        -webkit-radial-gradient(50% 50%, circle, transparent 5px, rgba(0,0,0, .05) 5px, rgba(0,0,0, .05) 6px, transparent 6px),
+        -webkit-radial-gradient(40% 40%, circle, transparent 3px, rgba(0,0,0, .05) 3px, rgba(0,0,0, .05) 4px, transparent 4px);
+    background-image:
+        -moz-radial-gradient(50% 50%, circle, transparent 5px, rgba(0,0,0, .05) 5px, rgba(0,0,0, .05) 6px, transparent 6px),
+        -moz-radial-gradient(40% 40%, circle, transparent 3px, rgba(0,0,0, .05) 3px, rgba(0,0,0, .05) 4px, transparent 4px);
+    background-image:
+        radial-gradient(circle at 50% 50%, transparent 5px, rgba(0,0,0, .05) 5px, rgba(0,0,0, .05) 6px, transparent 6px),
+        radial-gradient(circle at 40% 40%, transparent 3px, rgba(0,0,0, .05) 3px, rgba(0,0,0, .05) 4px, transparent 4px);
+    background-size:
+        13px 13px,
+        16px 16px;
+
+    font: 16px/1.5 'Noto Serif', Palatino Linotype, Palatino, serif;
+    font-weight: 400;
+}

@@ -1,0 +1,21 @@
+.prompting
+{
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+    width: 5.5%;
+    display: block;
+    padding-right: 2em;
+    padding-right: 3%;
+    text-align: right;
+}
+
+.prompting:before
+{
+    content: '';
+    width: 4em;
+    display: block;
+    height: 0;
+}

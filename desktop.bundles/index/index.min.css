@@ -1,0 +1,713 @@
+/* ../../desktop.blocks/page/page.css begin */
+.page__body
+{
+    margin: 0;
+    text-align: center;
+
+    background-color: #f6f6f6;
+    background-image:
+        -webkit-radial-gradient(50% 50%, circle, transparent 5px, rgba(0,0,0, .05) 5px, rgba(0,0,0, .05) 6px, transparent 6px),
+        -webkit-radial-gradient(40% 40%, circle, transparent 3px, rgba(0,0,0, .05) 3px, rgba(0,0,0, .05) 4px, transparent 4px);
+    background-image:
+        -moz-radial-gradient(50% 50%, circle, transparent 5px, rgba(0,0,0, .05) 5px, rgba(0,0,0, .05) 6px, transparent 6px),
+        -moz-radial-gradient(40% 40%, circle, transparent 3px, rgba(0,0,0, .05) 3px, rgba(0,0,0, .05) 4px, transparent 4px);
+    background-image:
+        radial-gradient(circle at 50% 50%, transparent 5px, rgba(0,0,0, .05) 5px, rgba(0,0,0, .05) 6px, transparent 6px),
+        radial-gradient(circle at 40% 40%, transparent 3px, rgba(0,0,0, .05) 3px, rgba(0,0,0, .05) 4px, transparent 4px);
+    background-size:
+        13px 13px,
+        16px 16px;
+
+    font: 16px/1.5 'Noto Serif', Palatino Linotype, Palatino, serif;
+    font-weight: 400;
+}
+
+/* ../../desktop.blocks/page/page.css end */
+
+/* ../../desktop.blocks/grid/grid.css begin */
+/* 12 column grid. 5.5% colum + 3% margin */
+
+.grid
+{
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+    width: 1200px;
+    left: 50%;
+    margin-left: -600px;
+    height: 100%;
+    background-image: -webkit-linear-gradient(0deg, rgba(255,0,0, .15) 0%, rgba(255,0,0, .15) 64.7%, transparent 64.7%);
+    background-size: 8.6459% 100%;
+}
+
+/* ../../desktop.blocks/grid/grid.css end */
+
+/* ../../desktop.blocks/text/text.css begin */
+code
+{
+    font-family: Monaco;
+    background: #f2eae2;
+    padding: .1em .25em;
+}
+
+
+/* ../../desktop.blocks/text/text.css end */
+
+/* ../../desktop.blocks/header/header.css begin */
+.header
+{
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+    width: 1200px;
+    margin: 2em auto 3em;
+    text-align: left;
+    padding: 0;
+    display: table;
+}
+
+.header__left
+{
+    padding: 0;
+    margin: 0;
+    width: auto;
+    display: table-cell;
+    text-align: right;
+    width: 778px;
+}
+
+.header__center
+{
+    padding: 0;
+    margin: 0;
+    display: table-cell;
+    width: 200px;
+}
+
+.header__right
+{
+    width: 325px;
+    padding-left: 20px;
+    display: table-cell;
+}
+
+.header__item
+{
+    border-radius: 50%;
+    margin-bottom: 30px;
+    margin-right: 3px;
+    display: inline-block;
+}
+
+/* ../../desktop.blocks/header/header.css end */
+
+/* ../../desktop.blocks/logo/logo.css begin */
+.logo
+{
+    display: inline-block;
+    color: #C9C9C9;
+    margin: 0;
+    margin-right: -10px;
+    font: 32px/1 Monaco;
+    text-align: center;
+    float: right;
+}
+
+.logo .var
+{
+    color: #66C9EE;
+}
+
+.logo .ya
+{
+    color: #82B964;
+}
+
+@-webkit-keyframes twinkly {
+    0%   { background: #D24D33; }
+    100% { background: lightgrey; }
+}
+@-moz-keyframes twinkly {
+    0%   { background: #D24D33; }
+    100% { background: lightgrey; }
+}
+
+.logo .cursor
+{
+    width: 3px;
+    height: 45px;
+    margin-bottom: -10px;
+    display: inline-block;
+    -webkit-animation: twinkly .5s alternate infinite;
+    -moz-animation: twinkly .5s alternate infinite;
+}
+
+/* ../../desktop.blocks/logo/logo.css end */
+
+/* ../../desktop.blocks/candies/candies.css begin */
+.candies_i
+{
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+/* ../../desktop.blocks/candies/candies.css end */
+
+/* ../../desktop.blocks/layout/layout.css begin */
+.layout
+{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* ../../desktop.blocks/layout/layout.css end */
+
+/* ../../desktop.blocks/main/main.css begin */
+.main
+{
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+    width: 66%;
+    -moz-box-flex: 1;
+}
+
+/* ../../desktop.blocks/main/main.css end */
+
+/* ../../desktop.blocks/article/article.css begin */
+.article__header
+{
+    padding: 0;
+    margin: 0;
+    color: #D24D33;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.article__details
+{
+    font-size: .8em;
+}
+
+/* ../../desktop.blocks/article/article.css end */
+
+/* ../../desktop.blocks/box/box.css begin */
+.box
+{
+    margin-bottom: 1em;
+}
+
+.box__body
+{
+    padding: 0 1em;
+}
+
+.box__island
+{
+    padding: 0 1em;
+    background-color: #f9f9f9;
+
+    padding: 1em;
+    margin-top: .25em;
+
+    border: rgba(0,0,0, .075) 1px solid;
+}
+
+.box__title
+{
+    font-size: 1.5em;
+    font-weight: 400;
+    margin: 0 0 .5em;
+    padding: 0;
+    color: #666;
+}
+
+/* ../../desktop.blocks/box/box.css end */
+
+/* ../../desktop.blocks/comments/comments.css begin */
+.comments
+{
+    margin-top: 2em;
+}
+
+.comments__header
+{
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* ../../desktop.blocks/comments/comments.css end */
+
+/* ../../desktop.blocks/related/related.css begin */
+.related
+{
+    margin-top: 2em;
+}
+
+.related__header
+{
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.related__text
+{
+}
+
+/* ../../desktop.blocks/related/related.css end */
+
+/* ../../desktop.blocks/sidebar/sidebar.css begin */
+.sidebar
+{
+    -webkit-box-ordinal-group: 3;
+    -moz-box-ordinal-group: 3;
+    -ms-flex-order: 3;
+    -webkit-order: 3;
+    order: 3;
+    width: 22.5%;
+    padding-left: 2em;
+    padding-left: 3%;
+}
+
+.sidebar:before {
+  content: '';
+  width: 16em;
+  display: block;
+  height: 0;
+}
+
+/* ../../desktop.blocks/sidebar/sidebar.css end */
+
+/* ../../libs/bouwdoos/desktop.blocks/menu-vert/menu-vert.css begin */
+.menu-vert,
+.menu-vert__item
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+/* ../../libs/bouwdoos/desktop.blocks/menu-vert/menu-vert.css end */
+
+/* ../../desktop.blocks/link/link.css begin */
+.link
+{
+    color: #3B8DBD;
+}
+
+/* ../../desktop.blocks/link/link.css end */
+
+/* ../../desktop.blocks/github/github.css begin */
+/*
+ * Source: http://www.joepettersson.com/demo/jquery-github-widget/
+ */
+
+.github
+{
+    margin-top: 1em;
+}
+
+.github__body {
+    font-size: .8em;
+}
+
+#ghw-header
+{
+    margin: 1em 0 .5em;
+}
+
+#ghw-repos
+{
+}
+
+/*Utility styles*/
+.ghw-clear:after { content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+html[xmlns] .ghw-clear { display: block;}
+* html .ghw-clear { height: 1%;}
+
+#ghw-logo
+{
+	display: none;
+}
+
+#ghw-user
+{
+    display: inline-block;
+}
+
+/*Header*/
+#ghw-user b,
+#ghw-user img {
+	display: block;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+    width: 43px;
+    height: 43px;
+    border: #82B964 5px solid;
+    background-size: 43px 43px;
+}
+.ghw-no-bottom-border {
+	-webkit-border-bottom-right-radius: 0!important;
+	-webkit-border-bottom-left-radius: 0!important;
+	border-bottom-right-radius: 0!important;
+	border-bottom-left-radius: 0!important;
+}
+#ghw-github-user-data {
+    display: inline-block;
+	margin: 0;
+    margin-left: .5em;
+	color: #9f9f9f;
+    vertical-align: top;
+}
+#ghw-github #ghw-header #ghw-github-user-data h2 {
+	margin: 0px;
+	line-height: 12px;
+}
+#ghw-github #ghw-header #ghw-github-user-data h2 a {
+	font-size: 14px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #444;
+	text-shadow: 1px 1px 1px #fff;
+}
+#ghw-github-user-data a:hover {
+	opacity: 0.8;
+	-moz-opacity: 0.8;
+}
+#ghw-github #ghw-header #ghw-github-user-data #ghw-current-followers, #ghw-github #ghw-header #ghw-github-user-data #ghw-header-total-repos {
+	color: #686868!important;
+	text-decoration: none!important;
+	font-size: 11px!important;
+}
+#ghw-github #ghw-repos #ghw-github-loader {
+	width: 100%;
+	height: 200px;
+	background: url("https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-32.gif") center no-repeat;
+}
+#ghw-github #ghw-repos ul {
+	display: none;
+	padding: 0px;
+	margin: 0px;
+}
+#ghw-github #ghw-repos li {
+	list-style: none;
+	border-bottom: 1px solid #e3e3e3;
+	padding: 13px;
+}
+#ghw-github #ghw-repos li p {
+	margin: 0px;
+	padding: 0px;
+}
+#ghw-github #ghw-repos li .ghw-left {
+	float: left;
+	width: 70%;
+}
+#ghw-github #ghw-repos li .ghw-right {
+	float: right;
+	width: 30%;
+	opacity: 0.3;
+	-moz-opacity: 0.3;
+}
+#ghw-github #ghw-repos li.ghw-double .ghw-right {
+	margin-top: 5px;
+}
+#ghw-github #ghw-repos li .ghw-right span {
+	display: inline-block;
+	padding: 3px 7px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+	font-size: 11px;
+	margin-left: 3px;
+	-webkit-border-radius: 2px;
+    border-radius: 2px;
+    float: right;
+    position: relative;
+}
+#ghw-github .ghw-github-tooltip-content {
+	position: absolute;
+	top: 23px;
+	background: rgba(0,0,0,0.9);
+	color: #fff;
+	text-shadow: 1px 1px 1px #000;
+	border: 1px solid #000;
+	padding: 7px 10px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	right: 0px;
+	z-index: 250;
+	min-width: 150px;
+	text-align: center;
+}
+#ghw-github #ghw-repos li .ghw-right .ghw-forks {
+	background: #7e943a;
+}
+#ghw-github #ghw-repos li .ghw-right .ghw-watchers {
+	background: #357292;
+}
+#ghw-github #ghw-repos li .ghw-right .ghw-issues {
+	background: #a53131;
+}
+
+#ghw-github #ghw-repos li .ghw-meta-data {
+	font-size: 11px;
+	color: #999;
+}
+#ghw-github #ghw-repos .ghw-fork {
+	padding-left: 18px;
+	background-position: 0px -35px;
+}
+#ghw-github #ghw-repos li {
+	position: relative;
+}
+#ghw-github #ghw-repos li:last-child {
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	-moz-background-clip: padding; 
+	-webkit-background-clip: padding-box; 
+	background-clip: padding-box;
+}
+#ghw-github #ghw-repos li .ghw-title a {
+	color: #444;
+	text-decoration: none;
+}
+#ghw-github #ghw-repos li .ghw-title a .ghw-github-tooltip-content {
+	left: 5px;
+	top: 6px;
+	font-size: 11px;
+	text-align: left;
+	width: 72%;
+	line-height: 120%;
+	color: #999;
+}
+#ghw-github #ghw-repos li .ghw-title a .ghw-github-tooltip-content p {
+	font-size: 13px;
+	margin-bottom: 10px;
+	color: #fff;
+}
+#ghw-github #ghw-repos li .ghw-title a:hover{
+	text-decoration: underline;
+}
+#ghw-github #ghw-repos li:last-child {
+	border-bottom: 0px;
+}
+
+/* ../../desktop.blocks/github/github.css end */
+
+/* ../../desktop.blocks/prompting/prompting.css begin */
+.prompting
+{
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+    width: 5.5%;
+    display: block;
+    padding-right: 2em;
+    padding-right: 3%;
+    text-align: right;
+}
+
+.prompting:before
+{
+    content: '';
+    width: 4em;
+    display: block;
+    height: 0;
+}
+
+/* ../../desktop.blocks/prompting/prompting.css end */
+
+/* ../../desktop.blocks/languages/languages.css begin */
+.languages
+{
+    display: block;
+    padding: 0;
+    margin: .5em 0 0;
+    list-style: none;
+    float: right;
+}
+.languages__lang
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+.languages__kludge
+{
+    color: #666;
+}
+
+/* ../../desktop.blocks/languages/languages.css end */
+
+/* ../../desktop.blocks/social-ico/social-ico.css begin */
+/* Icons by Victor Gozalez http://www.iconarchive.com/show/so-smooth-social-icons-by-minisoft.es.html */
+.social-ico
+{
+    padding-top: 2em;
+}
+
+.social-ico__ico
+{
+    width: 44px;
+    height: 44px;
+    display: block;
+    margin: .5em 0 0 auto;
+    border-radius: 50%;
+    background-position: 50% 50%;
+}
+
+.social-ico__ico_type_rss
+{
+    background-image: url("../../desktop.blocks/social-ico/social-ico__rss.png");
+}
+
+.social-ico__ico_type_github
+{
+    background-image: url("../../desktop.blocks/social-ico/social-ico__github.png");
+}
+
+.social-ico__ico_type_twitter
+{
+    background-image: url("../../desktop.blocks/social-ico/social-ico__twitter.png");
+}
+
+.social-ico__ico_type_facebook
+{
+    background-image: url("../../desktop.blocks/social-ico/social-ico__facebook.png");
+}
+
+.social-ico__ico_type_linkedin
+{
+    background-image: url("../../desktop.blocks/social-ico/social-ico__linkedin.png");
+}
+
+.social-ico__text
+{
+    float: left;
+    line-height: 1.25em;
+    font-size: .8em;
+    padding-top: .3em;
+}
+
+.social-ico__rss-text
+{
+    color: #DF620E;
+}
+
+/* ../../desktop.blocks/social-ico/social-ico.css end */
+
+/* ../../desktop.blocks/footer/footer.css begin */
+.footer__outer
+{
+    background: #999;
+}
+
+.footer
+{
+    width: 1200px;
+    margin: 2em auto 0;
+    padding: 1.5em 0;
+    text-align: left;
+    font-size: .8em;
+    color: white;
+    font-family: Monaco;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+
+.footer__left
+{
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+    width: 13%;
+    padding-left: 5em;
+    padding-left: 10%;
+}
+
+.footer__center
+{
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+    width: 48.5%;
+    padding-left: 2em;
+    padding-left: 3%;
+}
+
+.footer__right
+{
+    -webkit-box-ordinal-group: 3;
+    -moz-box-ordinal-group: 3;
+    -ms-flex-order: 3;
+    -webkit-order: 3;
+    order: 3;
+    width: 22.5%;
+    padding-left: 2em;
+    padding-left: 3%;
+}
+
+.footer .link
+{
+    color: #fff;
+}
+
+/* ../../desktop.blocks/footer/footer.css end */
+
+/* ../../desktop.blocks/custom-fonts/custom-fonts.css begin */
+/* @license
+ * MyFonts Webfont Build ID 2517826, 2013-03-30T11:12:46-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed custom-fonts.src(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: 1470 Sorbonne by GLC
+ * URL: http://www.myfonts.com/fonts/glc/1470-sorbonne/normal/
+ * Copyright: Copyright (c) 2010 by Gilles le Corre. All rights reserved.
+ * Licensed pageviews: Unlimited
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2517826
+ * 
+ * © 2013 MyFonts Inc
+*/
+
+@font-face {font-family: 'SorbonneNormal1470';src: url("../../desktop.blocks/custom-fonts/custom-fonts.src/266B48_0_0.eot");src: url("../../desktop.blocks/custom-fonts/custom-fonts.src/266B48_0_0.eot?#iefix") format('embedded-opentype'),url("../../desktop.blocks/custom-fonts/custom-fonts.src/266B48_0_0.woff") format('woff'),url("../../desktop.blocks/custom-fonts/custom-fonts.src/266B48_0_0.ttf") format('truetype');}
+
+/* ../../desktop.blocks/custom-fonts/custom-fonts.css end */
+

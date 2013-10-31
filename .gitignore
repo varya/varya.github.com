@@ -3,3 +3,10 @@ _site/
 node_modules/
 .DS_Store
 s/libs/*
+
+.bem/cache/
+*.bundles/*/*.*
+!*.bundles/*/*.bemjson.js
+!*.bundles/*/*.min.js
+!*.bundles/*/*.min.css
+!*.bundles/.bem/*

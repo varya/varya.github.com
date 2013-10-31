@@ -1,5 +1,0 @@
-({
-    mustDeps: [
-        { block: 'custom-fonts' }
-    ]
-})
