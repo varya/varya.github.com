@@ -23,15 +23,15 @@ I belive it is a very good example of wrong implementation.
 The solution unifies all the elements over the world and assumes they all need
 just one way to be hidden. But this is far from reality.
 
-Let us say we have an element with `display: inline-block` property in its
+Let us say we have an element in its
 visible state. Guess what will happen when using `$.hide` and `$.show`? Yes, it
-will loose its correct `display` property. In the other words, the element will
+will add inline style with the `display` property. In the other words, the element will
 not return back to its original visible state.
 
 ```
 $('.my-block');
 
-// <span class="my-block" style="display: inline-block;">..</span>
+// <span class="my-block">..</span>
 
 $('.my-block').hide()
 
