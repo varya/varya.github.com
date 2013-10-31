@@ -12,7 +12,7 @@ visible when necessary.
 
 And as any good pattern it can be compromised with wrong implementation. Very
 often **hidden** means that the DOM element has `display: none` property.
-It became even more widespreaded with jQuery helpers `$.hide` and `$.show`.
+It became even more widespreaded with jQuery helpers `.hide` and `.show`.
 
 Once you have a visual block to hide, you use the `hide` helper which assignes
 `display: none` inline property making the block invisible. When it is needed to
@@ -24,7 +24,7 @@ The solution unifies all the elements over the world and assumes they all need
 just one way to be hidden. But this is far from reality.
 
 Let us say we have an element in its
-visible state. Guess what will happen when using `$.hide` and `$.show`? Yes, it
+visible state. Guess what will happen when using `.hide` and `.show`? Yes, it
 will add inline style with the `display` property. In the other words, the element will
 not return back to its original visible state.
 
@@ -43,8 +43,8 @@ $('.my-block').show()
 
 ```
 
-jQuery is clever enough to distingush inline elements. Using `$.hide` and
-`$.show` on them you get something like this:
+jQuery is clever enough to distingush inline elements. Using `.hide` and
+`.show` on them you get something like this:
 
 ```
 $('.my-block');
@@ -126,5 +126,5 @@ $.block('my-block').delMod('hidden');
 // <span class="my-block">...</span>
 ```
 
-That's all. From now on you are not allowed to use `$.hide` and `$.show`.
+That's all. From now on you are not allowed to use `.hide` and `.show`.
 Nerither for prototyping :-)
