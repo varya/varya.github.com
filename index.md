@@ -7,14 +7,19 @@ header: About me
 
 I am a front-end developer originally from the Utmost North 
 ([Petrozavodsk](http://maps.yandex.com/-/CVR3nIPf),
-Karelia); currently living in
-[Moscow](http://images.yandex.com/yandsearch?text=Moscow), Russia and working for
+Karelia); currently living in Amsterdam and working for
+TMG Online.<br/>
+Before, I had been living in
+[Moscow](http://images.yandex.com/yandsearch?text=Moscow), Russia for 5 years
+and working for
 [Yandex](http://www.yandex.com/).<br/>
 According to official papers, my name is `Varvara Stepanova`, although most people just call me `Varya`.
 
-I have been working for Yandex, the leading Russian search engine, for 5 yeas. The
-last 4 of which I have been a member of the [BEM](http://bem.info/) team.
+More than 4 years I am a member of
+the [BEM](http://bem.info/) team.
 Our mission is to open source the full technological stack that powers the Yandex UI framework.
+Being a remote BEM developer I use the solutions in my current work and personal
+projects.
 
 Besides the actual development of components, libraries and tools, I frequently speak at tech
 conferences, usually explaining the BEM methodology. I write articles in English and Russian, as well as
