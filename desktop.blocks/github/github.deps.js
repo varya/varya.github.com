@@ -1,8 +1,7 @@
 ({
     mustDeps: [
         {
-            block: 'i-jquery',
-            elem: 'github'
+            elem: 'jquery'
         }
     ]
 })
