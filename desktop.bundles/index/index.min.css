@@ -43,6 +43,7 @@
 /* ../../desktop.blocks/grid/grid.css end */
 
 /* ../../desktop.blocks/text/text.css begin */
+.highlight pre,
 code
 {
     font-family: Monaco;
