@@ -7,4 +7,6 @@ s/libs/*
 .bem/cache/
 *.bundles/*/*.*
 !*.bundles/*/*.bemjson.js
+!*.bundles/*/*.min.js
+!*.bundles/*/*.min.css
 !*.bundles/.bem/*
