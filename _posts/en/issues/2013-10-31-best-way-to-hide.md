@@ -1,30 +1,33 @@
 ---
 
-title: The best way to hide
+title: The Best Way to Hide
 
 categories: en issues
 
 layout: post
 
 ---
-There is a well-known front-end pattern to have hidden elements in DOM and make them
-visible when necessary. As with any good pattern, wrong implementation can compromise it.
+There is a well-known front-end pattern which is to have hidden elements in DOM
+and make them visible when necessary. As with any good pattern, it can be
+compromised by wrong implementation.
 
-Most of the times, **hidden** means that the DOM element gets a `display: none` property.
+Most times, **hidden** means that the DOM element gets a `display: none` property.
 This approach has become even more widespread thanks to `.hide()` and `.show()` jQuery helpers.
 
-Once you have a visible block which you need to hide, you use the `.hide()` helper which assignes
-an inline `display: none` style property, making the block invisible. When it has to
-become visible again, the `.show()` helper changes the inline CSS `display` property again.
+Whenever you need to hide a visible block you use the `.hide()` helper which in
+charge of assigning an inline `display: none` style property, making the block
+invisible. When it has to become visible again, the `.show()` helper changes the
+inline CSS `display` property.
 
 I believe this is a very nice example of wrong implementation.
 
-The solution unifies all the elements around the world and assumes all of them need
-just one way to be hidden; this assumption is far from reality.
+The solution unifies all the elements around the world and assumes all of them
+can be hidden in the same way. But this assumption is far from reality.
 
-Let us say we have an element in a visible state. Guess what will happen when we use `.hide()` and `.show()`?
+Let us say we have an element in a visible state. Guess what will happen when we
+use `.hide()` and `.show()`?
 Yes, an inline style with a `display` property will be added.
-In other words, the element won't return back to its original visible state.
+In other words, the element will not return back to its original visible state.
 
 ```
 $('.my-block');
@@ -59,10 +62,10 @@ $('.my-block').show();
 
 ```
 
-Again, the block didn't **return** to its original state after being shown. For
+Again, the block did not **return** to its original state after being shown. For
 sure, it became visible, but this state is not equivalent to the original one.
 Any new CSS class appended to the element with an intention to change its
-`display` property won't work as the inline style rule will prevail.
+`display` property will not work as the inline style rule prevails.
 
 The other problem is that setting `display` property to `none` doesn't always
 work for making an element invisible. Maybe for some reason it has to be hidden
@@ -102,9 +105,9 @@ $('.my-block').removeClass('my-block_hidden');
 ```
 
 This enables you to provide any type of hiding, not necessarily `display: none`,
-and ensures the block turns back into its original visible state when shown again.
+and ensures the block returns to its original visible state when shown again.
 
-If you would rather prefer not to mess with all those `.addClass()` and `.removeClass()`
+If you prefer not to mess with all those `.addClass()` and `.removeClass()`
 helpers, you can teach your JavaScript to work with modifiers (e.g. [as
 BEM does
 it](https://github.com/varya/bem-js-tutorial/blob/master/02-Modifiers.md)) which
