@@ -3,7 +3,7 @@ safe: true
 server: true
 markdown: redcarpet
 markdown_ext: md
-pygments: true
+pygments: false
 permalink: /:categories/:title
 exclude: ['.bem', 'GNUmakefile']
 

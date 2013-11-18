@@ -42,7 +42,7 @@ For example, if you need a hidden `<div>` with an authorization form to be shown
 when a user clicks on a 'log in' link you can write a JavaScript function for
 that. Then, call it in with an `onclick` attribute.
 
-```
+```html
 <a href="/login-page" onclick="return showLogin()">log in</a>
 <div id="login-form">
     <form name="login" ... >
@@ -51,7 +51,7 @@ that. Then, call it in with an `onclick` attribute.
 </div>
 ```
 
-```
+```js
 dom = document.getElementById ? true : false;
 
 function showLogin() {
@@ -77,7 +77,7 @@ the page `.js` file.
 From here I will write jQuery code to save time and space. If you prefer another
 library, just get the gist.
 
-```
+```js
 $.fn.myPlugin = function() {
   this.fadeIn(
     'normal',

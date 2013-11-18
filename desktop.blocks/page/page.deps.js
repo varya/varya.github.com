@@ -8,6 +8,10 @@
             mods: {
                 init: ['auto']
             }
+        },
+        {
+            block: 'highlight',
+            mods: { 'theme': ['solarized-light']}
         }
     ]
 })
