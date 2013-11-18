@@ -1,12 +1,11 @@
 /** @requires BEM */
 /** @requires BEM.DOM */
 
-modules.define('highlight', function(provide) {
+console.log(333);
+modules.define('highlight__init', ['highlight'], function(provide, hljs) {
 
-provide(function() {
+hljs.initHighlightingOnLoad();
 
-    hljs.initHighlightingOnLoad();
-
-});
+provide(hljs);
 
 });
