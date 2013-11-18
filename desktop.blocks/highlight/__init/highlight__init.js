@@ -1,12 +1,21 @@
 /** @requires BEM */
 /** @requires BEM.DOM */
 
-modules.define('highlight', function(provide) {
+modules.require(['highlight', 'jquery'], function(hljs, $) {
 
-provide(function() {
+    var langAliases = {
+        js: 'javascript'
+    }
 
-    hljs.initHighlightingOnLoad();
+    $(function(){
+        $('.highlight pre code').each(function(i, block){
+            var $block = $(block),
+                lang = $block.attr('data-lang');
+            $block.addClass(langAliases[lang] || lang);
+            hljs.highlightBlock(block);
+        })
+    })
 
-});
+    //hljs.initHighlightingOnLoad();
 
 });

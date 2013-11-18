@@ -99,11 +99,11 @@ have to write a line of code to apply the plugin.
 When having many controls per page it's not useful to initialize each of them
 separately. A better way would be to mark HTML block with a matching CSS class.
 
-```
+```html
 <input class="js-myPlugin" type="text" name="login" />
 ```
 
-```
+```js
 $.fn.myPlugin = function() {
   this.fadeIn(
     'normal',
@@ -123,7 +123,7 @@ even more declarative. If there is JavaScript to run for a component, it will be
 visible from the block HTML structure. You can mark all the 'alive' parts of
 your page with a special CSS class; for now let’s stick with `js` class.
 
-```
+```html
 <input
   class="inpt js"
   data-component="myPlugin"
@@ -139,7 +139,7 @@ attributes although there is another idea (spoiler!).
 With minor change there is the code initializing a proper JavaScript component
 for all the blocks on a page:
 
-```
+```js
 $('.js').each(function() {
     var $this = $(this);
     $this[$this.data('component')]();
@@ -152,13 +152,13 @@ class. Different instances of the same component also may need to pass some
 information. For example, an input plugin can validate the field value. But
 depending on the input different kinds of data can be expected.
 
-```
+```js
 $.fn.myInput = function() {
     // ...
 }
 ```
 
-```
+```html
 <input name="login" value=""/>
 <input name="zipcode" value=""/>
 ```
@@ -166,7 +166,7 @@ $.fn.myInput = function() {
 It is easy to provide per-instance parameters when initializing every instance
 separately.
 
-```
+```js
 $('input[name="login"]').myInput({
   validator: 'login'
 });
@@ -179,7 +179,7 @@ $('input[name="zipcode"]').myInput({
 With more declarative manner you need to include such information into a
 component HTML structure. Already mentioned data attributes can help with that.
 
-```
+```html
 <input
   class="inpt js"
   data-component="myInput"
@@ -195,7 +195,7 @@ component HTML structure. Already mentioned data attributes can help with that.
   value=""/>
 ```
 
-```
+```js
 $.fn.myInput = function() {
     if (this.data('validator') === 'login') // Supported by many frameworks
 }
@@ -210,7 +210,7 @@ able to use key-value pairs only can affect the plugin architecture.
 An elegant way is to provide data for a JavaScript component using natural
 JavaScript format, such as hashes. Here the event attributes can serve us again.
 
-```
+```html
 <input
     class="myInput"
     onclick="return {
@@ -225,7 +225,7 @@ browser click reaction is exactly as expected. From your plugin you can call the
 event-named method and get the data in its native JavaScript format without any
 need to parse and convert.
 
-```
+```js
 $.fn.myInput = function() {
  this[0].onclick().validator === 'login'
 };
@@ -236,7 +236,7 @@ large treeish hashes, arrays and even functions are possible. Such flexibility
 is extra salutary for organizing data when writing complex components and for
 customization.
 
-```
+```html
 <input
     class="inpt js"
     onclick="return {
@@ -250,7 +250,7 @@ customization.
 With nested hashes an HTML block can be operated by 2 or more different
 JavaScript components, each with its own set of parameters.
 
-```
+```html
 <input
     class="inpt js"
     onclick="return {
@@ -270,7 +270,7 @@ library can look for these elements in the document.
 
 First, you can link the script file after its related piece of HTML code.
 
-```
+```html
 <input
     class="myInput"
     onclick="return {
@@ -289,7 +289,7 @@ just ugly.
 The page needs to be loaded when running scripts. So, logically an `onload` event
 on the `window` object can help.
 
-```
+```js
 $(window).load(function(){
     $('.js').each(function() {
         var $this = $(this);
@@ -304,7 +304,7 @@ Including images, which mostly are not necessary to run scripts.
 The time to safely initialize your components is right after the document has
 been loaded and parsed into DOM, which is accompanied by a `document.ready` event.
 
-```
+```js
 $(function() {
     $('.js').each(function() {
         var $this = $(this);
@@ -358,7 +358,7 @@ Initializing components can take time and resources. So, when first initialized,
 the result can be saved and reused later. jQuery provides a nice `data` method
 suitable for that.
 
-```
+```js
 $.fn.myPlugin = function() { return this.each(function() {
   var $this = $(this),
       data = $this.data('myPlugin');
@@ -375,7 +375,7 @@ responsibility to clean up. Event listeners, constant background calculations
 and even layout changes, that could have happend before. When being deactivated,
 a component has to place things back with a `destroy` method.
 
-```
+```js
 $.fn.myPlugin = function() { return this.each(function() {
   var $this = $(this),
       data = $this.data('myPlugin');
@@ -405,7 +405,7 @@ $.fn.myInit = function() {
 
 A special method to destroy the components being removed has similar sense.
 
-```
+```js
 $.fn.myDestroy = function() {
     this.find('.js').each(function() {
         var $this = $(this),
@@ -443,7 +443,7 @@ API to create your own JavaScript components.
 With a component framework a developer uses API and describes a predefined
 component structure. All the common things are in the core.
 
-```
+```js
 $.widget('my.component', {
     _create: function() { /* ... */ },
     destroy: function() { /* ... */ }
@@ -457,7 +457,7 @@ different problems.<br/>
 For example, with the releaving modules a core can provide an API to extend the
 main component functionality.
 
-```
+```js
 $.widget('ui.dialog', $.ui.dialog, {
     close: function() {
         if(confirm('Close???')) {
@@ -475,7 +475,7 @@ Another example of such a high-level component framework is JavaScript part of
 patterns; create classes, their dynamic and static methods, as well as inherit
 component and extend their functionality and reuse basics with super calls.
 
-```
+```js
 BEM.DOM.decl(
     { block: 'my-dialog', baseBlock: 'dialog' },
     {
