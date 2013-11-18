@@ -1,12 +1,12 @@
-﻿/*
+/*
 
-Dark style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Brown Paper style from goldblog.com.ua (c) Zaripov Yura <yur4ik7@ukr.net>
 
 */
 
 pre code {
   display: block; padding: 0.5em;
-  background: #444;
+  background:#b7a68e url(./brown-paper.png);
 }
 
 pre .keyword,
@@ -17,19 +17,22 @@ pre .flow,
 pre .lisp .title,
 pre .clojure .built_in,
 pre .nginx .title,
-pre .tex .special {
-  color: white;
+pre .tex .special,
+pre .request,
+pre .status {
+  color:#005599;
+  font-weight:bold;
 }
 
 pre code,
-pre .subst {
-  color: #DDD;
+pre .subst,
+pre .tag .keyword {
+  color: #363C69;
 }
 
 pre .string,
 pre .title,
 pre .haskell .type,
-pre .ini .title,
 pre .tag .value,
 pre .css .rules .value,
 pre .preprocessor,
@@ -53,10 +56,8 @@ pre .stream,
 pre .envvar,
 pre .apache .tag,
 pre .apache .cbracket,
-pre .tex .command,
-pre .prompt,
-pre .coffeescript .attribute {
-  color: #D88;
+pre .tex .number {
+  color: #2C009F;
 }
 
 pre .comment,
@@ -68,15 +69,16 @@ pre .doctype,
 pre .deletion,
 pre .shebang,
 pre .apache .sqbracket,
+pre .nginx .built_in,
 pre .tex .formula {
-  color: #777;
+  color: #802022;
 }
 
 pre .keyword,
 pre .literal,
-pre .title,
 pre .css .id,
 pre .phpdoc,
+pre .title,
 pre .haskell .type,
 pre .vbscript .built_in,
 pre .sql .aggregate,
@@ -87,9 +89,7 @@ pre .chunk,
 pre .winutils,
 pre .bash .variable,
 pre .apache .tag,
-pre .tex .special,
-pre .request,
-pre .status {
+pre .tex .command {
   font-weight: bold;
 }
 
@@ -100,5 +100,5 @@ pre .xml .javascript,
 pre .xml .vbscript,
 pre .xml .css,
 pre .xml .cdata {
-  opacity: 0.5;
+  opacity: 0.8;
 }
