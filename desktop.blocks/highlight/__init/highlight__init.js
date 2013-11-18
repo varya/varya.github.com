@@ -4,7 +4,8 @@
 modules.require(['highlight', 'jquery'], function(hljs, $) {
 
     var langAliases = {
-        js: 'javascript'
+        js: 'javascript',
+        html: 'xml'
     }
 
     $(function(){
