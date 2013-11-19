@@ -29,7 +29,7 @@ use `.hide()` and `.show()`?
 Yes, an inline style with a `display` property will be added.
 In other words, the element will not return back to its original visible state.
 
-```
+```js
 $('.my-block');
 
 // <span class="my-block">..</span>
@@ -47,7 +47,7 @@ $('.my-block').show()
 jQuery is clever enough to detect inline elements. By applying `.hide()` and
 `.show()`, you get something like this:
 
-```
+```js
 $('.my-block');
 
 // <span class="my-block">...</span>
@@ -81,7 +81,7 @@ states of interface components. The same goes for the hidden state.
 Every block you would like to hide and show should be equipped with a proper
 modifier:
 
-```
+```css
 .my-block_hidden {
     display: none;
 }
@@ -90,7 +90,7 @@ modifier:
 Then, by applying this modifier and removing it from a block you can be sure it
 transitions into one of its predefined states:
 
-```
+```js
 $('.my-block');
 
 // <span class="my-block">...</span>
@@ -113,7 +113,7 @@ BEM does
 it](https://github.com/varya/bem-js-tutorial/blob/master/02-Modifiers.md)) which
 will make your code even better:
 
-```
+```js
 $.block('my-block');
 
 // <span class="my-block">...</span>
