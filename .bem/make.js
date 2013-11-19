@@ -56,11 +56,13 @@ module.exports = function(make) {
                 .setBundleBuildLevels([
                     'bem-core',
                     'bem-components',
-                    'bouwdoos'
+                    'bouwdoos',
+                    'bem-highlight.js'
                 ].reduce(function(levels, lib) {
                     return levels.concat([
                         environ.getLibPath(lib, 'common.blocks'),
-                        environ.getLibPath(lib, 'desktop.blocks')
+                        environ.getLibPath(lib, 'desktop.blocks'),
+                        environ.getLibPath(lib, 'blocks')
                     ]);
                 }, []).concat(
                     PATH.join(environ.PRJ_ROOT, 'desktop.blocks')
