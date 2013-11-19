@@ -10,8 +10,7 @@
             }
         },
         {
-            block: 'highlight',
-            mods: { 'theme': ['solarized-light']}
+            block: 'highlight'
         }
     ]
 })
