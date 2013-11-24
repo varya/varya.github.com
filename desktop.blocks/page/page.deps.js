@@ -11,6 +11,9 @@
         },
         {
             block: 'highlight'
+        },
+        {
+            block: 'fonts'
         }
     ]
 })

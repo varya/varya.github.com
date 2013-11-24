@@ -102,7 +102,7 @@
                 }
             ]
         },
-        { block: 'custom-fonts' },
+        /*{ block: 'custom-fonts' },*/
         { elem: 'js', url: 'index.min.js' }
     ]
 })
