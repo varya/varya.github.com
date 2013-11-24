@@ -941,27 +941,3 @@ html[xmlns] .ghw-clear { display: block;}
 
 /* ../../desktop.blocks/footer/footer.css end */
 
-/* ../../desktop.blocks/custom-fonts/custom-fonts.css begin */
-/* @license
- * MyFonts Webfont Build ID 2517826, 2013-03-30T11:12:46-0400
- * 
- * The fonts listed in this notice are subject to the End User License
- * Agreement(s) entered into by the website owner. All other parties are 
- * explicitly restricted from using the Licensed custom-fonts.src(s).
- * 
- * You may obtain a valid license at the URLs below.
- * 
- * Webfont: 1470 Sorbonne by GLC
- * URL: http://www.myfonts.com/fonts/glc/1470-sorbonne/normal/
- * Copyright: Copyright (c) 2010 by Gilles le Corre. All rights reserved.
- * Licensed pageviews: Unlimited
- * 
- * License: http://www.myfonts.com/viewlicense?type=web&buildid=2517826
- * 
- * © 2013 MyFonts Inc
-*/
-
-@font-face {font-family: 'SorbonneNormal1470';src: url("../../desktop.blocks/custom-fonts/custom-fonts.src/266B48_0_0.eot");src: url("../../desktop.blocks/custom-fonts/custom-fonts.src/266B48_0_0.eot?#iefix") format('embedded-opentype'),url("../../desktop.blocks/custom-fonts/custom-fonts.src/266B48_0_0.woff") format('woff'),url("../../desktop.blocks/custom-fonts/custom-fonts.src/266B48_0_0.ttf") format('truetype');}
-
-/* ../../desktop.blocks/custom-fonts/custom-fonts.css end */
-
