@@ -1,0 +1,14 @@
+<script>
+(function(d, s, l, r) {
+if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
+    r = [
+        '<style>',
+        l.getItem('varya.me.fonts'),
+        '</style>'
+    ];
+    console.log(r);
+    document.write(r.join(''));
+}
+
+})(document, Storage, localStorage);
+</script>
