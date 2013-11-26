@@ -6,8 +6,6 @@ categories: en issues
 
 layout: post
 
-invisible: true
-
 ---
 A developer using custom fonts in web (don't say this is evil) usually face a
 dilemma.
@@ -45,7 +43,7 @@ With inlining a base64 of a font into CSS and linking it in `<head>` no
 twitching is guaranteed as well as increasing page loading time.
 
 For a while I was deciding between the two variants until my colleague [Roman
-Komarov aka kizu](http://kizu.ru/en/) sudgested an elegant solution which is in
+Komarov aka kizu](http://kizu.ru/en/) suggested an elegant solution which is in
 use right now.
 
 At the first time a user opens any page of this site, a CSS with the font is
