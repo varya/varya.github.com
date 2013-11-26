@@ -301,6 +301,14 @@ code
 
 /* ../../desktop.blocks/text/text.css end */
 
+/* ../../desktop.blocks/articles-list/articles-list.css begin */
+.articles-list__item p
+{
+    margin-top: 0.15em;
+}
+
+/* ../../desktop.blocks/articles-list/articles-list.css end */
+
 /* ../../desktop.blocks/header/header.css begin */
 .header
 {
