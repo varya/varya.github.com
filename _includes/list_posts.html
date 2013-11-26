@@ -11,12 +11,15 @@
 
             {% if list_posts_categories_url contains list_posts_categories and list_posts_categories != "^/" %}
                 {% capture list_posts_items %}{{ list_posts_items }}
-                    <li><a href="{{ post.url }}/">{{ post.title }}</a> — <em class="published">{{ post.date | date: "%d %B, %Y" }}</em></li>{% endcapture %}
+                    <li class="articles-list__item">
+                        <a href="{{ post.url }}/">{{ post.title }}</a> — <em class="published">{{ post.date | date: "%d %B, %Y" }}</em>
+                        {{ post.excerpt }}
+                    </li>{% endcapture %}
             {% endif %}
         {% endunless %}
     {% endfor %}
 {% endcapture %}{% if list_posts_items != '' %}
-<ul>
+<ul class="articles-list">
     {{ list_posts_items }}
 </ul>
 {% else %}<p>Sorry, no posts to list with that category.</p>{% endif %}

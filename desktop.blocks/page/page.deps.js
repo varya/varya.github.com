@@ -9,11 +9,8 @@
                 init: ['auto']
             }
         },
-        {
-            block: 'highlight'
-        },
-        {
-            block: 'fonts'
-        }
+        { block: 'highlight' },
+        { block: 'fonts' },
+        { block: 'articles-list' }
     ]
 })
