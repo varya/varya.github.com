@@ -15,7 +15,7 @@ information into text as we always skip many important things mistakenly
 considering them being primitive.
 
 The quesion was about `.bem/make.js` configuration file which is needed if you
-use [bem tools](http://bem.info/tools/bem/bem-tools/) to build your pages. The
+use [bem-tools](http://bem.info/tools/bem/bem-tools/) to build your pages. The
 [12th and 13th
 lines](https://github.com/bem/project-stub/blob/14e24fd17ba66a357a2f6fcdce045065b4eb5d6c/.bem/make.js#L12)
 describe regular expressions to match `blocks` and `bundles`. And the meaning of
@@ -55,7 +55,7 @@ pattern) can be a buiding brick.
 src="http://img-fotki.yandex.ru/get/6730/14441195.30/0_7e0f8_33c1c86c_L.jpg"/>
 
 Bundle files are also what a browser can read: CSS, JavaScript, HTML. _None of
-them was written by a person, they are built with BEM tools_. Have a look
+them was written by a person, they are built with bem-tools_. Have a look
 inside to be sure that this is robot's code.
 
 <pre><code>├── desktop.bundles/
@@ -66,7 +66,7 @@ inside to be sure that this is robot's code.
 │   │   └── <a href="https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/index.html">index.html</a></code></pre>
 
 
-Think about bem tools as about building crane to pick up the bricks and make a
+Think about bem-tools as about building crane to pick up the bricks and make a
 house with them.
 
 <img
@@ -76,7 +76,7 @@ developer. This is
 [index.bemjson.js](https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/index.bemjson.js),
 the JSON decription of what are the blocks on a page and what it their nested
 structure. Sounds logical, as only we human can know what we would like to see
-on a page. Everything else is produced by the `bem tools`. Once given
+on a page. Everything else is produced by the `bem-tools`. Once given
 informaiton about which blocks to use for a page, they pick them up for
 `desktop.bundles` set of blocks and do their job.
 
@@ -86,14 +86,14 @@ here is a draft.
 <img
 src="http://img-fotki.yandex.ru/get/6704/14441195.30/0_7e1ba_9dacd537_L.jpg"/>
 
-But why do `bem tools` need the regular expessions?
+But why do `bem-tools` need the regular expessions?
 
-This is quite easy. The folders `bem tools` operate with are `levels`. It can
+This is quite easy. The folders `bem-tools` operate with are `levels`. It can
 help if you think about a level as about `a set`, a set of entities. There can be
 a set of blocks wraped with `desktop.blocks` folder, and a set of result pages
 wraped with `desktop.bundles` folder. In the
 [.bem/levels/](https://github.com/bem/project-stub/tree/14e24fd17ba66a357a2f6fcdce045065b4eb5d6c/.bem/levels)
-cofiguration folder there are some instructions from which bem tools understand
+cofiguration folder there are some instructions from which bem-tools understand
 what to do with those different types of levels.
 
 Dividing your project entities into blocks and bundles makes it possible to have
