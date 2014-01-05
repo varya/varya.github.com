@@ -50,8 +50,8 @@ function* foo(x) {
 ```js
 var g = foo(2);
 
-console.log(typeof g); \\ -> object
-console.log(g instanceof Object); \\ -> true
+console.log(typeof g); // -> object
+console.log(g instanceof Object); // -> true
 ```
 
 Функция-генератор описывает действия каждого шага итеративного алгоритма. Каждый
