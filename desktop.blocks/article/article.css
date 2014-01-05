@@ -11,3 +11,14 @@
 {
     font-size: .8em;
 }
+
+.article__text code
+{
+    white-space: nowrap;
+    background: #fdf6e3;
+}
+
+.article__text pre code
+{
+    white-space: pre;
+}
