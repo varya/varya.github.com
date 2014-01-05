@@ -6,4 +6,6 @@ title: List of issues
 
 ---
 
-Ok, as you can see there are not _that much_ issues there, but I'll try to write more. I'll write at least one article per week actually, so stay tuned!
+The issues here are some reflections of my job, recently discussed topics as
+well as the results of my experiments. Fell free to cick RSS button to the left
+to stay tuned.
