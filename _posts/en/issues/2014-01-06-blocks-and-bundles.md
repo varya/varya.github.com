@@ -121,7 +121,7 @@ separately:
 └── touch.bundles/</code></pre>
 
 With that structure desktop version of a web site gets source code from both
-`common.blocks` and `desktop.blocks` levels as touc version gest it from
+`common.blocks` and `desktop.blocks` levels as touch version gets it from
 `common.blocks` and `touch.blocks`.
 
 <img
