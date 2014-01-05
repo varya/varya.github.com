@@ -48,6 +48,12 @@ CSS, JavaScript and sometimes templates.
 │   │   ├── <a href="https://github.com/varya/online-shop-dummy/blob/master/desktop.blocks/goods/goods.deps.js">goods.deps.js</a>
 │   │   └── <a href="https://github.com/varya/online-shop-dummy/blob/master/desktop.blocks/goods/goods.ie.css">goods.ie.css</a></code></pre>
 
+Real world analogy of a BEM block (and actually any module of any modular
+pattern) can be a buiding brick.
+
+<img
+src="http://img-fotki.yandex.ru/get/6730/14441195.30/0_7e0f8_33c1c86c_L.jpg"/>
+
 Bundle files are also what a browser can read: CSS, JavaScript, HTML. _None of
 them was written by a person, they are built with BEM tools_. Have a look
 inside to be sure that this is robot's code.
@@ -67,6 +73,12 @@ structure. Sounds logical, as only we human can know what we would like to see
 on a page. Everything else is produced by the `bem tools`. Once given
 informaiton about which blocks to use for a page, they pick them up for
 `desktop.bundles` set of blocks and do their job.
+
+Think about bem tools as about building crane to pick up the bricks and make a
+house with them.
+
+<img
+src="http://img-fotki.yandex.ru/get/9058/14441195.30/0_7e0f3_ff76f66a_L.jpg"/>
 
 But why do `bem tools` need the regular expessions?
 
@@ -88,6 +100,17 @@ into the same repository as well as the pages built with them:
 ├── touch.blocks/
 └── touch.bundles/</code></pre>
 
+Comming back to the real world, ot only bricks are the modules but lego blocks
+as well.
+
+<img
+src="http://img-fotki.yandex.ru/get/6704/14441195.30/0_7e0f6_f69c7d44_L.jpg">
+
+They also are to build a house. A pretty different house though.
+
+<img
+src="http://img-fotki.yandex.ru/get/9326/14441195.30/0_7e0f4_3d999550_L.jpg"/>
+
 Going futher you can detach code common for all the platforms and store it
 separately:
 
@@ -100,6 +123,9 @@ separately:
 With that structure desktop version of a web site gets source code from both
 `common.blocks` and `desktop.blocks` levels as touc version gest it from
 `common.blocks` and `touch.blocks`.
+
+<img
+src="http://img-fotki.yandex.ru/get/6725/14441195.30/0_7e0f5_3e107fd4_L.jpg"/>
 
 And before I wrap up, I cannot stop being delighted by the idea of [BEM project
 stub](https://github.com/bem/project-stub/). I use it a lot myself when starting
