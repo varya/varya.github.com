@@ -1,6 +1,6 @@
 ---
 
-title: Blocks are briks, and bundles are buildings
+title: Blocks are bricks, and bundles are buildings
 
 categories: en issues
 
