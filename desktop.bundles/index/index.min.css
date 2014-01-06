@@ -466,6 +466,17 @@ code
     font-size: .8em;
 }
 
+.article__text code
+{
+    white-space: nowrap;
+    background: #fdf6e3;
+}
+
+.article__text pre code
+{
+    white-space: pre;
+}
+
 /* ../../desktop.blocks/article/article.css end */
 
 /* ../../desktop.blocks/box/box.css begin */
