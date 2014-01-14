@@ -104,29 +104,29 @@ src="http://img-fotki.yandex.ru/get/6704/14441195.30/0_7e1ba_9dacd537_L.jpg"/>
 есть инструкции, по которым bem tools понимают, что делать с уровнями разных
 типов.
 
-Dividing your project entities into blocks and bundles makes it possible to have
-different sets of blocks and different bundles built with those sets. For
-example, you can store blocks to a desktop and touch versions of your web site
-into the same repository as well as the pages built with them.
+Выделяя в проекте блоки и бандлы, можно делать разные наборы блоков и разные
+бандлы, собранные из этих наборов. Например, блоки для desktop и touch версий
+сайта могут храниться в одном репозитории. И страницы, собранные из таких блоков
+— тоже.
 
 <pre><code>├── desktop.blocks/
 ├── desktop.bundles/
 ├── touch.blocks/
 └── touch.bundles/</code></pre>
 
-Comming back to the real world, not only bricks are the modules but lego blocks
-as well.
+Возвращаясь к примерам из реального мира, не только кирпичики могут быть
+модулями, но и детальки LEGO.
 
 <img
 src="http://img-fotki.yandex.ru/get/6704/14441195.30/0_7e0f6_f69c7d44_L.jpg">
 
-They also are to build a house. A pretty different house though.
+Из них также можно построить дом. Немножечко другой, конечно.
 
 <img
 src="http://img-fotki.yandex.ru/get/9326/14441195.30/0_7e0f4_3d999550_L.jpg"/>
 
-Going futher you can detach code common for all the platforms and store it
-separately.
+Если пойти дальше, вы можете выделить код блоков, общий для всех платформ, и
+хранить его отдельно.
 
 <pre><code>├── common.blocks/
 ├── desktop.blocks/
@@ -134,21 +134,23 @@ separately.
 ├── touch.blocks/
 └── touch.bundles/</code></pre>
 
-With that structure desktop version of a web site gets source code from both
-`common.blocks` and `desktop.blocks` levels as touch version gets it from
-`common.blocks` and `touch.blocks`.
+С такой структурой desktop версия формируется из кода блоков уровней
+`common.blocks` и `desktop.blocks`, а touch версия — из уровней `common.blocks`
+и `touch.blocks`.
 
 <img
 src="http://img-fotki.yandex.ru/get/6725/14441195.30/0_7e0f5_3e107fd4_L.jpg"/>
 
-And before I wrap up, I cannot stop being delighted by the idea of [BEM project
-stub](https://github.com/bem/project-stub/). I use it a lot myself when starting
-projects. The [Full stack quick start
-tutorial](http://bem.info/articles/start-with-project-stub/) which you may
-remember demostrates how exactly. So does a friend who asked me about the
-basics. I never realized before that the project stub makes is possible to start
-a BEM project with no knowledge above. :-)
+И в заключении, я не перестаю радоваться идее проекта
+[BEM project
+stub](https://github.com/bem/project-stub/). Сама постоянно использую его,
+начиная новые проекты. Туториал о
+[старте проекта на полном стеке
+БЭМ](http://bem.info/articles/start-with-project-stub/) показывает, как именно.
+Так же БЭМ использует и знакомый, задавший мне вопрос. Я никогда раньше не
+подозревала, что project stub позволяет начать работы с БЭМ без знания всего
+того, что описано выше. :-)
 
-Having this written I see that describing the BEM basics is pretty easy and not very
-time-consuming to me being (I hope!) useful for the others. If so, please ask
-what you need to know.
+Кстати, написав все это, я поняла, что описание основ БЭМ для меня несложно и
+занимает разумное время. При этом (я надеюсь!), это очень полезно для других.
+Так что спрашивайте всё, что вы хотите знать.
