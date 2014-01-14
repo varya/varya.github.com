@@ -77,8 +77,8 @@ developer. This is
 the JSON decription of what are the blocks on a page and what it their nested
 structure. Sounds logical, as only we human can know what we would like to see
 on a page. Everything else is produced by the `bem tools`. Once given
-informaiton about which blocks to use for a page, they pick them up for
-`desktop.bundles` set of blocks and do their job.
+informaiton about which blocks to use for a page, they pick them up from
+`desktop.blocks` set of blocks and do their job.
 
 Extending the building-a-house example I can say that `page.bemjson.js` file
 here is a draft.
