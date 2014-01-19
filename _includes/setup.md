@@ -1,7 +1,3 @@
-Including [Tenkan](https://github.com/kizu/tenkan)
-
-    {% include tenkan/setup.md %}
-
 {% assign lang = "en" %}
 {% assign lang_prefix = "en" %}
 
