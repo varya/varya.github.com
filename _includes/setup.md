@@ -1,3 +1,7 @@
+Including [Tenkan](https://github.com/kizu/tenkan)
+
+    {% include tenkan/setup.md %}
+
 {% assign lang = "en" %}
 {% assign lang_prefix = "en" %}
 
@@ -19,14 +23,18 @@ Borrowed from https://github.com/kizu/kizu.github.com
 {% endcomment %}
 
     {% if lang == 'en' %}
-        {% capture expected_translation_id %}{{ page.id | replace:'/en/','/' }}{% endcapture %}
+        {% capture expected_translation_id %}{{ page.id | replace:'/en/','/ru/' }}{% endcapture %}
     {% else %}
-        {% capture expected_translation_id  %}/en{{ page.id }}{% endcapture %}
+        {% capture expected_translation_id %}{{ page.id | replace:'/ru/','/en/' }}{% endcapture %}
     {% endif %}
 
-    {% assign posts_ids = site.posts | map:'id' %}
-
-    {% if page.page_type != 'post' or posts_ids contains expected_translation_id %}
+    {% if page.page_type == 'post' %}
+        {% for item in site.posts %}
+          {% if item.id == expected_translation_id %}
+              {% assign page_has_translation = true %}
+          {% endif %}
+        {% endfor %}
+    {% else %}
         {% assign page_has_translation = true %}
     {% endif %}
 
