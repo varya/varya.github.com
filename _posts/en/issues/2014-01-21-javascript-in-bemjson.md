@@ -46,6 +46,8 @@ I created an example of such usage:
     ]
 })
 ```
+[full
+code](https://github.com/varya/dynamic-bemjson/blob/master/desktop.bundles/index/index.bemjson.js)
 
 This JavaScript creates 10 `button` blocks when building a page with `bem-tools`.
 Check the [result page](http://varya.me/dynamic-bemjson/desktop.bundles/index/index.html)
@@ -53,4 +55,5 @@ to see them.
 
 Indeed, this feature is not needed when BEMJSON is a result of 1st layer templates
 (like BEMTREE, priv.js) you can produce as much BEMJSON as is necessary. But with
-initial development of a static web page, the JavaScript tricks help to save a lot.
+initial development of a static web page, the JavaScript tricks help to avoid
+copy-paste.
