@@ -19,3 +19,38 @@ Thanks to `BEMHTML` templates you do not need write all the HTML manually.
 Describing page sructure in `BEMJSON` rather than writing all the tags manually
 saves time. But sometimes this is still a lot of work to do especially for large
 pages.
+
+Luckily BEMJSON can include JavaScript pieces to produce some blocks dymamically.
+I created an example of such usage:
+
+```js
+({
+    block: 'page',
+    ...
+    content:[
+        ...
+        {
+            block: 'content',
+            content: (function() {
+                var res = [];
+                for(var i = 0; i < 10; i++) {
+                    res.push({
+                        block: 'button',
+                        content: 'Button ' + (i + 1)
+                    });
+                }
+                return res;
+            })()
+        },
+        ...
+    ]
+})
+```
+
+This JavaScript creates 10 `button` blocks when building a page with `bem-tools`.
+Check the [result page](http://varya.me/dynamic-bemjson/desktop.bundles/index/index.html)
+to see them.
+
+Indeed, this feature is not needed when BEMJSON is a result of 1st layer templates
+(like BEMTREE, priv.js) you can produce as much BEMJSON as is necessary. But with
+initial development of a static web page, the JavaScript tricks help to save a lot.
