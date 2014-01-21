@@ -47,12 +47,61 @@ JavaScript. Если использууется полный стек БЭМ, п
 })
 ```
 [полный
-код](https://github.com/varya/dynamic-bemjson/blob/master/desktop.bundles/index/index.bemjson.js)
+код](https://github.com/varya/dynamic-bemjson/blob/master/desktop.bundles/page1/page1.bemjson.js)
 
 Когда страница собирается при помощи `bem-tools`, этот JavaScript создает 10
 блоков `button`.
-Можете проверить [результирующую страницу](http://varya.me/dynamic-bemjson/desktop.bundles/index/index.html)
+Можете проверить [результирующую страницу](http://varya.me/dynamic-bemjson/desktop.bundles/page1/page1.html)
 чтобы увидеть их.
+
+Ещё одним примером может служить блок `menu`.
+Another example is a `menu` block. Such interface pieces usually consist of a
+lot of items with minor differences which cases a lot of copy-paste on a page.
+With JavaScript in BEMJSON this can be easily reduced.
+
+```js
+({
+    block: 'page',
+    ...
+    content:[
+        ...
+        {
+            block: 'menu',
+            content: [
+                {
+                    title: 'Index',
+                    isSelected: false,
+                },
+                {
+                    title: 'Products',
+                    isSelected: true
+                },
+                {
+                    title: 'Contact',
+                    isSelected: false
+                }
+            ].map(function(item){
+                var block = {
+                    block: 'menu',
+                    elem: 'item',
+                    content: item.title,
+                    mods: {
+                        selected: item.isSelected
+                    }
+                };
+                return block;
+            })
+        },
+        ...
+    ]
+})
+```
+[full
+code](https://github.com/varya/dynamic-bemjson/blob/master/desktop.bundles/page2/page2.bemjson.js)
+
+This gives a [page with a menu of 3 items](http://varya.me/dynamic-bemjson/desktop.bundles/page2/page2.html).
+The bigger is the array of items, the more you save. Especially when the structure
+of every item changes while developing.
 
 Конечно, этой возможностью не придется пользоваться, если BEMJSON — это
 результат первого слоя шаблонов (таких как BEMTREE или priv.js) — там вы можете

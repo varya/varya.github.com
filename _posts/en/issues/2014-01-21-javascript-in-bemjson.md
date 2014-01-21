@@ -47,11 +47,60 @@ I created an example of such usage:
 })
 ```
 [full
-code](https://github.com/varya/dynamic-bemjson/blob/master/desktop.bundles/index/index.bemjson.js)
+code](https://github.com/varya/dynamic-bemjson/blob/master/desktop.bundles/page1/page1.bemjson.js)
 
 This JavaScript creates 10 `button` blocks when building a page with `bem-tools`.
-Check the [result page](http://varya.me/dynamic-bemjson/desktop.bundles/index/index.html)
+Check the [result
+page](http://varya.me/dynamic-bemjson/desktop.bundles/page1/page1.html)
 to see them.
+
+Another example is a `menu` block. Such interface pieces usually consist of a
+lot of items with minor differences which cases a lot of copy-paste on a page.
+With JavaScript in BEMJSON this can be easily reduced.
+
+```js
+({
+    block: 'page',
+    ...
+    content:[
+        ...
+        {
+            block: 'menu',
+            content: [
+                {
+                    title: 'Index',
+                    isSelected: false,
+                },
+                {
+                    title: 'Products',
+                    isSelected: true
+                },
+                {
+                    title: 'Contact',
+                    isSelected: false
+                }
+            ].map(function(item){
+                var block = {
+                    block: 'menu',
+                    elem: 'item',
+                    content: item.title,
+                    mods: {
+                        selected: item.isSelected
+                    }
+                };
+                return block;
+            })
+        },
+        ...
+    ]
+})
+```
+[full
+code](https://github.com/varya/dynamic-bemjson/blob/master/desktop.bundles/page2/page2.bemjson.js)
+
+This gives a [page with a menu of 3 items](http://varya.me/dynamic-bemjson/desktop.bundles/page2/page2.html).
+The bigger is the array of items, the more you save. Especially when the structure
+of every item changes while developing.
 
 Indeed, this feature is not needed when BEMJSON is a result of 1st layer templates
 (like BEMTREE, priv.js) you can produce as much BEMJSON as is necessary. But with
