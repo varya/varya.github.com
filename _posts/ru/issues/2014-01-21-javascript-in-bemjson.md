@@ -54,10 +54,9 @@ JavaScript. Если использууется полный стек БЭМ, п
 Можете проверить [результирующую страницу](http://varya.me/dynamic-bemjson/desktop.bundles/page1/page1.html)
 чтобы увидеть их.
 
-Ещё одним примером может служить блок `menu`.
-Another example is a `menu` block. Such interface pieces usually consist of a
-lot of items with minor differences which cases a lot of copy-paste on a page.
-With JavaScript in BEMJSON this can be easily reduced.
+Ещё одним примером может служить блок `menu`. Такой интерфейсный компонент
+обычно состоит из множества повторяющихся пунктов с минимальными различиями.
+Получается копипаст, которого можно избежать, используя JavaScript в BEMJSON.
 
 ```js
 ({
@@ -99,9 +98,9 @@ With JavaScript in BEMJSON this can be easily reduced.
 [full
 code](https://github.com/varya/dynamic-bemjson/blob/master/desktop.bundles/page2/page2.bemjson.js)
 
-This gives a [page with a menu of 3 items](http://varya.me/dynamic-bemjson/desktop.bundles/page2/page2.html).
-The bigger is the array of items, the more you save. Especially when the structure
-of every item changes while developing.
+В результате получается [страница с меню из 3х пунктов](http://varya.me/dynamic-bemjson/desktop.bundles/page2/page2.html).
+Чем больше массив с пунктами меню, тем больше пользы. Особенно если структура
+меню меняется в процессе разработки.
 
 Конечно, этой возможностью не придется пользоваться, если BEMJSON — это
 результат первого слоя шаблонов (таких как BEMTREE или priv.js) — там вы можете
