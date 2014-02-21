@@ -5,7 +5,7 @@
     {% for n in site.navigation %}
     {% capture text %}{{ n.name | map: lang }}{% endcapture %}
     {% if text != '' %}
-    <li class="b-menu-vert__item">
+    <li class="menu-vert__item">
     {% if n.key == 'about' %}
         {% capture url %}/{{lang}}/{% endcapture %}
         {% if lang == 'en' %}
