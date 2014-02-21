@@ -7,6 +7,13 @@
     margin-top: 1em;
 }
 
+@media screen and (max-width: 768px) {
+    .github
+    {
+        display: none;
+    }
+}
+
 .github__body {
     font-size: .8em;
 }

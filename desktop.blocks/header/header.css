@@ -12,6 +12,12 @@
     display: table;
 }
 
+@media screen and (max-width: 768px) {
+    .header {
+        width: 720px;
+    }
+}
+
 .header__left
 {
     padding: 0;
@@ -20,6 +26,12 @@
     display: table-cell;
     text-align: right;
     width: 778px;
+}
+
+@media screen and (max-width: 768px) {
+    .header__left {
+        width: 100%;
+    }
 }
 
 .header__center
@@ -35,6 +47,12 @@
     width: 325px;
     padding-left: 20px;
     display: table-cell;
+}
+
+@media screen and (max-width: 768px) {
+    .header__right {
+        display: none;
+    }
 }
 
 .header__item
