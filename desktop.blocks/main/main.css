@@ -18,5 +18,6 @@
         -webkit-order: 2;
         order: 2;
         width: 100%;
+        display: block;
     }
 }
