@@ -10,6 +10,17 @@
     padding-left: 3%;
 }
 
+@media screen and (max-width: 768px) {
+    .sidebar
+    {
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        -ms-flex-order: 2;
+        -webkit-order: 2;
+        order: 2;
+    }
+}
+
 .sidebar:before {
   content: '';
   width: 16em;

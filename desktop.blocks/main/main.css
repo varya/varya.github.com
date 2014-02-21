@@ -8,3 +8,14 @@
     width: 66%;
     -moz-box-flex: 1;
 }
+
+@media screen and (max-width: 768px) {
+    .main
+    {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -ms-flex-order: 1;
+        -webkit-order: 1;
+        order: 1;
+    }
+}
