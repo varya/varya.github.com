@@ -476,11 +476,12 @@ code
 @media screen and (max-width: 768px) {
     .main
     {
-        -webkit-box-ordinal-group: 1;
-        -moz-box-ordinal-group: 1;
-        -ms-flex-order: 1;
-        -webkit-order: 1;
-        order: 1;
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        -ms-flex-order: 2;
+        -webkit-order: 2;
+        order: 2;
+        width: 100%;
     }
 }
 
@@ -595,11 +596,39 @@ code
 @media screen and (max-width: 768px) {
     .sidebar
     {
-        -webkit-box-ordinal-group: 2;
-        -moz-box-ordinal-group: 2;
-        -ms-flex-order: 2;
-        -webkit-order: 2;
-        order: 2;
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -ms-flex-order: 1;
+        -webkit-order: 1;
+        order: 1;
+        width: 100%;
+        margin-bottom: 1em;
+        font-size: 1.25em;
+        text-align: center;
+    }
+
+    .sidebar .menu-vert__title
+    {
+        display: none;
+    }
+    .sidebar .menu-vert__item
+    {
+        display: inline-block;
+    }
+    .sidebar .menu-vert__item:after
+    {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: rgba(0,0,0, 0.2);
+        border-radius: 50%;
+        margin: 0 1em;
+    }
+
+    .sidebar .menu-vert__item:last-child::after
+    {
+        display: none;
     }
 }
 
@@ -640,6 +669,13 @@ code
 .github
 {
     margin-top: 1em;
+}
+
+@media screen and (max-width: 768px) {
+    .github
+    {
+        display: none;
+    }
 }
 
 .github__body {
@@ -854,7 +890,7 @@ html[xmlns] .ghw-clear { display: block;}
         -webkit-order: 3;
         order: 3;
         width: 100%;
-        text-align: left;
+        text-align: center;
     }
 }
 
@@ -1015,6 +1051,13 @@ html[xmlns] .ghw-clear { display: block;}
     flex-flow: row wrap;
 }
 
+@media screen and (max-width: 768px) {
+    .footer {
+        width: 710px;
+        text-align: center;
+    }
+}
+
 .footer__left
 {
     -webkit-box-ordinal-group: 1;
@@ -1028,8 +1071,27 @@ html[xmlns] .ghw-clear { display: block;}
 }
 
 @media screen and (max-width: 768px) {
-    .footer {
-        width: 710px;
+    .footer__left
+    {
+        padding-left: 0;
+        width: 100%;
+        margin-bottom: 0.5em;
+    }
+
+    .footer__left .menu-vert__item
+    {
+        display: inline-block;
+    }
+
+    .footer__left .menu-vert__item:after
+    {
+        content: '·';
+        margin: 0 0.5em;
+    }
+
+    .footer__left .menu-vert__item:last-child::after
+    {
+        display: none;
     }
 }
 
@@ -1045,6 +1107,14 @@ html[xmlns] .ghw-clear { display: block;}
     padding-left: 3%;
 }
 
+@media screen and (max-width: 768px) {
+    .footer__center
+    {
+        padding-left: 0;
+        width: 100%;
+    }
+}
+
 .footer__right
 {
     -webkit-box-ordinal-group: 3;
@@ -1055,6 +1125,13 @@ html[xmlns] .ghw-clear { display: block;}
     width: 22.5%;
     padding-left: 2em;
     padding-left: 3%;
+}
+
+@media screen and (max-width: 768px) {
+    .footer__right
+    {
+        display: none;
+    }
 }
 
 .footer .link
