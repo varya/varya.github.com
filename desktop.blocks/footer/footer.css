@@ -35,6 +35,12 @@
     padding-left: 10%;
 }
 
+@media screen and (max-width: 768px) {
+    .footer {
+        width: 710px;
+    }
+}
+
 .footer__center
 {
     -webkit-box-ordinal-group: 2;
