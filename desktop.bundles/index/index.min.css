@@ -482,6 +482,7 @@ code
         -webkit-order: 2;
         order: 2;
         width: 100%;
+        display: block;
     }
 }
 
@@ -605,6 +606,7 @@ code
         margin-bottom: 1em;
         font-size: 1.25em;
         text-align: center;
+        display: block;
     }
 
     .sidebar .menu-vert__title
@@ -891,6 +893,7 @@ html[xmlns] .ghw-clear { display: block;}
         order: 3;
         width: 100%;
         text-align: center;
+        display: block;
     }
 }
 
