@@ -24,7 +24,7 @@ I will not write why modules and modular systems are needed, there are plenty of
 articles about it. Let us rather proceed to the msin question: why do we need
 *another* modular system?<br/>
 For sure, there are CommonJS and AMD, but working for large projects I faced
-their large drawback. They anyway are synchronious. This is not fatal, but in my
+their large drawback. They anyway are synchronous. This is not fatal, but in my
 project we often had to prodive different hacks for it.
 
 Let us say, we have 3 modules: moduleA, moduleB and moduleC. moduleC depends on
@@ -133,8 +133,8 @@ Nothing interesting yet. All the three examples are similar. Although you may
 notice the `provide` callback in the YM example. What is it for?
 
 Let us imagine a case that `moduleA` and `moduleB` cannot be resolved immediately
-(synchroniuosly, as it is required by CommonJS and AMD). Sometimes you need to
-do an asynchronious action first. The simpliest example can me `setTimeout`.
+(synchronously, as it is required by CommonJS and AMD). Sometimes you need to
+do an asynchronous action first. The simpliest example can be `setTimeout`.
 There is no way to implement it elegantly with CommonJS and AMD.
 But with `YM` it can be coded like following:
 
@@ -173,9 +173,9 @@ its dependant modules. *Profit!*
 
 As for real file example, I use a lot YandexMaps API (API of [Yandex.Maps](http://maps.yandex.com/)
 public service. Yandex.Maps API has complex loading scheme and this cannot be
-done synchroniously. This means that I cannot simply link it to a page
+done synchronously. This means that I cannot simply link it to a page
 `<script type="text/javascript" src="url-of-ymaps.js"></script>` and be sure that
-all teh following scripts will get the API code ready. First I need to wait for
+all the following scripts will get the API code ready. First I need to wait for
 the event `ymaps.ready` to fire.
 
 The project I am working for is quite complex; we have many classes inherited
@@ -237,7 +237,7 @@ Then we make other modules dependent on `jquery` module.
 
 Thus, the whole project code is represented with modules. There is no global, no
 need in agreement on the order of linking the scripts (including third-party ones),
-no dirty hacks for asynchroniousness.
+no dirty hacks for asynchronousness.
 
 And to wrap up, let me demonstrate you YM modular system API (indeed, it has more
 methods, and this one are only the basic ones).
