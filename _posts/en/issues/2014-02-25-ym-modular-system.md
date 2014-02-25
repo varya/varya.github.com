@@ -204,3 +204,68 @@ modules.define(
     });
 });
 ```
+
+There are 2 other modules in use here: `loader` and `config`. I do not show
+their code, but the first one loads scripts and the second one is a hash with
+constant values.
+
+*ComplexLayer.js:*
+
+```js
+modules.define('ComplexLayer', ['inherit', 'ymaps'], function(provide, inherit, ymaps) {
+    var ComplexLayer = inherit(ymaps.Layer, ...);
+    
+    provide(ComplexLayer);
+});
+```
+
+The same we do if jQuery is needed. There is a module to load jQuery:
+
+```js
+modules.define(
+    'jquery',
+    ['loader',
+    function(provide, loader) {
+
+    loader('//yandex.st/jquery/2.1.0/jquery.min.js', function() {
+        provide(jQuery.noConflict(true));
+    });
+});
+```
+
+Then we make other modules dependent on `jquery` module.
+
+Thus, the whole project code is represented with modules. There is no global, no
+need in agreement on the order of linking the scripts (including third-party ones),
+no dirty hacks for asynchroniousness.
+
+And to wrap up, let me demonstrate you YM modular system API (indeed, it has more
+methods, and this one are only the basic ones).
+
+*Defining a module:*
+
+```js
+void modules.define(
+    String moduleName,
+    [String[] dependencies],
+    Function(
+        Function(Object objectToProvide) provide,
+        [Object resolvedDependency, ...],
+        [Object previousDeclaration]
+    ) declarationFunction
+)
+```
+
+*Requiring a module:*
+
+```js
+void modules.require(
+    String[] dependencies,
+    Function(
+        [Object resolvedDependency, ...]
+    ) callbackFunction
+)
+```
+
+The project is open source and hosted at GitHub:
+[github.com/ymaps/modules](https://github.com/ymaps/modules).
