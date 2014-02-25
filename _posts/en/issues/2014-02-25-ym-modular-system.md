@@ -21,7 +21,7 @@ Russian. And below you can find the translation.
 So, one more modular system? Besides CommonJS and AMD? Why should we care?
 
 I will not write why modules and modular systems are needed, there are plenty of
-articles about it. Let us rather proceed to the msin question: why do we need
+articles about it. Let us rather proceed to the main question: why do we need
 *another* modular system?<br/>
 For sure, there are CommonJS and AMD, but working for large projects I faced
 their large drawback. They anyway are synchronous. This is not fatal, but in my
