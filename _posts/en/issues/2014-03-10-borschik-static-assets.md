@@ -110,7 +110,8 @@ mentioned in text, for example.
 
 ### Build system
 Now you can use `borschik` in you project build process. I simply wrote a
-[Makefile](https://github.com/varya/st-deliverer/blob/master/Makefile) for it.
+[Makefile](https://github.com/varya/st-deliverer/blob/master/Makefile) with a
+lot of help from [@alexeyten](https://github.com/alexeyten) (tnx!).
 There is also a grunt plugin [megatolya/grunt-borschik](https://github.com/megatolya/grunt-borschik).<br/>
 Indeed, `borschik` is included into [bem-tools](http://bem.info/tools/bem/bem-tools/)
 and [enb](https://github.com/enb-make/enb) — the two competitive solutions for
