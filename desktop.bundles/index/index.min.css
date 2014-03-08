@@ -501,6 +501,7 @@ code
 .article__details
 {
     font-size: .8em;
+    color: #999;
 }
 
 .article__text code
@@ -548,6 +549,20 @@ code
 }
 
 /* ../../desktop.blocks/box/box.css end */
+
+/* ../../desktop.blocks/share/share.css begin */
+.share
+{
+    height: 26px;
+    float: right;
+}
+
+.b-share-btn__wrap
+{
+    display: block;
+}
+
+/* ../../desktop.blocks/share/share.css end */
 
 /* ../../desktop.blocks/comments/comments.css begin */
 .comments

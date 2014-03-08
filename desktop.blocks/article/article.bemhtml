@@ -21,6 +21,14 @@ block article {
 
     }
 
-    elem text, mix: [{ block: 'box', elem: 'island' }]
+    elem text   {
+        mix: [{ block: 'box', elem: 'island' }]
+
+        content: [
+            { block: 'share' },
+            this.ctx.content
+        ]
+
+    }
 
 }
