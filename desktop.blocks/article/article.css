@@ -10,6 +10,7 @@
 .article__details
 {
     font-size: .8em;
+    color: #999;
 }
 
 .article__text code
