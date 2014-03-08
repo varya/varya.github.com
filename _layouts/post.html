@@ -20,8 +20,7 @@ page_type: post
         <div class="share yashare-auto-init" data-yashareL10n="{{ lang }}"
             data-yashareQuickServices="twitter,facebook,gplus{% if lang == 'ru' %},vkontakte{% endif %}" data-yashareTheme="counter"
         ></div>
-        {{ lang }}
-        {% if page.date %}<span class="article__detailes author vcard">
+        {% if page.date %}<span class="article__details author vcard">
             {{ site.loc | map: "published" | map: lang }} {% assign published_time = page.date %}{% include published_format.html %}
             {% assign list_categories = page.categories %}{% include list_categories.html %}
         </span>{% endif %}
