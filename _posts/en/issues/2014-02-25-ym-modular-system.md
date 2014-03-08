@@ -171,7 +171,9 @@ its dependant modules. *Win!*
 
 ### Real life example
 
-As for real file example, I often use the YandexMaps API (API of [Yandex.Maps](http://maps.yandex.com/)
+As for real file example, I often use the YandexMaps API
+([http://api.yandex.com/maps/](http://api.yandex.com/maps/), API of
+[Yandex.Maps](http://maps.yandex.com/)
 public service). Yandex.Maps API has a complex loading scheme and this cannot be
 done synchronously. This means that I cannot simply link it to a page
 `<script type="text/javascript" src="url-of-ymaps.js"></script>` and be sure that
