@@ -10,7 +10,7 @@ layout: post
 There is a well-known front-end pattern which is to have hidden elements in DOM
 and make them visible when necessary. As with any good pattern, it can be
 compromised by wrong implementation.
-<!--more-->
+<excerpt/>
 
 Most times, **hidden** means that the DOM element gets a `display: none` property.
 This approach has become even more widespread thanks to `.hide()` and `.show()` jQuery helpers.

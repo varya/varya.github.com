@@ -11,8 +11,7 @@ Last week I met the need to develop a web site which static assets have to be
 hosted on a different server and respond by different URL than its HTML. This
 is the requirement to all the static files: stylesheets and JavaScript linked to
 the page as well as imges and fonts mentioned in HTML, CSS and JavaScript
-code.<!--more-->
-However it is obvious that these resources should be local when developing.
+code.<excerpt/> However it is obvious that these resources should be local when developing.
 Thus, the challenge was to introduce a piece of magic which knows where we aim
 to host the statics and transforms all the relative paths into absolute ones
 according to it.
