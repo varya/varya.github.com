@@ -9,7 +9,7 @@ layout: post
 ---
 
 Иногда мы на работе решаем интересные задачки. Вот, например, одна (почти первая) в постановке <a href="http://alpha-san.ya.ru/"><span style="color: #000000;"><strong><span style="color: #ff0000;">n</span>op`а</strong></span></a>:
-<!--more-->
+<excerpt/>
 
 <strong>Частный случай:</strong>
 Дан такой xml: 

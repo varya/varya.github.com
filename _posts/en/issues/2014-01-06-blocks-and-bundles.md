@@ -13,7 +13,7 @@ from someone who is enjoying the full BEM stack (BEM-CSS, i-bem.js and BEMHTML
 templates) for their projects. Answering the questions I promised to turn the
 information into text as we always skip many important things mistakenly
 considering them being primitive.
-<!--more-->
+<excerpt/>
 
 The quesion was about `.bem/make.js` configuration file which is needed if you
 use [bem tools](http://bem.info/tools/bem/bem-tools/) to build your pages. The

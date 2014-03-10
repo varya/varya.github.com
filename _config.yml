@@ -10,7 +10,7 @@ exclude: ['.bem', 'GNUmakefile']
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables",     "with_toc_data"]
 
-excerpt_separator: <!--more-->
+excerpt_separator: <excerpt/>
 
 production_url : http://varya.me
 
