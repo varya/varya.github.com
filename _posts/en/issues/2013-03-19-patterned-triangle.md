@@ -10,7 +10,7 @@ layout: post
 
 As you might know, I recently run the [BEM
 LOVE](https://github.com/toivonen/bem-love) project to demonstrate how blocks
-can communicate with JavaScript.
+can communicate with JavaScript.<!--more-->
 
 The first example is dull enough; [a boy, a girl and the heartless
 world](http://toivonen.github.com/bem-love/desktop.bundles/ask-her-what-music-she-likes/ask-her-what-music-she-likes.html).

@@ -11,6 +11,7 @@ This article features common problems that developers often face, or maybe used
 to face before the current open source era, when writing JavaScript for the
 client side; showcase of possible solutions to these problems and explanations
 of my choices.
+<!--more-->
 
 ## Client-side magic
 I am going to write about client-side JavaScript code only which runs under a

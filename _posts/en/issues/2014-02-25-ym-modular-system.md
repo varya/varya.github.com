@@ -11,6 +11,7 @@ The recently published [step-by-step tutorial on
 i-bem.js](http://bem.info/tutorials/articles/bem-js-tutorial/) mentioned **YM
 modular system** as a base for component JavaScript solution behind BEM. Why do
 we need another modular system? Let us see...
+<!--more-->
 
 The author of YM modules, [Dmitry Filatov](https://github.com/dfilatov) recently
 came up with an [article about YM modules](http://habrahabr.ru/post/213627/) in

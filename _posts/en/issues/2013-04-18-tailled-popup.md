@@ -22,6 +22,7 @@ On a view,
  * to fit any background of a page, and this border can be of any width;
  * a popup can be oriented differently, so that its tail must fit to the top,
  right, bottom or left with no problem.
+<!--more-->
 
 As for browser support, it is:
 
