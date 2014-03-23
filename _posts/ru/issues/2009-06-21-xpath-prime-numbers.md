@@ -9,6 +9,7 @@ layout: post
 ---
 
 Иногда мы на работе решаем интересные задачки. Вот, например, одна (почти первая) в постановке <a href="http://alpha-san.ya.ru/"><span style="color: #000000;"><strong><span style="color: #ff0000;">n</span>op`а</strong></span></a>:
+<excerpt/>
 
 <strong>Частный случай:</strong>
 Дан такой xml: 
@@ -25,7 +26,7 @@ layout: post
 большое, маленькое, еще какое-то &mdash; мы не знаем. 
 
 Нужно. Написать <strong>xpath</strong>, выбирающий все item'ы с простыми числами.
-Подчеркиваю - <strong>xpath</strong>.<!--more-->
+Подчеркиваю - <strong>xpath</strong>.
 Т.е. внутри тега xsl:stylesheet должен быть один примерно такой шаблон:
 
 [cc lang="xslt"]

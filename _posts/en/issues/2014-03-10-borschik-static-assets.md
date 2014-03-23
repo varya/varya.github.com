@@ -8,10 +8,10 @@ layout: post
 
 ---
 Last week I met the need to develop a web site which static assets have to be
-hosted on a different server and respond by different URL than its HTML. This
+hosted on a different server and respond by different URLs than its HTML. This
 is the requirement to all the static files: stylesheets and JavaScript linked to
-the page as well as imges and fonts mentioned in HTML, CSS and JavaScript code.
-However it is obvious that these resources should be local when developing.
+the page as well as imges and fonts mentioned in HTML, CSS and JavaScript
+code.<excerpt/> However it is obvious that these resources should be local when developing.
 Thus, the challenge was to introduce a piece of magic which knows where we aim
 to host the statics and transforms all the relative paths into absolute ones
 according to it.
@@ -21,6 +21,7 @@ The tools which helped me is called
 Besides it reffers to a famous Russian/Ukranian soup, it also alludes to a word
 "сборщик" [sborschik], and so might be translated as
 <strike>ass</strike>embler. "Removing the ass part" as one of my friends says.
+:-)
 
 <center>
 <iframe src="//embed.gettyimages.com/embed/135591409?et=B_T3l-shrE-pr9-ELe_wJw&sig=5haG67PAzCxGourA96ZB7m9LwSket1v9PpvXEXNIkBM=" width="508" height="407" frameborder="0" scrolling="no"></iframe>
@@ -36,7 +37,7 @@ project structure. In my project I store everything in
 When building I get HTML files in
 [dist/html directory](https://github.com/varya/st-deliverer/tree/gh-pages/dist/html).
 Check out the code and make sure that static files are linked from a different
-server.
+server by their absolute paths.
 
 ```html
 <html>
@@ -92,10 +93,10 @@ configuration file serves for that.
 }
 ```
 Note that you can tune different replacements for different paths. Here I tried
-to illusrate with the fonts.
+to illustrate with the fonts.
 
 ### Run the command
-Run borschik over a file with contains links to local static assets, and you
+Run borschik over a file which contains links to local static assets, and you
 will get the transformation result. For example,
 
 ```bash
@@ -109,7 +110,7 @@ Borschik knows the syntax of web technologies. It will not touch the links
 mentioned in text, for example.
 
 ### Build system
-Now you can use `borschik` in you project build process. I simply wrote a
+Now you can use `borschik` in your project build process. I simply wrote a
 [Makefile](https://github.com/varya/st-deliverer/blob/master/Makefile) with a
 lot of help from [@alexeyten](https://github.com/alexeyten) (tnx!).
 There is also a grunt plugin [megatolya/grunt-borschik](https://github.com/megatolya/grunt-borschik).<br/>
