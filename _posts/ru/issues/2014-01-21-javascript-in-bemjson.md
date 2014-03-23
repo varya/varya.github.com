@@ -13,7 +13,7 @@ JavaScript. Если использууется полный стек БЭМ, п
 полноценному сайту происходит постепенно. Можно склонировать проект
 [project-stub](https://github.com/bem/project-stub)
 и сделать статическую страницу, об этом уже опубликован
-[туториал](http://bem.info/articles/start-with-project-stub/).
+[туториал](http://bem.info/articles/start-with-project-stub/).<excerpt/>
 
 Благодаря `BEMHTML` вам не нужно писать весь HTML для страницы вручную. Описывая
 страницу в BEMJSON, вы экономите время, ведь не нужно писать каждый тег. Но в

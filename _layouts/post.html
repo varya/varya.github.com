@@ -8,17 +8,23 @@ page_type: post
     {% if page.title %}
     <div class="article__body box__body">
         <h1 class="article__header">{{ page.title }}</h1>
-        {% if page.date %}<span class="article__detailes author vcard">
-            {{ site.loc | map: "published" | map: lang }} {% assign published_time = page.date %}{% include published_format.html %}
-            {% assign list_categories = page.categories %}{% include list_categories.html %}
-        </span>{% endif %}
     </div>
     {% endif %}
 
     <div class="article__text box__island">
     {% if page.invisible %}<p style="color: red;"><strong>This page is a draft, it's not published yet, so please don't share links to it to anyone, ok?</strong></p>{% endif %}
     {% capture link_handles_input %}{{ content }}{% endcapture %}{% include link_handles.html %}
-    {% capture demo_handles_input %}{{ link_handles_result }}{% endcapture %}{% include demo_handles.html %}{{ demo_handles_result }}
+    {% capture demo_handles_input %}{{ link_handles_result }}{% endcapture %}{% include demo_handles.html %}
+        <script type="text/javascript" src="//yandex.st/share/share.js"
+        charset="utf-8"></script>
+        <div class="share yashare-auto-init" data-yashareL10n="{{ lang }}"
+            data-yashareQuickServices="twitter,facebook,gplus{% if lang == 'ru' %},vkontakte{% endif %}" data-yashareTheme="counter"
+        ></div>
+        {% if page.date %}<span class="article__details author vcard">
+            {{ site.loc | map: "published" | map: lang }} {% assign published_time = page.date %}{% include published_format.html %}
+            {% assign list_categories = page.categories %}{% include list_categories.html %}
+        </span>{% endif %}
+        {{ demo_handles_result }}
     </div>
 
     <div class="comments">

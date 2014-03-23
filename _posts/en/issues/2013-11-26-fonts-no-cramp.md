@@ -14,6 +14,7 @@ The users' main interest is the content of the page not the
 view. It is nice to provide it as fast as possible and then apply a custom font.
 This blog used to work this way. I provided a script among others in the bundle
 linked by the end of the page.
+<excerpt/>
 
 ```js
 (function(d){

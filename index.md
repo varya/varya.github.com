@@ -5,7 +5,7 @@ header: About me
 ---
 {% include setup.md %}
 
-I am a front-end developer originally from the Utmost North 
+I am a front-end developer originally from the Utmost North
 ([Petrozavodsk](http://maps.yandex.com/-/CVR3nIPf),
 Karelia); currently living in Amsterdam and working for
 TMG Online.<br/>
@@ -30,12 +30,13 @@ There are some links on the [content](en/content/) page for your browsing pleasu
 I am keen on traveling and dream of having friends all over the world.
 If you're interested, here's the first personal thing to learn about me: I am passionate about cats, all of them (lions included).
 
-On this site I am going to publish my day-to-day writings as well as links to articles, projects and presentations.
+On this site I publish my day-to-day writings as well as links to
+articles, projects and presentations.
 
 This site is available in both English and [Russian](/ru).
 
 Here are some obligatory (but useful) links as well:
 
- * [Github](https://github.com/toivonen)
+ * [Github](https://github.com/varya)
  * [Twitter](https://twitter.com/toivonens)
  * [LinkedIn](http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b)

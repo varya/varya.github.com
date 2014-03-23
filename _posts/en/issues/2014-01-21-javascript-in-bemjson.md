@@ -14,6 +14,7 @@ site goes smoothly. You can clone the project from
 [project-stub](https://github.com/bem/project-stub) and create a static web page
 as it was [described
 earlier](http://bem.info/articles/start-with-project-stub/).
+<excerpt/>
 
 Thanks to `BEMHTML` templates, you do not need write all the HTML manually.
 Describing page sructure in `BEMJSON` rather than writing all the tags manually
