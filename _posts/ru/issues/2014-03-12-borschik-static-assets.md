@@ -112,9 +112,7 @@ npm install -g borschik
 небольшой
 [Makefile](https://github.com/varya/st-deliverer/blob/master/Makefile), спасибо
 [@alexeyten](https://github.com/alexeyten) за 90% его содержания. :-) Но есть
-также и плагин для grunt
-There is also a grunt plugin
-[megatolya/grunt-borschik](https://github.com/megatolya/grunt-borschik).<br/>
+также и плагин для grunt [megatolya/grunt-borschik](https://github.com/megatolya/grunt-borschik).<br/>
 Конечно, `borschik` включен в системы сборки БЭМ-проектов
 [bem-tools](http://bem.info/tools/bem/bem-tools/)
 и [enb](https://github.com/enb-make/enb)
