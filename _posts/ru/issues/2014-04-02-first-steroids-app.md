@@ -38,9 +38,9 @@ target="_blank"><img alt="Googleplay" class="appstore_icon"
 src="https://share.appgyver.com/assets/googleplay-2cef882d62e402fbdbfe8cdac5794069.png"></a>
 </div>
 
-Теперь вы можете открыть в компьютере эту ссылку
-[http://bit.ly/finnish-counting-001](http://bit.ly/finnish-counting-001) (пришлось
-сократить) — откроется страница с QR-кодом. Отсканируйте QR-код при помощи
+Теперь вы можете открыть в компьютере эту
+[страницу с QR-кодом](http://bit.ly/finnish-counting-001). Отсканируйте QR-код
+при помощи
 свежеустановленного AppGyver Scaner, и моё приложение загрузится к вам в
 телефон.
 
