@@ -103,6 +103,10 @@ loc:
         ru: 'На этом сайте'
         en: 'On this site'
 
+    last_in_blog_title:
+        ru: 'Недавние заметки'
+        en: 'Recently in the blog'
+
 #    projects:
 #        ru: "Проекты"
 #        en: "Projects"
