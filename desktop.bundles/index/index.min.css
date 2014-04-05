@@ -564,6 +564,52 @@ code
 
 /* ../../desktop.blocks/share/share.css end */
 
+/* ../../desktop.blocks/recent-posts/recent-posts.css begin */
+.recent-posts
+{
+    padding: 0;
+}
+
+.recent-posts__list
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.recent-posts__item
+{
+    margin: 0;
+    border-bottom: rgba(0,0,0, .075) 1px solid;
+}
+
+.recent-posts__date
+{
+    padding: 0.25em 0.25em 0.25em 1em;
+    width: 6em;
+    display: inline-block;
+    text-align: right;
+    border-right: rgba(0,0,0, .075) 1px solid;
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0, 0), rgba(255,255,255, 0.5));
+}
+
+.recent-posts__text-item
+{
+    padding: 0.25em 0.5em 0.25em 0.25em;
+}
+
+/* ../../desktop.blocks/recent-posts/recent-posts.css end */
+
+/* ../../desktop.blocks/date/date.css begin */
+.date__day,
+.date__month,
+.date__year
+{
+    font-style: normal;
+}
+
+/* ../../desktop.blocks/date/date.css end */
+
 /* ../../desktop.blocks/comments/comments.css begin */
 .comments
 {
