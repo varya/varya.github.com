@@ -12,7 +12,7 @@ DOM.decl('recent-posts', {
             'inited' : function() {
 
                 this.elem('date').each(function(i, elem){
-                    var clr = colors.getRandomColor();
+                    var clr = colors.getNextColor();
                     $(elem).css('background-color', '#' + clr);
                 });
 

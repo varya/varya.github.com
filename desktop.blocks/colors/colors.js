@@ -2,11 +2,26 @@
 
 modules.define('colors', function(provide) {
 
+var lastIndex;
+
 var colors = {
 
     getRandomColor: function() {
         var clrs = this.colorBase;
         return clrs[Math.floor(Math.random()*clrs.length)];
+    },
+
+    getNextColor: function() {
+        return this.colorBase[this.getLastIndex()];
+    },
+
+    getLastIndex: function() {
+        var clrs = this.colorBase;
+        lastIndex = lastIndex + 1 || Math.floor(Math.random()*clrs.length);
+        if (lastIndex == clrs.length) {
+            lastIndex = 0;
+        }
+        return lastIndex;
     },
 
     colorBase: [
