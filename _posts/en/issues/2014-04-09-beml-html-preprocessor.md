@@ -74,7 +74,10 @@ into the following HTML.
 
 ```html
 <div class="b-animals">
-  <div class="b-animals__cat b-animals__cat_size_big b-animals__cat_color_red"></div>
+  <div class="b-animals__cat
+              b-animals__cat_size_big
+              b-animals__cat_color_red
+              "></div>
 </div>
 ```
 
