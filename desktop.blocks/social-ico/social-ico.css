@@ -32,7 +32,9 @@
     height: 22px;
     background-size: 40px 40px;
     background-repeat: no-repeat;
-    display: inline-block; 
+    display: inline-block;
+    margin: 0 0 0 0.5em;
+    vertical-align: middle;
 }
 
 @media screen and (max-width: 768px) {
