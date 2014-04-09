@@ -7,12 +7,14 @@ categories: en issues
 layout: post
 
 ---
-The original article by Maxim Shkalin was [posted in his
-blog](http://zenwalker.ru/blog/2014/1/html-preprocessor-for-bem.html).
+Depending on a project people prefer different ways to adapt BEM.
+This results 
+into a range of tools for our choice. Today, I am translating Maxim Shkalin's
+description of the `BEML` templating pre-processor.
 
 Willing to lighten the development with BEM I propose a tiny extension for the
 HTML syntax (yes, I used to writ all those long CSS classes manually). As the
-name `BEMHTML` is greedily taken by the Yandex guys, let us call it `BEML`.
+name `BEMHTML` is greedily taken by the Yandex guys, let us call it `BEML`.<excerpt/>
 
 ## Objective
 
@@ -46,3 +48,60 @@ But finally I cut them off. It would be too complex to support and then provide
 the portability. Besides, there is a lot of other template engines; I would
 rather enter into alliance with them than to compete. Finally I got not a
 template engine but a preprocessor (or postprocessor) to the current one.
+
+The scenario is the following. First, create BEML markup using your template
+engine. Then, past it not to the client but to the post-processor which turns
+BEM syntax into HTML. Funally the HTML goes to the client.
+
+Or, there is a faster way for the braves. You can change your template with
+pre-processor which turns BEM attributes into HTML, cache it and use this
+chached copy with your dear template engine. Indeed, the pre-processor does not
+touch the template engine code.
+
+## Syntax
+This is very simple, you just use 4 more attributes like `block`, `elem`, `mod`
+and `mix`. I suppose it is clear what each of them is responsible for. For the
+complex values you can use light JSON dialect with no quotation marks and
+optional curly braces. Finally the tool turns this code:
+
+```html
+<div block="b-animals">
+  <div elem="cat" mod="size:big, color:red"></div>
+</div>
+```
+
+into the following HTML.
+
+```html
+<div class="b-animals">
+  <div class="b-animals__cat b-animals__cat_size_big b-animals__cat_color_red"></div>
+</div>
+```
+
+Much readable.
+
+Full information about the syntax you can learn from the [README on GitHub](https://github.com/zenwalker/node-beml).
+
+## Try now
+
+```bash
+npm install beml
+```
+
+```js
+var beml = require('beml');
+var template = '<div block="b-block" mod="size:big"></div>';
+
+beml.process(template, function(err, html) {
+  console.log(html);
+});
+```
+
+## Author
+This article is a translaton.
+The original article by Maxim Shkalin was [posted in his
+blog](http://zenwalker.ru/blog/2014/1/html-preprocessor-for-bem.html). Follow him in the social networks:
+<a class="link social-ico__ico social-ico__ico_in-text social-ico__ico_type_twitter"
+href="https://twitter.com/zenwalker2/" target="_blank"></a>
+<a class="link social-ico__ico social-ico__ico_in-text social-ico__ico_type_github"
+href="https://github.com/zenwalker/" target="_blank"></a>
