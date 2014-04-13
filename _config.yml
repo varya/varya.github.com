@@ -22,6 +22,10 @@ link_handles:
     - prefix: "gh:"
       handle: "https://github.com/"
 
+twitter:
+    - en: 'varya_en'
+    - ru: 'toivonens'
+
 comments :
   provider : disqus
   disqus :
@@ -126,9 +130,6 @@ loc:
     name:
         ru: "Варя Степанова"
         en: "Varvara Stepanova"
-    twitter_name:
-        ru: "toivonens"
-        en: "toivonens"
     twitter_follow:
         ru: "Читайте меня в твиттере"
         en: "Follow me on twitter"

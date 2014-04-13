@@ -42,7 +42,10 @@ layout: layout
                     <a class="link social-ico__ico social-ico__ico_type_rss" href="/feed.xml" title="New on Varya.me"></a>
                 </li>
                 <li class="menu-vert__item">
-                    <a class="link social-ico__ico social-ico__ico_type_twitter" href="https://twitter.com/toivonens" target="_blank"></a>
+                <a class="link social-ico__ico social-ico__ico_type_twitter"
+                    href="https://twitter.com/{{ site.twitter | map: lang }}"
+                    title="@{{ site.twitter | map: lang }}"
+                    target="_blank"></a>
                 </li>
                 <li class="menu-vert__item">
                     <a class="link social-ico__ico social-ico__ico_type_github" href="https://github.com/varya" target="_blank"></a>
@@ -69,7 +72,9 @@ layout: layout
 				© {{ site.time | date: "%Y" }}
 				<span class="link__inner">{{ site.loc.name | map: lang }}</span>.
 			</a>{% else %}© {{ site.time | date: "%Y" }} {{ site.loc.name | map: lang }}.{% endif %}
-			<a class="link  link_wrapper  link_twitter" href="https://twitter.com/{{ site.loc.twitter_name | map: lang }}">
+			<a class="link  link_wrapper  link_twitter"
+                href="https://twitter.com/{{ site.twitter | map: lang }}"
+                title="@{{ site.twitter | map: lang }}">
 				<img alt="Twitter" class="ico" src="http://favicon.yandex.net/favicon/twitter.com" title="Twitter"/>
 				<span class="link__inner">{{ site.loc.twitter_follow | map: lang }}</span>!
 			</a>
