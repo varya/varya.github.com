@@ -1,9 +1,12 @@
 /** @requires BEM */
 /** @requires BEM.DOM */
 
-modules.define('i-bem__dom', ['jquery', 'colors'], function(provide, $, colors, DOM) {
+modules.define(
+    { block: 'recent-posts' },
+    ['jquery', 'colors'],
+    function(provide, $, colors) {
 
-DOM.decl('recent-posts', {
+provide({
 
     onSetMod : {
 
@@ -22,7 +25,5 @@ DOM.decl('recent-posts', {
     }
 
 });
-
-provide(DOM);
 
 });

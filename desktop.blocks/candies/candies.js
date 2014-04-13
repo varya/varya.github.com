@@ -1,9 +1,11 @@
 /** @requires BEM */
 /** @requires BEM.DOM */
 
-modules.define('i-bem__dom', function(provide, DOM) {
+modules.define(
+    { block: 'candies' },
+    function(provide) {
 
-DOM.decl('candies', {
+provide({
 
     onSetMod : {
 
@@ -107,7 +109,5 @@ DOM.decl('candies', {
     stopPoint: 0
 
 });
-
-provide(DOM);
 
 });
