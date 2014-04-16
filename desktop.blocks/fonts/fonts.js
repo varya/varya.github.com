@@ -1,7 +1,10 @@
 /** @requires BEM */
 /* http://stackoverflow.com/questions/16253429/saving-a-css-web-font-in-html5-local-storage */
 
-modules.define('fonts', ['jquery'], function(provide, $) {
+modules.define(
+    { block: 'fonts' },
+    ['jquery'],
+    function(provide, $) {
 
 $(function(){
 

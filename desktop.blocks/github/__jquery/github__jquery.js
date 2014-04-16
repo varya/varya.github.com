@@ -2,9 +2,12 @@
 // Source: http://www.joepettersson.com/demo/jquery-github-widget/
 //
 //
-modules.define('i-bem__dom', ['jquery'], function(provide, $, DOM) {
+modules.define(
+    { block: 'github__jquery' },
+    ['jquery'],
+    function(provide, $) {
 
-(function ($, window, document, undefined) {
+provide(function ($, window, document, undefined) {
 	"use strict";
 	// Setup our defaults
 	var pluginName = 'github',
@@ -208,7 +211,5 @@ modules.define('i-bem__dom', ['jquery'], function(provide, $, DOM) {
 	};
 
 }($, window, document));
-
-provide(DOM);
 
 });
