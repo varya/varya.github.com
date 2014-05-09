@@ -14,6 +14,8 @@ interface summing up his experince in interface design for
 original article](https://medium.com/p/70bb2d0d58be). For the others, I
 translated into English.<excerpt/>
 
+<a href="http://fotki.yandex.ru/users/toivonens/view/536876"><img src="http://img-fotki.yandex.ru/get/5307/14441195.32/0_8312c_41e9ff4_L.jpg" width="500" height="400" border="0" title="1-uKQk77m8wVSPIF1uMW-cbw.jpeg" alt="1-uKQk77m8wVSPIF1uMW-cbw.jpeg"/></a>
+
 An introduction first. I am an interface designer for
 [Yandex](http://www.yandex.com/). I have been working here on
 [Yandex.Maps](http://maps.yandex.com/?text=Russian%20Federation%2C%20Moscow&sll=37.619899%2C55.753676&ll=37.619899%2C55.753676&spn=1.505127%2C0.542907&z=10&l=map),
@@ -60,3 +62,10 @@ Another thing, I have not read a lot of books about it and was not trained to do
 it. I started to work with it 2 years before graduation from a technical
 univercity and so earned my living. Thus my experince results from practice and
 observation.
+
+## Form
+Being a child I thought that with drawing I projected an image in my head onto a
+piece of paper. When I began to copy comics characters or real objects, drawing
+turned into a skill to notice object details.
+
+First, I valued the form. As for respect to the color, it came to me much later.
