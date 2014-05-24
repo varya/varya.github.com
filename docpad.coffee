@@ -26,6 +26,9 @@ plugins:
             {raw: 'date', format: 'MMMM Do YYYY', formatted: 'humanDate'}
             {raw: 'date', format: 'YYYY-MM-DD', formatted: 'computerDate'}
         ]
+    ghpages:
+        deployRemote: 'origin'
+        deployBranch: 'master'
 
 templateData:
 
