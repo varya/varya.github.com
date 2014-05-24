@@ -3,6 +3,7 @@
 title: Упражнения для дикции
 
 categories: ru issues
+old: true
 
 layout: post
 

@@ -3,6 +3,7 @@
 title: Мой опыт изучения английского
 
 categories: ru issues
+old: true
 
 layout: post
 

@@ -3,6 +3,7 @@
 title: Бложик на bem tools 1.0.0alpha
 
 categories: ru issues
+old: true
 
 layout: post
 

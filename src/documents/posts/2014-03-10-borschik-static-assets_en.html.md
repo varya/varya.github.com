@@ -3,6 +3,7 @@
 title: Borschik helps with remote static assets
 
 categories: en issues
+old: true
 
 layout: post
 

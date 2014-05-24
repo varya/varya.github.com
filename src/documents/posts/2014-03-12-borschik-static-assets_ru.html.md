@@ -3,6 +3,7 @@
 title: Локальная разработка и удаленный хостинг статики
 
 categories: ru issues
+old: true
 
 layout: post
 

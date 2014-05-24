@@ -3,6 +3,7 @@
 title: Простые числа и XPath
 
 categories: ru issues
+old: true
 
 layout: post
 

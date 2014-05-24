@@ -3,6 +3,7 @@
 title: JavaScript in BEMJSON
 
 categories: en issues
+old: true
 
 layout: post
 

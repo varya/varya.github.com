@@ -3,6 +3,7 @@
 title: JavaScript components low basics
 
 categories: en issues
+old: true
 
 layout: post
 

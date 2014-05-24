@@ -3,6 +3,7 @@
 title: Patterned triangles with  CSS
 
 categories: en issues
+old: true
 
 layout: post
 

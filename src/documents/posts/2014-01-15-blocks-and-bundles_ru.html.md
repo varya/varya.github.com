@@ -3,6 +3,7 @@
 title: Блоки как кирпичи и бандлы как дома
 
 categories: ru issues
+old: true
 
 layout: post
 

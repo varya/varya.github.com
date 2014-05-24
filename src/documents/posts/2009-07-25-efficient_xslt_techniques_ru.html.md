@@ -3,6 +3,7 @@
 title: XSLT - результативные технологии программирования
 
 categories: ru issues
+old: true
 
 layout: post
 

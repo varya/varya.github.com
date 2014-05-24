@@ -3,8 +3,11 @@
 title: Custom fonts with no cramp
 
 categories: en issues
+old: true
 
 layout: post
+
+old: true
 
 ---
 A developer using custom fonts in web (don't say this is evil) usually face a

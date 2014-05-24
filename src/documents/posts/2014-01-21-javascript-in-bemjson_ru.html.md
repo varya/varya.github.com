@@ -3,6 +3,7 @@
 title: JavaScript в BEMJSON
 
 categories: ru issues
+old: true
 
 layout: post
 

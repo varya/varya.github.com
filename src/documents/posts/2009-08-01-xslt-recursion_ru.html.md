@@ -3,6 +3,7 @@
 title: Эффективное использование рекурсии в XSL
 
 categories: ru issues
+old: true
 
 layout: post
 

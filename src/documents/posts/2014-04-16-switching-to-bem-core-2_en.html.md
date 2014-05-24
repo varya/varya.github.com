@@ -3,6 +3,7 @@
 title: Switching to bem-core#v2
 
 categories: en issues
+old: true
 
 layout: post
 

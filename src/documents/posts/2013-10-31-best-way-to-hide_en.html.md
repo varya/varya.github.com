@@ -3,8 +3,11 @@
 title: The Best Way to Hide
 
 categories: en issues
+old: true
 
 layout: post
+
+old: true
 
 ---
 There is a well-known front-end pattern which is to have hidden elements in DOM

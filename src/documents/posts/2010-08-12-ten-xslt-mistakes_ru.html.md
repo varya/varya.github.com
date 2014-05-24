@@ -3,6 +3,7 @@
 title: 10 ошибок XSLT-программистов
 
 categories: ru issues
+old: true
 
 layout: post
 
