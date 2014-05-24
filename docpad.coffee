@@ -20,7 +20,7 @@ docpadConfig = {
 plugins:
     grunt:
         writeAfter: false
-        generateAfter: ["copy"]
+        generateAfter: ["bem", "copy"]
     moment:
         formats: [
             {raw: 'date', format: 'MMMM Do YYYY', formatted: 'humanDate'}
