@@ -26,6 +26,11 @@ module.exports = function(grunt) {
                 files: {
                     "out/": ["data/*"]
                 }
+            },
+            cname: {
+                files: {
+                    "out/": ["./CNAME"]
+                }
             }
         }
     });
