@@ -28,4 +28,4 @@ $(function(){
 
 });
 
-modules.require(['fonts'], function(){});
+modules.require([{ block: 'fonts' }], function(){});
