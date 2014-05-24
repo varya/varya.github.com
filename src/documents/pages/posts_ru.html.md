@@ -1,7 +1,8 @@
 ---
 
-layout: listing
+layout: posts
 
-title: Список заметок
+title: Блог
 
+order: 1
 ---
