@@ -4,6 +4,19 @@
     <meta charset="utf-8"/>
     <title><%= @document.htmlTitle %></title>
     <%- @getBlock('styles').add(['/desktop.bundles/index/index.min.css']).toHTML() %>
+    <script>
+    (function(d, s, l, r) {
+    if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
+        r = [
+            '<style>',
+            l.getItem('varya.me.fonts'),
+            '</style>'
+        ];
+        document.write(r.join(''));
+    }
+
+    })(document, Storage, localStorage);
+    </script>
 </head>
 <body class="page page__body">
     <header class="header">
