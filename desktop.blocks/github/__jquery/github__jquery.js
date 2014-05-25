@@ -3,7 +3,7 @@
 //
 //
 modules.define(
-    { block: 'github__jquery' },
+    'github__jquery',
     ['jquery'],
     function(provide, $) {
 

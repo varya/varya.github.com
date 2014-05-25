@@ -2,13 +2,13 @@
 /** @requires BEM.DOM */
 
 modules.define(
-    { block: 'highlight' },
-    ['jquery'],
-    function(provide, $) {
+    'highlight',
+    ['i-bem__dom', 'jquery'],
+    function(provide, BEMDOM, $) {
 
-provide({
+provide(BEMDOM.decl({ block: this.name }, {
     getCodeContainer: function() {
-        this._codeContainer = this._codeContainer || this.domElem.find('pre code')[0];
+        this._codeContainer = this._codeContainer || this.domElem.find('code')[0];
         return this._codeContainer;
     },
     get$CodeContainer: function() {
@@ -20,6 +20,6 @@ provide({
             lang: this.get$CodeContainer().attr('data-lang')
         }
     }
-});
+}));
 
 });

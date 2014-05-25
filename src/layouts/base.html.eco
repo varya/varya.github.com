@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html class="page page_<%= @document.lang %>">
+<head>
+    <meta charset="utf-8"/>
+    <title><%= @document.htmlTitle %></title>
+    <%- @getBlock('styles').add(['/desktop.bundles/index/index.min.css']).toHTML() %>
+    <script>
+    (function(d, s, l, r) {
+    if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
+        r = [
+            '<style>',
+            l.getItem('varya.me.fonts'),
+            '</style>'
+        ];
+        document.write(r.join(''));
+    }
+
+    })(document, Storage, localStorage);
+    </script>
+</head>
+<body class="page page__body">
+    <header class="header">
+        <div class="header__left candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'></div>
+        <logo class="logo header__center">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+        <div class="header__right candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 } } }'></div>
+    </header>
+    <div class="layout">
+        <section class="main">
+            <ul class="languages">
+            <% for lang in @site.langs : %>
+                <li class="languages__lang">
+                    <% if @document.lang != lang : %>
+                    <a href="<%= @translationUrl() %>">
+                        <%= lang %>
+                    </a>
+                    <% else: %>
+                        <%= lang %>
+                    <% end %>
+                </li>
+                <% end %>
+            </ul>
+            <%- @content %>
+        </section>
+        <nav class="sidebar">
+        <ul class="menu-vert">
+            <h3 class="menu-vert__title box__title">
+                <%= @i18n('On this site') %>
+            </h3>
+            <% for page in @getCollection("documents").findAll({isPage:true, lang: @document.lang},[{order: 1}]).toJSON(): %>
+                <li class="menu-vert__item <%= if page.id is @document.id then 'menu-vert__item_active' %>">
+                    <a class="link" href="<%= page.url %>">
+                        <%= page.title %>
+                    </a>
+                </li>
+            <% end %>
+            </ul>
+            <div class="github i-bem"
+                data-bem='{ "github" : { "user" : "<%- @site.github %>" } }'>
+                <div class="github__header"></div>
+                <div class="github__body"></div>
+            </div>
+        </nav>
+        <aside class="prompting">
+            <ul class="social-ico menu-vert">
+                <li class="menu-vert__item">
+                    <ul class="social-ico__text menu-vert">
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/en/feed.xml" title="New on Varya.me in English">en</a>
+                        </li>
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/ru/feed.xml" title="Новые записи на Varya.me">ru</a>
+                        </li>
+                    </ul>
+                    <a class="link social-ico__ico social-ico__ico_type_rss" href="/feed.xml" title="New on Varya.me"></a>
+                </li>
+                <li class="menu-vert__item">
+                <a class="link social-ico__ico social-ico__ico_type_twitter"
+                    href="https://twitter.com/<%- @site.twitter[@document.lang] %>"
+                    title="@<%- @site.twitter[@document.lang] %>"
+                    target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_github" href="https://github.com/<%- @site.github %>" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_facebook" href="http://www.facebook.com/varvara.stepanova.9" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_linkedin" href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b" target="_blank"></a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <div class="footer__outer">
+        <footer class="footer">
+            <div class="footer__left">
+            </div>
+            <div class="footer__center">
+                <a class="link  link_text  link_wrapper" href="<%- @site.siteRoot[@document.lang] %>">
+                    © <%- @site.date.getFullYear() %>
+                    <span class="link__inner"><%- @site.name[@document.lang] %></span>.
+                </a>
+                <a class="link  link_wrapper  link_twitter"
+                    href="https://twitter.com/<%- @site.twitter[@document.lang] %>"
+                    title="@<%- @site.twitter[@document.lang] %>">
+                    <img alt="Twitter" class="ico" src="http://favicon.yandex.net/favicon/twitter.com" title="Twitter"/>
+                    <span class="link__inner"><%- @i18n('Follow me on twitter') %></span>!
+                </a>
+            </div>
+            <div class="footer__right">
+            </div>
+        </footer>
+    </div>
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter20478625 = new Ya.Metrika({id:20478625, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/20478625" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+    <script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/desktop.bundles/index/index.min.js"></script>
+</body>
+</html>

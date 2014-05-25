@@ -1,0 +1,44 @@
+---
+layout: base
+---
+<div class="article" role="main">
+    <div class="article__body box__body">
+        <h1 class="article__header">
+            <%- @document.title %>
+        </h1>
+    </div>
+    <div class="article__text box__island">
+        <script type="text/javascript" src="//yandex.st/share/share.js"
+        charset="utf-8"></script>
+        <div class="share yashare-auto-init" data-yashareL10n="{{ lang }}"
+            data-yashareQuickServices="twitter,facebook,gplus<%- ',vkontakte' if @document.lang == 'ru' %>" data-yashareTheme="counter"
+        ></div>
+        <span class="article__details author vcard">
+            <%- @i18n('Published on') %>
+            <%= @moment(@document.date).format('Do MMMM YYYY') %>
+        </span>
+        <%- @content %>
+    </div>
+    <div class="comments">
+        <div class="comments__box box__body">
+            <h4 class="comments__header">
+                <%- @i18n('Comments') %>
+            </h4>
+        </div>
+        <div class="comments__body box__island">
+            <%- @getDisqus() %>
+        </div>
+    </div>
+    <div class="related">
+        <div class="related__body box__body">
+            <h4 class="related__header">
+                <%- @i18n('By the way') %>
+            </h4>
+        </div>
+        <div class="related__text box__island">
+                <a href="https://github.com/varya/varya.github.com/issues/new?title=<%- @i18n('Feedback for ') %><%- @document.title %>">
+                    <%- @i18n("Create a GitHub issue for me") %></a><%- @i18n("if you've spotted") %>.
+                <!--Также можно внести изменения самостоятельно.-->
+        </div>
+    </div>
+</div>

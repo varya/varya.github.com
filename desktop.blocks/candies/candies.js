@@ -2,10 +2,11 @@
 /** @requires BEM.DOM */
 
 modules.define(
-    { block: 'candies' },
-    function(provide) {
+    'candies',
+    ['i-bem__dom'],
+    function(provide, BEMDOM) {
 
-provide({
+provide(BEMDOM.decl({block: this.name}, {
 
     onSetMod : {
 
@@ -108,6 +109,6 @@ provide({
     ],
     stopPoint: 0
 
-});
+}));
 
 });

@@ -2,7 +2,7 @@
 /* http://stackoverflow.com/questions/16253429/saving-a-css-web-font-in-html5-local-storage */
 
 modules.define(
-    { block: 'fonts' },
+    'fonts',
     ['jquery'],
     function(provide, $) {
 
