@@ -145,6 +145,7 @@ collections:
 
                 if document.get('old')
                     a.relativeOutDirPath = 'issues'
+                    a.disqusIdentifier = 'undefined';
 
                 newUrl = "#{language}/#{a.relativeOutDirPath}/#{basename}.#{a.outExtension}"
 
