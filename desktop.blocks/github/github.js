@@ -2,10 +2,11 @@
 /** @requires BEM.DOM */
 
 modules.define(
-    { block: 'github' },
-    function(provide) {
+    'github',
+    ['i-bem__dom', 'github__jquery'],
+    function(provide, BEMDOM) {
 
-provide({
+provide(BEMDOM.decl({block: this.name}, {
 
     onSetMod : {
 
@@ -24,6 +25,6 @@ provide({
 
     }
 
-});
+}));
 
 });

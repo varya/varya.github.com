@@ -2,11 +2,11 @@
 /** @requires BEM.DOM */
 
 modules.define(
-    { block: 'recent-posts' },
-    ['jquery', 'colors'],
-    function(provide, $, colors) {
+    'recent-posts',
+    ['i-bem__dom', 'jquery', 'colors'],
+    function(provide, BEMDOM, $, colors) {
 
-provide({
+provide(BEMDOM.decl({block: this.name}, {
 
     onSetMod : {
 
@@ -24,6 +24,6 @@ provide({
 
     }
 
-});
+}));
 
 });

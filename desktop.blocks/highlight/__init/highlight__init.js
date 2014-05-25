@@ -2,7 +2,7 @@
 /** @requires BEM.DOM */
 
 modules.define(
-    { block: 'highlight' },
+    'highlight',
     ['jquery'],
     function(provide, $) {
 
