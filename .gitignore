@@ -3,7 +3,7 @@ _site/
 node_modules/
 out/
 .DS_Store
-s/libs/*
+libs/
 
 .bem/cache/
 *.bundles/*/*.*
