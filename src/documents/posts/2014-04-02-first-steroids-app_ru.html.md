@@ -4,6 +4,8 @@ title: Мобильное приложение на Steroids
 
 categories: ru issues
 
+old: true
+
 layout: post
 
 ---
