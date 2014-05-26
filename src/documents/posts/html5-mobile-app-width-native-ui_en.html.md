@@ -143,7 +143,7 @@ folder](https://github.com/varya/steroids-fronttrends2014/tree/master/www/icons)
 After making the change wait for rebuild and check.
 
 <div style="text-align:center;">
-<img src="http://img-fotki.yandex.ru/get/9088/14441195.32/0_84262_ae854cb8_orig.png" width="340" height="89" border="0" title="Снимок экрана 2014-05-26 в 16.49.36.png" alt="Снимок экрана 2014-05-26 в 16.49.36.png"/>
+<img src="http://img-fotki.yandex.ru/get/9088/14441195.32/0_84262_ae854cb8_orig.png" width="340" height="89" border="0" title="" alt=""/>
 </div>
 
 Next, we can play with notifications.
@@ -225,7 +225,7 @@ navigation bar. Tapping on it you can see a notification; one
 of those you studied recently.
 
 <div style="text-align:center;">
-<img src="http://img-fotki.yandex.ru/get/9115/14441195.32/0_84264_7f27d435_orig.png" width="640" height="1136" border="0" title="" alt=""/>
+<img src="http://img-fotki.yandex.ru/get/9115/14441195.32/0_84264_7f27d435_L.png" width="282" height="500" border="0" title="" alt=""/>
 </div>
 
 The last of native UI examples in this app is showing
@@ -288,7 +288,7 @@ web interface at [cloud.appgyver.com](https://cloud.appgyver.com/applications).
 From there you also push the app into AppStore and GooglePlay.
 
 <div style="text-align:center;">
-<img src="http://img-fotki.yandex.ru/get/9062/14441195.32/0_84265_d03d686e_orig.png" width="500" height="327" border="0" title="Снимок экрана 2014-05-26 в 18.03.58.png" alt="Снимок экрана 2014-05-26 в 18.03.58.png"/>
+<img src="http://img-fotki.yandex.ru/get/9062/14441195.32/0_84265_d03d686e_orig.png" width="500" height="327" border="0" title="" alt=""/>
 </div>
 
 This is easy. As easy that a newbie can develop an app in a few minutes
@@ -306,5 +306,5 @@ at the [AppGyver Academy](http://academy.appgyver.com/) where you find:
 * documentation,
 * big community of devs.
 
-And, of course, you can read this blog. I promise to share my next findings
+And, of course, you can read [this blog](/en/posts/). I promise to share my next findings
 regarding Steroids soon :-)
