@@ -57,6 +57,9 @@ templateData:
             en: 'http://varya.me/'
             ru: 'http://varya.me/ru/'
         url: 'http://varya.me/'
+        title: 'var ya; stepanova'
+        description: 'Front end developer, blogger and cats lover.'
+        author: 'Varya Stepanova'
         name:
             en: 'Varya Stepanova'
             ru: 'Варя Степанова'
