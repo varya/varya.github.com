@@ -469,6 +469,21 @@ code
 
 /* ../../desktop.blocks/share/share.css end */
 
+/* ../../desktop.blocks/slide-frame/slide-frame.css begin */
+.slide
+{
+    text-align: center;
+}
+.slide__frame
+{
+    margin: 0 auto;
+    width: 600px;
+    height: 400px;
+    border: 0;
+}
+
+/* ../../desktop.blocks/slide-frame/slide-frame.css end */
+
 /* ../../desktop.blocks/recent-posts/recent-posts.css begin */
 .recent-posts
 {
