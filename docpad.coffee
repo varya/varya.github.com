@@ -29,6 +29,16 @@ plugins:
     ghpages:
         deployRemote: 'origin'
         deployBranch: 'master'
+    rss:
+        default:
+            collection: 'posts'
+            url: '/feed.xml'
+        posts_en:
+            collection: 'posts_en'
+            url: '/en/feed.xml'
+        posts_ru:
+            collection: 'posts_ru'
+            url: '/ru/feed.xml'
 
 templateData:
 
@@ -109,6 +119,21 @@ templateData:
         content and ((content.search @cutTag) isnt -1)
 
 collections:
+    posts: ->
+        @getCollection("documents").findAllLive({
+            relativeOutDirPath: 'posts'
+        }, [{date:-1}])
+    posts_en: ->
+        @getCollection("documents").findAllLive({
+            relativeOutDirPath: 'posts',
+            basename: /_en$/
+        }, [{date:-1}])
+    posts_ru: ->
+        @getCollection("documents").findAllLive({
+            relativeOutDirPath: 'posts',
+            basename: /_ru$/
+        }, [{date:-1}])
+
     translate: (database) ->
         @getCollection('documents').findAllLive({basename: languageRegex}).on 'add', (document) ->
             a = document.attributes
@@ -170,6 +195,9 @@ collections:
         link2Old('./out/en/issues', 'index.html', './out/en/posts/index.html')
         link2Old('./out/ru/issues', 'index.html', './out/ru/posts/index.html')
         link2Old('./out/ru/issues/bem-tools-1.0.0-alpha', 'index.html', './out/ru/issues/bem-tools-100-alpha/index.html')
+
+env: 'static'
+
 }
 
 
