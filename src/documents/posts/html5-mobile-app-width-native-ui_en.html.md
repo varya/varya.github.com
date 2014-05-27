@@ -69,7 +69,7 @@ target="_blank"><img alt="Googleplay" class="appstore_icon"
 src="https://share.appgyver.com/assets/googleplay-2cef882d62e402fbdbfe8cdac5794069.png"></a>
 </div>
 
-Another way to watch the app is not bring it into a desktop simulator.
+Another way to watch the app is to bring it into a desktop simulator.
 To do this, type `simulator` in the terminal wich launched
 `steroids connect`.
 
