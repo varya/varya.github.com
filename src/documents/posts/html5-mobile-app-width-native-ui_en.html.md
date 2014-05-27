@@ -106,7 +106,7 @@ Let us start with showing the native tabs.
   </iframe>
 </div>
 
-In the `config/application.coffee` file you can fine a commented
+In the `config/application.coffee` file you can find a commented
 example of defining a list of tabs with their icons and
 locations (URLs) they lead to.
 
