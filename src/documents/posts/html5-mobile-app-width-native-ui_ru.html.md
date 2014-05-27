@@ -95,7 +95,11 @@ src="https://share.appgyver.com/assets/googleplay-2cef882d62e402fbdbfe8cdac57940
 [туториалам](http://academy.appgyver.com/) и
 [API документации](http://docs.appgyver.com/en/stable/index.html).
 Дальше я покажу как использовать в вашем приложении
+<<<<<<< HEAD
 некоторые штатные элементы интерфейса, то есть
+=======
+некоторые системные элементы интерфейса, то есть
+>>>>>>> Translation of Native UI in Steroids
 писать на HTML5/JavaScript приложение с *native UI*.
 
 <div class="slide">
@@ -239,7 +243,11 @@ steroids.view.navigationBar.update({
 <img src="http://img-fotki.yandex.ru/get/9115/14441195.32/0_84264_7f27d435_L.png" width="282" height="500" border="0" title="" alt=""/>
 </div>
 
+<<<<<<< HEAD
 И последний пример штатного интерфейса в этом приложении
+=======
+И последний пример системного интерфейса в этом приложении
+>>>>>>> Translation of Native UI in Steroids
 — модальное окно.
 
 <div class="slide">
