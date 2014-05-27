@@ -69,7 +69,7 @@ target="_blank"><img alt="Googleplay" class="appstore_icon"
 src="https://share.appgyver.com/assets/googleplay-2cef882d62e402fbdbfe8cdac5794069.png"></a>
 </div>
 
-Another way to watch the app is not bring it into a desktop simulator.
+Another way to watch the app is to bring it into a desktop simulator.
 To do this, type `simulator` in the terminal wich launched
 `steroids connect`.
 
@@ -106,7 +106,7 @@ Let us start with showing the native tabs.
   </iframe>
 </div>
 
-In the `config/application.coffee` file you can fine a commented
+In the `config/application.coffee` file you can find a commented
 example of defining a list of tabs with their icons and
 locations (URLs) they lead to.
 
@@ -220,7 +220,7 @@ steroids.view.navigationBar.update({
 })
 ```
 
-This will bring the button to the right silde of the
+This will bring the button to the right side of the
 navigation bar. Tapping on it you can see a notification; one
 of those you studied recently.
 
