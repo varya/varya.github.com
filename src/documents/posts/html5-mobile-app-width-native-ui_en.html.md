@@ -220,7 +220,7 @@ steroids.view.navigationBar.update({
 })
 ```
 
-This will bring the button to the right silde of the
+This will bring the button to the right side of the
 navigation bar. Tapping on it you can see a notification; one
 of those you studied recently.
 
