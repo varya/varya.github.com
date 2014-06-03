@@ -116,7 +116,7 @@ src="https://share.appgyver.com/assets/googleplay-2cef882d62e402fbdbfe8cdac57940
 табов в файле `config/application.coffee`. Это список табов
 с их иконками и ссылками, на которые они ведут.
 
-В моём приложении я создаю 3 таба для следующий страниц:
+В моём приложении я создаю 3 таба для следующих страниц:
 * index.html
 * notificationExample.html
 * knowledge.html
@@ -180,7 +180,7 @@ folder](https://github.com/varya/steroids-fronttrends2014/tree/master/www/icons)
   ontouchend="vibrate()">Vibrate the device</button>
 ```
 
-Кнопки реагирую на прикосновения пользователя и запускают
+Кнопки реагируют на прикосновения пользователя и запускают
 различные JavaScript-функции. Чтобы сделать страницу работающей,
 нужно задать эти функции в `<head>` или `*.js` файле страницы.
 Каждая из них иллюстрирует работу своего вида нотификации, такого
@@ -191,7 +191,7 @@ a kind of notification which are:
 * `navigator.notification.prompt`
 * `navigator.notification.vibrate`
 
-Код фукнций можете взять
+Код функций можете взять
 [из моего репозитория](https://github.com/varya/steroids-fronttrends2014/blob/master/www/notificationExample.html#L15).
 
 Теперь вы можете перейти на эту страницу по соответствующему
