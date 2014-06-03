@@ -15,7 +15,7 @@ a framework and a toolkit for developing HTML5 mobile apps. If you did not have
 a chance to hear it, this offline text presentation is for you.<excerpt/>
 
 <div class="slide">
-  <iframe class="slide__frame"
+  <iframe class="slide__frame" scrolling="no"
     src="http://varya.me/start-with-steroids/?full#Cover">
   </iframe>
 </div>
@@ -25,7 +25,7 @@ Steroids because it enables me to create pretty native-looking application
 and smoothly go through the developing and releasing flow in a few minutes.
 
 <div class="slide">
-  <iframe class="slide__frame"
+  <iframe class="slide__frame" scrolling="no"
     src="http://varya.me/start-with-steroids/?full#summary">
   </iframe>
 </div>
@@ -35,7 +35,7 @@ your project and takes care of building an app, developing flow, debugging
 and releasing. It is based on NodeJs, so you have to have it installed.
 
 <div class="slide">
-  <iframe class="slide__frame"
+  <iframe class="slide__frame" scrolling="no"
     src="http://varya.me/start-with-steroids/?full#3">
   </iframe>
 </div>
@@ -44,7 +44,7 @@ The required version for now is `0.10.25`. Follow the [Installation and Setup
 Guide](http://academy.appgyver.com/categories/1/contents/1).
 
 <div class="slide">
-  <iframe class="slide__frame"
+  <iframe class="slide__frame" scrolling="no"
     src="http://varya.me/start-with-steroids/?full#4">
   </iframe>
 </div>
@@ -82,7 +82,7 @@ and tutorials. Run `steroids generate` command and get the relevant
 code.
 
 <div class="slide">
-  <iframe class="slide__frame"
+  <iframe class="slide__frame" scrolling="no"
     src="http://varya.me/start-with-steroids/?full#5">
   </iframe>
 </div>
@@ -93,7 +93,7 @@ Below I demonstrated some of the features which enable
 to use *native UI*.
 
 <div class="slide">
-  <iframe class="slide__frame"
+  <iframe class="slide__frame" scrolling="no"
     src="http://varya.me/start-with-steroids/?full#examples-list">
   </iframe>
 </div>
@@ -101,7 +101,7 @@ to use *native UI*.
 Let us start with showing the native tabs.
 
 <div class="slide">
-  <iframe class="slide__frame"
+  <iframe class="slide__frame" scrolling="no"
     src="http://varya.me/start-with-steroids/?full#7">
   </iframe>
 </div>
@@ -149,7 +149,7 @@ After making the change wait for rebuild and check.
 Next, we can play with notifications.
 
 <div class="slide">
-  <iframe class="slide__frame"
+  <iframe class="slide__frame" scrolling="no"
     src="http://varya.me/start-with-steroids/?full#8">
   </iframe>
 </div>
@@ -190,7 +190,7 @@ Another native element could be a button in the application navigation
 bar.
 
 <div class="slide">
-  <iframe class="slide__frame"
+  <iframe class="slide__frame" scrolling="no"
     src="http://varya.me/start-with-steroids/?full#9">
   </iframe>
 </div>
@@ -232,7 +232,7 @@ The last of native UI examples in this app is showing
 modal views.
 
 <div class="slide">
-  <iframe class="slide__frame"
+  <iframe class="slide__frame" scrolling="no"
     src="http://varya.me/start-with-steroids/?full#10">
   </iframe>
 </div>
@@ -267,7 +267,7 @@ Once finished coding (or even in process) you may need to show the
 application to your friend, client or Mom.
 
 <div class="slide">
-  <iframe class="slide__frame"
+  <iframe class="slide__frame" scrolling="no"
     src="http://varya.me/start-with-steroids/?full#sharing">
   </iframe>
 </div>
@@ -295,7 +295,7 @@ This is easy. As easy that a newbie can develop an app in a few minutes
 and show you the how-to.
 
 <div class="slide">
-  <iframe class="slide__frame"
+  <iframe class="slide__frame" scrolling="no"
     src="http://varya.me/start-with-steroids/?full#links">
   </iframe>
 </div>
