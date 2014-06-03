@@ -39,7 +39,36 @@ The posts are listed in the index page. Once you added a new
 item, you can see it in this list and navigate to its page
 — the docpad rebuilds from source automatically.
 
+Plase the pages as `*.md` files into `src/documents/pages`
+directory. The posts are kept into `src/documents/posts`.
+
 ## How to develop statics
+The statics is developed with [BEM](http://bem.info/).
+You can get CSS and JavaScript files for your pages in
+`desktop.bundles` directory. The pages are built with blocks
+from `desktop.blocks` folder.
+
+The rebuild process for statics runs under docpad server.
+
+Sometimes you may prefer to develop static pages separately.
+For this run
+
+```
+./node_modules/enb/bin/enb server
+```
+
+You will get another server which rebuilds statics. It
+produces static html from `*.bemjson.js` files in
+`desktop.bundles`. You can develop the layout inserting
+json where and providing `BEMHTML` templates for the
+corresponding blog. Find the documentation about `BEMHTML`
+here:
+* [BEMHTML templates description](http://bem.info/libs/bem-core/2.2.0/templating/rationale/)
+* [BEMHTML quick start](http://bem.info/libs/bem-core/2.2.0/templating/intro/)
+* [BEMHTML tutorial](http://bem.info/libs/bem-core/2.2.0/templating/reference/)
+
+For the same blocks you can provide `*.css` and `*.js` files
+and get them built into pages.
 
 ## How to publish
 TODO: insert gh-pages
@@ -69,7 +98,7 @@ Source code for this blog.
 * [sapegin/blog.sapegin.me](https://github.com/sapegin/blog.sapegin.me)<br/>
 Source code for [blog.sapegin.me](http://blog.sapegin.me/)
 
-Mreover, [Stackoverflow](http://stackoverflow.com/) indeed already
+Moreover, [Stackoverflow](http://stackoverflow.com/) indeed already
 has an answer to almost all the question you have. If not, create a new
 one.
 
