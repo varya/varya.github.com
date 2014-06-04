@@ -15,6 +15,8 @@ files, here we go.
 
 ## How to start
 
+You need install the docpad first. Follow their [Installation Guide](http://docpad.org/docs/install).
+
 The installation guide is super short and easy. Clone, fork or
 copy from the [docpad-bem-stub repository](https://github.com/varya/docpad-bem-stub).
 Then, go though the 3 installation steps:
