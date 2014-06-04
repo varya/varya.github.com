@@ -6,19 +6,6 @@ layout: base
         <h1 class="article__header"><%- @document.title %></h1>
     </div>
     <div class="article__text box__island">
-        <ul class="articles-list">
-            <% for post in @getCollection("documents").findAll({isPost: true,lang: @document.lang}, [{date:-1}]).toJSON(): %>
-                <li class="articles-list__item">
-                    <a href="<%= post.url %>">
-                        <%= post.title %>
-                    </a>
-                    —
-                    <em class="published">
-                        <%= @moment(post.date).format('Do MMMM YYYY') %>
-                    </em>
-                    <%- @cuttedContent(post.contentRenderedWithoutLayouts) %>
-                </li>
-            <% end %>
-        </ul>
+        <%- @content %>
     <div>
 <div>
