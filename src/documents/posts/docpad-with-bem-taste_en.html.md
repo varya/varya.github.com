@@ -63,15 +63,29 @@ produces static html from `*.bemjson.js` files in
 json where and providing `BEMHTML` templates for the
 corresponding blog. Find the documentation about `BEMHTML`
 here:
-* [BEMHTML templates description](http://bem.info/libs/bem-core/2.2.0/templating/rationale/)
 * [BEMHTML quick start](http://bem.info/libs/bem-core/2.2.0/templating/intro/)
-* [BEMHTML tutorial](http://bem.info/libs/bem-core/2.2.0/templating/reference/)
 
 For the same blocks you can provide `*.css` and `*.js` files
 and get them built into pages.
 
 ## How to publish
-TODO: insert gh-pages
+The blog is tuned to be deployed on GitHub. Thus, your
+repository has to be named as `<username>.github.com`. You
+can develop in its `source` branch. For deploying on
+`<username>.github.io` host run this command:
+
+```
+docpad deploy-ghpages
+```
+
+This will create `master` branch of the repository whose
+source is linked to the host.
+
+You can also attach your own domain to the blog like I did.
+Also, it is possible to host your blog in differently named
+repository. However this will make you to provide changes
+on `docpad.coffee` configuration file.<br/>
+Study [Github Pages](https://pages.github.com/) to learn more.
 
 ## Why Docpad?
 This blog had been running on Jekyll for a while. This was an
@@ -91,33 +105,69 @@ you already can write and publish. If you want to provide changes
 into the build process, modify the templates or extend with
 plugins, [learn at Docpad website](http://docpad.org/).
 
-You can also see how the other guys deal with Docpad. Here are
-the repositories I recommed:
-* [varya/varya.github.com](https://github.com/varya/varya.github.com)<br/>
-Source code for this blog.
-* [sapegin/blog.sapegin.me](https://github.com/sapegin/blog.sapegin.me)<br/>
-Source code for [blog.sapegin.me](http://blog.sapegin.me/)
-
 Moreover, [Stackoverflow](http://stackoverflow.com/) indeed already
 has an answer to almost all the question you have. If not, create a new
 one.
 
 ## Why BEM?
+BEM is a very flexible modular solution for frontend which
+enables to develop reusable CSS and JavaScript components. Some code
+can be taken from open source libraries.
+
+You can learn a lot about BEM from [my articles and talks](/en/content)
+or at the [official BEM site](http://bem.info/).
 
 ## Inside about
+Above I described all you need to know for using your blog. Below there
+are a little more technical details on what is behind.
 
 ### ENB
-faster
+I use [enb](https://github.com/enb-make/enb) for building pages of block
+components. This solution is preferable to bem-tools because of it is much
+faster. When rebuilding pages on every change, this is sensetive.
 
 ### i-bem.js and modules
+I personally love that this solution brings `i-bem.js` library to the
+project. Hope to demonstrate its amazing capabilities here in near future.
+But before I stuff my blog with complex JavaScript components, you
+can see some examples and very detailed explanations in [Step-by-step tutorial on
+i-bem.js](http://bem.info/tutorials/bem-js-tutorial/).
+
+Another JavaScript feature you can enjoy is [YM modular system](/en/issues/ym-modular-system).
+These are JavaScript modules with asynchronious resolving.
 
 ### BEMHTML
+As mentioned above, `BEMHTML` is a templating solution. Being JavaScript-based,
+these templates can be applied on both server and client side. There are
+a couple of documents for a deeper dive into it here:
+* [BEMHTML templates description](http://bem.info/libs/bem-core/2.2.0/templating/rationale/)
+* [BEMHTML tutorial](http://bem.info/libs/bem-core/2.2.0/templating/reference/)
 
 ### bem-core and bem-components
+BEM is also nice for a possibility to borrow the components from libraries.
+`docpad-bem-stub` uses 2 now available libraries:
+* [bem-core](http://bem.info/libs/bem-core/2.2.0/)
+* [bem-components](http://bem.info/libs/bem-components/v2/)
+I hope to see more in the future.
 
 ## What next?
-* detect changes in static files
-* atomic builds for statics
-* css preprocessors
-* fresh design
-* nice initial posts
+Indeed everything can be improved. These are my thoughts on how
+to continue.
+* detect changes in static files<br/>
+Docpad watches over the changes in `src` directory. This means that
+when developing statics you will not get the rebuild. I am thinking
+on running `enb server` under `docpad run` and proxy. This maybe
+better than watch over a lot of files in `desktop.blocks`, `desktop.bundles`
+and all the libraries.
+* css preprocessors<br/>
+The blog styles is in pure CSS now. But with a little
+change into enb configuration we can learn it to build with
+preprocessors.
+* fresh design<br/>
+Creating a simple layout is the most difficult design task. Don't you agree?
+* nice initial posts<br/>
+This is even harder than the desing tasks but I think the users feel much
+more comfortable when getting a blog with predefined texts.
+
+If you feel your oats and want to do your bit, fork [the repository](https://github.com/varya/docpad-bem-stub)
+and start :-)
