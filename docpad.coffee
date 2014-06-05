@@ -86,6 +86,11 @@ templateData:
                 ru: ', если вы заметили ошибку или хотите дополнить статью'
             'Recently in the blog':
                 ru: 'Недавние заметки'
+            'Or you can':
+                ru: 'Или вы можете'
+            'edit yourself':
+                en: 'edit this post yourself and make me a patch'
+                ru: 'отредактировать пост самостоятельно и послать мне патч'
 
         if !words[phrase]
             return phrase
@@ -140,6 +145,7 @@ collections:
     translate: (database) ->
         @getCollection('documents').findAllLive({basename: languageRegex}).on 'add', (document) ->
             a = document.attributes
+            oldBasename = a.basename
             parts = a.basename.match(languageRegex)
             outPath = document.get('outPath')
 
@@ -176,6 +182,12 @@ collections:
                     a.disqusIdentifier = 'undefined';
 
                 newUrl = "#{language}/#{a.relativeOutDirPath}/#{basename}.#{a.outExtension}"
+
+            editLink = "https://github.com/varya/varya.github.com/edit/develop/src/documents/posts/#{oldBasename}.html.md"
+
+            document.setMeta {
+                editLink: editLink
+            }
 
             urls = ["/#{newUrl}"]
 

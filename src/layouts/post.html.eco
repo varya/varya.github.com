@@ -51,8 +51,9 @@ layout: base
         </div>
         <div class="related__text box__island">
                 <a href="https://github.com/varya/varya.github.com/issues/new?title=<%- @i18n('Feedback for ') %><%- @document.title %>">
-                    <%- @i18n("Create a GitHub issue for me") %></a><%- @i18n("if you've spotted") %>.
-                <!--Также можно внести изменения самостоятельно.-->
+                <%- @i18n("Create a GitHub issue for me") %></a><%- @i18n("if you've spotted") %>.
+                <%- @i18n("Or you can") %>
+                <a href="<%- @document.editLink %>"><%- @i18n("edit yourself") %></a>.
         </div>
     </div>
 </div>
