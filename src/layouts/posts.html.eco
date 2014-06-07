@@ -1,9 +1,13 @@
 ---
-layout: page
+layout: base
 ---
-<ul class="articles-list">
+<div class="article" role="main">
+    <div class="article__body box__body">
+        <h1 class="article__header"><%- @document.title %></h1>
+    </div>
+    <%- @content %>
     <% for post in @getCollection("documents").findAll({isPost: true,lang: @document.lang}, [{date:-1}]).toJSON(): %>
-        <li class="articles-list__item">
+        <div class="article__text box__island articles-list__item">
             <a href="<%= post.url %>">
                 <%= post.title %>
             </a>
@@ -12,6 +16,6 @@ layout: page
                 <%= @moment(post.date).format('Do MMMM YYYY') %>
             </em>
             <%- @cuttedContent(post.contentRenderedWithoutLayouts) %>
-        </li>
+        </div>
     <% end %>
-</ul>
+<div>
