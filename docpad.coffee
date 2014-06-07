@@ -158,9 +158,6 @@ collections:
 
             if outPath.indexOf('/pages/') != -1
                 document.set('isPage', true)
-                newOutPath = outPath
-                    .replace('_' + language + '.html', '.html')
-                    .replace('/pages/', '/' + language + '/')
 
                 newUrl = "#{language}/#{basename}.#{a.outExtension}"
                 if basename == 'index' && language == 'en'
@@ -168,9 +165,6 @@ collections:
 
             if outPath.indexOf('/posts/') != -1
                 document.set('isPost', true)
-                newOutPath = outPath
-                    .replace('_' + language + '.html', '.html')
-                    .replace('/posts/', '/' + language + '/posts/')
 
                 ownDate = basename.match(/^(\d{4})-(\d{2})-(\d{2})-/)
                 if (ownDate)
@@ -193,7 +187,6 @@ collections:
 
             document
                 .setMetaDefaults({
-                    #outPath: newOutPath,
                     url: urls[0]
                 })
                 .addUrl(urls)
