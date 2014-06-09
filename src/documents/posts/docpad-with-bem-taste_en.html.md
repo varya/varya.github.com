@@ -21,7 +21,7 @@ Then, the installation of the blog is super short and easy. Clone, fork or
 copy from the [docpad-bem-stub repository](https://github.com/varya/docpad-bem-stub).
 Then, go though the 3 installation steps:
 
-```sh
+```bash
 npm install
 ./node_modules/bower-npm-install/bin/bower-npm-install
 docpad run
@@ -76,7 +76,7 @@ repository has to be named as `<username>.github.com`. You
 can develop in its `source` branch. For deploying on
 `<username>.github.io` host run this command:
 
-```sh
+```bash
 docpad deploy-ghpages
 ```
 
