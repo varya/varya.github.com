@@ -1,6 +1,6 @@
 ---
 
-title: Using drawers on Steroids
+title: Using side drawers in mobile apps on Steroids.js
 
 date: 2014-06-09
 
