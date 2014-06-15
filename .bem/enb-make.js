@@ -24,8 +24,8 @@ module.exports = function(config) {
         require('enb-bemxjst/techs/html-from-bemjson'),
         /*require('enb/techs/js'),*/
         require('enb/techs/css'),
-        [ require('enb/techs/file-copy'), { sourceTarget: '?.js', destTarget: '?.min.js' } ],
-        [ require('enb/techs/file-copy'), { sourceTarget: '?.css', destTarget: '?.min.css' } ]
+        [require('enb/techs/borschik'), { sourceTarget: '?.js', destTarget: '?.min.js' }],
+        [require('enb/techs/borschik'), { sourceTarget: '?.css', destTarget: '?.min.css' }]
     ]);
 
     nodeConfig.addTargets(['?.min.js', '?.min.css', '?.html']);
