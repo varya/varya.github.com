@@ -12,6 +12,7 @@
     "enb-xjst": "~1.1.1",
     "enb-bemxjst": "~1.2.0",
     "enb-modules": "~0.1.2",
+    "enb-diverse-js": ">=0.1.0",
     "docpad": "~6.64.3",
     "docpad-plugin-cleanurls": "~2.7.0",
     "docpad-plugin-eco": "~2.0.3",

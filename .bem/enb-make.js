@@ -3,15 +3,26 @@ module.exports = function(config) {
     });
     config.nodeMask(/^desktop.bundles\/.*/, function(nodeConfig) {
     nodeConfig.addTechs([
-        [ require('enb/techs/levels'), { levels: getLevels(config) } ],
-        [ require('enb/techs/file-provider'), { target: '?.bemjson.js' } ],
-        require('enb/techs/bemdecl-from-bemjson'),
-        require('enb-modules/techs/deps-with-modules'),
+        new (require('enb/techs/file-provider'))({ target: '?.bemjson.js' }),
+        new (require('enb/techs/levels'))({ levels: getLevels(config) }),
+        new (require('enb/techs/files'))(),
+
+        // BEMDECL
+        new (require('enb/techs/bemdecl-from-bemjson'))(),
+
+        // DEPS
+        new (require('enb-modules/techs/deps-with-modules')),
+
+        // JS
+        new (require('enb-diverse-js/techs/vanilla-js'))(),
+        new (require('enb-diverse-js/techs/node-js'))(),
+        new (require('enb-diverse-js/techs/browser-js'))(),
+        new (require('enb-modules/techs/prepend-modules'))({ source: '?.browser.js' }),
+
         /*require('enb/techs/deps-old'),*/
-        require('enb/techs/files'),
         require('enb-bemxjst/techs/bemhtml-old'),
         require('enb-bemxjst/techs/html-from-bemjson'),
-        require('enb/techs/js'),
+        /*require('enb/techs/js'),*/
         require('enb/techs/css'),
         [ require('enb/techs/file-copy'), { sourceTarget: '?.js', destTarget: '?.min.js' } ],
         [ require('enb/techs/file-copy'), { sourceTarget: '?.css', destTarget: '?.min.css' } ]
