@@ -13,13 +13,16 @@ Russian-speaking conferences and later switched to English-speaking conferences 
 speaches I noticed how different the content is, depending on the language. Sometime I even thought that the communities
 evolve differently and go different directions.
 <excerpt/>
-My Russian-speaking colleagues indeed know the "Indeprendent blocks HTML markup" article by Vitaly Harisov. He published
-this in 2005 and so drew the main principles of HTML/CSS development today known as `BEM`. We can say that this was the
+My Russian-speaking colleagues indeed know the "[HTML/CSS markup with ndeprendent blocks](http://vitaly.harisov.name/article/independent-blocks.html)"
+article by Vitaly Harisov. He published
+this in 2008 and so drew the main principles of HTML/CSS development today known as BEM. We can say that this was the
 moment BEM started being developed in Russia and the neighbouring countries. As for English-speaking developers, they
-learned about BEM only in 2012 from my article in SmashingMagazine. Then, as you might know, Harry Roberts caught sight
+learned about BEM only in 2012 from [my article in
+SmashingMagazine](http://www.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/). Then, as you might
+know, [Harry Roberts](http://csswizardry.com/about/) caught sight
 of that and thanks to his publications BEM became popular in the rest of the world.
 
-Thus, 7 years passed since the technology was released until a common Alabama guy got a chance to learn about it. For
+Thus, 4 years passed since the technology was released until a common Alabama guy got a chance to learn about it. For
 such along term many technologies could die.
 
 No doubt, this is much better for both the technology and the industry if developers had have learned it in 2005. I
