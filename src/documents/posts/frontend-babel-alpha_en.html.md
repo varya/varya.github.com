@@ -2,7 +2,7 @@
 
 title: The so different frontend community and how we deal with it
 
-date: 2014-07-01
+date: 2014-06-30
 
 layout: post
 
