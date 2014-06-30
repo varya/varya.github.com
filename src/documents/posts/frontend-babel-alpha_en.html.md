@@ -41,16 +41,16 @@ The project is called **Frontend Babel** and here is the URL: [http://frontendba
 Technically, it is a statically generated blog (thanks to DocPad). Any person can take it and run a local copy, then add
 a translated article and submit a pull request into the original source.
 
-* [About the project](frontendbabel.info/about/)
+* [About the project](http://frontendbabel.info/about/)
 * [Repository on GitHub](https://github.com/frontendbabel/frontendbabel.github.com)
 * [How to contribute](http://frontendbabel.info/how-to-contribute)
 
 The first couple of articles were already translated by [Max Shirshin](https://www.google.com/+MaxShirshin). These are:
 
 * an interesting [post about web page rendering by Alexander
-  Skutin](frontendbabel.info/articles/webpage-rendering-101)
+  Skutin](http://frontendbabel.info/articles/webpage-rendering-101)
 * an awesome [article about graphical interface by Danil
-  Kovchy](frontendbabel.info/articles/graphical-interface)
+  Kovchy](http://frontendbabel.info/articles/graphical-interface)
 
 You can already share these links with your English-speaking colleagues :-)
 

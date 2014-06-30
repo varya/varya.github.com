@@ -49,16 +49,16 @@ SmashingMagazine](http://www.smashingmagazine.com/2012/04/16/a-new-front-end-met
 Это статический блог (здесь я говорю спасибо DocPad за генерацию) — любой может развернуть его у себя, добавить
 статью-перевод и пул-реквестом влить в сайт.
 
-* [о проекте](frontendbabel.info/about/)
+* [о проекте](http://frontendbabel.info/about/)
 * [репозиторий](https://github.com/frontendbabel/frontendbabel.github.com)
 * [как контрибьютить](http://frontendbabel.info/how-to-contribute)
 
 Первые статьи уже перевёл с русского Макс Ширшин. Это
 
 * интересная [заметка Александра Скутина о рендеринге
-страниц](frontendbabel.info/articles/webpage-rendering-101) (вы могли читать её на Хабре)
+страниц](http://frontendbabel.info/articles/webpage-rendering-101) (вы могли читать её на Хабре)
 * и прекрасная [статья Данила
-Ковчего о графическом интерфейсе](frontendbabel.info/articles/graphical-interface).
+Ковчего о графическом интерфейсе](http://frontendbabel.info/articles/graphical-interface).
 
 Можете уже сейчас поделиться этими
 ссылками со своими англоязычными коллегами :-) Пусть узнают, какой у нас создаётся хороший контент.
