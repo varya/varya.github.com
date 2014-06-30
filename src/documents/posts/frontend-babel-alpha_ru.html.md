@@ -53,7 +53,7 @@ SmashingMagazine](http://www.smashingmagazine.com/2012/04/16/a-new-front-end-met
 * [репозиторий](https://github.com/frontendbabel/frontendbabel.github.com)
 * [как контрибьютить](http://frontendbabel.info/how-to-contribute)
 
-Первые статьи уже перевёл с русского Макс Ширшин. Это
+Первые статьи уже перевёл с русского [Макс Ширшин](https://www.google.com/+MaxShirshin). Это
 
 * интересная [заметка Александра Скутина о рендеринге
 страниц](http://frontendbabel.info/articles/webpage-rendering-101) (вы могли читать её на Хабре)
