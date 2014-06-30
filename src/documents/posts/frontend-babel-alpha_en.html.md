@@ -21,7 +21,7 @@ of that and thanks to his publications BEM became known to the rest of the world
 
 Thus, 4 years passed since the technology was released until a typical English-speaking web developer got a chance to learn about it. This could have been enough time for a technology to mature and slowly die.
 
-No doubt, a better option would be to make it available back in 2005. I suppose that modular trend on the web would have started earlier and we would have got the results faster. Today we
+No doubt, a better option would be to make it available back in 2008. I suppose that modular trend on the web would have started earlier and we would have got the results faster. Today we
 would use Web Components (they implement some component ideas of BEM) everywhere (and for a long time, already).
 
 With all this in mind, I decided to dedicate some of my free time to publish translations on my blog.
