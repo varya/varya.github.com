@@ -31,7 +31,8 @@ expensive](http://aerotwist.com/blog/pixels-are-expensive/)». Ссылка По
 переводите](https://github.com/frontendbabel/frontendbabel.github.com/issues?labels=%24+Russian&page=1&state=open) :-)
 Кстати, не бойтесь сделать ошибку. Frontend Babel — это ресурс для англоязычной аудитории, и среди читателей обязательно
 найдётся кто-то, кто исправит вас Pull-Request'ом. Это тоже [подтверждено
-опытом](https://github.com/frontendbabel/frontendbabel.github.com/pull/42).
+опытом](https://github.com/frontendbabel/frontendbabel.github.com/pull/42), даже [несколько
+раз](https://github.com/frontendbabel/frontendbabel.github.com/pull/74).
 
 Или можно [добавить статью в пул на перевод](https://github.com/frontendbabel/frontendbabel.github.com/issues/new). Там
 есть сколько то, но много не мало.
