@@ -7,13 +7,13 @@ layout: post
 ---
 В прошлый понедельник запустился новый проект коллективных переводов фронтэндерских статей на английский [Frontend
 Babel](http://frontendbabel.info/). Я писала об этом [подробный пост](/ru/posts/frontend-babel-alpha), который очень
-хорошо разошелся благодаря ретвитам и попаданию на Хабр. И насколько я могу судить по статистике, первая неделя прошла
+хорошо разошелся благодаря ретвитам и попаданию на Хабр. И насколько я могу судить по статистике, неделя прошла
 отлично.
 <excerpt/>
 
 Первый перевод проекта — статья «[What Every Frontend Developer Should Know About Webpage
 Rendering](http://frontendbabel.info/articles/webpage-rendering-101/)» попала в популярные рассылки [CSS
-Weekly](http://css-weekly.com/) и [HTML5 Weekly](http://html5weekly.com/). Благодаря им уже на следуюзий день сайт
+Weekly](http://css-weekly.com/) и [HTML5 Weekly](http://html5weekly.com/). Благодаря им уже на следующий день сайт
 посетило больше 9 тысяч человек! А всего за неделю было 35 тысяч просмотров.
 
 А вот картинка про то, какую аудиторию получили публикации, которые могли рассчитывать только на русскоязычных читателей
@@ -22,8 +22,8 @@ Weekly](http://css-weekly.com/) и [HTML5 Weekly](http://html5weekly.com/). Бл
 ![](http://img-fotki.yandex.ru/get/6745/14441195.32/0_85670_478637f6_orig.png)
 
 Более того, спустя ещё день devrel Google Chrome Пол Льюис ([@aerotwist](https://twitter.com/aerotwist)) опубликовал
-в своём блоге пост с дополнительной информацией о том как именно браузер рисует страницу — «[Pixels are
-expensive](http://aerotwist.com/blog/pixels-are-expensive/)». Ссылка Пола стала ещё одним источником траффика — более
+в своём блоге пост с дополнительной информацией, о том как именно браузер рисует страницу — «[Pixels are
+expensive](http://aerotwist.com/blog/pixels-are-expensive/)». Упоминание Полом Frontend Babel стало ещё одним источником траффика — более
 полутора тысяч посетителей. Но главное даже не это, а то что благодаря Frontend Babel **состоялся диалог**. Языковые
 границы стираются, и развитие нашей индустрии ускоряется. Очень круто видеть такой результат уже в первую неделю работы!
 
@@ -35,7 +35,7 @@ expensive](http://aerotwist.com/blog/pixels-are-expensive/)». Ссылка По
 раз](https://github.com/frontendbabel/frontendbabel.github.com/pull/74).
 
 Или можно [добавить статью в пул на перевод](https://github.com/frontendbabel/frontendbabel.github.com/issues/new). Там
-есть сколько то, но много не мало.
+уже есть сколько-то, но много не мало.
 
 Ближайшее время (за вычетом переводов) я планирую посвятить расширению языковой географии Frontend Babel. Уже сейчас в
 очереди есть статьи [на
