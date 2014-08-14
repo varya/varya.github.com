@@ -11,8 +11,6 @@ order: 2
 i-bem.js](http://bem.info/tutorials/articles/bem-js-tutorial/)<br/>
 This set of well-explained examples demonstrates how to create JavaScript
 components using the basic features of `i-bem.js`.
-Этот туториал по созданию JavaScript-компонент с фреймворком
-`i-bem.js` подробно описывает его базовые возможности.
 * [The thinking behind BEM](https://vimeo.com/66474705)<br/>
 The talk at [Front-Trends 2013](http://2013.front-trends.com/)  gives a birds-eye
 view of the sometimes surprising ideas behind BEM, and the benefits they offer
