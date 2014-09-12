@@ -1,6 +1,6 @@
 ---
 
-title: Run in time (about Mac applications)
+title: Run on time (about Mac applications)
 
 date: 2014-09-12
 
@@ -8,14 +8,14 @@ layout: post
 
 ---
 I use the same laptop for both work and personal needs. This is useful but makes me to see to keeping my
-work-life balance. I do this simply — turn off all the applications running when I finished my working day
+work-life balance. I do this simply — turn off all the applications running when I finish my working day
 in the evening. The only issue is not to forget to open them again next day. But this process can be automatized. :-)
 <excerpt/>
 The most important is to run the applications which are in use by the other team members. For example, I a Jabber app
 has to be running since the workday has started. The same goes for any other messenger.
 
 We here at AppGyver use [Flowdock](https://www.flowdock.com)
-for team comunication. So I needed to be sure that it is open every morning.
+for team communication. So I needed to be sure that it is open every morning.
 
 
 It turned out that this is doable on Mac with the native Calendar application. Let me show you how exactly.
