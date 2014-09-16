@@ -75,6 +75,3 @@ Not ideal, indeed. If your calendar is synchronized with iPhone, it peeps by thi
 application, so it reminds you about the event with sound. But as [one of my friends
 suggests](http://varya.me/ru/posts/run-app-in-time-on-mac/#comment-1582219469) the workaround can be to create a
 separate calendar for such event and not to synchronize it with other devices.
-
-Не без минусов. Этот же календарь на iPhone в 9:30 пиликает уведомлением о событии. Файл на телефоне он открыть не
-может, поэтому просто радостно сообщает, что вот оно событие наступает.
