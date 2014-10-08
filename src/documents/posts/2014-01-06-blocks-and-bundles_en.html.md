@@ -53,8 +53,7 @@ built with the tools. Block files are our dear CSS, JavaScript and sometimes tem
 Real world analogy of a BEM block (and actually any module of any modular
 pattern) can be a buiding brick.
 
-<img
-src="http://img-fotki.yandex.ru/get/6730/14441195.30/0_7e0f8_33c1c86c_L.jpg"/>
+![](http://img-fotki.yandex.ru/get/6730/14441195.30/0_7e0f8_33c1c86c_L.jpg)
 
 Bundle files are also what a browser can read: CSS, JavaScript, HTML. _None of
 them was written by a person, they are built with BEM tools_. Have a look
@@ -71,8 +70,8 @@ inside to be sure that this is robot's code.
 Think about bem tools as about building crane to pick up the bricks and make a
 house with them.
 
-<img
-src="http://img-fotki.yandex.ru/get/9058/14441195.30/0_7e0f3_ff76f66a_L.jpg"/>
+![](http://img-fotki.yandex.ru/get/9058/14441195.30/0_7e0f3_ff76f66a_L.jpg)
+
 Besides *.js, *.css and *.html files there is the only one here written by a
 developer. This is
 [index.bemjson.js](https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/index.bemjson.js),
@@ -85,8 +84,7 @@ informaiton about which blocks to use for a page, they pick them up from
 Extending the building-a-house example I can say that `page.bemjson.js` file
 here is a draft.
 
-<img
-src="http://img-fotki.yandex.ru/get/6704/14441195.30/0_7e1ba_9dacd537_L.jpg"/>
+![](http://img-fotki.yandex.ru/get/6704/14441195.30/0_7e1ba_9dacd537_L.jpg)
 
 But why do `bem tools` need the regular expessions?
 
@@ -111,13 +109,11 @@ into the same repository as well as the pages built with them.
 Comming back to the real world, not only bricks are the modules but lego blocks
 as well.
 
-<img
-src="http://img-fotki.yandex.ru/get/6704/14441195.30/0_7e0f6_f69c7d44_L.jpg">
+![](http://img-fotki.yandex.ru/get/6704/14441195.30/0_7e0f6_f69c7d44_L.jpg)
 
 They also are to build a house. A pretty different house though.
 
-<img
-src="http://img-fotki.yandex.ru/get/9326/14441195.30/0_7e0f4_3d999550_L.jpg"/>
+![](http://img-fotki.yandex.ru/get/9326/14441195.30/0_7e0f4_3d999550_L.jpg)
 
 Going futher you can detach code common for all the platforms and store it
 separately.
@@ -132,8 +128,7 @@ With that structure desktop version of a web site gets source code from both
 `common.blocks` and `desktop.blocks` levels as touch version gets it from
 `common.blocks` and `touch.blocks`.
 
-<img
-src="http://img-fotki.yandex.ru/get/6725/14441195.30/0_7e0f5_3e107fd4_L.jpg"/>
+![](http://img-fotki.yandex.ru/get/6725/14441195.30/0_7e0f5_3e107fd4_L.jpg)
 
 And before I wrap up, I cannot stop being delighted by the idea of [BEM project
 stub](https://github.com/bem/project-stub/). I use it a lot myself when starting

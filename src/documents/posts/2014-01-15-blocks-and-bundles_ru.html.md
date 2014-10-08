@@ -59,8 +59,7 @@ bem tools. Для блоков это знакомые нам CSS, JavaScript и
 Проводя параллели для БЭМ (и любого другого модульного паттерна) в реальном
 мире, можно сказать, что блок — это кирпичик.
 
-<img
-src="http://img-fotki.yandex.ru/get/6730/14441195.30/0_7e0f8_33c1c86c_L.jpg"/>
+![](http://img-fotki.yandex.ru/get/6730/14441195.30/0_7e0f8_33c1c86c_L.jpg)
 
 Файлы бандлов — это тоже файлы, нужные для браузера: CSS, JavaScript, HTML. _Ни
 один из них не написан разработчиком, они созданы bem tools_. Можете посмотреть
@@ -77,8 +76,8 @@ src="http://img-fotki.yandex.ru/get/6730/14441195.30/0_7e0f8_33c1c86c_L.jpg"/>
 Для понимания bem tools представьте, что это строительный кран. Он берет
 строительные блоки и возводит из них дом.
 
-<img
-src="http://img-fotki.yandex.ru/get/9058/14441195.30/0_7e0f3_ff76f66a_L.jpg"/>
+![](http://img-fotki.yandex.ru/get/9058/14441195.30/0_7e0f3_ff76f66a_L.jpg)
+
 Хотя, кроме *.js, *.css и *.html файлов, всё-таки есть один файл, написанный
 разрабочиком.
 Это
@@ -92,8 +91,7 @@ src="http://img-fotki.yandex.ru/get/9058/14441195.30/0_7e0f3_ff76f66a_L.jpg"/>
 Продолжая пример со строительством дома, можно сказать что `page.bemjson.js` —
 это чертеж.
 
-<img
-src="http://img-fotki.yandex.ru/get/6704/14441195.30/0_7e1ba_9dacd537_L.jpg"/>
+![](http://img-fotki.yandex.ru/get/6704/14441195.30/0_7e1ba_9dacd537_L.jpg)
 
 Но почему же `bem tools` нужно регулярное выражение в настройках?
 
@@ -118,13 +116,11 @@ src="http://img-fotki.yandex.ru/get/6704/14441195.30/0_7e1ba_9dacd537_L.jpg"/>
 Возвращаясь к примерам из реального мира, не только кирпичики могут быть
 модулями, но и детальки LEGO.
 
-<img
-src="http://img-fotki.yandex.ru/get/6704/14441195.30/0_7e0f6_f69c7d44_L.jpg">
+![](http://img-fotki.yandex.ru/get/6704/14441195.30/0_7e0f6_f69c7d44_L.jpg)
 
 Из них также можно построить дом. Немножечко другой, конечно.
 
-<img
-src="http://img-fotki.yandex.ru/get/9326/14441195.30/0_7e0f4_3d999550_L.jpg"/>
+![](http://img-fotki.yandex.ru/get/9326/14441195.30/0_7e0f4_3d999550_L.jpg)
 
 Если пойти дальше, вы можете выделить код блоков, общий для всех платформ, и
 хранить его отдельно.
@@ -139,8 +135,7 @@ src="http://img-fotki.yandex.ru/get/9326/14441195.30/0_7e0f4_3d999550_L.jpg"/>
 `common.blocks` и `desktop.blocks`, а touch версия — из уровней `common.blocks`
 и `touch.blocks`.
 
-<img
-src="http://img-fotki.yandex.ru/get/6725/14441195.30/0_7e0f5_3e107fd4_L.jpg"/>
+![](http://img-fotki.yandex.ru/get/6725/14441195.30/0_7e0f5_3e107fd4_L.jpg)
 
 И в заключении, я не перестаю радоваться идее проекта
 [BEM project
