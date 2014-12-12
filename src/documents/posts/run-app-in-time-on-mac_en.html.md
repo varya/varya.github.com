@@ -7,7 +7,7 @@ date: 2014-09-12
 layout: post
 
 ---
-I use the same laptop for both work and personal needs. This is useful but makes me to see to keeping my
+I use the same laptop for both work and personal needs. This is useful but makes me see to keeping my
 work-life balance. I do this simply — turn off all the applications running when I finish my working day
 in the evening. The only issue is not to forget to open them again next day. But this process can be automatized. :-)
 <excerpt/>
