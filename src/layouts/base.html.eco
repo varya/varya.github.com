@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="page page_<%= @document.lang %>">
+<html class="page page_<%= @document.lang %>" lang="<%= @document.lang %>">
 <head>
     <meta charset="utf-8"/>
     <title><%= @document.htmlTitle %></title>
