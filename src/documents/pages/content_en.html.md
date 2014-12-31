@@ -8,7 +8,7 @@ order: 2
 ---
 
 * [Tutorial on JavaScript components with
-i-bem.js](http://bem.info/tutorials/articles/bem-js-tutorial/)<br/>
+i-bem.js](http://bem.info/tutorials/bem-js-tutorial/)<br/>
 This set of well-explained examples demonstrates how to create JavaScript
 components using the basic features of `i-bem.js`.
 * [The thinking behind BEM](https://vimeo.com/66474705)<br/>

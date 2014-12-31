@@ -8,7 +8,7 @@ order: 2
 ---
 
 * [Пошаговое руководство по
-i-bem.js](http://ru.bem.info/tutorials/articles/bem-js-tutorial/)<br/>
+i-bem.js](http://ru.bem.info/tutorials/bem-js-tutorial/)<br/>
 Этот туториал по созданию JavaScript-компонент с фреймворком
 `i-bem.js` подробно описывает его базовые возможности.
 * [The thinking behind BEM](https://vimeo.com/66474705)<br/>
