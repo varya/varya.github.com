@@ -2,7 +2,7 @@
 
 title: JSCS in use
 
-date: 2014-12-04
+date: 2014-12-29
 
 layout: post
 
@@ -21,18 +21,18 @@ decision which tool to use was made quickly.
 There are indeed many other solutions, such as JSLint and JSHint, the most mentioned once. But let me first tell you a
 story.
 
-Оказывается, когда авторы JSHint познакомились с JSCS, он им так понравился, что они предпочли стать его
-контрибьютерами, чем развивать проверку стиля в своём инструменте. А у себя оставили более сложные штуки, не про стиль,
-а про программирование.
-
-<blockquote class="twitter-tweet" lang="ru"><p>And with that, JSCS now has all the style enforcement rules that are
+Interesting enough that JSHint authors liked JSCS so much that they prefered to contribute into it rather than develop
+style checkings in their tool. So they removed all the style enforcement rules out of JSHint and keep it now for
+more complex things not about coding style but about programming patterns.
+<blockquote class="twitter-tweet" lang="en"><p>And with that, JSCS now has all the style enforcement rules that are
 being dropped in <a href="https://twitter.com/JSHint">@JSHint</a> 3.0: <a
 href="https://t.co/W98EMSiTN5">https://t.co/W98EMSiTN5</a> cc <a
 href="https://twitter.com/valueof">@valueof</a></p>&mdash; Mike Sherov (@mikesherov) <a
-href="https://twitter.com/mikesherov/status/419596672520318976">4 января 2014</a></blockquote>
+href="https://twitter.com/mikesherov/status/419596672520318976">4 Jan 2014</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Получается, выбор стоит не между JSLint, JSHint и JSCS, а между JSLint и комбинацией JSHint + JSCS.
+This means that there is no question if you choose JSLint, JSHint **or** JSCS. Currently you can choose between
+JSLint and JSHint + JSCS working together.
 
 ```js
 gulp.task('jslint',
@@ -40,24 +40,25 @@ gulp.task('jslint',
   );
 ```
 
-А учитывая, что инструмент новый, со стройной архитектурой, контрибьютить в него будет одно удовольствие да и меньше
-шансов на слишком долгую жизнь багов из-за какого-нибудь непроходимого легаси.
+Assuming that JSCS is a new tool with not yet spoiled structure, I suppose that it would be a pleasure to contribute
+into it. Also, the tool's youth promises that future possible bugs would be fixed soon as there is no legacy.
 
-Вдохновляет также и тот факт, что JSCS уже выбрали такие уважаемые команды как разработчики jQuery, Bootsrap и
-AngularJS.
 
-Итак, JSCS — это npm-пакет, и установить его можно как глобально на свою машину так и локально на конкретный проект:
+Moreover, I personally find encouraging that JSCS has been already chosen by such respectable teams as jQuery, Bootsrap
+and AngularJS.
+
+Long story short, JSCS is an npm package. You can install it either globally or locally for a particular project:
 
 ```
 npm install jscs
 ```
 
-Кроме того, понадобится создать конфигурационный файл `.jscsrc` и там описать, какого стиля должен придерживаться
-JavaScript на вашем проекте. Этот файл помещается в корень проекта.
+Besides, you will need a configuration file `.jscsrc` and define what kind of JavaScript style you prefer for the
+project. This file should be put into the root of your project.
 
-Несмотря на большое количество правил, которые поддерживает JSCS, конфиг вряд ли будет большим, потому что в инструменте
-предусмотрены пресеты. Популярных стилей для JavaScript кода не так много, и если вы выбрали один из них, то нет нужды
-описывать стиль полностью. Достаточно указать, на кого вы хотели бы быть похожим:
+JSCS support tonns of rules. Nethertheless, your config file would not be too heavy thanks to presets. In most cases we
+choose from popular JavaScript styles and so there is no need to define the rules over and over again. You only need to
+write who you prefer to look like:
 
 * airbnb
 * crockford
@@ -67,17 +68,15 @@ JavaScript на вашем проекте. Этот файл помещаетс�
 * wikimedia
 * yandex
 
-Даже если у вас есть расхождения с этими стилями, всё равно удобно выбрать максимально похожий пресет, потому что в JSCS
-возможно переопределить правила пресета.
+Even if you want to be special, you still can choose the most similar preset and redefine some of its rules below.
 
-И, конечно, важно, что инструмент уже достаточно зрелый. А значит, есть все необходимые дружественные пакеты и плагины
-для разных редакторов.
+Important thing is that JSCS is already quite a mature thing, which means that you can easily find acompany packagies
+and needed plug-ins for editors.
 
-## Как это было
+## The Sucess Story
 
-В общем, учитывая все эти факты, мы остановились на JSCS. Начали с того, что написали подходящую нам конфигурацию и тут
-же исключили из списка для проверки все наши файлы. У проекта уже была модульная структура, поэтому это оказалось
-несложным.
+Assuming these facts, we decided to give JSCS a try. We started with defining a lovely configuration but excluded all
+the files from the checking process yet. Our project already had modular structure, so this was easy.
 
 ```
 {
@@ -92,14 +91,14 @@ JavaScript на вашем проекте. Этот файл помещаетс�
 }
 ```
 
-Мы договорились, что начиная работать с каким-нибудь модулем, кроме реализации фич, мы также будем править стиль и
-вычеркивать исправленные модули из списка непроверяемых файлов. Соблюдая это, мы довольно быстро исправили все файлы и
-обошлись без конфликтов.
+Then, we agreed that if any of us starts coding or changing a module, he/she will fix the codestyle and swipe out the
+fixed moduler from the `excludeFiles` list. Following this, we got our files fixed quite fast and even avoid conflicts.
 
-Гораздо важнее оказалось поддержание исправленных файлов в их исправленном состоянии во время будуших правок. Конечно,
-тут нам помогают автоматические проверки. Но возникает вопрос, настолько строги мы должны быть в этих проверках и когда
-именно проверять. Ведь поддержка стиля не должна становиться самоцелью и должна перетягивать на себя весь фокус
-разработки.
+Keeping the codestyle when maintaining these files lately turned out to be more challengable. Automatic checkings are
+very helpful here, but we needed to decide how strict we should be. The codestyle should not be our main goal instead of
+development.
+
+
 
 В итоге мы пришли к концепции раздения ответственности. Так, для основного репозитория мы выбрали жесткую политику
 в вопросе соблюдения стиля, а для форков — рекомендательную. Мы настроили Travis так, чтобы он проверял стиль для
