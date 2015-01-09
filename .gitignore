@@ -8,3 +8,5 @@ libs/
 *.bundles/*/*.*
 !*.bundles/*/*.bemjson.js
 !*.bundles/.bem/*
+
+src/public/styleguide
