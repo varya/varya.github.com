@@ -1,3 +1,37 @@
+/*
+
+
+Article
+
+markup:
+<div class="article" role="main">
+  <div class="article__body box__body">
+    <h1 class="article__header">
+      Article title
+    </h1>
+  </div>
+  <div class="article__text box__island">
+    Article text
+  </div>
+</div>
+
+Styleguide 1
+
+*/
+
+/*
+
+Article header
+
+markup:
+<h1 class="article__header">
+  Article title
+</h1>
+
+Styleguide 1.1
+
+*/
+
 .article__header
 {
     padding: 0;
