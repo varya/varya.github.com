@@ -10,7 +10,7 @@
     "bower-npm-install": "~0.5.1",
     "docpad": "^6.69.2",
     "docpad-plugin-cleanurls": "~2.7.0",
-    "docpad-plugin-eco": "~2.0.3",
+    "docpad-plugin-eco": "^2.1.0",
     "docpad-plugin-ghpages": "~2.4.3",
     "docpad-plugin-grunt": "~2.1.1",
     "docpad-plugin-highlightjs": "~2.2.1",
