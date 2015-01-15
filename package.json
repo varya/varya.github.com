@@ -21,7 +21,7 @@
     "enb": "~0.13.2",
     "enb-bemxjst": "~1.2.0",
     "enb-diverse-js": ">=0.1.0",
-    "enb-modules": "~0.1.2",
+    "enb-modules": "^0.2.0",
     "enb-xjst": "~1.1.1",
     "glob": "~3.2.9",
     "grunt": "~0.4.5",
