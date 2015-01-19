@@ -7,6 +7,13 @@ title: Статьи и презентации
 order: 2
 ---
 
+* [Styleguide generator by SC5](http://www.slideshare.net/VarvaraStepanova/sc5-style-guide-generator)<br/>
+Этой презентаций я знакомила разработчиков компаний
+[Veikkaus](https://www.veikkaus.fi/) и [Elisa](http://elisa.fi/) с инструментом SC5 StyleGuide в декабре 2014 и январе 2015.
+* [JSCS in use at SC5 Online](http://varya.me/jscs-talk/)<br/>
+Рассказ об JSCS, инструменте контроля JavaScript стиля, и опыте его использования в [SC5 Online](http://sc5.io/), 18
+ноября 2014 на [HelsinkiJS
+meetup](http://www.eventbrite.com/e/helsinkijs-november-2014-tickets-14262484475?utm_campaign=event_reminder&utm_medium=email&ref=eemaileventremind&utm_source=eb_email&utm_term=eventname).
 * [Пошаговое руководство по
 i-bem.js](http://ru.bem.info/tutorials/bem-js-tutorial/)<br/>
 Этот туториал по созданию JavaScript-компонент с фреймворком
