@@ -10,6 +10,8 @@ order: 2
 * [Styleguide generator by SC5](http://www.slideshare.net/VarvaraStepanova/sc5-style-guide-generator)<br/>
 With this presentation I introduced SC5 StyleGuide to frontend developers at [Veikkaus](https://www.veikkaus.fi/)
 and [Elisa](http://elisa.fi/) in December 2014 and January 2015.
+* [BEM FAQ](http://getbem.com/faq/)<br/>
+A list of frequently asked questions about BEM and detailed answers to them.
 * [JSCS in use at SC5 Online](http://varya.me/jscs-talk/)<br/>
 This talk given 18th on November at [HelsinkiJS
 meetup](http://www.eventbrite.com/e/helsinkijs-november-2014-tickets-14262484475?utm_campaign=event_reminder&utm_medium=email&ref=eemaileventremind&utm_source=eb_email&utm_term=eventname)

@@ -10,6 +10,8 @@ order: 2
 * [Styleguide generator by SC5](http://www.slideshare.net/VarvaraStepanova/sc5-style-guide-generator)<br/>
 Этой презентаций я знакомила разработчиков компаний
 [Veikkaus](https://www.veikkaus.fi/) и [Elisa](http://elisa.fi/) с инструментом SC5 StyleGuide в декабре 2014 и январе 2015.
+* [BEM FAQ](http://getbem.com/faq/)<br/>
+Список частозадаваемых вопросов по БЭМ и подробные ответы к ним.
 * [JSCS in use at SC5 Online](http://varya.me/jscs-talk/)<br/>
 Рассказ об JSCS, инструменте контроля JavaScript стиля, и опыте его использования в [SC5 Online](http://sc5.io/), 18
 ноября 2014 на [HelsinkiJS
