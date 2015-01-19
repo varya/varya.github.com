@@ -43,7 +43,7 @@ dev"](http://bem.info/articles/yandex-frontend-dev/).
 * [Frontend evolution at Yandex](https://vimeo.com/51897014)<br/>
 История БЭМ за 10 минут! Презентация на Fronteers Jam Session в октябре 2012.
 * [БЭМ и JavaScript: Сборник
-рецептов](http://events.yandex-team.ru/events/yasubbotnik/msk-sep-2012/talks/324/)<br/>
+рецептов](https://events.yandex.ru/lib/talks/324/)<br/>
 Презентация JavaScript по БЭМ на Яндекс.Субботнике 8 сентября 2012 в Москве.
 Разбор задач из реальной жизни настоящих проектов Яндекса.
 * [A New Frontend Methodology:
