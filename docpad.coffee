@@ -27,7 +27,7 @@ plugins:
             {raw: 'date', format: 'YYYY-MM-DD', formatted: 'computerDate'}
         ]
     ghpages:
-        deployRemote: 'origin'
+        deployRemote: 'varya'
         deployBranch: 'master'
     rss:
         default:
