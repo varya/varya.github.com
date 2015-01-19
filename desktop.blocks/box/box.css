@@ -1,0 +1,29 @@
+.box
+{
+    margin-bottom: 1em;
+}
+
+.box__body
+{
+    padding: 0 1em;
+}
+
+.box__island
+{
+    padding: 0 1em;
+    background-color: #f9f9f9;
+
+    padding: 1em;
+    margin-top: .25em;
+
+    border: rgba(0,0,0, .075) 1px solid;
+}
+
+.box__title
+{
+    font-size: 1.5em;
+    font-weight: 400;
+    margin: 0 0 .5em;
+    padding: 0;
+    color: #666;
+}

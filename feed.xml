@@ -1,0 +1,1294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[var ya; stepanova]]></title>
+        <description><![CDATA[Front end developer, blogger and cats lover.]]></description>
+        <link>http://varya.me/</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Mon, 19 Jan 2015 14:56:46 GMT</lastBuildDate>
+        <atom:link href="http://varya.me//feed.xml" rel="self" type="application/rss+xml"/>
+        <author><![CDATA[Varya Stepanova]]></author>
+        <pubDate>Mon, 19 Jan 2015 14:56:36 GMT</pubDate>
+        <item>
+            <title><![CDATA[Первая неделя Frontend Babel]]></title>
+            <description><![CDATA[<p>В прошлый понедельник запустился новый проект коллективных переводов фронтендерских статей на английский <a href="http://frontendbabel.info/">Frontend
+Babel</a>. Я писала об этом <a href="/ru/posts/frontend-babel-alpha">подробный пост</a>, который очень
+хорошо разошелся благодаря ретвитам и попаданию на Хабр. И насколько я могу судить по статистике, неделя прошла
+отлично.</p>
+<excerpt/>
+
+<p>Первый перевод проекта — статья «<a href="http://frontendbabel.info/articles/webpage-rendering-101/">What Every Frontend Developer Should Know About Webpage
+Rendering</a>» попала в популярные рассылки <a href="http://css-weekly.com/">CSS
+Weekly</a> и <a href="http://html5weekly.com/">HTML5 Weekly</a>. Благодаря им уже на следующий день сайт
+посетило больше 9 тысяч человек! А всего за неделю было 35 тысяч просмотров.</p>
+<p>А вот картинка про то, какую аудиторию получили публикации, которые могли рассчитывать только на русскоязычных читателей
+всего две недели тому назад:</p>
+<p><img src="http://img-fotki.yandex.ru/get/6745/14441195.32/0_85670_478637f6_orig.png" alt=""></p>
+<p>Более того, спустя ещё день devrel Google Chrome Пол Льюис (<a href="https://twitter.com/aerotwist">@aerotwist</a>) опубликовал
+в своём блоге пост с дополнительной информацией, о том как именно браузер рисует страницу — «<a href="http://aerotwist.com/blog/pixels-are-expensive/">Pixels are
+expensive</a>». Упоминание Полом Frontend Babel стало ещё одним источником трафика — более
+полутора тысяч посетителей. Но главное даже не это, а то что благодаря Frontend Babel <strong>состоялся диалог</strong>. Языковые
+границы стираются, и развитие нашей индустрии ускоряется. Очень круто видеть такой результат уже в первую неделю работы!</p>
+<p>Если вы уже вдохновлены стать причастными к этому успеху, <a href="https://github.com/frontendbabel/frontendbabel.github.com/issues?labels=%24+Russian&amp;page=1&amp;state=open">берите и
+переводите</a> :-)
+Кстати, не бойтесь сделать ошибку. Frontend Babel — это ресурс для англоязычной аудитории, и среди читателей обязательно
+найдётся кто-то, кто исправит вас Pull-Request&#39;ом. Это тоже <a href="https://github.com/frontendbabel/frontendbabel.github.com/pull/42">подтверждено
+опытом</a>, даже <a href="https://github.com/frontendbabel/frontendbabel.github.com/pull/74">несколько
+раз</a>.</p>
+<p>Или можно <a href="https://github.com/frontendbabel/frontendbabel.github.com/issues/new">добавить статью в пул на перевод</a>. Там
+уже есть сколько-то, но много не мало.</p>
+<p>Ближайшее время (за вычетом переводов) я планирую посвятить расширению языковой географии Frontend Babel. Уже сейчас в
+очереди есть статьи <a href="https://github.com/frontendbabel/frontendbabel.github.com/issues?labels=%24+French&amp;page=1&amp;state=open">на
+французском</a> и
+<a href="https://github.com/frontendbabel/frontendbabel.github.com/issues?labels=%24+Polish&amp;page=1&amp;state=open">польском</a>. Дело
+за малым — надо найти переводчиков :-)</p>
+<h2 id="changelog">Changelog</h2>
+<p>Сам сайт Frontend Babel претерпел изменения и внешнего вида, и сборки. Здесь спасибо <a href="http://kizu.ru/">Роме Комарову</a>, он
+насоздавал кучу issue, и их реализация делает сайт намного лучше с точки зрения UX.</p>
+<p>Изменения же генерации сайта понадобились, чтобы у статей появились мета-описание и кратинка. Это делает их более
+привлекательными, когда делишься ссылкой в Facebook или LinkedIn. Сниппет третьей статьи «<a href="http://frontendbabel.info/articles/developing-cross-browser-extensions/">Developing Cross-Browser
+Extensions</a>» уже выглядел вот так:</p>
+<p><img src="http://img-fotki.yandex.ru/get/6843/14441195.32/0_8566f_734ee93c_orig.png" alt=""></p>
+<p>Хорошо бы ещё иметь такую картинку для корня проекта. Кто-нибудь может нарисовать? Ну и если у вас есть другие идеи по
+улучшению, не стесняйтесь <a href="https://github.com/frontendbabel/frontendbabel.github.com/issues/new">завести issue</a>.</p>
+]]></description>
+            <link>http://varya.me//ru/posts/frontend-babel-first-week</link>
+            <guid isPermaLink="true">http://varya.me//ru/posts/frontend-babel-first-week</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Thu, 15 Jan 2015 18:26:30 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Использование JSCS]]></title>
+            <description><![CDATA[<p>Хочу поделиться опытом поддержания единого стиля JavaScript в одном из своих проектов. Недавно мы решили пробовать
+молодой инструмент JSCS, и результат его использования понравился всем членам команды.</p>
+<excerpt/>
+
+<p>Когда я присоединилась к проекту <a href="http://styleguide.sc5.io/">SC5 Styleguide</a>, мне сразу бросилось в глаза отсутствие
+единого стиля для JavaScript кода. Это ещё не было ужасающим, но было ясно, что проект в скором времени будет расти и чем раньше мы начнём
+прилагать усилия к соблюдению единого стиля, тем лучше. Тем более, я уже знала о существовании и особенностях JSCS,
+потому что на одном из моих проектов <a href="http://frontendbabel.info/articles/jscs-javascript-code-style/">публиковался перевод
+статьи о нем</a>. Поэтому мы даже не стояли перед вопросом,
+какой инструмент выбрать.</p>
+<p>Конечно, есть и другие решения. Чаще всего называют JSLint и JSHint. Но давайте я сначала расскажу вам одну историю.</p>
+<p>Оказывается, когда авторы JSHint познакомились с JSCS, он им так понравился, что они предпочли стать его
+контрибьютерами, чем развивать проверку стиля в своём инструменте. А у себя оставили более сложные штуки, не про стиль,
+а про программирование.</p>
+<p><blockquote class="twitter-tweet" lang="ru"><p>And with that, JSCS now has all the style enforcement rules that are
+being dropped in <a href="https://twitter.com/JSHint">@JSHint</a> 3.0: <a href="a
+href=&quot;https://t.co/W98EMSiTN5&quot;">a
+href=&quot;https://t.co/W98EMSiTN5&quot;</a><a href="https://t.co/W98EMSiTN5">https://t.co/W98EMSiTN5</a></a> cc <a href="a
+href=&quot;https://twitter.com/valueof&quot;">a
+href=&quot;https://twitter.com/valueof&quot;</a>@valueof</a></p>&mdash; Mike Sherov (@mikesherov) <a href="a
+href=&quot;https://twitter.com/mikesherov/status/419596672520318976&quot;">a
+href=&quot;https://twitter.com/mikesherov/status/419596672520318976&quot;</a>4 января 2014</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Получается, выбор стоит не между JSLint, JSHint и JSCS, а между JSLint и комбинацией JSHint + JSCS.</p>
+<pre class="highlight"><code class="hljs javascript">gulp.task(<span class="hljs-string">'jslint'</span>,
+  [ <span class="hljs-string">'jshint'</span>, <span class="hljs-string">'jscs'</span> ]
+  );
+</code></pre>
+<p>А учитывая, что инструмент новый, со стройной архитектурой, контрибьютить в него будет одно удовольствие да и меньше
+шансов на слишком долгую жизнь багов из-за какого-нибудь непроходимого легаси.</p>
+<p>Вдохновляет также и тот факт, что JSCS уже выбрали такие уважаемые команды как разработчики jQuery, Bootsrap и
+AngularJS.</p>
+<p>Итак, JSCS — это npm-пакет, и установить его можно как глобально на свою машину так и локально на конкретный проект:</p>
+<pre class="highlight"><code class="hljs cmake">npm <span class="hljs-keyword">install</span> jscs
+</code></pre><p>Кроме того, понадобится создать конфигурационный файл <code>.jscsrc</code> и там описать, какого стиля должен придерживаться
+JavaScript на вашем проекте. Этот файл помещается в корень проекта.</p>
+<p>Несмотря на большое количество правил, которые поддерживает JSCS, конфиг вряд ли будет большим, потому что в инструменте
+предусмотрены пресеты. Популярных стилей для JavaScript кода не так много, и если вы выбрали один из них, то нет нужды
+описывать стиль полностью. Достаточно указать, на кого вы хотели бы быть похожим:</p>
+<ul>
+<li>airbnb</li>
+<li>crockford</li>
+<li>google</li>
+<li>jquery</li>
+<li>mdcs</li>
+<li>wikimedia</li>
+<li>yandex</li>
+</ul>
+<p>Даже если у вас есть расхождения с этими стилями, всё равно удобно выбрать максимально похожий пресет, потому что в JSCS
+возможно переопределить правила пресета.</p>
+<p>И, конечно, важно, что инструмент уже достаточно зрелый. А значит, есть все необходимые дружественные пакеты и плагины
+для разных редакторов.</p>
+<h2 id="-">Как это было</h2>
+<p>В общем, учитывая все эти факты, мы остановились на JSCS. Начали с того, что написали подходящую нам конфигурацию и тут
+же исключили из списка для проверки все наши файлы. У проекта уже была модульная структура, поэтому это оказалось
+несложным.</p>
+<pre class="highlight"><code class="hljs r">{
+    <span class="hljs-keyword">...</span>
+
+    <span class="hljs-string">"excludeFiles"</span>: [
+      <span class="hljs-string">"node_modules/**"</span>,
+      <span class="hljs-string">"src/modules/a/**"</span>,
+      <span class="hljs-string">"src/modules/b/**"</span>,
+      <span class="hljs-string">"src/*.js
+    ]
+}
+</span></code></pre><p>Мы договорились, что начиная работать с каким-нибудь модулем, кроме реализации фич, мы также будем править стиль и
+вычеркивать исправленные модули из списка непроверяемых файлов. Соблюдая это, мы довольно быстро исправили все файлы и
+обошлись без конфликтов.</p>
+<p>Гораздо важнее оказалось поддержание исправленных файлов в их исправленном состоянии во время будуших правок. Конечно,
+тут нам помогают автоматические проверки. Но возникает вопрос, настолько строги мы должны быть в этих проверках и когда
+именно проверять. Ведь поддержка стиля не должна становиться самоцелью и должна перетягивать на себя весь фокус
+разработки.</p>
+<p>В итоге мы пришли к концепции раздения ответственности. Так, для основного репозитория мы выбрали жесткую политику
+в вопросе соблюдения стиля, а для форков — рекомендательную. Мы настроили Travis так, чтобы он проверял стиль для
+пул-реквестов. Если стиль не соблюден, пул-реквест не может быть влит в основной репозиторий. Таким образом, там вообще
+никогда нет кода с плохим стилем. В то же время для форков всё гораздо мягче. Мы отказались от насильственных pre-push
+хуков с проверкой стиля, но рекомендуем самостоятельную установку pre-commit хука и использование плагинов JSCS для
+редакторов, чтобы узнавать об ошибках в процессе разработки, а не тогда, когда ломается пул-реквест. Все рекомендации
+написаны у нас в разработческой документации, и новые члены команды активно ими пользуются.</p>
+<p>Всем особенно нравится, как реализована поддержа в редакторах. Ведь конфигурация стиля приезжает в репозиторий проекта
+вместе с кодом, и редактор считывает её самостоятельно. А, главное, у разных проектов может быть разный стиль, и для
+перекрестной работы не требуется никакая перенастройка.</p>
+<p><img src="http://varya.me/jscs-talk/pictures/sublime.gif" alt=""></p>
+<p>Ну и, конечно, всегда есть возможность запустить проверку стиля вручную как gulp-таск.</p>
+<p><img src="http://varya.me/jscs-talk/pictures/travis.png" alt=""></p>
+<h2 id="-">Предостережения</h2>
+<p>Во время внедрения инструмента мы столкнулись с парочкой неудобств. Думаю, стоит о них упомянуть, тем более, что к ним
+нашлись решения.</p>
+<p>Основное расстройство — ошибка &quot;out of memory&quot; при запуске gulp-таска с проверкой. Оказалось, что недостаточно исключить
+файлы в конфигурации JSCS. Gulp всё равно сначала пытается работать с ними всеми и пока дело доходит до JSCS, память уже
+кончается. В итоге мы пришли к использованию пакета <code>gulp-ignore</code>:</p>
+<pre class="highlight"><code class="hljs actionscript">gulp.task(<span class="hljs-string">'jscs'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">return</span> gulp.src([
+    <span class="hljs-string">'**/*.js'</span>
+  ])
+  .pipe(gulpIgnore.exclude([
+    <span class="hljs-string">'node_modules/**'</span>,
+    <span class="hljs-string">'demo-output/**'</span>
+  ]))
+  .pipe(jscs());
+})
+</code></pre><p>Это не очень хорошее решение, ведь здесь пришлось перчислись все те исключения, которые уже задекларированы в <code>.jscsrc</code>.
+Но лучшего варианта у нас пока нет.</p>
+<p>И, второй момент: если вы используете watch в разработке, то скорее всего захотите видеть ошибки в терминале, но не
+прерывать исполнение таска. Для этого потребуется <code>gulp-plumber</code>:</p>
+<pre class="highlight"><code class="hljs r">gulp.task(<span class="hljs-string">'jscs'</span>, <span class="hljs-keyword">function</span>() {
+  <span class="hljs-keyword">return</span> gulp.src([
+    <span class="hljs-string">'**/*.js'</span>
+  ])
+  <span class="hljs-keyword">...</span>
+  .pipe(plumber())
+  .pipe(jscs());
+});
+</code></pre><p>Всё, больше никаких проблем или вопросов относительно иструмента у нас не было. Он прекрасно работает и уже сохранил нам
+тысячи человекочасов.</p>
+<h2 id="-">А так же</h2>
+<p>Возможно, вас также заинтересует <a href="http://habrahabr.ru/post/220229/">рассказ автора JSCS</a> и мои
+<a href="http://varya.me/jscs-talk/">слайды</a> от доклада на эту тему.</p>
+]]></description>
+            <link>http://varya.me//ru/posts/jscs-in-use</link>
+            <guid isPermaLink="true">http://varya.me//ru/posts/jscs-in-use</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Tue, 25 Nov 2014 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Run on time (about Mac applications)]]></title>
+            <description><![CDATA[<p>I use the same laptop for both work and personal needs. This is useful but makes me see to keeping my
+work-life balance. I do this simply — turn off all the applications running when I finish my working day
+in the evening. The only issue is not to forget to open them again next day. But this process can be automatized. :-)</p>
+<p><excerpt/>
+The most important is to run the applications which are in use by the other team members. For example, I a Jabber app
+has to be running since the workday has started. The same goes for any other messenger.</p>
+<p>We here at AppGyver use <a href="https://www.flowdock.com">Flowdock</a>
+for team communication. So I needed to be sure that it is open every morning.</p>
+<p>It turned out that this is doable on Mac with the native Calendar application. Let me show you how exactly.</p>
+<h3 id="create-a-new-event-in-the-calendar">Create a new event in the Calendar</h3>
+<p>I named mine &quot;Run Flowdock&quot;. Do not bother about the laptop being opened by the event time your are setting up. The
+application can run in advance. My event has <code>9:35</code> time.</p>
+<h3 id="make-your-event-repeated">Make your event repeated</h3>
+<p>This event should be repeated every week at the workdays.</p>
+<h3 id="run-the-application">Run the application</h3>
+<p>Now the most interesting thing. You can run any application using custom event alerts.</p>
+<p>Choose the last item in the <code>alert</code> select, which is <code>Custom</code>.</p>
+<p><img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/4802/14441195.32/0_88921_7d53950e_L.png" width="300" height="500" border="0"
+title="" alt=""/></p>
+<p>Once the next dialog is opened, choose <code>Open file</code>.</p>
+<p><img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/4813/14441195.32/0_88925_47986a79_M.png" width="300" height="167" border="0"
+title="" alt=""/>
+<img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/5109/14441195.32/0_88924_ea39983e_M.png" width="300" height="162" border="0"
+title="" alt=""/></p>
+<p>By <code>file</code> they mean an applicaiton to be run. It is defined to be <code>Calendar</code> by default but you can
+choose another one.</p>
+<p><img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/4810/14441195.32/0_88922_22d155c7_M.png" width="300" height="193" border="0"
+title="" alt=""/></p>
+<p>Then, select the application needed in the Finder dialog. In my case it is Flowdock.</p>
+<p><img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/4809/14441195.32/0_88923_7597bf28_M.png" width="300" height="196" border="0"
+title="" alt=""/></p>
+<p>Then, fix the time. 5 minutes before 9:35 is exactly half past nine. Let me remin you, this does not mean that
+you need to be at work by this time and have your laptop opened. You can be riding a bus or even sleeping. The
+application will run later, when you open your computer.</p>
+<h3 id="drawback">Drawback</h3>
+<p>Not ideal, indeed. If your calendar is synchronized with iPhone, it peeps by this time. The phone cannot run the
+application, so it reminds you about the event with sound. But as <a href="http://varya.me/ru/posts/run-app-in-time-on-mac/#comment-1582219469">one of my friends
+suggests</a> the workaround can be to create a
+separate calendar for such event and not to synchronize it with other devices.</p>
+]]></description>
+            <link>http://varya.me//en/posts/run-app-in-time-on-mac</link>
+            <guid isPermaLink="true">http://varya.me//en/posts/run-app-in-time-on-mac</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Fri, 12 Sep 2014 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Запускать вовремя (о приложениях на Mac)]]></title>
+            <description><![CDATA[<p>Я использую один и тот же ноутбук и для работы, и для личных дел. Это удобно, но за соблюдением баланса «работа-жизнь»
+приходится следить дополнительно. Я поступаю просто: уходя с работы, закрываю все приложения. Главное не забывать их
+открывать следующим утром. Но этот процесс можно автоматизировать :-)</p>
+<p><excerpt/>
+Особенно важно держать открытыми приложения, от которых зависит работа других членов команды. Например, с началом
+рабочего дня должен быть запущен джаббер (или другой используемый мессенджер).</p>
+<p>В AppGyver для общения всех со всеми
+используют <a href="https://www.flowdock.com">Flowdock</a>. Вот мне и понадобилось гарантированно иметь его открытым с утра.</p>
+<p>Оказалось, что на Mac запуск приложения в определенное время можно сделать штатными средствами — при помощи приложения
+Calendar. Вот как:</p>
+<h3 id="-">Создайте в Календаре новое событие</h3>
+<p>Я назвала своё «Run Flowdock». Время события не обязательно устанавливать с учетом того, чтобы компьютер был уже открыт.
+Можно и удобно запускать всё заранее. У моего события стоит <code>9:35</code>.</p>
+<h3 id="-">Сделайте событие повторяющимся</h3>
+<p>Событие должно повторяться каждую неделю по рабочим дням.</p>
+<h3 id="-">Запускайте приложение</h3>
+<p>А теперь самое интересное. Приложение можно запускать как кастомное уведомление о событии.<br/><br/>
+В выпадушке <code>alert</code> нужно выбрать самый последний пункт — <code>Custom</code>.<br/>
+<img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/4802/14441195.32/0_88921_7d53950e_L.png" width="300" height="500" border="0"
+title="" alt=""/></p>
+<p>В появившемся диалоге вместо <code>Message</code> нужно выбрать <code>Open file</code></p>
+<p><img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/4813/14441195.32/0_88925_47986a79_M.png" width="300" height="167" border="0"
+title="" alt=""/>
+<img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/5109/14441195.32/0_88924_ea39983e_M.png" width="300" height="162" border="0"
+title="" alt=""/></p>
+<p>Под файлом здесь понимается приложение. По умолчанию это <code>Calendar</code>, но можно выбрать и другое.</p>
+<p><img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/4810/14441195.32/0_88922_22d155c7_M.png" width="300" height="193" border="0"
+title="" alt=""/></p>
+<p>Затем в диалоговом окне Finder выбрать нужное приложение из папки <code>Applications</code>. В моём случае это Flowdock.</p>
+<p><img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/4809/14441195.32/0_88923_7597bf28_M.png" width="300" height="196" border="0"
+title="" alt=""/></p>
+<p>Затем корректируем время. За 5 минут до 9:35 — как раз будет полдесятого. Напоминаю, это вовсе не означает, что к этому
+времени нужно сидеть на работе с открытым ноутбуком. Можно ехать в автобусе или вообще спать. Приложение запустится
+тогда, когда вы откроете крышку.</p>
+<h3 id="-">Минусы</h3>
+<p>Не без минусов. Этот же календарь на iPhone в 9:30 пиликает уведомлением о событии. Файл на телефоне он открыть не
+может, поэтому просто радостно сообщает, что вот оно событие наступает.</p>
+]]></description>
+            <link>http://varya.me//ru/posts/run-app-in-time-on-mac</link>
+            <guid isPermaLink="true">http://varya.me//ru/posts/run-app-in-time-on-mac</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Wed, 10 Sep 2014 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The so different frontend community and how we deal with it]]></title>
+            <description><![CDATA[<p>Long time ago I could read and learn about web development in Russian only. Later, having completed an English language course, I began to read articles and blogs in English more and more. The same went for conferences: I visited
+Russian-speaking conferences at first and later switched to English-speaking conferences in Europe. In both articles and conference talks, I noticed how the content was different depending on the language used. Sometime I even thought that the communities evolve in different ways and follow different directions.</p>
+<p><excerpt/>
+My Russian-speaking colleagues indeed know the &quot;<a href="http://vitaly.harisov.name/article/independent-blocks.html">HTML/CSS markup with independent blocks</a>&quot;
+article by Vitaly Harisov. He published
+this in 2008 and outlined the main principles of HTML/CSS development which is known as BEM nowadays. We can say
+that was the moment BEM started being used in Russia and neighbouring countries. As for English-speaking developers, they
+learned about BEM only in 2012 from <a href="http://www.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/">my article in
+SmashingMagazine</a>. Then, as you might
+know, <a href="http://csswizardry.com/about/">Harry Roberts</a> caught sight
+of that and thanks to his publications BEM became known to the rest of the world.</p>
+<p>Thus, 4 years passed since the technology was released until a typical English-speaking web developer got a chance to learn about it. This could have been enough time for a technology to mature and slowly die.</p>
+<p>No doubt, a better option would be to make it available back in 2008. I suppose that modular trend on the web would have started earlier and we would have got the results faster. Today we
+would use Web Components (they implement some component ideas of BEM) everywhere (and for a long time, already).</p>
+<p>With all this in mind, I decided to dedicate some of my free time to publish translations on my blog.
+So the translated articles on <a href="/en/issues/ym-modular-system">Ymaps modules</a> and
+<a href="/en/issues/beml-html-preprocessor">BEML</a> were published. I also had more articles in the queue for translation. Reading
+a lot of developer blogs in Russian, I realized that a lot of interesting content is still being produced. &quot;Is this for Russia only?&quot; I asked myself.</p>
+<p>Imagine all these new approaches, libraries, and frameworks that exist today all over the world!.. but you will never
+learn them because their authors publish in Arabic, Spanish, Japanese or other languages you do not speak.</p>
+<p>Nevertheless, we frontend developers have a wonderful community. Open source culture
+and technologies like GitHub enable us to help each other and get better results together. To contribute, one does not have to be an expert. For example, many products get their documentation improved just with the help of people who like the project.</p>
+<p>This encouraged me to create a collaboration web site for translating frontend articles from local languages into English.</p>
+<p>The project is called <strong>Frontend Babel</strong> and here is the URL: <a href="http://frontendbabel.info">http://frontendbabel.info</a>.
+Technically, it is a statically generated blog (thanks to DocPad). Any person can take it and run a local copy, then add
+a translated article and submit a pull request into the original source.</p>
+<ul>
+<li><a href="http://frontendbabel.info/about/">About the project</a></li>
+<li><a href="https://github.com/frontendbabel/frontendbabel.github.com">Repository on GitHub</a></li>
+<li><a href="http://frontendbabel.info/how-to-contribute">How to contribute</a></li>
+</ul>
+<p>The first couple of articles were already translated by <a href="https://www.google.com/+MaxShirshin">Max Shirshin</a>. These are:</p>
+<ul>
+<li>an interesting <a href="http://frontendbabel.info/articles/webpage-rendering-101">post about web page rendering by Alexander
+Skutin</a></li>
+<li>an awesome <a href="http://frontendbabel.info/articles/graphical-interface">article about graphical interface by Danil
+Kovchy</a></li>
+</ul>
+<p>You can already share these links with your English-speaking colleagues :-)</p>
+<p>Max and I have plans to translate more during the next weeks. I encourage all of you who knows Arabic, Japanese, Polish, French, Spanish (and any other language) to join the project and help us translate. English-speaking developers can do proofreading.</p>
+<p>Translating into a foreign language is hard work indeed, but with the help of English-speaking people in our community, we will get the texts improved. So, if you were thinking about writing in English, this may be a good chance to start and learn.<br/></p>
+<p>Interesting articles will attract visitors. With this, both an author and a translator get more attention on the web and establish new proffesional contacts throught their websites and social networks.</p>
+<p>Always remember: a contribution to an open source project can be small, but it is always appreciated! Here are just
+some ideas on what you can do:</p>
+<ul>
+<li><a href="https://github.com/frontendbabel/frontendbabel.github.com/issues/new">Add new source articles into our task
+queue</a><br/>
+If you know an interesting article worth to be published, create an issue about it. So another
+contributer can grab this task and translate it.</li>
+<li><a href="http://frontendbabel.info/how-to-contribute#push-new-translation">Push new translations</a><br/>
+Find a nice article in a language you know, translate it into English and publish on this website.</li>
+<li><strong>Tell friends about the project</strong><br/>
+Mentioning this project in social networks and your blog posts you can involve people from
+all over the world!</li>
+<li>Fix English in the texts<br/>
+If you spot a grammatical error, you can edit an article (there is a link to an editor below) and submit
+a pull request.</li>
+<li>Propose site changes<br/>
+Suggest what can be improved on this web site by adding your ideas to <a href="https://github.com/frontendbabel/frontendbabel.github.com/issues?labels=%40+Translation&amp;state=open">the list of
+issues</a>.</li>
+<li><a href="https://github.com/frontendbabel/frontendbabel.github.com/issues?labels=&amp;page=1&amp;state=open">Grab an issue to do</a><br/></li>
+</ul>
+<p>Your contributions will help improve this project a lot!</p>
+]]></description>
+            <link>http://varya.me//en/posts/frontend-babel-alpha</link>
+            <guid isPermaLink="true">http://varya.me//en/posts/frontend-babel-alpha</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Mon, 30 Jun 2014 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Про дружбу народов во frontend сообществе]]></title>
+            <description><![CDATA[<p>Когда-то я читала о web-разработке только на русском. Позднее, выучившись на курсах английского, я стала всё больше и
+больше читать англоязычные блоги и статьи. Также было и с конференциями: начав с русскоязычных, я затем стала посещать и
+зарубежные. Иногда и со статьями, и с
+докладами, я замечала, что контент очень разный. Бывало, складывалось впечатление, что каждое сообщество безусловно
+развивается, но своим путём.</p>
+<p><excerpt/>
+Думаю, многие русскоязычные разработчики знают статью Виталия Харисова «<a href="http://vitaly.harisov.name/article/independent-blocks.html">Вёрстка независимыми
+блоками</a>».
+Виталий опубликовал её в 2008 году, обозначив основные принципы вёрстки, известные сейчас под именем БЭМ. Можно считать,
+что с того момента началось развитие БЭМ в России и соседних странах. А разработчики, владеющие английским языком,
+узнали про БЭМ лишь в 2012 году из <a href="http://www.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/">моей статьи в
+SmashingMagazine</a>.
+Потом, как вы знаете, методология понравилась <a href="http://csswizardry.com/about/">Гари Робертсу</a> и благодаря его публикациям распространилась и на Западе.</p>
+<p>Итак, прошло <strong>4 года</strong> между тем как технология была выпущена в свет и тем как о ней узнал обычный фронтендер из Алабамы.
+За такой срок многие технологические вещи даже успевают устареть.</p>
+<p>Нет никаких сомнений: и для технологии, и для индустрии было бы намного лучше, узнай массовый пользователь о БЭМ в
+далеком 2008. Скорее всего развитие модульных технологий в Web началось бы раньше, и пошло бы быстрее. Уже сейчас мы бы
+использовали WebComponents (реализующие идеи компонентного подхода БЭМ) повсеместно.</p>
+<p>Некоторое время назад, размышляя над фактами, изложенными выше, я решила посвящать часть своего времени и страниц в блоге
+переводам. Так появились посты-переводы про <a href="/en/issues/ym-modular-system">Ymaps modules</a> и
+<a href="/en/issues/beml-html-preprocessor">BEML</a>. Сразу скажу, на очереди для перевода были и другие статьи. Читая личные блоги и
+Хабр, я видела, что люди пишут уйму всего интересного. Но... разве только в России?</p>
+<p>Представьте, сколько новых решений, библиотек, фреймворков есть на сегодняшний момент в других уголках света!
+Только вы о них не узнаете, ведь их авторы говорят на арабском, испанском, японском и на многих других неизвестных вам
+языках :-)</p>
+<p>И всё-таки мы живём в удивительное время, и у нас, разработчиков интерфейсов, потрясающее сообщество. Open source
+культура и такие технологии как GitHub позволяют нам помогать друг другу и добиваться намного больших результатов
+вместе. При этом вовсе не обязательно коммитить в NodeJS, чтобы внести свой вклад. Так, например, работает известный многим
+проект <a href="http://frontender.info/">Frontender.info</a> — благодаря коллективному труду у русскоязычных разработчиков есть постоянно обновляемый ресурс с
+переводами самых актуальных статей с английского языка на русский.</p>
+<p>Всё это подтолкнуло меня к созданию сервиса коллективных переводов на английский.</p>
+<p>Проект называется <strong>Frontend Babel </strong> и уже доступен по адресу <a href="http://frontendbabel.info">http://frontendbabel.info</a>.
+Это статический блог (здесь я говорю спасибо DocPad за генерацию) — любой может развернуть его у себя, добавить
+статью-перевод и пул-реквестом влить в сайт.</p>
+<ul>
+<li><a href="http://frontendbabel.info/about/">о проекте</a></li>
+<li><a href="https://github.com/frontendbabel/frontendbabel.github.com">репозиторий</a></li>
+<li><a href="http://frontendbabel.info/how-to-contribute">как контрибьютить</a></li>
+</ul>
+<p>Первые статьи уже перевёл с русского <a href="https://www.google.com/+MaxShirshin">Макс Ширшин</a>. Это</p>
+<ul>
+<li>интересная <a href="http://frontendbabel.info/articles/webpage-rendering-101">заметка Александра Скутина о рендеринге
+страниц</a> (вы могли читать её на Хабре)</li>
+<li>и прекрасная <a href="http://frontendbabel.info/articles/graphical-interface">статья Данила
+Ковчего о графическом интерфейсе</a>.</li>
+</ul>
+<p>Можете уже сейчас поделиться этими
+ссылками со своими англоязычными коллегами :-) Пусть узнают, какой у нас создаётся хороший контент.</p>
+<p>Мы с Максом собираемся переводить всё новые и новые статьи. Также я приглашаю присоединиться к проекту арабо- японо-
+испано- (тут даже бессмысленно перечислять каких ещё) язычных разработчиков. Надеюсь, они откликнутся, и мы наконец-то сможем узнать об
+идеях и технических новинках наших коллег. Правда, вдохновить их на работу можно будет только собственным примером. Так
+что, присоединяйтесь и вы.</p>
+<p>Конечно, переводить на чужой язык намного сложнее, чем на родной. Но всё равно я хочу вас воодушевить. Все статьи
+будут вычитываться (пока нами с Максом, а очень скоро — нейтивами), если вы ещё не пишете на английском, но хотели
+начать, это отличная возможность потренироваться и научиться новому.<br/>
+Статьи с хорошим контентом получают траффик. И упоминание автора и переводчика статьи (со ссылками на сайт и
+социальные сети) — это заслуженные ими упоминание и новые профессиональные контакты.</p>
+<p>Всегда помните: вклад в open source проект может быть небольшим, но в любом случае он неоценим! Вот лишь несколько идей,
+каким может быть ваше участие:</p>
+<ul>
+<li><a href="https://github.com/frontendbabel/frontendbabel.github.com/issues/new">Добавьте статью в очередь на
+перевод</a><br/>
+Если вы знаете интересную статью (да хоть вашу собственную), которую стоит опубликовать, заведите issue об этом. Другой
+участник проекта увидит эту задачу и переведёт.</li>
+<li><a href="http://frontendbabel.info/how-to-contribute#push-new-translation">Сделайте свой перевод</a><br/>
+Найдите интересную статью на русском, переведите её на английский и опубликуйте на сайте.</li>
+<li><strong>Расскажите друзьям и коллегам о проекте</strong><br/>
+Написав о Frontend Babel в Twitter, Facebook или своём блоге, вы поможете привлечь новых участников проекта. Особенно
+круто вставить несколько мотивационных слов от себя :-)</li>
+<li>Поправьте английский в статьях<br/>
+Если вы видите грамматическую ошибку или опечатку, статью можно отредактировать (внизу, под текстом, есть ссылка) и
+предложить свой pull request.</li>
+<li>Предложите улучшения на сайте<br/>
+Посоветуйте, что можно было бы улучшить, изложив свои идеи в
+<a href="https://github.com/frontendbabel/frontendbabel.github.com/issues?labels=%40+Translation&amp;state=open">списке
+задач</a>.</li>
+<li><a href="https://github.com/frontendbabel/frontendbabel.github.com/issues?labels=&amp;page=1&amp;state=open">Возьмите на себя задачу</a><br/>
+С вашим участием сайт может стать намного лучше!</li>
+</ul>
+]]></description>
+            <link>http://varya.me//ru/posts/frontend-babel-alpha</link>
+            <guid isPermaLink="true">http://varya.me//ru/posts/frontend-babel-alpha</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Mon, 30 Jun 2014 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Using side drawers in mobile apps on Steroids.js]]></title>
+            <description><![CDATA[<p>As a mobile apps user you may be already familiar to drawers.
+They are quite popular solution for a side menu. Using <code>Steroids</code>
+HTML5/JavaScript framework for hybrid mobile applications, you
+can bring such an interface solution into your product very easy.</p>
+<excerpt/>
+
+<p>The usage of drawers explained here is demonstrated in the <a href="https://github.com/AppGyver/kitchensink">Steroids
+Kitchensink</a> open source application.
+This is now being developed set of most useful examples for Steroids.
+As the application is constantly changing, I will freeze the code examples
+at <a href="https://github.com/AppGyver/kitchensink/tree/ceacb0ea80799b1d81454e2e966b553b807fbadc">28 May 2014</a>.</p>
+<p>To explore the application in your mobile device or in a
+simulator clone the repository and run the project. You may need some information
+about how to start Steroids projects. That can be learned from tutorials:</p>
+<ul>
+<li><a href="https://academy.appgyver.com/categories/1-setup-and-getting-started/contents/1-installing-steroids">Installing
+Steroids</a></li>
+<li><a href="https://academy.appgyver.com/categories/1-setup-and-getting-started/contents/2-hello-world">Hello World application</a></li>
+</ul>
+<p>Or from my recent article about <a href="/en/posts/html5-mobile-app-width-native-ui/">HTML5 mobile apps with native UI on
+Steroids</a>.</p>
+<p>Once run the project you will see a page with a list of examples
+and a navigation bar.</p>
+<p><img class="article__image" src="http://img-fotki.yandex.ru/get/9652/14441195.32/0_8477d_3b6d66a5_L.png" width="282" height="500" border="0"/></p>
+<p>The button to teh left of a menu bar opens a side menu. But before we start to
+study side drawers let&#39;s look at how this button is shown.</p>
+<p>The initial view is coded in <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/app/views/example/index.html"><code>app/views/example/index.html</code></a>.
+This is an angular view with directives for the list and for the navigation bar.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"IndexCtrl"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">navigation-bar</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Steroids Kitchensink"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">left-button</span> <span class="hljs-attribute">icon</span>=<span class="hljs-value">"/vendor/icons8/menu-32"</span>
+        <span class="hljs-attribute">onTap</span>=<span class="hljs-value">"showMenu()"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">left-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">navigation-bar</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>The <code>navigation-bar</code> directive is custom and described in <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/app/directives/navigationBar.coffee"><code>app/directives/navigationBar.coffee</code></a>.
+Using such a directive rather than <code>steroids.view.navigationBar</code> helpers at every page is
+more useful for the applications with many views.</p>
+<p>Indeed inside the directive the same helpers are used. But declaring navigation bar
+title and buttons in the view makes our programmers lifes a little bit
+easier.</p>
+<p>Here the navigation bar titled &quot;Steroids Kitchensink&quot; contains a &quot;hamburger&quot;
+menu button which responds to the tapping with calling <code>showMenu</code> methods of
+the corresponding controller.</p>
+<p>This controller is coded in <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/app/controllers/example.coffee"><code>app/controllers/example.coffee</code></a>.
+As you can see, the <code>showMenu</code> method is pretty short.</p>
+<pre class="highlight"><code class="hljs coffeescript">$scope.showMenu = <span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>
+  steroids.drawers.show {
+    <span class="hljs-attribute">edge</span>: steroids.screen.edges.LEFT
+  }
+</code></pre>
+<p>It uses the drawers <code>show</code> method and slide the initial view to
+the right which uncovers the menu view.</p>
+<p>Of course, the code needs to know what is the view we mean by &#39;left&#39;.
+We have to provide it with such a knowledge declaring the list of drawers
+in the <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/config/application.coffee#L39"><code>config/application.coffee</code></a>
+configuration file.</p>
+<pre class="highlight"><code class="hljs coffeescript">steroids.config.drawers =
+  <span class="hljs-attribute">left</span>:
+    <span class="hljs-attribute">id</span>: <span class="hljs-string">"sidemenu"</span>
+    <span class="hljs-attribute">location</span>: <span class="hljs-string">"http://localhost/views/sidemenu/index.html"</span>
+    <span class="hljs-attribute">showOnAppLoad</span>: <span class="hljs-literal">false</span>
+    <span class="hljs-attribute">widthOfDrawerInPixels</span>: <span class="hljs-number">250</span>
+  <span class="hljs-attribute">options</span>:
+    <span class="hljs-attribute">centerViewInteractionMode</span>: <span class="hljs-string">"Full"</span>
+    <span class="hljs-attribute">closeGestures</span>: [<span class="hljs-string">"PanNavBar"</span>, <span class="hljs-string">"PanCenterView"</span>, <span class="hljs-string">"TapCenterView"</span>]
+    <span class="hljs-attribute">openGestures</span>: [<span class="hljs-string">"PanNavBar"</span>, <span class="hljs-string">"PanCenterView"</span>]
+    <span class="hljs-attribute">showShadow</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-attribute">stretchDrawer</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-attribute">widthOfLayerInPixels</span>: <span class="hljs-number">0</span>
+</code></pre>
+<p>Here the menu view file and some parameters. You can learn about
+what they mean from a special tutorial about <a href="https://academy.appgyver.com/categories/3-user-interface-and-design/contents/98-configuring-drawers-on-app-load">configuring drawers</a>.</p>
+<p>This will make the sidemenu shown.</p>
+<p><img class="article__image" src="http://img-fotki.yandex.ru/get/9766/14441195.32/0_8477e_dbe7889e_L.png" width="282" height="500" border="0"/></p>
+<p>To make it look like in the picture you need to provide a
+corresponding view with the list of menu items. Here it is defined
+in <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/app/views/sidemenu/index.html"><code>app/views/sidemenu/index.html</code></a>.
+This is pretty similar to the list of examples in the initial view. To make it function
+we provide:</p>
+<ul>
+<li>a list of items and the corresponding view in <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/www/data/sidemenu.json"><code>www/data/sidemenu.json</code></a>;</li>
+<li>data model in <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/app/models/sidemenu.js"><code>app/models/sidemenu.js</code></a>;</li>
+<li>controller in <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/app/controllers/sidemenu.coffee"><code>app/controllers/sidemenu.coffee</code></a>.</li>
+</ul>
+<p>From the drawers perspective the most important piece of code
+to study is the controller. It says to hide the opened drawer if you
+tap the currently active menu item. Opening other menu items goes
+differently; it replaces the current central view with some animation.</p>
+<pre class="highlight"><code class="hljs coffeescript"><span class="hljs-keyword">if</span> item.active
+  steroids.drawers.hide {}
+<span class="hljs-keyword">else</span>
+  webView = <span class="hljs-keyword">new</span> steroids.views.WebView {
+    <span class="hljs-attribute">id</span>: item.id,
+    <span class="hljs-attribute">location</span>: item.url
+  }
+  steroids.drawers.hide {
+    <span class="hljs-attribute">center</span>: webView
+  }
+</code></pre>
+<p>Hiding the currently opened drawer with <code>steroids.drawers.hide</code> simply
+gets back the previously shown central view.</p>
+<p>If you want to show a different page, you would also use <code>steroids.drawers.hide</code> but
+with an additional <code>center</code> parameter to pass the needed view. This view has to be
+created in advance with <code>steroids.views.WebView</code>.</p>
+<p>Besides, such a view must be configured as preloaded in <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/config/application.coffee#L31"><code>config/application.coffee</code></a>.</p>
+<pre class="highlight"><code class="hljs coffeescript">steroids.config.preloads = [
+  {
+    <span class="hljs-attribute">id</span>: <span class="hljs-string">"settings"</span>
+    <span class="hljs-attribute">location</span>: <span class="hljs-string">"http://localhost/views/settings/index.html"</span>
+  }
+]
+</code></pre>
+<p>Thus, with tapping on the <em>Settings</em> menu item you will get the settings
+page shown.</p>
+<p><img class="article__image" src="http://img-fotki.yandex.ru/get/9667/14441195.32/0_8477f_2aafe347_L.png" width="282" height="500" border="0"/></p>
+<p>This page is empty yet. The upcoming posts will fill it in with something
+interesting. Stay tuned :-)</p>
+]]></description>
+            <link>http://varya.me//en/posts/steroids-drawers</link>
+            <guid isPermaLink="true">http://varya.me//en/posts/steroids-drawers</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Mon, 09 Jun 2014 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Docpad with the taste of BEM]]></title>
+            <description><![CDATA[<p>Let me present a stub for <strong>docpad-run</strong> project with
+<strong>bem-built</strong> static assets. If you ever wanted to be
+a generic blog holder equiped with nice and neat static
+files, here we go.</p>
+<excerpt/>
+
+<h2 id="how-to-start">How to start</h2>
+<p>You need install the docpad first. Follow their <a href="http://docpad.org/docs/install">Installation Guide</a>.</p>
+<p>Then, the installation of the blog is super short and easy. Clone, fork or
+copy from the <a href="https://github.com/varya/docpad-bem-stub">docpad-bem-stub repository</a>.
+Then, go though the 3 installation steps:</p>
+<pre class="highlight"><code class="hljs bash">npm install
+./node_modules/bower-npm-install/bin/bower-npm-install
+docpad run
+</code></pre>
+<p>With these 3 steps you will get:</p>
+<ul>
+<li>a local server with a generic docpad blog;</li>
+<li><a href="http://bem.info/libs/bem-core/2.2.0/">bem-core</a> and <a href="http://bem.info/libs/bem-components/v2/">bem-components</a>
+libraries of reusable CSS/JavaScript/templates code;</li>
+<li>fully tuned static-build instructions which run on changes
+in your source code;</li>
+<li>initial blog structure.</li>
+</ul>
+<h2 id="how-to-write">How to write</h2>
+<p>In the given structure you can write either pages or blog posts.
+The posts are listed in the index page. Once you added a new
+item, you can see it in this list and navigate to its page;
+the docpad rebuilds from source automatically.</p>
+<p>Place the pages as <code>*.html.md</code> files into <code>src/documents/pages</code>
+directory. The posts are kept into <code>src/documents/posts</code>.</p>
+<h2 id="how-to-develop-statics">How to develop statics</h2>
+<p>The statics is developed with <a href="http://bem.info/">BEM</a>.
+You can get CSS and JavaScript files for your pages in
+<code>desktop.bundles</code> directory. The pages are built with blocks
+from <code>desktop.blocks</code> folder.</p>
+<p>The rebuild process for statics runs under docpad server.</p>
+<p>Sometimes you may prefer to develop static pages separately.
+For this run</p>
+<pre class="highlight"><code class="hljs gradle">.<span class="hljs-regexp">/node_modules/</span>enb<span class="hljs-regexp">/bin/</span>enb server
+</code></pre><p>You will get another server which rebuilds statics. It
+produces static html files from <code>*.bemjson.js</code> files in
+<code>desktop.bundles</code>. You can develop the layout inserting
+json there and providing <code>BEMHTML</code> templates for the
+corresponding block. Find the documentation about <code>BEMHTML</code>
+here:</p>
+<ul>
+<li><a href="http://bem.info/libs/bem-core/2.2.0/templating/intro/">BEMHTML quick start</a></li>
+</ul>
+<p>For the same blocks you can provide <code>*.css</code> and <code>*.js</code> files
+and get them built into pages.</p>
+<h2 id="how-to-publish">How to publish</h2>
+<p>The blog is tuned to be deployed on GitHub. Thus, your
+repository has to be named as <code>&lt;username&gt;.github.com</code>. You
+can develop in its <code>source</code> branch. For deploying on
+<code>&lt;username&gt;.github.io</code> host run this command:</p>
+<pre class="highlight"><code class="hljs bash">docpad deploy-ghpages
+</code></pre>
+<p>This will create <code>master</code> branch of the repository whose
+source is linked to the host.</p>
+<p>You can also attach your own domain to the blog like I did.
+Also, it is possible to host your blog in differently named
+repository. However this will make you to provide changes
+on <code>docpad.coffee</code> configuration file.<br/>
+Study <a href="https://pages.github.com/">Github Pages</a> to learn more.</p>
+<h2 id="why-docpad-">Why Docpad?</h2>
+<p>This blog had been running on Jekyll for a while. This was an
+acceptable soltuion for a quick start. However with the growth
+of the posts base I started to suffer from not very fast
+rebuilds. Also, sometimes providing changes into the blog
+layout was hard, mostly due to the limitations of <code>liquid</code>
+templates.</p>
+<p>I&#39;ve decided that <a href="http://docpad.org/">Docpad</a> should be much
+better alternative. It is served as an npm package, possible to
+be extended with plugins and has an active fast-growing
+developers community.</p>
+<p>The <code>docpad-bem-stub</code> gives you initial structure, from which
+you already can write and publish. If you want to provide changes
+into the build process, modify the templates or extend with
+plugins, <a href="http://docpad.org/">learn at Docpad website</a>.</p>
+<p>Moreover, <a href="http://stackoverflow.com/">Stackoverflow</a> indeed already
+has an answer to almost all the questions you have. If not, create a new
+one.</p>
+<h2 id="why-bem-">Why BEM?</h2>
+<p>BEM is a very flexible modular solution for frontend which
+enables to develop reusable CSS and JavaScript components. Plus, some code
+can be taken from their open source libraries.</p>
+<p>You can learn a lot about BEM from <a href="/en/content">my articles and talks</a>
+or at the <a href="http://bem.info/">official BEM site</a>.</p>
+<h2 id="inside-about">Inside about</h2>
+<p>Above I described all you need to know for using your blog. Below there
+are a little more technical details on what is behind.</p>
+<h3 id="enb">ENB</h3>
+<p>I use <a href="https://github.com/enb-make/enb">enb</a> for building pages with block
+components. This solution is preferable to bem-tools because of it is much
+faster. When rebuilding pages on every change, this is sensetive.</p>
+<h3 id="i-bem-js-and-modules">i-bem.js and modules</h3>
+<p>I personally love that this solution brings <code>i-bem.js</code> library to the
+project. Hope to demonstrate its amazing capabilities here in near future.
+But before I stuff my blog with complex JavaScript components, you
+can see some examples and very detailed explanations in <a href="http://bem.info/tutorials/bem-js-tutorial/">Step-by-step tutorial on
+i-bem.js</a>.</p>
+<p>Another JavaScript feature you can enjoy is <a href="/en/issues/ym-modular-system">YM modular system</a>.
+These are JavaScript modules with asynchronious resolving.</p>
+<h3 id="bemhtml">BEMHTML</h3>
+<p>As mentioned above, <code>BEMHTML</code> is a templating solution. Being JavaScript-based,
+these templates can be applied on both server and client side. There are
+a couple of documents for a deeper dive into it here:</p>
+<ul>
+<li><a href="http://bem.info/libs/bem-core/2.2.0/templating/rationale/">BEMHTML templates description</a></li>
+<li><a href="http://bem.info/libs/bem-core/2.2.0/templating/reference/">BEMHTML tutorial</a></li>
+</ul>
+<h3 id="bem-core-and-bem-components">bem-core and bem-components</h3>
+<p>BEM is also nice for a possibility to borrow the components from libraries.
+<code>docpad-bem-stub</code> uses 2 now available libraries:</p>
+<ul>
+<li><a href="http://bem.info/libs/bem-core/2.2.0/">bem-core</a></li>
+<li><a href="http://bem.info/libs/bem-components/v2/">bem-components</a></li>
+</ul>
+<p>I hope to see more in the future.</p>
+<h2 id="what-next-">What next?</h2>
+<p>Indeed everything can be improved. These are my thoughts on how
+to continue.</p>
+<ul>
+<li>detect changes in static files<br/>
+Docpad watches over the changes in <code>src</code> directory. This means that
+when developing statics you will not get the rebuild. I am thinking
+on running <code>enb server</code> under <code>docpad run</code> and proxy. This maybe
+better than watch over a lot of files in <code>desktop.blocks</code>, <code>desktop.bundles</code>
+and all the libraries.</li>
+<li>css preprocessors<br/>
+The blog styles are in pure CSS now. But with a little
+change into enb configuration we can learn it to build with
+preprocessors.</li>
+<li>fresh design<br/>
+Creating a simple layout is the most difficult design task. Don&#39;t you agree?</li>
+<li>nice initial posts<br/>
+This is even harder than the desing tasks but I think the users feel much
+more comfortable when getting a blog with predefined texts.</li>
+</ul>
+<p>If you feel your oats and want to do your bit, fork <a href="https://github.com/varya/docpad-bem-stub">the repository</a>
+and start :-)</p>
+]]></description>
+            <link>http://varya.me//en/posts/docpad-with-bem-taste</link>
+            <guid isPermaLink="true">http://varya.me//en/posts/docpad-with-bem-taste</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Wed, 04 Jun 2014 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Мобильное приложение на HTML5 со штатным интерфейсом]]></title>
+            <description><![CDATA[<p>Недавно я побывала на конференции <a href="http://2014.front-trends.com/">Front Trends 2014</a>
+в Варшаве. Конференция очень крутая, обязательно посетите её в следующем году.
+У них всегда интересная основная программа, и кроме неё есть ещё
+мини-доклады от всех желающих. В этом году одним из таких докладов был мой,
+о фреймворке и инструментах для разработки HTML5/JavaScript мобильных
+приложений <a href="http://www.appgyver.com/steroids">Steroids</a>.
+Если вы не были на конференции, то можете прочесть мою презентацию в тексте.</p>
+<excerpt/>
+
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#Cover">
+  </iframe>
+</div>
+
+<p>Я совсем новичок в разработке мобильных приложений, но всё равно решилась
+показать, как пользоваться Steroids, потому что благодаря ему я смогла сделать
+приложение с системным интерфейсом (native UI) и безболезненно пройти через
+весь цикл разработки за считанные минуты.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#summary">
+  </iframe>
+</div>
+
+<p>Инструменты Steroids — это пакет с command line интерфейсом. Вместе с ним вы получите
+JavaScript-фреймворк Steroids. А также инструменты обеспечат вам сборку проекта,
+удобный процесс разработки, отладки и релиза. Всё написано под NodeJS, так что
+потребуется его установить.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#3">
+  </iframe>
+</div>
+
+<p>Нужна версия <code>0.10.25</code>. В инструкции <a href="http://academy.appgyver.com/categories/1/contents/1">Installation and Setup
+Guide</a>
+подробно написано, как устанавливать.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#4">
+  </iframe>
+</div>
+
+<p>Самая первая команда, которой вы воспользуетесь, — это <code>steroids create</code>.
+Затем, в получившейся папке проекта наберите <code>steroids connect --watch</code> —
+запустится процесс steroids. Флаг <code>--watch</code> нужен, чтобы Steroids отслеживал
+изменения файлов и каждый раз пересобирал проект и обновлял его на подключенных
+устройствах.</p>
+<p>Вы можете подключить к проекту реальный телефон. После запуска <code>steroids connect</code>
+откроется окно браузера с QR-кодом. Считайте этот QR-код мобильным приложением
+<code>AppGyver Scanner</code> — и проект окажется в вашем телефоне (а кроме того — будет
+обновляться).</p>
+<div style="text-align:center;">
+<a href="https://itunes.apple.com/us/app/appgyver-scanner/id575076515?mt=8"
+target="_blank"><img alt="Appstore" class="appstore_icon"
+src="https://share.appgyver.com/assets/appstore-df950585b54bd081a7826913fc715cd4.png"></a>
+<a href="https://play.google.com/store/apps/details?id=com.appgyver.android&amp;feature=nav_result#?t=W251bGwsMSwxLDMsImNvbS5hcHBneXZlci5hbmRyb2lkIl0."
+target="_blank"><img alt="Googleplay" class="appstore_icon"
+src="https://share.appgyver.com/assets/googleplay-2cef882d62e402fbdbfe8cdac5794069.png"></a>
+</div>
+
+<p>Другой способ — открыть проект в Simulator. Для этого наберите <code>simulator</code>
+в окне терминала, где запускали <code>steroids connect</code>.</p>
+<p>Теперь можете изменить исходный код приложения. Например, напишите
+свой текст в файле <code>www/index.html</code>. После этого можете проверить,
+что приложение в подключенном телефоне или в симуляторе изменилось.</p>
+<p>Научиться, как сделать более серьезные изменения в проекте, вы
+можете из примеров и туториалов. Запустите <code>steroids generate</code>, и
+получите нужный код.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#5">
+  </iframe>
+</div>
+
+<p>Можете смотреть, как устроены эти примеры, учиться по
+<a href="http://academy.appgyver.com/">туториалам</a> и
+<a href="http://docs.appgyver.com/en/stable/index.html">API документации</a>.
+Дальше я покажу как использовать в вашем приложении
+некоторые штатные элементы интерфейса, то есть
+писать на HTML5/JavaScript приложение с <em>native UI</em>.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#examples-list">
+  </iframe>
+</div>
+
+<p>Давайте начнем с табов.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#7">
+  </iframe>
+</div>
+
+<p>Вы можете найти закомментированный пример использования
+табов в файле <code>config/application.coffee</code>. Это список табов
+с их иконками и ссылками, на которые они ведут.</p>
+<p>В моём приложении я создаю 3 таба для следующих страниц:</p>
+<ul>
+<li>index.html</li>
+<li>notificationExample.html</li>
+<li>knowledge.html</li>
+</ul>
+<pre class="highlight"><code class="hljs coffeescript">steroids.config.tabBar.enabled = <span class="hljs-literal">true</span>
+steroids.config.tabBar.tabs = [
+  {
+    <span class="hljs-attribute">title</span>: <span class="hljs-string">"Index"</span>
+    <span class="hljs-attribute">icon</span>: <span class="hljs-string">"icons/pill@2x.png"</span>
+    <span class="hljs-attribute">location</span>: <span class="hljs-string">"http://localhost/index.html"</span>
+  },
+  {
+    <span class="hljs-attribute">title</span>: <span class="hljs-string">"Notifications"</span>
+    <span class="hljs-attribute">icon</span>: <span class="hljs-string">"icons/bell.png"</span>
+    <span class="hljs-attribute">location</span>: <span class="hljs-string">"http://localhost/notificationExample.html"</span>
+  },
+  {
+    <span class="hljs-attribute">title</span>: <span class="hljs-string">"Knowledge base"</span>
+    <span class="hljs-attribute">icon</span>: <span class="hljs-string">"icons/coding.png"</span>
+    <span class="hljs-attribute">location</span>: <span class="hljs-string">"http://localhost/knowledge.html"</span>
+  }
+]
+</code></pre>
+<p>Положите html-файлы этих страниц в папку <code>www</code>. Пока они могут
+быть пустыми. Также не забудьте об иконках, можете взять из моего
+репозитория всю папку <a href="https://github.com/varya/steroids-fronttrends2014/tree/master/www/icons">icon
+folder</a>.</p>
+<p>После того как все изменения будут сделаны, подождите пересборки и
+убедитесь в результате.</p>
+<div style="text-align:center;">
+<img src="http://img-fotki.yandex.ru/get/9088/14441195.32/0_84262_ae854cb8_orig.png" width="340" height="89" border="0" title="" alt=""/>
+</div>
+
+<p>Дальше можно поиграть с нотификациями.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#8">
+  </iframe>
+</div>
+
+<p>Разместите код этих кнопок внутри тега <code>&lt;body&gt;</code> на странице
+<code>www/notificationExample.html</code>.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"showAlert()"</span>&gt;</span>Show alert dialogue<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"showConfirm()"</span>&gt;</span>Show confirm dialogue<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"showPrompt()"</span>&gt;</span>Show prompt dialogue<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"vibrate()"</span>&gt;</span>Vibrate the device<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+</code></pre>
+<p>Кнопки реагируют на прикосновения пользователя и запускают
+различные JavaScript-функции. Чтобы сделать страницу работающей,
+нужно задать эти функции в <code>&lt;head&gt;</code> или <code>*.js</code> файле страницы.
+Каждая из них иллюстрирует работу своего вида нотификации, такого
+как:
+a kind of notification which are:</p>
+<ul>
+<li><code>navigator.notification.alert</code></li>
+<li><code>navigator.notification.confirm</code></li>
+<li><code>navigator.notification.prompt</code></li>
+<li><code>navigator.notification.vibrate</code></li>
+</ul>
+<p>Код функций можете взять
+<a href="https://github.com/varya/steroids-fronttrends2014/blob/master/www/notificationExample.html#L15">из моего репозитория</a>.</p>
+<p>Теперь вы можете перейти на эту страницу по соответствующему
+табу и увидеть, как работает каждый тип нотификации.</p>
+<p>Следующий системный элемент — кнопка на навигационной панели
+(navigation bar).</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#9">
+  </iframe>
+</div>
+
+<p>Навигационная панель может быть изменена при помощи JavaScript-хелперов
+фреймворка Steroids. Если вы хотите сделать её одинаковой для всех страниц
+приложения, то разместите код в файле <code>www/javascripts/application.js</code>,
+который подключен ко всем <code>*.html</code> файлам.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> loginButton = <span class="hljs-keyword">new</span> steroids.buttons.NavigationBarButton();
+loginButton.title = <span class="hljs-string">"the Button"</span>;
+
+loginButton.onTap = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    navigator.notification.alert(
+        <span class="hljs-string">'You tapped the button!'</span>,
+        <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{},
+        <span class="hljs-string">'the Alert'</span>,
+        <span class="hljs-string">'I did!'</span>
+    );
+}
+
+steroids.view.navigationBar.update({
+    buttons: {
+      right: [loginButton]
+    }
+})
+</code></pre>
+<p>Этот код вставит кнопку в правую часть навигационной панели.
+Касание кнопки запустит нотификацию, уже знакомую вам по предыдущему
+примеру.</p>
+<div style="text-align:center;">
+<img src="http://img-fotki.yandex.ru/get/9115/14441195.32/0_84264_7f27d435_L.png" width="282" height="500" border="0" title="" alt=""/>
+</div>
+
+<p>И последний пример штатного интерфейса в этом приложении
+— модальное окно.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#10">
+  </iframe>
+</div>
+
+<p>Разместите эту кнопку в файле <code>www/index.html</code>:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"showModal()"</span>&gt;</span>Open modal<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+</code></pre>
+<p>И определите функцию <code>showModal</code>, которая открывает модальное
+окно с соответствующим содержанием.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showModal</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> webView =
+    <span class="hljs-keyword">new</span> steroids.views.WebView(<span class="hljs-string">"/views/modalExample/show.html"</span>);
+  steroids.modal.show(webView);
+}
+</code></pre>
+<p>Что показывать в модальном окне, должно быть написано в файле
+<code>app/views/modalExample/show.html</code>. Кстати, не забудьте, что там
+должна быть кнопка закрывания модального окна. Чтобы всё прошло
+быстрее, позаимствуйте
+<a href="https://github.com/varya/steroids-fronttrends2014/blob/master/app/views/modalExample/show.html">код из репозитория приложения</a>.</p>
+<p>С этими и <a href="http://docs.appgyver.com/en/stable/steroids_Steroids%20Native%20UI_index.md.html#Steroids%C2%A0Native%C2%A0UI">другими элементами интерфейса</a>
+вы можете сделать приложение с системным интерфейсом, которое
+будет выглядеть натурально на том устройстве, на котором запускается
+приложение.</p>
+<p>Когда приложение закончено (или даже в процессе), вы можете захотеть
+показать его другу, клиенту или даже маме.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#sharing">
+  </iframe>
+</div>
+
+<p>Можно воспользоваться QR-кодом, упоминаемым в начале статьи. Он
+принесет код с вашего компьютера на любое устройство. Но вы оба должны
+быть подключены к одной сети.</p>
+<p>Если вы хотите показать приложение удаленно, разместите код в облаке.
+Для этого есть команда <code>steroids deploy</code>. В результате вы тоже получите
+страницу с QR-кодом. Его можно считать при помощи <code>AppGyver Scaner</code> и
+получить в своём телефоне приложение прямо из облака.</p>
+<p>Вы можете делиться всеми своими приложениями из облака. А также
+настраивать их и собирать релизы. Всё это делается через web-интерфейс
+<a href="https://cloud.appgyver.com/applications">cloud.appgyver.com</a>.</p>
+<p>Отсюда же приложения можно отправлять в AppStore и GooglePlay.</p>
+<div style="text-align:center;">
+<img src="http://img-fotki.yandex.ru/get/9062/14441195.32/0_84265_d03d686e_orig.png" width="500" height="327" border="0" title="" alt=""/>
+</div>
+
+<p>Видите, это просто. Настолько просто, что даже новичок может не только
+разработать приложение, но и сделать об этом презентацию с живым кодом
+на конференции.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#links">
+  </iframe>
+</div>
+
+<p>Узнать больше о Steroids и Cordova (в основе Steroids лежит PhoneGap)
+можно в <a href="http://academy.appgyver.com/">AppGyver Academy</a>. Там есть:</p>
+<ul>
+<li>подробные обучающие материалы,</li>
+<li>документация,</li>
+<li>сообщество разработчиков.</li>
+</ul>
+<p>И, конечно, вы можете читать <a href="/ru/posts">этот блог</a>. Я собираюсь
+делиться своими следующими открытиями относительно Steroids в ближайшее время :-)</p>
+]]></description>
+            <link>http://varya.me//ru/posts/html5-mobile-app-width-native-ui</link>
+            <guid isPermaLink="true">http://varya.me//ru/posts/html5-mobile-app-width-native-ui</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Wed, 28 May 2014 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[HTML5 mobile apps with native UI on Steroids]]></title>
+            <description><![CDATA[<p>Recently I attended <a href="http://2014.front-trends.com/">Front Trends 2014</a> in Warsaw.
+This is an awesome conference which you should (no, definitely have to!) attend
+in 2015. Besides incredible main programm Front Trends provides a set of Lighting Talks.
+This year I was a part of it presenting <a href="http://www.appgyver.com/steroids">Steroids</a>,
+a framework and a toolkit for developing HTML5 mobile apps. If you did not have
+a chance to hear it, this offline text presentation is for you.<excerpt/></p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#Cover">
+  </iframe>
+</div>
+
+<p>Being an absolute newbie in developing mobile apps I decided to showcase
+Steroids because it enables me to create pretty native-looking application
+and smoothly go through the developing and releasing flow in a few minutes.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#summary">
+  </iframe>
+</div>
+
+<p>The Steroids toolkit is a CLI; it brings Steroids JavaScript framewrok into
+your project and takes care of building an app, developing flow, debugging
+and releasing. It is based on NodeJs, so you have to have it installed.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#3">
+  </iframe>
+</div>
+
+<p>The required version for now is <code>0.10.25</code>. Follow the <a href="http://academy.appgyver.com/categories/1/contents/1">Installation and Setup
+Guide</a>.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#4">
+  </iframe>
+</div>
+
+<p>Your very first start would be creating a project using <code>steroids create</code>
+command. Then, typing <code>steroids connect --watch</code> in the gotten project
+folder launches steroids process. The <code>--watch</code> flag as you can guess tells
+Steroids to watch over the file changes, rebuild the app and push the results
+to the connected devices.</p>
+<p>You can connect a physical smartphone to the project. After running
+<code>steroids connect</code> you get a web page with a QR code opened in your browser.
+Use <code>AppGyver Scanner</code> to read this QR code, it will bring the application
+into your phone and keep it connected.</p>
+<div style="text-align:center;">
+<a href="https://itunes.apple.com/us/app/appgyver-scanner/id575076515?mt=8"
+target="_blank"><img alt="Appstore" class="appstore_icon"
+src="https://share.appgyver.com/assets/appstore-df950585b54bd081a7826913fc715cd4.png"></a>
+<a href="https://play.google.com/store/apps/details?id=com.appgyver.android&amp;feature=nav_result#?t=W251bGwsMSwxLDMsImNvbS5hcHBneXZlci5hbmRyb2lkIl0."
+target="_blank"><img alt="Googleplay" class="appstore_icon"
+src="https://share.appgyver.com/assets/googleplay-2cef882d62e402fbdbfe8cdac5794069.png"></a>
+</div>
+
+<p>Another way to watch the app is to bring it into a desktop simulator.
+To do this, type <code>simulator</code> in the terminal wich launched
+<code>steroids connect</code>.</p>
+<p>You can change the application source files. E.g. edit a text
+in <code>www/index.html</code> and make sure that the app in the connected device
+or in the simulator has been changed.</p>
+<p>To provide more powerful changes you can learn from the examples
+and tutorials. Run <code>steroids generate</code> command and get the relevant
+code.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#5">
+  </iframe>
+</div>
+
+<p>You can learn from this code examples, from <a href="http://academy.appgyver.com/">tutorials</a>
+and <a href="http://docs.appgyver.com/en/stable/index.html">API Docs</a>. 
+Below I demonstrated some of the features which enable
+to use <em>native UI</em>.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#examples-list">
+  </iframe>
+</div>
+
+<p>Let us start with showing the native tabs.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#7">
+  </iframe>
+</div>
+
+<p>In the <code>config/application.coffee</code> file you can find a commented
+example of defining a list of tabs with their icons and
+locations (URLs) they lead to.</p>
+<p>In my application I created 3 tabs. They are for</p>
+<ul>
+<li>index.html</li>
+<li>notificationExample.html</li>
+<li>knowledge.html</li>
+</ul>
+<pre class="highlight"><code class="hljs coffeescript">steroids.config.tabBar.enabled = <span class="hljs-literal">true</span>
+steroids.config.tabBar.tabs = [
+  {
+    <span class="hljs-attribute">title</span>: <span class="hljs-string">"Index"</span>
+    <span class="hljs-attribute">icon</span>: <span class="hljs-string">"icons/pill@2x.png"</span>
+    <span class="hljs-attribute">location</span>: <span class="hljs-string">"http://localhost/index.html"</span>
+  },
+  {
+    <span class="hljs-attribute">title</span>: <span class="hljs-string">"Notifications"</span>
+    <span class="hljs-attribute">icon</span>: <span class="hljs-string">"icons/bell.png"</span>
+    <span class="hljs-attribute">location</span>: <span class="hljs-string">"http://localhost/notificationExample.html"</span>
+  },
+  {
+    <span class="hljs-attribute">title</span>: <span class="hljs-string">"Knowledge base"</span>
+    <span class="hljs-attribute">icon</span>: <span class="hljs-string">"icons/coding.png"</span>
+    <span class="hljs-attribute">location</span>: <span class="hljs-string">"http://localhost/knowledge.html"</span>
+  }
+]
+</code></pre>
+<p>Place the pages into <code>www</code> directory and keep them empty yet.
+Do not forget the icons. You can borrow the whole <a href="https://github.com/varya/steroids-fronttrends2014/tree/master/www/icons">icon
+folder</a>.</p>
+<p>After making the change wait for rebuild and check.</p>
+<div style="text-align:center;">
+<img src="http://img-fotki.yandex.ru/get/9088/14441195.32/0_84262_ae854cb8_orig.png" width="340" height="89" border="0" title="" alt=""/>
+</div>
+
+<p>Next, we can play with notifications.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#8">
+  </iframe>
+</div>
+
+<p>Place these buttons inside the <code>&lt;body&gt;</code> container of the
+<code>www/notificationExample.html</code> file.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"showAlert()"</span>&gt;</span>Show alert dialogue<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"showConfirm()"</span>&gt;</span>Show confirm dialogue<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"showPrompt()"</span>&gt;</span>Show prompt dialogue<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"vibrate()"</span>&gt;</span>Vibrate the device<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+</code></pre>
+<p>As you can see, they run different JavaScript functions on
+touch. To finish the page you need to define these functions
+in the <code>&lt;head&gt;</code> or linked <code>*.js</code> file. Each function demonstrates
+a kind of notification which are:</p>
+<ul>
+<li><code>navigator.notification.alert</code></li>
+<li><code>navigator.notification.confirm</code></li>
+<li><code>navigator.notification.prompt</code></li>
+<li><code>navigator.notification.vibrate</code></li>
+</ul>
+<p>Borrow the JavaScript code from <a href="https://github.com/varya/steroids-fronttrends2014/blob/master/www/notificationExample.html#L15">my repo</a>.</p>
+<p>Now you can navigate to this page using the tabs and try
+each type of notification with tapping.</p>
+<p>Another native element could be a button in the application navigation
+bar.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#9">
+  </iframe>
+</div>
+
+<p>The navigation bar can be modified with JavaScript on Steroids.
+If you want it to be the same across all the application pages,
+provide this JavaScript in the <code>www/javascripts/application.js</code> file
+which is linked to all the <code>*.html</code> files.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> loginButton = <span class="hljs-keyword">new</span> steroids.buttons.NavigationBarButton();
+loginButton.title = <span class="hljs-string">"the Button"</span>;
+
+loginButton.onTap = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    navigator.notification.alert(
+        <span class="hljs-string">'You tapped the button!'</span>,
+        <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{},
+        <span class="hljs-string">'the Alert'</span>,
+        <span class="hljs-string">'I did!'</span>
+    );
+}
+
+steroids.view.navigationBar.update({
+    buttons: {
+      right: [loginButton]
+    }
+})
+</code></pre>
+<p>This will bring the button to the right side of the
+navigation bar. Tapping on it you can see a notification; one
+of those you studied recently.</p>
+<div style="text-align:center;">
+<img src="http://img-fotki.yandex.ru/get/9115/14441195.32/0_84264_7f27d435_L.png" width="282" height="500" border="0" title="" alt=""/>
+</div>
+
+<p>The last of native UI examples in this app is showing
+modal views.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#10">
+  </iframe>
+</div>
+
+<p>Add this button into <code>www/index.html</code>:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"showModal()"</span>&gt;</span>Open modal<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+</code></pre>
+<p>And code <code>showModal</code> method to open a view as a modal.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showModal</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> webView =
+    <span class="hljs-keyword">new</span> steroids.views.WebView(<span class="hljs-string">"/views/modalExample/show.html"</span>);
+  steroids.modal.show(webView);
+}
+</code></pre>
+<p>The related view is a piece of html, which you should place into
+<code>app/views/modalExample/show.html</code>. BTW, it has to have an interface
+element closing the view. To make the process faster, pick up the
+<a href="https://github.com/varya/steroids-fronttrends2014/blob/master/app/views/modalExample/show.html">code from the application repo</a>.</p>
+<p>With this and <a href="http://docs.appgyver.com/en/stable/steroids_Steroids%20Native%20UI_index.md.html#Steroids%C2%A0Native%C2%A0UI">other UI features</a>
+you can build a mobile interface which looks absolutely native for a
+device where you application runs.</p>
+<p>Once finished coding (or even in process) you may need to show the
+application to your friend, client or Mom.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#sharing">
+  </iframe>
+</div>
+
+<p>You can use the QR code from the beginning of our session which can
+bring your application to any any device directly from your computer.
+However this only will work if them both are connected to the same
+network.</p>
+<p>If you want to share with someone remotely, deploy your app into the cloud.
+The <code>steroids deploy</code> command serves for it. As a result you get
+a page (also with a QR code) which can be scanned with AppGyver Scaner on
+a phone and thus your pal get the same app from the cloud.</p>
+<p>All your applications in the cloud can be shared, tuned and built with
+web interface at <a href="https://cloud.appgyver.com/applications">cloud.appgyver.com</a>.</p>
+<p>From there you also push the app into AppStore and GooglePlay.</p>
+<div style="text-align:center;">
+<img src="http://img-fotki.yandex.ru/get/9062/14441195.32/0_84265_d03d686e_orig.png" width="500" height="327" border="0" title="" alt=""/>
+</div>
+
+<p>This is easy. As easy that a newbie can develop an app in a few minutes
+and show you the how-to.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#links">
+  </iframe>
+</div>
+
+<p>You can learn more about Steroids and Cordova (Steroids is based on PhoneGap)
+at the <a href="http://academy.appgyver.com/">AppGyver Academy</a> where you find:</p>
+<ul>
+<li>detailed tutorials,</li>
+<li>documentation,</li>
+<li>big community of devs.</li>
+</ul>
+<p>And, of course, you can read <a href="/en/posts/">this blog</a>. I promise to share my next findings
+regarding Steroids soon :-)</p>
+]]></description>
+            <link>http://varya.me//en/posts/html5-mobile-app-width-native-ui</link>
+            <guid isPermaLink="true">http://varya.me//en/posts/html5-mobile-app-width-native-ui</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Mon, 26 May 2014 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

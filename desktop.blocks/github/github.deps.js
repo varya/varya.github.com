@@ -1,0 +1,7 @@
+({
+    mustDeps: [
+        {
+            elem: 'jquery'
+        }
+    ]
+})

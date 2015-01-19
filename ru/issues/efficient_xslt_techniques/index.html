@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html class="page page_ru" lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <title>XSLT - результативные технологии программирования</title>
+    <link  rel="stylesheet" href="/desktop.bundles/index/index.min.css" />
+    <script>
+    (function(d, s, l, r) {
+    if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
+        r = [
+            '<style>',
+            l.getItem('varya.me.fonts'),
+            '</style>'
+        ];
+        document.write(r.join(''));
+    }
+
+    })(document, Storage, localStorage);
+    </script>
+</head>
+<body class="page page__body">
+    <header class="header">
+        <div class="header__left candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'></div>
+        <logo class="logo header__center">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+        <div class="header__right candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 } } }'></div>
+    </header>
+    <div class="layout">
+        <section class="main">
+            <ul class="languages">
+            
+                <li class="languages__lang">
+                    
+                    <a href="">
+                        en
+                    </a>
+                    
+                </li>
+                
+                <li class="languages__lang">
+                    
+                        ru
+                    
+                </li>
+                
+            </ul>
+            <div class="article" role="main">
+    <div class="article__body box__body">
+        <h1 class="article__header">
+            XSLT - результативные технологии программирования
+        </h1>
+    </div>
+    <div class="article__text box__island">
+        <script type="text/javascript" src="//yandex.st/share/share.js"
+        charset="utf-8"></script>
+        <div class="share yashare-auto-init" data-yashareL10n="{{ lang }}"
+            data-yashareQuickServices="twitter,facebook,gplus,vkontakte" data-yashareTheme="counter"
+        ></div>
+        <span class="article__details author vcard">
+            Опубликовано
+            25th August 2009
+        </span>
+        <p>Перевод документа <a href="a
+href=&quot;http://www.xml.org/sites/www.xml.org/files/xslt_efficient_programming_techniques.pdf&quot;">a
+href=&quot;http://www.xml.org/sites/www.xml.org/files/xslt_efficient_programming_techniques.pdf&quot;</a>XSLT</p>
+<ul>
+<li>Efficient Programming Techniques</a>, который мне очень помог.</li>
+</ul>
+<p>С ростом популярности XML как средства взаимодействия с различными системами,
+все больше и больше организаций приходят к XML, чтобы решить свои вопросы
+функциональной совместимости.<excerpt/> Вместе с попытками архитекторов достигнуть ясного
+разделения между отображением и бизнес-логикой, XSLT становится важнее. XSL, по
+сути, - это XML-документ (дерево, согласно спецификации DTD), который
+применяется к древовидным структурам данных (XML-документ), чтобы выработать
+результирующее дерево.</p>
+<p>Эта статья представляет список лучших приемов, используемых для написания
+XSLT-преобразований. Эта статья может быть использована как направление к
+лучшему пути достижения нужных результатов в XSL. Она предназначается для
+разработчиков, которые знакомы с основами XSL, но нуждаются в указателе на
+действенный путь программирования на XSL. Информация в этой статье основана на
+моём собственном опыте в XML и XSL. Список лучших приемов составлен по различным
+источникам, чтобы сделать всеобъемлющий документ, который будет расти, если
+найдётся больше хороших приемов. Если у вас есть несколько очень хороших
+приёмов, которым вы следуете и которых нет в этом списке, скиньте мне на email
+<em><a href="mailto:pboundre@gr.com">pboundre@gr.com</a></em>.</p>
+<p><h2>Подключение внешних файлов - правильный путь</h2>
+Есть три способа включения внешних файлов в ваш xsl:</p>
+<p>Если у вас есть дополнительные HTML-файлы, которые вы хотите включить в ваш
+результат без изменений, возможно самый простой путь получить его в вашем
+результирующем дереве - это включить его как внешнюю синтаксическую сущность
+(entity) в преобразование. Это влечет за собой объявление сущности и
+обращение к ней в вашем преобразовании.</p>
+<p> <strong><code>header.html</code>:</strong><br/>
+{% highlight html %}</p>
+<p><table>
+  <tr>
+    <td><a href="/">Home</a></td>
+    <td><a href="/movies/">Movies</a></td>
+    <td><a href="/shop/">Shop</a></td>
+  </tr>
+</table>
+{% endhighlight %}</p>
+<p><strong><code>data.xsl</code>:</strong><br/>
+{% highlight xml %}
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE xsl:stylesheet [
+<!-- declares header.html as an external parsed entity
+-->
+&lt;!ENTITY header SYSTEM &quot;header.html&quot;&gt;
+]&gt;</p>
+<p><xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <html>
+            <head><title>People</title></head>
+            <body>
+            <!-- includes header.html directly -->
+            &header;
+            <xsl:apply-templates />
+            </body>
+        </html>
+    </xsl:template>
+</xsl:stylesheet>
+{% endhighlight %}</p>
+<p> Или у вас есть дополнительные XML-файле, которые вы хотели бы преобразовать и
+ включить в документ, над которым вы работаете.<br/>
+Если у вас есть XML-файл, который вы хотели бы включить в результат, вам нужно
+использовать функцию <code>document()</code>, чтобы поучить доступ к информации, и вам нужны
+шаблоны в вашем преобразовании, чтобы обработать их и включить в результирующее
+дерево:</p>
+<p><strong><code>header.xml</code>:</strong><br/>
+{% highlight xml %}</p>
+<p><menu>
+    <item href="/">Home</item>
+    <item href="/movies/">Movies</item>
+    <item href="/shop/">Shop</item>
+</menu>
+{% endhighlight %}</p>
+<p><strong><code>data.xsl</code>:</strong><br/>
+{% highlight xml %}
+&lt;?xml version=&quot;1.0&quot;?&gt;</p>
+<p><xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <html>
+            <head><title>People</title></head>
+            <body>
+                <!-- applies templates to the information contained in
+                header.xml -->
+                <xsl:apply-templates select="document('header.xml')"/></p>
+<pre class="highlight"><code class="hljs xml">            <span class="hljs-comment">&lt;!-- applies templates to the input file --&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">xsl:apply-templates</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">xsl:template</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- transforms the XML in header.xml into the table we want --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">xsl:template</span> <span class="hljs-attribute">match</span>=<span class="hljs-value">"menu"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">table</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">xsl:for-each</span> <span class="hljs-attribute">select</span>=<span class="hljs-value">"item"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"{@href}"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">xsl:value-of</span> <span class="hljs-attribute">select</span>=<span class="hljs-value">"."</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">xsl:for-each</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">xsl:template</span>&gt;</span>
+</code></pre><p></xsl:stylesheet>
+{% endhighlight %}</p>
+<p>Или же у вас есть внешние дополнительные XSLT-файлы, которые вы бы хотели
+использовать, чтобы формировать результирующее дерево:<br/>
+Пусть у вас есть входящий XML-документ, который включает включает некоторую
+информацию, нужную вам как и остальные данные на странице, вы захотите
+импортировать (import) или включить (include) преобразования для них, так чтобы
+шаблоны, определённые в них использовались будто они часть основного
+преобразования. То, что вам нужно: <code>xsl:import</code> или <code>xsl:include</code> - зависит от того,
+хотите ли вы переопределять шаблоны (или часть из них), которые заданы во
+включаемом преобразовании. Если хотите, используйте xsl:import, в противном
+случае - <code>xsl:include</code>.</p>
+<p><strong><code>data.xml</code>:</strong><br/>
+{% highlight xml %}
+&lt;?xml version=&quot;1.0&quot;?&gt;</p>
+<p><doc>
+    <menu>
+        <item href="/">Home</item>
+        <item href="/movies/">Movies</item>
+        <item href="/shop/">Shop</item>
+    </menu>
+    <people>
+        <person age="50" name="larry"/>
+        <person age="50" name="larry"/>
+    </people>
+</doc>
+{% endhighlight %}</p>
+<p><strong><code>header.xsl</code>:</strong><br/>
+{% highlight xml %}
+&lt;?xml version=&quot;1.0&quot;?&gt;</p>
+<p><xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="menu">
+        <table>
+            <tr>
+                <xsl:for-each select="item">
+                     <td><a href="{@href}"><xsl:value-of select="." /></a></td>
+                 </xsl:for-each>
+              </tr>
+          </table>
+      </xsl:template>
+</xsl:stylesheet>
+{% endhighlight %}</p>
+<p><strong><code>data.xsl</code>:</strong><br/>
+{% highlight xml %}
+&lt;?xml version=&quot;1.0&quot;?&gt;</p>
+<p><xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<!-- includes the templates from theheader.xsl stylesheet --></p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">xsl:include</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"header.xsl"</span> /&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">xsl:template</span> <span class="hljs-attribute">match</span>=<span class="hljs-value">"/"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>People<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+            <span class="hljs-comment">&lt;!-- applies templates to the menu definition to create the
+            header - the templates come from header.xsl --&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">xsl:apply-templates</span> <span class="hljs-attribute">select</span>=<span class="hljs-value">"doc/menu"</span> /&gt;</span>
+            <span class="hljs-comment">&lt;!-- applies templates to the data to create the rest of the
+            document --&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">xsl:apply-templates</span> <span class="hljs-attribute">select</span>=<span class="hljs-value">"doc/people"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+     <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">xsl:template</span>&gt;</span>
+  ...
+</code></pre><p></xsl:stylesheet>
+{% endhighlight %}</p>
+<p>Вам также стоит иметь преобразование, включающее шаблоны для видоизменения
+информации в что-то, что вам нужно.</p>
+<h2 id="-xsl-patterns-">Используйте XSL шаблоны проектирования (patterns)</h2>
+<h3 id="-">Метод Кая для нахождения пересечения, разности и дизъюнкции множеств</h3>
+<p>Единственная операция над множествами, предоставляемая XSLT, - это объединение.
+Оно может быть описано с использованием оператора объединения из XPath и XSLT -
+&quot;<code>|</code>&quot;. Можно выразить пересечение двух наборов узлов (node set) на чистом XPath.
+Этот способ был открыт Майклом Каем (Michael Kay) и известен как метод Кая
+(Kaysian method).</p>
+<p>{% highlight xml %}</p>
+<xsl:variable name="intersection" select="$ns[count(.|$ns2) = count ($ns2)]"/>
+
+<p><xsl:variable name="set-difference" select="$ns1[count(.|$ns2) != count($ns2)]"/>
+{% endhighlight %}</p>
+<p>Пример:<br/>
+{% highlight xml %}
+&lt;?xml version=&quot;1.0&quot;?&gt;</p>
+<p><xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:data="crane" version="1.0">
+    <xsl:output method="text"/>
+    <data:data> <!--data source for testing purposes-->
+        <item>1</item><item>2</item><item>3</item>
+        <item>4</item><item>5</item><item>6</item>
+    </data:data></p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">xsl:template</span> <span class="hljs-attribute">match</span>=<span class="hljs-value">"/"</span>&gt;</span> <span class="hljs-comment">&lt;!--root rule--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">xsl:variable</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"ns1"</span> <span class="hljs-attribute">select</span>=<span class="hljs-value">"//item[position()&gt;1]"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">xsl:variable</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"ns2"</span> <span class="hljs-attribute">select</span>=<span class="hljs-value">"//item[position()&amp;lt;5]"</span>/&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">xsl:for-each</span> <span class="hljs-attribute">select</span>=<span class="hljs-value">"$ns1[count(.|$ns2)=count($ns2)]"</span>&gt;</span>
+        Intersection: <span class="hljs-tag">&lt;<span class="hljs-title">xsl:value-of</span> <span class="hljs-attribute">select</span>=<span class="hljs-value">"."</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">xsl:for-each</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">xsl:for-each</span> <span class="hljs-attribute">select</span>=<span class="hljs-value">"(
+                    $ns1[count(.|$ns2)!=count($ns2)] |
+                    $ns2[count(.|$ns1)!=count($ns1)]
+                    )"</span>&gt;</span>
+        Difference: <span class="hljs-tag">&lt;<span class="hljs-title">xsl:value-of</span> <span class="hljs-attribute">select</span>=<span class="hljs-value">"."</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">xsl:for-each</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">xsl:template</span>&gt;</span>
+</code></pre><p></xsl:stylesheet>
+{% endhighlight %}</p>
+<p>Результат:</p>
+<pre class="highlight"><code class="hljs http"><span class="hljs-attribute">Intersection</span>: <span class="hljs-string">2</span>
+<span class="hljs-attribute">Intersection</span>: <span class="hljs-string">3</span>
+<span class="hljs-attribute">Intersection</span>: <span class="hljs-string">4</span>
+<span class="hljs-attribute">Difference</span>: <span class="hljs-string">1</span>
+<span class="hljs-attribute">Difference</span>: <span class="hljs-string">5</span>
+<span class="hljs-attribute">Difference</span>: <span class="hljs-string">6</span>
+</code></pre><h3 id="-">Метод Вендела Пая для нерекурсивного цикла</h3>
+<p>Метод Вендела Пая (Wendell Pie) демонстрирует способ избежать XSLT-рекурсии при
+применении циклов.</p>
+<p>Пример:<br/>
+{% highlight xml %}</p>
+<p><Tag ID="1">
+    <Value>4</Value>
+</Tag></p>
+<p><Tag ID="2">
+    <Value>2</Value>
+</Tag>
+{% endhighlight %}</p>
+<p>Требующийся результат:<br/>
+{% highlight html %}</p>
+<p><TABLE>
+    <TR ID="1">
+        <TD> </TD>
+        <TD> </TD>
+        <TD> </TD>
+        <TD> </TD>
+    </TR>
+</TABLE></p>
+<p><TABLE>
+    <TR ID="2">
+        <TD> </TD>
+        <TD> </TD>
+    </TR>
+</TABLE>
+{% endhighlight %}</p>
+<p>Другими словами, я хочу создать набор новых узлов, количество которых основано
+на значении Value, содержащемся в документе. Ниже я представляю маленькое
+обобщение,  которое не  зависит от числа узлов в исходном XML-документе и
+использует вместо этого число узлов в преобразовании:</p>
+<p>{% highlight xml %}</p>
+<p><xsl:template match="TAG"></p>
+<p><TABLE>
+    <TR ID="@ID">
+        <xsl:for-each select="(document('')//*)[position() &lt;= Value]">
+            <TD> </TD>
+        </xsl:for-each>
+    </TR>
+</TABLE>
+</xsl:template>
+{% endhighlight %}</p>
+<p>Здесь используется количество элементов в преобразовании. Это количество будет
+значительно превышено, если мы будем проверять на разные типы узлов, например:</p>
+<p>{% highlight xml %}</p>
+<p><xsl:for-each select="($st//node()| $st//@* | $st//namespace::*) [position() &lt;= Value]">
+{% endhighlight %}</p>
+<p>где <code>$st</code> определено как  <code>document(&#39;&#39;)</code>, то есть корневой узел преобразования.</p>
+<h3 id="-">Метод условной выборки Оливера Беккера</h3>
+<p>Воможность XPath выбирать список узлов, основываясь на сложных условиях, очень
+мощная. Хотя ей недостаёт возможностей для определения строки как
+противоположного набору узлов. Вам часто нужно использовать навороченную
+xsl:choose конструкцию только чтобы определить, что-то вроде &quot;в случае 1
+используй строку 1, в случае 2 - строку 2, ..., в случае N - строку N.?</p>
+<p>Во всех таких случаях нам нужен способ, который позволил бы нам определять в
+XPath-выражении строку, которая зависит от условия или условий.</p>
+<p>Теперь о том, как это сделать:<br/>
+Мы хотим получить XPath-выражение, которое возвращает строку, когда некоторое
+заданное условие истинно, и возвращает пустую строку, если это условие ложно.
+Можно условиться, что true - это &quot;1&quot;, а false - это &quot;0&quot;. Но как подогнать &quot;1&quot; к
+какой-то строке? Какую функцию для работы со строкой мы могли бы использовать?
+<em>substring()</em> кажется достаточно удобной. А вот и трюк: мы можем
+использовать substring() только с двумя аргументами: substring(str, nOffset)
+возвратит остаток строки str, начинающийся с позиции nOffset.</p>
+<p>В частности:<br/></p>
+<ul>
+<li><code>substring(str, 1)</code> возвращает целую строку<br/></li>
+<li><code>substring(str, [очень большое число])</code> возвратит пустую строку, если это
+большое число гарантированно больше, чем длина строки.</li>
+</ul>
+<p>Таким образом, выражение, которое мы могли бы использовать, будет:</p>
+<p>{% highlight java %}
+concat(
+    substring( str1, exp( условие ) ),
+    substring( str2, exp( not(условие) ) )
+)
+{% endhighlight %}
+и мы хотим, чтобы <code>exp(условие)</code> было 1, если условие истинное и Infinity, если
+условие ложное.</p>
+<p>Мы выражаем exp(условие) так:
+<code>1 div условие</code>, потому что булево значение сначала преобразуется в число (true</p>
+<ul>
+<li>в 1, а false - в 0), мы получим в точности:</li>
+</ul>
+<p>{% highlight java %}
+exp(true) = 1
+exp(false) = Infinity
+{% endhighlight %}</p>
+<p>Итог:<br/>
+XPath-выражение, возвращающее одну строку, если условие истинно и другую, если
+оно ложно, такое:
+{% highlight java %}
+concat(
+    substring(Str1, 1 div условие),
+    substring(Str2, 1 div условие)
+)
+{% endhighlight %}
+Впервые это было использовано Оливером Беккером (Oliver Becker) и названо как
+метод Беккера.</p>
+<p>Например:<br/>
+Я хочу написать темплейт, который создаёт текст: &quot;My department&quot;,  если передан
+параметр &quot;IT&quot; и текст &quot;Some other department&quot;, если значение параметра другое.</p>
+<p>Конечно, никаких <code>xsl:if</code> или <code>xsl:when</code> не допускается.</p>
+<p>Пример кода:<br/>
+{% highlight xml %}
+&lt;?xml version=&quot;1.0&quot;?&gt;</p>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:data="crane" version="1.0">
+
+  <xsl:output method="text"/>
+
+<p>  <xsl:template match="/">
+    IT:
+    <xsl:call-template name="whoIs">
+      <xsl:with-param name="department" select="'IT'" />
+    </xsl:call-template>
+    <br/>
+    Finance:
+    <xsl:call-template name="whoIs">
+      <xsl:with-param name="department" select="'Finance'" />
+    </xsl:call-template>
+  </xsl:template></p>
+<p>  <xsl:template name="whoIs">
+    <xsl:param name="department" select="someDepartment" />
+    <br/>
+    <xsl:value-of select="
+      concat(
+        substring('My department', 1 div ($department = 'IT')),
+        substring('Some other department', 1 div not(($department = 'IT')))
+      )" />
+    <br/>
+  </xsl:template>
+</xsl:stylesheet>
+{% endhighlight %}</p>
+<h3 id="-">Используйте метод Мюнха для группировки</h3>
+<p>Группировка часто плохо осуществляется в XSL. Обычно эта задача возникает, когда
+вы получаете XML-вывод (несгруппированный) из базы данных и должны сгруппировать
+его средствами XSL. База данных обычно выдаёт вам результаты, структурированные
+согласно записям в ней. Например, давайте рассмотрим таблицу служащих, из
+которой получается такой XML:</p>
+<p>{% highlight xml %}
+<data>
+  <employee no="1">
+    <name>Prathit Bondre</name>
+    <department>IT</department>
+  </employee>
+  <employee no="2">
+    <name>Adheet Bondre</name>
+    <department>Finance</department>
+  </employee>
+  <employee no="3">
+    <name>Sinan Edil</name>
+    <department>IT</department>
+  </employee>
+  <employee no="4">
+    <name>Jeremy King</name>
+    <department>Finance</department>
+  </employee>
+</data>
+{% endhighlight %}</p>
+<p>Требуется такой вывод:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Finance<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
+Adheet Bondre
+Jeremy King
+
+<span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>IT<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
+Prathit Bondre
+Sinan Edil
+</code></pre><p>Задача состоит в том, чтобы превратить этот плоский вывод в список,
+сгруппированный по департаментам, чтобы дать требуемый результат, который
+показан выше.</p>
+<p>Есть два шага на пути к решению:</p>
+<ul>
+<li>Узнать, какие департаменты существуют</li>
+<li>Получить всех служащих, которые относятся к одному департаменту</li>
+</ul>
+<p>Узнать, какие департаменты существуют, можно выбрав по одному сотруднику из
+каждого департамента в XML, который может с успехом быть первым, кто попадётся.
+Один способ найти их - это взять тех сотрудников, которые не относятся к
+департаменту из множества департаментов предыдущих сотрудников.</p>
+<p>{% highlight xml %}
+employee[not(department = preceding-sibling::employee/department)]
+{% endhighlight %}</p>
+<p>Определив таких сотрудников, легко найти их департаменты и собрать вместе всех
+сотрудников из одного и того же департамента:</p>
+<p>{% highlight xml %}</p>
+<p><xsl:apply-template select="data/employee[department = current()/department]"/>
+{% endhighlight %}</p>
+<p>Проблема этого метода в том, что он включает в себя два XPath-выражения,
+вычисление которых потребует много ресурсов для больших XML-документов. Поиск по
+всем предыдущим братьям с осью &#39;preceding-sibling&#39; занимает много времени, если
+вы ближе к конце записей. Кроме того, получение всех контактов определённых
+департаментов каждый раз включает в себя поиск одного сотрудника.</p>
+<h4 id="-">Метод Мюнха</h4>
+<p>Этот метод разработан Стивом Мюнхом (Steve Muench) для представления этих
+функций более эффективным способом с использованием ключей. Ключи работают путём
+назначения значения ключа узлу и дают прямой доступ к узлу через такое значение.
+Если элементов, у которых один и тот же ключ, много, то все эти элементы
+найдутся, когда вы воспользуетесь этим ключом. В сущности, это означает, что
+если вы хотите сгруппировать множество узлов согласно какому-то свойству узла,
+вы можете использовать ключи.</p>
+<p>В примере выше мы хотим сгруппировать сотрудников согласно их департаментам,
+поэтому мы создаём ключ, который назначает каждому сотруднику значение ключа,
+которое берётся из департамента этого сотрудника. Узлы, которые мы хотим
+сгруппировать должны быть подставлены в атрибут &quot;match&quot;. Значение ключа, которые
+мы хотим использовать записывается в атрибут &quot;use&quot;.</p>
+<p>{% highlight xml %}</p>
+<p><xsl:key name="employees-by-department" match="employee" use="department"/>
+{% endhighlight %}</p>
+<p>Однажды определив ключ, зная департамент, мы можем быстро получить доступ ко
+всем сотрудникам этого департамента.<br/>
+Например, ключ <code>key(&#39;employees-by-department&#39;, &#39;IT&#39;)</code> даст записи с
+департаментом &quot;IT&quot;.</p>
+<p>Однако, первое, что нам надо сделать,- это определить, какие бывают
+департаменты, что включает в себя нахождение первого сотрудника в XML для
+каждого департамента. Здесь мы снова можем использовать ключи. Мы знаем, что
+сотрудник будет частью списка узлов, которые можно получить по ключу данного
+департамента: вопрос в том, будет ли он первым в этом списке (который упорядочен
+как записи в XML-документе) или ниже? Нас интересуют только записи, идущие
+первыми в списке.<br/>
+Выяснение, является ли сотрудник первым в списке, возвращённом по ключу,
+подразумевает сравнение узла employee с первым узлом в списке. Этот способ также
+может быть использован для получения отдельных элементов в XML-файле. Есть пара
+характерных способов проверки, идентичны ли два узла:</p>
+<ul>
+<li>Сравнить уникальные идентификаторы, сгенерированные для узлов (используя
+<code>generate-id()</code>):</li>
+</ul>
+<p>{% highlight xml %}
+employee[generate-id() = generate-id(key(&#39;employees-by-department&#39;, department)[1])]
+{% endhighlight %}</p>
+<ul>
+<li>Посмотреть, сколько узлов включает в себя результат объединения двух узлов:
+один или два - узлы не могут повторяться во множестве, так что если там
+только один узел, то они должны быть одним и тем же узлом:</li>
+</ul>
+<p>{% highlight xml %}
+employee[count(.|key(&#39;employees-by-department&#39;, department)[1]) = 1]
+{% endhighlight %}</p>
+<p>Однажды определив группы, вы можете отсортировать их так, как вам нравится.
+Также вы можете отсортировать узлы в рамках группы так, как вы хотите. Вот
+шаблон, который создаёт результат, который мы описали, из XML, полученного из
+базы данных:</p>
+<p>{% highlight xml %}
+&lt;?xml version=&quot;1.0&quot;?&gt;</p>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<p>  <xsl:output method = "html" encoding="Windows-1252" />
+  <xsl:key name = "employees-by-department" match ="employee" use = "department" /></p>
+<p>  <xsl:template match="data">
+    <html>
+      <head></head>
+      <body>
+        <xsl:for-each select = "employee[count(.|key('employees-bydepartment',
+department)[1])=1]">
+          <xsl:sort select="department" />
+          <b><u><xsl:value-of select="department" /></u></b><br/>
+            <xsl:for-each select="key('employees-bydepartment',
+department)">
+              <xsl:sort select="name"/>
+              <xsl:value-of select="name" /><br/>
+            </xsl:for-each>
+          </xsl:for-each>
+        </body>
+      </html>
+  </xsl:template></p>
+<p></xsl:stylesheet>
+{% endhighlight %}</p>
+<p>Метод Мюнха обычно лучше использовать для группировки узлов из XML-документа,
+потому что он не подразумевает прохождения через большое число узлов, и поэтому
+он более эффективен. Он особенно полезен, когда у вас есть плоская выдача из
+базы данных, например, которую вам нужно преобразовать в какую-нибудь
+иерархичную структуру. Он может быть применён в любой ситуации, где нужно
+группировать узлы согласно их свойствам, которые можно получить через
+XPath.<br/>
+Обратная сторона состоит в том, что метод Мюнха будет работать только с
+XSLT-процессором, поддерживающим ключи. Вдобавок, использование ключей может
+быть достаточно затратным по памяти, потому что все узлы и их ключи хранятся в
+памяти. Наконец, может быть трудно использовать ключи, если узлы, которые вы
+хотите сгруппировать, получены из разных подключенных источников.</p>
+<h2 id="-xsl-import">Использование xsl:import</h2>
+<p>Используйте <code>&lt;xsl:import&gt;</code>, чтобы подключить общие, основные правила в
+преобразование, задуманное для определённых трансформаций. Если можете, не
+импортируйте больше шаблонов, чем вам нужно.</p>
+<h2 id="-html">Использование статического HTML</h2>
+<p>Для любых &quot;неизменных&quot; порций html на странице (таких как шапка, подвал,
+элементы навигации) определённо более эффективно хранить фрагменты как внешние
+xml-файлы и копировать их в результирующее дерево используя <code>xsl:copy-of</code> и
+функцию <code>document()</code>, чем использовать именованные шаблоны или <code>xsl:import</code>.</p>
+<h2 id="-call-apply-templates">Разница между call и apply templates</h2>
+<p>Call-template, в отличие от aplly-templates, не меняет контекстный (текущий)
+узел. И атрибут select имеет значение только в aplly-templates, и не имеет в
+call-template.</p>
+<h2 id="-">Повторное использование кода и рефакторинг</h2>
+<p>Проблема с использованием одного темплейта с множеством условий - это то, что
+очень быстро делает код отвратительным, нечитаемым и неподддерживаемым. Проблема
+многих шаблонов состоит в том, что вы часто дублируете код. Золотая середина -
+использовать много шаблонов, а при необходимости повторить код - вызывать
+именованные шаблоны, иногда с параметрами, если имеют место небольшие изменения,
+которые должны быть учтены. Именованные шаблоны похожи на подпрограммы или
+приватные методы.</p>
+<p>Например. Допустим, вы хотите обработать элементы item, имея один шаблон для
+узлов со значением атрибута type - &#39;Book&#39;, один - для &#39;CD&#39;, и один для всех
+остальных.</p>
+<p>{% highlight xml %}</p>
+<p><xsl:template match="item[@type='Book']"/></p>
+<p><xsl:template match="item[@type='CD']"/></p>
+<p><xsl:template match="item"/>
+{% endhighlight %}</p>
+<p>И они переопределят шаблон, привязанный к &quot;*&quot; (любой элемент). Шаблоны с более
+точной адресацией будут иметь более высокий приоритет для сопоставления.</p>
+<h2 id="-xsl-">Автоматизируйте XSL-документацию</h2>
+<p>Программисты обычно ненавидят документацию и поэтому обычно не пишут её.
+Javadocs в Java даёт большое утешение программистскому сообществу, обеспечивая
+способ автоматически генерировать документацию. Есть похожий инструмент, который
+написан для XSL и называется xsldoc. Его можно бесплатно скачать на
+<a href="http://www.xsldoc.org/">www.xsldoc.org</a>.<br/>
+Этот инструмент обеспечит автоматизированный, стандартизированный и надежный
+способ создания документации о ваших XSL-файлах, и поскольку он управляется из
+командной строки, то может стать частью процесса сборки.</p>
+<h2 id="-xslt-">Не изобретайте велосипед, используйте XSLT-библиотеку</h2>
+<p>XSLT-библиотека - это open source репозиторий XSL-шаблонов, которые были
+написаны и проверены. В библиотеке множество шаблонов для работы со строками,
+датами, обработки узлов и т.п., что может быть эффективно использовано в ваших
+xsl-файлах. Так что сэкономьте своё время с этой библиотекой. Её можно
+посмотреть по адресу <a href="http://xsltsl.sourceforge.net">http://xsltsl.sourceforge.net</a>.</p>
+<h2 id="-html-">Уменьшайте размер ваших HTML-документов</h2>
+<p>Уменьшайте размер вашего HTML, используя <code>indent=&quot;no&quot;</code> в теге
+<code>&lt;xsl:output/&gt;</code>. Этот атрибут сообщает XSLT-процессору не делать отступы в
+HTML-документе, что делает файлы меньше и они грузятся быстрее.</p>
+<p>{% highlight xml %}</p>
+<p><xsl:output method="html" indent="no"/>
+{% endhighlight %}</p>
+
+    </div>
+    <div class="comments">
+        <div class="comments__box box__body">
+            <h4 class="comments__header">
+                Обсуждение
+            </h4>
+        </div>
+        <div class="comments__body box__island">
+            
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                    var disqus_shortname = 'varya'; // required: replace example with your forum shortname
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            
+        </div>
+    </div>
+    <div class="related">
+        <div class="related__body box__body">
+            <h4 class="related__header">
+                Кстати
+            </h4>
+        </div>
+        <div class="related__text box__island">
+                <a href="https://github.com/varya/varya.github.com/issues/new?title=Feedback for XSLT - результативные технологии программирования">
+                Создайте для меня issue на GitHub</a>, если вы заметили ошибку или хотите дополнить статью.
+                Или вы можете
+                <a href="https://github.com/varya/varya.github.com/edit/develop/src/documents/posts/2009-07-25-efficient_xslt_techniques_ru.html.md">отредактировать пост самостоятельно и послать мне патч</a>.
+        </div>
+    </div>
+</div>
+        </section>
+        <nav class="sidebar">
+        <ul class="menu-vert">
+            <h3 class="menu-vert__title box__title">
+                На этом сайте
+            </h3>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/ru/posts">
+                        Блог
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/ru/content">
+                        Статьи и презентации
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/ru">
+                        Обо мне
+                    </a>
+                </li>
+            
+            </ul>
+            <div class="github i-bem"
+                data-bem='{ "github" : { "user" : "varya" } }'>
+                <div class="github__header"></div>
+                <div class="github__body"></div>
+            </div>
+        </nav>
+        <aside class="prompting">
+            <ul class="social-ico menu-vert">
+                <li class="menu-vert__item">
+                    <ul class="social-ico__text menu-vert">
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/en/feed.xml" title="New on Varya.me in English">en</a>
+                        </li>
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/ru/feed.xml" title="Новые записи на Varya.me">ru</a>
+                        </li>
+                    </ul>
+                    <a class="link social-ico__ico social-ico__ico_type_rss" href="/feed.xml" title="New on Varya.me"></a>
+                </li>
+                <li class="menu-vert__item">
+                <a class="link social-ico__ico social-ico__ico_type_twitter"
+                    href="https://twitter.com/toivonens"
+                    title="@toivonens"
+                    target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_github" href="https://github.com/varya" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_facebook" href="http://www.facebook.com/varvara.stepanova.9" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_linkedin" href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b" target="_blank"></a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <div class="footer__outer">
+        <footer class="footer">
+            <div class="footer__left">
+            </div>
+            <div class="footer__center">
+                <a class="link  link_text  link_wrapper" href="http://varya.me/ru/">
+                    © 2015
+                    <span class="link__inner">Варя Степанова</span>.
+                </a>
+                <a class="link  link_wrapper  link_twitter"
+                    href="https://twitter.com/toivonens"
+                    title="@toivonens">
+                    <img alt="Twitter" class="ico" src="http://favicon.yandex.net/favicon/twitter.com" title="Twitter"/>
+                    <span class="link__inner">Читайте меня в Твиттере</span>!
+                </a>
+            </div>
+            <div class="footer__right">
+            </div>
+        </footer>
+    </div>
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter20478625 = new Ya.Metrika({id:20478625, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/20478625" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+    <script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/desktop.bundles/index/index.min.js" async defer></script>
+</body>
+</html>

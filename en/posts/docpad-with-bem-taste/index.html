@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="page page_en" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Docpad with the taste of BEM</title>
+    <link  rel="stylesheet" href="/desktop.bundles/index/index.min.css" />
+    <script>
+    (function(d, s, l, r) {
+    if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
+        r = [
+            '<style>',
+            l.getItem('varya.me.fonts'),
+            '</style>'
+        ];
+        document.write(r.join(''));
+    }
+
+    })(document, Storage, localStorage);
+    </script>
+</head>
+<body class="page page__body">
+    <header class="header">
+        <div class="header__left candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'></div>
+        <logo class="logo header__center">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+        <div class="header__right candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 } } }'></div>
+    </header>
+    <div class="layout">
+        <section class="main">
+            <ul class="languages">
+            
+                <li class="languages__lang">
+                    
+                        en
+                    
+                </li>
+                
+                <li class="languages__lang">
+                    
+                    <a href="">
+                        ru
+                    </a>
+                    
+                </li>
+                
+            </ul>
+            <div class="article" role="main">
+    <div class="article__body box__body">
+        <h1 class="article__header">
+            Docpad with the taste of BEM
+        </h1>
+    </div>
+    <div class="article__text box__island">
+        <script type="text/javascript" src="//yandex.st/share/share.js"
+        charset="utf-8"></script>
+        <div class="share yashare-auto-init" data-yashareL10n="{{ lang }}"
+            data-yashareQuickServices="twitter,facebook,gplus" data-yashareTheme="counter"
+        ></div>
+        <span class="article__details author vcard">
+            Published on
+            4th June 2014
+        </span>
+        <p>Let me present a stub for <strong>docpad-run</strong> project with
+<strong>bem-built</strong> static assets. If you ever wanted to be
+a generic blog holder equiped with nice and neat static
+files, here we go.</p>
+<excerpt/>
+
+<h2 id="how-to-start">How to start</h2>
+<p>You need install the docpad first. Follow their <a href="http://docpad.org/docs/install">Installation Guide</a>.</p>
+<p>Then, the installation of the blog is super short and easy. Clone, fork or
+copy from the <a href="https://github.com/varya/docpad-bem-stub">docpad-bem-stub repository</a>.
+Then, go though the 3 installation steps:</p>
+<pre class="highlight"><code class="hljs bash">npm install
+./node_modules/bower-npm-install/bin/bower-npm-install
+docpad run
+</code></pre>
+<p>With these 3 steps you will get:</p>
+<ul>
+<li>a local server with a generic docpad blog;</li>
+<li><a href="http://bem.info/libs/bem-core/2.2.0/">bem-core</a> and <a href="http://bem.info/libs/bem-components/v2/">bem-components</a>
+libraries of reusable CSS/JavaScript/templates code;</li>
+<li>fully tuned static-build instructions which run on changes
+in your source code;</li>
+<li>initial blog structure.</li>
+</ul>
+<h2 id="how-to-write">How to write</h2>
+<p>In the given structure you can write either pages or blog posts.
+The posts are listed in the index page. Once you added a new
+item, you can see it in this list and navigate to its page;
+the docpad rebuilds from source automatically.</p>
+<p>Place the pages as <code>*.html.md</code> files into <code>src/documents/pages</code>
+directory. The posts are kept into <code>src/documents/posts</code>.</p>
+<h2 id="how-to-develop-statics">How to develop statics</h2>
+<p>The statics is developed with <a href="http://bem.info/">BEM</a>.
+You can get CSS and JavaScript files for your pages in
+<code>desktop.bundles</code> directory. The pages are built with blocks
+from <code>desktop.blocks</code> folder.</p>
+<p>The rebuild process for statics runs under docpad server.</p>
+<p>Sometimes you may prefer to develop static pages separately.
+For this run</p>
+<pre class="highlight"><code class="hljs gradle">.<span class="hljs-regexp">/node_modules/</span>enb<span class="hljs-regexp">/bin/</span>enb server
+</code></pre><p>You will get another server which rebuilds statics. It
+produces static html files from <code>*.bemjson.js</code> files in
+<code>desktop.bundles</code>. You can develop the layout inserting
+json there and providing <code>BEMHTML</code> templates for the
+corresponding block. Find the documentation about <code>BEMHTML</code>
+here:</p>
+<ul>
+<li><a href="http://bem.info/libs/bem-core/2.2.0/templating/intro/">BEMHTML quick start</a></li>
+</ul>
+<p>For the same blocks you can provide <code>*.css</code> and <code>*.js</code> files
+and get them built into pages.</p>
+<h2 id="how-to-publish">How to publish</h2>
+<p>The blog is tuned to be deployed on GitHub. Thus, your
+repository has to be named as <code>&lt;username&gt;.github.com</code>. You
+can develop in its <code>source</code> branch. For deploying on
+<code>&lt;username&gt;.github.io</code> host run this command:</p>
+<pre class="highlight"><code class="hljs bash">docpad deploy-ghpages
+</code></pre>
+<p>This will create <code>master</code> branch of the repository whose
+source is linked to the host.</p>
+<p>You can also attach your own domain to the blog like I did.
+Also, it is possible to host your blog in differently named
+repository. However this will make you to provide changes
+on <code>docpad.coffee</code> configuration file.<br/>
+Study <a href="https://pages.github.com/">Github Pages</a> to learn more.</p>
+<h2 id="why-docpad-">Why Docpad?</h2>
+<p>This blog had been running on Jekyll for a while. This was an
+acceptable soltuion for a quick start. However with the growth
+of the posts base I started to suffer from not very fast
+rebuilds. Also, sometimes providing changes into the blog
+layout was hard, mostly due to the limitations of <code>liquid</code>
+templates.</p>
+<p>I&#39;ve decided that <a href="http://docpad.org/">Docpad</a> should be much
+better alternative. It is served as an npm package, possible to
+be extended with plugins and has an active fast-growing
+developers community.</p>
+<p>The <code>docpad-bem-stub</code> gives you initial structure, from which
+you already can write and publish. If you want to provide changes
+into the build process, modify the templates or extend with
+plugins, <a href="http://docpad.org/">learn at Docpad website</a>.</p>
+<p>Moreover, <a href="http://stackoverflow.com/">Stackoverflow</a> indeed already
+has an answer to almost all the questions you have. If not, create a new
+one.</p>
+<h2 id="why-bem-">Why BEM?</h2>
+<p>BEM is a very flexible modular solution for frontend which
+enables to develop reusable CSS and JavaScript components. Plus, some code
+can be taken from their open source libraries.</p>
+<p>You can learn a lot about BEM from <a href="/en/content">my articles and talks</a>
+or at the <a href="http://bem.info/">official BEM site</a>.</p>
+<h2 id="inside-about">Inside about</h2>
+<p>Above I described all you need to know for using your blog. Below there
+are a little more technical details on what is behind.</p>
+<h3 id="enb">ENB</h3>
+<p>I use <a href="https://github.com/enb-make/enb">enb</a> for building pages with block
+components. This solution is preferable to bem-tools because of it is much
+faster. When rebuilding pages on every change, this is sensetive.</p>
+<h3 id="i-bem-js-and-modules">i-bem.js and modules</h3>
+<p>I personally love that this solution brings <code>i-bem.js</code> library to the
+project. Hope to demonstrate its amazing capabilities here in near future.
+But before I stuff my blog with complex JavaScript components, you
+can see some examples and very detailed explanations in <a href="http://bem.info/tutorials/bem-js-tutorial/">Step-by-step tutorial on
+i-bem.js</a>.</p>
+<p>Another JavaScript feature you can enjoy is <a href="/en/issues/ym-modular-system">YM modular system</a>.
+These are JavaScript modules with asynchronious resolving.</p>
+<h3 id="bemhtml">BEMHTML</h3>
+<p>As mentioned above, <code>BEMHTML</code> is a templating solution. Being JavaScript-based,
+these templates can be applied on both server and client side. There are
+a couple of documents for a deeper dive into it here:</p>
+<ul>
+<li><a href="http://bem.info/libs/bem-core/2.2.0/templating/rationale/">BEMHTML templates description</a></li>
+<li><a href="http://bem.info/libs/bem-core/2.2.0/templating/reference/">BEMHTML tutorial</a></li>
+</ul>
+<h3 id="bem-core-and-bem-components">bem-core and bem-components</h3>
+<p>BEM is also nice for a possibility to borrow the components from libraries.
+<code>docpad-bem-stub</code> uses 2 now available libraries:</p>
+<ul>
+<li><a href="http://bem.info/libs/bem-core/2.2.0/">bem-core</a></li>
+<li><a href="http://bem.info/libs/bem-components/v2/">bem-components</a></li>
+</ul>
+<p>I hope to see more in the future.</p>
+<h2 id="what-next-">What next?</h2>
+<p>Indeed everything can be improved. These are my thoughts on how
+to continue.</p>
+<ul>
+<li>detect changes in static files<br/>
+Docpad watches over the changes in <code>src</code> directory. This means that
+when developing statics you will not get the rebuild. I am thinking
+on running <code>enb server</code> under <code>docpad run</code> and proxy. This maybe
+better than watch over a lot of files in <code>desktop.blocks</code>, <code>desktop.bundles</code>
+and all the libraries.</li>
+<li>css preprocessors<br/>
+The blog styles are in pure CSS now. But with a little
+change into enb configuration we can learn it to build with
+preprocessors.</li>
+<li>fresh design<br/>
+Creating a simple layout is the most difficult design task. Don&#39;t you agree?</li>
+<li>nice initial posts<br/>
+This is even harder than the desing tasks but I think the users feel much
+more comfortable when getting a blog with predefined texts.</li>
+</ul>
+<p>If you feel your oats and want to do your bit, fork <a href="https://github.com/varya/docpad-bem-stub">the repository</a>
+and start :-)</p>
+
+    </div>
+    <div class="comments">
+        <div class="comments__box box__body">
+            <h4 class="comments__header">
+                Comments
+            </h4>
+        </div>
+        <div class="comments__body box__island">
+            
+                <div id="disqus_thread"></div>
+<script>
+	(function(){
+		window.disqus_shortname = 'varya';
+		window.disqus_developer = '1';
+		window.disqus_url = 'http://varya.me//en/posts/docpad-with-bem-taste';
+		window.disqus_identifier = 'posts-docpad-with-bem-taste-en';
+		window.disqus_title = 'Docpad with the taste of BEM';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            
+        </div>
+    </div>
+    <div class="related">
+        <div class="related__body box__body">
+            <h4 class="related__header">
+                By the way
+            </h4>
+        </div>
+        <div class="related__text box__island">
+                <a href="https://github.com/varya/varya.github.com/issues/new?title=Feedback for Docpad with the taste of BEM">
+                Create a GitHub issue for me</a> if you've spotted a typo or a mistake, or wish to add something on.
+                Or you can
+                <a href="https://github.com/varya/varya.github.com/edit/develop/src/documents/posts/docpad-with-bem-taste_en.html.md">edit this post yourself and make me a patch</a>.
+        </div>
+    </div>
+</div>
+        </section>
+        <nav class="sidebar">
+        <ul class="menu-vert">
+            <h3 class="menu-vert__title box__title">
+                On this site
+            </h3>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/posts">
+                        Blog
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/content">
+                        Articles and talks
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/">
+                        About me
+                    </a>
+                </li>
+            
+            </ul>
+            <div class="github i-bem"
+                data-bem='{ "github" : { "user" : "varya" } }'>
+                <div class="github__header"></div>
+                <div class="github__body"></div>
+            </div>
+        </nav>
+        <aside class="prompting">
+            <ul class="social-ico menu-vert">
+                <li class="menu-vert__item">
+                    <ul class="social-ico__text menu-vert">
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/en/feed.xml" title="New on Varya.me in English">en</a>
+                        </li>
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/ru/feed.xml" title="Новые записи на Varya.me">ru</a>
+                        </li>
+                    </ul>
+                    <a class="link social-ico__ico social-ico__ico_type_rss" href="/feed.xml" title="New on Varya.me"></a>
+                </li>
+                <li class="menu-vert__item">
+                <a class="link social-ico__ico social-ico__ico_type_twitter"
+                    href="https://twitter.com/varya_en"
+                    title="@varya_en"
+                    target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_github" href="https://github.com/varya" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_facebook" href="http://www.facebook.com/varvara.stepanova.9" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_linkedin" href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b" target="_blank"></a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <div class="footer__outer">
+        <footer class="footer">
+            <div class="footer__left">
+            </div>
+            <div class="footer__center">
+                <a class="link  link_text  link_wrapper" href="http://varya.me/">
+                    © 2015
+                    <span class="link__inner">Varya Stepanova</span>.
+                </a>
+                <a class="link  link_wrapper  link_twitter"
+                    href="https://twitter.com/varya_en"
+                    title="@varya_en">
+                    <img alt="Twitter" class="ico" src="http://favicon.yandex.net/favicon/twitter.com" title="Twitter"/>
+                    <span class="link__inner">Follow me on twitter</span>!
+                </a>
+            </div>
+            <div class="footer__right">
+            </div>
+        </footer>
+    </div>
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter20478625 = new Ya.Metrika({id:20478625, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/20478625" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+    <script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/desktop.bundles/index/index.min.js" async defer></script>
+</body>
+</html>

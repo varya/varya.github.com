@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="page page_en" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Custom fonts with no cramp</title>
+    <link  rel="stylesheet" href="/desktop.bundles/index/index.min.css" />
+    <script>
+    (function(d, s, l, r) {
+    if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
+        r = [
+            '<style>',
+            l.getItem('varya.me.fonts'),
+            '</style>'
+        ];
+        document.write(r.join(''));
+    }
+
+    })(document, Storage, localStorage);
+    </script>
+</head>
+<body class="page page__body">
+    <header class="header">
+        <div class="header__left candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'></div>
+        <logo class="logo header__center">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+        <div class="header__right candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 } } }'></div>
+    </header>
+    <div class="layout">
+        <section class="main">
+            <ul class="languages">
+            
+                <li class="languages__lang">
+                    
+                        en
+                    
+                </li>
+                
+                <li class="languages__lang">
+                    
+                    <a href="">
+                        ru
+                    </a>
+                    
+                </li>
+                
+            </ul>
+            <div class="article" role="main">
+    <div class="article__body box__body">
+        <h1 class="article__header">
+            Custom fonts with no cramp
+        </h1>
+    </div>
+    <div class="article__text box__island">
+        <script type="text/javascript" src="//yandex.st/share/share.js"
+        charset="utf-8"></script>
+        <div class="share yashare-auto-init" data-yashareL10n="{{ lang }}"
+            data-yashareQuickServices="twitter,facebook,gplus" data-yashareTheme="counter"
+        ></div>
+        <span class="article__details author vcard">
+            Published on
+            26th December 2013
+        </span>
+        <p>A developer using custom fonts in web (don&#39;t say this is evil) usually face a
+dilemma.</p>
+<p>The users&#39; main interest is the content of the page not the
+view. It is nice to provide it as fast as possible and then apply a custom font.
+This blog used to work this way. I provided a script among others in the bundle
+linked by the end of the page.</p>
+<excerpt/>
+
+<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(d)</span></span>{
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addFont</span><span class="hljs-params">(url, h, l)</span> </span>{
+h = d.getElementsByTagName(<span class="hljs-string">'head'</span>)[<span class="hljs-number">0</span>];
+l = d.createElement(<span class="hljs-string">'link'</span>);
+l.href = url;
+l.rel = <span class="hljs-string">'stylesheet'</span>;
+h.appendChild(l);
+}
+
+addFont(<span class="hljs-string">'//fonts.googleapis.com/css?'</span> +
+<span class="hljs-string">'family=Noto+Serif&amp;subset=latin,cyrillic-ext,cyrillic'</span>);
+
+})(<span class="hljs-built_in">document</span>);
+</code></pre>
+<p>The drawback is obvious. Once a font is loaded and apllied, a user notice
+twitching as a page is being re-rendering. It is recommended to define a
+suitable system font in the <code>font-face</code>. But there never is a good fit.
+Otherwise there was no need in a custom font.</p>
+<p>The only way to avoid the font rendering jerk is to provide the font in advance.
+With inlining a base64 of a font into CSS and linking it in <code>&lt;head&gt;</code> no
+twitching is guaranteed as well as increasing page loading time.</p>
+<p>For a while I was deciding between the two variants until my colleague <a href="http://kizu.ru/en/">Roman
+Komarov aka kizu</a> suggested an elegant solution which is in
+use right now.</p>
+<p>At the first time a user opens any page of this site, a CSS with the font is
+loaded and stored as a piece of text in the <code>localStorage</code>.</p>
+<pre class="highlight"><code class="hljs javascript">$(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span>(Storage) === <span class="hljs-string">'undefined'</span>) {
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">if</span> (localStorage.getItem(<span class="hljs-string">'varya.me.fonts'</span>) === <span class="hljs-literal">null</span>) {
+
+        $.ajax({
+            url: <span class="hljs-string">'../../data/fonts.css'</span>,
+            success: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(response)</span></span>{
+                localStorage.setItem(<span class="hljs-string">'varya.me.fonts'</span>, response);
+            },
+            dataType: <span class="hljs-string">'text'</span>
+        });
+
+    }
+
+});
+</code></pre>
+<p>But I do not apply this CSS after loading. So, not jerks. As request is only to
+fill up the storage, it goes after the <code>domReady</code>.</p>
+<p>By the time of requesting the next page the custom font is already in the user&#39;s
+computer. Checking that it is available I apply it to the page. The faster the
+better, and as the action costs almost nothing an inline <code>&lt;head&gt;</code> script goes
+here.</p>
+<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(d, s, l, r)</span> </span>{
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span>(s) !== <span class="hljs-string">'undefined'</span> &amp;&amp; l.getItem(<span class="hljs-string">'varya.me.fonts'</span>)) {
+    r = [
+        <span class="hljs-string">'&lt;style&gt;'</span>,
+        l.getItem(<span class="hljs-string">'varya.me.fonts'</span>),
+        <span class="hljs-string">'&lt;/style&gt;'</span>
+    ];
+    <span class="hljs-built_in">document</span>.write(r.join(<span class="hljs-string">''</span>));
+}
+
+})(<span class="hljs-built_in">document</span>, Storage, localStorage);
+</code></pre>
+<p>With that the blog looks as it should do with 2+ pages loaded. I consider this
+price for no-twitching custom font as reasonable.</p>
+<p>Any ideas of making it even better?</p>
+
+    </div>
+    <div class="comments">
+        <div class="comments__box box__body">
+            <h4 class="comments__header">
+                Comments
+            </h4>
+        </div>
+        <div class="comments__body box__island">
+            
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                    var disqus_shortname = 'varya'; // required: replace example with your forum shortname
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            
+        </div>
+    </div>
+    <div class="related">
+        <div class="related__body box__body">
+            <h4 class="related__header">
+                By the way
+            </h4>
+        </div>
+        <div class="related__text box__island">
+                <a href="https://github.com/varya/varya.github.com/issues/new?title=Feedback for Custom fonts with no cramp">
+                Create a GitHub issue for me</a> if you've spotted a typo or a mistake, or wish to add something on.
+                Or you can
+                <a href="https://github.com/varya/varya.github.com/edit/develop/src/documents/posts/2013-11-26-fonts-no-cramp_en.html.md">edit this post yourself and make me a patch</a>.
+        </div>
+    </div>
+</div>
+        </section>
+        <nav class="sidebar">
+        <ul class="menu-vert">
+            <h3 class="menu-vert__title box__title">
+                On this site
+            </h3>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/posts">
+                        Blog
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/content">
+                        Articles and talks
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/">
+                        About me
+                    </a>
+                </li>
+            
+            </ul>
+            <div class="github i-bem"
+                data-bem='{ "github" : { "user" : "varya" } }'>
+                <div class="github__header"></div>
+                <div class="github__body"></div>
+            </div>
+        </nav>
+        <aside class="prompting">
+            <ul class="social-ico menu-vert">
+                <li class="menu-vert__item">
+                    <ul class="social-ico__text menu-vert">
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/en/feed.xml" title="New on Varya.me in English">en</a>
+                        </li>
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/ru/feed.xml" title="Новые записи на Varya.me">ru</a>
+                        </li>
+                    </ul>
+                    <a class="link social-ico__ico social-ico__ico_type_rss" href="/feed.xml" title="New on Varya.me"></a>
+                </li>
+                <li class="menu-vert__item">
+                <a class="link social-ico__ico social-ico__ico_type_twitter"
+                    href="https://twitter.com/varya_en"
+                    title="@varya_en"
+                    target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_github" href="https://github.com/varya" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_facebook" href="http://www.facebook.com/varvara.stepanova.9" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_linkedin" href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b" target="_blank"></a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <div class="footer__outer">
+        <footer class="footer">
+            <div class="footer__left">
+            </div>
+            <div class="footer__center">
+                <a class="link  link_text  link_wrapper" href="http://varya.me/">
+                    © 2015
+                    <span class="link__inner">Varya Stepanova</span>.
+                </a>
+                <a class="link  link_wrapper  link_twitter"
+                    href="https://twitter.com/varya_en"
+                    title="@varya_en">
+                    <img alt="Twitter" class="ico" src="http://favicon.yandex.net/favicon/twitter.com" title="Twitter"/>
+                    <span class="link__inner">Follow me on twitter</span>!
+                </a>
+            </div>
+            <div class="footer__right">
+            </div>
+        </footer>
+    </div>
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter20478625 = new Ya.Metrika({id:20478625, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/20478625" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+    <script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/desktop.bundles/index/index.min.js" async defer></script>
+</body>
+</html>

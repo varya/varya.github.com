@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html class="page page_ru" lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <title>Мобильное приложение на HTML5 со штатным интерфейсом</title>
+    <link  rel="stylesheet" href="/desktop.bundles/index/index.min.css" />
+    <script>
+    (function(d, s, l, r) {
+    if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
+        r = [
+            '<style>',
+            l.getItem('varya.me.fonts'),
+            '</style>'
+        ];
+        document.write(r.join(''));
+    }
+
+    })(document, Storage, localStorage);
+    </script>
+</head>
+<body class="page page__body">
+    <header class="header">
+        <div class="header__left candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'></div>
+        <logo class="logo header__center">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+        <div class="header__right candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 } } }'></div>
+    </header>
+    <div class="layout">
+        <section class="main">
+            <ul class="languages">
+            
+                <li class="languages__lang">
+                    
+                    <a href="/en/posts/html5-mobile-app-width-native-ui">
+                        en
+                    </a>
+                    
+                </li>
+                
+                <li class="languages__lang">
+                    
+                        ru
+                    
+                </li>
+                
+            </ul>
+            <div class="article" role="main">
+    <div class="article__body box__body">
+        <h1 class="article__header">
+            Мобильное приложение на HTML5 со штатным интерфейсом
+        </h1>
+    </div>
+    <div class="article__text box__island">
+        <script type="text/javascript" src="//yandex.st/share/share.js"
+        charset="utf-8"></script>
+        <div class="share yashare-auto-init" data-yashareL10n="{{ lang }}"
+            data-yashareQuickServices="twitter,facebook,gplus,vkontakte" data-yashareTheme="counter"
+        ></div>
+        <span class="article__details author vcard">
+            Опубликовано
+            28th May 2014
+        </span>
+        <p>Недавно я побывала на конференции <a href="http://2014.front-trends.com/">Front Trends 2014</a>
+в Варшаве. Конференция очень крутая, обязательно посетите её в следующем году.
+У них всегда интересная основная программа, и кроме неё есть ещё
+мини-доклады от всех желающих. В этом году одним из таких докладов был мой,
+о фреймворке и инструментах для разработки HTML5/JavaScript мобильных
+приложений <a href="http://www.appgyver.com/steroids">Steroids</a>.
+Если вы не были на конференции, то можете прочесть мою презентацию в тексте.</p>
+<excerpt/>
+
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#Cover">
+  </iframe>
+</div>
+
+<p>Я совсем новичок в разработке мобильных приложений, но всё равно решилась
+показать, как пользоваться Steroids, потому что благодаря ему я смогла сделать
+приложение с системным интерфейсом (native UI) и безболезненно пройти через
+весь цикл разработки за считанные минуты.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#summary">
+  </iframe>
+</div>
+
+<p>Инструменты Steroids — это пакет с command line интерфейсом. Вместе с ним вы получите
+JavaScript-фреймворк Steroids. А также инструменты обеспечат вам сборку проекта,
+удобный процесс разработки, отладки и релиза. Всё написано под NodeJS, так что
+потребуется его установить.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#3">
+  </iframe>
+</div>
+
+<p>Нужна версия <code>0.10.25</code>. В инструкции <a href="http://academy.appgyver.com/categories/1/contents/1">Installation and Setup
+Guide</a>
+подробно написано, как устанавливать.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#4">
+  </iframe>
+</div>
+
+<p>Самая первая команда, которой вы воспользуетесь, — это <code>steroids create</code>.
+Затем, в получившейся папке проекта наберите <code>steroids connect --watch</code> —
+запустится процесс steroids. Флаг <code>--watch</code> нужен, чтобы Steroids отслеживал
+изменения файлов и каждый раз пересобирал проект и обновлял его на подключенных
+устройствах.</p>
+<p>Вы можете подключить к проекту реальный телефон. После запуска <code>steroids connect</code>
+откроется окно браузера с QR-кодом. Считайте этот QR-код мобильным приложением
+<code>AppGyver Scanner</code> — и проект окажется в вашем телефоне (а кроме того — будет
+обновляться).</p>
+<div style="text-align:center;">
+<a href="https://itunes.apple.com/us/app/appgyver-scanner/id575076515?mt=8"
+target="_blank"><img alt="Appstore" class="appstore_icon"
+src="https://share.appgyver.com/assets/appstore-df950585b54bd081a7826913fc715cd4.png"></a>
+<a href="https://play.google.com/store/apps/details?id=com.appgyver.android&amp;feature=nav_result#?t=W251bGwsMSwxLDMsImNvbS5hcHBneXZlci5hbmRyb2lkIl0."
+target="_blank"><img alt="Googleplay" class="appstore_icon"
+src="https://share.appgyver.com/assets/googleplay-2cef882d62e402fbdbfe8cdac5794069.png"></a>
+</div>
+
+<p>Другой способ — открыть проект в Simulator. Для этого наберите <code>simulator</code>
+в окне терминала, где запускали <code>steroids connect</code>.</p>
+<p>Теперь можете изменить исходный код приложения. Например, напишите
+свой текст в файле <code>www/index.html</code>. После этого можете проверить,
+что приложение в подключенном телефоне или в симуляторе изменилось.</p>
+<p>Научиться, как сделать более серьезные изменения в проекте, вы
+можете из примеров и туториалов. Запустите <code>steroids generate</code>, и
+получите нужный код.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#5">
+  </iframe>
+</div>
+
+<p>Можете смотреть, как устроены эти примеры, учиться по
+<a href="http://academy.appgyver.com/">туториалам</a> и
+<a href="http://docs.appgyver.com/en/stable/index.html">API документации</a>.
+Дальше я покажу как использовать в вашем приложении
+некоторые штатные элементы интерфейса, то есть
+писать на HTML5/JavaScript приложение с <em>native UI</em>.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#examples-list">
+  </iframe>
+</div>
+
+<p>Давайте начнем с табов.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#7">
+  </iframe>
+</div>
+
+<p>Вы можете найти закомментированный пример использования
+табов в файле <code>config/application.coffee</code>. Это список табов
+с их иконками и ссылками, на которые они ведут.</p>
+<p>В моём приложении я создаю 3 таба для следующих страниц:</p>
+<ul>
+<li>index.html</li>
+<li>notificationExample.html</li>
+<li>knowledge.html</li>
+</ul>
+<pre class="highlight"><code class="hljs coffeescript">steroids.config.tabBar.enabled = <span class="hljs-literal">true</span>
+steroids.config.tabBar.tabs = [
+  {
+    <span class="hljs-attribute">title</span>: <span class="hljs-string">"Index"</span>
+    <span class="hljs-attribute">icon</span>: <span class="hljs-string">"icons/pill@2x.png"</span>
+    <span class="hljs-attribute">location</span>: <span class="hljs-string">"http://localhost/index.html"</span>
+  },
+  {
+    <span class="hljs-attribute">title</span>: <span class="hljs-string">"Notifications"</span>
+    <span class="hljs-attribute">icon</span>: <span class="hljs-string">"icons/bell.png"</span>
+    <span class="hljs-attribute">location</span>: <span class="hljs-string">"http://localhost/notificationExample.html"</span>
+  },
+  {
+    <span class="hljs-attribute">title</span>: <span class="hljs-string">"Knowledge base"</span>
+    <span class="hljs-attribute">icon</span>: <span class="hljs-string">"icons/coding.png"</span>
+    <span class="hljs-attribute">location</span>: <span class="hljs-string">"http://localhost/knowledge.html"</span>
+  }
+]
+</code></pre>
+<p>Положите html-файлы этих страниц в папку <code>www</code>. Пока они могут
+быть пустыми. Также не забудьте об иконках, можете взять из моего
+репозитория всю папку <a href="https://github.com/varya/steroids-fronttrends2014/tree/master/www/icons">icon
+folder</a>.</p>
+<p>После того как все изменения будут сделаны, подождите пересборки и
+убедитесь в результате.</p>
+<div style="text-align:center;">
+<img src="http://img-fotki.yandex.ru/get/9088/14441195.32/0_84262_ae854cb8_orig.png" width="340" height="89" border="0" title="" alt=""/>
+</div>
+
+<p>Дальше можно поиграть с нотификациями.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#8">
+  </iframe>
+</div>
+
+<p>Разместите код этих кнопок внутри тега <code>&lt;body&gt;</code> на странице
+<code>www/notificationExample.html</code>.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"showAlert()"</span>&gt;</span>Show alert dialogue<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"showConfirm()"</span>&gt;</span>Show confirm dialogue<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"showPrompt()"</span>&gt;</span>Show prompt dialogue<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"vibrate()"</span>&gt;</span>Vibrate the device<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+</code></pre>
+<p>Кнопки реагируют на прикосновения пользователя и запускают
+различные JavaScript-функции. Чтобы сделать страницу работающей,
+нужно задать эти функции в <code>&lt;head&gt;</code> или <code>*.js</code> файле страницы.
+Каждая из них иллюстрирует работу своего вида нотификации, такого
+как:
+a kind of notification which are:</p>
+<ul>
+<li><code>navigator.notification.alert</code></li>
+<li><code>navigator.notification.confirm</code></li>
+<li><code>navigator.notification.prompt</code></li>
+<li><code>navigator.notification.vibrate</code></li>
+</ul>
+<p>Код функций можете взять
+<a href="https://github.com/varya/steroids-fronttrends2014/blob/master/www/notificationExample.html#L15">из моего репозитория</a>.</p>
+<p>Теперь вы можете перейти на эту страницу по соответствующему
+табу и увидеть, как работает каждый тип нотификации.</p>
+<p>Следующий системный элемент — кнопка на навигационной панели
+(navigation bar).</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#9">
+  </iframe>
+</div>
+
+<p>Навигационная панель может быть изменена при помощи JavaScript-хелперов
+фреймворка Steroids. Если вы хотите сделать её одинаковой для всех страниц
+приложения, то разместите код в файле <code>www/javascripts/application.js</code>,
+который подключен ко всем <code>*.html</code> файлам.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> loginButton = <span class="hljs-keyword">new</span> steroids.buttons.NavigationBarButton();
+loginButton.title = <span class="hljs-string">"the Button"</span>;
+
+loginButton.onTap = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    navigator.notification.alert(
+        <span class="hljs-string">'You tapped the button!'</span>,
+        <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{},
+        <span class="hljs-string">'the Alert'</span>,
+        <span class="hljs-string">'I did!'</span>
+    );
+}
+
+steroids.view.navigationBar.update({
+    buttons: {
+      right: [loginButton]
+    }
+})
+</code></pre>
+<p>Этот код вставит кнопку в правую часть навигационной панели.
+Касание кнопки запустит нотификацию, уже знакомую вам по предыдущему
+примеру.</p>
+<div style="text-align:center;">
+<img src="http://img-fotki.yandex.ru/get/9115/14441195.32/0_84264_7f27d435_L.png" width="282" height="500" border="0" title="" alt=""/>
+</div>
+
+<p>И последний пример штатного интерфейса в этом приложении
+— модальное окно.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#10">
+  </iframe>
+</div>
+
+<p>Разместите эту кнопку в файле <code>www/index.html</code>:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"showModal()"</span>&gt;</span>Open modal<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+</code></pre>
+<p>И определите функцию <code>showModal</code>, которая открывает модальное
+окно с соответствующим содержанием.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showModal</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> webView =
+    <span class="hljs-keyword">new</span> steroids.views.WebView(<span class="hljs-string">"/views/modalExample/show.html"</span>);
+  steroids.modal.show(webView);
+}
+</code></pre>
+<p>Что показывать в модальном окне, должно быть написано в файле
+<code>app/views/modalExample/show.html</code>. Кстати, не забудьте, что там
+должна быть кнопка закрывания модального окна. Чтобы всё прошло
+быстрее, позаимствуйте
+<a href="https://github.com/varya/steroids-fronttrends2014/blob/master/app/views/modalExample/show.html">код из репозитория приложения</a>.</p>
+<p>С этими и <a href="http://docs.appgyver.com/en/stable/steroids_Steroids%20Native%20UI_index.md.html#Steroids%C2%A0Native%C2%A0UI">другими элементами интерфейса</a>
+вы можете сделать приложение с системным интерфейсом, которое
+будет выглядеть натурально на том устройстве, на котором запускается
+приложение.</p>
+<p>Когда приложение закончено (или даже в процессе), вы можете захотеть
+показать его другу, клиенту или даже маме.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#sharing">
+  </iframe>
+</div>
+
+<p>Можно воспользоваться QR-кодом, упоминаемым в начале статьи. Он
+принесет код с вашего компьютера на любое устройство. Но вы оба должны
+быть подключены к одной сети.</p>
+<p>Если вы хотите показать приложение удаленно, разместите код в облаке.
+Для этого есть команда <code>steroids deploy</code>. В результате вы тоже получите
+страницу с QR-кодом. Его можно считать при помощи <code>AppGyver Scaner</code> и
+получить в своём телефоне приложение прямо из облака.</p>
+<p>Вы можете делиться всеми своими приложениями из облака. А также
+настраивать их и собирать релизы. Всё это делается через web-интерфейс
+<a href="https://cloud.appgyver.com/applications">cloud.appgyver.com</a>.</p>
+<p>Отсюда же приложения можно отправлять в AppStore и GooglePlay.</p>
+<div style="text-align:center;">
+<img src="http://img-fotki.yandex.ru/get/9062/14441195.32/0_84265_d03d686e_orig.png" width="500" height="327" border="0" title="" alt=""/>
+</div>
+
+<p>Видите, это просто. Настолько просто, что даже новичок может не только
+разработать приложение, но и сделать об этом презентацию с живым кодом
+на конференции.</p>
+<div class="slide">
+  <iframe class="slide__frame"
+    src="http://varya.me/start-with-steroids/?full#links">
+  </iframe>
+</div>
+
+<p>Узнать больше о Steroids и Cordova (в основе Steroids лежит PhoneGap)
+можно в <a href="http://academy.appgyver.com/">AppGyver Academy</a>. Там есть:</p>
+<ul>
+<li>подробные обучающие материалы,</li>
+<li>документация,</li>
+<li>сообщество разработчиков.</li>
+</ul>
+<p>И, конечно, вы можете читать <a href="/ru/posts">этот блог</a>. Я собираюсь
+делиться своими следующими открытиями относительно Steroids в ближайшее время :-)</p>
+
+    </div>
+    <div class="comments">
+        <div class="comments__box box__body">
+            <h4 class="comments__header">
+                Обсуждение
+            </h4>
+        </div>
+        <div class="comments__body box__island">
+            
+                <div id="disqus_thread"></div>
+<script>
+	(function(){
+		window.disqus_shortname = 'varya';
+		window.disqus_developer = '1';
+		window.disqus_url = 'http://varya.me//ru/posts/html5-mobile-app-width-native-ui';
+		window.disqus_identifier = 'posts-html5-mobile-app-width-native-ui-ru';
+		window.disqus_title = 'Мобильное приложение на HTML5 со штатным интерфейсом';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            
+        </div>
+    </div>
+    <div class="related">
+        <div class="related__body box__body">
+            <h4 class="related__header">
+                Кстати
+            </h4>
+        </div>
+        <div class="related__text box__island">
+                <a href="https://github.com/varya/varya.github.com/issues/new?title=Feedback for Мобильное приложение на HTML5 со штатным интерфейсом">
+                Создайте для меня issue на GitHub</a>, если вы заметили ошибку или хотите дополнить статью.
+                Или вы можете
+                <a href="https://github.com/varya/varya.github.com/edit/develop/src/documents/posts/html5-mobile-app-width-native-ui_ru.html.md">отредактировать пост самостоятельно и послать мне патч</a>.
+        </div>
+    </div>
+</div>
+        </section>
+        <nav class="sidebar">
+        <ul class="menu-vert">
+            <h3 class="menu-vert__title box__title">
+                На этом сайте
+            </h3>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/ru/posts">
+                        Блог
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/ru/content">
+                        Статьи и презентации
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/ru">
+                        Обо мне
+                    </a>
+                </li>
+            
+            </ul>
+            <div class="github i-bem"
+                data-bem='{ "github" : { "user" : "varya" } }'>
+                <div class="github__header"></div>
+                <div class="github__body"></div>
+            </div>
+        </nav>
+        <aside class="prompting">
+            <ul class="social-ico menu-vert">
+                <li class="menu-vert__item">
+                    <ul class="social-ico__text menu-vert">
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/en/feed.xml" title="New on Varya.me in English">en</a>
+                        </li>
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/ru/feed.xml" title="Новые записи на Varya.me">ru</a>
+                        </li>
+                    </ul>
+                    <a class="link social-ico__ico social-ico__ico_type_rss" href="/feed.xml" title="New on Varya.me"></a>
+                </li>
+                <li class="menu-vert__item">
+                <a class="link social-ico__ico social-ico__ico_type_twitter"
+                    href="https://twitter.com/toivonens"
+                    title="@toivonens"
+                    target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_github" href="https://github.com/varya" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_facebook" href="http://www.facebook.com/varvara.stepanova.9" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_linkedin" href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b" target="_blank"></a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <div class="footer__outer">
+        <footer class="footer">
+            <div class="footer__left">
+            </div>
+            <div class="footer__center">
+                <a class="link  link_text  link_wrapper" href="http://varya.me/ru/">
+                    © 2015
+                    <span class="link__inner">Варя Степанова</span>.
+                </a>
+                <a class="link  link_wrapper  link_twitter"
+                    href="https://twitter.com/toivonens"
+                    title="@toivonens">
+                    <img alt="Twitter" class="ico" src="http://favicon.yandex.net/favicon/twitter.com" title="Twitter"/>
+                    <span class="link__inner">Читайте меня в Твиттере</span>!
+                </a>
+            </div>
+            <div class="footer__right">
+            </div>
+        </footer>
+    </div>
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter20478625 = new Ya.Metrika({id:20478625, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/20478625" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+    <script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/desktop.bundles/index/index.min.js" async defer></script>
+</body>
+</html>

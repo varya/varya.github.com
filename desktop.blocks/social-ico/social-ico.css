@@ -1,0 +1,103 @@
+/* Icons by Victor Gozalez http://www.iconarchive.com/show/so-smooth-social-icons-by-minisoft.es.html */
+.social-ico
+{
+    padding-top: 2em;
+}
+
+@media screen and (max-width: 768px) {
+    .social-ico
+    {
+        padding-top: 1em;
+    }
+
+    .social-ico .menu-vert__item
+    {
+        display:inline-block;
+    }
+}
+
+.social-ico__ico
+{
+    width: 44px;
+    height: 44px;
+    display: block;
+    margin: .5em 0 0 auto;
+    border-radius: 50%;
+    background-position: 50% 50%;
+}
+
+.social-ico__ico_in-text
+{
+    width: 22px;
+    height: 22px;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: 0 0 0 0.5em;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 768px) {
+    .social-ico__ico
+    {
+        margin: 0;
+        margin-right: 0.5em;
+    }
+}
+
+.social-ico__ico_type_rss
+{
+    background-image: url('social-ico__rss.png');
+}
+
+@media screen and (max-width: 768px) {
+    .social-ico__ico_type_rss
+    {
+        margin-right: 2em;
+    }
+}
+
+.social-ico__ico_type_github
+{
+    background-image: url('social-ico__github.png');
+}
+
+.social-ico__ico_type_twitter
+{
+    background-image: url('social-ico__twitter.png');
+}
+
+.social-ico__ico_type_facebook
+{
+    background-image: url('social-ico__facebook.png');
+}
+
+.social-ico__ico_type_linkedin
+{
+    background-image: url('social-ico__linkedin.png');
+}
+
+.social-ico__text
+{
+    float: left;
+    line-height: 1.25em;
+    font-size: .8em;
+    padding-top: .3em;
+}
+
+@media screen and (max-width: 768px) {
+    .social-ico__text
+    {
+        float: right;
+        margin-right: 1em;
+    }
+    .social-ico__text .menu-vert__item
+    {
+        display: list-item;
+    }
+}
+
+.social-ico__rss-text
+{
+    color: #DF620E;
+}

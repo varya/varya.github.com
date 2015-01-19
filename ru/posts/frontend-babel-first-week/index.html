@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="page page_ru" lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <title>Первая неделя Frontend Babel</title>
+    <link  rel="stylesheet" href="/desktop.bundles/index/index.min.css" />
+    <script>
+    (function(d, s, l, r) {
+    if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
+        r = [
+            '<style>',
+            l.getItem('varya.me.fonts'),
+            '</style>'
+        ];
+        document.write(r.join(''));
+    }
+
+    })(document, Storage, localStorage);
+    </script>
+</head>
+<body class="page page__body">
+    <header class="header">
+        <div class="header__left candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'></div>
+        <logo class="logo header__center">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+        <div class="header__right candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 } } }'></div>
+    </header>
+    <div class="layout">
+        <section class="main">
+            <ul class="languages">
+            
+                <li class="languages__lang">
+                    
+                    <a href="">
+                        en
+                    </a>
+                    
+                </li>
+                
+                <li class="languages__lang">
+                    
+                        ru
+                    
+                </li>
+                
+            </ul>
+            <div class="article" role="main">
+    <div class="article__body box__body">
+        <h1 class="article__header">
+            Первая неделя Frontend Babel
+        </h1>
+    </div>
+    <div class="article__text box__island">
+        <script type="text/javascript" src="//yandex.st/share/share.js"
+        charset="utf-8"></script>
+        <div class="share yashare-auto-init" data-yashareL10n="{{ lang }}"
+            data-yashareQuickServices="twitter,facebook,gplus,vkontakte" data-yashareTheme="counter"
+        ></div>
+        <span class="article__details author vcard">
+            Опубликовано
+            15th January 2015
+        </span>
+        <p>В прошлый понедельник запустился новый проект коллективных переводов фронтендерских статей на английский <a href="http://frontendbabel.info/">Frontend
+Babel</a>. Я писала об этом <a href="/ru/posts/frontend-babel-alpha">подробный пост</a>, который очень
+хорошо разошелся благодаря ретвитам и попаданию на Хабр. И насколько я могу судить по статистике, неделя прошла
+отлично.</p>
+<excerpt/>
+
+<p>Первый перевод проекта — статья «<a href="http://frontendbabel.info/articles/webpage-rendering-101/">What Every Frontend Developer Should Know About Webpage
+Rendering</a>» попала в популярные рассылки <a href="http://css-weekly.com/">CSS
+Weekly</a> и <a href="http://html5weekly.com/">HTML5 Weekly</a>. Благодаря им уже на следующий день сайт
+посетило больше 9 тысяч человек! А всего за неделю было 35 тысяч просмотров.</p>
+<p>А вот картинка про то, какую аудиторию получили публикации, которые могли рассчитывать только на русскоязычных читателей
+всего две недели тому назад:</p>
+<p><img src="http://img-fotki.yandex.ru/get/6745/14441195.32/0_85670_478637f6_orig.png" alt=""></p>
+<p>Более того, спустя ещё день devrel Google Chrome Пол Льюис (<a href="https://twitter.com/aerotwist">@aerotwist</a>) опубликовал
+в своём блоге пост с дополнительной информацией, о том как именно браузер рисует страницу — «<a href="http://aerotwist.com/blog/pixels-are-expensive/">Pixels are
+expensive</a>». Упоминание Полом Frontend Babel стало ещё одним источником трафика — более
+полутора тысяч посетителей. Но главное даже не это, а то что благодаря Frontend Babel <strong>состоялся диалог</strong>. Языковые
+границы стираются, и развитие нашей индустрии ускоряется. Очень круто видеть такой результат уже в первую неделю работы!</p>
+<p>Если вы уже вдохновлены стать причастными к этому успеху, <a href="https://github.com/frontendbabel/frontendbabel.github.com/issues?labels=%24+Russian&amp;page=1&amp;state=open">берите и
+переводите</a> :-)
+Кстати, не бойтесь сделать ошибку. Frontend Babel — это ресурс для англоязычной аудитории, и среди читателей обязательно
+найдётся кто-то, кто исправит вас Pull-Request&#39;ом. Это тоже <a href="https://github.com/frontendbabel/frontendbabel.github.com/pull/42">подтверждено
+опытом</a>, даже <a href="https://github.com/frontendbabel/frontendbabel.github.com/pull/74">несколько
+раз</a>.</p>
+<p>Или можно <a href="https://github.com/frontendbabel/frontendbabel.github.com/issues/new">добавить статью в пул на перевод</a>. Там
+уже есть сколько-то, но много не мало.</p>
+<p>Ближайшее время (за вычетом переводов) я планирую посвятить расширению языковой географии Frontend Babel. Уже сейчас в
+очереди есть статьи <a href="https://github.com/frontendbabel/frontendbabel.github.com/issues?labels=%24+French&amp;page=1&amp;state=open">на
+французском</a> и
+<a href="https://github.com/frontendbabel/frontendbabel.github.com/issues?labels=%24+Polish&amp;page=1&amp;state=open">польском</a>. Дело
+за малым — надо найти переводчиков :-)</p>
+<h2 id="changelog">Changelog</h2>
+<p>Сам сайт Frontend Babel претерпел изменения и внешнего вида, и сборки. Здесь спасибо <a href="http://kizu.ru/">Роме Комарову</a>, он
+насоздавал кучу issue, и их реализация делает сайт намного лучше с точки зрения UX.</p>
+<p>Изменения же генерации сайта понадобились, чтобы у статей появились мета-описание и кратинка. Это делает их более
+привлекательными, когда делишься ссылкой в Facebook или LinkedIn. Сниппет третьей статьи «<a href="http://frontendbabel.info/articles/developing-cross-browser-extensions/">Developing Cross-Browser
+Extensions</a>» уже выглядел вот так:</p>
+<p><img src="http://img-fotki.yandex.ru/get/6843/14441195.32/0_8566f_734ee93c_orig.png" alt=""></p>
+<p>Хорошо бы ещё иметь такую картинку для корня проекта. Кто-нибудь может нарисовать? Ну и если у вас есть другие идеи по
+улучшению, не стесняйтесь <a href="https://github.com/frontendbabel/frontendbabel.github.com/issues/new">завести issue</a>.</p>
+
+    </div>
+    <div class="comments">
+        <div class="comments__box box__body">
+            <h4 class="comments__header">
+                Обсуждение
+            </h4>
+        </div>
+        <div class="comments__body box__island">
+            
+                <div id="disqus_thread"></div>
+<script>
+	(function(){
+		window.disqus_shortname = 'varya';
+		window.disqus_developer = '1';
+		window.disqus_url = 'http://varya.me//ru/posts/frontend-babel-first-week';
+		window.disqus_identifier = 'posts-frontend-babel-first-week-ru';
+		window.disqus_title = 'Первая неделя Frontend Babel';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            
+        </div>
+    </div>
+    <div class="related">
+        <div class="related__body box__body">
+            <h4 class="related__header">
+                Кстати
+            </h4>
+        </div>
+        <div class="related__text box__island">
+                <a href="https://github.com/varya/varya.github.com/issues/new?title=Feedback for Первая неделя Frontend Babel">
+                Создайте для меня issue на GitHub</a>, если вы заметили ошибку или хотите дополнить статью.
+                Или вы можете
+                <a href="https://github.com/varya/varya.github.com/edit/develop/src/documents/posts/frontend-babel-first-week_ru.html.md">отредактировать пост самостоятельно и послать мне патч</a>.
+        </div>
+    </div>
+</div>
+        </section>
+        <nav class="sidebar">
+        <ul class="menu-vert">
+            <h3 class="menu-vert__title box__title">
+                На этом сайте
+            </h3>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/ru/posts">
+                        Блог
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/ru/content">
+                        Статьи и презентации
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/ru">
+                        Обо мне
+                    </a>
+                </li>
+            
+            </ul>
+            <div class="github i-bem"
+                data-bem='{ "github" : { "user" : "varya" } }'>
+                <div class="github__header"></div>
+                <div class="github__body"></div>
+            </div>
+        </nav>
+        <aside class="prompting">
+            <ul class="social-ico menu-vert">
+                <li class="menu-vert__item">
+                    <ul class="social-ico__text menu-vert">
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/en/feed.xml" title="New on Varya.me in English">en</a>
+                        </li>
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/ru/feed.xml" title="Новые записи на Varya.me">ru</a>
+                        </li>
+                    </ul>
+                    <a class="link social-ico__ico social-ico__ico_type_rss" href="/feed.xml" title="New on Varya.me"></a>
+                </li>
+                <li class="menu-vert__item">
+                <a class="link social-ico__ico social-ico__ico_type_twitter"
+                    href="https://twitter.com/toivonens"
+                    title="@toivonens"
+                    target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_github" href="https://github.com/varya" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_facebook" href="http://www.facebook.com/varvara.stepanova.9" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_linkedin" href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b" target="_blank"></a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <div class="footer__outer">
+        <footer class="footer">
+            <div class="footer__left">
+            </div>
+            <div class="footer__center">
+                <a class="link  link_text  link_wrapper" href="http://varya.me/ru/">
+                    © 2015
+                    <span class="link__inner">Варя Степанова</span>.
+                </a>
+                <a class="link  link_wrapper  link_twitter"
+                    href="https://twitter.com/toivonens"
+                    title="@toivonens">
+                    <img alt="Twitter" class="ico" src="http://favicon.yandex.net/favicon/twitter.com" title="Twitter"/>
+                    <span class="link__inner">Читайте меня в Твиттере</span>!
+                </a>
+            </div>
+            <div class="footer__right">
+            </div>
+        </footer>
+    </div>
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter20478625 = new Ya.Metrika({id:20478625, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/20478625" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+    <script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/desktop.bundles/index/index.min.js" async defer></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="page page_en" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>JavaScript in BEMJSON</title>
+    <link  rel="stylesheet" href="/desktop.bundles/index/index.min.css" />
+    <script>
+    (function(d, s, l, r) {
+    if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
+        r = [
+            '<style>',
+            l.getItem('varya.me.fonts'),
+            '</style>'
+        ];
+        document.write(r.join(''));
+    }
+
+    })(document, Storage, localStorage);
+    </script>
+</head>
+<body class="page page__body">
+    <header class="header">
+        <div class="header__left candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'></div>
+        <logo class="logo header__center">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+        <div class="header__right candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 } } }'></div>
+    </header>
+    <div class="layout">
+        <section class="main">
+            <ul class="languages">
+            
+                <li class="languages__lang">
+                    
+                        en
+                    
+                </li>
+                
+                <li class="languages__lang">
+                    
+                    <a href="/ru/issues/javascript-in-bemjson">
+                        ru
+                    </a>
+                    
+                </li>
+                
+            </ul>
+            <div class="article" role="main">
+    <div class="article__body box__body">
+        <h1 class="article__header">
+            JavaScript in BEMJSON
+        </h1>
+    </div>
+    <div class="article__text box__island">
+        <script type="text/javascript" src="//yandex.st/share/share.js"
+        charset="utf-8"></script>
+        <div class="share yashare-auto-init" data-yashareL10n="{{ lang }}"
+            data-yashareQuickServices="twitter,facebook,gplus" data-yashareTheme="counter"
+        ></div>
+        <span class="article__details author vcard">
+            Published on
+            21st February 2014
+        </span>
+        <p>We usually start developing a web site prototyping the interface and then
+implementing HTML/CSS and bacis JavaScript. In case
+of using the full BEM stack a tranformation from prototype to a functioning web
+site goes smoothly. You can clone the project from
+<a href="https://github.com/bem/project-stub">project-stub</a> and create a static web page
+as it was <a href="http://bem.info/articles/start-with-project-stub/">described
+earlier</a>.</p>
+<excerpt/>
+
+<p>Thanks to <code>BEMHTML</code> templates, you do not need write all the HTML manually.
+Describing page sructure in <code>BEMJSON</code> rather than writing all the tags manually
+saves time. But sometimes this is still a lot of work to do, especially for large
+pages.</p>
+<p>Luckily BEMJSON can include JavaScript pieces to produce some blocks dymamically.
+I created an example of such usage:</p>
+<pre class="highlight"><code class="hljs javascript">({
+    block: <span class="hljs-string">'page'</span>,
+    ...
+    content:[
+        ...
+        {
+            block: <span class="hljs-string">'content'</span>,
+            content: (<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+                <span class="hljs-keyword">var</span> res = [];
+                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+                    res.push({
+                        block: <span class="hljs-string">'button'</span>,
+                        content: <span class="hljs-string">'Button '</span> + (i + <span class="hljs-number">1</span>)
+                    });
+                }
+                <span class="hljs-keyword">return</span> res;
+            })()
+        },
+        ...
+    ]
+})
+</code></pre>
+<p><a href="https://github.com/varya/dynamic-bemjson/blob/master/desktop.bundles/page1/page1.bemjson.js">full
+code</a></p>
+<p>This JavaScript creates 10 <code>button</code> blocks when the page is being built with
+<code>bem-tools</code>.
+Check the <a href="http://varya.me/dynamic-bemjson/desktop.bundles/page1/page1.html">result
+page</a>
+to see them.</p>
+<p>Another example is a <code>menu</code> block. Such interface pieces usually consist of a
+lot of items with minor differences which cases a lot of copy-paste on a page.
+With JavaScript in BEMJSON this can be easily reduced.</p>
+<pre class="highlight"><code class="hljs javascript">({
+    block: <span class="hljs-string">'page'</span>,
+    ...
+    content:[
+        ...
+        {
+            block: <span class="hljs-string">'menu'</span>,
+            content: [
+                {
+                    title: <span class="hljs-string">'Index'</span>,
+                    isSelected: <span class="hljs-literal">false</span>,
+                },
+                {
+                    title: <span class="hljs-string">'Products'</span>,
+                    isSelected: <span class="hljs-literal">true</span>
+                },
+                {
+                    title: <span class="hljs-string">'Contact'</span>,
+                    isSelected: <span class="hljs-literal">false</span>
+                }
+            ].map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(item)</span></span>{
+                <span class="hljs-keyword">var</span> block = {
+                    block: <span class="hljs-string">'menu'</span>,
+                    elem: <span class="hljs-string">'item'</span>,
+                    content: item.title,
+                    mods: {
+                        selected: item.isSelected
+                    }
+                };
+                <span class="hljs-keyword">return</span> block;
+            })
+        },
+        ...
+    ]
+})
+</code></pre>
+<p><a href="https://github.com/varya/dynamic-bemjson/blob/master/desktop.bundles/page2/page2.bemjson.js">full
+code</a></p>
+<p>This gives a <a href="http://varya.me/dynamic-bemjson/desktop.bundles/page2/page2.html">page with a menu of 3 items</a>.
+The bigger is the array of items, the more you save. Especially when the structure
+of every item changes while developing.</p>
+<p>Indeed, this feature is not needed when BEMJSON is a result of 1st layer templates
+(like BEMTREE, priv.js) you can produce as much BEMJSON as is necessary. But with
+initial development of a static web page, the JavaScript tricks help to avoid
+copy-paste.</p>
+
+    </div>
+    <div class="comments">
+        <div class="comments__box box__body">
+            <h4 class="comments__header">
+                Comments
+            </h4>
+        </div>
+        <div class="comments__body box__island">
+            
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                    var disqus_shortname = 'varya'; // required: replace example with your forum shortname
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            
+        </div>
+    </div>
+    <div class="related">
+        <div class="related__body box__body">
+            <h4 class="related__header">
+                By the way
+            </h4>
+        </div>
+        <div class="related__text box__island">
+                <a href="https://github.com/varya/varya.github.com/issues/new?title=Feedback for JavaScript in BEMJSON">
+                Create a GitHub issue for me</a> if you've spotted a typo or a mistake, or wish to add something on.
+                Or you can
+                <a href="https://github.com/varya/varya.github.com/edit/develop/src/documents/posts/2014-01-21-javascript-in-bemjson_en.html.md">edit this post yourself and make me a patch</a>.
+        </div>
+    </div>
+</div>
+        </section>
+        <nav class="sidebar">
+        <ul class="menu-vert">
+            <h3 class="menu-vert__title box__title">
+                On this site
+            </h3>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/posts">
+                        Blog
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/content">
+                        Articles and talks
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/">
+                        About me
+                    </a>
+                </li>
+            
+            </ul>
+            <div class="github i-bem"
+                data-bem='{ "github" : { "user" : "varya" } }'>
+                <div class="github__header"></div>
+                <div class="github__body"></div>
+            </div>
+        </nav>
+        <aside class="prompting">
+            <ul class="social-ico menu-vert">
+                <li class="menu-vert__item">
+                    <ul class="social-ico__text menu-vert">
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/en/feed.xml" title="New on Varya.me in English">en</a>
+                        </li>
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/ru/feed.xml" title="Новые записи на Varya.me">ru</a>
+                        </li>
+                    </ul>
+                    <a class="link social-ico__ico social-ico__ico_type_rss" href="/feed.xml" title="New on Varya.me"></a>
+                </li>
+                <li class="menu-vert__item">
+                <a class="link social-ico__ico social-ico__ico_type_twitter"
+                    href="https://twitter.com/varya_en"
+                    title="@varya_en"
+                    target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_github" href="https://github.com/varya" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_facebook" href="http://www.facebook.com/varvara.stepanova.9" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_linkedin" href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b" target="_blank"></a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <div class="footer__outer">
+        <footer class="footer">
+            <div class="footer__left">
+            </div>
+            <div class="footer__center">
+                <a class="link  link_text  link_wrapper" href="http://varya.me/">
+                    © 2015
+                    <span class="link__inner">Varya Stepanova</span>.
+                </a>
+                <a class="link  link_wrapper  link_twitter"
+                    href="https://twitter.com/varya_en"
+                    title="@varya_en">
+                    <img alt="Twitter" class="ico" src="http://favicon.yandex.net/favicon/twitter.com" title="Twitter"/>
+                    <span class="link__inner">Follow me on twitter</span>!
+                </a>
+            </div>
+            <div class="footer__right">
+            </div>
+        </footer>
+    </div>
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter20478625 = new Ya.Metrika({id:20478625, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/20478625" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+    <script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/desktop.bundles/index/index.min.js" async defer></script>
+</body>
+</html>

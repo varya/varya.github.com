@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="page page_ru" lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <title>Мобильное приложение на Steroids</title>
+    <link  rel="stylesheet" href="/desktop.bundles/index/index.min.css" />
+    <script>
+    (function(d, s, l, r) {
+    if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
+        r = [
+            '<style>',
+            l.getItem('varya.me.fonts'),
+            '</style>'
+        ];
+        document.write(r.join(''));
+    }
+
+    })(document, Storage, localStorage);
+    </script>
+</head>
+<body class="page page__body">
+    <header class="header">
+        <div class="header__left candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'></div>
+        <logo class="logo header__center">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+        <div class="header__right candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 } } }'></div>
+    </header>
+    <div class="layout">
+        <section class="main">
+            <ul class="languages">
+            
+                <li class="languages__lang">
+                    
+                    <a href="">
+                        en
+                    </a>
+                    
+                </li>
+                
+                <li class="languages__lang">
+                    
+                        ru
+                    
+                </li>
+                
+            </ul>
+            <div class="article" role="main">
+    <div class="article__body box__body">
+        <h1 class="article__header">
+            Мобильное приложение на Steroids
+        </h1>
+    </div>
+    <div class="article__text box__island">
+        <script type="text/javascript" src="//yandex.st/share/share.js"
+        charset="utf-8"></script>
+        <div class="share yashare-auto-init" data-yashareL10n="{{ lang }}"
+            data-yashareQuickServices="twitter,facebook,gplus,vkontakte" data-yashareTheme="counter"
+        ></div>
+        <span class="article__details author vcard">
+            Опубликовано
+            2nd May 2014
+        </span>
+        <p>На днях я написала своё первое мобильное приложение. Суммарно это заняло всего
+пару часов, и всё благодаря фреймворку
+<a href="http://www.appgyver.com/steroids">Steroids</a> от AppGyver. С его помощью делать
+гибридные приложения (это когда HTML5/JavaScript внутри) очень легко, а
+инструменты <code>Steroids</code> позволяют легко деплоить приложение и делиться им с
+друзьями.<excerpt/></p>
+<h3 id="-">Легко посмотреть приложение</h3>
+<p>Приложение у меня пока &quot;игрушечное&quot; — это всего одна страница, где озвучены
+случайные числительные на финском языке.</p>
+<div style="text-align:center;">
+<img
+src="http://img-fotki.yandex.ru/get/9827/14441195.30/0_81ae7_60ff43b1_L.png"
+width="282" height="500" title="" alt="" border="0"/>
+</div>
+
+<p>Сейчас увидеть работающее приложение в телефоне можно только через <code>Appgyver
+Scaner</code> — вспомогательную программу для обмена Steroids-based мобильными
+приложениями до релиза. Поставьте сейчас, чтобы позже загрузить моё приложение:</p>
+<div style="text-align:center;">
+<a href="https://itunes.apple.com/us/app/appgyver-scanner/id575076515?mt=8"
+target="_blank"><img alt="Appstore" class="appstore_icon"
+src="https://share.appgyver.com/assets/appstore-df950585b54bd081a7826913fc715cd4.png"></a>
+<a href="https://play.google.com/store/apps/details?id=com.appgyver.android&amp;feature=nav_result#?t=W251bGwsMSwxLDMsImNvbS5hcHBneXZlci5hbmRyb2lkIl0."
+target="_blank"><img alt="Googleplay" class="appstore_icon"
+src="https://share.appgyver.com/assets/googleplay-2cef882d62e402fbdbfe8cdac5794069.png"></a>
+</div>
+
+<p>Теперь вы можете открыть в компьютере эту
+<a href="http://bit.ly/finnish-counting-001">страницу с QR-кодом</a>. Отсканируйте QR-код
+при помощи
+свежеустановленного AppGyver Scaner, и моё приложение загрузится к вам в
+телефон.</p>
+<p>Я сознательно не релизила пока приложение. Во-первых, оно ещё сырое. А
+во-вторых, хочу, чтобы вы увидели как легко поделиться готовящимся
+приложением с другими, причем на любом этапе разработки.</p>
+<h3 id="-dev-">Запустить dev-версию</h3>
+<p>Код приложения открытый, хостится на Github:
+<a href="https://github.com/varya/finnish-counting">varya/finnish-counting</a>. Чтобы
+развернуть проект у себя на машине, понадобится npm-пакет <code>steroids</code>:</p>
+<pre class="highlight"><code class="hljs cmake">npm <span class="hljs-keyword">install</span> steroids -g
+</code></pre><p>Если до этого npm-пакеты на машину не устанавливались, то придется пройти через
+все шаги <a href="http://academy.appgyver.com/categories/1/contents/1">инструкции по
+установке</a>.</p>
+<p>Затем нужно склонировать код проекта и установить зависимости:</p>
+<pre class="highlight"><code class="hljs less"><span class="hljs-attribute">git</span> clone git<span class="hljs-variable">@github</span>.<span class="hljs-attribute">com</span>:varya/finnish-counting.git -b develop
+cd finnish-counting
+npm install
+</code></pre><p>Для начала работы с проектом запускаем</p>
+<pre class="highlight"><code class="hljs applescript">steroids connect <span class="hljs-comment">--watch</span>
+</code></pre><p>Ключ <code>--watch</code> нужен для отслеживания изменений и перезагрузки приложения.</p>
+<p>После запуска этой команды в браузере откроется страница с QR-кодом.
+Отсканировав QR-код всё тем же AppGyver Scaner, вы получите приложение прямо в
+телефоне. Только имейте в виду, что телефон и компьютер должны находиться в
+одной сети. При каждой редакции кода приложение будет обновляться – очень
+удобно, особенно если работаешь над внешним видом интерфейса.</p>
+<p>Если телефона под рукой нет, можно открыть приложение на макет в iOS simulator.
+Для этого в терминале с запущенным <code>steroids</code> нужно просто написать</p>
+<pre class="highlight"><code class="hljs nginx"><span class="hljs-title">simulator</span>
+</code></pre><h3 id="-">Что писать?</h3>
+<p>Основной код приложения находится в
+<a href="https://github.com/varya/finnish-counting/blob/vesions/0.0.1/www/javascripts/application.js">www/application.js</a>.
+Оно ещё маленькое и не использует все возможности Steroids. Но уже очевидно, что
+когда страниц станет больше, мне понадобится <a href="http://docs.appgyver.com/en/edge/steroids_Steroids%20Native%20UI_index.md.html#Steroids%C2%A0Native%C2%A0UI">Steroids Native
+UI</a>.</p>
+<p>Другие возможности фреймворка такие как удобное обращение к камере, файловой
+системе телефона, нотификациям — хорошо задокументированы на страницах <a href="http://docs.appgyver.com/en/edge/index.html">API
+Docs</a>. Там же есть примеры
+использования <code>Cordova API</code> — именно с его помощью в моём приложении
+проигрывается звук.</p>
+<p>Новые приложения появляются каждый день, можно релизить и хвастаться в <a href="http://x.appgyver.com/xapps">AppGyver
+Apps Gallery</a>. Только успевай с идеями: я вот
+хотела написать мобильный аналог игры 2048, а он уже там есть. Значит, буду
+развивать свою «считалку» :-)</p>
+<p>Кстати, у кого есть телефон на Андроиде — проверьте, скачивается у вас моё
+приложение, работает ли? Я пока могу проверить только на iOS, а одно из
+преимуществ приложений на Steroids — то, что они кросс-платформенные, с
+нативными фичами для каждой платформы, конечно.</p>
+
+    </div>
+    <div class="comments">
+        <div class="comments__box box__body">
+            <h4 class="comments__header">
+                Обсуждение
+            </h4>
+        </div>
+        <div class="comments__body box__island">
+            
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                    var disqus_shortname = 'varya'; // required: replace example with your forum shortname
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            
+        </div>
+    </div>
+    <div class="related">
+        <div class="related__body box__body">
+            <h4 class="related__header">
+                Кстати
+            </h4>
+        </div>
+        <div class="related__text box__island">
+                <a href="https://github.com/varya/varya.github.com/issues/new?title=Feedback for Мобильное приложение на Steroids">
+                Создайте для меня issue на GitHub</a>, если вы заметили ошибку или хотите дополнить статью.
+                Или вы можете
+                <a href="https://github.com/varya/varya.github.com/edit/develop/src/documents/posts/2014-04-02-first-steroids-app_ru.html.md">отредактировать пост самостоятельно и послать мне патч</a>.
+        </div>
+    </div>
+</div>
+        </section>
+        <nav class="sidebar">
+        <ul class="menu-vert">
+            <h3 class="menu-vert__title box__title">
+                На этом сайте
+            </h3>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/ru/posts">
+                        Блог
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/ru/content">
+                        Статьи и презентации
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/ru">
+                        Обо мне
+                    </a>
+                </li>
+            
+            </ul>
+            <div class="github i-bem"
+                data-bem='{ "github" : { "user" : "varya" } }'>
+                <div class="github__header"></div>
+                <div class="github__body"></div>
+            </div>
+        </nav>
+        <aside class="prompting">
+            <ul class="social-ico menu-vert">
+                <li class="menu-vert__item">
+                    <ul class="social-ico__text menu-vert">
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/en/feed.xml" title="New on Varya.me in English">en</a>
+                        </li>
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/ru/feed.xml" title="Новые записи на Varya.me">ru</a>
+                        </li>
+                    </ul>
+                    <a class="link social-ico__ico social-ico__ico_type_rss" href="/feed.xml" title="New on Varya.me"></a>
+                </li>
+                <li class="menu-vert__item">
+                <a class="link social-ico__ico social-ico__ico_type_twitter"
+                    href="https://twitter.com/toivonens"
+                    title="@toivonens"
+                    target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_github" href="https://github.com/varya" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_facebook" href="http://www.facebook.com/varvara.stepanova.9" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_linkedin" href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b" target="_blank"></a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <div class="footer__outer">
+        <footer class="footer">
+            <div class="footer__left">
+            </div>
+            <div class="footer__center">
+                <a class="link  link_text  link_wrapper" href="http://varya.me/ru/">
+                    © 2015
+                    <span class="link__inner">Варя Степанова</span>.
+                </a>
+                <a class="link  link_wrapper  link_twitter"
+                    href="https://twitter.com/toivonens"
+                    title="@toivonens">
+                    <img alt="Twitter" class="ico" src="http://favicon.yandex.net/favicon/twitter.com" title="Twitter"/>
+                    <span class="link__inner">Читайте меня в Твиттере</span>!
+                </a>
+            </div>
+            <div class="footer__right">
+            </div>
+        </footer>
+    </div>
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter20478625 = new Ya.Metrika({id:20478625, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/20478625" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+    <script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/desktop.bundles/index/index.min.js" async defer></script>
+</body>
+</html>
