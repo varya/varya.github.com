@@ -8,7 +8,7 @@ order: 3
 I am a front-end developer originally from the Utmost North
 ([Petrozavodsk](http://maps.yandex.com/-/CVR3nIPf),
 Karelia); currently living in Helsinki
-and working for SC5 Online.<br/>
+and working for [SC5 Online](http://sc5.io).<br/>
 Before, I had been living Amsterdam for less than a year and previously in
 [Moscow](http://images.yandex.com/yandsearch?text=Moscow), Russia for 5 years
 and working for
