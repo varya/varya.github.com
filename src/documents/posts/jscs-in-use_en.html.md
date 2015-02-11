@@ -2,7 +2,7 @@
 
 title: JSCS in use
 
-date: 2014-12-29
+date: 2015-02-11
 
 layout: post
 
@@ -70,10 +70,10 @@ write who you prefer to look like:
 
 Even if you want to be special, you still can choose the most similar preset and redefine some of its rules below.
 
-Important thing is that JSCS is already quite a mature thing, which means that you can easily find acompany packagies
+Important thing is that JSCS is already quite a mature thing, which means that you can easily find acompanying packages
 and needed plug-ins for editors.
 
-## The Sucess Story
+## The Success Story
 
 Assuming these facts, we decided to give JSCS a try. We started with defining a lovely configuration but excluded all
 the files from the checking process yet. Our project already had modular structure, so this was easy.
@@ -92,40 +92,39 @@ the files from the checking process yet. Our project already had modular structu
 ```
 
 Then, we agreed that if any of us starts coding or changing a module, he/she will fix the codestyle and swipe out the
-fixed moduler from the `excludeFiles` list. Following this, we got our files fixed quite fast and even avoid conflicts.
+fixed module from the `excludeFiles` list. Following this, we got our files fixed quite fast and even avoid conflicts.
 
-Keeping the codestyle when maintaining these files lately turned out to be more challengable. Automatic checkings are
+Keeping the codestyle when maintaining these files lately turned out to be more challengeable. Automatic checkings are
 very helpful here, but we needed to decide how strict we should be. The codestyle should not be our main goal instead of
 development.
 
+Finally we came up with "separation of concerns" model. Thus, for the upstream repository we have strict codestyle
+policy, and for the forks it is more suggestive. We taught Travis to check codestyle in the pull requests we are
+getting. If codestyle is broken, the Travis build fails. So, pull requests with wrong codestyle cannot be merged into
+the upstream. This ensures us that we will never get bad code there. However for the forks it is not that strict. We
+turned down the idea of using pre-push hooks but recommend a developer to install a pre-commit hook in their repository
+clone as well as using JSCS IDE plugins in order to learn about wrong codestyle while developing and not when their pull
+request gets broken. These recommendations are described in our documentation for developers and all the team members
+follow them.
 
-
-В итоге мы пришли к концепции раздения ответственности. Так, для основного репозитория мы выбрали жесткую политику
-в вопросе соблюдения стиля, а для форков — рекомендательную. Мы настроили Travis так, чтобы он проверял стиль для
-пул-реквестов. Если стиль не соблюден, пул-реквест не может быть влит в основной репозиторий. Таким образом, там вообще
-никогда нет кода с плохим стилем. В то же время для форков всё гораздо мягче. Мы отказались от насильственных pre-push
-хуков с проверкой стиля, но рекомендуем самостоятельную установку pre-commit хука и использование плагинов JSCS для
-редакторов, чтобы узнавать об ошибках в процессе разработки, а не тогда, когда ломается пул-реквест. Все рекомендации
-написаны у нас в разработческой документации, и новые члены команды активно ими пользуются.
-
-Всем особенно нравится, как реализована поддержа в редакторах. Ведь конфигурация стиля приезжает в репозиторий проекта
-вместе с кодом, и редактор считывает её самостоятельно. А, главное, у разных проектов может быть разный стиль, и для
-перекрестной работы не требуется никакая перенастройка.
+Everyone especially likes that JSCS can work with the code editors. The codestyle configuration is stored in the project
+repository and so an editor reads on its own. The most wonderful thing is that when switching between the projects with
+different codestyles, it does not require any change of settings.
 
 ![](http://varya.me/jscs-talk/pictures/sublime.gif)
 
-Ну и, конечно, всегда есть возможность запустить проверку стиля вручную как gulp-таск.
+And of course it is always possible to check the codestyle manually running a gulp task.
 
 ![](http://varya.me/jscs-talk/pictures/travis.png)
 
-## Предостережения
+## Word of caution
 
-Во время внедрения инструмента мы столкнулись с парочкой неудобств. Думаю, стоит о них упомянуть, тем более, что к ним
-нашлись решения.
+We faced a couple of problems when applying the tool. I believe they are worth to be mentioned, especially as I can
+provide the solutions.
 
-Основное расстройство — ошибка "out of memory" при запуске gulp-таска с проверкой. Оказалось, что недостаточно исключить
-файлы в конфигурации JSCS. Gulp всё равно сначала пытается работать с ними всеми и пока дело доходит до JSCS, память уже
-кончается. В итоге мы пришли к использованию пакета `gulp-ignore`:
+The most painful was "out of memory" error when running a gulp task with JSCS checking. Turned out, that excluding files
+in the configuration is not enough. Gulp tries to process all the files that match the mask and is soon run out of
+memory. We fixed this with using `gulp-ingnore` package:
 
 ```
 gulp.task('jscs', function() {
@@ -140,11 +139,12 @@ gulp.task('jscs', function() {
 })
 ```
 
-Это не очень хорошее решение, ведь здесь пришлось перчислись все те исключения, которые уже задекларированы в `.jscsrc`.
-Но лучшего варианта у нас пока нет.
+This is not the best solution because we need to list the excluded files in both `.jscs` configuration and the
+`gulpfile.js`. But there is nothing better yet.
 
-И, второй момент: если вы используете watch в разработке, то скорее всего захотите видеть ошибки в терминале, но не
-прерывать исполнение таска. Для этого потребуется `gulp-plumber`:
+The second trick is about checking the codestyle while watching the project files with Gulp. You would probably like to
+see the errors reported in your terminal but still have the `watch` task running. This is possible with the help of
+`gulp-plumber`:
 
 ```
 gulp.task('jscs', function() {
@@ -157,11 +157,10 @@ gulp.task('jscs', function() {
 });
 ```
 
-Всё, больше никаких проблем или вопросов относительно иструмента у нас не было. Он прекрасно работает и уже сохранил нам
-тысячи человекочасов.
+This is all, we did not face any other problem with the tool. It works just fine and has already saved thousands of
+man-hours.
 
-## А так же
+## Besides
 
-Возможно, вас также заинтересует [рассказ автора JSCS](http://habrahabr.ru/post/220229/) и мои
-[слайды](http://varya.me/jscs-talk/) от доклада на эту тему.
-
+If you are interested in the slides for this talk, here they are
+[http://varya.me/jscs-talk/](http://varya.me/jscs-talk/).
