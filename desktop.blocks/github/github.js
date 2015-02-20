@@ -45,7 +45,22 @@ provide(BEMDOM.decl({block: this.name}, {
 
     _showRepos: function() {
         // Created needed BEMJSON
-        console.log(BEMHTML);
+
+        var reposBEMJSON = this.repos.map(function(repo) {
+
+            return {
+                block: 'test',
+                //elem: 'repo',
+                content: '1111',
+                info: {
+                    name: repo.name,
+                    url: repo.html_url
+                }
+            }
+        });
+
+        var html = BEMHTML.apply(reposBEMJSON)
+        console.log(html);
     }
 
 }));
