@@ -1,17 +1,12 @@
-[{
-    mustDeps: [
-        {
-            elem: 'jquery'
-        },
-        {
-            block: 'i-bem'
-        }
-    ]
-}, {
-    tech: 'js',
-    mustDeps: { tech: 'bemhtml', block: 'i-bem' }
-}, {
-    tech: 'js',
-    mustDeps: { tech: 'bemhtml', block: 'test' }
-
-}]
+[
+    {
+        mustDeps: 'i-bem',
+        shouldDeps: { elem: 'jquery' }
+    },
+    {
+        tech: 'js',
+        shouldDeps: [
+            { block: 'test', tech: 'bemhtml' }
+        ]
+    }
+]
