@@ -8,10 +8,10 @@
         }
     ]
 }, {
-
     tech: 'js',
-    mustDeps: [
-      { tech: 'bemhtml', block: 'test' }
-    ]
+    mustDeps: { tech: 'bemhtml', block: 'i-bem' }
+}, {
+    tech: 'js',
+    mustDeps: { tech: 'bemhtml', block: 'test' }
 
 }]
