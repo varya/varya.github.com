@@ -6,7 +6,7 @@
     {
         tech: 'js',
         shouldDeps: [
-            { block: 'test', tech: 'bemhtml' }
+            { elem: 'repo', tech: 'bemhtml' }
         ]
     }
 ]

@@ -49,8 +49,8 @@ provide(BEMDOM.decl({block: this.name}, {
         var reposBEMJSON = this.repos.map(function(repo) {
 
             return {
-                block: 'test',
-                //elem: 'repo',
+                block: 'github',
+                elem: 'repo',
                 content: '1111',
                 info: {
                     name: repo.name,

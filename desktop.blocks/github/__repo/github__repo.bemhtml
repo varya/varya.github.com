@@ -1,0 +1,7 @@
+block github, elem repo {
+
+    tag: 'li'
+
+    content: this.ctx.info.name
+
+}
