@@ -2,6 +2,11 @@ block github, elem repo {
 
     tag: 'li'
 
-    content: this.ctx.info.name
+    content: {
+        block: 'link',
+        mix: [{ block: 'github', elem: 'link' }],
+        url: this.ctx.info.url,
+        content: this.ctx.info.name
+    }
 
 }
