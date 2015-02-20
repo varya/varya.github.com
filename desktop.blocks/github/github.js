@@ -51,7 +51,6 @@ provide(BEMDOM.decl({block: this.name}, {
             return {
                 block: 'github',
                 elem: 'repo',
-                content: '1111',
                 info: {
                     name: repo.name,
                     url: repo.html_url
@@ -60,7 +59,7 @@ provide(BEMDOM.decl({block: this.name}, {
         });
 
         var html = BEMHTML.apply(reposBEMJSON)
-        console.log(html);
+        this.elem('body').append(html);
     }
 
 }));
