@@ -1,4 +1,5 @@
 ({
+    mustDeps: ['i-bem'],
     shouldDeps: [
         {
             block: 'highlight',

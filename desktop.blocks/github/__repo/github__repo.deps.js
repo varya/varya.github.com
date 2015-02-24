@@ -1,3 +1,4 @@
 [{
-    mustDeps: ['i-bem', 'link']
+    mustDeps: ['i-bem'],
+    shouldDeps: ['link']
 }]
