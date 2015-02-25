@@ -56,10 +56,12 @@
                 </li>
             <% end %>
             </ul>
-            <div class="github i-bem"
+            <div class="github i-bem box github_not-ready"
                 data-bem='{ "github" : { "user" : "<%- @site.github %>" } }'>
-                <div class="github__header"></div>
-                <div class="github__body"></div>
+                <div class="github__header box__title">
+                  <%= @i18n('Last updated repos') %>
+                </div>
+                <ul class="github__body"></ul>
             </div>
         </nav>
         <aside class="prompting">

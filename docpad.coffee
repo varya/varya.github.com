@@ -71,6 +71,8 @@ templateData:
         words =
             'On this site':
                 ru: 'На этом сайте'
+            'Last updated repos':
+                ru: 'Репозитории'
             'Follow me on twitter':
                 ru: 'Читайте меня в Твиттере'
             'Published on':

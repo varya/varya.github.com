@@ -1,4 +1,10 @@
 ({
+    mustDeps: [
+        {
+            block: 'highlight',
+            elem: 'hack'
+        }
+    ],
     shouldDeps: [
         { block: 'grid' },
         { block: 'text' },
