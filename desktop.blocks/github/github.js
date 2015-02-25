@@ -13,14 +13,6 @@ provide(BEMDOM.decl({block: this.name}, {
         'js' : {
             'inited' :function() {
                 this._getRepos();
-                /*this.elem('body').github({
-                    user: this.params.user,
-                    show_repos: 5,
-                    show_extended_info: false,
-                    show_follows: false,
-                    oldest_first: false,
-                    width: '100%'
-                });*/
             }
         }
 
@@ -38,7 +30,7 @@ provide(BEMDOM.decl({block: this.name}, {
                 if(filter.indexOf(repo.name) === -1) {
                     return true;
                 }
-            }).slice(0, 10);
+            }).slice(0, 20);
             _this._showRepos();
         });
     },
@@ -58,8 +50,9 @@ provide(BEMDOM.decl({block: this.name}, {
             }
         });
 
-        var html = BEMHTML.apply(reposBEMJSON)
+        var html = BEMHTML.apply(reposBEMJSON);
         this.elem('body').append(html);
+        this.delMod('not-ready');
     }
 
 }));

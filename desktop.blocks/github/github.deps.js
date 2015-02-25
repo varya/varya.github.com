@@ -1,7 +1,6 @@
 [
     {
-        mustDeps: 'i-bem',
-        shouldDeps: { elem: 'jquery' }
+        mustDeps: 'i-bem'
     },
     {
         tech: 'js',
