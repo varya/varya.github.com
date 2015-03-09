@@ -7,9 +7,13 @@ title: Articles and talks
 order: 2
 ---
 
+* [Automating Style-Guide-Driven
+  Development](http://www.smashingmagazine.com/2015/03/05/automating-style-guide-driven-development/)<br/>
+  This article at *SmashingMagazine* was published on 5th March 2105. It explained the motivation and benefits
+  of style-guide-driven development and component-based approach in frontend.
 * [Styleguide generator by SC5](http://www.slideshare.net/VarvaraStepanova/sc5-style-guide-generator)<br/>
 With this presentation I introduced SC5 StyleGuide to frontend developers at [Veikkaus](https://www.veikkaus.fi/)
-and [Elisa](http://elisa.fi/) in December 2014 and January 2015.
+and [Elisa](http://elisa.fi/) in December 2014 and January 2015 and [Frontend.fi](http://frontend.fi/) on January 2015.
 * [BEM FAQ](http://getbem.com/faq/)<br/>
 A list of frequently asked questions about BEM and detailed answers to them.
 * [JSCS in use at SC5 Online](http://varya.me/jscs-talk/)<br/>
