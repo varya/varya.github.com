@@ -7,9 +7,14 @@ title: Статьи и презентации
 order: 2
 ---
 
+* [Automating Style-Guide-Driven
+  Development](http://www.smashingmagazine.com/2015/03/05/automating-style-guide-driven-development/)<br/>
+  Статья для *SmashingMagazine*, опубликована 5 марта 2015. Она объясняет мотивацию и преимущества разработки
+  посредством style guide и пользу компонентного подхода во фронтенде.
 * [Styleguide generator by SC5](http://www.slideshare.net/VarvaraStepanova/sc5-style-guide-generator)<br/>
 Этой презентаций я знакомила разработчиков компаний
-[Veikkaus](https://www.veikkaus.fi/) и [Elisa](http://elisa.fi/) с инструментом SC5 StyleGuide в декабре 2014 и январе 2015.
+[Veikkaus](https://www.veikkaus.fi/) и [Elisa](http://elisa.fi/) с инструментом SC5 StyleGuide в декабре 2014 и январе
+2015, а также на [Frontend.fi](http://frontend.fi/).
 * [BEM FAQ](http://getbem.com/faq/)<br/>
 Список частозадаваемых вопросов по БЭМ и подробные ответы к ним.
 * [JSCS in use at SC5 Online](http://varya.me/jscs-talk/)<br/>
