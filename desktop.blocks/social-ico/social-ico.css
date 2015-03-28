@@ -1,4 +1,21 @@
 /* Icons by Victor Gozalez http://www.iconarchive.com/show/so-smooth-social-icons-by-minisoft.es.html */
+
+/*
+
+Social Icons
+
+.social-ico__ico_type_rss         - RSS
+.social-ico__ico_type_twitter     - Twitter
+.social-ico__ico_type_github      - Github
+.social-ico__ico_type_facebook    - Facebook
+.social-ico__ico_type_linkedin    - LinkedIn
+
+markup:
+<a class="link social-ico__ico {$modifiers}" href="#" title="Icon title"></a>
+
+Styleguide 1.2
+
+*/
 .social-ico
 {
     padding-top: 2em;

@@ -1,6 +1,5 @@
 /*
 
-
 Article
 
 markup:
@@ -15,7 +14,7 @@ markup:
   </div>
 </div>
 
-Styleguide 1
+Styleguide 2
 
 */
 
@@ -28,7 +27,7 @@ markup:
   Article title
 </h1>
 
-Styleguide 1.1
+Styleguide 2.1
 
 */
 
@@ -41,6 +40,19 @@ Styleguide 1.1
     font-weight: 400;
 }
 
+/*
+
+Article details
+
+markup:
+<span class="article__details author vcard">
+    Published on
+    11th February 2015
+</span>
+
+Styleguide 2.2
+
+*/
 .article__details
 {
     font-size: .8em;

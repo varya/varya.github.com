@@ -2,6 +2,23 @@
  * Source: http://www.joepettersson.com/demo/jquery-github-widget/
  */
 
+/*
+
+Github
+
+markup:
+<div class="github i-bem box github_not-ready"
+    data-bem='{ "github" : { "user" : "varya" } }'>
+    <div class="github__header box__title">
+      Last updated repos
+    </div>
+    <ul class="github__body"></ul>
+</div>
+
+Styleguide 3.1
+
+*/
+
 .github
 {
     margin-top: 1em;
