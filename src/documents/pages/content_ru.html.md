@@ -7,6 +7,10 @@ title: Статьи и презентации
 order: 2
 ---
 
+* [Driving Style-Guide-Driven Development]<br/>
+  Презентация об опыте внедрения style-guide-driven development и о том как это вылилось в разработку специального
+  инструмента — SC5 Style Guide Generator. Выступление состоялось на конфренциях [EmpireJS 2015,
+  Нью Йорк](https://youtu.be/bKI0amimw-k) и ScotlandJS 2015, Эдинбург.
 * [Automating Style-Guide-Driven
   Development](http://www.smashingmagazine.com/2015/03/05/automating-style-guide-driven-development/)<br/>
   Статья для *SmashingMagazine*, опубликована 5 марта 2015. Она объясняет мотивацию и преимущества разработки
