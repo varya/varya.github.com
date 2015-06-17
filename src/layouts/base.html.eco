@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title><%= @document.htmlTitle %></title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
     <%- @getBlock('styles').add(['/desktop.bundles/index/index.min.css']).toHTML() %>
     <script>
     (function(d, s, l, r) {
