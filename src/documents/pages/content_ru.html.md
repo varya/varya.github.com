@@ -7,6 +7,10 @@ title: Статьи и презентации
 order: 2
 ---
 
+* [Сначала стайлгайд, или как перейти на компонентный подход](http://varya.me/wsd-2015)<br/>
+  Как SC5 Style Guide Generator используется для style-guide-driven development и переводит
+  всю разработку на компонентные рельсы. Рассказано на [Web Standards Day](http://webstandardsdays.ru/2015/06/20/)
+  20 июня 2015.
 * [Driving Style-Guide-Driven Development](https://youtu.be/bKI0amimw-k)<br/>
   Презентация об опыте внедрения style-guide-driven development и о том как это вылилось в разработку специального
   инструмента — SC5 Style Guide Generator. Выступление состоялось на конфренциях EmpireJS 2015,
