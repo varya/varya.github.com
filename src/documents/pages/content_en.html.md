@@ -11,6 +11,9 @@ order: 2
   This talk describes experience of brining Style-Guide-Driven Development into practise and reveals how it
   ended up with developing a special tool — Style Guide Generator by SC5. The presenttaion was given at EmpireJS 2015,
   New York and ScotlandJS 2015, Edinburgh.
+  * [Video from EmpireJS, New York](https://youtu.be/bKI0amimw-k)
+  * [Video from ScotlandJs, Edinburgh](https://youtu.be/gWzYMJjtx-Y)
+  * [Slides](http://varya.me/empirejs-2015/)
 * [Automating Style-Guide-Driven
   Development](http://www.smashingmagazine.com/2015/03/05/automating-style-guide-driven-development/)<br/>
   This article at *SmashingMagazine* was published on 5th March 2105. It explained the motivation and benefits
