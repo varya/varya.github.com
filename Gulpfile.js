@@ -12,8 +12,9 @@ gulp.task("styleguide:generate", function() {
         appRoot: '/styleguide',
         overviewPath: "src/styleguide/overview.md",
         extraHead: [
-          //'<script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>',
-          '<script src="/desktop.bundles/index/index.min.js" async defer></script>'
+          '<script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>',
+          '<script src="/desktop.bundles/index/index.min.js"></script>',
+          '<script src="/styleguide-hack.js"></script>'
         ],
         disableEncapsulation: true,
         disableHtml5Mode: true
