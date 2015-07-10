@@ -10,7 +10,13 @@ gulp.task("styleguide:generate", function() {
         title: "Varya.me Styleguide",
         rootPath: outputPath,
         appRoot: '/styleguide',
-        overviewPath: "src/styleguide/overview.md"
+        overviewPath: "src/styleguide/overview.md",
+        extraHead: [
+          //'<script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>',
+          '<script src="/desktop.bundles/index/index.min.js" async defer></script>'
+        ],
+        disableEncapsulation: true,
+        disableHtml5Mode: true
       }))
     .pipe(gulp.dest(outputPath));
 });
