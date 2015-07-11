@@ -18,9 +18,9 @@ glob = require("glob")
 docpadConfig = {
 
 plugins:
-    grunt:
-        writeAfter: false
-        generateAfter: ["shell", "copy"]
+    gulp:
+      writeAfter: false
+      generateAfter: ["bem-copy", "single-files"]
     moment:
         formats: [
             {raw: 'date', format: 'MMMM Do YYYY', formatted: 'humanDate'}

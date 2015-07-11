@@ -1,4 +1,5 @@
 var gulp = require("gulp"),
+  shell = require('gulp-shell'),
   styleguide = require("sc5-styleguide"),
 
   outputPath = 'src/public/styleguide';
@@ -34,4 +35,18 @@ gulp.task("styleguide-watch", ["styleguide"], function() {
   // Start watching changes and update styleguide whenever changes are detected
   // Styleguide automatically detects existing server instance
   gulp.watch(["desktop.blocks/**/*.css"], ["styleguide"]);
+});
+
+gulp.task("bem-build", shell.task([
+  "./node_modules/enb/bin/enb make --no-cache"
+]));
+
+gulp.task("bem-copy", ["bem-build"], function() {
+  gulp.src(["desktop.blocks/**/*", "desktop.bundles/**/*"], { base: "."})
+    .pipe(gulp.dest("src/public/"));
+});
+
+gulp.task("single-files", function() {
+  gulp.src(["CNAME", "data/**"], { base: "." })
+    .pipe(gulp.dest("src/public/"));
 });
