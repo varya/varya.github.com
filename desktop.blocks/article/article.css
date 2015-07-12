@@ -1,3 +1,44 @@
+/*
+
+Content
+
+Styleguide 2
+
+*/
+
+/*
+
+Article
+
+markup:
+<div class="article" role="main">
+  <div class="article__body box__body">
+    <h1 class="article__header">
+      Article title
+    </h1>
+  </div>
+  <div class="article__text box__island">
+    Article text
+  </div>
+</div>
+
+Styleguide 2.1
+
+*/
+
+/*
+
+Article header
+
+markup:
+<h1 class="article__header">
+  Article title
+</h1>
+
+Styleguide 2.1.1
+
+*/
+
 .article__header
 {
     padding: 0;
@@ -7,6 +48,19 @@
     font-weight: 400;
 }
 
+/*
+
+Article details
+
+markup:
+<span class="article__details author vcard">
+    Published on
+    11th February 2015
+</span>
+
+Styleguide 2.1.2
+
+*/
 .article__details
 {
     font-size: .8em;

@@ -1,3 +1,13 @@
+/*
+
+Logo
+
+markup:
+<logo class="logo">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+
+Styleguide 1.1
+
+*/
 .logo
 {
     display: inline-block;

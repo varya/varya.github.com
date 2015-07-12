@@ -8,3 +8,9 @@ libs/
 *.bundles/*/*.*
 !*.bundles/*/*.bemjson.js
 !*.bundles/.bem/*
+
+src/public/styleguide/
+src/public/CNAME
+src/public/data/
+src/public/desktop.blocks/
+src/public/desktop.bundles/
