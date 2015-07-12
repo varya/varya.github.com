@@ -2,7 +2,7 @@ var gulp = require("gulp"),
   shell = require('gulp-shell'),
   styleguide = require("sc5-styleguide"),
 
-  outputPath = 'src/public/styleguide';
+  outputPath = 'out/styleguide';
 
 gulp.task("styleguide:generate", function() {
 
@@ -43,10 +43,22 @@ gulp.task("bem-build", shell.task([
 
 gulp.task("bem-copy", ["bem-build"], function() {
   gulp.src(["desktop.blocks/**/*", "desktop.bundles/**/*"], { base: "."})
-    .pipe(gulp.dest("src/public/"));
+    .pipe(gulp.dest("out/"));
 });
 
 gulp.task("single-files", function() {
   gulp.src(["CNAME", "data/**"], { base: "." })
-    .pipe(gulp.dest("src/public/"));
+    .pipe(gulp.dest("out/"));
 });
+
+gulp.task("bem-watch", ["bem-watch-files", "bem-watch-build"]);
+
+gulp.task("bem-watch-files", function() {
+  gulp.watch(["desktop.blocks/**/*"], ["bem-build"]);
+});
+
+gulp.task("bem-watch-build", function() {
+  gulp.watch(["desktop.build/**/*"], ["bem-copy"]);
+});
+
+gulp.task("dev", ["bem-watch", "styleguide-watch"]);
