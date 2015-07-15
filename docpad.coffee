@@ -20,7 +20,7 @@ docpadConfig = {
 plugins:
     gulp:
       writeAfter: false
-      generateAfter: ["bem-copy", "single-files"]
+      generateAfter: ["bem-copy", "single-files", "styleguide"]
     moment:
         formats: [
             {raw: 'date', format: 'MMMM Do YYYY', formatted: 'humanDate'}
