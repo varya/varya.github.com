@@ -3,11 +3,15 @@
  */
 
 modules.require(
-    ['i-bem__dom_init', 'jquery', 'next-tick'],
-    function(init, $, nextTick) {
+    ['i-bem__dom', 'jquery', 'next-tick'],
+    function(BEMDOM, $, nextTick) {
 
 $(function() {
-    window.setTimeout(function() { nextTick(init) }, 5000);
+    $(window).bind("styleguide:onRendered", function(e) {
+        nextTick(function() {
+            BEMDOM.init(e.originalEvent.detail.elements);
+        });
+    });
 });
 
 });
