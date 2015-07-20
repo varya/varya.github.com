@@ -75,3 +75,9 @@ gulp.task("bem-watch-build", function() {
 });
 
 gulp.task("dev", ["bem-watch", "styleguide-watch"]);
+
+
+//Tests
+//
+// 1. Gather screenshots
+// ./node_modules/gemini/bin/gemini gather --root-url http://varya.me/ tests/gemini-test.js
