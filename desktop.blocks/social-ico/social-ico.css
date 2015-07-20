@@ -31,6 +31,7 @@ Styleguide 1.5
 .social-ico
 {
     padding-top: 2em;
+    background: red;
 }
 
 @media screen and (max-width: 768px) {
