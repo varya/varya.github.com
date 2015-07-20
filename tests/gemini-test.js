@@ -14,22 +14,14 @@ examples.forEach(function(example) {
           .capture('plain', function(actions, find){
               /*actions.executeJS(function(window) {
 
-                  window.modules.require(
-                      ['i-bem__dom', 'jquery'],
-                      function(BEMDOM, $) {
-
-                      $(function() {
-                          $(window).bind("styleguide:onRendered", function(e) {
-                              window.doTake = true;
-                          });
-                      });
-
+                  window.addEventListener('load', function() {
+                      window.doTake = true;
                   });
 
               })
               actions.waitForJSCondition(function(window) {
                   return window.doTake;
-              }, 2000);*/
+              }, 3000);*/
               actions.wait(3000)
           });
   });
