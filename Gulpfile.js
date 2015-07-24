@@ -1,6 +1,9 @@
 var gulp = require("gulp"),
   run = require('gulp-run'),
   styleguide = require("sc5-styleguide"),
+  //webdriver = require("gulp-webdriver"),
+  shell = require("gulp-shell"),
+  bg = require("gulp-bg"),
 
   outputPath = 'out/styleguide';
 
@@ -76,8 +79,30 @@ gulp.task("bem-watch-build", function() {
 
 gulp.task("dev", ["bem-watch", "styleguide-watch"]);
 
+gulp.task("phantom", bg('phantomjs',  '--webdriver', '4444', '--disk-cache', 'true'));
 
-//Tests
-//
-// 1. Gather screenshots
-// ./node_modules/gemini/bin/gemini gather --root-url http://varya.me/ tests/gemini-test.js
+var geminiRunObj =  {
+  templateData: {
+    f: function(root, path) {
+      return '.' + path.substr(root.length);
+    }
+  }
+};
+
+var productionUrl = 'http://varya.me'
+
+gulp.task("gemini:gather", ["phantom"], function(){
+  gulp.src("tests/*.js", { read: false })
+    .pipe(shell([
+        './node_modules/gemini/bin/gemini gather --root-url ' + productionUrl + ' <%= f(file.cwd, file.path) %>'
+      ], geminiRunObj));
+});
+
+gulp.task("gemini:test", ["phantom"], function(){
+  gulp.src("tests/*.js", { read: false })
+    .pipe(shell([
+        './node_modules/gemini/bin/gemini test --reporter html --reporter flat <%= f(file.cwd, file.path) %>'
+      ], geminiRunObj));
+});
+
+gulp.task("test", ["gemini:test"]);
