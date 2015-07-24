@@ -1,10 +1,6 @@
 var gemini = require('gemini');
 
-var examples = [
-  '1.2-1',
-  '1.1',
-  '2.1'
-];
+var examples = require('./pages-list');
 
 var pages = [];
 pages.push({
