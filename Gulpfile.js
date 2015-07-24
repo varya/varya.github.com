@@ -2,6 +2,7 @@ var gulp = require("gulp"),
   run = require('gulp-run'),
   styleguide = require("sc5-styleguide"),
   shell = require("gulp-shell"),
+  fs = require('fs'),
 
   outputPath = 'out/styleguide';
 
@@ -91,9 +92,29 @@ var geminiRunObj =  {
   }
 };
 
-var productionUrl = 'http://varya.me'
+var productionUrl = 'http://varya.me';
+var styleGuidePath = outputPath;
 
-gulp.task("gemini:gather", ["phantom"], function(){
+gulp.task("test:pages-list", function() {
+  var styleguideData = JSON.parse(fs.readFileSync(styleGuidePath + "/styleguide.json"));
+  var examples = [];
+  styleguideData.sections.forEach(function(section) {
+    if (!section.markup) { // For sections with markup only
+      return;
+    }
+    if (section.modifiers.length === 0) {
+      // Only for the pages with markup
+      examples.push(section.reference);
+    } else {
+      for(var m = 1;m<=section.modifiers.length;m++) {
+        examples.push(section.reference + '-' + m);
+      }
+    }
+  });
+  fs.writeFileSync('tests/pages-list.js', 'module.exports = ' + JSON.stringify(examples, null, 4));
+});
+
+gulp.task("gemini:gather", ["phantom", "test:pages-list"], function(){
   gulp.src("tests/*.js", { read: false })
     .pipe(shell([
         './node_modules/gemini/bin/gemini gather --root-url ' + productionUrl + ' <%= f(file.cwd, file.path) %>'
