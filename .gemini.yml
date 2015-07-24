@@ -7,8 +7,4 @@ browsers:
     browserName: chrome
     version: "37.0"
 
-  firefox:
-    browserName: firefox
-    version: "31.0"
-
 windowSize: 1024x768
