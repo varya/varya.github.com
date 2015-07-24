@@ -11,4 +11,4 @@ browsers:
     browserName: firefox
     version: "31.0"
 
-windowSize: 1600x1200
+windowSize: 1024x768
