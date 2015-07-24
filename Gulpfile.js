@@ -1,9 +1,7 @@
 var gulp = require("gulp"),
   run = require('gulp-run'),
   styleguide = require("sc5-styleguide"),
-  //webdriver = require("gulp-webdriver"),
   shell = require("gulp-shell"),
-  bg = require("gulp-bg"),
 
   outputPath = 'out/styleguide';
 
@@ -79,7 +77,11 @@ gulp.task("bem-watch-build", function() {
 
 gulp.task("dev", ["bem-watch", "styleguide-watch"]);
 
-gulp.task("phantom", bg('phantomjs',  '--webdriver', '4444', '--disk-cache', 'true'));
+var spawn = require('child_process').spawn;
+
+gulp.task("phantom", function() {
+  spawn('phantomjs',  ['--webdriver', '4444', '--disk-cache', 'true'])
+});
 
 var geminiRunObj =  {
   templateData: {
