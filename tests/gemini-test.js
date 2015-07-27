@@ -29,6 +29,14 @@ pages.forEach(function(page) {
 
 
           });
+      // Insert additions
+      try {
+        var additionalCode = require('./gemini-test-' + page.name);
+        if (typeof additionalCode === "function") {
+          additionalCode(suite);
+        }
+      } catch (ex) {
+      }
   });
 
 });
