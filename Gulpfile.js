@@ -2,6 +2,7 @@ var gulp = require("gulp"),
   run = require('gulp-run'),
   styleguide = require("sc5-styleguide"),
   shell = require("gulp-shell"),
+  clean = require("gulp-clean"),
   fs = require('fs'),
 
   outputPath = 'out/styleguide';
@@ -116,6 +117,16 @@ gulp.task("test:pages-list", function() {
   fs.writeFileSync('tests/pages-list.js', 'module.exports = ' + JSON.stringify(examples, null, 4));
 });
 
+gulp.task("gemini:clean:gathered", function() {
+  gulp.src("gemini/", { read: false })
+    .pipe(clean());
+});
+
+gulp.task("gemini:clean:report", function() {
+  gulp.src("gemini-report/", { read: false })
+    .pipe(clean());
+});
+
 gulp.task("gemini:gather", ["phantom", "test:pages-list"], function(done){
   var stream = gulp.src("tests/*.js", { read: false })
     .pipe(shell([
@@ -131,7 +142,7 @@ gulp.task("gemini:gather", ["phantom", "test:pages-list"], function(done){
   });
 });
 
-gulp.task("gemini:test", ["phantom"], function(done){
+gulp.task("gemini:test", ["gemini:clean:report", "phantom"], function(done){
   var stream = gulp.src("tests/*.js", { read: false })
     .pipe(shell([
         './node_modules/gemini/bin/gemini test --reporter html --reporter flat <%= f(file.cwd, file.path) %>'
@@ -145,8 +156,6 @@ gulp.task("gemini:test", ["phantom"], function(done){
   });
 });
 
-gulp.task("gemini:clean", shell.task(["rm -rf ./gemini"]));
-
-gulp.task("test:update", ["gemini:clean", "gemini:gather"]);
+gulp.task("test:update", ["gemini:clean:gathered", "gemini:gather"]);
 
 gulp.task("test", ["gemini:test"]);
