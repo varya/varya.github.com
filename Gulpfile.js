@@ -82,7 +82,8 @@ var spawn = require('child_process').spawn;
 var phantomProcess;
 
 gulp.task("phantom", function() {
-  phantomProcess = spawn('phantomjs',  ['--webdriver', '4444', '--disk-cache', 'true'])
+  phantomProcess = spawn('phantomjs',  ['--webdriver', '4444', '--disk-cache', 'true'],  {setsid:true});
+  phantomProcess.stdout.pipe(process.stdout);
 });
 
 var geminiRunObj =  {
@@ -115,15 +116,17 @@ gulp.task("test:pages-list", function() {
   fs.writeFileSync('tests/pages-list.js', 'module.exports = ' + JSON.stringify(examples, null, 4));
 });
 
-gulp.task("gemini:gather", ["phantom", "test:pages-list"], function(){
+gulp.task("gemini:gather", ["phantom", "test:pages-list"], function(done){
   var stream = gulp.src("tests/*.js", { read: false })
     .pipe(shell([
         './node_modules/gemini/bin/gemini gather --root-url ' + productionUrl + ' <%= f(file.cwd, file.path) %>'
       ], geminiRunObj));
   stream.on('end', function() {
-    phantomProcess.kill('SIGINT');
+    phantomProcess.kill('SIGTERM');
+    done();
   });
   stream.on('error', function(err) {
+    phantomProcess.kill('SIGTERM');
     done(err);
   });
 });
@@ -134,9 +137,10 @@ gulp.task("gemini:test", ["phantom"], function(done){
         './node_modules/gemini/bin/gemini test --reporter html --reporter flat <%= f(file.cwd, file.path) %>'
       ], geminiRunObj));
   stream.on('end', function() {
-    phantomProcess.kill('SIGINT');
+    phantomProcess.kill('SIGTERM');
   });
   stream.on('error', function(err) {
+    phantomProcess.kill('SIGTERM');
     done(err);
   });
 });
