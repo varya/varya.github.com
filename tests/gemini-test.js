@@ -21,22 +21,30 @@ pages.forEach(function(page) {
         suite.skip();
       }
       suite.setUrl(page.url)
-          .setCaptureElements('body')
-          .capture('plain', function(actions, find){
+        .setCaptureElements('body')
+        .capture('plain', function(actions, find){
 
-              actions.waitForElementToShow('shadow-dom', 7000);
-              actions.wait(500);
+            actions.waitForElementToShow('shadow-dom', 7000);
+            actions.wait(500);
 
 
-          });
-      // Insert additions
-      try {
-        var additionalCode = require('./gemini-test-' + page.name);
-        if (typeof additionalCode === "function") {
-          additionalCode(suite);
+        });
+        // Do not consider navigation arrows
+        // Change to arrows when this is fixed https://github.com/gemini-testing/gemini/issues/192
+
+        var selectors = [
+          '.sg-navigation-section'
+        ];
+        // Insert additions
+        try {
+          var options = require('./gemini-test_' + page.name);
+          if (options.selectorsToIgnore) {
+            selectors = selectors.concat(options.selectorsToIgnore);
+          }
+        } catch (ex) {
+
         }
-      } catch (ex) {
-      }
+        suite.ignoreElements.apply(gemini, selectors);
   });
 
 });
