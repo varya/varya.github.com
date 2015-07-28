@@ -39,6 +39,12 @@ Styleguide 2.1.1
 
 */
 
+.article
+{
+    font: 16px/1.5 'Noto Serif', Palatino Linotype, Palatino, serif;
+    font-weight: 400;
+}
+
 .article__header
 {
     padding: 0;
