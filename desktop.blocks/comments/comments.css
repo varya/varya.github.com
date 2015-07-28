@@ -1,7 +1,36 @@
+/*
+
+Comments
+
+markup:
+<div class="comments">
+  <div class="comments__box box__body">
+    <sg-insert>2.4.1</sg-insert>
+  </div>
+  <div class="comments__body box__island">
+    Disqus comments
+  </div>
+</div>
+
+Styleguide 2.4
+
+*/
+
 .comments
 {
     margin-top: 2em;
 }
+
+/*
+Comments' header
+
+markup:
+<h4 class="comments__header">
+  Comments
+</h4>
+
+Styleguide 2.4.1
+*/
 
 .comments__header
 {

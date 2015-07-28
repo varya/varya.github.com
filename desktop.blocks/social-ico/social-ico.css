@@ -2,16 +2,28 @@
 
 /*
 
-Social Icons
-
-.social-ico__ico_type_rss         - RSS
-.social-ico__ico_type_twitter     - Twitter
-.social-ico__ico_type_github      - Github
-.social-ico__ico_type_facebook    - Facebook
-.social-ico__ico_type_linkedin    - LinkedIn
+Set of social icons
 
 markup:
-<a class="link social-ico__ico {$modifiers}" href="#" title="Icon title"></a>
+<ul class="social-ico menu-vert">
+  <li class="menu-vert__item">
+    <ul class="social-ico__text menu-vert">
+      <li class="menu-vert__item">
+        <a class="link social-ico__rss-text" href="/en/feed.xml" title="New on Varya.me in English">en</a>
+      </li>
+      <li class="menu-vert__item">
+        <a class="link social-ico__rss-text" href="/ru/feed.xml" title="Новые записи на Varya.me">ru</a>
+      </li>
+    </ul>
+    <a class="link social-ico__ico social-ico__ico_type_rss" href="/feed.xml" title="New on Varya.me"></a>
+  </li>
+  <li class="menu-vert__item">
+  <a class="link social-ico__ico social-ico__ico_type_twitter"
+      href="#"
+      title="My twitter"
+      target="_blank"></a>
+  </li>
+</ul>
 
 Styleguide 1.2
 
@@ -32,6 +44,21 @@ Styleguide 1.2
         display:inline-block;
     }
 }
+
+/*
+Social icon
+
+.social-ico__ico_type_rss         - RSS
+.social-ico__ico_type_twitter     - Twitter
+.social-ico__ico_type_github      - Github
+.social-ico__ico_type_facebook    - Facebook
+.social-ico__ico_type_linkedin    - LinkedIn
+
+markup:
+<a class="link social-ico__ico {$modifiers}" href="#" title="Icon title"></a>
+
+Styleguide 1.2.2
+*/
 
 .social-ico__ico
 {

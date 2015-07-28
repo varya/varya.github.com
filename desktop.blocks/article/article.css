@@ -1,24 +1,17 @@
 /*
 
-Content
-
-Styleguide 2
-
-*/
-
-/*
-
 Article
 
 markup:
 <div class="article" role="main">
   <div class="article__body box__body">
-    <h1 class="article__header">
-      Article title
-    </h1>
+    <sg-insert>2.1.1</sg-insert>
   </div>
   <div class="article__text box__island">
-    Article text
+    <sg-insert>2.1.2</sg-insert>
+    <p>
+      Article text
+    </p>
   </div>
 </div>
 

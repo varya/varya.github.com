@@ -1,3 +1,14 @@
+/*
+Prompting
+
+markup:
+<aside class="prompting">
+  <sg-insert>1.2</sg-insert>
+</aside>
+
+Styleguide 3.3
+*/
+
 .prompting
 {
     -webkit-box-ordinal-group: 1;

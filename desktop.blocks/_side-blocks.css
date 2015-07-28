@@ -7,7 +7,7 @@ Styleguide 3
 */
 
 /*
-@import url("github/github.css");
+@import url("github/github.css"); // 3.1
 */
 
 /*
@@ -38,4 +38,8 @@ markup:
 
 Styleguide 3.2
 
+*/
+
+/*
+@import url("prompting/prompting.css"); // 3.3
 */

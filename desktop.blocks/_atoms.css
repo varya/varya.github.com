@@ -7,6 +7,7 @@ Styleguide 1
 */
 
 /*
-@import url("logo/logo.css");
-@import url("social-ico/social-ico.css");
+@import url("logo/logo.css"); // 1.1
+@import url("social-ico/social-ico.css"); // 1.2
+@import url("text/text.css"); // 1.3
 */
