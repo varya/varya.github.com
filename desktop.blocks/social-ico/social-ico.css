@@ -25,7 +25,7 @@ markup:
   </li>
 </ul>
 
-Styleguide 1.2
+Styleguide 1.5
 
 */
 .social-ico
@@ -57,7 +57,7 @@ Social icon
 markup:
 <a class="link social-ico__ico {$modifiers}" href="#" title="Icon title"></a>
 
-Styleguide 1.2.2
+Styleguide 1.5.1
 */
 
 .social-ico__ico

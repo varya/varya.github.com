@@ -1,5 +1,4 @@
 /*
-
 Atoms
 
 Styleguide 1
@@ -14,7 +13,9 @@ styleguide:ignore:start
 @import url("share/share.css"); // 1.6
 
 styleguide:ignore:end
+*/
 
+/*
 Main blocks
 
 Styleguide 2
@@ -26,7 +27,9 @@ styleguide:ignore:start
 @import url("box/box.css"); // 2.3
 
 styleguide:ignore:end
+*/
 
+/*
 Content blocks
 
 Styleguide 3
@@ -40,7 +43,9 @@ styleguide:ignore:start
 @import url("recent-posts/recent-posts.css"); // 3.5
 
 styleguide:ignore:end
+*/
 
+/*
 Side blocks
 
 Styleguide 4
@@ -53,7 +58,9 @@ styleguide:ignore:start
 @import url("prompting/prompting.css"); // 4.4
 
 styleguide:ignore:end
+*/
 
+/*
 Fun things
 
 Styleguide 5

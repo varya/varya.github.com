@@ -1,19 +1,17 @@
 /*
-
 List of articles
 
 markup:
 <div class="article" role="main">
   <div class="article__body box__body">
-    <sg-insert>2.1.1</sg-insert>
+    <sg-insert>3.1.1</sg-insert>
   </div>
-  <sg-insert>2.2.1</sg-insert>
-  <sg-insert>2.2.1</sg-insert>
-  <sg-insert>2.2.1</sg-insert>
+  <sg-insert>3.4.1</sg-insert>
+  <sg-insert>3.4.1</sg-insert>
+  <sg-insert>3.4.1</sg-insert>
 </div>
 
-Styleguide 2.2
-
+Styleguide 3.4
 */
 
 
@@ -37,13 +35,14 @@ markup:
   </p>
 </div>
 
-Styleguide 2.2.1
-
+Styleguide 3.4.1
 */
+
 .articles-list__item
 {
     margin-bottom: 1em;
 }
+
 .articles-list__item p
 {
     margin-top: 0.15em;

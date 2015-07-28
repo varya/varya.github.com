@@ -5,14 +5,14 @@ Comments
 markup:
 <div class="comments">
   <div class="comments__box box__body">
-    <sg-insert>2.4.1</sg-insert>
+    <sg-insert>3.2.1</sg-insert>
   </div>
   <div class="comments__body box__island">
     Disqus comments
   </div>
 </div>
 
-Styleguide 2.4
+Styleguide 3.2
 
 */
 
@@ -29,7 +29,7 @@ markup:
   Comments
 </h4>
 
-Styleguide 2.4.1
+Styleguide 3.2.1
 */
 
 .comments__header
