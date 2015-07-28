@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "bower-npm-install": "~0.5.1",
-    "docpad": "~6.69.2",
+    "docpad": "^6.78.1",
     "docpad-plugin-cleanurls": "~2.7.0",
     "docpad-plugin-eco": "~2.1.0",
     "docpad-plugin-ghpages": "~2.4.3",
@@ -26,7 +26,6 @@
     "glob": "^4.3.5",
     "grunt": "~0.4.5",
     "grunt-contrib-copy": "^0.7.0",
-    "grunt-shell": "^1.1.1",
     "safeps": "~2.2.11",
     "sc5-styleguide": "0.3.27"
   },
@@ -42,6 +41,7 @@
     "enb-bembundle": "^1.1.0",
     "enb-borschik": "^1.5.0",
     "gulp": "^3.8.10",
+    "gulp-run": "^1.6.10",
     "gulp-shell": "^0.4.2"
   }
 }

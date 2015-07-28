@@ -1,5 +1,5 @@
 var gulp = require("gulp"),
-  shell = require('gulp-shell'),
+  run = require('gulp-run'),
   styleguide = require("sc5-styleguide"),
 
   outputPath = 'out/styleguide';
@@ -37,9 +37,9 @@ gulp.task("styleguide-watch", ["styleguide"], function() {
   gulp.watch(["desktop.blocks/**/*.css"], ["styleguide"]);
 });
 
-gulp.task("bem-build", shell.task([
-  "./node_modules/enb/bin/enb make --no-cache"
-]));
+gulp.task("bem-build", function() {
+  run('./node_modules/enb/bin/enb make --no-cache').exec();
+})
 
 gulp.task("bem-copy", ["bem-build"], function() {
   gulp.src(["desktop.blocks/**/*", "desktop.bundles/**/*"], { base: "."})
