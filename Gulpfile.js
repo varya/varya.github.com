@@ -15,7 +15,20 @@ gulp.task("styleguide:generate", function() {
         extraHead: [
           '<script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>',
           '<script src="/desktop.bundles/index/index.min.js"></script>',
-          '<script src="/styleguide-hack.js"></script>'
+          '<script src="/styleguide-hack.js"></script>',
+          [ '<script>',
+            '(function(d, s, l, r) {',
+            "if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {",
+                'r = [',
+                    "'<style>',",
+                    "l.getItem('varya.me.fonts'),",
+                    "'</style>'",
+                '];',
+                "document.write(r.join(''));",
+            '}',
+
+            '})(document, Storage, localStorage);',
+            '</script>' ].join('')
         ],
         disableEncapsulation: true,
         disableHtml5Mode: true
