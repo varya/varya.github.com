@@ -2,13 +2,10 @@
 Third party
 
 Styleguide 5
-*/
 
-/*
-Share
+styleguide:ignore:start
 
-markup:
-<script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+@import url("share/share.css"); // 5.1
 
-Styleguide 5.1
+styleguide:ignore:end
 */

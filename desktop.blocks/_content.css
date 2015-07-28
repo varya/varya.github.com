@@ -4,13 +4,15 @@ Content
 
 Styleguide 2
 
-*/
-
-/*
+styleguide:ignore:start
 
 @import url("article/article.css"); // 2.1
 @import url("articles-list/articles-list.css"); // 2.2
 @import url("recent-posts/recent-posts.css"); // 2.3
 @import url("comments/comments.css"); // 2.4
+@import url("footer/footer.css"); // 2.5
+@import url("header/header.css"); // 2.6
+@import url("related/related.css"); // 2.7
 
+styleguide:ignore:end
 */

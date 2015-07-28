@@ -1,3 +1,21 @@
+/*
+Related infromation
+
+markup:
+<div class="related">
+  <div class="related__body box__body">
+    <h4 class="related__header">
+      Related info
+    </h4>
+  </div>
+  <div class="related__text box__island">
+    Related text and <sg-insert>1.6</sg-insert>
+  </div>
+</div>
+
+Styleguide 2.7
+*/
+
 .related
 {
     margin-top: 2em;

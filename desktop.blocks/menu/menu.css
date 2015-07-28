@@ -1,0 +1,27 @@
+/*
+Side menu
+
+markup:
+<ul class="menu-vert">
+    <h3 class="menu-vert__title box__title">
+        On this site
+    </h3>
+    <li class="menu-vert__item ">
+        <a class="link" href="/en/posts">
+            Blog
+        </a>
+    </li>
+    <li class="menu-vert__item ">
+        <a class="link" href="/en/content">
+            Articles and talks
+        </a>
+    </li>
+    <li class="menu-vert__item ">
+        <a class="link" href="/">
+            About me
+        </a>
+    </li>
+</ul>
+
+Styleguide 3.2
+*/

@@ -1,45 +1,14 @@
 /*
-
 Side blocks
 
 Styleguide 3
 
-*/
+styleguide:ignore:start
 
-/*
 @import url("github/github.css"); // 3.1
-*/
-
-/*
-
-Side menu
-
-markup:
-<ul class="menu-vert">
-    <h3 class="menu-vert__title box__title">
-        On this site
-    </h3>
-    <li class="menu-vert__item ">
-        <a class="link" href="/en/posts">
-            Blog
-        </a>
-    </li>
-    <li class="menu-vert__item ">
-        <a class="link" href="/en/content">
-            Articles and talks
-        </a>
-    </li>
-    <li class="menu-vert__item ">
-        <a class="link" href="/">
-            About me
-        </a>
-    </li>
-</ul>
-
-Styleguide 3.2
-
-*/
-
-/*
+@import url("menu/menu.css"); // 3.2
 @import url("prompting/prompting.css"); // 3.3
+@import url("sidebar/sidebar.css"); // 3.4
+
+styleguide:ignore:end
 */

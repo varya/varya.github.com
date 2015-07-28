@@ -1,3 +1,14 @@
+/*
+Sidebar
+
+markup:
+<nav class="sidebar">
+  <sg-insert>3.2</sg-insert>
+  <sg-insert>3.1</sg-insert>
+</nav>
+
+Styleguide 3.4
+*/
 .sidebar
 {
     -webkit-box-ordinal-group: 3;
