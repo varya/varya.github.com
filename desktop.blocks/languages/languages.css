@@ -1,3 +1,19 @@
+/*
+Language switcher
+
+markup:
+<ul class="languages">
+  <li class="languages__lang">
+    <a href="#">
+      ru
+    </a>
+    en
+  </li>
+</ul>
+
+Styleguide 1.4
+*/
+
 .languages
 {
     display: block;

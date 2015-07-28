@@ -1,33 +1,23 @@
 /*
-
-Content
-
-Styleguide 2
-
-*/
-
-/*
-
 Article
 
 markup:
 <div class="article" role="main">
   <div class="article__body box__body">
-    <h1 class="article__header">
-      Article title
-    </h1>
+    <sg-insert>3.1.1</sg-insert>
   </div>
   <div class="article__text box__island">
-    Article text
+    <sg-insert>3.1.2</sg-insert>
+    <p>
+      Article text
+    </p>
   </div>
 </div>
 
-Styleguide 2.1
-
+Styleguide 3.1
 */
 
 /*
-
 Article header
 
 markup:
@@ -35,9 +25,14 @@ markup:
   Article title
 </h1>
 
-Styleguide 2.1.1
-
+Styleguide 3.1.1
 */
+
+.article
+{
+    font: 16px/1.5 'Noto Serif', Palatino Linotype, Palatino, serif;
+    font-weight: 400;
+}
 
 .article__header
 {
@@ -49,7 +44,6 @@ Styleguide 2.1.1
 }
 
 /*
-
 Article details
 
 markup:
@@ -58,9 +52,9 @@ markup:
     11th February 2015
 </span>
 
-Styleguide 2.1.2
-
+Styleguide 3.1.2
 */
+
 .article__details
 {
     font-size: .8em;

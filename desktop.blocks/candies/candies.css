@@ -1,22 +1,13 @@
 /*
-
-Fun things
-
-Styleguide 4
-
-*/
-
-/*
-
 Candies
 
 markup:
 <div class="candies i-bem" data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'>
 </div>
 
-Styleguide 4.1
-
+Styleguide 5.1
 */
+
 .candies_i
 {
     display: inline-block;
