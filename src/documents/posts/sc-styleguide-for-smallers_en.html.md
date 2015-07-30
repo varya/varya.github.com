@@ -73,11 +73,11 @@ gulp.task("styleguide:generate", function() {
 
 However, I needed yet another trick to make the scripts work properly. My components are written with `i-bem.js`
 framework which automatically initialises them on the `domReady` event. This is what I wanted for the static pages because the
-components markup is HTML. But for the Style Guide, which is architecturally a SPA, this did not work. The components
+components markup is in HTML document. But for the Style Guide, which is architecturally a SPA, this did not work. The components
 are rendered on the fly, and this obviously happens after `domReady`; that is why by default they stay
 uninitialized. So they should be initialized after they had been rendered. Luckily, the Style Guide
 triggers an event on the `window` object named `styleguide:onRendered` every time a new component is re-rendered.
-By handling this event, I managed to get the components initialized right after they appear in HTML. This code is needed
+By handling this event, I managed to get the components initialized right after they appear on the page. This code is needed
 for the Style Guide only, so I do not include it into the project bundle but provide as an additional script in the
 Style Guide configuration:
 
@@ -183,7 +183,7 @@ In my case, I tell it skip my overview lists because they have nothing to do wit
 sections and their possible descriptions (I just haven't provided any) are in work.
 
 ### Describing the pieces
-Everything else went smooth. For every component I provided the KSS description. The `logo` block can be the
+Everything else went smoothly. For every component I provided the KSS description. The `logo` block can be the
 simplest example:
 
 ```css
@@ -266,7 +266,7 @@ I personally like that the search source is not only the CSS of components but a
 refactorings this, for example, makes possible to select all the components containing inputs and look how the changes affect them.
 
 However this is just a small addition to one major benefit I see in using the Style Guide. I find it far more important 
-that it reveals my mistakes.
+that **it reveals my mistakes**.
 
 I already used the component way when building my blog. And I was pretty sure that my BEM experience is a 100%
 guarantee that I get this right. But even developing with a highly modular approach in mind, I did this from the page perspective.
@@ -278,7 +278,7 @@ independent**.
 
 After the SC5 Style Guide magically represented each of them separately, I can see that the
 [logo](http://varya.me/styleguide/#/section/1.1) is aligned to the right.
-Why should it be? Obviously, my mistake when I tried to made it fit into the Header.
+And why should it be? Obviously, my mistake when I tried to made it fit into the Header.
 
 The same goes for the [language switcher](http://varya.me/styleguide/#/section/1.4) positioned on the right.
 
