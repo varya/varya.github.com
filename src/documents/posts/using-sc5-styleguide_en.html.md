@@ -1,25 +1,25 @@
 ---
 
-title: Using SC5 StyleGuide
+title: Style-guide the smaller things
 
 date: 2015-07-30
 
 layout: post
 
 ---
-I've been presenting [SC5 StyleGuide](http://styleguide.sc5.io/) several times during this year sharing my experience of using it for one
+I've been presenting [SC5 Style Guide](http://styleguide.sc5.io/) several times during this year sharing my experience of using it for one
 of the SC5's clients, Elisa. Assuming that Elisa is a huge mobile operator with a lot of websites and a need
-to keep those websites visually consistent, there is no wonder that the SC5 StyleGuide as a tool provides benefits
+to keep those websites visually consistent, there is no wonder that the SC5 Style Guide as a tool provides benefits
 there. But what about smaller websites? Would it be useful there? I did not know the answer to this question
 and wanted to experiment. The experiment were conducted on my blog codebase.
 <excerpt/>
 
-This is how the Living StyleGuide looks like: [varya.me/styleguide](http://varya.me/styleguide). You can see the interface
+This is how the Living Style Guide looks like: [varya.me/styleguide](http://varya.me/styleguide). You can see the interface
 decomposed into block pieces, each of those representing a meaningful interface unit. I haven't seen the interface of my blog
 from this perspective before. It gave me a lot of insight into the ways the CSS architecture of my blog should be designed.
 But, let's consider things one by one.
 
-## Fine-tuning the SC5 StyleGuide tool
+## Fine-tuning the SC5 Style Guide tool
 
 Everything starts with
 
@@ -30,12 +30,12 @@ npm install --save-dev sc5-styleguide
 Then, I was able to use the tool to build the interface representation. It required
 [a couple of Gulp tasks](https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/Gulpfile.js).
 
-I had to deviate from the example configuration in a couple of place to make my StyleGuide work as it does now. Let me
+I had to deviate from the example configuration in a couple of place to make my Style Guide work as it does now. Let me
 name and explain these things.
 
 ### Providing the `appRoot` parameter.
 
-As I am hosting the StyleGuide website not it the root folder but in a subfolder named `styleguide`, I inform the
+As I am hosting the Style Guide website not it the root folder but in a subfolder named `styleguide`, I inform the
   generator about that, so it can build the properly working app:
 
 ```js
@@ -73,13 +73,13 @@ gulp.task("styleguide:generate", function() {
 
 However, I needed yet another trick to make the scripts work properly. My components are written with `i-bem.js`
 framework which automatically initialises them on the `domReady` event. This is what I wanted for the static pages because the
-components markup is HTML. But for the StyleGuide, which is architecturally a SPA, this did not work; the components
-are rendered on the fly, and this obviously happens after `domReady`. That is why by default they stay
-uninitialized. So they should be initialized after they had been rendered. Luckily, the StyleGuide
+components markup is HTML. But for the Style Guide, which is architecturally a SPA, this did not work. The components
+are rendered on the fly, and this obviously happens after `domReady`; that is why by default they stay
+uninitialized. So they should be initialized after they had been rendered. Luckily, the Style Guide
 triggers an event on the `window` object named `styleguide:onRendered` every time a new component is re-rendered.
 By handling this event, I managed to get the components initialized right after they appear in HTML. This code is needed
-for the StyleGuide only, so I do not include it into the project bundle but provide as an additional script in the
-StyleGuide configuration:
+for the Style Guide only, so I do not include it into the project bundle but provide as an additional script in the
+Style Guide configuration:
 
 ```
 gulp.task("styleguide:generate", function() {
@@ -100,18 +100,18 @@ of repositories after querying the GitHub API: [varya.me/styleguide/#/section/4.
 Or try out the Candies randomly built with JavaScript [varya.me/styleguide/#/section/5.1](http://varya.me/styleguide/#/section/5.1).
 
 The last important thing to make JavaScript work is to use `disableEncapsulation: true` parameter. Normally the
-StyleGuide wraps each component in the ShadowDOM because it lets us developers write component CSS without
-worrying about affecting the StyleGuide interface. But it also makes the components scoped from the JavaScript linked
-to the StyleGuide website — including that additional JavaScript I showed above. By disabling the encapsulation, I made
-the components to be inserted into the HTML page as they are, without any scoping. As for affecting the StyleGuide
+Style Guide wraps each component in the ShadowDOM because it lets us developers write component CSS without
+worrying about affecting the Style Guide interface. But it also makes the components scoped from the JavaScript linked
+to the Style Guide website — including that additional JavaScript I showed above. By disabling the encapsulation, I made
+the components to be inserted into the HTML page as they are, without any scoping. As for affecting the Style Guide
 interface, in my case it will never happen as I use BEM and all my components are already "encapsulated" thanks to that methodology.
 
 ### Hosting a static page
 
-The SC5 StyleGuide provides a development server which routes all the paths to its root. When hosting it outside, you
+The SC5 Style Guide provides a development server which routes all the paths to its root. When hosting it outside, you
 should care about the routing yourself as you would do for any other SPA. But my blog is hosted on GitHub Pages
 which is a simple static hosting and does not provide any routing capabilities. For managing this case, I use the
-`disableHtml5Mode: true` option. It makes the StyleGuide application generate the old-school links with `#`. And so it
+`disableHtml5Mode: true` option. It makes the Style Guide application generate the old-school links with `#`. And so it
 works.
 
 ## Documenting the components
@@ -120,7 +120,7 @@ needed to create a descriptive structure and document the blocks with KSS.
 
 ### Structuring the code
 Unfortunately the BEM way of storing components in folders turned out to be not good enough to see
-the code from the style guide perspective. On a file system, all the components are represented at the same
+the code from the living-style-guide perspective. On a file system, all the components are represented at the same
 level which turns them into a long list without much structure:
 
 ```
@@ -171,12 +171,12 @@ styleguide:ignore:end
 ```
 [github/varya/varya.github.com/desktop-blocks/overview.css](https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/overview.css)
 
-There are only comments in this file in which I provide the documentation of every subset as a StyleGuide section.
+There are only comments in this file in which I provide the documentation of every subset as a Style Guide section.
 Listing the paths of the dependant CSS files makes it easier to navigate through the code. The `@import` syntax is used just
 because :-)
 
 The only trick here is the magic `styleguide:ignore:start` and `styleguide:ignore:end` keywords. It is possible to
-place them inside comments in any piece of your CSS (or SASS or LESS) and make the StyleGuide generator ignore 
+place them inside comments in any piece of your CSS (or SASS or LESS) and make the Style Guide generator ignore 
 what is in between.
 
 In my case, I tell it skip my overview lists because they have nothing to do with the codebase. But the names of the
@@ -206,7 +206,7 @@ Styleguide 1.1
 See it rendered: [varya.me/styleguide/#/section/1.1](http://varya.me/styleguide/#/section/1.1)
 
 In some other components I used extra features. For example, different social icons are the same `ico` element with different
-modifiers. In the StyleGuide I could documents them all together:
+modifiers. In the Style Guide I could documents them all together:
 
 ```css
 /*
@@ -258,14 +258,14 @@ This makes the markup examples pretty short, however it expands for rendering th
 markup on the website: [varya.me/styleguide/#/section/4.1](http://varya.me/styleguide/#/section/4.1)
 
 ## Style-Guide-Driven Development
-If you type "logo" in the StyleGuide search field, it will find and render all the components where `logo` is found!
+If you type "logo" in the Style Guide search field, it will find and render all the components where `logo` is found!
 The search goes through all the CSS codebase. Similarly you can search for the components using `<em>` in their markup.
 Or `font:` in their CSS.
 
 I personally like that the search source is not only the CSS of components but also their markup examples. During the
 refactorings this, for example, makes possible to select all the components containing inputs and look how the changes affect them.
 
-However this is just a small addition to one major benefit I see in using the StyleGuide. I find it far more important 
+However this is just a small addition to one major benefit I see in using the Style Guide. I find it far more important 
 that it reveals my mistakes.
 
 I already used the component way when building my blog. And I was pretty sure that my BEM experience is a 100%
@@ -276,7 +276,7 @@ components fitted first.
 I considered them independent and so tried to write my code. But **sitting at the same page they never actually were
 independent**.
 
-After the SC5 StyleGuide magically represented each of them separately, I can see that the
+After the SC5 Style Guide magically represented each of them separately, I can see that the
 [logo](http://varya.me/styleguide/#/section/1.1) is aligned to the right.
 Why should it be? Obviously, my mistake when I tried to made it fit into the Header.
 
@@ -284,7 +284,7 @@ The same goes for the [language switcher](http://varya.me/styleguide/#/section/1
 
 In the [set of social icons](http://varya.me/styleguide/#/section/1.5), the language switcher provided with the RSS
 icon was considered to stay with it. But this only happens because at the blog pages
-it is placed into a narrow container. The StyleGuide represents it on its own and I can see that it is not that
+it is placed into a narrow container. The Style Guide represents it on its own and I can see that it is not that
 flawless as I thought.
 
 Such discoveries obviously lead to the refactoring :-)
