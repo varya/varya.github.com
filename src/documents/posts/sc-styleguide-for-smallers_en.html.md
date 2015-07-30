@@ -11,7 +11,7 @@ I've been presenting [SC5 Style Guide](http://styleguide.sc5.io/) several times 
 of the SC5's clients, Elisa. Assuming that Elisa is a huge mobile operator with a lot of websites and a need
 to keep those websites visually consistent, there is no wonder that the SC5 Style Guide as a tool provides benefits
 there. But what about smaller websites? Would it be useful there? I did not know the answer to this question
-and wanted to experiment. The experiment were conducted on my blog codebase.
+and wanted to experiment. The experiment was conducted on my blog codebase.
 <excerpt/>
 
 This is how the Living Style Guide looks like: [varya.me/styleguide](http://varya.me/styleguide). You can see the interface
@@ -30,7 +30,7 @@ npm install --save-dev sc5-styleguide
 Then, I was able to use the tool to build the interface representation. It required
 [a couple of Gulp tasks](https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/Gulpfile.js).
 
-I had to deviate from the example configuration in a couple of place to make my Style Guide work as it does now. Let me
+I had to deviate from the example configuration in a couple of places to make my Style Guide work as it does now. Let me
 name and explain these things.
 
 ### Providing the `appRoot` parameter.
