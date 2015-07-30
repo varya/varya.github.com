@@ -15,7 +15,6 @@ gulp.task("styleguide:generate", function() {
         extraHead: [
           '<script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>',
           '<script src="/desktop.bundles/index/index.min.js"></script>',
-          '<script src="/styleguide-hack.js"></script>',
           [ '<script>',
             '(function(d, s, l, r) {',
             "if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {",
@@ -28,7 +27,8 @@ gulp.task("styleguide:generate", function() {
             '}',
 
             '})(document, Storage, localStorage);',
-            '</script>' ].join('')
+            '</script>' ].join(''),
+          '<script src="/styleguide/i-bem__init_styleguide.js"></script>'
         ],
         disableEncapsulation: true,
         disableHtml5Mode: true
