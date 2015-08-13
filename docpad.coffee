@@ -187,6 +187,10 @@ collections:
 
             urls = ["/#{newUrl}"]
 
+            # Page mirrors
+            if (document.get('name') == 'sc5-styleguide-for-smallers_en.html')
+              urls.push("/en/posts/sc-styleguide-for-smallers.html")
+
             document
                 .setMetaDefaults({
                     url: urls[0]
