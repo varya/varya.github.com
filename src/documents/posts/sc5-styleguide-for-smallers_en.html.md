@@ -6,6 +6,11 @@ date: 2015-07-30
 
 layout: post
 
+meta:
+  desc: >
+    A story about how I tried to use SC5 Style Guide on my tiny tiny blog project and aparently got see the CSS
+    architecture from completety different perspective.
+
 ---
 I've been presenting [SC5 Style Guide](http://styleguide.sc5.io/) several times during this year sharing my experience of using it for one
 of the SC5's clients, Elisa. Assuming that Elisa is a huge mobile operator with a lot of websites and a need
