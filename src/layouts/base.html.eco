@@ -17,7 +17,8 @@
     }
 
     })(document, Storage, localStorage);
-    </script>
+  </script>
+  <%- @hlp.metaProps(@document) %>
 </head>
 <body class="page page__body">
     <header class="header">

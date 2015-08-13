@@ -128,6 +128,16 @@ templateData:
     hasReadMore: (content) ->
         content and ((content.search @cutTag) isnt -1)
 
+    hlp:
+        metaProps: (document) ->
+            if document.meta.desc
+                desc = document.meta.desc
+            if document.thumb
+                thumb = document.thumb
+            "" +
+            (if desc then "<meta content=\"#{desc}\" property=\"og:description\"/>" else "") +
+            (if thumb then "<meta content=\"#{thumb}\" property=\"og:image\"/>" else "")
+
 collections:
     posts: ->
         @getCollection("documents").findAllLive({
