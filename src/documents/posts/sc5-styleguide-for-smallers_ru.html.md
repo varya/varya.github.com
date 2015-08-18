@@ -2,7 +2,7 @@
 
 title: Стайл гайд для самых маленьких
 
-date: 2015-08-14
+date: 2015-08-18
 
 layout: post
 
@@ -100,29 +100,31 @@ gulp.task("styleguide:generate", function() {
 [varya.me/styleguide/#/section/4.3](http://varya.me/styleguide/#/section/4.3). Или на странице блока с кружочками,
 которые генерируются случайным образом: [varya.me/styleguide/#/section/5.1](http://varya.me/styleguide/#/section/5.1).
 
-The last important thing to make JavaScript work is to use `disableEncapsulation: true` parameter. Normally the
-Style Guide wraps each component in the ShadowDOM because it lets us developers write component CSS without
-worrying about affecting the Style Guide interface. But it also makes the components scoped from the JavaScript linked
-to the Style Guide website — including that additional JavaScript I showed above. By disabling the encapsulation, I made
-the components to be inserted into the HTML page as they are, without any scoping. As for affecting the Style Guide
-interface, in my case it will never happen as I use BEM and all my components are already "encapsulated" thanks to that methodology.
+И последняя, очень важная деталь для того, чтобы заставить JavaScript работать — это использование параметра
+`disableEncapsulation: true`. По умолчанию Style Guide оборачивает каждый компонент в ShadowDOM. Это даёт разработчику
+возможность не беспокоиться о том, что его стили пересекутся со стилями сгенерированного веб-сайта. Но в то же время
+это инкапсулирует компонент, в том числе и от JavaScript, подключённого в `<head>`. Но благодаря специальному параметру
+эту инкапсуляцию можно предотвратить. Так что у меня компоненты просто вставляются в HTML-код сайта как есть. Что
+касается возможности перезаписать стили сайта, этого не случится. Я использую БЭМ, поэтому все компоненты уже
+"инкапсулированы" на уровне методологии.
 
-### Hosting a static page
+### Стайл гайд как статическая страница
 
-The SC5 Style Guide provides a development server which routes all the paths to its root. When hosting it outside, you
-should care about the routing yourself as you would do for any other SPA. But my blog is hosted on GitHub Pages
-which is a simple static hosting and does not provide any routing capabilities. For managing this case, I use the
-`disableHtml5Mode: true` option. It makes the Style Guide application generate the old-school links with `#`. And so it
-works.
+Для режима разработки у SC5 Style Guide запускается сервер, который разруливает все пути в корневой каталог, откуда и
+раздаётся сгененированный SPA-сайт. Если вы хотите пользоваться результатом в своём сервере, о такой маршрутизации
+придется позаботиться самостоятельно. Но в моём случае сайт располагается на GitHub Pages, это статический хостинг и там
+никакой маршрутизации не предусмотрено. Однако на этот случай есть настройка `disableHtml5Mode: true`. Она говорит
+генератору, что в приложении должны быть старые добрые ссылки с решеткой `#`. Так что всё работает.
 
-## Documenting the components
-As I used BEM for my website frontend from very beginning, the CSS was already written the component-way. I only
-needed to create a descriptive structure and document the blocks with KSS.
+## Документирование компонент
 
-### Structuring the code
-Unfortunately the BEM way of storing components in folders turned out to be not good enough to see
-the code from the living-style-guide perspective. On a file system, all the components are represented at the same
-level which turns them into a long list without much structure:
+Ещё до внедрения стайл гайда, у меня весь CSS был написан по БЭМ, то есть с компонентым подходом. Для стайл гайда нужно
+было только задать компонентам структуру и задокументировать блоки при помощи KSS.
+
+### Структурирование кода
+
+Оказалось, что файловая структура, которую предлагает БЭМ, не самое лучшее решение для разработки живого стайлгайда. На
+файловой системе все компоненты представлены длинным плоским списком:
 
 ```
 desktop.blocks/
@@ -135,12 +137,12 @@ desktop.blocks/
 
 [github/varya/varya.github.com/desktop-blocks](https://github.com/varya/varya.github.com/tree/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks)
 
-In this case the atomic components are not distinct from the structural interface pieces (such as Header or Footer),
-from the side blocks, or from CSS provided to style third-party things. Flat structure is indeed good for
-bundling tools but we humans need more logical nesting.
+То есть маленькие атомарные компоненты никак не отличаются от блоков для структуры страницы (таких как Header или
+Footer), от блоков из сайдбара или от CSS для сторонних виджетов. Разумеется, плоская структура более удобна для
+сборщиков, но с точки зрения разработки нужна какая-то каталогизация.
 
-For that I provide the `overview.css` file, which has nothing to do with the final product and only helps me arrange the
-blocks. I have 5 sections, in which I place the blocks depending on what they are:
+Для этого я сделала файл `overview.css`, в котором нет никакого активного CSS, но он помогает мне организовать блоки.
+У меня там 5 секций, и в каждой относящиеся к ней компоненты:
 
 ```
 /*
@@ -172,20 +174,20 @@ styleguide:ignore:end
 ```
 [github/varya/varya.github.com/desktop-blocks/overview.css](https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/overview.css)
 
-There are only comments in this file in which I provide the documentation of every subset as a Style Guide section.
-Listing the paths of the dependant CSS files makes it easier to navigate through the code. The `@import` syntax is used just
-because :-)
+По сути в файле кроме комментариев ничего нет. А в комментариях — описание каждой секции. Также перечислены
+файлы блоков, имеющие к ней отношение. Это удобно для навигации по коду. В этом перечислении я использовала `@import`
+(просто потому что могу).
 
-The only trick here is the magic `styleguide:ignore:start` and `styleguide:ignore:end` keywords. It is possible to
-place them inside comments in any piece of your CSS (or SASS or LESS) and make the Style Guide generator ignore 
-what is in between.
+Здесь только одна особенность — использование волшебных комментариев `styleguide:ignore:start` и
+`styleguide:ignore:end`. Ими можно обернуть любой кусок CSS (SASS или LESS) кода и таким образом сказать генератору SC5
+Style Guide, что этот кусок нужно проигнорировать.
 
-In my case, I tell it skip my overview lists because they have nothing to do with the codebase. But the names of the
-sections and their possible descriptions (I just haven't provided any) are in work.
+Я игнорирую свои списки блоков, потому что они никак не влияют на код. Но описания секций остаются.
 
-### Describing the pieces
-Everything else went smoothly. For every component I provided the KSS description. The `logo` block can be the
-simplest example:
+### Описание блоков
+
+Все остальное легко. Перед каждым компонентом я размещаю комментарий с KSS описанием. Например, один из простых блоков,
+Logo:
 
 ```css
 /*
@@ -206,8 +208,8 @@ Styleguide 1.1
 
 See it rendered: [varya.me/styleguide/#/section/1.1](http://varya.me/styleguide/#/section/1.1)
 
-In some other components I used extra features. For example, different social icons are the same `ico` element with different
-modifiers. In the Style Guide I could documents them all together:
+В некоторых компонентах использованы дополнительные возможности. Например, социальные иконки — это один и тот же блок
+с разными модификаторыми. Такое можно задокументировать одним махом:
 
 ```css
 /*
@@ -232,11 +234,11 @@ Styleguide 1.5.1
 
 [github/varya/varya.github.com/desktop-blocks/social-ico/social-ico.css](https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/social-ico/social-ico.css#L49)
 
-In the website the component is rendered separately with every modifier possible:
+В документации компоненты прорисованны по отдельности для каждого модификатора:
 [varya.me/styleguide/#/section/1.5.1](http://varya.me/styleguide/#/section/1.5.1)
 
-For the complex components which contain other ones I used `<sg-insert>` keyword. It takes another component's markup
-by its reference number.
+Для сложносоставных компоненты, которые используют внутри себя другие, я использовала ключевой тег `<sg-insert>`.
+Он вставляет вместо себя код компонента с соответствующим номером.
 
 ```css
 /*
@@ -255,40 +257,40 @@ Styleguide 4.1
 ```
 [github/varya/varya.github.com/desktop-blocks/sidebar/sidebar.css](https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/sidebar/sidebar.css)
 
-This makes the markup examples pretty short, however it expands for rendering the component and showing the
-markup on the website: [varya.me/styleguide/#/section/4.1](http://varya.me/styleguide/#/section/4.1)
+Благодаря этому документация в коде приемлемого размера, а на сайте все раскрывается в полном виде:
+[varya.me/styleguide/#/section/4.1](http://varya.me/styleguide/#/section/4.1)
+
 
 ## Style-Guide-Driven Development
-If you type "logo" in the Style Guide search field, it will find and render all the components where `logo` is found!
-The search goes through all the CSS codebase. Similarly you can search for the components using `<em>` in their markup.
-Or `font:` in their CSS.
 
-I personally like that the search source is not only the CSS of components but also their markup examples. During the
-refactorings this, for example, makes possible to select all the components containing inputs and look how the changes affect them.
+Если в получившемся стайл гайде в поле для поиска вы наберете "logo", то увидите все компоненты, который используют
+логотип! Поиск проводится по всему коду. Точно так же можно поискать компоненты, в разметке которых используется `<em>`.
+Или в чьих стилях есть `font:`.
 
-However this is just a small addition to one major benefit I see in using the Style Guide. I find it far more important 
-that **it reveals my mistakes**.
+Мне лично особенно нравится, что можно искать и по разметке. Этим можно пользоваться во время рефакторинга. Например,
+изменив input, я могу найти все использующие его блоки и посмотреть, не сломались ли они.
 
-I already used the component way when building my blog. And I was pretty sure that my BEM experience is a 100%
-guarantee that I get this right. But even developing with a highly modular approach in mind, I did this from the page perspective.
-Before the components were integrated into the blog engine, I had developed a static page and this was where the
-components fitted first.
+Хотя на самом деле это лишь небольшое дополнение к главному преимуществу использования стайл гайда. По-моему, его
+основной плюс — **демонстрация ошибок вёрстки**.
 
-I considered them independent and so tried to write my code. But **sitting at the same page they never actually were
-independent**.
+В CSS моего блога ещё до внедрения стайл гайда использовался компонентый подход. Учитывая мой БЭМ опыт, я была на 100%
+уверена, что компоненты написаны хорошо. Но даже такая компонентная разработка всё равно происходила с точки зрения
+страницы. До того как блоки были внедрены в блог, я делала их на отдельной статической странице. То есть отдельно, вне
+страницы, они никогда и не существовали.
 
-After the SC5 Style Guide magically represented each of them separately, I can see that the
-[logo](http://varya.me/styleguide/#/section/1.1) is aligned to the right.
-And why should it be? Obviously, my mistake when I tried to made it fit into the Header.
+Блоки разрабатывались как независимые, я писала код, пытаясь этого достигнуть. Но **будучи размещенными вместе на одной и
+той же странице, они никогда независимыми не были**.
 
-The same goes for the [language switcher](http://varya.me/styleguide/#/section/1.4) positioned on the right.
+После того как SC5 Style Guide волшебным образом отрисовал их по отдельности, я могу видеть, что блок
+[logo](http://varya.me/styleguide/#/section/1.1) выровнен по правому краю. Хотя почему бы это? Очевидно, это моя ошибка,
+допущенная, когда я верстала логитип внутри блока Header.
 
-In the [set of social icons](http://varya.me/styleguide/#/section/1.5), the language switcher provided with the RSS
-icon was considered to stay with it. But this only happens because at the blog pages
-it is placed into a narrow container. The Style Guide represents it on its own and I can see that it is not that
-flawless as I thought.
+То же самое произошло с [переключалкой языков](http://varya.me/styleguide/#/section/1.4), она так же выровнена вправо.
 
-Such discoveries obviously lead to the refactoring :-)
+В [блоке социальных иконок](http://varya.me/styleguide/#/section/1.5) переключалка языков подразумевалась рядом с
+иконкой RSS. Но на странице они располагаются близко друг к другу только потому что весь блок помещен в узкий контейнер.
+В стайл гайде блок отрисован отдельно, и мне теперь видно, что он свёрстан неидеально.
 
-To top it off, I must say that the experiment does not end and there are already findings for further
-posts. Stay tuned!
+Конечно, такие открытия подразумевают скорый рефакторинг :-)
+
+И в довершение нужно сказать, что эксперимент не закончен. Есть и другие открытия для новых постов.
