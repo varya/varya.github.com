@@ -153,6 +153,20 @@ collections:
             relativeOutDirPath: 'posts',
             basename: /_ru$/
         }, [{date:-1}])
+    life: ->
+        @getCollection("documents").findAllLive({
+            relativeOutDirPath: 'life'
+        }, [{date:-1}])
+    life_en: ->
+        @getCollection("documents").findAllLive({
+            relativeOutDirPath: 'life',
+            basename: /_en$/
+        }, [{date:-1}])
+    life_ru: ->
+        @getCollection("documents").findAllLive({
+            relativeOutDirPath: 'life',
+            basename: /_ru$/
+        }, [{date:-1}])
 
     translate: (database) ->
         @getCollection('documents').findAllLive({basename: languageRegex}).on 'add', (document) ->
@@ -175,7 +189,7 @@ collections:
                 if basename == 'index' && language == 'en'
                     newUrl = "#{basename}.#{a.outExtension}"
 
-            if outPath.indexOf('/posts/') != -1
+            if outPath.indexOf('/posts/') != -1 or outPath.indexOf('/life/') != -1
                 document.set('isPost', true)
 
                 ownDate = basename.match(/^(\d{4})-(\d{2})-(\d{2})-/)
