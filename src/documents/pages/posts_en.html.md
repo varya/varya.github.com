@@ -2,7 +2,7 @@
 
 layout: posts
 
-title: Blog
+title: Tech Blog
 
 order: 1
 ---
