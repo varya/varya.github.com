@@ -26,6 +26,7 @@ layout: base
             </h4>
         </div>
         <div class="comments__body box__island">
+            <%- @document.old_url %>
             <% if @document.old: %>
                 <div id="disqus_thread"></div>
                 <script type="text/javascript">
