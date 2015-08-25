@@ -182,6 +182,9 @@ collections:
 
             document.set('htmlTitle', document.get('htmlTitle') || document.get('title'))
 
+            if outPath.indexOf('/life/') != -1
+                document.set('isLife', true)
+
             if outPath.indexOf('/pages/') != -1
                 document.set('isPage', true)
 
