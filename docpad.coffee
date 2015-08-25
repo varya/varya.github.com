@@ -206,7 +206,12 @@ collections:
 
                 newUrl = "#{language}/#{a.relativeOutDirPath}/#{basename}.#{a.outExtension}"
 
-            editLink = "https://github.com/varya/varya.github.com/edit/develop/src/documents/posts/#{oldBasename}.html.md"
+            if document.get('isLife')
+                editFolder = "life"
+            else
+                editFolder = "posts"
+
+            editLink = "https://github.com/varya/varya.github.com/edit/develop/src/documents/#{editFolder}/#{oldBasename}.html.md"
 
             document.setMeta {
                 editLink: editLink
