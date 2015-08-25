@@ -6,7 +6,7 @@ layout: base
         <h1 class="article__header"><%- @document.title %></h1>
     </div>-->
     <%- @content %>
-    <% for post in @getCollection("posts").findAll({lang: @document.lang}, [{date:-1}]).toJSON(): %>
+    <% for post in @getCollection("life").findAll({lang: @document.lang}, [{date:-1}]).toJSON(): %>
         <div class="article__body box__body">
             <h2 class="article__header">
               <a href="<%= post.url %>" class="article__header-link">

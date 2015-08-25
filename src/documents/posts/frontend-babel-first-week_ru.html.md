@@ -2,6 +2,8 @@
 
 title: Первая неделя Frontend Babel
 
+date: 2014-06-02
+
 layout: post
 
 ---

@@ -2,7 +2,7 @@
 
 layout: posts
 
-title: Блог
+title: Тех блог
 
 order: 1
 ---
