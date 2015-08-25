@@ -6,6 +6,8 @@ date: 2013-11-11
 
 layout: post
 
+tumblr: true
+
 ---
 Я уже писала как [апостилировать документы для получения вида на жительство в Голландии](/ru/life/documents-for-dutch-visa-apostille).
 

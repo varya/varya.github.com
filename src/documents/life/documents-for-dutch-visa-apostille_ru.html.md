@@ -6,6 +6,8 @@ date: 2013-09-22
 
 layout: post
 
+tumblr: true
+
 ---
 Итак, у вас есть оффер на работу в голландской компании на сумму не менее 50183 евро в год (до налогов) или 36801 евро, если вам ещё нет 30 лет. Это значит, что вы попадаете под <strike>программу для больно умных</strike> [Highly Skilled Migrant Programme](http://www.hollandexpatcenter.com/employers/immigration/highly_skilled_migrant/). Я приехала в Голландию так, и могу рассказать, что делать с документами, а то разобраться было не просто.
 
