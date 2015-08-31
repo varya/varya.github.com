@@ -30,7 +30,7 @@ npm install --save-dev sc5-styleguide
 ```
 
 После этого я смогла сгенерировать веб-сайт стайл гайда. Для этого понадобилась
-[пачрока gulp тасков](https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/Gulpfile.js).
+[парочка gulp тасков](https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/Gulpfile.js).
 
 Мне нужно было немного отступить от конфигурации, которая предлагается в документации, чтобы решить свои задачи. Напишу
 об этом подробно.
