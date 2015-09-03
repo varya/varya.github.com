@@ -17,7 +17,7 @@ answer.
 <excerpt/>
 
 Moscow (and I guess other Russian cities') airports do not have normal taxi system. Meaning, there is no special place
-where taxis wait in queue for their passengers. Instead, you face some people in the hall crying "taxi, taxi". They are
+where taxis wait in queue for their passengers. Instead, you face some people in the hall shouting "taxi, taxi". They are
 mostly swindler trying to catch someone not familiar with the system and drive them for 5x or 10x price. Versed people
 call for taxi by phone in advance, ask friends to drive them or use smartphone applications to order a cab. We did the
 last. (Well, they say that there is official taxi somewhere, not the queue of cars but a place to order. Anyway we
