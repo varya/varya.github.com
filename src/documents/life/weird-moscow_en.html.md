@@ -18,7 +18,7 @@ answer.
 
 Moscow (and I guess other Russian cities') airports do not have normal taxi system. Meaning, there is no special place
 where taxis wait in queue for their passengers. Instead, you face some people in the hall crying "taxi, taxi". They are
-mostly swindler trying to catch someone not familiar with the system and drive them for 5x or 10x price. Versed people
+mostly swindlers trying to catch someone not familiar with the system and drive them for 5x or 10x price. Versed people
 call for taxi by phone in advance, ask friends to drive them or use smartphone applications to order a cab. We did the
 last. (Well, they say that there is official taxi somewhere, not the queue of cars but a place to order. Anyway we
 couldn't find any sign pointing to it :-)
@@ -38,7 +38,7 @@ often architectural and design masterpieces. When living in Moscow we used to gi
 to the couchsurfers. Yes, there are guide books with the most amazing routes of Moscow metro, like there are books for
 walking round Paris and Amsterdam.
 
-Walking on Moscow streets has became better. It used to be challenging due to the cars parked on the pedestrian paths.
+Walking on Moscow streets has become better. It used to be challenging due to the cars parked on the pedestrian paths.
 There is no such thing any more: higher fines and almost immediate evacuation do their part. But it is yet ordeal.
 Streets are sometimes enormously wide with rare crosswalks. Prepare to walk a lot, twice or thrice longer distances
 than in usual touristy.
