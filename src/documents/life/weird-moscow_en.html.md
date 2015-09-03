@@ -29,7 +29,8 @@ with Helsinki.
 If you are lucky not to live in a hotel but surf a friend's couch or book a room/apartment, this is a good chance to
 learn the people's life. If it happens to be outside the 3rd Ring Road, it may be in 17- or 20- floor building.
 
-Nothing special inside. Besides, the bathtub is the must. Take the bubbles, the water is cheap abathtub
+Nothing special inside. Besides, the bathtub is the must. Take the bubbles, the water is cheap.
+
 Although the taxi is still the most comfortable transport for moving around (besides the rush hour) and today's currency
 rate encourages to use it, try metro sometimes. It is extremely noisy, even at the lines with modern trains. But do put
 up. You may discover that train comes every 90 seconds. Then, the stations of the Ring Line and everything inside are
