@@ -72,7 +72,7 @@ you would ask male programmers.
 
 ## For women in tech: how to answer about women in tech
 
-As I said, I was not ready to the question. However I felt uncomfortable, I tried to make laugh as I believe that most
+As I said, I was not ready for the question. However I felt uncomfortable, I tried to make laugh as I believe that most
 conflict situations may be avoided if turned out into a joke. So, I responded:
 
 — Would you ask me such a question if I were a man? So, my answer is: don't treat us differently.
@@ -80,7 +80,7 @@ conflict situations may be avoided if turned out into a joke. So, I responded:
 I do not suggest other ladies to reply like that as now I think that it might have sounded too aggressive. Also, if the
 person who asked me the question is reading this post, I apologise for such a response.
 
-The conference host could have help me. But he started to explain why it is a right thing to ask me this question
+The conference host could have help me. But he started to explain why it is a right thing to ask me this question being
 based on my gender. I guess this is because the situation was unusual and unexpected for him as well. No one has yet
 enough experience in dealing with the stuff. However I believe that killing the discussion is the right thing.
 Unfortunately I cannot propose any solution on how exactly to wrap up a case and come to another question. But if you
