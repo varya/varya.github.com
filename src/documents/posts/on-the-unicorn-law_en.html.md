@@ -65,7 +65,7 @@ awkward situation.
 The more relevant thing would be to ask a random female about what they know. For example, something about their
 personal experience. However, I still do not suggest this, because questions like "What are the difficulties you faced
 as a female developer" are very often too personal to be answered on stage. I think that if not on stage but in a
-private conversation, I would not mind a question regarding my experience.
+private conversation, I would not mind a question regarding my gender-in-tech experience.
 
 If for some reason you would like a random female speaker to answer a gender-equality question publically, it might be a
 good idea to formulate it as much related to their work as you could. Something like "How to do solve diversity problem
