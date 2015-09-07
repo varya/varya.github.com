@@ -28,10 +28,10 @@ the talk I got this question:
 I was absolutely not ready to this question. No wonder, being at stage and giving a presentation already brings a lot of
 stress. When it comes to a question session, it is even harder. And the last thing a speaker wants is to get such question.
 
-It happened first time in my life, so my response was not correct. In this post I will describe why conference attendants
-should not ask this question to female speakers. If you were willing to do so, please read. Maybe you will change your
-mind. I will also try to propose a proper respond to future speakers and conference hosts. However, this is an open
-question, I believe many can propose much better options. Go ahead in comments :-)
+This happened to me at the first time, so my response was not correct. In this post I will describe why conference
+attendants should not ask this question to female speakers. If you were willing to do so, please read. Maybe you will
+change your mind. I will also try to propose a proper respond to future speakers and conference hosts. However, this is
+an open question, I believe many can propose much better options. Go ahead in comments :-)
 
 ## Do not ask women in tech about women in tech
 
@@ -64,7 +64,12 @@ awkward situation.
 
 The more relevant thing would be to ask a random female about what they know. For example, something about their
 personal experience. However, I still do not suggest this, because questions like "What are the difficulties you faced
-as a female developer" are very often too personal to be answered on stage.
+as a female developer" are very often too personal to be answered on stage. I think that if not on stage but in a
+private conversation, I would not mind a question regarding my experience.
+
+If for some reason you would like a random female speaker to answer a gender-equality question publically, it might be a
+good idea to formulate it as much related to their work as you could. Something like "How to do solve diversity problem
+**in your company**?" would work better.
 
 So, the conclusion here is that the best way is not to have sexpectations (thanks my colleague Toni for the word) that
 female developers have knowledge in the diversity thing and even are interested in gender equality stuff. Ask them what
