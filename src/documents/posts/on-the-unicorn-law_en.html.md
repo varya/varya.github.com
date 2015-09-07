@@ -49,7 +49,7 @@ anything related to diversity. So, there is completely no objective reason to as
 this only because I am a woman.
 
 This is the first answer on "What is wrong?". Asking a woman gender related questions because she is a woman is pushing
-her to represent her sex. However it was clear that my intention of speaking at the conference was to share my findings
+her to represent her gender. However it was clear that my intention of speaking at the conference was to share my findings
 in programming and learn from another programmers. It had nothing to do with my gender.
 
 Then, this question could be to the point, if I were responsible for bad diversity situation in the industry. And I am
