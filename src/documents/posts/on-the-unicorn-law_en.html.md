@@ -68,7 +68,7 @@ as a female developer" are very often too personal to be answered on stage. I th
 private conversation, I would not mind a question regarding my gender-in-tech experience.
 
 If for some reason you would like a random female speaker to answer a gender-equality question publically, it might be a
-good idea to formulate it as much related to their work as you could. Something like "How to do solve diversity problem
+good idea to formulate it as much related to their work as you could. Something like "How do you solve diversity problem
 **in your company**?" would work better.
 
 So, the conclusion here is that the best way is not to have sexpectations (thanks my colleague Toni for the word) that
