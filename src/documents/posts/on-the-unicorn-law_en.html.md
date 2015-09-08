@@ -43,7 +43,7 @@ law formulated by [Emma Jane Westby](http://emmajane.net/):
 
 I was surprised that the problem had been already formulated and number of people had faced it.
 
-The presentation I gave was not related to gender problems, is was completely technical CSS/JavaScript speech. I am not
+The presentation I gave was not related to gender problems, it was completely technical CSS/JavaScript speech. I am not
 a social scientist but a programmer. Moreover, I am not a gender equality activist. I even had never written in my blog
 anything related to diversity. So, there is completely no objective reason to ask me questions like that. I was asked
 this only because I am a woman.
