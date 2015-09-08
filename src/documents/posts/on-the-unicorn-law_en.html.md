@@ -99,8 +99,8 @@ I could say "I don't know". But these are not the words to pronounce when being 
 Also I could respond "Sorry, I am not a social scientist". But I don't want to make a fool of the person
 asking.
 
-The honest version is "If there are already some ladies who have chosen to be programmers and came into the industry,
-just leave them in peace. Maybe they will stay".
+The honest version on the question about how to get more women in tech is "If there are already some ladies who have
+chosen to be programmers and came into the industry, just leave them in peace. Maybe they will stay".
 
 Any other ideas?
 
