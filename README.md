@@ -18,7 +18,21 @@ http://www.iconarchive.com/show/so-smooth-social-icons-by-minisoft.es.html
 
 ## Run gemini
 
-* Run selemium server
-* Run phantom phantomjs --webdriver=4444
-* Снять эталонные скриншоты:
-  ./node_modules/gemini/bin/gemini gather --root-url http://varya.me tests/gemini-test.j
+### Take reference screenshots
+```
+gulp test:update
+```
+
+### Check up interface
+
+Run blog locally
+
+```
+docpad run
+```
+
+Run test in another terminal window/tab:
+
+```
+gulp test
+```
