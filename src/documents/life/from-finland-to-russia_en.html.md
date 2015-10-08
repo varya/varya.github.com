@@ -112,7 +112,7 @@ trough the building with their luggage, which goes to X-rays. You can also keep 
 case declare the number of suits in the custom declaration mentioned above. The driver goes to the second booth
 which is in 20 meters forward. In there you need to present the custom declaration and the car documents. They take one
 copy and give back another one with a stamp. Having gotten this, drive the car forward to the next line (these 20
-meters), than open all the doors and the trunk. I also recommend to open капот. This is not obligatory but can make
+meters), than open all the doors and the trunk. I also recommend to open the hood. This is not obligatory but can make
 things faster if they want to look there. The cars are examined, sometimes with a dog. They may ask what is inside the
 suits. As a result of examination you get another stamp in the custom declaration. This means that you have passed.
 While this proccedure goes, the passengers who have alredy passed the border control are expected to wait you on the
