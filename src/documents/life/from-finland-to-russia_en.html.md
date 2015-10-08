@@ -27,7 +27,7 @@ morning, this means arriving at 8 in the evening. So, you will need to spend who
 from 8pm to 8 am. But sleeping in the bus is not the best experience of my life. Usually the next day is all dedicated
 for rest.
 
-The busses are comfortable, they provide toilets and blankets. But it is still a bus with not that much space,
+The buses are comfortable, they provide toilets and blankets. But it is still a bus with not that much space,
 especially if you get a neighbor. Also, they operate only in Russian, and non-Russian speakers may find difficult to
 communicate. However I believe this is still doable.
 
@@ -49,14 +49,14 @@ Pryazha (Prääsä) — Petrozavodsk (Petroskoi).
 src="https://www.google.com/maps/embed?pb=!1m58!1m12!1m3!1d3945977.173735904!2d24.92763507997702!3d61.12398277225209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m43!3e0!4m5!1s0x46920bc796210691%3A0xcd4ebd843be2f763!2sHelsinki!3m2!1d60.1733244!2d24.941024799999997!4m5!1s0x468e2090ecf624f5%3A0x366ea5de0a7e15d7!2sNeste+Oil+Orimattila+Tuuliharja%2C+Orimattila!3m2!1d60.825630499999995!2d25.5279597!4m5!1s0x4690be3c263e712b%3A0x12804594829a161!2sABC+Viipurinportti+Lappeenranta%2C+Hirsim%C3%A4enkatu%2C+Lappeenranta!3m2!1d61.052775999999994!2d28.260175!4m5!1s0x469bc539bef430b9%3A0x40146d63c75b200!2sKitee!3m2!1d62.0984379!2d30.138004499999997!4m5!1s0x46995f4d08a2a6d3%3A0x62d9b7196c7fc150!2sNiiralan+rajanylityspaikka%2C+Tohmaj%C3%A4rvi!3m2!1d62.1719819!2d30.613665599999997!4m5!1s0x4698c269b1f5e4ff%3A0x63754189a5492f48!2sKolatselga%2C+Republic+of+Karelia%2C+Russia!3m2!1d61.678122599999995!2d32.230222!4m5!1s0x46a1ec3dd7bf1fe7%3A0xe49db0d89a0485d4!2sPetrozavodsk%2C+Republic+of+Karelia%2C+Russia!3m2!1d61.7781617!2d34.3640396!5e0!3m2!1sen!2sfi!4v1444217488751"
 width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-You navigator or Google may build another route. Do not belive them.
+Your navigator or Google may build another route. Do not believe them.
 
-Better to go through Lahti than through Porvo. Numbers say that Porvo-way is faster. But the difference is only 10
+Better to go through Lahti than through Porvoo. Numbers say that Porvoo-way is faster. But the difference is only 10
 minutes, whereas road to Lahti has 4 lanes and does not take all the traffic to St. Petersburg. This ensures the fastest
 speed and more comfortable drive.
 
 Closer to the border take a short cut through Kitee. After the border take the route to Kolatselga (Kolatselkä). There
-is anothe road to Petrosozavodsk, through Suoyarvi (Suojärvi) which is shorter, but not faster. The roads' condition in
+is another road to Petrozavodsk, through Suoyarvi (Suojärvi) which is shorter, but not faster. The roads' condition in
 Russia is legendary, so it matters to take the better route.
 
 ## The stops
@@ -88,7 +88,7 @@ from the insuarance company that your KASKO is also valid in Russia. This can al
 
 Having arrived at the Finnish side of the border, you should stop your car near the special line in front of the toll
 barrier.
-Than go inside building for the passport control. The car documents should be given to the pasport control officer.
+Than go inside the building for the passport control. The car documents should be given to the pasport control officer.
 After they let you pass, your passengers and you can sit into the car and as the bar gets lifted go forward.
 
 To cross the Russian border you will need to present 2 filled copies of the [custom
@@ -137,7 +137,7 @@ I recommend to keep driving to the big road junction and then move towards the c
 
 Going back happens in reverse order.
 
-When getting closer to the Russian checkpoint, take the curved side. The straigh one is for the tacks. And there is no
+When getting closer to the Russian checkpoint, take the curved side. The straigh one is for the tucks. And there is no
 sign about it, yes :-)
 
 ![](/img/vyartsilya-gate.png)
