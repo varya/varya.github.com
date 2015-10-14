@@ -1,6 +1,7 @@
 var gulp = require("gulp"),
   run = require('gulp-run'),
   styleguide = require("sc5-styleguide"),
+  sc5StyleguideGemini = require('sc5-styleguide-visualtest'),
   shell = require("gulp-shell"),
   clean = require("gulp-clean"),
   fs = require('fs'),
@@ -79,83 +80,34 @@ gulp.task("bem-watch-build", function() {
 
 gulp.task("dev", ["bem-watch", "styleguide-watch"]);
 
-var spawn = require('child_process').spawn;
-var phantomProcess;
-
-gulp.task("phantom", function() {
-  phantomProcess = spawn('phantomjs',  ['--webdriver', '4444', '--disk-cache', 'true'],  {setsid:true});
-  phantomProcess.stdout.pipe(process.stdout);
-});
-
-var geminiRunObj =  {
-  templateData: {
-    f: function(root, path) {
-      return '.' + path.substr(root.length);
-    }
-  }
-};
-
-var productionUrl = 'http://varya.me';
+var productionUrl = 'http://varya.me/styleguide/#';
 var styleGuidePath = outputPath;
+gulp.task("test:update", ["test:visual:update"]);
 
-gulp.task("test:pages-list", function() {
-  var styleguideData = JSON.parse(fs.readFileSync(styleGuidePath + "/styleguide.json"));
-  var examples = [];
-  styleguideData.sections.forEach(function(section) {
-    if (!section.markup) { // For sections with markup only
-      return;
-    }
-    if (section.modifiers.length === 0) {
-      // Only for the pages with markup
-      examples.push(section.reference);
-    } else {
-      for(var m = 1;m<=section.modifiers.length;m++) {
-        examples.push(section.reference + '-' + m);
-      }
-    }
-  });
-  fs.writeFileSync('tests/pages-list.js', 'module.exports = ' + JSON.stringify(examples, null, 4));
+gulp.task("test", ["test:visual"]);
+
+gulp.task("test:visual", function() {
+  gulp.src(styleGuidePath, { read: false })
+    .pipe(sc5StyleguideGemini.test({
+      configDir: './tests/visual/config',
+      gridScreenshotsDir: './tests/visual/grid-screenshots',
+      rootUrl: 'http://localhost:9778/styleguide/#'
+    }));
 });
 
-gulp.task("gemini:clean:gathered", function() {
-  gulp.src("gemini/", { read: false })
-    .pipe(clean());
+gulp.task("test:visual:config", function() {
+  return gulp.src(styleGuidePath, { read: false })
+    .pipe(sc5StyleguideGemini.configure({
+      excludePages: []
+    }))
+    .pipe(gulp.dest('./tests/visual/config'));
 });
 
-gulp.task("gemini:clean:report", function() {
-  gulp.src("gemini-report/", { read: false })
-    .pipe(clean());
+gulp.task("test:visual:update", ["test:visual:config"], function() {
+  gulp.src(styleGuidePath, { read: false })
+    .pipe(sc5StyleguideGemini.gather({
+      configDir: './tests/visual/config',
+      gridScreenshotsDir: './tests/visual/grid-screenshots',
+      rootUrl: productionUrl
+    }));
 });
-
-gulp.task("gemini:gather", ["phantom", "test:pages-list"], function(done){
-  var stream = gulp.src("tests/*.js", { read: false })
-    .pipe(shell([
-        './node_modules/gemini/bin/gemini gather --root-url ' + productionUrl + ' <%= f(file.cwd, file.path) %>'
-      ], geminiRunObj));
-  stream.on('end', function() {
-    phantomProcess.kill('SIGTERM');
-    done();
-  });
-  stream.on('error', function(err) {
-    phantomProcess.kill('SIGTERM');
-    done(err);
-  });
-});
-
-gulp.task("gemini:test", ["gemini:clean:report", "phantom"], function(done){
-  var stream = gulp.src("tests/*.js", { read: false })
-    .pipe(shell([
-        './node_modules/gemini/bin/gemini test --reporter html --reporter flat <%= f(file.cwd, file.path) %>'
-      ], geminiRunObj));
-  stream.on('end', function() {
-    phantomProcess.kill('SIGTERM');
-  });
-  stream.on('error', function(err) {
-    phantomProcess.kill('SIGTERM');
-    done(err);
-  });
-});
-
-gulp.task("test:update", ["gemini:clean:gathered", "gemini:gather"]);
-
-gulp.task("test", ["gemini:test"]);

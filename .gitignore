@@ -1,5 +1,6 @@
 .bem/tmp/cache.js
 node_modules/
+gemini-report/
 out/
 .DS_Store
 libs/
