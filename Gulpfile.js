@@ -1,6 +1,10 @@
 var gulp = require("gulp"),
   run = require('gulp-run'),
   styleguide = require("sc5-styleguide"),
+  sc5StyleguideGemini = require('sc5-styleguide-visualtest'),
+  shell = require("gulp-shell"),
+  clean = require("gulp-clean"),
+  fs = require('fs'),
 
   outputPath = 'out/styleguide';
 
@@ -75,3 +79,35 @@ gulp.task("bem-watch-build", function() {
 });
 
 gulp.task("dev", ["bem-watch", "styleguide-watch"]);
+
+var productionUrl = 'http://varya.me/styleguide/#';
+var styleGuidePath = outputPath;
+gulp.task("test:update", ["test:visual:update"]);
+
+gulp.task("test", ["test:visual"]);
+
+gulp.task("test:visual", function() {
+  gulp.src(styleGuidePath, { read: false })
+    .pipe(sc5StyleguideGemini.test({
+      configDir: './tests/visual/config',
+      gridScreenshotsDir: './tests/visual/grid-screenshots',
+      rootUrl: 'http://localhost:9778/styleguide/#'
+    }));
+});
+
+gulp.task("test:visual:config", function() {
+  return gulp.src(styleGuidePath, { read: false })
+    .pipe(sc5StyleguideGemini.configure({
+      excludePages: []
+    }))
+    .pipe(gulp.dest('./tests/visual/config'));
+});
+
+gulp.task("test:visual:update", ["test:visual:config"], function() {
+  gulp.src(styleGuidePath, { read: false })
+    .pipe(sc5StyleguideGemini.gather({
+      configDir: './tests/visual/config',
+      gridScreenshotsDir: './tests/visual/grid-screenshots',
+      rootUrl: productionUrl
+    }));
+});
