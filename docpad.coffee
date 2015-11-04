@@ -141,30 +141,30 @@ templateData:
 collections:
     posts: ->
         @getCollection("documents").findAllLive({
-            relativeOutDirPath: 'posts'
+            isPost: true
         }, [{date:-1}])
     posts_en: ->
         @getCollection("documents").findAllLive({
-            relativeOutDirPath: 'posts',
+            isPost: true,
             basename: /_en$/
         }, [{date:-1}])
     posts_ru: ->
         @getCollection("documents").findAllLive({
-            relativeOutDirPath: 'posts',
+            isPost: true,
             basename: /_ru$/
         }, [{date:-1}])
     life: ->
         @getCollection("documents").findAllLive({
-            relativeOutDirPath: 'life'
+            isLife: true
         }, [{date:-1}])
     life_en: ->
         @getCollection("documents").findAllLive({
-            relativeOutDirPath: 'life',
+            isLife: true,
             basename: /_en$/
         }, [{date:-1}])
     life_ru: ->
         @getCollection("documents").findAllLive({
-            relativeOutDirPath: 'life',
+            isLife: true,
             basename: /_ru$/
         }, [{date:-1}])
 
