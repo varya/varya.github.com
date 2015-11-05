@@ -109,6 +109,8 @@ templateData:
             .replace('_' + @document.lang, '_' + langBase[@document.lang])
         hasTranslation = glob.sync('src/documents/'+ p).length
 
+        if (@document.isPost && hasTranslation)
+            return replaceLang(@document.url, @document.lang)
         if @document.basename == "index_en"
             return "/ru/"
         if @document.basename == "index_ru"
@@ -185,6 +187,9 @@ collections:
             if outPath.indexOf('/life/') != -1
                 document.set('isLife', true)
 
+            if outPath.indexOf('/posts/') != -1
+                document.set('isPost', true)
+
             if outPath.indexOf('/pages/') != -1
                 document.set('isPage', true)
 
@@ -193,7 +198,6 @@ collections:
                     newUrl = "#{basename}.#{a.outExtension}"
 
             if outPath.indexOf('/posts/') != -1 or outPath.indexOf('/life/') != -1
-                document.set('isPost', true)
 
                 ownDate = basename.match(/^(\d{4})-(\d{2})-(\d{2})-/)
                 if (ownDate)
@@ -201,7 +205,7 @@ collections:
                     document.setMeta('date', new Date(ownDate[1], ownDate[2], ownDate[3]))
 
                 if document.get('old')
-                    a.relativeOutDirPath = 'issues'
+                    a.relativeOutDirPath = a.relativeOutDirPath.replace('posts/', 'issues/');
                     a.disqusIdentifier = 'undefined';
 
                 newUrl = "#{language}/#{a.relativeOutDirPath}/#{basename}.#{a.outExtension}"
@@ -211,7 +215,7 @@ collections:
             else
                 editFolder = "posts"
 
-            editLink = "https://github.com/varya/varya.github.com/edit/develop/src/documents/#{editFolder}/#{oldBasename}.html.md"
+            editLink = "https://github.com/varya/varya.github.com/edit/develop/src/documents/{#editFolder}/#{basename}/index_#{language}.html.md"
 
             document.setMeta {
                 editLink: editLink
