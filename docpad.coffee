@@ -210,12 +210,24 @@ collections:
 
                 newUrl = "#{language}/#{a.relativeOutDirPath}/#{basename}.#{a.outExtension}"
 
+                checkThumb = (path) ->
+                    exts = ['jpeg', 'png', 'jpg', 'gif']
+                    for k, ext of exts
+                        if fs.existsSync "#{path}/thumb.#{ext}"
+                            return "thumb.#{ext}"
+
+                thumb = checkThumb(['src/documents', a.relativeDirPath].join('/'))
+                if thumb
+                    thumb = "http://varya.me/#{a.relativeOutDirPath}/#{thumb}"
+                if !a.thumb
+                    a.thumb = thumb
+
             if document.get('isLife')
                 editFolder = "life"
             else
                 editFolder = "posts"
 
-            editLink = "https://github.com/varya/varya.github.com/edit/develop/src/documents/{#editFolder}/#{basename}/index_#{language}.html.md"
+            editLink = "https://github.com/varya/varya.github.com/edit/develop/src/documents/#{editFolder}/#{basename}/index_#{language}.html.md"
 
             document.setMeta {
                 editLink: editLink
@@ -228,6 +240,9 @@ collections:
               urls.push("/en/posts/sc-styleguide-for-smallers.html")
 
             document
+                .set {
+                    image: a.thumb || ""
+                }
                 .setMetaDefaults({
                     url: urls[0]
                 })
