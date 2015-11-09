@@ -48,6 +48,7 @@
     "gulp-clean": "^0.3.1",
     "gulp-run": "^1.6.10",
     "gulp-shell": "^0.4.2",
-    "sc5-styleguide-visualtest": "1.0.6"
+    "minimist": "^1.2.0",
+    "sc5-styleguide-visualtest": "1.4.0"
   }
 }

@@ -3,10 +3,11 @@
 import gulp from "gulp";
 import run from "gulp-run";
 import styleguide from "sc5-styleguide";
-import sc5StyleguideGemini from "sc5-styleguide-visualtest";
+import sc5VisualTest from "sc5-styleguide-visualtest";
 import shell from "gulp-shell";
 import clean from"gulp-clean";
 import fs from "fs";
+import minimist from "minimist";
 
 const outputPath = 'out/styleguide';
 
@@ -84,6 +85,15 @@ gulp.task("dev", ["bem-watch", "styleguide-watch"]);
 
 const productionUrl = "http://varya.me/styleguide/#";
 const styleGuidePath = outputPath;
+const knownOptions = {
+  "string": "section",
+  "default": { "section": false }
+};
+var options = minimist(process.argv.slice(2), knownOptions);
+
+const customTests = {
+  "2.1": "./test_2.1_custom.js"
+};
 
 gulp.task("test:update", ["test:visual:update"]);
 
@@ -91,26 +101,23 @@ gulp.task("test", ["test:visual"]);
 
 gulp.task("test:visual", () => {
   gulp.src(styleGuidePath, { read: false })
-    .pipe(sc5StyleguideGemini.test({
+    .pipe(sc5VisualTest.test({
       configDir: "./tests/visual/config",
       gridScreenshotsDir: "./tests/visual/grid-screenshots",
-      rootUrl: "http://localhost:9778/styleguide/#"
+      rootUrl: "http://localhost:9778/styleguide/#",
+      sections: options.section
     }));
 });
 
-gulp.task("test:visual:config", () => {
-  return gulp.src(styleGuidePath, { read: false })
-    .pipe(sc5StyleguideGemini.configure({
-      excludePages: []
-    }))
-    .pipe(gulp.dest("./tests/visual/config"));
-});
-
-gulp.task("test:visual:update", ["test:visual:config"], () => {
+gulp.task("test:visual:update", () => {
   gulp.src(styleGuidePath, { read: false })
-    .pipe(sc5StyleguideGemini.gather({
+    .pipe(sc5VisualTest.gather({
       configDir: "./tests/visual/config",
       gridScreenshotsDir: "./tests/visual/grid-screenshots",
-      rootUrl: productionUrl
-    }));
+      rootUrl: productionUrl,
+      excludePages: [],
+      customTests: customTests,
+      sections: options.section
+    }))
+    .pipe(gulp.dest('./tests/visual/config'));
 });
