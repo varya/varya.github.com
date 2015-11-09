@@ -35,13 +35,16 @@
     "start": "node_modules/docpad/bin/docpad-server"
   },
   "devDependencies": {
+    "babel": "^6.0.15",
+    "babel-core": "^6.1.2",
+    "babel-preset-es2015": "^6.1.2",
     "borschik": "^1.3.2",
     "borschik-tech-cleancss": "^2.0.1",
     "enb-bem-techs": "^1.0.3",
     "enb-bembundle": "^1.1.0",
     "enb-borschik": "^1.5.0",
     "gemini": "0.12.6",
-    "gulp": "^3.8.10",
+    "gulp": "^3.9.0",
     "gulp-clean": "^0.3.1",
     "gulp-run": "^1.6.10",
     "gulp-shell": "^0.4.2",

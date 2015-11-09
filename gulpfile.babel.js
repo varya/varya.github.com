@@ -1,14 +1,16 @@
-var gulp = require("gulp"),
-  run = require('gulp-run'),
-  styleguide = require("sc5-styleguide"),
-  sc5StyleguideGemini = require('sc5-styleguide-visualtest'),
-  shell = require("gulp-shell"),
-  clean = require("gulp-clean"),
-  fs = require('fs'),
+"use strict";
 
-  outputPath = 'out/styleguide';
+import gulp from "gulp";
+import run from "gulp-run";
+import styleguide from "sc5-styleguide";
+import sc5StyleguideGemini from "sc5-styleguide-visualtest";
+import shell from "gulp-shell";
+import clean from"gulp-clean";
+import fs from "fs";
 
-gulp.task("styleguide:generate", function() {
+const outputPath = 'out/styleguide';
+
+gulp.task("styleguide:generate", () => {
 
   return gulp.src(["desktop.blocks/**/*.css"])
     .pipe(styleguide.generate({
@@ -40,7 +42,7 @@ gulp.task("styleguide:generate", function() {
     .pipe(gulp.dest(outputPath));
 });
 
-gulp.task("styleguide:applystyles", function() {
+gulp.task('styleguide:applystyles', () => {
   return gulp.src("desktop.bundles/index/index.min.css")
     .pipe(styleguide.applyStyles())
     .pipe(gulp.dest(outputPath));
@@ -48,45 +50,46 @@ gulp.task("styleguide:applystyles", function() {
 
 gulp.task("styleguide", ["styleguide:generate", "styleguide:applystyles"]);
 
-gulp.task("styleguide-watch", ["styleguide"], function() {
+gulp.task("styleguide-watch", ["styleguide"], () => {
   // Start watching changes and update styleguide whenever changes are detected
   // Styleguide automatically detects existing server instance
   gulp.watch(["desktop.blocks/**/*.css"], ["styleguide"]);
 });
 
-gulp.task("bem-build", function() {
+gulp.task("bem-build", () => {
   run("./node_modules/enb/bin/enb make --no-cache").exec();
 })
 
-gulp.task("bem-copy", ["bem-build"], function() {
+gulp.task("bem-copy", ["bem-build"], () => {
   gulp.src(["desktop.blocks/**/*", "desktop.bundles/**/*"], { base: "."})
     .pipe(gulp.dest("out/"));
 });
 
-gulp.task("single-files", function() {
+gulp.task("single-files", () => {
   gulp.src(["CNAME", "data/**"], { base: "." })
     .pipe(gulp.dest("out/"));
 });
 
 gulp.task("bem-watch", ["bem-watch-files", "bem-watch-build"]);
 
-gulp.task("bem-watch-files", function() {
+gulp.task("bem-watch-files", () => {
   gulp.watch(["desktop.blocks/**/*"], ["bem-build"]);
 });
 
-gulp.task("bem-watch-build", function() {
+gulp.task("bem-watch-build", () => {
   gulp.watch(["desktop.build/**/*"], ["bem-copy"]);
 });
 
 gulp.task("dev", ["bem-watch", "styleguide-watch"]);
 
-var productionUrl = "http://varya.me/styleguide/#";
-var styleGuidePath = outputPath;
+const productionUrl = "http://varya.me/styleguide/#";
+const styleGuidePath = outputPath;
+
 gulp.task("test:update", ["test:visual:update"]);
 
 gulp.task("test", ["test:visual"]);
 
-gulp.task("test:visual", function() {
+gulp.task("test:visual", () => {
   gulp.src(styleGuidePath, { read: false })
     .pipe(sc5StyleguideGemini.test({
       configDir: "./tests/visual/config",
@@ -95,7 +98,7 @@ gulp.task("test:visual", function() {
     }));
 });
 
-gulp.task("test:visual:config", function() {
+gulp.task("test:visual:config", () => {
   return gulp.src(styleGuidePath, { read: false })
     .pipe(sc5StyleguideGemini.configure({
       excludePages: []
@@ -103,7 +106,7 @@ gulp.task("test:visual:config", function() {
     .pipe(gulp.dest("./tests/visual/config"));
 });
 
-gulp.task("test:visual:update", ["test:visual:config"], function() {
+gulp.task("test:visual:update", ["test:visual:config"], () => {
   gulp.src(styleGuidePath, { read: false })
     .pipe(sc5StyleguideGemini.gather({
       configDir: "./tests/visual/config",
