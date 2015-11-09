@@ -91,6 +91,10 @@ const knownOptions = {
 };
 var options = minimist(process.argv.slice(2), knownOptions);
 
+const customTests = {
+  "2.1": "./test_2.1_custom.js"
+};
+
 gulp.task("test:update", ["test:visual:update"]);
 
 gulp.task("test", ["test:visual"]);
@@ -112,6 +116,7 @@ gulp.task("test:visual:update", () => {
       gridScreenshotsDir: "./tests/visual/grid-screenshots",
       rootUrl: productionUrl,
       excludePages: [],
+      customTests: customTests,
       sections: options.section
     }))
     .pipe(gulp.dest('./tests/visual/config'));
