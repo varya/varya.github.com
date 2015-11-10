@@ -133,12 +133,14 @@ templateData:
     hlp:
         metaProps: (document) ->
             if document.meta.desc
-                desc = document.meta.desc
+                desc = document.meta.desc.replace(/\"/gi,'\\"').replace(/\'/gi, "\\'");
             if document.thumb
                 thumb = document.thumb
             "" +
             (if desc then "<meta content=\"#{desc}\" property=\"og:description\"/>" else "") +
-            (if thumb then "<meta content=\"#{thumb}\" property=\"og:image\"/>" else "")
+            (if thumb then "<meta content=\"#{thumb}\" property=\"og:image\"/>" else "") +
+            "<meta content=\"#{document.title}\" property=\"og:title\"/>" +
+            "<meta content=\"http://varya.me#{document.meta.url}\" property=\"og:url\"/>"
 
 collections:
     posts: ->
@@ -221,6 +223,10 @@ collections:
                     thumb = "http://varya.me/#{a.relativeOutDirPath}/#{thumb}"
                 if !a.thumb
                     a.thumb = thumb
+
+                document.setMeta {
+                    type: "article"
+                }
 
             if document.get('isLife')
                 editFolder = "life"
