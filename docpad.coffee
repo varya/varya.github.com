@@ -233,7 +233,7 @@ collections:
             else
                 editFolder = "posts"
 
-            editLink = "https://github.com/varya/varya.github.com/edit/develop/src/documents/#{editFolder}/#{basename}/index_#{language}.html.md"
+            editLink = "https://github.com/varya/varya.github.com/edit/develop/src/documents/#{a.relativeOutDirPath}/index_#{language}.html.md"
 
             document.setMeta {
                 editLink: editLink
