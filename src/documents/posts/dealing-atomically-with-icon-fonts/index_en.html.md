@@ -9,7 +9,7 @@ layout: post
 meta:
   desc: >
     Fixing the "using UI library" workflow with building icon fonts from atomic SVG icons. The library has its own flow,
-    and obviously the new things can only appear in new versions. However it is understandable that the library
+    and obviously the new things can only appear in new versions. However the library
     customers sometimes cannot wait even an hour. With the atomic builds you can easily provide library customer with
     the freedom to modify everything. Even icon fonts.
 
@@ -19,11 +19,11 @@ My recent huge project was developing a library of CSS and JavaScript components
 web services and mobile apps. In most cases such work brings up question about how to avoid blocking the processes.
 
 The library has its own flow, and obviously the new things can only appear in new versions. However I made my best to
-provide fast releases, and so we had them 2-3 times a week, it is still understandable that the library customers
-sometimes cannot wait even an hour.
+provide fast releases, and so the library has them 2-3 times a week, it is still understandable that the library
+customers sometimes cannot wait even an hour.
 
-I belive that one of the must-haves of UI library is the freedom it should give to its customer. You can easily provide
-it if practice atomic approach in most cases. For example, for the icon fonts.
+I belive that one of the must-haves of UI library is the freedom which it should give to its customers. You can easily
+provide this if practice atomic approach everythere. For example, for the icon fonts.
 
 <excerpt/>
 
@@ -31,8 +31,8 @@ it if practice atomic approach in most cases. For example, for the icon fonts.
 Soon or not SVG will conquer the world. But now we still have icon fonts in some projects. The same story was with that
 library.
 
-However the icon font perfectly suited for the displaying icons onto the webpage, it was integration and flow which
-created the problem. All the icons fit into one fontfile (in 4 different formats):
+However the icon font perfectly suited for the displaying icons onto the web pages, it was integration and flow which
+created the problem. All the icons fit into one font file (well, in 4 different formats):
 
 ```
 src/
@@ -65,14 +65,14 @@ Also the library provided CSS to make the icon-symbol matching:
 }
 ```
 
-Customers get the library as a Bower or npm package. When they need a new icon to be in the set, they might request this
-and wait for the package to update. As usual, the fastest way to get something happening is to do this yourself. So, it
+Customers get the library as a bower or npm package. When they need a new icon to be in the set, they might request this
+and wait for the package to update. As usual, the fastest way to get something happened is to do this yourself. So, it
 possible to contribute and even release yourself. But still any further change would need you to go through the
 development process.
 
 ### Atomic and buildable
 
-Often you need to divide into smaller pieces in order to make things more mantainable. The same with icons. In the
+Often you need to divide into smaller pieces in order to make things more mantainable. The same goes with icons. In the
 library we changed it so that the source is now a set of SVG files:
 
 ```
@@ -85,7 +85,7 @@ src/
 
 The file names are important, these words are used to generate the CSS classes, which are the API for the customer.
 Numbers are for the right order. If building the icon system from very beginning, they are not needed. But in the
-library case I wanted back compatibility.
+library case I wanted backward compatibility.
 
 Then, these icons are built into the same icon fonts with `gulp-iconfont` plugin:
 
@@ -123,7 +123,7 @@ gulp.task("build:icons", function() {
 ```
 
 Besides the icon files this task needs the templates to produce the CSS (or SCSS, as in this case) which makes the
-class-symbol matching. I found it logical to store it together with the icon files:
+symbol-class matching. I found it logical to store it together with the icon files:
 
 ```
 src/
@@ -203,7 +203,7 @@ In the `icons.scss`, which is normal SCSS file, the result is requested:
 ### Extend on fly
 
 The variables may be redefined on the customer's side. This makes is a fast way to change the icon, if the replacement
-already sit in the font.
+already sit in the font bundle.
 
 If not, it is almost zero amout of work to implement this build-from-atoms process on the customer side.
 
@@ -248,10 +248,10 @@ It is not even needed to implement template for the output SCSS, it comes in the
 
 With such a flow a UI library customer stays completely independent from the library release cycle and may bring a new
 icon into her product as soon as the atomic SVG file is copied into the needed folder. As a background process it is
-needed to contribute the same icon into to library, but not necessarily the same moment. And even the contributing
+needed to contribute the same icon into the library, but not necessarily the same moment. And even the contributing
 process is changed to be better because it came to adding an SVG file.
 
-As other atomical things, such font flow makes git history more useful. With separate files changing it is easier to see
+As other atomical things, such font flow makes git history more useful. Now it is easier to see
 if the provided change affected many or just one icon. Also, SVG images are rendered nicely in pull requests.
 
 Even simultaneous changes of the icons in both library and customer websites are possible and should not cause any
