@@ -18,7 +18,7 @@ meta:
 My recent huge project was developing a library of CSS and JavaScript components for sharing this code across a lot of
 web services and mobile apps. In most cases such work brings up question about how to avoid blocking the processes.
 
-The library has its own flow, and obviously the new things can only appear in new versions. However I made my best to
+The library has its own flow, and obviously the new things can only appear in new versions. Although I made my best to
 provide fast releases, and so the library has them 2-3 times a week, it is still understandable that the library
 customers sometimes cannot wait even an hour.
 
