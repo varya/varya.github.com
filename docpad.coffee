@@ -140,7 +140,7 @@ templateData:
             (if desc then "<meta content=\"#{desc}\" property=\"og:description\"/>" else "") +
             (if thumb then "<meta content=\"#{thumb}\" property=\"og:image\"/>" else "") +
             "<meta content=\"#{document.title}\" property=\"og:title\"/>" +
-            "<meta content=\"http://varya.me#{document.meta.url}\" property=\"og:url\"/>"
+            (if document.meta.url then "<meta content=\"http://varya.me#{document.meta.url.replace(/index\.html$/gi, '')}\" property=\"og:url\"/>" else "")
 
 collections:
     posts: ->
