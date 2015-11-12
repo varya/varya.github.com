@@ -136,11 +136,18 @@ templateData:
                 desc = document.meta.desc.replace(/\'/gi, "\\'");
             if document.thumb
                 thumb = document.thumb
+            if document.lang == "en"
+                locale = "en_US"
+            if document.lang == "ru"
+                locale ="ru_RU"
             "" +
             (if desc then "<meta content=\'#{desc}\' property=\"og:description\"/>" else "") +
             (if thumb then "<meta content=\"#{thumb}\" property=\"og:image\"/>" else "") +
             "<meta content=\"#{document.title}\" property=\"og:title\"/>" +
-            (if document.meta.url then "<meta content=\"http://varya.me#{document.meta.url.replace(/index\.html$/gi, '')}\" property=\"og:url\"/>" else "")
+            (if document.meta.url then "<meta content=\"http://varya.me#{document.meta.url.replace(/index\.html$/gi, '')}\" property=\"og:url\"/>" else "") +
+            "<meta property=\"og:site_name\" content=\"var ya;\"/>" +
+            "<meta property=\"og:locale\" content=\"#{locale}\"/> " +
+            "<meta property=\"article:author\" content=\"https://www.facebook.com/toivonens\"/>"
 
 collections:
     posts: ->
