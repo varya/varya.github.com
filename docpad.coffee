@@ -133,11 +133,11 @@ templateData:
     hlp:
         metaProps: (document) ->
             if document.meta.desc
-                desc = document.meta.desc.replace(/\"/gi,'\\"').replace(/\'/gi, "\\'");
+                desc = document.meta.desc.replace(/\'/gi, "\\'");
             if document.thumb
                 thumb = document.thumb
             "" +
-            (if desc then "<meta content=\"#{desc}\" property=\"og:description\"/>" else "") +
+            (if desc then "<meta content=\'#{desc}\' property=\"og:description\"/>" else "") +
             (if thumb then "<meta content=\"#{thumb}\" property=\"og:image\"/>" else "") +
             "<meta content=\"#{document.title}\" property=\"og:title\"/>" +
             (if document.meta.url then "<meta content=\"http://varya.me#{document.meta.url.replace(/index\.html$/gi, '')}\" property=\"og:url\"/>" else "")
