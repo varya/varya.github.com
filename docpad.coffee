@@ -146,6 +146,7 @@ templateData:
             "<meta content=\"#{document.title}\" property=\"og:title\"/>" +
             (if document.meta.url then "<meta content=\"http://varya.me#{document.meta.url.replace(/index\.html$/gi, '')}\" property=\"og:url\"/>" else "") +
             "<meta property=\"og:site_name\" content=\"var ya;\"/>" +
+            "<meta property=\"og:type\" content=\"article\"/>" +
             "<meta property=\"og:locale\" content=\"#{locale}\"/> " +
             "<meta property=\"article:author\" content=\"https://www.facebook.com/toivonens\"/>"
 
