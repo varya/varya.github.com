@@ -92,7 +92,10 @@ const knownOptions = {
 var options = minimist(process.argv.slice(2), knownOptions);
 
 const customTests = {
-  "2.1": "./test_2.1_custom.js"
+  "2.1": "./test_2.1_custom.js",
+  "3.5": "./test_3.5_custom.js",
+  "4.3": "./test_4.3_custom.js",
+  "5.1": "./test_5.1_custom.js"
 };
 
 gulp.task("test:update", ["test:visual:update"]);
