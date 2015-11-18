@@ -5,7 +5,9 @@ markup:
 <header class="header">
   <div class="header__left candies i-bem"
       data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'></div>
-  <logo class="logo header__center">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+  <div class="header__center">
+      <logo class="logo">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+  </div>
   <div class="header__right candies i-bem"
       data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 } } }'></div>
 </header>
@@ -41,6 +43,7 @@ Styleguide 2.1
     display: table-cell;
     text-align: right;
     width: 778px;
+    line-height: 4em;
 }
 
 @media screen and (max-width: 768px) {
@@ -62,6 +65,7 @@ Styleguide 2.1
     width: 325px;
     padding-left: 20px;
     display: table-cell;
+    line-height: 4em;
 }
 
 @media screen and (max-width: 768px) {
