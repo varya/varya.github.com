@@ -9,7 +9,7 @@ examples.forEach(function (example) {
   pages.push(buildPageObj(example));
 });
 
-var testCode = require('./_core-test');
+var testCode = require('./test_3.5_custom.js');
 
 pages.forEach(function (page) {
   testCode(page);
