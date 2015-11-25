@@ -1,0 +1,1424 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[var ya; stepanova]]></title>
+        <description><![CDATA[Front end developer, blogger and cats lover.]]></description>
+        <link>http://varya.me/</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Wed, 25 Nov 2015 12:37:12 GMT</lastBuildDate>
+        <atom:link href="http://varya.me//en/feed.xml" rel="self" type="application/rss+xml"/>
+        <author><![CDATA[Varya Stepanova]]></author>
+        <pubDate>Wed, 25 Nov 2015 12:36:16 GMT</pubDate>
+        <item>
+            <title><![CDATA[Dealing atomically with icon fonts]]></title>
+            <description><![CDATA[<p>My recent huge project was developing a library of CSS and JavaScript components for sharing this code across a lot of
+web services and mobile apps. In most cases such work brings up question about how to avoid blocking the processes.</p>
+<p>The library has its own flow, and obviously the new things can only appear in new versions. Although I made my best to
+provide fast releases, and so the library has them 2-3 times a week, it is still understandable that the library
+customers sometimes cannot wait even an hour.</p>
+<p>I belive that one of the must-haves of UI library is the freedom which it should give to its customers. You can easily
+provide this if practice atomic approach everythere. For example, for the icon fonts.</p>
+<excerpt/>
+
+<h3 id="solid-piece">Solid piece</h3>
+<p>Soon or not SVG will conquer the world. But now we still have icon fonts in some projects. The same story was with that
+library.</p>
+<p>However the icon font perfectly suited for the displaying icons onto the web pages, it was integration and flow which
+created the problem. All the icons fit into one font file (well, in 4 different formats):</p>
+<pre class="highlight"><code class="hljs stylus">src/
+  fonts/
+    iconfont<span class="hljs-class">.eot</span>
+    iconfont<span class="hljs-class">.svg</span>
+    iconfont<span class="hljs-class">.ttf</span>
+    iconfont<span class="hljs-class">.woff</span>
+</code></pre><p>Also the library provided CSS to make the icon-symbol matching:</p>
+<pre class="highlight"><code class="hljs scss"><span class="hljs-class">.icon</span> {
+  <span class="hljs-attribute">font-family</span><span class="hljs-value">: <span class="hljs-variable">$global-font-icon</span>;</span>
+  &amp;<span class="hljs-pseudo">:before</span> {
+    <span class="hljs-comment">/* Some common icon stuff */</span>
+  }
+  &amp;--support {
+    &amp;<span class="hljs-pseudo">:before</span> {
+      <span class="hljs-attribute">content</span><span class="hljs-value">: <span class="hljs-string">"a"</span>;</span>
+    }
+  }
+  &amp;--chat {
+    &amp;<span class="hljs-pseudo">:before</span> {
+      <span class="hljs-attribute">content</span><span class="hljs-value">: <span class="hljs-string">"b"</span>;</span>
+    }
+  }
+  ...
+}
+</code></pre>
+<p>Customers get the library as a bower or npm package. When they need a new icon to be in the set, they might request this
+and wait for the package to update. As usual, the fastest way to get something happened is to do this yourself. So, it
+possible to contribute and even release yourself. But still any further change would need you to go through the
+development process.</p>
+<h3 id="atomic-and-buildable">Atomic and buildable</h3>
+<p>Often you need to divide into smaller pieces in order to make things more mantainable. The same goes with icons. In the
+library we changed it so that the source is now a set of SVG files:</p>
+<pre class="highlight"><code class="hljs stylus">src/
+  icons/
+    <span class="hljs-number">1000</span>-support<span class="hljs-class">.svg</span>
+    <span class="hljs-number">1010</span>-chat<span class="hljs-class">.svg</span>
+    <span class="hljs-number">1020</span>-users<span class="hljs-class">.svg</span>
+</code></pre><p>The file names are important, these words are used to generate the CSS classes, which are the API for the customer.
+Numbers are for the right order. If building the icon system from very beginning, they are not needed. But in the
+library case I wanted backward compatibility.</p>
+<p>Then, these icons are built into the same icon fonts with <code>gulp-iconfont</code> plugin:</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp"</span>);
+<span class="hljs-keyword">var</span> iconfont = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp-iconfont"</span>);
+<span class="hljs-keyword">var</span> consolidate = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp-consolidate"</span>);
+
+<span class="hljs-keyword">var</span> sourcePath = <span class="hljs-string">"src/"</span>;
+
+gulp.task(<span class="hljs-string">"build:icons"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> gulp.src([sourcePath + <span class="hljs-string">"/icons/*.svg"</span>])
+      .pipe(iconfont({
+        fontName: <span class="hljs-string">"myicons"</span>,
+        formats: [<span class="hljs-string">"ttf"</span>, <span class="hljs-string">"eot"</span>, <span class="hljs-string">"woff"</span>, <span class="hljs-string">"svg"</span>],
+        centerHorizontally: <span class="hljs-literal">true</span>,
+        fixedWidth: <span class="hljs-literal">true</span>
+      }))
+      .on(<span class="hljs-string">"glyphs"</span>, (glyphs) =&gt; {
+
+        glyphs.forEach((icon) =&gt; {
+          icon.name = icon.name.replace(<span class="hljs-regexp">/^\d+\-/g</span>, <span class="hljs-string">""</span>);
+        });
+
+        gulp.src(sourcePath + <span class="hljs-string">"/icons/util/*.scss"</span>) <span class="hljs-comment">// Template</span>
+            .pipe(consolidate(<span class="hljs-string">"lodash"</span>, {
+                glyphs: glyphs,
+                fontName: <span class="hljs-string">"myiconfont"</span>,
+                fontPath: <span class="hljs-string">"../fonts/"</span>
+            }))
+            .pipe(gulp.dest(sourcePath + <span class="hljs-string">"/scss/"</span>));
+      })
+      .pipe(gulp.dest(sourcePath + <span class="hljs-string">"/fonts/"</span>));
+});
+</code></pre>
+<p>Besides the icon files this task needs the templates to produce the CSS (or SCSS, as in this case) which makes the
+symbol-class matching. I found it logical to store it together with the icon files:</p>
+<pre class="highlight"><code class="hljs stylus">src/
+  icons/
+    utils/
+      iconfont__icons<span class="hljs-class">.scss</span>
+      iconfont__variables<span class="hljs-class">.scss</span>
+</code></pre><p>It&#39;s possible to manage with one template only, but for even more flexibility I have two. The main one makes the
+classes:</p>
+<pre class="highlight"><code class="hljs undefined">@font-face {
+  font-family: $global-font-icon;
+  src:url("&lt;%= fontPath %&gt;&lt;%= fontName %&gt;..eot");
+  src:url("&lt;%= fontPath %&gt;&lt;%= fontName %&gt;.?#iefix") format("embedded-opentype"),
+    url("&lt;%= fontPath %&gt;&lt;%= fontName %&gt;.woff") format("woff"),
+    url("&lt;%= fontPath %&gt;&lt;%= fontName %&gt;.ttf") format("truetype"),
+    url("&lt;%= fontPath %&gt;&lt;%= fontName %&gt;.#&lt;%= fontName %&gt;") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  font-family: $global-font-icon;
+
+  &amp;:before {
+    /* Some common icon stuff */
+  }
+&lt;% _.each(glyphs, function(glyph) { %&gt;
+  &amp;.--&lt;%= glyph.name %&gt; {
+    &amp;:before {
+      content: $icon--&lt;%= glyph.name %&gt;;
+    }
+  }&lt;% }); %&gt;
+
+}
+</code></pre>
+<p>And another one makes the varibles:</p>
+<pre class="highlight"><code class="hljs undefined">&lt;% _.each(glyphs, function(glyph) { %&gt;
+$icon-&lt;%= glyph.name %&gt;: "\&lt;%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %&gt;" !default;
+&lt;% }); %&gt;
+</code></pre>
+<p>Running the task produces the fonts and 2 generic SCSS files:</p>
+<pre class="highlight"><code class="hljs stylus">src/
+  <span class="hljs-attribute">font</span>/
+    iconfont<span class="hljs-class">.eot</span>
+    iconfont<span class="hljs-class">.svg</span>
+    iconfont<span class="hljs-class">.ttf</span>
+    iconfont<span class="hljs-class">.woff</span>
+  scss/
+    icons<span class="hljs-class">.scss</span> <span class="hljs-comment">// Not generic</span>
+    iconfont__icons<span class="hljs-class">.scss</span>
+    iconfont__variables<span class="hljs-class">.scss</span>
+</code></pre><p>In the <code>icons.scss</code>, which is normal SCSS file, the result is requested:</p>
+<pre class="highlight"><code class="hljs undefined">// Icons
+//
+// Lists all the icons that are used in the services.
+//
+// Styleguide 5
+
+@import "iconfont__variables.scss";
+@import "iconfont__icons.scss";
+</code></pre>
+<h3 id="extend-on-fly">Extend on fly</h3>
+<p>The variables may be redefined on the customer&#39;s side. This makes is a fast way to change the icon, if the replacement
+already sit in the font bundle.</p>
+<p>If not, it is almost zero amout of work to implement this build-from-atoms process on the customer side.</p>
+<p>The customer has all the library code, let&#39;s say in <code>bower_components</code>, and can have its own folder of icons:</p>
+<pre class="highlight"><code class="hljs stylus">bower_components/
+  ui-library/
+    dist/
+      icons/
+      scss/
+src/
+  icons/
+    <span class="hljs-number">2000</span>-rabbit<span class="hljs-class">.svg</span>
+    <span class="hljs-number">2010</span>-gift<span class="hljs-class">.svg</span>
+</code></pre><p>When building the font they need to use both their set of icons and the library icons:</p>
+<pre class="highlight"><code class="hljs javascript">
+<span class="hljs-keyword">var</span> sourcePath = <span class="hljs-string">"src/"</span>;
+
+gulp.task(<span class="hljs-string">"build:icons"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> gulp.src([sourcePath + <span class="hljs-string">"/icons/*.svg"</span>, <span class="hljs-string">"bower_components/ui-library/dist/icons/*.svg"</span>])
+      .pipe(iconfont({
+        <span class="hljs-comment">/* The same as above */</span>
+      }))
+      .on(<span class="hljs-string">"glyphs"</span>, (glyphs) =&gt; {
+
+        gulp.src(<span class="hljs-string">"bower_components/ui-library/dist/icons/util/*.scss"</span>)
+            .pipe(consolidate(<span class="hljs-string">"lodash"</span>, {
+                <span class="hljs-comment">/* The same as above */</span>
+            }))
+            .pipe(gulp.dest(sourcePath + <span class="hljs-string">"/scss/"</span>));
+      })
+      .pipe(gulp.dest(sourcePath + <span class="hljs-string">"/fonts/"</span>));
+});
+</code></pre>
+<p>It is not even needed to implement template for the output SCSS, it comes in the library dist.</p>
+<p>With such a flow a UI library customer stays completely independent from the library release cycle and may bring a new
+icon into her product as soon as the atomic SVG file is copied into the needed folder. As a background process it is
+needed to contribute the same icon into the library, but not necessarily the same moment. And even the contributing
+process is changed to be better because it came to adding an SVG file.</p>
+<p>As other atomical things, such font flow makes git history more useful. Now it is easier to see
+if the provided change affected many or just one icon. Also, SVG images are rendered nicely in pull requests.</p>
+<p>Even simultaneous changes of the icons in both library and customer websites are possible and should not cause any
+conflict.</p>
+<p>And the last but not least nice thing: all the icons are now in the library as SVG files. Hopefully later we come up
+with using next century technologies and not the icons fonts. When this sweet moment comes, half of the work will have
+been done :-)</p>
+]]></description>
+            <link>http://varya.me//en/posts/dealing-atomically-with-icon-fonts</link>
+            <guid isPermaLink="true">http://varya.me//en/posts/dealing-atomically-with-icon-fonts</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Tue, 10 Nov 2015 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Tag cloud of random sizes in pure CSS]]></title>
+            <description><![CDATA[<p>Last week I faced a need to make a fake tag cloud, where the words need to be of different size. This was needed for
+a presentation slide, and as my slides are always in HTML/CSS, must be implemented with these technologies. It is always
+possible to inject some JavaScript and code anything. But what about pure CSS, do we get random sizes there?</p>
+<excerpt/>
+
+<div class="testings" markdown="1">
+
+<ul class="cloud">
+<li>performance testing</li>
+<li>stress testing</li>
+<li>conformance testing</li>
+<li>acceptane testing</li>
+<li>smoke testing</li>
+<li>regression testing</li>
+<li>white box testing</li>
+<li>functional testing</li>
+<li>system testing</li>
+<li>black box testing</li>
+<li>load testing</li>
+<li>compatibility testing</li>
+<li>unit testing</li>
+</ul>
+
+</div>
+
+<style>
+.testings {
+    text-align: center;
+    width: 400px;
+}
+.testings .cloud {
+    display: inline;
+    list-style-type: none;
+    width: 400px;
+}
+.testings .cloud li {
+    list-style: none;
+    display: inline;
+}
+
+/* Random sizes */
+
+.testings .cloud li:nth-of-type(3n + 1) {
+    font-size: 1.25em;
+}
+.testings .cloud li:nth-of-type(4n+3) {
+    font-size: 1.5em;
+}
+.testings .cloud li:nth-of-type(5n - 3) {
+    font-size: 1em;
+}
+
+</style>
+
+<p>The tag cloud you see above is what I get. You may notice it&#39;s not real random; after refreshing you will always get the
+same result. But still looks like a tag cloud of different sizes and works perfectly as an example.</p>
+<p>This is a list, it&#39;s easy to generate from markdown:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cloud"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>performance testing<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>stress testing<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>conformance testing<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>acceptane testing<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>smoke testing<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre>
+<p>Then, flattened as usual:</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-class">.cloud</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">list-style-type</span>:<span class="hljs-value"> none</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">400px</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.cloud</span> <span class="hljs-tag">li</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">list-style</span>:<span class="hljs-value"> none</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline</span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<p>And then different sizes are made with a few <code>nth-of-type</code> combined in different variants:</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-class">.cloud</span> <span class="hljs-tag">li</span><span class="hljs-pseudo">:nth-of-type(3n</span> + 1) <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">1.25em</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.cloud</span> <span class="hljs-tag">li</span><span class="hljs-pseudo">:nth-of-type(4n+3)</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">1.5em</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.cloud</span> <span class="hljs-tag">li</span><span class="hljs-pseudo">:nth-of-type(5n</span> <span class="hljs-tag">-</span> 3) <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">1em</span></span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<p>I tuned the <code>nth-of-type</code> values so that it would look nicely. Depending on the length of the words used, you may need
+to play arownd with the values and maybe use more than 3 sizes.</p>
+]]></description>
+            <link>http://varya.me//en/posts/pseudo-tag-cloud-css</link>
+            <guid isPermaLink="true">http://varya.me//en/posts/pseudo-tag-cloud-css</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Mon, 02 Nov 2015 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[An answer to the question which should not have been asked]]></title>
+            <description><![CDATA[<p>I never thought that I would write a post about diversity. But as the <strong>unicorn law</strong> says that being a woman in tech you
+will be eventually speaking about women in tech, I do so now. However I&#39;m doing this not because it is a strong will of
+mine. Something happened which makes me to respond.</p>
+<excerpt/>
+
+<p>I was recently speaking at a conference (a very good conference, I must say this) and during the asking session after
+the talk I got this question:</p>
+<p><strong>— How to solve the diversity problem and get more women in our industry?</strong></p>
+<p>I was absolutely not ready to this question. No wonder, being at stage and giving a presentation already brings a lot of
+stress. When it comes to a question session, it is even harder. And the last thing a speaker wants is to get such question.</p>
+<p>This happened to me at the first time, so my response was not correct. In this post I will describe why conference
+attendants should not ask this question to female speakers. If you were willing to do so, please read. Maybe you will
+change your mind. I will also try to propose a proper respond to future speakers and conference hosts. However, this is
+an open question, I believe many can propose much better options. Go ahead in comments :-)</p>
+<h2 id="do-not-ask-women-in-tech-about-women-in-tech">Do not ask women in tech about women in tech</h2>
+<p>Although I felt very uncomfortable when getting this question, it was hard to describe in words what exactly was wrong.
+So, I made some research across the Internet articles and speaking with friends. This is how I learnt about the unicorn
+law formulated by <a href="http://emmajane.net/">Emma Jane Westby</a>:</p>
+<blockquote>
+<p>If you are a woman in Open Source, you will eventually give a talk about being a woman in Open Source.</p>
+</blockquote>
+<p>I was surprised that the problem had been already formulated and number of people had faced it.</p>
+<p>The presentation I gave was not related to gender problems, it was completely technical CSS/JavaScript speech. I am not
+a social scientist but a programmer. Moreover, I am not a gender equality activist. I even had never written in my blog
+anything related to diversity. So, there is completely no objective reason to ask me questions like that. I was asked
+this only because I am a woman.</p>
+<p>This is the first answer on &quot;What is wrong?&quot;. Asking a woman gender related questions because she is a woman is pushing
+her to represent her gender. However it was clear that my intention of speaking at the conference was to share my findings
+in programming and learn from another programmers. It had nothing to do with my gender.</p>
+<p>Then, this question could be to the point, if I were responsible for bad diversity situation in the industry. And I am
+obviously not. I did my part staying on stage and presenting the result of my work when being asked about the solutions
+to the problem which I did not cause.</p>
+<p>Another thing, that not being a social scientist I don&#39;t have proper information to develop a good answer. So, the
+situation may be described like &quot;a speaker stays on stage in front of hundreds of people looking at her and gets a
+question which she clearly is not able to answer&quot;. It is known in advance that I cannot provide any valuable respond to
+this question. There would not be any useful information coming from me. The only result was that I was put into an
+awkward situation.</p>
+<p>The more relevant thing would be to ask a random female about what they know. For example, something about their
+personal experience. However, I still do not suggest this, because questions like &quot;What are the difficulties you faced
+as a female developer&quot; are very often too personal to be answered on stage. I think that if not on stage but in a
+private conversation, I would not mind a question regarding my gender-in-tech experience.</p>
+<p>If for some reason you would like a random female speaker to answer a gender-equality question publically, it might be a
+good idea to formulate it as much related to their work as you could. Something like &quot;How do you solve diversity problem
+<strong>in your company</strong>?&quot; would work better.</p>
+<p>So, the conclusion here is that the best way is not to have sexpectations (thanks my colleague Toni for the word) that
+female developers have knowledge in the diversity thing and even are interested in gender equality stuff. Ask them what
+you would ask male programmers.</p>
+<h2 id="for-women-in-tech-how-to-answer-about-women-in-tech">For women in tech: how to answer about women in tech</h2>
+<p>As I said, I was not ready for the question. However I felt uncomfortable, I tried to make laugh as I believe that most
+conflict situations may be avoided if turned out into a joke. So, I responded:</p>
+<p>— Would you ask me such a question if I were a man? So, my answer is: don&#39;t treat us differently.</p>
+<p>I do not suggest other ladies to reply like that as now I think that it might have sounded too aggressive. Also, if the
+person who asked me the question is reading this post, I apologise for such a response.</p>
+<p>The conference host could have help me. But he started to explain why it is a right thing to ask me this question being
+based on my gender. I guess this is because the situation was unusual and unexpected for him as well. No one has yet
+enough experience in dealing with the stuff. However I believe that killing the discussion is the right thing.
+Unfortunately I cannot propose any solution on how exactly to wrap up a case and come to another question. But if you
+are going to be a conference host, please, think up.</p>
+<p>Anyway, in a few days already not being under stress and having a chance to deeply think about it, I still did not come
+up with an answer. Seriously, it is not that easy.</p>
+<p>I could say &quot;I don&#39;t know&quot;. But these are not the words to pronounce when being on stage. I hope everyone agrees.</p>
+<p>Also I could respond &quot;Sorry, I am not a social scientist&quot;. But I don&#39;t want to make a fool of the person
+asking.</p>
+<p>The honest version on the question about how to get more women in tech is &quot;If there are already some ladies who have
+chosen to be programmers and came into the industry, just leave them in peace. Maybe they will stay&quot;.</p>
+<p>Any other ideas?</p>
+<p>BTW, this is a good article which helped me a lot to understand my feelings about the situation:
+<a href="https://adainitiative.org/2014/03/breaking-the-unicorn-law-stop-asking-women-in-open-techculture-about-women-in-open-techculture/">Breaking the Unicorn Law: Stop asking women in open tech/culture about women in open
+tech/culture</a>.</p>
+]]></description>
+            <link>http://varya.me//en/posts/on-the-unicorn-law</link>
+            <guid isPermaLink="true">http://varya.me//en/posts/on-the-unicorn-law</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Mon, 07 Sep 2015 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Style-guide the smaller things]]></title>
+            <description><![CDATA[<p>I&#39;ve been presenting <a href="http://styleguide.sc5.io/">SC5 Style Guide</a> several times during this year sharing my experience of using it for one
+of the SC5&#39;s clients, Elisa. Assuming that Elisa is a huge mobile operator with a lot of websites and a need
+to keep those websites visually consistent, there is no wonder that the SC5 Style Guide as a tool provides benefits
+there. But what about smaller websites? Would it be useful there? I did not know the answer to this question
+and wanted to experiment. The experiment was conducted on my blog codebase.</p>
+<excerpt/>
+
+<p>This is how the Living Style Guide looks like: <a href="http://varya.me/styleguide">varya.me/styleguide</a>. You can see the interface
+decomposed into block pieces, each of those representing a meaningful interface unit. I haven&#39;t seen the interface of my blog
+from this perspective before. It gave me a lot of insight into the ways the CSS architecture of my blog should be designed.
+But, let&#39;s consider things one by one.</p>
+<h2 id="fine-tuning-the-sc5-style-guide-tool">Fine-tuning the SC5 Style Guide tool</h2>
+<p>Everything starts with</p>
+<pre class="highlight"><code class="hljs q">npm install --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span> sc5-styleguide
+</code></pre><p>Then, I was able to use the tool to build the interface representation. It required
+<a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/Gulpfile.js">a couple of Gulp tasks</a>.</p>
+<p>I had to deviate from the example configuration in a couple of places to make my Style Guide work as it does now. Let me
+name and explain these things.</p>
+<h3 id="providing-the-approot-parameter-">Providing the <code>appRoot</code> parameter.</h3>
+<p>As I am hosting the Style Guide website not it the root folder but in a subfolder named <code>styleguide</code>, I inform the
+  generator about that, so it can build the properly working app:</p>
+<pre class="highlight"><code class="hljs javascript">gulp.task(<span class="hljs-string">"styleguide:generate"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+
+  <span class="hljs-keyword">return</span> gulp.src([<span class="hljs-string">"desktop.blocks/**/*.css"</span>])
+    .pipe(styleguide.generate({
+      title: <span class="hljs-string">"Varya.me Styleguide"</span>,
+      appRoot: <span class="hljs-string">'/styleguide'</span>,
+      ...
+</code></pre>
+<h3 id="providing-scripts">Providing scripts</h3>
+<p>Under the <code>extraHead</code> parameter I list all the additions needed. Some of my components
+need JavaScript to function. It is indeed possible to ignore that and present
+their views only, but I wanted them to be exactly as they were used in the blog.
+Thanks to <code>extraHead</code> I could supply any code needed. I used it to
+link the same scripts that I have on my blog pages:</p>
+<pre class="highlight"><code class="hljs javascript">gulp.task(<span class="hljs-string">"styleguide:generate"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+
+  <span class="hljs-keyword">return</span> gulp.src([<span class="hljs-string">"desktop.blocks/**/*.css"</span>])
+    .pipe(styleguide.generate({
+      title: <span class="hljs-string">"Varya.me Styleguide"</span>,
+      ...
+      extraHead: [
+        <span class="hljs-string">'&lt;script src="http://yandex.st/jquery/1.7.2/jquery.min.js"&gt;&lt;/script&gt;'</span>,
+        <span class="hljs-string">'&lt;script src="/desktop.bundles/index/index.min.js"&gt;&lt;/script&gt;'</span>,
+        ...
+      ]
+    ...
+</code></pre>
+<p>However, I needed yet another trick to make the scripts work properly. My components are written with <code>i-bem.js</code>
+framework which automatically initialises them on the <code>domReady</code> event. This is what I wanted for the static pages because the
+components markup is in HTML document. But for the Style Guide, which is architecturally a SPA, this did not work. The components
+are rendered on the fly, and this obviously happens after <code>domReady</code>; that is why by default they stay
+uninitialized. So they should be initialized after they had been rendered. Luckily, the Style Guide
+triggers an event on the <code>window</code> object named <code>styleguide:onRendered</code> every time a new component is re-rendered.
+By handling this event, I managed to get the components initialized right after they appear on the page. This code is needed
+for the Style Guide only, so I do not include it into the project bundle but provide as an additional script in the
+Style Guide configuration:</p>
+<pre class="highlight"><code class="hljs r">gulp.task(<span class="hljs-string">"styleguide:generate"</span>, <span class="hljs-keyword">function</span>() {
+
+  <span class="hljs-keyword">return</span> gulp.src([<span class="hljs-string">"desktop.blocks/**/*.css"</span>])
+    .pipe(styleguide.generate({
+      title: <span class="hljs-string">"Varya.me Styleguide"</span>,
+      <span class="hljs-keyword">...</span>
+      extraHead: [
+        <span class="hljs-keyword">...</span>
+        <span class="hljs-string">'&lt;script src="/styleguide/i-bem__init_styleguide.js"&gt;&lt;/script&gt;'</span>
+      ]
+    <span class="hljs-keyword">...</span>
+</code></pre><p>You can check how the JavaScript components are working with the block which is initially empty and renders the list
+of repositories after querying the GitHub API: <a href="http://varya.me/styleguide/#/section/4.3">varya.me/styleguide/#/section/4.3</a>.
+Or try out the Candies randomly built with JavaScript <a href="http://varya.me/styleguide/#/section/5.1">varya.me/styleguide/#/section/5.1</a>.</p>
+<p>The last important thing to make JavaScript work is to use <code>disableEncapsulation: true</code> parameter. Normally the
+Style Guide wraps each component in the ShadowDOM because it lets us developers write component CSS without
+worrying about affecting the Style Guide interface. But it also makes the components scoped from the JavaScript linked
+to the Style Guide website — including that additional JavaScript I showed above. By disabling the encapsulation, I made
+the components to be inserted into the HTML page as they are, without any scoping. As for affecting the Style Guide
+interface, in my case it will never happen as I use BEM and all my components are already &quot;encapsulated&quot; thanks to that methodology.</p>
+<h3 id="hosting-a-static-page">Hosting a static page</h3>
+<p>The SC5 Style Guide provides a development server which routes all the paths to its root. When hosting it outside, you
+should care about the routing yourself as you would do for any other SPA. But my blog is hosted on GitHub Pages
+which is a simple static hosting and does not provide any routing capabilities. For managing this case, I use the
+<code>disableHtml5Mode: true</code> option. It makes the Style Guide application generate the old-school links with <code>#</code>. And so it
+works.</p>
+<h2 id="documenting-the-components">Documenting the components</h2>
+<p>As I used BEM for my website frontend from very beginning, the CSS was already written the component-way. I only
+needed to create a descriptive structure and document the blocks with KSS.</p>
+<h3 id="structuring-the-code">Structuring the code</h3>
+<p>Unfortunately the BEM way of storing components in folders turned out to be not good enough to see
+the code from the living-style-guide perspective. On a file system, all the components are represented at the same
+level which turns them into a long list without much structure:</p>
+<pre class="highlight"><code class="hljs r">desktop.blocks/
+├── article
+├── articles-list
+├── box
+├── <span class="hljs-keyword">...</span>
+└── text
+</code></pre><p><a href="https://github.com/varya/varya.github.com/tree/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks">github/varya/varya.github.com/desktop-blocks</a></p>
+<p>In this case the atomic components are not distinct from the structural interface pieces (such as Header or Footer),
+from the side blocks, or from CSS provided to style third-party things. Flat structure is indeed good for
+bundling tools but we humans need more logical nesting.</p>
+<p>For that I provide the <code>overview.css</code> file, which has nothing to do with the final product and only helps me arrange the
+blocks. I have 5 sections, in which I place the blocks depending on what they are:</p>
+<pre class="highlight"><code class="hljs r">/*
+Atoms
+
+Styleguide <span class="hljs-number">1</span>
+
+styleguide:ignore:start
+
+@import url(<span class="hljs-string">"logo/logo.css"</span>); // <span class="hljs-number">1.1</span>
+@import url(<span class="hljs-string">"text/text.css"</span>); // <span class="hljs-number">1.2</span>
+<span class="hljs-keyword">...</span>
+
+styleguide:ignore:end
+*/
+
+/*
+Main blocks
+
+Styleguide <span class="hljs-number">2</span>
+
+styleguide:ignore:start
+
+@import url(<span class="hljs-string">"header/header.css"</span>); // <span class="hljs-number">2.1</span>
+<span class="hljs-keyword">...</span>
+
+styleguide:ignore:end
+*/
+</code></pre><p><a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/overview.css">github/varya/varya.github.com/desktop-blocks/overview.css</a></p>
+<p>There are only comments in this file in which I provide the documentation of every subset as a Style Guide section.
+Listing the paths of the dependant CSS files makes it easier to navigate through the code. The <code>@import</code> syntax is used just
+because :-)</p>
+<p>The only trick here is the magic <code>styleguide:ignore:start</code> and <code>styleguide:ignore:end</code> keywords. It is possible to
+place them inside comments in any piece of your CSS (or SASS or LESS) and make the Style Guide generator ignore 
+what is in between.</p>
+<p>In my case, I tell it skip my overview lists because they have nothing to do with the codebase. But the names of the
+sections and their possible descriptions (I just haven&#39;t provided any) are in work.</p>
+<h3 id="describing-the-pieces">Describing the pieces</h3>
+<p>Everything else went smoothly. For every component I provided the KSS description. The <code>logo</code> block can be the
+simplest example:</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-comment">/*
+
+Logo
+
+markup:
+&lt;logo class="logo"&gt;···&lt;b class="var"&gt;var&lt;/b&gt;·&lt;b class="ya"&gt;ya&lt;/b&gt;;&lt;b class="cursor"&gt;&lt;/b&gt;&lt;/logo&gt;
+
+Styleguide 1.1
+
+*/</span>
+<span class="hljs-class">.logo</span>
+<span class="hljs-rules">{
+<span class="hljs-rule"><span class="hljs-attribute">...
+</span></span></span></code></pre>
+<p><a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/logo/logo.css">github/varya/varya.github.com/desktop-blocks/logo/logo.css</a></p>
+<p>See it rendered: <a href="http://varya.me/styleguide/#/section/1.1">varya.me/styleguide/#/section/1.1</a></p>
+<p>In some other components I used extra features. For example, different social icons are the same <code>ico</code> element with different
+modifiers. In the Style Guide I could documents them all together:</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-comment">/*
+Social icon
+
+.social-ico__ico_type_rss         - RSS
+.social-ico__ico_type_twitter     - Twitter
+.social-ico__ico_type_github      - Github
+.social-ico__ico_type_facebook    - Facebook
+.social-ico__ico_type_linkedin    - LinkedIn
+
+markup:
+&lt;a class="link social-ico__ico {$modifiers}" href="#" title="Icon title"&gt;&lt;/a&gt;
+
+Styleguide 1.5.1
+*/</span>
+
+<span class="hljs-class">.social-ico__ico</span>
+<span class="hljs-rules">{
+<span class="hljs-rule"><span class="hljs-attribute">...
+</span></span></span></code></pre>
+<p><a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/social-ico/social-ico.css#L49">github/varya/varya.github.com/desktop-blocks/social-ico/social-ico.css</a></p>
+<p>In the website the component is rendered separately with every modifier possible:
+<a href="http://varya.me/styleguide/#/section/1.5.1">varya.me/styleguide/#/section/1.5.1</a></p>
+<p>For the complex components which contain other ones I used <code>&lt;sg-insert&gt;</code> keyword. It takes another component&#39;s markup
+by its reference number.</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-comment">/*
+Sidebar
+markup:
+&lt;nav class="sidebar"&gt;
+  &lt;sg-insert&gt;4.2&lt;/sg-insert&gt;
+  &lt;sg-insert&gt;4.3&lt;/sg-insert&gt;
+&lt;/nav&gt;
+Styleguide 4.1
+*/</span>
+
+<span class="hljs-class">.sidebar</span>
+<span class="hljs-rules">{
+<span class="hljs-rule"><span class="hljs-attribute">...
+</span></span></span></code></pre>
+<p><a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/sidebar/sidebar.css">github/varya/varya.github.com/desktop-blocks/sidebar/sidebar.css</a></p>
+<p>This makes the markup examples pretty short, however it expands for rendering the component and showing the
+markup on the website: <a href="http://varya.me/styleguide/#/section/4.1">varya.me/styleguide/#/section/4.1</a></p>
+<h2 id="style-guide-driven-development">Style-Guide-Driven Development</h2>
+<p>If you type &quot;logo&quot; in the Style Guide search field, it will find and render all the components where <code>logo</code> is found!
+The search goes through all the CSS codebase. Similarly you can search for the components using <code>&lt;em&gt;</code> in their markup.
+Or <code>font:</code> in their CSS.</p>
+<p>I personally like that the search source is not only the CSS of components but also their markup examples. During the
+refactorings this, for example, makes possible to select all the components containing inputs and look how the changes affect them.</p>
+<p>However this is just a small addition to one major benefit I see in using the Style Guide. I find it far more important 
+that <strong>it reveals my mistakes</strong>.</p>
+<p>I already used the component way when building my blog. And I was pretty sure that my BEM experience is a 100%
+guarantee that I get this right. But even developing with a highly modular approach in mind, I did this from the page perspective.
+Before the components were integrated into the blog engine, I had developed a static page and this was where the
+components fitted first.</p>
+<p>I considered them independent and so tried to write my code. But <strong>sitting at the same page they never actually were
+independent</strong>.</p>
+<p>After the SC5 Style Guide magically represented each of them separately, I can see that the
+<a href="http://varya.me/styleguide/#/section/1.1">logo</a> is aligned to the right.
+And why should it be? Obviously, my mistake when I tried to made it fit into the Header.</p>
+<p>The same goes for the <a href="http://varya.me/styleguide/#/section/1.4">language switcher</a> positioned on the right.</p>
+<p>In the <a href="http://varya.me/styleguide/#/section/1.5">set of social icons</a>, the language switcher provided with the RSS
+icon was considered to stay with it. But this only happens because at the blog pages
+it is placed into a narrow container. The Style Guide represents it on its own and I can see that it is not that
+flawless as I thought.</p>
+<p>Such discoveries obviously lead to the refactoring :-)</p>
+<p>To top it off, I must say that the experiment does not end and there are already findings for further
+posts. Stay tuned!</p>
+]]></description>
+            <link>http://varya.me//en/posts/sc5-styleguide-for-smallers</link>
+            <guid isPermaLink="true">http://varya.me//en/posts/sc5-styleguide-for-smallers</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Thu, 30 Jul 2015 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[JSCS in use]]></title>
+            <description><![CDATA[<p>This time I would like to share my experience of keeping a codestyle in one of my working projects. This is about a new
+tool called <strong>JSCS</strong> which we have recently chosen with the team and now are very pleased with the result.</p>
+<excerpt/>
+
+<p>Once I joined <a href="http://styleguide.sc5.io/">SC5 Styleguide</a> project, I discovered that it was not consistent enough from
+its codestyle perspective. It was not frightening by that time, but it was already clear that the project was going to
+grow fast and the sooner we start bothering about keeping the codestyle the better. I was already aware about JSCS and
+its features because had published <a href="http://frontendbabel.info/articles/jscs-javascript-code-style/">a translation of author&#39;s tool
+introduction</a> in one of my side-projects. So the
+decision which tool to use was made quickly.</p>
+<p>There are indeed many other solutions, such as JSLint and JSHint, the most mentioned once. But let me first tell you a
+story.</p>
+<p>Interesting enough that JSHint authors liked JSCS so much that they prefered to contribute into it rather than develop
+style checkings in their tool. So they removed all the style enforcement rules out of JSHint and keep it now for
+more complex things not about coding style but about programming patterns.</p>
+<p><blockquote class="twitter-tweet" lang="en"><p>And with that, JSCS now has all the style enforcement rules that are
+being dropped in <a href="https://twitter.com/JSHint">@JSHint</a> 3.0: <a href="a
+href=&quot;https://t.co/W98EMSiTN5&quot;">a
+href=&quot;https://t.co/W98EMSiTN5&quot;</a><a href="https://t.co/W98EMSiTN5">https://t.co/W98EMSiTN5</a></a> cc <a href="a
+href=&quot;https://twitter.com/valueof&quot;">a
+href=&quot;https://twitter.com/valueof&quot;</a>@valueof</a></p>&mdash; Mike Sherov (@mikesherov) <a href="a
+href=&quot;https://twitter.com/mikesherov/status/419596672520318976&quot;">a
+href=&quot;https://twitter.com/mikesherov/status/419596672520318976&quot;</a>4 Jan 2014</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>This means that there is no question if you choose JSLint, JSHint <strong>or</strong> JSCS. Currently you can choose between
+JSLint and JSHint + JSCS working together.</p>
+<pre class="highlight"><code class="hljs javascript">gulp.task(<span class="hljs-string">'jslint'</span>,
+  [ <span class="hljs-string">'jshint'</span>, <span class="hljs-string">'jscs'</span> ]
+  );
+</code></pre>
+<p>Assuming that JSCS is a new tool with not yet spoiled structure, I suppose that it would be a pleasure to contribute
+into it. Also, the tool&#39;s youth promises that future possible bugs would be fixed soon as there is no legacy.</p>
+<p>Moreover, I personally find encouraging that JSCS has been already chosen by such respectable teams as jQuery, Bootsrap
+and AngularJS.</p>
+<p>Long story short, JSCS is an npm package. You can install it either globally or locally for a particular project:</p>
+<pre class="highlight"><code class="hljs cmake">npm <span class="hljs-keyword">install</span> jscs
+</code></pre><p>Besides, you will need a configuration file <code>.jscsrc</code> and define what kind of JavaScript style you prefer for the
+project. This file should be put into the root of your project.</p>
+<p>JSCS support tonns of rules. Nethertheless, your config file would not be too heavy thanks to presets. In most cases we
+choose from popular JavaScript styles and so there is no need to define the rules over and over again. You only need to
+write who you prefer to look like:</p>
+<ul>
+<li>airbnb</li>
+<li>crockford</li>
+<li>google</li>
+<li>jquery</li>
+<li>mdcs</li>
+<li>wikimedia</li>
+<li>yandex</li>
+</ul>
+<p>Even if you want to be special, you still can choose the most similar preset and redefine some of its rules below.</p>
+<p>Important thing is that JSCS is already quite a mature thing, which means that you can easily find acompanying packages
+and needed plug-ins for editors.</p>
+<h2 id="the-success-story">The Success Story</h2>
+<p>Assuming these facts, we decided to give JSCS a try. We started with defining a lovely configuration but excluded all
+the files from the checking process yet. Our project already had modular structure, so this was easy.</p>
+<pre class="highlight"><code class="hljs r">{
+    <span class="hljs-keyword">...</span>
+
+    <span class="hljs-string">"excludeFiles"</span>: [
+      <span class="hljs-string">"node_modules/**"</span>,
+      <span class="hljs-string">"src/modules/a/**"</span>,
+      <span class="hljs-string">"src/modules/b/**"</span>,
+      <span class="hljs-string">"src/*.js
+    ]
+}
+</span></code></pre><p>Then, we agreed that if any of us starts coding or changing a module, he/she will fix the codestyle and swipe out the
+fixed module from the <code>excludeFiles</code> list. Following this, we got our files fixed quite fast and even avoid conflicts.</p>
+<p>Keeping the codestyle when maintaining these files lately turned out to be more challengeable. Automatic checkings are
+very helpful here, but we needed to decide how strict we should be. The codestyle should not be our main goal instead of
+development.</p>
+<p>Finally we came up with &quot;separation of concerns&quot; model. Thus, for the upstream repository we have strict codestyle
+policy, and for the forks it is more suggestive. We taught Travis to check codestyle in the pull requests we are
+getting. If codestyle is broken, the Travis build fails. So, pull requests with wrong codestyle cannot be merged into
+the upstream. This ensures us that we will never get bad code there. However for the forks it is not that strict. We
+turned down the idea of using pre-push hooks but recommend a developer to install a pre-commit hook in their repository
+clone as well as using JSCS IDE plugins in order to learn about wrong codestyle while developing and not when their pull
+request gets broken. These recommendations are described in our documentation for developers and all the team members
+follow them.</p>
+<p>Everyone especially likes that JSCS can work with the code editors. The codestyle configuration is stored in the project
+repository and so an editor reads on its own. The most wonderful thing is that when switching between the projects with
+different codestyles, it does not require any change of settings.</p>
+<p><img src="http://varya.me/jscs-talk/pictures/sublime.gif" alt=""></p>
+<p>And of course it is always possible to check the codestyle manually running a gulp task.</p>
+<p><img src="http://varya.me/jscs-talk/pictures/travis.png" alt=""></p>
+<h2 id="word-of-caution">Word of caution</h2>
+<p>We faced a couple of problems when applying the tool. I believe they are worth to be mentioned, especially as I can
+provide the solutions.</p>
+<p>The most painful was &quot;out of memory&quot; error when running a gulp task with JSCS checking. Turned out, that excluding files
+in the configuration is not enough. Gulp tries to process all the files that match the mask and is soon run out of
+memory. We fixed this with using <code>gulp-ingnore</code> package:</p>
+<pre class="highlight"><code class="hljs actionscript">gulp.task(<span class="hljs-string">'jscs'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">return</span> gulp.src([
+    <span class="hljs-string">'**/*.js'</span>
+  ])
+  .pipe(gulpIgnore.exclude([
+    <span class="hljs-string">'node_modules/**'</span>,
+    <span class="hljs-string">'demo-output/**'</span>
+  ]))
+  .pipe(jscs());
+})
+</code></pre><p>This is not the best solution because we need to list the excluded files in both <code>.jscs</code> configuration and the
+<code>gulpfile.js</code>. But there is nothing better yet.</p>
+<p>The second trick is about checking the codestyle while watching the project files with Gulp. You would probably like to
+see the errors reported in your terminal but still have the <code>watch</code> task running. This is possible with the help of
+<code>gulp-plumber</code>:</p>
+<pre class="highlight"><code class="hljs r">gulp.task(<span class="hljs-string">'jscs'</span>, <span class="hljs-keyword">function</span>() {
+  <span class="hljs-keyword">return</span> gulp.src([
+    <span class="hljs-string">'**/*.js'</span>
+  ])
+  <span class="hljs-keyword">...</span>
+  .pipe(plumber())
+  .pipe(jscs());
+});
+</code></pre><p>This is all, we did not face any other problem with the tool. It works just fine and has already saved thousands of
+man-hours.</p>
+<h2 id="besides">Besides</h2>
+<p>If you are interested in the slides for this talk, here they are
+<a href="http://varya.me/jscs-talk/">http://varya.me/jscs-talk/</a>.</p>
+]]></description>
+            <link>http://varya.me//en/posts/jscs-in-use</link>
+            <guid isPermaLink="true">http://varya.me//en/posts/jscs-in-use</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Wed, 11 Feb 2015 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Run on time (about Mac applications)]]></title>
+            <description><![CDATA[<p>I use the same laptop for both work and personal needs. This is useful but makes me see to keeping my
+work-life balance. I do this simply — turn off all the applications running when I finish my working day
+in the evening. The only issue is not to forget to open them again next day. But this process can be automatized. :-)</p>
+<p><excerpt/>
+The most important is to run the applications which are in use by the other team members. For example, I a Jabber app
+has to be running since the workday has started. The same goes for any other messenger.</p>
+<p>We here at AppGyver use <a href="https://www.flowdock.com">Flowdock</a>
+for team communication. So I needed to be sure that it is open every morning.</p>
+<p>It turned out that this is doable on Mac with the native Calendar application. Let me show you how exactly.</p>
+<h3 id="create-a-new-event-in-the-calendar">Create a new event in the Calendar</h3>
+<p>I named mine &quot;Run Flowdock&quot;. Do not bother about the laptop being opened by the event time your are setting up. The
+application can run in advance. My event has <code>9:35</code> time.</p>
+<h3 id="make-your-event-repeated">Make your event repeated</h3>
+<p>This event should be repeated every week at the workdays.</p>
+<h3 id="run-the-application">Run the application</h3>
+<p>Now the most interesting thing. You can run any application using custom event alerts.</p>
+<p>Choose the last item in the <code>alert</code> select, which is <code>Custom</code>.</p>
+<p><img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/4802/14441195.32/0_88921_7d53950e_L.png" width="300" height="500" border="0"
+title="" alt=""/></p>
+<p>Once the next dialog is opened, choose <code>Open file</code>.</p>
+<p><img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/4813/14441195.32/0_88925_47986a79_M.png" width="300" height="167" border="0"
+title="" alt=""/>
+<img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/5109/14441195.32/0_88924_ea39983e_M.png" width="300" height="162" border="0"
+title="" alt=""/></p>
+<p>By <code>file</code> they mean an applicaiton to be run. It is defined to be <code>Calendar</code> by default but you can
+choose another one.</p>
+<p><img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/4810/14441195.32/0_88922_22d155c7_M.png" width="300" height="193" border="0"
+title="" alt=""/></p>
+<p>Then, select the application needed in the Finder dialog. In my case it is Flowdock.</p>
+<p><img
+class="article__image"
+src="http://img-fotki.yandex.ru/get/4809/14441195.32/0_88923_7597bf28_M.png" width="300" height="196" border="0"
+title="" alt=""/></p>
+<p>Then, fix the time. 5 minutes before 9:35 is exactly half past nine. Let me remin you, this does not mean that
+you need to be at work by this time and have your laptop opened. You can be riding a bus or even sleeping. The
+application will run later, when you open your computer.</p>
+<h3 id="drawback">Drawback</h3>
+<p>Not ideal, indeed. If your calendar is synchronized with iPhone, it peeps by this time. The phone cannot run the
+application, so it reminds you about the event with sound. But as <a href="http://varya.me/ru/posts/run-app-in-time-on-mac/#comment-1582219469">one of my friends
+suggests</a> the workaround can be to create a
+separate calendar for such event and not to synchronize it with other devices.</p>
+]]></description>
+            <link>http://varya.me//en/posts/run-app-in-time-on-mac</link>
+            <guid isPermaLink="true">http://varya.me//en/posts/run-app-in-time-on-mac</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Fri, 12 Sep 2014 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The so different frontend community and how we deal with it]]></title>
+            <description><![CDATA[<p>Long time ago I could read and learn about web development in Russian only. Later, having completed an English language course, I began to read articles and blogs in English more and more. The same went for conferences: I visited
+Russian-speaking conferences at first and later switched to English-speaking conferences in Europe. In both articles and conference talks, I noticed how the content was different depending on the language used. Sometime I even thought that the communities evolve in different ways and follow different directions.</p>
+<p><excerpt/>
+My Russian-speaking colleagues indeed know the &quot;<a href="http://vitaly.harisov.name/article/independent-blocks.html">HTML/CSS markup with independent blocks</a>&quot;
+article by Vitaly Harisov. He published
+this in 2008 and outlined the main principles of HTML/CSS development which is known as BEM nowadays. We can say
+that was the moment BEM started being used in Russia and neighbouring countries. As for English-speaking developers, they
+learned about BEM only in 2012 from <a href="http://www.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/">my article in
+SmashingMagazine</a>. Then, as you might
+know, <a href="http://csswizardry.com/about/">Harry Roberts</a> caught sight
+of that and thanks to his publications BEM became known to the rest of the world.</p>
+<p>Thus, 4 years passed since the technology was released until a typical English-speaking web developer got a chance to learn about it. This could have been enough time for a technology to mature and slowly die.</p>
+<p>No doubt, a better option would be to make it available back in 2008. I suppose that modular trend on the web would have started earlier and we would have got the results faster. Today we
+would use Web Components (they implement some component ideas of BEM) everywhere (and for a long time, already).</p>
+<p>With all this in mind, I decided to dedicate some of my free time to publish translations on my blog.
+So the translated articles on <a href="/en/issues/ym-modular-system">Ymaps modules</a> and
+<a href="/en/issues/beml-html-preprocessor">BEML</a> were published. I also had more articles in the queue for translation. Reading
+a lot of developer blogs in Russian, I realized that a lot of interesting content is still being produced. &quot;Is this for Russia only?&quot; I asked myself.</p>
+<p>Imagine all these new approaches, libraries, and frameworks that exist today all over the world!.. but you will never
+learn them because their authors publish in Arabic, Spanish, Japanese or other languages you do not speak.</p>
+<p>Nevertheless, we frontend developers have a wonderful community. Open source culture
+and technologies like GitHub enable us to help each other and get better results together. To contribute, one does not have to be an expert. For example, many products get their documentation improved just with the help of people who like the project.</p>
+<p>This encouraged me to create a collaboration web site for translating frontend articles from local languages into English.</p>
+<p>The project is called <strong>Frontend Babel</strong> and here is the URL: <a href="http://frontendbabel.info">http://frontendbabel.info</a>.
+Technically, it is a statically generated blog (thanks to DocPad). Any person can take it and run a local copy, then add
+a translated article and submit a pull request into the original source.</p>
+<ul>
+<li><a href="http://frontendbabel.info/about/">About the project</a></li>
+<li><a href="https://github.com/frontendbabel/frontendbabel.github.com">Repository on GitHub</a></li>
+<li><a href="http://frontendbabel.info/how-to-contribute">How to contribute</a></li>
+</ul>
+<p>The first couple of articles were already translated by <a href="https://www.google.com/+MaxShirshin">Max Shirshin</a>. These are:</p>
+<ul>
+<li>an interesting <a href="http://frontendbabel.info/articles/webpage-rendering-101">post about web page rendering by Alexander
+Skutin</a></li>
+<li>an awesome <a href="http://frontendbabel.info/articles/graphical-interface">article about graphical interface by Danil
+Kovchy</a></li>
+</ul>
+<p>You can already share these links with your English-speaking colleagues :-)</p>
+<p>Max and I have plans to translate more during the next weeks. I encourage all of you who knows Arabic, Japanese, Polish, French, Spanish (and any other language) to join the project and help us translate. English-speaking developers can do proofreading.</p>
+<p>Translating into a foreign language is hard work indeed, but with the help of English-speaking people in our community, we will get the texts improved. So, if you were thinking about writing in English, this may be a good chance to start and learn.<br/></p>
+<p>Interesting articles will attract visitors. With this, both an author and a translator get more attention on the web and establish new proffesional contacts throught their websites and social networks.</p>
+<p>Always remember: a contribution to an open source project can be small, but it is always appreciated! Here are just
+some ideas on what you can do:</p>
+<ul>
+<li><a href="https://github.com/frontendbabel/frontendbabel.github.com/issues/new">Add new source articles into our task
+queue</a><br/>
+If you know an interesting article worth to be published, create an issue about it. So another
+contributer can grab this task and translate it.</li>
+<li><a href="http://frontendbabel.info/how-to-contribute#push-new-translation">Push new translations</a><br/>
+Find a nice article in a language you know, translate it into English and publish on this website.</li>
+<li><strong>Tell friends about the project</strong><br/>
+Mentioning this project in social networks and your blog posts you can involve people from
+all over the world!</li>
+<li>Fix English in the texts<br/>
+If you spot a grammatical error, you can edit an article (there is a link to an editor below) and submit
+a pull request.</li>
+<li>Propose site changes<br/>
+Suggest what can be improved on this web site by adding your ideas to <a href="https://github.com/frontendbabel/frontendbabel.github.com/issues?labels=%40+Translation&amp;state=open">the list of
+issues</a>.</li>
+<li><a href="https://github.com/frontendbabel/frontendbabel.github.com/issues?labels=&amp;page=1&amp;state=open">Grab an issue to do</a><br/></li>
+</ul>
+<p>Your contributions will help improve this project a lot!</p>
+]]></description>
+            <link>http://varya.me//en/posts/frontend-babel-alpha</link>
+            <guid isPermaLink="true">http://varya.me//en/posts/frontend-babel-alpha</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Mon, 30 Jun 2014 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Using side drawers in mobile apps on Steroids.js]]></title>
+            <description><![CDATA[<p>As a mobile apps user you may be already familiar to drawers.
+They are quite popular solution for a side menu. Using <code>Steroids</code>
+HTML5/JavaScript framework for hybrid mobile applications, you
+can bring such an interface solution into your product very easy.</p>
+<excerpt/>
+
+<p>The usage of drawers explained here is demonstrated in the <a href="https://github.com/AppGyver/kitchensink">Steroids
+Kitchensink</a> open source application.
+This is now being developed set of most useful examples for Steroids.
+As the application is constantly changing, I will freeze the code examples
+at <a href="https://github.com/AppGyver/kitchensink/tree/ceacb0ea80799b1d81454e2e966b553b807fbadc">28 May 2014</a>.</p>
+<p>To explore the application in your mobile device or in a
+simulator clone the repository and run the project. You may need some information
+about how to start Steroids projects. That can be learned from tutorials:</p>
+<ul>
+<li><a href="https://academy.appgyver.com/categories/1-setup-and-getting-started/contents/1-installing-steroids">Installing
+Steroids</a></li>
+<li><a href="https://academy.appgyver.com/categories/1-setup-and-getting-started/contents/2-hello-world">Hello World application</a></li>
+</ul>
+<p>Or from my recent article about <a href="/en/posts/html5-mobile-app-width-native-ui/">HTML5 mobile apps with native UI on
+Steroids</a>.</p>
+<p>Once run the project you will see a page with a list of examples
+and a navigation bar.</p>
+<p><img class="article__image" src="http://img-fotki.yandex.ru/get/9652/14441195.32/0_8477d_3b6d66a5_L.png" width="282" height="500" border="0"/></p>
+<p>The button to teh left of a menu bar opens a side menu. But before we start to
+study side drawers let&#39;s look at how this button is shown.</p>
+<p>The initial view is coded in <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/app/views/example/index.html"><code>app/views/example/index.html</code></a>.
+This is an angular view with directives for the list and for the navigation bar.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"IndexCtrl"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">navigation-bar</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Steroids Kitchensink"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">left-button</span> <span class="hljs-attribute">icon</span>=<span class="hljs-value">"/vendor/icons8/menu-32"</span>
+        <span class="hljs-attribute">onTap</span>=<span class="hljs-value">"showMenu()"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">left-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">navigation-bar</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>The <code>navigation-bar</code> directive is custom and described in <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/app/directives/navigationBar.coffee"><code>app/directives/navigationBar.coffee</code></a>.
+Using such a directive rather than <code>steroids.view.navigationBar</code> helpers at every page is
+more useful for the applications with many views.</p>
+<p>Indeed inside the directive the same helpers are used. But declaring navigation bar
+title and buttons in the view makes our programmers lifes a little bit
+easier.</p>
+<p>Here the navigation bar titled &quot;Steroids Kitchensink&quot; contains a &quot;hamburger&quot;
+menu button which responds to the tapping with calling <code>showMenu</code> methods of
+the corresponding controller.</p>
+<p>This controller is coded in <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/app/controllers/example.coffee"><code>app/controllers/example.coffee</code></a>.
+As you can see, the <code>showMenu</code> method is pretty short.</p>
+<pre class="highlight"><code class="hljs coffeescript">$scope.showMenu = <span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>
+  steroids.drawers.show {
+    <span class="hljs-attribute">edge</span>: steroids.screen.edges.LEFT
+  }
+</code></pre>
+<p>It uses the drawers <code>show</code> method and slide the initial view to
+the right which uncovers the menu view.</p>
+<p>Of course, the code needs to know what is the view we mean by &#39;left&#39;.
+We have to provide it with such a knowledge declaring the list of drawers
+in the <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/config/application.coffee#L39"><code>config/application.coffee</code></a>
+configuration file.</p>
+<pre class="highlight"><code class="hljs coffeescript">steroids.config.drawers =
+  <span class="hljs-attribute">left</span>:
+    <span class="hljs-attribute">id</span>: <span class="hljs-string">"sidemenu"</span>
+    <span class="hljs-attribute">location</span>: <span class="hljs-string">"http://localhost/views/sidemenu/index.html"</span>
+    <span class="hljs-attribute">showOnAppLoad</span>: <span class="hljs-literal">false</span>
+    <span class="hljs-attribute">widthOfDrawerInPixels</span>: <span class="hljs-number">250</span>
+  <span class="hljs-attribute">options</span>:
+    <span class="hljs-attribute">centerViewInteractionMode</span>: <span class="hljs-string">"Full"</span>
+    <span class="hljs-attribute">closeGestures</span>: [<span class="hljs-string">"PanNavBar"</span>, <span class="hljs-string">"PanCenterView"</span>, <span class="hljs-string">"TapCenterView"</span>]
+    <span class="hljs-attribute">openGestures</span>: [<span class="hljs-string">"PanNavBar"</span>, <span class="hljs-string">"PanCenterView"</span>]
+    <span class="hljs-attribute">showShadow</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-attribute">stretchDrawer</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-attribute">widthOfLayerInPixels</span>: <span class="hljs-number">0</span>
+</code></pre>
+<p>Here the menu view file and some parameters. You can learn about
+what they mean from a special tutorial about <a href="https://academy.appgyver.com/categories/3-user-interface-and-design/contents/98-configuring-drawers-on-app-load">configuring drawers</a>.</p>
+<p>This will make the sidemenu shown.</p>
+<p><img class="article__image" src="http://img-fotki.yandex.ru/get/9766/14441195.32/0_8477e_dbe7889e_L.png" width="282" height="500" border="0"/></p>
+<p>To make it look like in the picture you need to provide a
+corresponding view with the list of menu items. Here it is defined
+in <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/app/views/sidemenu/index.html"><code>app/views/sidemenu/index.html</code></a>.
+This is pretty similar to the list of examples in the initial view. To make it function
+we provide:</p>
+<ul>
+<li>a list of items and the corresponding view in <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/www/data/sidemenu.json"><code>www/data/sidemenu.json</code></a>;</li>
+<li>data model in <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/app/models/sidemenu.js"><code>app/models/sidemenu.js</code></a>;</li>
+<li>controller in <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/app/controllers/sidemenu.coffee"><code>app/controllers/sidemenu.coffee</code></a>.</li>
+</ul>
+<p>From the drawers perspective the most important piece of code
+to study is the controller. It says to hide the opened drawer if you
+tap the currently active menu item. Opening other menu items goes
+differently; it replaces the current central view with some animation.</p>
+<pre class="highlight"><code class="hljs coffeescript"><span class="hljs-keyword">if</span> item.active
+  steroids.drawers.hide {}
+<span class="hljs-keyword">else</span>
+  webView = <span class="hljs-keyword">new</span> steroids.views.WebView {
+    <span class="hljs-attribute">id</span>: item.id,
+    <span class="hljs-attribute">location</span>: item.url
+  }
+  steroids.drawers.hide {
+    <span class="hljs-attribute">center</span>: webView
+  }
+</code></pre>
+<p>Hiding the currently opened drawer with <code>steroids.drawers.hide</code> simply
+gets back the previously shown central view.</p>
+<p>If you want to show a different page, you would also use <code>steroids.drawers.hide</code> but
+with an additional <code>center</code> parameter to pass the needed view. This view has to be
+created in advance with <code>steroids.views.WebView</code>.</p>
+<p>Besides, such a view must be configured as preloaded in <a href="https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/config/application.coffee#L31"><code>config/application.coffee</code></a>.</p>
+<pre class="highlight"><code class="hljs coffeescript">steroids.config.preloads = [
+  {
+    <span class="hljs-attribute">id</span>: <span class="hljs-string">"settings"</span>
+    <span class="hljs-attribute">location</span>: <span class="hljs-string">"http://localhost/views/settings/index.html"</span>
+  }
+]
+</code></pre>
+<p>Thus, with tapping on the <em>Settings</em> menu item you will get the settings
+page shown.</p>
+<p><img class="article__image" src="http://img-fotki.yandex.ru/get/9667/14441195.32/0_8477f_2aafe347_L.png" width="282" height="500" border="0"/></p>
+<p>This page is empty yet. The upcoming posts will fill it in with something
+interesting. Stay tuned :-)</p>
+]]></description>
+            <link>http://varya.me//en/posts/steroids-drawers</link>
+            <guid isPermaLink="true">http://varya.me//en/posts/steroids-drawers</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Mon, 09 Jun 2014 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Docpad with the taste of BEM]]></title>
+            <description><![CDATA[<p>Let me present a stub for <strong>docpad-run</strong> project with
+<strong>bem-built</strong> static assets. If you ever wanted to be
+a generic blog holder equiped with nice and neat static
+files, here we go.</p>
+<excerpt/>
+
+<h2 id="how-to-start">How to start</h2>
+<p>You need install the docpad first. Follow their <a href="http://docpad.org/docs/install">Installation Guide</a>.</p>
+<p>Then, the installation of the blog is super short and easy. Clone, fork or
+copy from the <a href="https://github.com/varya/docpad-bem-stub">docpad-bem-stub repository</a>.
+Then, go though the 3 installation steps:</p>
+<pre class="highlight"><code class="hljs bash">npm install
+./node_modules/bower-npm-install/bin/bower-npm-install
+docpad run
+</code></pre>
+<p>With these 3 steps you will get:</p>
+<ul>
+<li>a local server with a generic docpad blog;</li>
+<li><a href="http://bem.info/libs/bem-core/2.2.0/">bem-core</a> and <a href="http://bem.info/libs/bem-components/v2/">bem-components</a>
+libraries of reusable CSS/JavaScript/templates code;</li>
+<li>fully tuned static-build instructions which run on changes
+in your source code;</li>
+<li>initial blog structure.</li>
+</ul>
+<h2 id="how-to-write">How to write</h2>
+<p>In the given structure you can write either pages or blog posts.
+The posts are listed in the index page. Once you added a new
+item, you can see it in this list and navigate to its page;
+the docpad rebuilds from source automatically.</p>
+<p>Place the pages as <code>*.html.md</code> files into <code>src/documents/pages</code>
+directory. The posts are kept into <code>src/documents/posts</code>.</p>
+<h2 id="how-to-develop-statics">How to develop statics</h2>
+<p>The statics is developed with <a href="http://bem.info/">BEM</a>.
+You can get CSS and JavaScript files for your pages in
+<code>desktop.bundles</code> directory. The pages are built with blocks
+from <code>desktop.blocks</code> folder.</p>
+<p>The rebuild process for statics runs under docpad server.</p>
+<p>Sometimes you may prefer to develop static pages separately.
+For this run</p>
+<pre class="highlight"><code class="hljs gradle">.<span class="hljs-regexp">/node_modules/</span>enb<span class="hljs-regexp">/bin/</span>enb server
+</code></pre><p>You will get another server which rebuilds statics. It
+produces static html files from <code>*.bemjson.js</code> files in
+<code>desktop.bundles</code>. You can develop the layout inserting
+json there and providing <code>BEMHTML</code> templates for the
+corresponding block. Find the documentation about <code>BEMHTML</code>
+here:</p>
+<ul>
+<li><a href="http://bem.info/libs/bem-core/2.2.0/templating/intro/">BEMHTML quick start</a></li>
+</ul>
+<p>For the same blocks you can provide <code>*.css</code> and <code>*.js</code> files
+and get them built into pages.</p>
+<h2 id="how-to-publish">How to publish</h2>
+<p>The blog is tuned to be deployed on GitHub. Thus, your
+repository has to be named as <code>&lt;username&gt;.github.com</code>. You
+can develop in its <code>source</code> branch. For deploying on
+<code>&lt;username&gt;.github.io</code> host run this command:</p>
+<pre class="highlight"><code class="hljs bash">docpad deploy-ghpages
+</code></pre>
+<p>This will create <code>master</code> branch of the repository whose
+source is linked to the host.</p>
+<p>You can also attach your own domain to the blog like I did.
+Also, it is possible to host your blog in differently named
+repository. However this will make you to provide changes
+on <code>docpad.coffee</code> configuration file.<br/>
+Study <a href="https://pages.github.com/">Github Pages</a> to learn more.</p>
+<h2 id="why-docpad-">Why Docpad?</h2>
+<p>This blog had been running on Jekyll for a while. This was an
+acceptable soltuion for a quick start. However with the growth
+of the posts base I started to suffer from not very fast
+rebuilds. Also, sometimes providing changes into the blog
+layout was hard, mostly due to the limitations of <code>liquid</code>
+templates.</p>
+<p>I&#39;ve decided that <a href="http://docpad.org/">Docpad</a> should be much
+better alternative. It is served as an npm package, possible to
+be extended with plugins and has an active fast-growing
+developers community.</p>
+<p>The <code>docpad-bem-stub</code> gives you initial structure, from which
+you already can write and publish. If you want to provide changes
+into the build process, modify the templates or extend with
+plugins, <a href="http://docpad.org/">learn at Docpad website</a>.</p>
+<p>Moreover, <a href="http://stackoverflow.com/">Stackoverflow</a> indeed already
+has an answer to almost all the questions you have. If not, create a new
+one.</p>
+<h2 id="why-bem-">Why BEM?</h2>
+<p>BEM is a very flexible modular solution for frontend which
+enables to develop reusable CSS and JavaScript components. Plus, some code
+can be taken from their open source libraries.</p>
+<p>You can learn a lot about BEM from <a href="/en/content">my articles and talks</a>
+or at the <a href="http://bem.info/">official BEM site</a>.</p>
+<h2 id="inside-about">Inside about</h2>
+<p>Above I described all you need to know for using your blog. Below there
+are a little more technical details on what is behind.</p>
+<h3 id="enb">ENB</h3>
+<p>I use <a href="https://github.com/enb-make/enb">enb</a> for building pages with block
+components. This solution is preferable to bem-tools because of it is much
+faster. When rebuilding pages on every change, this is sensetive.</p>
+<h3 id="i-bem-js-and-modules">i-bem.js and modules</h3>
+<p>I personally love that this solution brings <code>i-bem.js</code> library to the
+project. Hope to demonstrate its amazing capabilities here in near future.
+But before I stuff my blog with complex JavaScript components, you
+can see some examples and very detailed explanations in <a href="http://bem.info/tutorials/bem-js-tutorial/">Step-by-step tutorial on
+i-bem.js</a>.</p>
+<p>Another JavaScript feature you can enjoy is <a href="/en/issues/ym-modular-system">YM modular system</a>.
+These are JavaScript modules with asynchronious resolving.</p>
+<h3 id="bemhtml">BEMHTML</h3>
+<p>As mentioned above, <code>BEMHTML</code> is a templating solution. Being JavaScript-based,
+these templates can be applied on both server and client side. There are
+a couple of documents for a deeper dive into it here:</p>
+<ul>
+<li><a href="http://bem.info/libs/bem-core/2.2.0/templating/rationale/">BEMHTML templates description</a></li>
+<li><a href="http://bem.info/libs/bem-core/2.2.0/templating/reference/">BEMHTML tutorial</a></li>
+</ul>
+<h3 id="bem-core-and-bem-components">bem-core and bem-components</h3>
+<p>BEM is also nice for a possibility to borrow the components from libraries.
+<code>docpad-bem-stub</code> uses 2 now available libraries:</p>
+<ul>
+<li><a href="http://bem.info/libs/bem-core/2.2.0/">bem-core</a></li>
+<li><a href="http://bem.info/libs/bem-components/v2/">bem-components</a></li>
+</ul>
+<p>I hope to see more in the future.</p>
+<h2 id="what-next-">What next?</h2>
+<p>Indeed everything can be improved. These are my thoughts on how
+to continue.</p>
+<ul>
+<li>detect changes in static files<br/>
+Docpad watches over the changes in <code>src</code> directory. This means that
+when developing statics you will not get the rebuild. I am thinking
+on running <code>enb server</code> under <code>docpad run</code> and proxy. This maybe
+better than watch over a lot of files in <code>desktop.blocks</code>, <code>desktop.bundles</code>
+and all the libraries.</li>
+<li>css preprocessors<br/>
+The blog styles are in pure CSS now. But with a little
+change into enb configuration we can learn it to build with
+preprocessors.</li>
+<li>fresh design<br/>
+Creating a simple layout is the most difficult design task. Don&#39;t you agree?</li>
+<li>nice initial posts<br/>
+This is even harder than the desing tasks but I think the users feel much
+more comfortable when getting a blog with predefined texts.</li>
+</ul>
+<p>If you feel your oats and want to do your bit, fork <a href="https://github.com/varya/docpad-bem-stub">the repository</a>
+and start :-)</p>
+]]></description>
+            <link>http://varya.me//en/posts/docpad-with-bem-taste</link>
+            <guid isPermaLink="true">http://varya.me//en/posts/docpad-with-bem-taste</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Wed, 04 Jun 2014 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[HTML5 mobile apps with native UI on Steroids]]></title>
+            <description><![CDATA[<p>Recently I attended <a href="http://2014.front-trends.com/">Front Trends 2014</a> in Warsaw.
+This is an awesome conference which you should (no, definitely have to!) attend
+in 2015. Besides incredible main programm Front Trends provides a set of Lighting Talks.
+This year I was a part of it presenting <a href="http://www.appgyver.com/steroids">Steroids</a>,
+a framework and a toolkit for developing HTML5 mobile apps. If you did not have
+a chance to hear it, this offline text presentation is for you.<excerpt/></p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#Cover">
+  </iframe>
+</div>
+
+<p>Being an absolute newbie in developing mobile apps I decided to showcase
+Steroids because it enables me to create pretty native-looking application
+and smoothly go through the developing and releasing flow in a few minutes.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#summary">
+  </iframe>
+</div>
+
+<p>The Steroids toolkit is a CLI; it brings Steroids JavaScript framewrok into
+your project and takes care of building an app, developing flow, debugging
+and releasing. It is based on NodeJs, so you have to have it installed.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#3">
+  </iframe>
+</div>
+
+<p>The required version for now is <code>0.10.25</code>. Follow the <a href="http://academy.appgyver.com/categories/1/contents/1">Installation and Setup
+Guide</a>.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#4">
+  </iframe>
+</div>
+
+<p>Your very first start would be creating a project using <code>steroids create</code>
+command. Then, typing <code>steroids connect --watch</code> in the gotten project
+folder launches steroids process. The <code>--watch</code> flag as you can guess tells
+Steroids to watch over the file changes, rebuild the app and push the results
+to the connected devices.</p>
+<p>You can connect a physical smartphone to the project. After running
+<code>steroids connect</code> you get a web page with a QR code opened in your browser.
+Use <code>AppGyver Scanner</code> to read this QR code, it will bring the application
+into your phone and keep it connected.</p>
+<div style="text-align:center;">
+<a href="https://itunes.apple.com/us/app/appgyver-scanner/id575076515?mt=8"
+target="_blank"><img alt="Appstore" class="appstore_icon"
+src="https://share.appgyver.com/assets/appstore-df950585b54bd081a7826913fc715cd4.png"></a>
+<a href="https://play.google.com/store/apps/details?id=com.appgyver.android&amp;feature=nav_result#?t=W251bGwsMSwxLDMsImNvbS5hcHBneXZlci5hbmRyb2lkIl0."
+target="_blank"><img alt="Googleplay" class="appstore_icon"
+src="https://share.appgyver.com/assets/googleplay-2cef882d62e402fbdbfe8cdac5794069.png"></a>
+</div>
+
+<p>Another way to watch the app is to bring it into a desktop simulator.
+To do this, type <code>simulator</code> in the terminal wich launched
+<code>steroids connect</code>.</p>
+<p>You can change the application source files. E.g. edit a text
+in <code>www/index.html</code> and make sure that the app in the connected device
+or in the simulator has been changed.</p>
+<p>To provide more powerful changes you can learn from the examples
+and tutorials. Run <code>steroids generate</code> command and get the relevant
+code.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#5">
+  </iframe>
+</div>
+
+<p>You can learn from this code examples, from <a href="http://academy.appgyver.com/">tutorials</a>
+and <a href="http://docs.appgyver.com/en/stable/index.html">API Docs</a>. 
+Below I demonstrated some of the features which enable
+to use <em>native UI</em>.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#examples-list">
+  </iframe>
+</div>
+
+<p>Let us start with showing the native tabs.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#7">
+  </iframe>
+</div>
+
+<p>In the <code>config/application.coffee</code> file you can find a commented
+example of defining a list of tabs with their icons and
+locations (URLs) they lead to.</p>
+<p>In my application I created 3 tabs. They are for</p>
+<ul>
+<li>index.html</li>
+<li>notificationExample.html</li>
+<li>knowledge.html</li>
+</ul>
+<pre class="highlight"><code class="hljs coffeescript">steroids.config.tabBar.enabled = <span class="hljs-literal">true</span>
+steroids.config.tabBar.tabs = [
+  {
+    <span class="hljs-attribute">title</span>: <span class="hljs-string">"Index"</span>
+    <span class="hljs-attribute">icon</span>: <span class="hljs-string">"icons/pill@2x.png"</span>
+    <span class="hljs-attribute">location</span>: <span class="hljs-string">"http://localhost/index.html"</span>
+  },
+  {
+    <span class="hljs-attribute">title</span>: <span class="hljs-string">"Notifications"</span>
+    <span class="hljs-attribute">icon</span>: <span class="hljs-string">"icons/bell.png"</span>
+    <span class="hljs-attribute">location</span>: <span class="hljs-string">"http://localhost/notificationExample.html"</span>
+  },
+  {
+    <span class="hljs-attribute">title</span>: <span class="hljs-string">"Knowledge base"</span>
+    <span class="hljs-attribute">icon</span>: <span class="hljs-string">"icons/coding.png"</span>
+    <span class="hljs-attribute">location</span>: <span class="hljs-string">"http://localhost/knowledge.html"</span>
+  }
+]
+</code></pre>
+<p>Place the pages into <code>www</code> directory and keep them empty yet.
+Do not forget the icons. You can borrow the whole <a href="https://github.com/varya/steroids-fronttrends2014/tree/master/www/icons">icon
+folder</a>.</p>
+<p>After making the change wait for rebuild and check.</p>
+<div style="text-align:center;">
+<img src="http://img-fotki.yandex.ru/get/9088/14441195.32/0_84262_ae854cb8_orig.png" width="340" height="89" border="0" title="" alt=""/>
+</div>
+
+<p>Next, we can play with notifications.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#8">
+  </iframe>
+</div>
+
+<p>Place these buttons inside the <code>&lt;body&gt;</code> container of the
+<code>www/notificationExample.html</code> file.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"showAlert()"</span>&gt;</span>Show alert dialogue<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"showConfirm()"</span>&gt;</span>Show confirm dialogue<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"showPrompt()"</span>&gt;</span>Show prompt dialogue<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"vibrate()"</span>&gt;</span>Vibrate the device<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+</code></pre>
+<p>As you can see, they run different JavaScript functions on
+touch. To finish the page you need to define these functions
+in the <code>&lt;head&gt;</code> or linked <code>*.js</code> file. Each function demonstrates
+a kind of notification which are:</p>
+<ul>
+<li><code>navigator.notification.alert</code></li>
+<li><code>navigator.notification.confirm</code></li>
+<li><code>navigator.notification.prompt</code></li>
+<li><code>navigator.notification.vibrate</code></li>
+</ul>
+<p>Borrow the JavaScript code from <a href="https://github.com/varya/steroids-fronttrends2014/blob/master/www/notificationExample.html#L15">my repo</a>.</p>
+<p>Now you can navigate to this page using the tabs and try
+each type of notification with tapping.</p>
+<p>Another native element could be a button in the application navigation
+bar.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#9">
+  </iframe>
+</div>
+
+<p>The navigation bar can be modified with JavaScript on Steroids.
+If you want it to be the same across all the application pages,
+provide this JavaScript in the <code>www/javascripts/application.js</code> file
+which is linked to all the <code>*.html</code> files.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> loginButton = <span class="hljs-keyword">new</span> steroids.buttons.NavigationBarButton();
+loginButton.title = <span class="hljs-string">"the Button"</span>;
+
+loginButton.onTap = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    navigator.notification.alert(
+        <span class="hljs-string">'You tapped the button!'</span>,
+        <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{},
+        <span class="hljs-string">'the Alert'</span>,
+        <span class="hljs-string">'I did!'</span>
+    );
+}
+
+steroids.view.navigationBar.update({
+    buttons: {
+      right: [loginButton]
+    }
+})
+</code></pre>
+<p>This will bring the button to the right side of the
+navigation bar. Tapping on it you can see a notification; one
+of those you studied recently.</p>
+<div style="text-align:center;">
+<img src="http://img-fotki.yandex.ru/get/9115/14441195.32/0_84264_7f27d435_L.png" width="282" height="500" border="0" title="" alt=""/>
+</div>
+
+<p>The last of native UI examples in this app is showing
+modal views.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#10">
+  </iframe>
+</div>
+
+<p>Add this button into <code>www/index.html</code>:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button-block"</span>
+  <span class="hljs-attribute">ontouchend</span>=<span class="hljs-value">"showModal()"</span>&gt;</span>Open modal<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+</code></pre>
+<p>And code <code>showModal</code> method to open a view as a modal.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showModal</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> webView =
+    <span class="hljs-keyword">new</span> steroids.views.WebView(<span class="hljs-string">"/views/modalExample/show.html"</span>);
+  steroids.modal.show(webView);
+}
+</code></pre>
+<p>The related view is a piece of html, which you should place into
+<code>app/views/modalExample/show.html</code>. BTW, it has to have an interface
+element closing the view. To make the process faster, pick up the
+<a href="https://github.com/varya/steroids-fronttrends2014/blob/master/app/views/modalExample/show.html">code from the application repo</a>.</p>
+<p>With this and <a href="http://docs.appgyver.com/en/stable/steroids_Steroids%20Native%20UI_index.md.html#Steroids%C2%A0Native%C2%A0UI">other UI features</a>
+you can build a mobile interface which looks absolutely native for a
+device where you application runs.</p>
+<p>Once finished coding (or even in process) you may need to show the
+application to your friend, client or Mom.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#sharing">
+  </iframe>
+</div>
+
+<p>You can use the QR code from the beginning of our session which can
+bring your application to any any device directly from your computer.
+However this only will work if them both are connected to the same
+network.</p>
+<p>If you want to share with someone remotely, deploy your app into the cloud.
+The <code>steroids deploy</code> command serves for it. As a result you get
+a page (also with a QR code) which can be scanned with AppGyver Scaner on
+a phone and thus your pal get the same app from the cloud.</p>
+<p>All your applications in the cloud can be shared, tuned and built with
+web interface at <a href="https://cloud.appgyver.com/applications">cloud.appgyver.com</a>.</p>
+<p>From there you also push the app into AppStore and GooglePlay.</p>
+<div style="text-align:center;">
+<img src="http://img-fotki.yandex.ru/get/9062/14441195.32/0_84265_d03d686e_orig.png" width="500" height="327" border="0" title="" alt=""/>
+</div>
+
+<p>This is easy. As easy that a newbie can develop an app in a few minutes
+and show you the how-to.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#links">
+  </iframe>
+</div>
+
+<p>You can learn more about Steroids and Cordova (Steroids is based on PhoneGap)
+at the <a href="http://academy.appgyver.com/">AppGyver Academy</a> where you find:</p>
+<ul>
+<li>detailed tutorials,</li>
+<li>documentation,</li>
+<li>big community of devs.</li>
+</ul>
+<p>And, of course, you can read <a href="/en/posts/">this blog</a>. I promise to share my next findings
+regarding Steroids soon :-)</p>
+]]></description>
+            <link>http://varya.me//en/posts/html5-mobile-app-width-native-ui</link>
+            <guid isPermaLink="true">http://varya.me//en/posts/html5-mobile-app-width-native-ui</guid>
+            <dc:creator><![CDATA[Varya Stepanova]]></dc:creator>
+            <pubDate>Mon, 26 May 2014 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

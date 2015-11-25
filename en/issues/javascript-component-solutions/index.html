@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html class="page page_en" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>JavaScript components low basics</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+    <link  rel="stylesheet" href="/desktop.bundles/index/index.min.css" />
+    <script>
+    (function(d, s, l, r) {
+    if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
+        r = [
+            '<style>',
+            l.getItem('varya.me.fonts'),
+            '</style>'
+        ];
+        document.write(r.join(''));
+    }
+
+    })(document, Storage, localStorage);
+  </script>
+  <meta content="JavaScript components low basics" property="og:title"/><meta content="http://varya.me/en/issues/javascript-component-solutions/" property="og:url"/><meta property="og:site_name" content="var ya;"/><meta property="og:type" content="article"/><meta property="og:locale" content="en_US"/> <meta property="article:author" content="https://www.facebook.com/toivonens"/>
+</head>
+<body class="page page__body">
+    <header class="header">
+        <div class="header__left candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'></div>
+        <div class="header__center">
+            <logo class="logo">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+        </div>
+        <div class="header__right candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 } } }'></div>
+    </header>
+    <div class="layout">
+        <section class="main">
+            <ul class="languages">
+            
+                <li class="languages__lang">
+                    
+                        en
+                    
+                </li>
+                
+                <li class="languages__lang">
+                    
+                    <a href="/ru/">
+                        ru
+                    </a>
+                    
+                </li>
+                
+            </ul>
+            <div class="article" role="main">
+    <div class="article__body box__body">
+        <h1 class="article__header">
+            JavaScript components low basics
+        </h1>
+    </div>
+    <div class="article__text box__island">
+        <script type="text/javascript" src="//yandex.st/share/share.js"
+        charset="utf-8"></script>
+        <div class="share yashare-auto-init" data-yashareL10n="{{ lang }}"
+            data-yashareQuickServices="twitter,facebook,gplus" data-yashareTheme="counter"
+        ></div>
+        <span class="article__details author vcard">
+            Published on
+            28th June 2013
+        </span>
+        <p>This article features common problems that developers often face, or maybe used
+to face before the current open source era, when writing JavaScript for the
+client side; showcase of possible solutions to these problems and explanations
+of my choices.</p>
+<excerpt/>
+
+<h2 id="client-side-magic">Client-side magic</h2>
+<p>I am going to write about client-side JavaScript code only which runs under a
+browser and empowers an interface with interactivity.</p>
+<p>A piece of interface is represented with some HTML (and obviously styled with
+CSS). Also it can be equiped with JavaScript usually describing how to react to
+user&#39;s actions.</p>
+<p>So, when developing a piece of interface, we write:</p>
+<ol>
+<li>HTML/CSS</li>
+<li>JavaScript</li>
+<li>Some code to link 2 to 1.<br/>
+(This code says which part of HTML on a page corresponds to a JavaScript
+component.)</li>
+</ol>
+<h2 id="a-few-ways-to-matchmake">A few ways to matchmake</h2>
+<p>Thus, the so-called &#39;linking&#39; joins designated piece of JavaScript to its
+corresponding piece of HTML. There are different ways around this.</p>
+<h3 id="linking-with-event-attributes-the-old-school-way-">Linking with event attributes. The old school way.</h3>
+<p>Since, in most cases running JavaScript is a reaction to some events firing,
+there is an obvious way to declare in HTML what the reaction should be. These
+are the <a href="http://www.w3.org/TR/html401/interact/scripts.html#events">intrinsic event
+attributes</a>.</p>
+<p>For example, if you need a hidden <code>&lt;div&gt;</code> with an authorization form to be shown
+when a user clicks on a &#39;log in&#39; link you can write a JavaScript function for
+that. Then, call it in with an <code>onclick</code> attribute.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/login-page"</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"return showLogin()"</span>&gt;</span>log in<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"login-form"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"login"</span> <span class="hljs-attribute">...</span> &gt;</span>
+    ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<pre class="highlight"><code class="hljs javascript">dom = <span class="hljs-built_in">document</span>.getElementById ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showLogin</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">if</span> ( dom &amp;&amp; <span class="hljs-built_in">document</span>.forms[<span class="hljs-string">'login'</span>] ) {
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'login-form'</span>).style.display = <span class="hljs-string">'block'</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+</code></pre>
+<p>That works fine, except it uses global variables and demonstrates constraint
+with choosing a script loading strategy, which will be detailed below. Also in
+this case you cannot code any predefined action; everything happens after a user
+does something.<br/>
+I personally don&#39;t like this method because it leaves JavaScript implants in
+HTML code, whose main purpose is to describe the document structure, not page
+behavior.</p>
+<h3 id="moving-javascript-into-javascript">Moving JavaScript into JavaScript</h3>
+<p>Therefore, a better way would be to stack everything related to JavaScript into
+the page <code>.js</code> file.</p>
+<p>From here I will write jQuery code to save time and space. If you prefer another
+library, just get the gist.</p>
+<pre class="highlight"><code class="hljs javascript">$.fn.myPlugin = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">this</span>.fadeIn(
+    <span class="hljs-string">'normal'</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{ ... }
+  );
+}
+
+...
+
+$(<span class="hljs-string">'#element'</span>).myPlugin();
+</code></pre>
+<p>With plugins you can describe behavioral pattern and then apply it to the
+elements needed. In this case you don&#39;t need to inject JavaScript into HTML any
+more, which makes maintenance easier. But for every single element you still
+have to write a line of code to apply the plugin.</p>
+<h3 id="declaring-behavior-with-css-classes">Declaring behavior with CSS classes</h3>
+<p>When having many controls per page it&#39;s not useful to initialize each of them
+separately. A better way would be to mark HTML block with a matching CSS class.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"js-myPlugin"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"login"</span> /&gt;</span>
+</code></pre>
+<pre class="highlight"><code class="hljs javascript">$.fn.myPlugin = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">this</span>.fadeIn(
+    <span class="hljs-string">'normal'</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{ ... }
+  );
+}
+
+$(<span class="hljs-string">'.js-myPlugin'</span>).myPlugin();
+</code></pre>
+<p>With that you need your &#39;linking&#39; code only once for a plugin; it can be written
+in the plugin file to maintain consistency.</p>
+<h3 id="one-css-class-to-rule-them-all">One CSS class to rule them all</h3>
+<p>However, when the variety of components grows, the &#39;linking&#39; solution should be
+even more declarative. If there is JavaScript to run for a component, it will be
+visible from the block HTML structure. You can mark all the &#39;alive&#39; parts of
+your page with a special CSS class; for now let’s stick with <code>js</code> class.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">input</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"inpt js"</span>
+  <span class="hljs-attribute">data-component</span>=<span class="hljs-value">"myPlugin"</span>
+  <span class="hljs-attribute">name</span>=<span class="hljs-value">"login"</span>
+  <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>/&gt;</span>
+</code></pre>
+<p>The step up of this method is the need of information which plugin is to apply
+to a particular control and a little more code to initialize. This leads onto a
+question about how to parametrize the component. This example suggests data
+attributes although there is another idea (spoiler!).</p>
+<p>With minor change there is the code initializing a proper JavaScript component
+for all the blocks on a page:</p>
+<pre class="highlight"><code class="hljs javascript">$(<span class="hljs-string">'.js'</span>).each(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> $<span class="hljs-keyword">this</span> = $(<span class="hljs-keyword">this</span>);
+    $<span class="hljs-keyword">this</span>[$<span class="hljs-keyword">this</span>.data(<span class="hljs-string">'component'</span>)]();
+})
+</code></pre>
+<h2 id="parametrizing">Parametrizing</h2>
+<p>Not only a component name has to be provided when initializing with <code>js</code> CSS
+class. Different instances of the same component also may need to pass some
+information. For example, an input plugin can validate the field value. But
+depending on the input different kinds of data can be expected.</p>
+<pre class="highlight"><code class="hljs javascript">$.fn.myInput = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"login"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"zipcode"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>/&gt;</span>
+</code></pre>
+<p>It is easy to provide per-instance parameters when initializing every instance
+separately.</p>
+<pre class="highlight"><code class="hljs javascript">$(<span class="hljs-string">'input[name="login"]'</span>).myInput({
+  validator: <span class="hljs-string">'login'</span>
+});
+$(<span class="hljs-string">'input[name="zipcode"]'</span>).myInput({
+  validator: <span class="hljs-string">'zipcode'</span>
+});
+</code></pre>
+<h3 id="data-attributes">data attributes</h3>
+<p>With more declarative manner you need to include such information into a
+component HTML structure. Already mentioned data attributes can help with that.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">input</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"inpt js"</span>
+  <span class="hljs-attribute">data-component</span>=<span class="hljs-value">"myInput"</span>
+  <span class="hljs-attribute">data-validator</span>=<span class="hljs-value">"login"</span>
+  <span class="hljs-attribute">name</span>=<span class="hljs-value">"login"</span>
+  <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>/&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">input</span>
+  <span class="hljs-attribute">class</span>=<span class="hljs-value">"inpt js"</span>
+  <span class="hljs-attribute">data-component</span>=<span class="hljs-value">"myInput"</span>
+  <span class="hljs-attribute">data-validator</span>=<span class="hljs-value">"zipcode"</span>
+  <span class="hljs-attribute">name</span>=<span class="hljs-value">"login"</span>
+  <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>/&gt;</span>
+</code></pre>
+<pre class="highlight"><code class="hljs javascript">$.fn.myInput = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.data(<span class="hljs-string">'validator'</span>) === <span class="hljs-string">'login'</span>) <span class="hljs-comment">// Supported by many frameworks</span>
+}
+</code></pre>
+<p>Data attributes is a brainchild of HTML5, so carry a doctype when using them.</p>
+<p>As a widespread solution with many libraries providing helpers for them, data
+attributes make parametrizing not difficult. Although the limitation of being
+able to use key-value pairs only can affect the plugin architecture.</p>
+<h3 id="onclick">onclick</h3>
+<p>An elegant way is to provide data for a JavaScript component using natural
+JavaScript format, such as hashes. Here the event attributes can serve us again.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">input</span>
+    <span class="hljs-attribute">class</span>=<span class="hljs-value">"myInput"</span>
+    <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"return {
+        validator: 'login'
+    }"</span>
+    <span class="hljs-attribute">name</span>=<span class="hljs-value">"login"</span>
+    <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>/&gt;</span>
+</code></pre>
+<p>When a user normally clicks, the hash is booleanized into <code>true</code>, so the default
+browser click reaction is exactly as expected. From your plugin you can call the
+event-named method and get the data in its native JavaScript format without any
+need to parse and convert.</p>
+<pre class="highlight"><code class="hljs javascript">$.fn.myInput = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+ <span class="hljs-keyword">this</span>[<span class="hljs-number">0</span>].onclick().validator === <span class="hljs-string">'login'</span>
+};
+</code></pre>
+<p>As JavaScript, this data can be of any type. Not only strings and numbers, but
+large treeish hashes, arrays and even functions are possible. Such flexibility
+is extra salutary for organizing data when writing complex components and for
+customization.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">input</span>
+    <span class="hljs-attribute">class</span>=<span class="hljs-value">"inpt js"</span>
+    <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"return {
+        component: 'myInput',
+        validator: function() { ... }
+    }"</span>
+    <span class="hljs-attribute">name</span>=<span class="hljs-value">"login"</span>
+    <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>/&gt;</span>
+</code></pre>
+<p>With nested hashes an HTML block can be operated by 2 or more different
+JavaScript components, each with its own set of parameters.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">input</span>
+    <span class="hljs-attribute">class</span>=<span class="hljs-value">"inpt js"</span>
+    <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"return {
+        'myInput' : {
+            validator: function() { ... }
+        },
+        'anotherPlugin' : {}
+    }"</span>
+    <span class="hljs-attribute">name</span>=<span class="hljs-value">"login"</span>
+    <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>/&gt;</span>
+</code></pre>
+<h2 id="start-fast">Start fast</h2>
+<h3 id="initializing-components">Initializing components</h3>
+<p>Applying plugins to elements is only possible when the page is loaded and your
+library can look for these elements in the document.</p>
+<p>First, you can link the script file after its related piece of HTML code.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">input</span>
+    <span class="hljs-attribute">class</span>=<span class="hljs-value">"myInput"</span>
+    <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"return {
+        validator: 'login'
+    }"</span>
+    <span class="hljs-attribute">name</span>=<span class="hljs-value">"login"</span>
+    <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/plugins/myInput.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<p>Whilst it can work sometimes, the method is just unreliable. It&#39;s not certain
+that the DOM will be ready by the time of the script loaded. Loading every
+plugin as a separate file definitely slows down the page. In addition, this is
+just ugly.</p>
+<p>The page needs to be loaded when running scripts. So, logically an <code>onload</code> event
+on the <code>window</code> object can help.</p>
+<pre class="highlight"><code class="hljs javascript">$(<span class="hljs-built_in">window</span>).load(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    $(<span class="hljs-string">'.js'</span>).each(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">var</span> $<span class="hljs-keyword">this</span> = $(<span class="hljs-keyword">this</span>);
+        $<span class="hljs-keyword">this</span>[$<span class="hljs-keyword">this</span>.data(<span class="hljs-string">'component'</span>)]();
+    })
+})
+</code></pre>
+<p>The drawback is that <code>window.onload</code> occurs when all the content is loaded.
+Including images, which mostly are not necessary to run scripts.</p>
+<p>The time to safely initialize your components is right after the document has
+been loaded and parsed into DOM, which is accompanied by a <code>document.ready</code> event.</p>
+<pre class="highlight"><code class="hljs javascript">$(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    $(<span class="hljs-string">'.js'</span>).each(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">var</span> $<span class="hljs-keyword">this</span> = $(<span class="hljs-keyword">this</span>);
+        $<span class="hljs-keyword">this</span>[$<span class="hljs-keyword">this</span>.data(<span class="hljs-string">'component'</span>)]();
+    })
+})
+</code></pre>
+<p>With that all the plugins used can be bundled into one JavaScript file and
+linked to a page within the <code>&lt;head&gt;</code> element as usual. Purposely loaded in
+advance, the script will be run when the page is ready.</p>
+<h3 id="loading-scripts">Loading scripts</h3>
+<p>Although, putting <code>&lt;script&gt;</code> tag into <code>&lt;head&gt;</code> also delays page loading. A better
+strategy is to draw a page as fast as possible and then introduce JavaScript
+magic. Reach that by placing <code>&lt;script&gt;</code> before the closing <code>&lt;/body&gt;</code> tag.</p>
+<p>On the other hand, when a user sees a page, it is expected to work. By now, it&#39;s
+hardly possible to respond user actions with plain HTML; people are used to rich
+interfaces. If that&#39;s crucial for your page functioning, divide the script file
+into 2. The first one linked in <code>&lt;head&gt;</code> provides major functionality. And the
+second, placed before <code>&lt;/body&gt;</code> contains all the magic tricks.</p>
+<h2 id="common-best-practises">Common best practises</h2>
+<h3 id="cover-up">Cover up</h3>
+<p>In this article, I switched from calling <code>showLogin</code> function to jQuery plugins
+and some improvements were made in linking components to HTML code. But more
+than this, giving JavaScript responsibility for the page behavior also enables
+to step forward with avoiding global variables in the code.</p>
+<p>This is true not only for JavaScript. The ids, form names and input names (all
+the things that can be named in HTML) are also a kind of global object.</p>
+<p>Common advice is to avoid their use.</p>
+<blockquote>
+<p>By reducing your global footprint to a single name, you significantly reduce
+the chance of bad interactions with other applications, widgets, or libraries.
+Douglas Crockford</p>
+</blockquote>
+<p>With the <a href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html">module
+pattern</a>
+wrapping your component into self-invoking anonymous function all the global
+variables turn into local ones.</p>
+<p>Use CSS classes instead of <code>id</code> and <code>name</code> attributes to identify elements and
+access them from JavaScript. This makes code more declarative, introduces
+flexibility and is easier to maintain in the long run.</p>
+<h3 id="doublecheck-you-don-t-double-do">Doublecheck you don&#39;t double-do</h3>
+<p>Initializing components can take time and resources. So, when first initialized,
+the result can be saved and reused later. jQuery provides a nice <code>data</code> method
+suitable for that.</p>
+<pre class="highlight"><code class="hljs javascript">$.fn.myPlugin = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.each(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> $<span class="hljs-keyword">this</span> = $(<span class="hljs-keyword">this</span>),
+      data = $<span class="hljs-keyword">this</span>.data(<span class="hljs-string">'myPlugin'</span>);
+  <span class="hljs-keyword">if</span> (!data) {
+    <span class="hljs-comment">// init...</span>
+    $<span class="hljs-keyword">this</span>.data(<span class="hljs-string">'myPlugin'</span>, { <span class="hljs-comment">/* ... */</span> });
+  }
+}};
+</code></pre>
+<h3 id="life-beyond-the-element">Life beyond the element</h3>
+<p>If the corresponding block has been removed from a page, it&#39;s the component&#39;s
+responsibility to clean up. Event listeners, constant background calculations
+and even layout changes, that could have happend before. When being deactivated,
+a component has to place things back with a <code>destroy</code> method.</p>
+<pre class="highlight"><code class="hljs javascript">$.fn.myPlugin = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.each(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> $<span class="hljs-keyword">this</span> = $(<span class="hljs-keyword">this</span>),
+      data = $<span class="hljs-keyword">this</span>.data(<span class="hljs-string">'myPlugin'</span>);
+  <span class="hljs-keyword">if</span> (!data) {
+    <span class="hljs-comment">// init...</span>
+    $<span class="hljs-keyword">this</span>.data(<span class="hljs-string">'myPlugin'</span>, {
+      destroy: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{ <span class="hljs-comment">/* ... */</span> }
+    });
+  }
+}};
+</code></pre>
+<h3 id="initializing-by-request">Initializing by request</h3>
+<p>With dynamically changed pages it&#39;s not enough to initialize components just the
+ones after <code>domReady</code>. There has to be some code to run every time you append
+new block onto a page, which turns HTML fragment into a functioning component.</p>
+<pre class="highlight"><code class="hljs javascript">$.fn.myInit = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">this</span>.find(<span class="hljs-string">'.js'</span>).each(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">var</span> $<span class="hljs-keyword">this</span> = $(<span class="hljs-keyword">this</span>);
+        $<span class="hljs-keyword">this</span>[$<span class="hljs-keyword">this</span>.data(<span class="hljs-string">'component'</span>)]();
+    });
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+})
+</code></pre><p>A special method to destroy the components being removed has similar sense.</p>
+<pre class="highlight"><code class="hljs javascript">$.fn.myDestroy = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">this</span>.find(<span class="hljs-string">'.js'</span>).each(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">var</span> $<span class="hljs-keyword">this</span> = $(<span class="hljs-keyword">this</span>),
+            name = $<span class="hljs-keyword">this</span>.data(<span class="hljs-string">'component'</span>);
+        $<span class="hljs-keyword">this</span>.data(name).destroy();
+    });
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.remove();
+})
+</code></pre>
+<h3 id="lazy-initialization">Lazy initialization</h3>
+<p>One more trick is a <a href="http://en.wikipedia.org/wiki/Lazy_initialization">lazy
+initialization</a> of components.
+The idea is similar to <a href="https://github.com/stevekwan/best-practices/blob/master/javascript/best-practices.md#lazy-load-assets-that-arent-immediately-required">lazy
+loading</a>
+and merely means do as less as possible beforehand.</p>
+<p>Instead of initializing all the components when <code>domReady</code> fires, you can do
+this separately for every component at the time the particular component needs
+that. Usually that&#39;s after a user started to interact with
+it and the respective events triggered. So, all the necessary predefined actions
+won&#39;t be run in advance and won&#39;t
+slow down page rendering and the work of other components. Objects corresponding
+to never-used components won&#39;t be created, which saves memory.</p>
+<h2 id="component-core">Component core</h2>
+<p>Many code practises above would be repeated again and again when implementing
+a lot of components. As you can guess, all the common things can be wrapped with
+a framework representing the core code for the components.</p>
+<p>One of the examples of this is jQuery UI. As many other frameworks it provides
+API to create your own JavaScript components.</p>
+<h3 id="predefined-component-structure">Predefined component structure</h3>
+<p>With a component framework a developer uses API and describes a predefined
+component structure. All the common things are in the core.</p>
+<pre class="highlight"><code class="hljs javascript">$.widget(<span class="hljs-string">'my.component'</span>, {
+    _create: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{ <span class="hljs-comment">/* ... */</span> },
+    destroy: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{ <span class="hljs-comment">/* ... */</span> }
+    myMethod: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{ <span class="hljs-comment">/* ... */</span> },
+});
+</code></pre>
+<h3 id="high-level-patterns">High-level patterns</h3>
+<p>Besides predefined structure, frameworks also provide architectural solutions to
+different problems.<br/>
+For example, with the releaving modules a core can provide an API to extend the
+main component functionality.</p>
+<pre class="highlight"><code class="hljs javascript">$.widget(<span class="hljs-string">'ui.dialog'</span>, $.ui.dialog, {
+    close: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span>(confirm(<span class="hljs-string">'Close???'</span>)) {
+            <span class="hljs-keyword">this</span>._super(<span class="hljs-string">'close'</span>)
+        }
+    }
+})
+</code></pre>
+<p>Component frameworks define basics for reusing code and implementing reusable
+JavaScript modules.</p>
+<p>Another example of such a high-level component framework is JavaScript part of
+<a href="http://bem.info/">BEM</a>. A developer can operate components with OOP common
+patterns; create classes, their dynamic and static methods, as well as inherit
+component and extend their functionality and reuse basics with super calls.</p>
+<pre class="highlight"><code class="hljs javascript">BEM.DOM.decl(
+    { block: <span class="hljs-string">'my-dialog'</span>, baseBlock: <span class="hljs-string">'dialog'</span> },
+    {
+        myMethod: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">this</span>.__base();
+            <span class="hljs-keyword">this</span>.__self.myStaticMethod();
+        }
+    },
+    {
+    myStaticMethod: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{ <span class="hljs-comment">/*...*/</span> }
+    }
+);
+</code></pre>
+<h2 id="from-now-on">From now on</h2>
+<p>A number of JavaScript frameworks and libraries were created last years.
+Generally they contain the solutions to the problems listed and also cover
+others, like:</p>
+<ul>
+<li>loading by request</li>
+<li>building page <code>.js</code> files</li>
+<li>dependency system</li>
+<li>complex component relations and data sharing</li>
+<li>data binding</li>
+</ul>
+<p>With comparing articles like <a href="http://blog.stevensanderson.com/2012/08/01/rich-javascript-applications-the-seven-frameworks-throne-of-js-2012/">Rich JavaScript Applications – the Seven
+Frameworks</a>
+by Steven Sanderson you can choose the one you like and have a quick look under
+the hood.</p>
+<h2 id="credits">Credits</h2>
+<p>Before I wrap up, let me
+thank <a href="https://github.com/veged">Sergey Berezhnoy</a> also known as
+<a href="https://twitter.com/veged">@veged</a> for his presentation about creating
+JavaScript components. Russian speaking readers can also enjoy the video! <a href="http://events.yandex.ru/events/yasubbotnik/msk-jul-2012/talks/302/">
+Сергей Бережной, Яндекс
+Разные способы создания клиентских
+js-компонентов</a></p>
+
+    </div>
+    <div class="comments">
+        <div class="comments__box box__body">
+            <h4 class="comments__header">
+                Comments
+            </h4>
+        </div>
+        <div class="comments__body box__island">
+            
+              
+                  <div id="disqus_thread"></div>
+                  <script type="text/javascript">
+                      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                      var disqus_shortname = 'varya'; // required: replace example with your forum shortname
+
+                      /* * * DON'T EDIT BELOW THIS LINE * * */
+                      (function() {
+                          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                      })();
+                  </script>
+                  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+              
+            
+        </div>
+    </div>
+    <div class="related">
+        <div class="related__body box__body">
+            <h4 class="related__header">
+                By the way
+            </h4>
+        </div>
+        <div class="related__text box__island">
+                <a href="https://github.com/varya/varya.github.com/issues/new?title=Feedback for JavaScript components low basics">
+                Create a GitHub issue for me</a> if you've spotted a typo or a mistake, or wish to add something on.
+                Or you can
+                <a href="https://github.com/varya/varya.github.com/edit/develop/src/documents/issues/javascript-component-solutions/index_en.html.md">edit this post yourself and make me a patch</a>.
+        </div>
+    </div>
+</div>
+        </section>
+        <nav class="sidebar">
+        <ul class="menu-vert">
+            <h3 class="menu-vert__title box__title">
+                On this site
+            </h3>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/posts">
+                        Tech Blog
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/content">
+                        Articles and talks
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/">
+                        About me
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/life">
+                        My life
+                    </a>
+                </li>
+            
+            </ul>
+            <div class="github i-bem box github_not-ready"
+                data-bem='{ "github" : { "user" : "varya" } }'>
+                <div class="github__header box__title">
+                  Last updated repos
+                </div>
+                <ul class="github__body"></ul>
+            </div>
+        </nav>
+        <aside class="prompting">
+            <ul class="social-ico menu-vert">
+                <li class="menu-vert__item">
+                    <ul class="social-ico__text menu-vert">
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/en/feed.xml" title="New on Varya.me in English">en</a>
+                        </li>
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/ru/feed.xml" title="Новые записи на Varya.me">ru</a>
+                        </li>
+                    </ul>
+                    <a class="link social-ico__ico social-ico__ico_type_rss" href="/feed.xml" title="New on Varya.me"></a>
+                </li>
+                <li class="menu-vert__item">
+                <a class="link social-ico__ico social-ico__ico_type_twitter"
+                    href="https://twitter.com/varya_en"
+                    title="@varya_en"
+                    target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_github" href="https://github.com/varya" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_facebook" href="http://www.facebook.com/varvara.stepanova.9" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_linkedin" href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b" target="_blank"></a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <div class="footer__outer">
+        <footer class="footer">
+            <div class="footer__left">
+            </div>
+            <div class="footer__center">
+                <a class="link  link_text  link_wrapper" href="http://varya.me/">
+                    © 2015
+                    <span class="link__inner">Varya Stepanova</span>.
+                </a>
+                <a class="link  link_wrapper  link_twitter"
+                    href="https://twitter.com/varya_en"
+                    title="@varya_en">
+                    <img alt="Twitter" class="ico" src="http://favicon.yandex.net/favicon/twitter.com" title="Twitter"/>
+                    <span class="link__inner">Follow me on twitter</span>!
+                </a>
+            </div>
+            <div class="footer__right">
+            </div>
+        </footer>
+    </div>
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter20478625 = new Ya.Metrika({id:20478625, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/20478625" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+    <script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/desktop.bundles/index/index.min.js" async defer></script>
+</body>
+</html>

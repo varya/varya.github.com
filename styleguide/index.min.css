@@ -1,0 +1,1414 @@
+/* ../../desktop.blocks/grid/grid.css: begin */ /**/
+    /* 12 column grid. 5.5% colum + 3% margin */
+    
+    .grid
+    {
+        position: absolute;
+        top: 0;
+        z-index: 9999;
+        width: 1200px;
+        left: 50%;
+        margin-left: -600px;
+        height: 100%;
+        background-image: -webkit-linear-gradient(0deg, rgba(255,0,0, .15) 0%, rgba(255,0,0, .15) 64.7%, transparent 64.7%);
+        background-size: 8.6459% 100%;
+    }
+    
+/* ../../desktop.blocks/grid/grid.css: end */ /**/
+
+/* ../../desktop.blocks/text/text.css: begin */ /**/
+    /*
+    Text
+    
+    markup:
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    </p>
+    
+    Styleguide 1.2
+    */
+    
+    /*
+    Code
+    
+    markup:
+    <code>var myVar;</code
+    
+    Styleguide 1.2.1
+    
+    */
+    .highlight pre,
+    code
+    {
+        font-family: Monaco;
+        padding: .1em .25em;
+    }
+    
+    
+/* ../../desktop.blocks/text/text.css: end */ /**/
+
+/* ../../desktop.blocks/articles-list/articles-list.css: begin */ /**/
+    /*
+    List of articles
+    
+    markup:
+    <div class="article" role="main">
+      <div class="article__body box__body">
+        <sg-insert>3.1.1</sg-insert>
+      </div>
+      <sg-insert>3.4.1</sg-insert>
+      <sg-insert>3.4.1</sg-insert>
+      <sg-insert>3.4.1</sg-insert>
+    </div>
+    
+    Styleguide 3.4
+    */
+    
+    
+    /*
+    Articles-list's item
+    
+    markup:
+    <div class="article__text box__island articles-list__item">
+      <a href="#">Article name</a>
+      —
+      <em class="published">
+        11th February 2015
+      </em>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+        in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+    
+    Styleguide 3.4.1
+    */
+    
+    .articles-list__item
+    {
+        margin-bottom: 1em;
+    }
+    
+    .articles-list__item p
+    {
+        margin-top: 0.15em;
+    }
+    
+/* ../../desktop.blocks/articles-list/articles-list.css: end */ /**/
+
+/* ../../desktop.blocks/header/header.css: begin */ /**/
+    /*
+    Header
+    
+    markup:
+    <header class="header">
+      <div class="header__left candies i-bem"
+          data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'></div>
+      <div class="header__center">
+          <logo class="logo">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+      </div>
+      <div class="header__right candies i-bem"
+          data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 } } }'></div>
+    </header>
+    
+    Styleguide 2.1
+    */
+    
+    .header
+    {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -ms-flex-order: 1;
+        -webkit-order: 1;
+        order: 1;
+        width: 1200px;
+        margin: 2em auto 3em;
+        text-align: left;
+        padding: 0;
+        display: table;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .header {
+            width: 720px;
+        }
+    }
+    
+    .header__left
+    {
+        padding: 0;
+        margin: 0;
+        width: auto;
+        display: table-cell;
+        text-align: right;
+        width: 778px;
+        line-height: 4em;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .header__left {
+            width: 100%;
+        }
+    }
+    
+    .header__center
+    {
+        padding: 0;
+        margin: 0;
+        display: table-cell;
+        width: 201px;
+    }
+    
+    .header__right
+    {
+        width: 325px;
+        padding-left: 20px;
+        display: table-cell;
+        line-height: 4em;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .header__right {
+            display: none;
+        }
+    }
+    
+    .header__item
+    {
+        border-radius: 50%;
+        margin-bottom: 30px;
+        margin-right: 3px;
+        display: inline-block;
+    }
+    
+/* ../../desktop.blocks/header/header.css: end */ /**/
+
+/* ../../desktop.blocks/logo/logo.css: begin */ /**/
+    /*
+    
+    Logo
+    
+    markup:
+    <logo class="logo">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+    
+    Styleguide 1.1
+    
+    */
+    .logo
+    {
+        color: #C9C9C9;
+        margin: 0;
+        margin-right: -10px;
+        font: 32px/1 Monaco;
+        text-align: center;
+        float: right;
+    }
+    
+    .logo .var
+    {
+        color: #66C9EE;
+    }
+    
+    .logo .ya
+    {
+        color: #82B964;
+    }
+    
+    @-webkit-keyframes twinkly {
+        0%   { background: #D24D33; }
+        100% { background: lightgrey; }
+    }
+    @-moz-keyframes twinkly {
+        0%   { background: #D24D33; }
+        100% { background: lightgrey; }
+    }
+    
+    .logo .cursor
+    {
+        width: 3px;
+        height: 45px;
+        margin-bottom: -10px;
+        display: inline-block;
+        -webkit-animation: twinkly .5s alternate infinite;
+        -moz-animation: twinkly .5s alternate infinite;
+    }
+    
+/* ../../desktop.blocks/logo/logo.css: end */ /**/
+
+/* ../../desktop.blocks/candies/candies.css: begin */ /**/
+    /*
+    Candies
+    
+    markup:
+    <div class="candies i-bem" data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'>
+    </div>
+    
+    Styleguide 5.1
+    */
+    
+    .candies_i
+    {
+        display: inline-block;
+        border-radius: 50%;
+        margin-right: 4px;
+    }
+    
+/* ../../desktop.blocks/candies/candies.css: end */ /**/
+
+/* ../../desktop.blocks/layout/layout.css: begin */ /**/
+    .layout
+    {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        -moz-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        width: 1200px;
+        margin: 0 auto;
+        text-align: left;
+    }
+    
+    @media only screen and (max-width: 1024px) {
+        .layout {
+            width: 1000px;
+        }
+    }
+    
+    @media screen and (max-width: 768px) {
+        .layout {
+            width: 710px;
+        }
+    }
+    
+/* ../../desktop.blocks/layout/layout.css: end */ /**/
+
+/* ../../desktop.blocks/main/main.css: begin */ /**/
+    .main
+    {
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        -ms-flex-order: 2;
+        -webkit-order: 2;
+        order: 2;
+        width: 66%;
+        -moz-box-flex: 1;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .main
+        {
+            -webkit-box-ordinal-group: 2;
+            -moz-box-ordinal-group: 2;
+            -ms-flex-order: 2;
+            -webkit-order: 2;
+            order: 2;
+            width: 100%;
+            display: block;
+        }
+    }
+    
+/* ../../desktop.blocks/main/main.css: end */ /**/
+
+/* ../../desktop.blocks/article/article.css: begin */ /**/
+    /*
+    Article
+    
+    markup:
+    <div class="article" role="main">
+      <div class="article__body box__body">
+        <sg-insert>3.1.1</sg-insert>
+      </div>
+      <div class="article__text box__island">
+        <sg-insert>3.1.2</sg-insert>
+        <p>
+          Article text
+        </p>
+      </div>
+    </div>
+    
+    Styleguide 3.1
+    */
+    
+    /*
+    Article header
+    
+    markup:
+    <h1 class="article__header">
+      Article title
+    </h1>
+    
+    Styleguide 3.1.1
+    */
+    
+    .article
+    {
+        font: 16px/1.5 'Noto Serif', Palatino Linotype, Palatino, serif;
+        font-weight: 400;
+    }
+    
+    .article__header
+    {
+        padding: 0;
+        margin: 0;
+        color: #D24D33;
+        font-size: 1.5em;
+        font-weight: 400;
+    }
+    
+    .article__header-link,
+    .article__header-link:link,
+    .article__header-link:hover,
+    .article__header-link:visited
+    {
+        color: #D24D33;
+    }
+    
+    /*
+    Article details
+    
+    markup:
+    <span class="article__details author vcard">
+        Published on
+        11th February 2015
+    </span>
+    
+    Styleguide 3.1.2
+    */
+    
+    .article__details
+    {
+        font-size: .8em;
+        color: #999;
+    }
+    
+    .article__text code
+    {
+        white-space: nowrap;
+    }
+    
+    .article__text pre code
+    {
+        white-space: pre;
+    }
+    
+    .article__image
+    {
+        display: block;
+        border: rgba(0,0,0, 0.1) 1px solid;
+        margin: 1em auto;
+    }
+    
+/* ../../desktop.blocks/article/article.css: end */ /**/
+
+/* ../../desktop.blocks/box/box.css: begin */ /**/
+    /*
+    Box
+    
+    markup:
+    <div class="box__body">
+      Box Body
+    </div>
+    <div class="box__island">
+      Island
+    </div>
+    
+    Styleguide 2.3
+    */
+    
+    .box
+    {
+        margin-bottom: 1em;
+    }
+    
+    .box__body
+    {
+        padding: 0 1em;
+    }
+    
+    .box__island
+    {
+        padding: 0 1em;
+        background-color: #f9f9f9;
+    
+        padding: 1em;
+        margin-top: .25em;
+    
+        border: rgba(0,0,0, .075) 1px solid;
+    }
+    
+    .box__title
+    {
+        font-size: 1.5em;
+        font-weight: 400;
+        margin: 0 0 .5em;
+        padding: 0;
+        color: #666;
+    }
+    
+/* ../../desktop.blocks/box/box.css: end */ /**/
+
+/* ../../desktop.blocks/share/share.css: begin */ /**/
+    /*
+    Share
+    
+    markup:
+    <script type="text/javascript" src='../../desktop.blocks/share/"/yandex.st/share/share.js" charset="utf-8"></script>
+    <div class="share yashare-auto-init" data-yashareL10n="{{ lang }}"
+        data-yashareQuickServices="twitter',facebook,gplusvkontakte" data-yashareTheme="counter"
+    ></div>
+    
+    Styleguide 1.6
+    */
+    .share
+    {
+        height: 26px;
+        float: right;
+    }
+    
+    .b-share-btn__wrap
+    {
+        display: block;
+    }
+    
+/* ../../desktop.blocks/share/share.css: end */ /**/
+
+/* ../../desktop.blocks/slide/slide.css: begin */ /**/
+    .slide
+    {
+        text-align: center;
+    }
+    .slide__frame
+    {
+        margin: 0 auto;
+        width: 600px;
+        height: 375px;
+        border: 1px solid rgba(0,0,0, 0.5);
+    }
+    
+/* ../../desktop.blocks/slide/slide.css: end */ /**/
+
+/* ../../desktop.blocks/date/date.css: begin */ /**/
+    .date__day,
+    .date__month,
+    .date__year
+    {
+        font-style: normal;
+    }
+    
+/* ../../desktop.blocks/date/date.css: end */ /**/
+
+/* ../../desktop.blocks/comments/comments.css: begin */ /**/
+    /*
+    
+    Comments
+    
+    markup:
+    <div class="comments">
+      <div class="comments__box box__body">
+        <sg-insert>3.2.1</sg-insert>
+      </div>
+      <div class="comments__body box__island">
+        Disqus comments
+      </div>
+    </div>
+    
+    Styleguide 3.2
+    
+    */
+    
+    .comments
+    {
+        margin-top: 2em;
+    }
+    
+    /*
+    Comments' header
+    
+    markup:
+    <h4 class="comments__header">
+      Comments
+    </h4>
+    
+    Styleguide 3.2.1
+    */
+    
+    .comments__header
+    {
+        margin: 0;
+        font-size: 1.5em;
+    }
+    
+/* ../../desktop.blocks/comments/comments.css: end */ /**/
+
+/* ../../desktop.blocks/related/related.css: begin */ /**/
+    /*
+    Related infromation
+    
+    markup:
+    <div class="related">
+      <div class="related__body box__body">
+        <h4 class="related__header">
+          Related info
+        </h4>
+      </div>
+      <div class="related__text box__island">
+        Related text and <sg-insert>1.3</sg-insert>
+      </div>
+    </div>
+    
+    Styleguide 3.3
+    */
+    
+    .related
+    {
+        margin-top: 2em;
+    }
+    
+    .related__header
+    {
+        margin: 0;
+        font-size: 1.5em;
+    }
+    
+    .related__text
+    {
+    }
+    
+/* ../../desktop.blocks/related/related.css: end */ /**/
+
+/* ../../desktop.blocks/sidebar/sidebar.css: begin */ /**/
+    /*
+    Sidebar
+    
+    markup:
+    <nav class="sidebar">
+      <sg-insert>4.2</sg-insert>
+      <sg-insert>4.3</sg-insert>
+    </nav>
+    
+    Styleguide 4.1
+    */
+    
+    .sidebar
+    {
+        -webkit-box-ordinal-group: 3;
+        -moz-box-ordinal-group: 3;
+        -ms-flex-order: 3;
+        -webkit-order: 3;
+        order: 3;
+        width: 22.5%;
+        padding-left: 2em;
+        padding-left: 3%;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .sidebar
+        {
+            -webkit-box-ordinal-group: 1;
+            -moz-box-ordinal-group: 1;
+            -ms-flex-order: 1;
+            -webkit-order: 1;
+            order: 1;
+            width: 100%;
+            margin-bottom: 1em;
+            font-size: 1.25em;
+            text-align: center;
+            display: block;
+        }
+    
+        .sidebar .menu-vert__title
+        {
+            display: none;
+        }
+        .sidebar .menu-vert__item
+        {
+            display: inline-block;
+        }
+        .sidebar .menu-vert__item:after
+        {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: rgba(0,0,0, 0.2);
+            border-radius: 50%;
+            margin: 0 1em;
+        }
+    
+        .sidebar .menu-vert__item:last-child::after
+        {
+            display: none;
+        }
+    }
+    
+    .sidebar:before {
+      content: '';
+      width: 16em;
+      display: block;
+      height: 0;
+    }
+    
+/* ../../desktop.blocks/sidebar/sidebar.css: end */ /**/
+
+/* ../../libs/bouwdoos/desktop.blocks/menu-vert/menu-vert.css: begin */ /**/
+    .menu-vert,
+    .menu-vert__item
+    {
+        margin: 0;
+        padding: 0;
+    
+        list-style: none;
+    }
+    
+/* ../../libs/bouwdoos/desktop.blocks/menu-vert/menu-vert.css: end */ /**/
+
+/* ../../desktop.blocks/link/link.css: begin */ /**/
+    /*
+    Link
+    
+    markup:
+    <a class="link" href="http://google.com">Link</a>
+    
+    Styleguide 1.3
+    */
+    
+    .link
+    {
+        color: #3B8DBD;
+    }
+    
+/* ../../desktop.blocks/link/link.css: end */ /**/
+
+/* ../../desktop.blocks/github/github.css: begin */ /**/
+    /*
+     * Source: http://www.joepettersson.com/demo/jquery-github-widget/
+     */
+    
+    /*
+    Github
+    
+    markup:
+    <div class="github i-bem box github_not-ready"
+        data-bem='{ "github" : { "user" : "varya" } }'>
+        <div class="github__header box__title">
+          Last updated repos
+        </div>
+        <ul class="github__body"></ul>
+    </div>
+    
+    Styleguide 4.3
+    */
+    
+    .github
+    {
+        margin-top: 1em;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .github
+        {
+            display: none;
+        }
+    }
+    
+    .github_not-ready
+    {
+        display: none;
+    }
+    
+    .github__body {
+        font-size: .8em;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    .github__repo
+    {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+/* ../../desktop.blocks/github/github.css: end */ /**/
+
+/* ../../desktop.blocks/prompting/prompting.css: begin */ /**/
+    /*
+    Prompting
+    
+    markup:
+    <aside class="prompting">
+      <sg-insert>1.5</sg-insert>
+    </aside>
+    
+    Styleguide 4.4
+    */
+    
+    .prompting
+    {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -ms-flex-order: 1;
+        -webkit-order: 1;
+        order: 1;
+        width: 5.5%;
+        display: block;
+        padding-right: 2em;
+        padding-right: 3%;
+        text-align: right;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .prompting
+        {
+            -webkit-box-ordinal-group: 3;
+            -moz-box-ordinal-group: 3;
+            -ms-flex-order: 3;
+            -webkit-order: 3;
+            order: 3;
+            width: 100%;
+            text-align: center;
+            display: block;
+        }
+    }
+    
+    .prompting:before
+    {
+        content: '';
+        width: 4em;
+        display: block;
+        height: 0;
+    }
+    
+/* ../../desktop.blocks/prompting/prompting.css: end */ /**/
+
+/* ../../desktop.blocks/languages/languages.css: begin */ /**/
+    /*
+    Language switcher
+    
+    markup:
+    <ul class="languages">
+      <li class="languages__lang">
+        <a href="#">
+          ru
+        </a>
+        en
+      </li>
+    </ul>
+    
+    Styleguide 1.4
+    */
+    
+    .languages
+    {
+        display: block;
+        padding: 0;
+        margin: .5em 0 0;
+        list-style: none;
+        float: right;
+    }
+    .languages__lang
+    {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+    }
+    .languages__kludge
+    {
+        color: #666;
+    }
+    
+/* ../../desktop.blocks/languages/languages.css: end */ /**/
+
+/* ../../desktop.blocks/social-ico/social-ico.css: begin */ /**/
+    /* Icons by Victor Gozalez http://www.iconarchive.com/show/so-smooth-social-icons-by-minisoft.es.html */
+    
+    /*
+    
+    Set of social icons
+    
+    markup:
+    <ul class="social-ico menu-vert">
+      <li class="menu-vert__item">
+        <ul class="social-ico__text menu-vert">
+          <li class="menu-vert__item">
+            <a class="link social-ico__rss-text" href="/en/feed.xml" title="New on Varya.me in English">en</a>
+          </li>
+          <li class="menu-vert__item">
+            <a class="link social-ico__rss-text" href="/ru/feed.xml" title="Новые записи на Varya.me">ru</a>
+          </li>
+        </ul>
+        <a class="link social-ico__ico social-ico__ico_type_rss" href="/feed.xml" title="New on Varya.me"></a>
+      </li>
+      <li class="menu-vert__item">
+      <a class="link social-ico__ico social-ico__ico_type_twitter"
+          href="#"
+          title="My twitter"
+          target="_blank"></a>
+      </li>
+    </ul>
+    
+    Styleguide 1.5
+    
+    */
+    .social-ico
+    {
+        padding-top: 2em;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .social-ico
+        {
+            padding-top: 1em;
+        }
+    
+        .social-ico .menu-vert__item
+        {
+            display:inline-block;
+        }
+    }
+    
+    /*
+    Social icon
+    
+    .social-ico__ico_type_rss         - RSS
+    .social-ico__ico_type_twitter     - Twitter
+    .social-ico__ico_type_github      - Github
+    .social-ico__ico_type_facebook    - Facebook
+    .social-ico__ico_type_linkedin    - LinkedIn
+    
+    markup:
+    <a class="link social-ico__ico {$modifiers}" href="#" title="Icon title"></a>
+    
+    Styleguide 1.5.1
+    */
+    
+    .social-ico__ico
+    {
+        width: 44px;
+        height: 44px;
+        display: block;
+        margin: .5em 0 0 auto;
+        border-radius: 50%;
+        background-position: 50% 50%;
+    }
+    
+    .social-ico__ico_in-text
+    {
+        width: 22px;
+        height: 22px;
+        background-size: 40px 40px;
+        background-repeat: no-repeat;
+        display: inline-block;
+        margin: 0 0 0 0.5em;
+        vertical-align: middle;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .social-ico__ico
+        {
+            margin: 0;
+            margin-right: 0.5em;
+        }
+    }
+    
+    .social-ico__ico_type_rss
+    {
+        background-image: url("../../desktop.blocks/social-ico/social-ico__rss.png");
+    }
+    
+    @media screen and (max-width: 768px) {
+        .social-ico__ico_type_rss
+        {
+            margin-right: 2em;
+        }
+    }
+    
+    .social-ico__ico_type_github
+    {
+        background-image: url("../../desktop.blocks/social-ico/social-ico__github.png");
+    }
+    
+    .social-ico__ico_type_twitter
+    {
+        background-image: url("../../desktop.blocks/social-ico/social-ico__twitter.png");
+    }
+    
+    .social-ico__ico_type_facebook
+    {
+        background-image: url("../../desktop.blocks/social-ico/social-ico__facebook.png");
+    }
+    
+    .social-ico__ico_type_linkedin
+    {
+        background-image: url("../../desktop.blocks/social-ico/social-ico__linkedin.png");
+    }
+    
+    .social-ico__text
+    {
+        float: left;
+        line-height: 1.25em;
+        font-size: .8em;
+        padding-top: .3em;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .social-ico__text
+        {
+            float: right;
+            margin-right: 1em;
+        }
+        .social-ico__text .menu-vert__item
+        {
+            display: list-item;
+        }
+    }
+    
+    .social-ico__rss-text
+    {
+        color: #DF620E;
+    }
+    
+/* ../../desktop.blocks/social-ico/social-ico.css: end */ /**/
+
+/* ../../desktop.blocks/footer/footer.css: begin */ /**/
+    /*
+    Footer
+    
+    markup:
+    <div class="footer__outer">
+      <footer class="footer">
+        <div class="footer__left">
+        </div>
+        <div class="footer__center">
+            Links
+        </div>
+        <div class="footer__right">
+        </div>
+      </footer>
+    </div>
+    
+    Styleguide 2.2
+    
+    */
+    
+    .footer__outer
+    {
+        background: #999;
+    }
+    
+    .footer
+    {
+        width: 1200px;
+        margin: 2em auto 0;
+        padding: 1.5em 0;
+        text-align: left;
+        font-size: .8em;
+        color: white;
+        font-family: Monaco;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        -moz-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .footer {
+            width: 710px;
+            text-align: center;
+        }
+    }
+    
+    .footer__left
+    {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -ms-flex-order: 1;
+        -webkit-order: 1;
+        order: 1;
+        width: 13%;
+        padding-left: 5em;
+        padding-left: 10%;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .footer__left
+        {
+            padding-left: 0;
+            width: 100%;
+            margin-bottom: 0.5em;
+        }
+    
+        .footer__left .menu-vert__item
+        {
+            display: inline-block;
+        }
+    
+        .footer__left .menu-vert__item:after
+        {
+            content: '·';
+            margin: 0 0.5em;
+        }
+    
+        .footer__left .menu-vert__item:last-child::after
+        {
+            display: none;
+        }
+    }
+    
+    .footer__center
+    {
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        -ms-flex-order: 2;
+        -webkit-order: 2;
+        order: 2;
+        width: 48.5%;
+        padding-left: 2em;
+        padding-left: 3%;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .footer__center
+        {
+            padding-left: 0;
+            width: 100%;
+        }
+    }
+    
+    .footer__right
+    {
+        -webkit-box-ordinal-group: 3;
+        -moz-box-ordinal-group: 3;
+        -ms-flex-order: 3;
+        -webkit-order: 3;
+        order: 3;
+        width: 22.5%;
+        padding-left: 2em;
+        padding-left: 3%;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .footer__right
+        {
+            display: none;
+        }
+    }
+    
+    .footer .link
+    {
+        color: #fff;
+    }
+    
+/* ../../desktop.blocks/footer/footer.css: end */ /**/
+
+/* ../../desktop.blocks/page/page.css: begin */ /**/
+    .page__body
+    {
+        margin: 0;
+        text-align: center;
+    
+        background-color: #f6f6f6;
+    
+        font: 16px/1.5 'Noto Serif', Palatino Linotype, Palatino, serif;
+        font-weight: 400;
+    }
+    
+/* ../../desktop.blocks/page/page.css: end */ /**/
+
+/* ../../libs/bem-highlight.js/blocks/highlight/highlight.css: begin */ /**/
+    /*
+    
+    Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+    
+    */
+    
+    pre code {
+      display: block; padding: 0.5em;
+      background: #F0F0F0;
+    }
+    
+    pre code,
+    pre .subst,
+    pre .tag .title,
+    pre .lisp .title,
+    pre .clojure .built_in,
+    pre .nginx .title {
+      color: black;
+    }
+    
+    pre .string,
+    pre .title,
+    pre .constant,
+    pre .parent,
+    pre .tag .value,
+    pre .rules .value,
+    pre .rules .value .number,
+    pre .preprocessor,
+    pre .haml .symbol,
+    pre .ruby .symbol,
+    pre .ruby .symbol .string,
+    pre .aggregate,
+    pre .template_tag,
+    pre .django .variable,
+    pre .smalltalk .class,
+    pre .addition,
+    pre .flow,
+    pre .stream,
+    pre .bash .variable,
+    pre .apache .tag,
+    pre .apache .cbracket,
+    pre .tex .command,
+    pre .tex .special,
+    pre .erlang_repl .function_or_atom,
+    pre .asciidoc .header,
+    pre .markdown .header,
+    pre .coffeescript .attribute {
+      color: #800;
+    }
+    
+    pre .comment,
+    pre .annotation,
+    pre .template_comment,
+    pre .diff .header,
+    pre .chunk,
+    pre .asciidoc .blockquote,
+    pre .markdown .blockquote {
+      color: #888;
+    }
+    
+    pre .number,
+    pre .date,
+    pre .regexp,
+    pre .literal,
+    pre .hexcolor,
+    pre .smalltalk .symbol,
+    pre .smalltalk .char,
+    pre .go .constant,
+    pre .change,
+    pre .lasso .variable,
+    pre .asciidoc .bullet,
+    pre .markdown .bullet,
+    pre .asciidoc .link_url,
+    pre .markdown .link_url {
+      color: #080;
+    }
+    
+    pre .label,
+    pre .javadoc,
+    pre .ruby .string,
+    pre .decorator,
+    pre .filter .argument,
+    pre .localvars,
+    pre .array,
+    pre .attr_selector,
+    pre .important,
+    pre .pseudo,
+    pre .pi,
+    pre .haml .bullet,
+    pre .doctype,
+    pre .deletion,
+    pre .envvar,
+    pre .shebang,
+    pre .apache .sqbracket,
+    pre .nginx .built_in,
+    pre .tex .formula,
+    pre .erlang_repl .reserved,
+    pre .prompt,
+    pre .asciidoc .link_label,
+    pre .markdown .link_label,
+    pre .vhdl .attribute,
+    pre .clojure .attribute,
+    pre .asciidoc .attribute,
+    pre .lasso .attribute,
+    pre .coffeescript .property {
+      color: #88F
+    }
+    
+    pre .keyword,
+    pre .id,
+    pre .title,
+    pre .built_in,
+    pre .aggregate,
+    pre .css .tag,
+    pre .javadoctag,
+    pre .phpdoc,
+    pre .yardoctag,
+    pre .smalltalk .class,
+    pre .winutils,
+    pre .bash .variable,
+    pre .apache .tag,
+    pre .go .typename,
+    pre .tex .command,
+    pre .asciidoc .strong,
+    pre .markdown .strong,
+    pre .request,
+    pre .status {
+      font-weight: bold;
+    }
+    
+    pre .asciidoc .emphasis,
+    pre .markdown .emphasis {
+      font-style: italic;
+    }
+    
+    pre .nginx .built_in {
+      font-weight: normal;
+    }
+    
+    pre .coffeescript .javascript,
+    pre .javascript .xml,
+    pre .lasso .markup,
+    pre .tex .formula,
+    pre .xml .javascript,
+    pre .xml .vbscript,
+    pre .xml .css,
+    pre .xml .cdata {
+      opacity: 0.5;
+    }
+    
+/* ../../libs/bem-highlight.js/blocks/highlight/highlight.css: end */ /**/
+
+/* ../../desktop.blocks/recent-posts/recent-posts.css: begin */ /**/
+    /*
+    Recent posts
+    
+    markup:
+    <div class="recent-posts i-bem" data-bem='{ "recent-posts": {} }'>
+      <ul class="recent-posts__list">
+        <li class="recent-posts__item">
+          <span class="badge recent-posts__date">11 February 2015</span>
+          <span class="recent-posts__text-item">
+            <a href="/en/posts/jscs-in-use">JSCS in use</a>
+          </span>
+        </li>
+        <li class="recent-posts__item">
+          <span class="badge recent-posts__date">12 September 2014</span>
+          <span class="recent-posts__text-item">
+            <a href="/en/posts/run-app-in-time-on-mac">Run on time (about Mac applications)</a>
+          </span>
+       </li>
+      </ul>
+    </div>
+    
+    Styleguide 3.5
+    */
+    
+    .recent-posts
+    {
+        padding: 0;
+    }
+    
+    .recent-posts__list
+    {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .recent-posts__item
+    {
+        margin: 0;
+        border-bottom: rgba(0,0,0, .075) 1px solid;
+    }
+    
+    .recent-posts__date
+    {
+        padding: 0.25em 0.25em 0.25em 1em;
+        width: 6em;
+        display: inline-block;
+        text-align: right;
+        border-right: rgba(0,0,0, .075) 1px solid;
+        background-image: -webkit-linear-gradient(top, rgba(0,0,0, 0), rgba(255,255,255, 0.5));
+    }
+    
+    .recent-posts__text-item
+    {
+        padding: 0.25em 0.5em 0.25em 0.25em;
+    }
+    
+/* ../../desktop.blocks/recent-posts/recent-posts.css: end */ /**/
+
+/* ../../libs/bem-highlight.js/blocks/highlight/_theme/highlight_theme_solarized-light.css: begin */ /**/
+    /*
+    
+    Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+    
+    */
+    
+    .highlight_theme_solarized-light .hljs {
+      display: block;
+      overflow-x: auto;
+      padding: 0.5em;
+      background: #fdf6e3;
+      color: #657b83;
+      -webkit-text-size-adjust: none;
+    }
+    
+    .highlight_theme_solarized-light .hljs-comment, .highlight_theme_solarized-light .diff .hljs-header, .highlight_theme_solarized-light .hljs-doctype, .highlight_theme_solarized-light .hljs-pi, .highlight_theme_solarized-light .lisp .hljs-string, .highlight_theme_solarized-light .hljs-javadoc {
+      color: #93a1a1;
+    }
+    
+    /* Solarized Green */
+    .highlight_theme_solarized-light .hljs-keyword, .highlight_theme_solarized-light .hljs-winutils, .highlight_theme_solarized-light .method, .highlight_theme_solarized-light .hljs-addition, .highlight_theme_solarized-light .css .hljs-tag, .highlight_theme_solarized-light .hljs-request, .highlight_theme_solarized-light .hljs-status, .highlight_theme_solarized-light .nginx .hljs-title {
+      color: #859900;
+    }
+    
+    /* Solarized Cyan */
+    .highlight_theme_solarized-light .hljs-number, .highlight_theme_solarized-light .hljs-command, .highlight_theme_solarized-light .hljs-string, .highlight_theme_solarized-light .hljs-tag .hljs-value, .highlight_theme_solarized-light .hljs-rules .hljs-value, .highlight_theme_solarized-light .hljs-phpdoc, .highlight_theme_solarized-light .hljs-dartdoc, .highlight_theme_solarized-light .tex .hljs-formula, .highlight_theme_solarized-light .hljs-regexp, .highlight_theme_solarized-light .hljs-hexcolor, .highlight_theme_solarized-light .hljs-link_url {
+      color: #2aa198;
+    }
+    
+    /* Solarized Blue */
+    .highlight_theme_solarized-light .hljs-title, .highlight_theme_solarized-light .hljs-localvars, .highlight_theme_solarized-light .hljs-chunk, .highlight_theme_solarized-light .hljs-decorator, .highlight_theme_solarized-light .hljs-built_in, .highlight_theme_solarized-light .hljs-identifier, .highlight_theme_solarized-light .vhdl .hljs-literal, .highlight_theme_solarized-light .hljs-id, .highlight_theme_solarized-light .css .hljs-function {
+      color: #268bd2;
+    }
+    
+    /* Solarized Yellow */
+    .highlight_theme_solarized-light .hljs-attribute, .highlight_theme_solarized-light .hljs-variable, .highlight_theme_solarized-light .lisp .hljs-body, .highlight_theme_solarized-light .smalltalk .hljs-number, .highlight_theme_solarized-light .hljs-constant, .highlight_theme_solarized-light .hljs-class .hljs-title, .highlight_theme_solarized-light .hljs-parent, .highlight_theme_solarized-light .hljs-type, .highlight_theme_solarized-light .hljs-link_reference {
+      color: #b58900;
+    }
+    
+    /* Solarized Orange */
+    .highlight_theme_solarized-light .hljs-preprocessor, .highlight_theme_solarized-light .hljs-preprocessor .hljs-keyword, .highlight_theme_solarized-light .hljs-pragma, .highlight_theme_solarized-light .hljs-shebang, .highlight_theme_solarized-light .hljs-symbol, .highlight_theme_solarized-light .hljs-symbol .hljs-string, .highlight_theme_solarized-light .diff .hljs-change, .highlight_theme_solarized-light .hljs-special, .highlight_theme_solarized-light .hljs-attr_selector, .highlight_theme_solarized-light .hljs-subst, .highlight_theme_solarized-light .hljs-cdata, .highlight_theme_solarized-light .css .hljs-pseudo, .highlight_theme_solarized-light .hljs-header {
+      color: #cb4b16;
+    }
+    
+    /* Solarized Red */
+    .highlight_theme_solarized-light .hljs-deletion, .highlight_theme_solarized-light .hljs-important {
+      color: #dc322f;
+    }
+    
+    /* Solarized Violet */
+    .highlight_theme_solarized-light .hljs-link_label {
+      color: #6c71c4;
+    }
+    
+    .highlight_theme_solarized-light .tex .hljs-formula {
+      background: #eee8d5;
+    }
+    
+/* ../../libs/bem-highlight.js/blocks/highlight/_theme/highlight_theme_solarized-light.css: end */ /**/
+
+/* ../../desktop.blocks/highlight/_theme/highlight_theme_solarized-light.css: begin */ /**/
+    .highlight_theme_solarized-light .hljs {
+        background: #fdf6e3;
+    }
+    
+/* ../../desktop.blocks/highlight/_theme/highlight_theme_solarized-light.css: end */ /**/

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html class="page page_en" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Borschik helps with remote static assets</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+    <link  rel="stylesheet" href="/desktop.bundles/index/index.min.css" />
+    <script>
+    (function(d, s, l, r) {
+    if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
+        r = [
+            '<style>',
+            l.getItem('varya.me.fonts'),
+            '</style>'
+        ];
+        document.write(r.join(''));
+    }
+
+    })(document, Storage, localStorage);
+  </script>
+  <meta content="Borschik helps with remote static assets" property="og:title"/><meta content="http://varya.me/en/issues/borschik-static-assets/" property="og:url"/><meta property="og:site_name" content="var ya;"/><meta property="og:type" content="article"/><meta property="og:locale" content="en_US"/> <meta property="article:author" content="https://www.facebook.com/toivonens"/>
+</head>
+<body class="page page__body">
+    <header class="header">
+        <div class="header__left candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'></div>
+        <div class="header__center">
+            <logo class="logo">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+        </div>
+        <div class="header__right candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 } } }'></div>
+    </header>
+    <div class="layout">
+        <section class="main">
+            <ul class="languages">
+            
+                <li class="languages__lang">
+                    
+                        en
+                    
+                </li>
+                
+                <li class="languages__lang">
+                    
+                    <a href="/ru/issues/borschik-static-assets">
+                        ru
+                    </a>
+                    
+                </li>
+                
+            </ul>
+            <div class="article" role="main">
+    <div class="article__body box__body">
+        <h1 class="article__header">
+            Borschik helps with remote static assets
+        </h1>
+    </div>
+    <div class="article__text box__island">
+        <script type="text/javascript" src="//yandex.st/share/share.js"
+        charset="utf-8"></script>
+        <div class="share yashare-auto-init" data-yashareL10n="{{ lang }}"
+            data-yashareQuickServices="twitter,facebook,gplus" data-yashareTheme="counter"
+        ></div>
+        <span class="article__details author vcard">
+            Published on
+            10th March 2014
+        </span>
+        <p>Last week I met the need to develop a web site which static assets have to be
+hosted on a different server and respond by different URLs than its HTML. This
+is the requirement to all the static files: stylesheets and JavaScript linked to
+the page as well as imges and fonts mentioned in HTML, CSS and JavaScript
+code.<excerpt/> However it is obvious that these resources should be local when developing.
+Thus, the challenge was to introduce a piece of magic which knows where we aim
+to host the statics and transforms all the relative paths into absolute ones
+according to it.</p>
+<p>The tools which helped me is called
+<a href="http://bem.info/tools/optimizers/borschik/">Borschik</a>. The name is funny.
+Besides it reffers to a famous Russian/Ukranian soup, it also alludes to a word
+&quot;сборщик&quot; [sborschik], and so might be translated as</p>
+<p><strike>ass</strike>embler. &quot;Removing the ass part&quot; as one of my friends says.
+:-)</p>
+<center>
+<iframe src="//embed.gettyimages.com/embed/135591409?et=B_T3l-shrE-pr9-ELe_wJw&sig=5haG67PAzCxGourA96ZB7m9LwSket1v9PpvXEXNIkBM=" width="508" height="407" frameborder="0" scrolling="no"></iframe>
+</center>
+
+<p>In the <a href="https://github.com/varya/st-deliverer">varya/st-deliverer</a> public repository
+you can find a stub project illustrating the solution.</p>
+<h3 id="project-structure">Project structure</h3>
+<p>As you will be able to see later <code>borschik</code> is very flexible. So you can use any
+project structure. In my project I store everything in
+<a href="b.com/varya/st-deliverer/tree/master/src">src folder</a>.
+When building I get HTML files in
+<a href="https://github.com/varya/st-deliverer/tree/gh-pages/dist/html">dist/html directory</a>.
+Check out the code and make sure that static files are linked from a different
+server by their absolute paths.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Deliver static assets with Borschik<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">link</span>
+      <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span>
+      <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://varya.github.io/stor.../styles.css"</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">body</span>
+    <span class="hljs-attribute">class</span>=<span class="hljs-value">"page"</span>
+    <span class="hljs-attribute">background</span>=<span class="hljs-value">"http://varya.github.io/stor.../grungy.jpg"</span>&gt;</span>
+  ...
+</code></pre>
+<p><a href="http://varya.me/st-deliverer/dist/html/">Open in your browser</a> to enjoy my visual
+design and a tom-cat.</p>
+<h3 id="bring-borschik-to-your-project">Bring borschik to your project</h3>
+<p>Borschik is an npm package. So, you can install it globally by runing</p>
+<pre class="highlight"><code class="hljs bash">npm install -g borschik
+</code></pre>
+<p>I personally prefer local project dependencies, so my project has a
+<a href="https://github.com/varya/st-deliverer/blob/master/package.json">package.json</a>
+file:</p>
+<pre class="highlight"><code class="hljs javascript">{
+  ...
+  <span class="hljs-string">"dependencies"</span>: {
+    <span class="hljs-string">"borschik"</span>: <span class="hljs-string">"0.4.2"</span>
+  },
+  ...
+}
+</code></pre>
+<h3 id="configuration">Configuration</h3>
+<p>Before we start the magic transformation it is needed to instruct <code>borschik</code> what
+to transform and how to transform. The <a href="https://github.com/varya/st-deliverer/blob/master/.borschik">.borschik</a>
+configuration file serves for that.</p>
+<pre class="highlight"><code class="hljs javascript">{
+  <span class="hljs-string">"paths"</span> : {
+    <span class="hljs-string">"src/img/"</span>: <span class="hljs-string">"http://varya.github.io/stor.../st-deliverer/img/"</span>,
+    <span class="hljs-string">"src/css/"</span>: <span class="hljs-string">"http://varya.github.io/stor.../st-deliverer/css/"</span>,
+    <span class="hljs-string">"src/font/"</span>: <span class="hljs-string">"http://varya.github.io/storage/fonts/"</span>
+
+  }
+}
+</code></pre>
+<p>Note that you can tune different replacements for different paths. Here I tried
+to illustrate with the fonts.</p>
+<h3 id="run-the-command">Run the command</h3>
+<p>Run borschik over a file which contains links to local static assets, and you
+will get the transformation result. For example,</p>
+<pre class="highlight"><code class="hljs bash">./node_modules/borschik/bin/borschik \
+  --input=src/css/styles.css
+</code></pre>
+<p>Fot the building process you will also need an <code>--output</code> flag to instruct
+<code>borschik</code> where to place the result.</p>
+<p>Borschik knows the syntax of web technologies. It will not touch the links
+mentioned in text, for example.</p>
+<h3 id="build-system">Build system</h3>
+<p>Now you can use <code>borschik</code> in your project build process. I simply wrote a
+<a href="https://github.com/varya/st-deliverer/blob/master/Makefile">Makefile</a> with a
+lot of help from <a href="https://github.com/alexeyten">@alexeyten</a> (tnx!).
+There is also a grunt plugin <a href="https://github.com/megatolya/grunt-borschik">megatolya/grunt-borschik</a>.<br/>
+Indeed, <code>borschik</code> is included into <a href="http://bem.info/tools/bem/bem-tools/">bem-tools</a>
+and <a href="https://github.com/enb-make/enb">enb</a> — the two competitive solutions for
+building the projects with BEM structure.</p>
+<h3 id="result">Result</h3>
+<p><a href="http://varya.me/st-deliverer/dist/html/">Check the cat again</a>. Still there?</p>
+<p>You also can learn about other features of <code>borschik</code> from the article:
+<a href="http://bem.info/articles/borschik/">http://bem.info/articles/borschik/</a>.</p>
+
+    </div>
+    <div class="comments">
+        <div class="comments__box box__body">
+            <h4 class="comments__header">
+                Comments
+            </h4>
+        </div>
+        <div class="comments__body box__island">
+            
+              
+                  <div id="disqus_thread"></div>
+                  <script type="text/javascript">
+                      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                      var disqus_shortname = 'varya'; // required: replace example with your forum shortname
+
+                      /* * * DON'T EDIT BELOW THIS LINE * * */
+                      (function() {
+                          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                      })();
+                  </script>
+                  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+              
+            
+        </div>
+    </div>
+    <div class="related">
+        <div class="related__body box__body">
+            <h4 class="related__header">
+                By the way
+            </h4>
+        </div>
+        <div class="related__text box__island">
+                <a href="https://github.com/varya/varya.github.com/issues/new?title=Feedback for Borschik helps with remote static assets">
+                Create a GitHub issue for me</a> if you've spotted a typo or a mistake, or wish to add something on.
+                Or you can
+                <a href="https://github.com/varya/varya.github.com/edit/develop/src/documents/issues/borschik-static-assets/index_en.html.md">edit this post yourself and make me a patch</a>.
+        </div>
+    </div>
+</div>
+        </section>
+        <nav class="sidebar">
+        <ul class="menu-vert">
+            <h3 class="menu-vert__title box__title">
+                On this site
+            </h3>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/posts">
+                        Tech Blog
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/content">
+                        Articles and talks
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/">
+                        About me
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/life">
+                        My life
+                    </a>
+                </li>
+            
+            </ul>
+            <div class="github i-bem box github_not-ready"
+                data-bem='{ "github" : { "user" : "varya" } }'>
+                <div class="github__header box__title">
+                  Last updated repos
+                </div>
+                <ul class="github__body"></ul>
+            </div>
+        </nav>
+        <aside class="prompting">
+            <ul class="social-ico menu-vert">
+                <li class="menu-vert__item">
+                    <ul class="social-ico__text menu-vert">
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/en/feed.xml" title="New on Varya.me in English">en</a>
+                        </li>
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/ru/feed.xml" title="Новые записи на Varya.me">ru</a>
+                        </li>
+                    </ul>
+                    <a class="link social-ico__ico social-ico__ico_type_rss" href="/feed.xml" title="New on Varya.me"></a>
+                </li>
+                <li class="menu-vert__item">
+                <a class="link social-ico__ico social-ico__ico_type_twitter"
+                    href="https://twitter.com/varya_en"
+                    title="@varya_en"
+                    target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_github" href="https://github.com/varya" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_facebook" href="http://www.facebook.com/varvara.stepanova.9" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_linkedin" href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b" target="_blank"></a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <div class="footer__outer">
+        <footer class="footer">
+            <div class="footer__left">
+            </div>
+            <div class="footer__center">
+                <a class="link  link_text  link_wrapper" href="http://varya.me/">
+                    © 2015
+                    <span class="link__inner">Varya Stepanova</span>.
+                </a>
+                <a class="link  link_wrapper  link_twitter"
+                    href="https://twitter.com/varya_en"
+                    title="@varya_en">
+                    <img alt="Twitter" class="ico" src="http://favicon.yandex.net/favicon/twitter.com" title="Twitter"/>
+                    <span class="link__inner">Follow me on twitter</span>!
+                </a>
+            </div>
+            <div class="footer__right">
+            </div>
+        </footer>
+    </div>
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter20478625 = new Ya.Metrika({id:20478625, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/20478625" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+    <script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/desktop.bundles/index/index.min.js" async defer></script>
+</body>
+</html>

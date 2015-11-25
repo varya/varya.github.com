@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html class="page page_en" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Style-guide the smaller things</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+    <link  rel="stylesheet" href="/desktop.bundles/index/index.min.css" />
+    <script>
+    (function(d, s, l, r) {
+    if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
+        r = [
+            '<style>',
+            l.getItem('varya.me.fonts'),
+            '</style>'
+        ];
+        document.write(r.join(''));
+    }
+
+    })(document, Storage, localStorage);
+  </script>
+  <meta content='A story about how I tried to use SC5 Style Guide on my tiny tiny blog project and aparently got see the CSS architecture from completety different perspective.
+' property="og:description"/><meta content="Style-guide the smaller things" property="og:title"/><meta content="http://varya.me/en/posts/sc5-styleguide-for-smallers/" property="og:url"/><meta property="og:site_name" content="var ya;"/><meta property="og:type" content="article"/><meta property="og:locale" content="en_US"/> <meta property="article:author" content="https://www.facebook.com/toivonens"/>
+</head>
+<body class="page page__body">
+    <header class="header">
+        <div class="header__left candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'></div>
+        <div class="header__center">
+            <logo class="logo">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+        </div>
+        <div class="header__right candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 } } }'></div>
+    </header>
+    <div class="layout">
+        <section class="main">
+            <ul class="languages">
+            
+                <li class="languages__lang">
+                    
+                        en
+                    
+                </li>
+                
+                <li class="languages__lang">
+                    
+                    <a href="/ru/posts/sc5-styleguide-for-smallers">
+                        ru
+                    </a>
+                    
+                </li>
+                
+            </ul>
+            <div class="article" role="main">
+    <div class="article__body box__body">
+        <h1 class="article__header">
+            Style-guide the smaller things
+        </h1>
+    </div>
+    <div class="article__text box__island">
+        <script type="text/javascript" src="//yandex.st/share/share.js"
+        charset="utf-8"></script>
+        <div class="share yashare-auto-init" data-yashareL10n="{{ lang }}"
+            data-yashareQuickServices="twitter,facebook,gplus" data-yashareTheme="counter"
+        ></div>
+        <span class="article__details author vcard">
+            Published on
+            30th July 2015
+        </span>
+        <p>I&#39;ve been presenting <a href="http://styleguide.sc5.io/">SC5 Style Guide</a> several times during this year sharing my experience of using it for one
+of the SC5&#39;s clients, Elisa. Assuming that Elisa is a huge mobile operator with a lot of websites and a need
+to keep those websites visually consistent, there is no wonder that the SC5 Style Guide as a tool provides benefits
+there. But what about smaller websites? Would it be useful there? I did not know the answer to this question
+and wanted to experiment. The experiment was conducted on my blog codebase.</p>
+<excerpt/>
+
+<p>This is how the Living Style Guide looks like: <a href="http://varya.me/styleguide">varya.me/styleguide</a>. You can see the interface
+decomposed into block pieces, each of those representing a meaningful interface unit. I haven&#39;t seen the interface of my blog
+from this perspective before. It gave me a lot of insight into the ways the CSS architecture of my blog should be designed.
+But, let&#39;s consider things one by one.</p>
+<h2 id="fine-tuning-the-sc5-style-guide-tool">Fine-tuning the SC5 Style Guide tool</h2>
+<p>Everything starts with</p>
+<pre class="highlight"><code class="hljs q">npm install --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span> sc5-styleguide
+</code></pre><p>Then, I was able to use the tool to build the interface representation. It required
+<a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/Gulpfile.js">a couple of Gulp tasks</a>.</p>
+<p>I had to deviate from the example configuration in a couple of places to make my Style Guide work as it does now. Let me
+name and explain these things.</p>
+<h3 id="providing-the-approot-parameter-">Providing the <code>appRoot</code> parameter.</h3>
+<p>As I am hosting the Style Guide website not it the root folder but in a subfolder named <code>styleguide</code>, I inform the
+  generator about that, so it can build the properly working app:</p>
+<pre class="highlight"><code class="hljs javascript">gulp.task(<span class="hljs-string">"styleguide:generate"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+
+  <span class="hljs-keyword">return</span> gulp.src([<span class="hljs-string">"desktop.blocks/**/*.css"</span>])
+    .pipe(styleguide.generate({
+      title: <span class="hljs-string">"Varya.me Styleguide"</span>,
+      appRoot: <span class="hljs-string">'/styleguide'</span>,
+      ...
+</code></pre>
+<h3 id="providing-scripts">Providing scripts</h3>
+<p>Under the <code>extraHead</code> parameter I list all the additions needed. Some of my components
+need JavaScript to function. It is indeed possible to ignore that and present
+their views only, but I wanted them to be exactly as they were used in the blog.
+Thanks to <code>extraHead</code> I could supply any code needed. I used it to
+link the same scripts that I have on my blog pages:</p>
+<pre class="highlight"><code class="hljs javascript">gulp.task(<span class="hljs-string">"styleguide:generate"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+
+  <span class="hljs-keyword">return</span> gulp.src([<span class="hljs-string">"desktop.blocks/**/*.css"</span>])
+    .pipe(styleguide.generate({
+      title: <span class="hljs-string">"Varya.me Styleguide"</span>,
+      ...
+      extraHead: [
+        <span class="hljs-string">'&lt;script src="http://yandex.st/jquery/1.7.2/jquery.min.js"&gt;&lt;/script&gt;'</span>,
+        <span class="hljs-string">'&lt;script src="/desktop.bundles/index/index.min.js"&gt;&lt;/script&gt;'</span>,
+        ...
+      ]
+    ...
+</code></pre>
+<p>However, I needed yet another trick to make the scripts work properly. My components are written with <code>i-bem.js</code>
+framework which automatically initialises them on the <code>domReady</code> event. This is what I wanted for the static pages because the
+components markup is in HTML document. But for the Style Guide, which is architecturally a SPA, this did not work. The components
+are rendered on the fly, and this obviously happens after <code>domReady</code>; that is why by default they stay
+uninitialized. So they should be initialized after they had been rendered. Luckily, the Style Guide
+triggers an event on the <code>window</code> object named <code>styleguide:onRendered</code> every time a new component is re-rendered.
+By handling this event, I managed to get the components initialized right after they appear on the page. This code is needed
+for the Style Guide only, so I do not include it into the project bundle but provide as an additional script in the
+Style Guide configuration:</p>
+<pre class="highlight"><code class="hljs r">gulp.task(<span class="hljs-string">"styleguide:generate"</span>, <span class="hljs-keyword">function</span>() {
+
+  <span class="hljs-keyword">return</span> gulp.src([<span class="hljs-string">"desktop.blocks/**/*.css"</span>])
+    .pipe(styleguide.generate({
+      title: <span class="hljs-string">"Varya.me Styleguide"</span>,
+      <span class="hljs-keyword">...</span>
+      extraHead: [
+        <span class="hljs-keyword">...</span>
+        <span class="hljs-string">'&lt;script src="/styleguide/i-bem__init_styleguide.js"&gt;&lt;/script&gt;'</span>
+      ]
+    <span class="hljs-keyword">...</span>
+</code></pre><p>You can check how the JavaScript components are working with the block which is initially empty and renders the list
+of repositories after querying the GitHub API: <a href="http://varya.me/styleguide/#/section/4.3">varya.me/styleguide/#/section/4.3</a>.
+Or try out the Candies randomly built with JavaScript <a href="http://varya.me/styleguide/#/section/5.1">varya.me/styleguide/#/section/5.1</a>.</p>
+<p>The last important thing to make JavaScript work is to use <code>disableEncapsulation: true</code> parameter. Normally the
+Style Guide wraps each component in the ShadowDOM because it lets us developers write component CSS without
+worrying about affecting the Style Guide interface. But it also makes the components scoped from the JavaScript linked
+to the Style Guide website — including that additional JavaScript I showed above. By disabling the encapsulation, I made
+the components to be inserted into the HTML page as they are, without any scoping. As for affecting the Style Guide
+interface, in my case it will never happen as I use BEM and all my components are already &quot;encapsulated&quot; thanks to that methodology.</p>
+<h3 id="hosting-a-static-page">Hosting a static page</h3>
+<p>The SC5 Style Guide provides a development server which routes all the paths to its root. When hosting it outside, you
+should care about the routing yourself as you would do for any other SPA. But my blog is hosted on GitHub Pages
+which is a simple static hosting and does not provide any routing capabilities. For managing this case, I use the
+<code>disableHtml5Mode: true</code> option. It makes the Style Guide application generate the old-school links with <code>#</code>. And so it
+works.</p>
+<h2 id="documenting-the-components">Documenting the components</h2>
+<p>As I used BEM for my website frontend from very beginning, the CSS was already written the component-way. I only
+needed to create a descriptive structure and document the blocks with KSS.</p>
+<h3 id="structuring-the-code">Structuring the code</h3>
+<p>Unfortunately the BEM way of storing components in folders turned out to be not good enough to see
+the code from the living-style-guide perspective. On a file system, all the components are represented at the same
+level which turns them into a long list without much structure:</p>
+<pre class="highlight"><code class="hljs r">desktop.blocks/
+├── article
+├── articles-list
+├── box
+├── <span class="hljs-keyword">...</span>
+└── text
+</code></pre><p><a href="https://github.com/varya/varya.github.com/tree/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks">github/varya/varya.github.com/desktop-blocks</a></p>
+<p>In this case the atomic components are not distinct from the structural interface pieces (such as Header or Footer),
+from the side blocks, or from CSS provided to style third-party things. Flat structure is indeed good for
+bundling tools but we humans need more logical nesting.</p>
+<p>For that I provide the <code>overview.css</code> file, which has nothing to do with the final product and only helps me arrange the
+blocks. I have 5 sections, in which I place the blocks depending on what they are:</p>
+<pre class="highlight"><code class="hljs r">/*
+Atoms
+
+Styleguide <span class="hljs-number">1</span>
+
+styleguide:ignore:start
+
+@import url(<span class="hljs-string">"logo/logo.css"</span>); // <span class="hljs-number">1.1</span>
+@import url(<span class="hljs-string">"text/text.css"</span>); // <span class="hljs-number">1.2</span>
+<span class="hljs-keyword">...</span>
+
+styleguide:ignore:end
+*/
+
+/*
+Main blocks
+
+Styleguide <span class="hljs-number">2</span>
+
+styleguide:ignore:start
+
+@import url(<span class="hljs-string">"header/header.css"</span>); // <span class="hljs-number">2.1</span>
+<span class="hljs-keyword">...</span>
+
+styleguide:ignore:end
+*/
+</code></pre><p><a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/overview.css">github/varya/varya.github.com/desktop-blocks/overview.css</a></p>
+<p>There are only comments in this file in which I provide the documentation of every subset as a Style Guide section.
+Listing the paths of the dependant CSS files makes it easier to navigate through the code. The <code>@import</code> syntax is used just
+because :-)</p>
+<p>The only trick here is the magic <code>styleguide:ignore:start</code> and <code>styleguide:ignore:end</code> keywords. It is possible to
+place them inside comments in any piece of your CSS (or SASS or LESS) and make the Style Guide generator ignore 
+what is in between.</p>
+<p>In my case, I tell it skip my overview lists because they have nothing to do with the codebase. But the names of the
+sections and their possible descriptions (I just haven&#39;t provided any) are in work.</p>
+<h3 id="describing-the-pieces">Describing the pieces</h3>
+<p>Everything else went smoothly. For every component I provided the KSS description. The <code>logo</code> block can be the
+simplest example:</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-comment">/*
+
+Logo
+
+markup:
+&lt;logo class="logo"&gt;···&lt;b class="var"&gt;var&lt;/b&gt;·&lt;b class="ya"&gt;ya&lt;/b&gt;;&lt;b class="cursor"&gt;&lt;/b&gt;&lt;/logo&gt;
+
+Styleguide 1.1
+
+*/</span>
+<span class="hljs-class">.logo</span>
+<span class="hljs-rules">{
+<span class="hljs-rule"><span class="hljs-attribute">...
+</span></span></span></code></pre>
+<p><a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/logo/logo.css">github/varya/varya.github.com/desktop-blocks/logo/logo.css</a></p>
+<p>See it rendered: <a href="http://varya.me/styleguide/#/section/1.1">varya.me/styleguide/#/section/1.1</a></p>
+<p>In some other components I used extra features. For example, different social icons are the same <code>ico</code> element with different
+modifiers. In the Style Guide I could documents them all together:</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-comment">/*
+Social icon
+
+.social-ico__ico_type_rss         - RSS
+.social-ico__ico_type_twitter     - Twitter
+.social-ico__ico_type_github      - Github
+.social-ico__ico_type_facebook    - Facebook
+.social-ico__ico_type_linkedin    - LinkedIn
+
+markup:
+&lt;a class="link social-ico__ico {$modifiers}" href="#" title="Icon title"&gt;&lt;/a&gt;
+
+Styleguide 1.5.1
+*/</span>
+
+<span class="hljs-class">.social-ico__ico</span>
+<span class="hljs-rules">{
+<span class="hljs-rule"><span class="hljs-attribute">...
+</span></span></span></code></pre>
+<p><a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/social-ico/social-ico.css#L49">github/varya/varya.github.com/desktop-blocks/social-ico/social-ico.css</a></p>
+<p>In the website the component is rendered separately with every modifier possible:
+<a href="http://varya.me/styleguide/#/section/1.5.1">varya.me/styleguide/#/section/1.5.1</a></p>
+<p>For the complex components which contain other ones I used <code>&lt;sg-insert&gt;</code> keyword. It takes another component&#39;s markup
+by its reference number.</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-comment">/*
+Sidebar
+markup:
+&lt;nav class="sidebar"&gt;
+  &lt;sg-insert&gt;4.2&lt;/sg-insert&gt;
+  &lt;sg-insert&gt;4.3&lt;/sg-insert&gt;
+&lt;/nav&gt;
+Styleguide 4.1
+*/</span>
+
+<span class="hljs-class">.sidebar</span>
+<span class="hljs-rules">{
+<span class="hljs-rule"><span class="hljs-attribute">...
+</span></span></span></code></pre>
+<p><a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/sidebar/sidebar.css">github/varya/varya.github.com/desktop-blocks/sidebar/sidebar.css</a></p>
+<p>This makes the markup examples pretty short, however it expands for rendering the component and showing the
+markup on the website: <a href="http://varya.me/styleguide/#/section/4.1">varya.me/styleguide/#/section/4.1</a></p>
+<h2 id="style-guide-driven-development">Style-Guide-Driven Development</h2>
+<p>If you type &quot;logo&quot; in the Style Guide search field, it will find and render all the components where <code>logo</code> is found!
+The search goes through all the CSS codebase. Similarly you can search for the components using <code>&lt;em&gt;</code> in their markup.
+Or <code>font:</code> in their CSS.</p>
+<p>I personally like that the search source is not only the CSS of components but also their markup examples. During the
+refactorings this, for example, makes possible to select all the components containing inputs and look how the changes affect them.</p>
+<p>However this is just a small addition to one major benefit I see in using the Style Guide. I find it far more important 
+that <strong>it reveals my mistakes</strong>.</p>
+<p>I already used the component way when building my blog. And I was pretty sure that my BEM experience is a 100%
+guarantee that I get this right. But even developing with a highly modular approach in mind, I did this from the page perspective.
+Before the components were integrated into the blog engine, I had developed a static page and this was where the
+components fitted first.</p>
+<p>I considered them independent and so tried to write my code. But <strong>sitting at the same page they never actually were
+independent</strong>.</p>
+<p>After the SC5 Style Guide magically represented each of them separately, I can see that the
+<a href="http://varya.me/styleguide/#/section/1.1">logo</a> is aligned to the right.
+And why should it be? Obviously, my mistake when I tried to made it fit into the Header.</p>
+<p>The same goes for the <a href="http://varya.me/styleguide/#/section/1.4">language switcher</a> positioned on the right.</p>
+<p>In the <a href="http://varya.me/styleguide/#/section/1.5">set of social icons</a>, the language switcher provided with the RSS
+icon was considered to stay with it. But this only happens because at the blog pages
+it is placed into a narrow container. The Style Guide represents it on its own and I can see that it is not that
+flawless as I thought.</p>
+<p>Such discoveries obviously lead to the refactoring :-)</p>
+<p>To top it off, I must say that the experiment does not end and there are already findings for further
+posts. Stay tuned!</p>
+
+    </div>
+    <div class="comments">
+        <div class="comments__box box__body">
+            <h4 class="comments__header">
+                Comments
+            </h4>
+        </div>
+        <div class="comments__body box__island">
+            
+              
+                  <div id="disqus_thread"></div>
+<script>
+	(function(){
+		window.disqus_shortname = 'varya';
+		window.disqus_developer = '1';
+		window.disqus_url = 'http://varya.me//en/posts/sc5-styleguide-for-smallers';
+		window.disqus_identifier = 'posts-sc5-styleguide-for-smallers-index-en';
+		window.disqus_title = 'Style-guide the smaller things';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+              
+            
+        </div>
+    </div>
+    <div class="related">
+        <div class="related__body box__body">
+            <h4 class="related__header">
+                By the way
+            </h4>
+        </div>
+        <div class="related__text box__island">
+                <a href="https://github.com/varya/varya.github.com/issues/new?title=Feedback for Style-guide the smaller things">
+                Create a GitHub issue for me</a> if you've spotted a typo or a mistake, or wish to add something on.
+                Or you can
+                <a href="https://github.com/varya/varya.github.com/edit/develop/src/documents/posts/sc5-styleguide-for-smallers/index_en.html.md">edit this post yourself and make me a patch</a>.
+        </div>
+    </div>
+</div>
+        </section>
+        <nav class="sidebar">
+        <ul class="menu-vert">
+            <h3 class="menu-vert__title box__title">
+                On this site
+            </h3>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/posts">
+                        Tech Blog
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/content">
+                        Articles and talks
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/">
+                        About me
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/life">
+                        My life
+                    </a>
+                </li>
+            
+            </ul>
+            <div class="github i-bem box github_not-ready"
+                data-bem='{ "github" : { "user" : "varya" } }'>
+                <div class="github__header box__title">
+                  Last updated repos
+                </div>
+                <ul class="github__body"></ul>
+            </div>
+        </nav>
+        <aside class="prompting">
+            <ul class="social-ico menu-vert">
+                <li class="menu-vert__item">
+                    <ul class="social-ico__text menu-vert">
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/en/feed.xml" title="New on Varya.me in English">en</a>
+                        </li>
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/ru/feed.xml" title="Новые записи на Varya.me">ru</a>
+                        </li>
+                    </ul>
+                    <a class="link social-ico__ico social-ico__ico_type_rss" href="/feed.xml" title="New on Varya.me"></a>
+                </li>
+                <li class="menu-vert__item">
+                <a class="link social-ico__ico social-ico__ico_type_twitter"
+                    href="https://twitter.com/varya_en"
+                    title="@varya_en"
+                    target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_github" href="https://github.com/varya" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_facebook" href="http://www.facebook.com/varvara.stepanova.9" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_linkedin" href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b" target="_blank"></a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <div class="footer__outer">
+        <footer class="footer">
+            <div class="footer__left">
+            </div>
+            <div class="footer__center">
+                <a class="link  link_text  link_wrapper" href="http://varya.me/">
+                    © 2015
+                    <span class="link__inner">Varya Stepanova</span>.
+                </a>
+                <a class="link  link_wrapper  link_twitter"
+                    href="https://twitter.com/varya_en"
+                    title="@varya_en">
+                    <img alt="Twitter" class="ico" src="http://favicon.yandex.net/favicon/twitter.com" title="Twitter"/>
+                    <span class="link__inner">Follow me on twitter</span>!
+                </a>
+            </div>
+            <div class="footer__right">
+            </div>
+        </footer>
+    </div>
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter20478625 = new Ya.Metrika({id:20478625, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/20478625" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+    <script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/desktop.bundles/index/index.min.js" async defer></script>
+</body>
+</html>

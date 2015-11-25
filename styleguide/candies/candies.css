@@ -1,0 +1,16 @@
+/*
+Candies
+
+markup:
+<div class="candies i-bem" data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'>
+</div>
+
+Styleguide 5.1
+*/
+
+.candies_i
+{
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 4px;
+}

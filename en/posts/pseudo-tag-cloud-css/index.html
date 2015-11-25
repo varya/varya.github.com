@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="page page_en" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Tag cloud of random sizes in pure CSS</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+    <link  rel="stylesheet" href="/desktop.bundles/index/index.min.css" />
+    <script>
+    (function(d, s, l, r) {
+    if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
+        r = [
+            '<style>',
+            l.getItem('varya.me.fonts'),
+            '</style>'
+        ];
+        document.write(r.join(''));
+    }
+
+    })(document, Storage, localStorage);
+  </script>
+  <meta content='Tag cloud of different with random sizes of the words with pure CSS.
+' property="og:description"/><meta content="http://varya.me/posts/pseudo-tag-cloud-css/thumb.png" property="og:image"/><meta content="Tag cloud of random sizes in pure CSS" property="og:title"/><meta content="http://varya.me/en/posts/pseudo-tag-cloud-css/" property="og:url"/><meta property="og:site_name" content="var ya;"/><meta property="og:type" content="article"/><meta property="og:locale" content="en_US"/> <meta property="article:author" content="https://www.facebook.com/toivonens"/>
+</head>
+<body class="page page__body">
+    <header class="header">
+        <div class="header__left candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'></div>
+        <div class="header__center">
+            <logo class="logo">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+        </div>
+        <div class="header__right candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 } } }'></div>
+    </header>
+    <div class="layout">
+        <section class="main">
+            <ul class="languages">
+            
+                <li class="languages__lang">
+                    
+                        en
+                    
+                </li>
+                
+                <li class="languages__lang">
+                    
+                    <a href="/ru/">
+                        ru
+                    </a>
+                    
+                </li>
+                
+            </ul>
+            <div class="article" role="main">
+    <div class="article__body box__body">
+        <h1 class="article__header">
+            Tag cloud of random sizes in pure CSS
+        </h1>
+    </div>
+    <div class="article__text box__island">
+        <script type="text/javascript" src="//yandex.st/share/share.js"
+        charset="utf-8"></script>
+        <div class="share yashare-auto-init" data-yashareL10n="{{ lang }}"
+            data-yashareQuickServices="twitter,facebook,gplus" data-yashareTheme="counter"
+        ></div>
+        <span class="article__details author vcard">
+            Published on
+            2nd November 2015
+        </span>
+        <p>Last week I faced a need to make a fake tag cloud, where the words need to be of different size. This was needed for
+a presentation slide, and as my slides are always in HTML/CSS, must be implemented with these technologies. It is always
+possible to inject some JavaScript and code anything. But what about pure CSS, do we get random sizes there?</p>
+<excerpt/>
+
+<div class="testings" markdown="1">
+
+<ul class="cloud">
+<li>performance testing</li>
+<li>stress testing</li>
+<li>conformance testing</li>
+<li>acceptane testing</li>
+<li>smoke testing</li>
+<li>regression testing</li>
+<li>white box testing</li>
+<li>functional testing</li>
+<li>system testing</li>
+<li>black box testing</li>
+<li>load testing</li>
+<li>compatibility testing</li>
+<li>unit testing</li>
+</ul>
+
+</div>
+
+<style>
+.testings {
+    text-align: center;
+    width: 400px;
+}
+.testings .cloud {
+    display: inline;
+    list-style-type: none;
+    width: 400px;
+}
+.testings .cloud li {
+    list-style: none;
+    display: inline;
+}
+
+/* Random sizes */
+
+.testings .cloud li:nth-of-type(3n + 1) {
+    font-size: 1.25em;
+}
+.testings .cloud li:nth-of-type(4n+3) {
+    font-size: 1.5em;
+}
+.testings .cloud li:nth-of-type(5n - 3) {
+    font-size: 1em;
+}
+
+</style>
+
+<p>The tag cloud you see above is what I get. You may notice it&#39;s not real random; after refreshing you will always get the
+same result. But still looks like a tag cloud of different sizes and works perfectly as an example.</p>
+<p>This is a list, it&#39;s easy to generate from markdown:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cloud"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>performance testing<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>stress testing<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>conformance testing<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>acceptane testing<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>smoke testing<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre>
+<p>Then, flattened as usual:</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-class">.cloud</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">list-style-type</span>:<span class="hljs-value"> none</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">400px</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.cloud</span> <span class="hljs-tag">li</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">list-style</span>:<span class="hljs-value"> none</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline</span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<p>And then different sizes are made with a few <code>nth-of-type</code> combined in different variants:</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-class">.cloud</span> <span class="hljs-tag">li</span><span class="hljs-pseudo">:nth-of-type(3n</span> + 1) <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">1.25em</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.cloud</span> <span class="hljs-tag">li</span><span class="hljs-pseudo">:nth-of-type(4n+3)</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">1.5em</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.cloud</span> <span class="hljs-tag">li</span><span class="hljs-pseudo">:nth-of-type(5n</span> <span class="hljs-tag">-</span> 3) <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">1em</span></span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<p>I tuned the <code>nth-of-type</code> values so that it would look nicely. Depending on the length of the words used, you may need
+to play arownd with the values and maybe use more than 3 sizes.</p>
+
+    </div>
+    <div class="comments">
+        <div class="comments__box box__body">
+            <h4 class="comments__header">
+                Comments
+            </h4>
+        </div>
+        <div class="comments__body box__island">
+            
+              
+                  <div id="disqus_thread"></div>
+<script>
+	(function(){
+		window.disqus_shortname = 'varya';
+		window.disqus_developer = '1';
+		window.disqus_url = 'http://varya.me//en/posts/pseudo-tag-cloud-css';
+		window.disqus_identifier = 'posts-pseudo-tag-cloud-css-index-en';
+		window.disqus_title = 'Tag cloud of random sizes in pure CSS';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+              
+            
+        </div>
+    </div>
+    <div class="related">
+        <div class="related__body box__body">
+            <h4 class="related__header">
+                By the way
+            </h4>
+        </div>
+        <div class="related__text box__island">
+                <a href="https://github.com/varya/varya.github.com/issues/new?title=Feedback for Tag cloud of random sizes in pure CSS">
+                Create a GitHub issue for me</a> if you've spotted a typo or a mistake, or wish to add something on.
+                Or you can
+                <a href="https://github.com/varya/varya.github.com/edit/develop/src/documents/posts/pseudo-tag-cloud-css/index_en.html.md">edit this post yourself and make me a patch</a>.
+        </div>
+    </div>
+</div>
+        </section>
+        <nav class="sidebar">
+        <ul class="menu-vert">
+            <h3 class="menu-vert__title box__title">
+                On this site
+            </h3>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/posts">
+                        Tech Blog
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/content">
+                        Articles and talks
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/">
+                        About me
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/life">
+                        My life
+                    </a>
+                </li>
+            
+            </ul>
+            <div class="github i-bem box github_not-ready"
+                data-bem='{ "github" : { "user" : "varya" } }'>
+                <div class="github__header box__title">
+                  Last updated repos
+                </div>
+                <ul class="github__body"></ul>
+            </div>
+        </nav>
+        <aside class="prompting">
+            <ul class="social-ico menu-vert">
+                <li class="menu-vert__item">
+                    <ul class="social-ico__text menu-vert">
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/en/feed.xml" title="New on Varya.me in English">en</a>
+                        </li>
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/ru/feed.xml" title="Новые записи на Varya.me">ru</a>
+                        </li>
+                    </ul>
+                    <a class="link social-ico__ico social-ico__ico_type_rss" href="/feed.xml" title="New on Varya.me"></a>
+                </li>
+                <li class="menu-vert__item">
+                <a class="link social-ico__ico social-ico__ico_type_twitter"
+                    href="https://twitter.com/varya_en"
+                    title="@varya_en"
+                    target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_github" href="https://github.com/varya" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_facebook" href="http://www.facebook.com/varvara.stepanova.9" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_linkedin" href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b" target="_blank"></a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <div class="footer__outer">
+        <footer class="footer">
+            <div class="footer__left">
+            </div>
+            <div class="footer__center">
+                <a class="link  link_text  link_wrapper" href="http://varya.me/">
+                    © 2015
+                    <span class="link__inner">Varya Stepanova</span>.
+                </a>
+                <a class="link  link_wrapper  link_twitter"
+                    href="https://twitter.com/varya_en"
+                    title="@varya_en">
+                    <img alt="Twitter" class="ico" src="http://favicon.yandex.net/favicon/twitter.com" title="Twitter"/>
+                    <span class="link__inner">Follow me on twitter</span>!
+                </a>
+            </div>
+            <div class="footer__right">
+            </div>
+        </footer>
+    </div>
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter20478625 = new Ya.Metrika({id:20478625, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/20478625" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+    <script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/desktop.bundles/index/index.min.js" async defer></script>
+</body>
+</html>

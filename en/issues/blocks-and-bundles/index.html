@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="page page_en" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Blocks are bricks, and bundles are buildings</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+    <link  rel="stylesheet" href="/desktop.bundles/index/index.min.css" />
+    <script>
+    (function(d, s, l, r) {
+    if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
+        r = [
+            '<style>',
+            l.getItem('varya.me.fonts'),
+            '</style>'
+        ];
+        document.write(r.join(''));
+    }
+
+    })(document, Storage, localStorage);
+  </script>
+  <meta content="Blocks are bricks, and bundles are buildings" property="og:title"/><meta content="http://varya.me/en/issues/blocks-and-bundles/" property="og:url"/><meta property="og:site_name" content="var ya;"/><meta property="og:type" content="article"/><meta property="og:locale" content="en_US"/> <meta property="article:author" content="https://www.facebook.com/toivonens"/>
+</head>
+<body class="page page__body">
+    <header class="header">
+        <div class="header__left candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'></div>
+        <div class="header__center">
+            <logo class="logo">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+        </div>
+        <div class="header__right candies i-bem"
+            data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 } } }'></div>
+    </header>
+    <div class="layout">
+        <section class="main">
+            <ul class="languages">
+            
+                <li class="languages__lang">
+                    
+                        en
+                    
+                </li>
+                
+                <li class="languages__lang">
+                    
+                    <a href="/ru/issues/blocks-and-bundles">
+                        ru
+                    </a>
+                    
+                </li>
+                
+            </ul>
+            <div class="article" role="main">
+    <div class="article__body box__body">
+        <h1 class="article__header">
+            Blocks are bricks, and bundles are buildings
+        </h1>
+    </div>
+    <div class="article__text box__island">
+        <script type="text/javascript" src="//yandex.st/share/share.js"
+        charset="utf-8"></script>
+        <div class="share yashare-auto-init" data-yashareL10n="{{ lang }}"
+            data-yashareQuickServices="twitter,facebook,gplus" data-yashareTheme="counter"
+        ></div>
+        <span class="article__details author vcard">
+            Published on
+            6th January 2014
+        </span>
+        <p>A couple of days ago I was asked about some basic things of using <a href="https://github.com/bem/project-stub/tree/14e24fd17ba66a357a2f6fcdce045065b4eb5d6c">BEM project
+stub</a>
+from someone who is enjoying the full BEM stack (BEM-CSS, i-bem.js and BEMHTML
+templates) for their projects. Answering the questions I promised to turn the
+information into text as we always skip many important things mistakenly
+considering them being primitive.</p>
+<excerpt/>
+
+<p>The quesion was about <code>.bem/make.js</code> configuration file which is needed if you
+use <a href="http://bem.info/tools/bem/bem-tools/">bem tools</a> to build your pages. The
+<a href="https://github.com/bem/project-stub/blob/14e24fd17ba66a357a2f6fcdce045065b4eb5d6c/.bem/make.js#L12">12th and 13th
+lines</a>
+describe regular expressions to match <code>blocks</code> and <code>bundles</code>. And the meaning of
+these terms turned out to be unclear.</p>
+<p>First of all, the expressions are to detect folders on the project file system.
+Those which end with <code>.blocks</code> store blocks, and those which end with <code>.bundles</code>
+store bundles. The <code>desktop.blocks</code> and <code>desktop.bundles</code> folders of the project
+stub demonstrate this.</p>
+<p>The purpose of <code>desktop.blocks</code> folder should be clear. As BEM is a modular
+development pattern there has to be a place to store modules, the so-called
+<code>blocks</code>. Each block has its own directory to keep all the files needed for this
+particular interface module. E.g. <a href="https://github.com/varya/online-shop-dummy/tree/master/desktop.blocks">one project block
+set</a>.</p>
+<p>The <code>desktop.bundles</code> folder needs some comments. It stores pages, which are the
+result of blocks applied. Every page has its own folder and inside you can find
+different files needed for a page to function. Examine the <a href="https://github.com/varya/online-shop-dummy/tree/gh-pages/desktop.bundles">example
+project</a>
+again.</p>
+<p>The difference is that block files are coded by a developer, as bundle files are
+built with the tools. Block files are our dear CSS, JavaScript and sometimes templates.</p>
+<pre class="highlight"><code class="hljs stylus">├── desktop.blocks/
+│   ├── goods/
+│   │   ├── &lt;<span class="hljs-tag">a</span> href=<span class="hljs-string">"https://github.com/varya/online-shop-dummy/blob/master/desktop.blocks/goods/goods.bemhtml"</span>&gt;goods.bemhtml&lt;/a&gt;
+│   │   ├── &lt;<span class="hljs-tag">a</span> href=<span class="hljs-string">"https://github.com/varya/online-shop-dummy/blob/master/desktop.blocks/goods/goods.css"</span>&gt;goods.css&lt;/a&gt;
+│   │   ├── &lt;<span class="hljs-tag">a</span> href=<span class="hljs-string">"https://github.com/varya/online-shop-dummy/blob/master/desktop.blocks/goods/goods.deps.js"</span>&gt;goods<span class="hljs-class">.deps</span><span class="hljs-class">.js</span>&lt;/a&gt;
+│   │   └── &lt;<span class="hljs-tag">a</span> href=<span class="hljs-string">"https://github.com/varya/online-shop-dummy/blob/master/desktop.blocks/goods/goods.ie.css"</span>&gt;goods<span class="hljs-class">.ie</span><span class="hljs-class">.css</span>&lt;/a&gt;</code></pre>
+
+<p>Real world analogy of a BEM block (and actually any module of any modular
+pattern) can be a buiding brick.</p>
+<p><img src="http://img-fotki.yandex.ru/get/6730/14441195.30/0_7e0f8_33c1c86c_L.jpg" alt=""></p>
+<p>Bundle files are also what a browser can read: CSS, JavaScript, HTML. <em>None of
+them was written by a person, they are built with BEM tools</em>. Have a look
+inside to be sure that this is robot&#39;s code.</p>
+<pre class="highlight"><code class="hljs stylus">├── desktop.bundles/
+│   ├── index/
+│   │   ├── &lt;<span class="hljs-tag">a</span> href=<span class="hljs-string">"https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/_index.css"</span>&gt;_index.css&lt;/a&gt;
+│   │   ├── &lt;<span class="hljs-tag">a</span> href=<span class="hljs-string">"https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/_index.js"</span>&gt;_index.js&lt;/a&gt;
+│   │   ├── &lt;<span class="hljs-tag">a</span> href=<span class="hljs-string">"https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/index.bemjson.js"</span>&gt;index<span class="hljs-class">.bemjson</span><span class="hljs-class">.js</span>&lt;/a&gt;
+│   │   └── &lt;<span class="hljs-tag">a</span> href=<span class="hljs-string">"https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/index.html"</span>&gt;index.html&lt;/a&gt;</code></pre>
+
+
+<p>Think about bem tools as about building crane to pick up the bricks and make a
+house with them.</p>
+<p><img src="http://img-fotki.yandex.ru/get/9058/14441195.30/0_7e0f3_ff76f66a_L.jpg" alt=""></p>
+<p>Besides <em>.js, </em>.css and *.html files there is the only one here written by a
+developer. This is
+<a href="https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/index.bemjson.js">index.bemjson.js</a>,
+the JSON decription of what are the blocks on a page and what it their nested
+structure. Sounds logical, as only we human can know what we would like to see
+on a page. Everything else is produced by the <code>bem tools</code>. Once given
+informaiton about which blocks to use for a page, they pick them up from
+<code>desktop.blocks</code> set of blocks and do their job.</p>
+<p>Extending the building-a-house example I can say that <code>page.bemjson.js</code> file
+here is a draft.</p>
+<p><img src="http://img-fotki.yandex.ru/get/6704/14441195.30/0_7e1ba_9dacd537_L.jpg" alt=""></p>
+<p>But why do <code>bem tools</code> need the regular expessions?</p>
+<p>This is quite easy. The folders <code>bem tools</code> operate with are <code>levels</code>. It can
+help if you think about a level as about <code>a set</code>, a set of entities. There can be
+a set of blocks wraped with <code>desktop.blocks</code> folder, and a set of result pages
+wraped with <code>desktop.bundles</code> folder. In the
+<a href="https://github.com/bem/project-stub/tree/14e24fd17ba66a357a2f6fcdce045065b4eb5d6c/.bem/levels">.bem/levels/</a>
+cofiguration folder there are some instructions from which bem tools understand
+what to do with those different types of levels.</p>
+<p>Dividing your project entities into blocks and bundles makes it possible to have
+different sets of blocks and different bundles built with those sets. For
+example, you can store blocks to a desktop and touch versions of your web site
+into the same repository as well as the pages built with them.</p>
+<pre class="highlight"><code class="hljs undefined">├── desktop.blocks/
+├── desktop.bundles/
+├── touch.blocks/
+└── touch.bundles/</code></pre>
+
+<p>Comming back to the real world, not only bricks are the modules but lego blocks
+as well.</p>
+<p><img src="http://img-fotki.yandex.ru/get/6704/14441195.30/0_7e0f6_f69c7d44_L.jpg" alt=""></p>
+<p>They also are to build a house. A pretty different house though.</p>
+<p><img src="http://img-fotki.yandex.ru/get/9326/14441195.30/0_7e0f4_3d999550_L.jpg" alt=""></p>
+<p>Going futher you can detach code common for all the platforms and store it
+separately.</p>
+<pre class="highlight"><code class="hljs axapta">├── <span class="hljs-keyword">common</span>.blocks/
+├── desktop.blocks/
+├── desktop.bundles/
+├── touch.blocks/
+└── touch.bundles/</code></pre>
+
+<p>With that structure desktop version of a web site gets source code from both
+<code>common.blocks</code> and <code>desktop.blocks</code> levels as touch version gets it from
+<code>common.blocks</code> and <code>touch.blocks</code>.</p>
+<p><img src="http://img-fotki.yandex.ru/get/6725/14441195.30/0_7e0f5_3e107fd4_L.jpg" alt=""></p>
+<p>And before I wrap up, I cannot stop being delighted by the idea of <a href="https://github.com/bem/project-stub/">BEM project
+stub</a>. I use it a lot myself when starting
+projects. The <a href="http://bem.info/articles/start-with-project-stub/">Full stack quick start
+tutorial</a> which you may
+remember demostrates how exactly. So does a friend who asked me about the
+basics. I never realized before that the project stub makes is possible to start
+a BEM project with no knowledge above. :-)</p>
+<p>Having this written I see that describing the BEM basics is pretty easy and not very
+time-consuming to me being (I hope!) useful for the others. If so, please ask
+what you need to know.</p>
+
+    </div>
+    <div class="comments">
+        <div class="comments__box box__body">
+            <h4 class="comments__header">
+                Comments
+            </h4>
+        </div>
+        <div class="comments__body box__island">
+            
+              
+                  <div id="disqus_thread"></div>
+                  <script type="text/javascript">
+                      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                      var disqus_shortname = 'varya'; // required: replace example with your forum shortname
+
+                      /* * * DON'T EDIT BELOW THIS LINE * * */
+                      (function() {
+                          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                      })();
+                  </script>
+                  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+              
+            
+        </div>
+    </div>
+    <div class="related">
+        <div class="related__body box__body">
+            <h4 class="related__header">
+                By the way
+            </h4>
+        </div>
+        <div class="related__text box__island">
+                <a href="https://github.com/varya/varya.github.com/issues/new?title=Feedback for Blocks are bricks, and bundles are buildings">
+                Create a GitHub issue for me</a> if you've spotted a typo or a mistake, or wish to add something on.
+                Or you can
+                <a href="https://github.com/varya/varya.github.com/edit/develop/src/documents/issues/blocks-and-bundles/index_en.html.md">edit this post yourself and make me a patch</a>.
+        </div>
+    </div>
+</div>
+        </section>
+        <nav class="sidebar">
+        <ul class="menu-vert">
+            <h3 class="menu-vert__title box__title">
+                On this site
+            </h3>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/posts">
+                        Tech Blog
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/content">
+                        Articles and talks
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/">
+                        About me
+                    </a>
+                </li>
+            
+                <li class="menu-vert__item ">
+                    <a class="link" href="/en/life">
+                        My life
+                    </a>
+                </li>
+            
+            </ul>
+            <div class="github i-bem box github_not-ready"
+                data-bem='{ "github" : { "user" : "varya" } }'>
+                <div class="github__header box__title">
+                  Last updated repos
+                </div>
+                <ul class="github__body"></ul>
+            </div>
+        </nav>
+        <aside class="prompting">
+            <ul class="social-ico menu-vert">
+                <li class="menu-vert__item">
+                    <ul class="social-ico__text menu-vert">
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/en/feed.xml" title="New on Varya.me in English">en</a>
+                        </li>
+                        <li class="menu-vert__item">
+                            <a class="link social-ico__rss-text" href="/ru/feed.xml" title="Новые записи на Varya.me">ru</a>
+                        </li>
+                    </ul>
+                    <a class="link social-ico__ico social-ico__ico_type_rss" href="/feed.xml" title="New on Varya.me"></a>
+                </li>
+                <li class="menu-vert__item">
+                <a class="link social-ico__ico social-ico__ico_type_twitter"
+                    href="https://twitter.com/varya_en"
+                    title="@varya_en"
+                    target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_github" href="https://github.com/varya" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_facebook" href="http://www.facebook.com/varvara.stepanova.9" target="_blank"></a>
+                </li>
+                <li class="menu-vert__item">
+                    <a class="link social-ico__ico social-ico__ico_type_linkedin" href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b" target="_blank"></a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <div class="footer__outer">
+        <footer class="footer">
+            <div class="footer__left">
+            </div>
+            <div class="footer__center">
+                <a class="link  link_text  link_wrapper" href="http://varya.me/">
+                    © 2015
+                    <span class="link__inner">Varya Stepanova</span>.
+                </a>
+                <a class="link  link_wrapper  link_twitter"
+                    href="https://twitter.com/varya_en"
+                    title="@varya_en">
+                    <img alt="Twitter" class="ico" src="http://favicon.yandex.net/favicon/twitter.com" title="Twitter"/>
+                    <span class="link__inner">Follow me on twitter</span>!
+                </a>
+            </div>
+            <div class="footer__right">
+            </div>
+        </footer>
+    </div>
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter20478625 = new Ya.Metrika({id:20478625, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/20478625" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+    <script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/desktop.bundles/index/index.min.js" async defer></script>
+</body>
+</html>
