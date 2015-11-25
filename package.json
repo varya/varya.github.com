@@ -27,7 +27,7 @@
     "grunt": "~0.4.5",
     "grunt-contrib-copy": "^0.7.0",
     "safeps": "~2.2.11",
-    "sc5-styleguide": "0.3.27"
+    "sc5-styleguide": "0.3.39"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
