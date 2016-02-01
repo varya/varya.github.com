@@ -7,7 +7,7 @@ date: 2015-10-08
 layout: post
 
 ---
-Recently we managed to go to Russia by car for a long weekend. This was a trip to my husband's and mine hometown
+Recently we managed to go to Russia by car for a long weekend. This was a trip to my husband's and my hometown
 [Petrozavodsk](https://en.wikipedia.org/wiki/Petrozavodsk) (Petroskoi in Finnish). Trips to there are quite a challenge
 as the trasport connection is not the best. Apparently the go-by-car option turned out to be the most comfortable. I
 recommend all my Finnish friends to have such a trip, at least once in a lifetime. You will see the Russian region which
