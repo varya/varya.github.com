@@ -7,6 +7,9 @@ title: Articles and talks
 order: 2
 ---
 
+* [Doing nothing for visual regression testing](http://varya.me/doing-nothing-for-visual-regression-2015/)<br/>
+  Visual regression testing approach wrapped into a nice and neat plugin for SC5 StyleGuide presented at HelsinkiJs
+  meetup in October 2015.
 * [Driving Style-Guide-Driven Development](https://youtu.be/bKI0amimw-k)<br/>
   This talk describes experience of brining Style-Guide-Driven Development into practise and reveals how it
   ended up with developing a special tool — Style Guide Generator by SC5. The presenttaion was given at EmpireJS 2015,
