@@ -7,6 +7,9 @@ title: Статьи и презентации
 order: 2
 ---
 
+* [Doing nothing for visual regression testing](http://varya.me/doing-nothing-for-visual-regression-2015/)<br/>
+  Метод регрессионного визуального тестирования, который можно внедрить с использованием плагина к SC5 StyleGuide,
+  представлен на HelsinkiJs в октябре 2015.
 * [Сначала стайлгайд, или как перейти на компонентный подход](http://varya.me/wsd-2015)<br/>
   Как SC5 Style Guide Generator используется для style-guide-driven development и переводит
   всю разработку на компонентные рельсы. Рассказано на [Web Standards Day](http://webstandardsdays.ru/2015/06/20/)
@@ -49,7 +52,7 @@ BEM](http://hasgeek.tv/metarefresh/2013/496-maintainable-frontend-development-wi
 stack](http://bem.info/articles/start-with-project-stub/)<br/>
 Пошаговый туториал о том как начать делать проект на БЭМ с использованием `bem
 tools`, шаблонов `BEMHTML` и декларативного JavaScript `i-bem.js`.<br/>
-Есть вариант на русском языке на Хабрахабре: [Попробуй БЭМ на 
+Есть вариант на русском языке на Хабрахабре: [Попробуй БЭМ на
 вкус!](http://habrahabr.ru/post/162385/)
 * [What you can borrow from Yandex frontend
 dev](https://vimeo.com/53219242)<br/>
