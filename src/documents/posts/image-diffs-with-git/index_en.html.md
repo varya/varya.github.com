@@ -45,7 +45,7 @@ I can run `git diff` over each of the modified images to see the following:
 ![](/posts/image-diffs-with-git/diff2.png)
 
 For every picture displayed, I can see a previous version (on the left side), a current version (on the right side) and
-visually represented difference (in between). This feature is useful for tracking exact changes im the image. Now, I can
+visually represented difference (in between). This feature is useful for tracking exact changes in the image. Now, I can
 easily spot if some particular details were shifted, some colors were changed, or a picture was accidentally blended
 with another one.
 
@@ -56,7 +56,7 @@ latest versions of OS X you need to install a package with a support of X11. To 
   › brew install imagemagick --with-x11
 ```
 
-Then, create a script to compares two given images. Run `cat ~/bin/git-imgdiff`, and paste inside:
+Then, create a script to compare two given images. Run `cat ~/bin/git-imgdiff`, and paste inside:
 
 ```
 #!/bin/sh
@@ -69,7 +69,7 @@ Now, test the script. It should do the comparison of two processed images:
   › ~/bin/git-imgdiff img1.png img2.png
 ```
 
-At this step, you need to show a comparisson of two processed images. For that, define the image files their extensions
+At this step, you need to show git how to use compariing script. For that, define the image files their extensions
 in a special file. Run `cat ~/.gitattributes` and paste the following:
 
 ```
@@ -78,7 +78,7 @@ in a special file. Run `cat ~/.gitattributes` and paste the following:
 *.png diff=image
 ```
 
-Provide git with this configuration with:
+Provide git with this configuration by:
 
 ```
   › git config --global core.attributesfile '~/.gitattributes'
