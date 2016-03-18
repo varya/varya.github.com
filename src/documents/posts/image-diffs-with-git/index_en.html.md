@@ -14,7 +14,7 @@ meta:
 
 ---
 
-My first task for new projects is to create a git repository. Wether it is a new app, or conference slides, or even an
+My first task for new projects is to create a git repository. Whether it is a new app, or conference slides, or even an
 article, I prefer to keep everything in Git. It is an excellent tool, and, personally, I enjoy its command line
 interface.
 
