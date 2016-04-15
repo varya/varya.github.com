@@ -12,26 +12,32 @@ meta:
 
 ---
 
-In modern frontend development, it is required to learn new things constantly. Every day, we read articles and blog posts, we examine the changelogs, follow the twitter announces and GitHub discussions. This helps us to keep on.
+Being a frontend developer these days means to learn the new things every day. We read articles and blog posts,
+examine the changelogs, follow the Twitter announcements and participate in the GitHub discussions.
+This helps to keep up.
 
 However,
-when it comes to studying something bigger, like the good parts of a new framework and ecosystem around it, more effort
-should be given. Organizing a whole-day hackathon for the developers in your company is a perfect solution to catch up
-the trend. At my company, SC5 online, we did so for mastering React development. Some ecosystem components such as
+when it comes to something bigger, like the exploring of a new framework or an ecosystem, it is not enough.
+The perfect solution is to organize a whole day hackathon for the developers in your company.
+At SC5 online, we took this advantage mastering the React development. Few ecosystem components such as
 webpack and redux came along.
 
 <excerpt/>
 
-For a commercial company, it is hard enough to find time for the whole-day learning event. Besides, the preparations for
-such thing consume a lot of time. When I realised this, I decided to share the materials, which I developed for our
+The private companies have hard time to find an opportunity and organize such event.
+Moreover, the preparations for the hackathon consume a lot of resources. To ease the hardship, I've decided to share
+the materials that I prepared for our event. The hackathon plan and the detailed description of slides are given below.
 hackathon. Below you can find the hackathon plan and the slides explained.
 
-This is the presentation I used for pre-coding section:
+It is the presentation that I used for a pre-coding section:
 [varya.me/reactjs-hackathon](http://varya.me/reactjs-hackathon/).
 
-By the time of presenting, the slides were hosted online, and in the beginning, I provide a short link to them. In the coding event, the developers align with a lot of online materials, such as starting projects, documentation, different tips. As my presentation has the links to them, it was important to give the others proceed these links. Besides, we had a special Slack channel, where all the links were shared again.
+At the moment, the slides were hosted online, and before starting I provided a short link to them.
+During the coding event, the developers need a bunch of online materials, including starting projects, documentation,
+tips and tricks. The links to these meterials were inserted in my presentation, and it was important to let the others
+check them out. Also, we had a special Slack channel where the links were shared one more time.
 
-In the next slide, I introduce the plan of our event to the colleagues:
+The next slide showed the plan of event to the participants:
 
 
 1. About the event
@@ -40,14 +46,16 @@ In the next slide, I introduce the plan of our event to the colleagues:
 1. Stub projects
 1. Linking UI libraries
 1. React Native
-1. Relay&QraphQL
+1. Relay&GraphQL
 1. Coding
 
-Everything listed here was covered by slides. Besides the coding part, which was the developers' time. Even so, the
-presentation took about 50 minutes. In this amount of time, I was able to provide all the needed introductions. On the
-other hand, it is good that not-yet-coding part took less than an hour. This way, people did not get bored.
+The slides included everything listed besides the coding part, which was devoted directly to the development.
+Altogether, the presentation took about 50 minutes. This amount of time ensured that I made all the needed
+introductions. Also, it was not too long to make people bored.
 
-At the next stage, I proposed the applications we could write with React that day. Here are the options:
+On the next stage, I offered the applications that we could write using React during the event.
+
+Here are the listed options:
 
 * Instagram-like
 * Twitter dashboard
@@ -58,20 +66,26 @@ At the next stage, I proposed the applications we could write with React that da
 * [Snake game](https://reake-react-snake.firebaseapp.com/)
 * Your own idea
 
-I think, the product goals should be revealed in the beginning. Especially, in the case of React hackathon. This way, people start thinking how they would code this in the technologies they are used to. But when it comes to using React, they are amazed at the elegance and easiness of the approach.
+I believe that the product goals should be defined at the start. It is especially important for the React hackathon.
+People start to think how they would code it in the way they are used to work. When it comes to React, they are
+impressed by the elegance and easiness of the approach.
 
-After that, I provide the links to official documentation and tutorials. Clear enough, that even whole-day coding event is not sufficient time to study a new framework. However, after getting interested, people should have a path to go further. A link to an interesting tutorial, preferably in video, serves this.
+After that, I provided the links to the official documentation and tutorials. It is evident that even whole day event
+is not sufficient to learn how to work with a new framework. However, it lets ignite an initial interest that can lead
+to the following independet research. A link to an interesting tutorial can be the first step.
 
-By the time of hackathon, there might be that some developers have already gotten React experience, some have read the articles, and some at least heard about the approach. Also, an in-company hackathon is not I-will-teach-you event, it is a collaborative and even team-building event. This why I wanted all the people to be involved.
+At the time of hackathon, some developers had a React experience, some have read the articles, and some at least heard
+about the approach. The hackathon is not a 'teach-you-how' workshop but a collaborative and even team-building event.
+This why I wanted all the people to be involved.
 
 When giving
-a presentation, you can make a contact with the audience by asking them questions. Moreover, the answers they give
-can become the content of the presentation. In one of the slides I have a title the same as the famous question on
-Reddit '[What is so great about React.js](https://www.reddit.com/r/javascript/comments/2uvz0x/whats_so_great_about_reactjs/)'.
-The answers, which I got from my audience, was written in a big textarea in the slide. It was visualised how everyone
-made their impact into the introduction.
+a presentation, you can make a contact with the audience by asking the questions. Moreover, you can add the given
+answers into the presentation on-the-go. One of my slides had the same a title as the famous Reddit's question
+'[What is so great about React.js](https://www.reddit.com/r/javascript/comments/2uvz0x/whats_so_great_about_reactjs/)'.
+I wrote the answers from the audience into a big textarea in the slide. It visualised the contribution that everyone
+made in the introduction.
 
-When it came to the list of React buzz words, we had not a solo talk but a proper discussion.
+When it came to the React buzz words, we had not a solo talk but a proper discussion.
 
 * ES2015 (ES6)
 * React
@@ -79,20 +93,19 @@ When it came to the list of React buzz words, we had not a solo talk but a prope
 * Flux / Redux
 * Relay & GraphQL
 
-The words and the explanations were given to save the developers' time when they google in the coding section.
-
-Then, most of the applications start with cloning the starter project. In the hackathon, the goal was not to give a fish
-but to teach how to fish. In this regard, I provided the link to the starter kit search:
+To save the developers' time in the codung section, I gave the definitions and explanations in advance.
+Also, the most of the applications usually start with cloning the starter project. In the hackathon, I aimed not to give
+a fish but to teach how to fish. To do that, I provided the link to the starter kit search:
 [andrewhfarmer.com/starter-project](http://andrewhfarmer.com/starter-project/).
 
-However, we were limited in time, and as a shortcuti, I explained some ways to start in details.
+However, we were limited in our time, so I explained some essentials and shortcuts for the efficient start.
 
-The main goal was diving into React ecosystem. So, ideally, in the coding section everyone would write an application
-with ES2015 (aka ES6), build it with webpack and use readux. In reality, it might look too complicated for
-the React beginners. At the same time, they must not be excluded.
+The top priority of the hackathon was diving into React ecosystem. The ultimate goal was to write an application
+using ES2015 (aka ES6), build it with webpack and use Readux. However, it might have been too complicated for the
+React beginners, and I did not want to exclude them.
 
-Assuming this, I first recommended the simplest React starter kit. Many did not realise that they can code React
-applications by linking two scripts hosted at CDN. Similar to write-on-jQuery approach.
+To ensure the inclusiveness, I recommended the simplest React starter kit. Many developers did not realise that they
+can code React applications by linking two scripts hosted at CDN that is similar to write-on-jQuery approach.
 
 ```js
 <script src="https://fb.me/react-0.14.7.js"
@@ -106,10 +119,11 @@ applications by linking two scripts hosted at CDN. Similar to write-on-jQuery ap
 With these two scripts and a single one local JavaScript file, you can follow [the official documentation](https://facebook.github.io/react/downloads.html)
 and start your React application right away.
 
-The other option suited for those, who are comfortable with builders but did not want to dedicate their time
-for studying ES2015 and prefer plain JavaScript. When I started with React, I dived deeply into all the new
-things. But I do remember that it took some time. Assuming this, 'ES5 + builder' solution is reasonable. For
-this, I provided two links to the possible starter kits:
+The other option is suited for those who are comfortable with builders and don't want to dedicate their time
+for sort out ES2015 and prefer plain JavaScript. When I've started with React, I dived deeply into the new
+things. However it took some time, which is not availabe during the one day event.
+So, 'ES5 + builder' solution is reasonable for the developers who want get their hands on React quickly.
+To provide the different options, I gave the links to the other starter kits:
 
 * [with webpack](https://github.com/petehunt/ReactHack)
 * [with gulp](https://github.com/artyomtrityak/react-hackathon)
@@ -120,14 +134,14 @@ The last stubs 'ES2015 + webpack' type. I've given two:
 * [varya/react-stub](https://github.com/varya/react-stub)
   * ES2015, BEM, PostCSS, webpack
 
-Although there was already a nice starter project called Essential, I also created my own and recommended it.
-I keep it minimalistic. For example, there is no redux linking there. I think, that for a first project it is better
-to start this way, then constantly bring complexity into.
+Despite the existence of a good starter project Essential, I've created my own and recommended it.
+I keep it minimalistic, so there is no redux linking there. I believe that the first project is better without
+exessive complexity.
 
-Another reason of creating my own starter is was that I demonstrated different UI libraries linked and used
-with the React project. Honestly, I don't yet see any ideal solution for the React UI library. This is the
-part which ecosystem is missing. But such libraries are very helpful at the initial bootstrapping stage. Also,
-it is good to be familiar with a few when the time comes to building UI for your own React project.
+One more reason to create my starter kit was to demonstrate the different UI libraries linked and used
+within the React project. Honestly, I don't see any ideal solution for the React UI library yet.
+The ecosystem misses a crucial part, but the existing libraries can help at the initial bootstrapping stage.
+Moreover, it provides a knowledge to use when it comes to building your own UI library for the React projects.
 
 * [React ToolBox](http://react-toolbox.com/#/) -
   [react-stub@with-react-toolbox](https://github.com/varya/react-stub/tree/with-react-toolbox)
@@ -136,21 +150,28 @@ it is good to be familiar with a few when the time comes to building UI for your
 * [Belle](http://nikgraf.github.io/belle/#/?_k=xvldj2) -
   [react-stub@with-belle](https://github.com/varya/react-stub/tree/with-belle)
 
-For showing how React project works with UI libraries, I prepared a branch for each option. These branches
-are in the public GitHub repository and available for usage. Also, I was able to run the code on my computer
-and demonstrate how the application changes after I alter the code.
+To demonstrate how React works with UI libraries, I prepared a branch for each option. These branches
+are in the public GitHub repository and available for using. Also, I was able to run the code on my computer
+and show how the application changes after I alter the code.
 
-The live coding section always makes a good impression. And it bridges the theory with actual coding.
+Live coding section always makes a good impression. Moreover, it connects the theory with actual coding.
 
-Before we started with the applications, I also provided the dummy JSONs for the applications based on
-third-party services data, such as Instagram and Twitter. This helped the developers keep focus on React rather
-than studying APIs.
+Before the development, I provided the dummy JSONs for the applications based on the
+third-party services data (Instagram or Twitter). That helped the developers to be focused on React rather
+than exploring APIs.
 
-In our hackathon, we had React Native and Relay & GraphQL sections for the advanced React users. These presentations
-were given by my colleague [Anssi Herranen](https://fi.linkedin.com/in/anssiherranen) and our quest [Mikhail
+During the hackathon, we had React Native and Relay & GraphQL sections for the advanced React users. These topics
+were covered by my colleague [Anssi Herranen](https://fi.linkedin.com/in/anssiherranen) and our quest [Mikhail
 Novikov](https://fi.linkedin.com/in/freiksenet) from [Reindex](https://www.reindex.io/).
 
-Then, the most important, coding, section started. At this step, you need to keep people focused on the programming
-and take care of all the basic needs. SC5's Head of Technology [Lauri Svan](https://fi.linkedin.com/in/laurisvan)
-helped with it. As a general idea, provide the developers with food and drinks. Having eaten, they manage to
-stay longer and finish their studies.
+
+After all the presentations, it was time to code. It is important that the hackathon organizers take care of the
+developers' basic needs and let the people be focused on the programming. I'm thankful for our Head of Technology
+[Lauri Svan](https://fi.linkedin.com/in/laurisvan) for ordering pizza and drinks, and organizing the people.
+The developers can stay active much longer if they are taken care.
+
+As a result of our hackathon, some developers came up with the applications and demostrated them in the demo part.
+The others got stable base to continues their studies later. And no doubt we all had huge fun.
+
+Feel free to take my presentation and materials for a hackathon in your company or at the community meeting. React
+rocks! :-)
