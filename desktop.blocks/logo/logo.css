@@ -18,6 +18,15 @@ Styleguide 1.1
     float: right;
 }
 
+@media screen and (max-width: 330px) {
+    .logo {
+        float: none;
+    }
+    .logo__dots {
+        display: none;
+    }
+}
+
 .logo .var
 {
     color: #66C9EE;
