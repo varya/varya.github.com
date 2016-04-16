@@ -26,6 +26,12 @@
     }
 }
 
+@media screen and (max-width: 580px) {
+    .layout {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 330px) {
     .layout {
         width: 100%;

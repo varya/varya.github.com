@@ -35,6 +35,12 @@ Styleguide 2.1
     }
 }
 
+@media screen and (max-width: 580px) {
+    .header {
+        width: 580px;
+    }
+}
+
 @media screen and (max-width: 330px) {
     .header {
         width: 330px;
@@ -59,6 +65,12 @@ Styleguide 2.1
     }
 }
 
+@media screen and (max-width: 580px) {
+    .header__left {
+        width: 360px;
+    }
+}
+
 @media screen and (max-width: 330px) {
     .header__left {
         display: none;
@@ -71,6 +83,12 @@ Styleguide 2.1
     margin: 0;
     display: table-cell;
     width: 201px;
+}
+
+@media screen and (max-width: 580px) {
+    .header__center {
+        padding-right: 10px;
+    }
 }
 
 @media screen and (max-width: 330px) {
