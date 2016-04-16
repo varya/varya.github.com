@@ -8,7 +8,8 @@ layout: post
 
 meta:
   desc: >
-    The materials for React hackathon.
+    Hackathon is a perfect solution for getting hands on React quickly. These materials ease the
+    hardship of preparations. Take it to deliver a whole day hackathon into your company.
 
 ---
 
