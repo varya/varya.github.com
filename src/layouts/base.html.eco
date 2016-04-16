@@ -25,7 +25,7 @@
         <div class="header__left candies i-bem"
             data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 }, "reverse" : true } }'></div>
         <div class="header__center">
-            <logo class="logo">···<b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
+            <logo class="logo"><span class="logo__dots">···</span><b class="var">var</b>·<b class="ya">ya</b>;<b class="cursor"></b></logo>
         </div>
         <div class="header__right candies i-bem"
             data-bem='{ "candies" : { "size" : { "max" : 28, "min" : 12 } } }'></div>

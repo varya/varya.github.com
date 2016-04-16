@@ -35,6 +35,13 @@ Styleguide 2.1
     }
 }
 
+@media screen and (max-width: 330px) {
+    .header {
+        width: 330px;
+        text-align: center;
+    }
+}
+
 .header__left
 {
     padding: 0;
@@ -52,12 +59,24 @@ Styleguide 2.1
     }
 }
 
+@media screen and (max-width: 330px) {
+    .header__left {
+        display: none;
+    }
+}
+
 .header__center
 {
     padding: 0;
     margin: 0;
     display: table-cell;
     width: 201px;
+}
+
+@media screen and (max-width: 330px) {
+    .header__center {
+        width: 100%;
+    }
 }
 
 .header__right
@@ -69,6 +88,12 @@ Styleguide 2.1
 }
 
 @media screen and (max-width: 768px) {
+    .header__right {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 330px) {
     .header__right {
         display: none;
     }

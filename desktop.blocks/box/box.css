@@ -33,6 +33,12 @@ Styleguide 2.3
     border: rgba(0,0,0, .075) 1px solid;
 }
 
+@media screen and (max-width: 330px) {
+    .box__island {
+        border-width: 1px 0 0;
+    }
+}
+
 .box__title
 {
     font-size: 1.5em;
