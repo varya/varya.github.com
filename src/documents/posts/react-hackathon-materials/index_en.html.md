@@ -2,7 +2,7 @@
 
 title: Materials for your React hackathon
 
-date: 2016-04-15
+date: 2016-04-16
 
 layout: post
 
