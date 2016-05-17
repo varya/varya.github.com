@@ -1,6 +1,6 @@
 ---
 
-title: Mastering SC5 Style Guide
+title: Living SC5 Styleguide, the next level
 
 date: 2016-05-20
 
@@ -12,13 +12,29 @@ meta:
 
 ---
 
-Before
+When it comes to the large web applications, we often operate with complex components. Such components are not just CSS
+styles for the pieces of an interface but also their JavaScript interactions and templates. As a documentation, the style
+guide should reflect them all. In other words, the components on the style guide's pages should be the same living as in
+production.
 
 <excerpt/>
 
+At my recent project, we had been using SC5 Style Guide in its simplest way - documenting the view of the component. For
+that, we provided the needed HTML in the KSS code and so had gotten the rendered component library.
+
+However, in the production code, these components appeared at the pages as a result of some templating transformations.
+Also, the project is very big and fast-developed, and the changes to the templates happened all the time. As a result,
+the living style guide was always out of date.
+
+Moreover, a lot of functionality could not be illustrated with plain HTML. It required the component JavaScript to be
+rendered correctly and interact with a user.
+
+At this project, I have solved the problem using advanced configuration of SC5 Style Guide. Below you can find the
+tricks and explanation.
+
 ## Living JavaScript components
 
-Usually, an piece of interface (often called 'a component') is a combination of HTML, CSS and JavaScript. With basic
+Usually, a piece of an interface (often called 'a component') is a combination of HTML, CSS, and JavaScript. With basic
 features if SC5 Style Guide you can easily document HTML and CSS. Applying JavaScript to the components requires an
 additional configuration.
 
@@ -61,16 +77,16 @@ $(window).on('styleguide:onRendered', function(e) {
 
 ## Additional processors
 
-The SC5 Style Guide parses the KSS dodumentation in your CSS (SASS, LESS) code, collects information about all the
+The SC5 Style Guide parses the KSS documentation in your CSS (SASS, LESS) code, collects information about all the
 components and produces a JSON file with it. The documentation pages you can see are the Angular pages built based
 on the information in this JSON.
 
 When generating the style guide, you can inject additional processors into transforming data for this JSON file. The
-custom processing functions can re-organize and modify these data. You can use this trick to provide more clever
+custom processing functions can re-organize and modify these data. You can use this trick to provide a more clever
 generator, run templates and parametrized JavaScript components.
 
 Examine the generated `styleguide.json` file to see how the data is organized by default. You will find out that every
-component is represented with an object similar to the following:
+component is represented by an object similar to the following:
 
 ```
 {
@@ -112,10 +128,10 @@ gulp.task("styleguide:generate", function() {
     ...
 ```
 
-As a value of this option you can list the processing functions. The given indexes matter for the order in which these
+As a value of this option, you can list the processing functions. The given indexes matter for the order in which these
 functions are applied to the data.
 
-Check out [documentation for options](https://github.com/SC5/sc5-styleguide#build-options).
+Check out [the documentation for options](https://github.com/SC5/sc5-styleguide#build-options).
 
 In my projects, I used additional processors to operate custom KSS parameters and modify data based on them.
 
@@ -162,7 +178,7 @@ var processTemplates = (styleguide) => {
 
 ## Templates on fly
 
-In the sigle-page applications, templates work on the client side. In this case it is better to process them this way
+In the single-page applications, templates work on the client side. In this case, it is better to process them this way
 in the style guide also. In other words, you should include the templates into the JavaScript bundle and initialize
 the components on containers.
 
@@ -228,7 +244,7 @@ This code runs a corresponding function for every selector in the `knownComponen
 passed into the initializing function as a parameter.
 
 ```
-// src/components/tabs/tabs.init.js
+// src/components/tabs/tabs.sg-init.js
 
 var Tabs = require('./tabs.js')
 
@@ -276,5 +292,37 @@ module.exports = function($container) {
 
 ## File structure
 
+You may have noticed that I suggest storing everything related to the component under the same folder. This is also
+relevant to the style-guide-related files.
 
-## Reusing project variables
+For a user, a piece of an interface is a consistent entity. They get it as a whole thing, no matter how many technologies
+are behind. For a developer, it is not that straightforward. We use CSS for styling, JavaScript for interactions and HTML
+for the view. The corresponding code is usually placed in a separate file for each technology. I find it quite
+distracting.
+
+However, the 'component folder' approach smoothes this situation. Storing everything (including the documentation) in
+the same place improves developer's experience very much.
+
+```
+src/
+  components/
+    login/
+      login.ejs
+      login.js
+      login.sg-init.js
+    tabs/
+      tabs.ejs
+      tabs.js
+      tabs.sass
+      tabs.sg-init.js
+```
+
+## Enjoy
+
+After having tuned the SC5 Style Guide as above you will get the double living documentation. Remember about the
+watching mode to re-generate the style guide on the file changes. This works as a nice development playground.
+
+And last but not least, I would like to thank the community which made these things possible. I used the SC5 Style Guide
+features by other developers and so feel very grateful. You may see their names [at the releases'
+page](https://github.com/SC5/sc5-styleguide/releases). Should you want yours appear here, please
+[contribute](https://github.com/SC5/sc5-styleguide).
