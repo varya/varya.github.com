@@ -8,7 +8,8 @@ layout: post
 
 meta:
   desc: >
-    Desc
+    Living documenttaion for CSS, JavaScript and templates of your components with SC5 Style Guide. In this post I share
+    my experience from the recent large project.
 
 ---
 
