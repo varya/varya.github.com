@@ -39,7 +39,7 @@ running
 npm start
 ```
 
-It starts a local that builds of html, js and css files related to the project. The magic
+It starts a local server that builds of html, js and css files related to the project. The magic
 happens with `webpack`. Let me explain it below.
 
 For now, let's concentrate on the file structure.
