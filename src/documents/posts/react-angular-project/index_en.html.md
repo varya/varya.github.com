@@ -2,7 +2,7 @@
 
 title: Simple React Angular project
 
-date: 2016-05-03
+date: 2016-05-19
 
 layout: post
 
