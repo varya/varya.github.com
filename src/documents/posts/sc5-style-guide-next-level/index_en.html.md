@@ -20,8 +20,9 @@ production.
 
 <excerpt/>
 
-At my recent project, we have been using SC5 Style Guide in its simplest way - documenting the view of the components. For
-that, we provided the needed HTML in the KSS code and so has received the rendered component library.
+At my recent project, we have been using [SC5 Style Guide](http://styleguide.sc5.io/) in its simplest way - documenting
+the view of the components. For that, we provided the needed HTML in the KSS code and so has received the rendered
+component library.
 
 However, in the production code, these components appeared at the pages as a result of some templating transformations.
 Also, the project is massive and fast-developed, and the changes to the templates happened all the time. As a result,
