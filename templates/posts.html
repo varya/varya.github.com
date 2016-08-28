@@ -1,0 +1,16 @@
+    <section>
+      {{{contents}}}
+    </section>
+    <section>
+      <h1>Lista dos Posts</h1>
+      <ul>
+        {{#each collections.posts }}
+          <li>
+            <a href="{{baseUrl}}/{{this.path}}/index.html" title="{{this.title}}">
+              <h2>{{this.title}}</h2>
+              {{{json this}}}
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </section>

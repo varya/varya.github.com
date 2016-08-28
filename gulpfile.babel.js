@@ -9,6 +9,21 @@ import clean from"gulp-clean";
 import fs from "fs";
 import minimist from "minimist";
 
+//import metalsmith from "gulp-metalsmith"
+import metalsmith from "metalsmith"
+import markdown from "metalsmith-markdown"
+import multiLanguage from "metalsmith-multi-language"
+import branch from "metalsmith-branch"
+import copy from "metalsmith-copy"
+import collections from "metalsmith-collections"
+import templates from "metalsmith-templates"
+import paths from "metalsmith-paths"
+import permalinks from "metalsmith-permalinks"
+
+import Handlebars from "handlebars"
+
+import stringify from "json-stringify-safe"
+
 const outputPath = 'out/styleguide';
 
 gulp.task("styleguide:generate", () => {
@@ -79,6 +94,59 @@ gulp.task("bem-watch-files", () => {
 
 gulp.task("bem-watch-build", () => {
   gulp.watch(["desktop.build/**/*"], ["bem-copy"]);
+});
+
+Handlebars.registerHelper('json', function(context) {
+   var str;
+   for(var key in context) {
+     str += key + ': ' + context[key].toString() + ', ';
+   }
+  return str;
+});
+
+gulp.task("metalsmith", ()=> {
+  metalsmith(__dirname)
+    .destination('build')
+    .use(copy({
+      pattern: '**/*.md',
+      move: true,
+      transform: f => {
+        if (f.match(/index_en.md/i)) {
+          return f.replace('_en.md', '.md');
+        }
+        if (f.match(/^.*_en.md/i)) {
+          return 'en/' + f.replace('_en.md', '.md');
+        }
+        if (f.match(/^.*_ru.md/i)) {
+          return 'ru/' + f.replace('_ru.md', '.md');
+        }
+                console.log('returned', f);
+      }
+
+    }))
+    .use(collections({
+      posts: {
+        pattern: 'posts/**/*.md',
+        sortBy: 'date',
+        reverse: true
+      }
+    }))
+    .use(permalinks({
+      pattern: ':title',
+      relative: false
+    }))
+    .use(paths({
+      property: "paths"
+    }))
+    .use(markdown({
+      smartypants: true,
+      gfm: true,
+      tables: true
+    }))
+    .use(templates('handlebars'))
+    .build((err, files) => {
+      if (err) throw err;
+    });
 });
 
 gulp.task("dev", ["bem-watch", "styleguide-watch"]);
