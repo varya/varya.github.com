@@ -16,12 +16,7 @@ http://www.iconarchive.com/show/so-smooth-social-icons-by-minisoft.es.html
 
     docpad deploy-ghpages --env static
 
-## Run gemini
-
-### Take reference screenshots
-```
-gulp test:update
-```
+## Run visual tests
 
 ### Check up interface
 
@@ -36,3 +31,10 @@ Run test in another terminal window/tab:
 ```
 gulp test
 ```
+
+### Update reference screenshots
+
+```
+gulp test:update
+```
+
