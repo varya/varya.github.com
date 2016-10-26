@@ -50,6 +50,7 @@
     "gulp-run": "^1.6.10",
     "gulp-shell": "^0.4.2",
     "minimist": "^1.2.0",
+    "phantomjs-prebuilt": "^2.1.13",
     "sc5-styleguide-visualtest": "1.9.0",
     "uglify-js": "^2.7.3",
     "ym": "^0.1.2"
