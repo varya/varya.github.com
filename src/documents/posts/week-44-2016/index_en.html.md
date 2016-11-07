@@ -12,17 +12,19 @@ meta:
 
 ---
 
-Before
+First thing first, I'm staring weekly posts about findings that are somehow related to work. This is a mature but not yet
+implemented idea. Although, a friend of mine [Vladimir Starkov sometimes practises the same](https://iamstarkov.com/).
+
+In this issue there are tips on organizing Google Calendar, nice project management addition for GitHub, Styleguide
+solutions for React projects and a couple of good reads.
 
 <excerpt/>
 
-First thing first, I'm staring weekly posts about findings somehow related to work. This is a mature but not yet
-implemented idea. Although, a friend of mine [Vladimir Starkov sometimes practises the approach](https://iamstarkov.com/).
 
 ## Week numbers in Google calendar
 
-In Finland, the week numbers are widely used. People easily make agreements on "in the beginning on week 44" or "on week
-12 next year". For this purpose and also for the actual weekly reports, I have subscribed for a special Google calendar
+In Finland, the week numbers are widely used. People easily make agreements on let's say "the beginning on week 45". For
+this purpose and also for the actual weekly reports, I have subscribed for a special Google calendar
 which provides a small week number at the top right corner or every monday.
 
 ![](/posts/week-44-2016/CalendarWeekNumbers3.png)
@@ -42,21 +44,21 @@ more features.
 
 ## React Storybook and React Styleguidist
 
-In the project I have started on Monday, we faced the need to document the React components. There were two candidates
+In the project I have started on Monday, we faced the need to document React components. There were two candidates
 among the tools to use — [React Storybook](https://getstorybook.io/) and [React
 Styleguidist](https://github.com/sapegin/react-styleguidist). Both with their pros and cons.
 
-By now, we ended up with Styleguidist. However, this is not a mature solution, and we can probably think back.
+By now, we ended up with Styleguidist. Anyway, this is not a mature solution, and we can probably think back.
 
-The Storybook was super easy to install. However, requires more typing for every story and does not read the props out
+The Storybook was super easy to install. However, it requires more typing for every story and does not read the props out
 of the documenting comments.
 
 The Styleguidist was a tricky thing to run. Everything goes smoothly at simple projects but this was not our case. There
-were some difficultes with the pages wrapped into `react-hot-loader` container. I solved it by introducing proper file
+were some difficulties with the pages wrapped into `react-hot-loader` container. I solved it by introducing proper file
 structure. We should have it anyway. Now, there is a dedicated folder for the components and we taught the Styleguidist
-work with it.
+to work with it.
 
-As an advice to friends, I can give the following: try to reuse your normal webpack config and not to write another one
+As a piece of advice to friends, I can give the following: try to reuse your normal webpack config and not to write another one
 in the `styleguide.config.js` file. It will save you some time when changing the building process. This is our version:
 
 ```
@@ -68,10 +70,6 @@ module.exports = {
   updateWebpackConfig(webpackConfig) {
     siteWebpack.module.loaders.forEach(function(loader) {
       webpackConfig.module.loaders.push(loader);
-    });
-    webpackConfig.module.noParse = siteWebpack.module.noParse;
-    siteWebpack.plugins.forEach(function(plugin) {
-       webpackConfig.plugins.push(plugin);
     });
     webpackConfig.postcss = siteWebpack.postcss;
 
