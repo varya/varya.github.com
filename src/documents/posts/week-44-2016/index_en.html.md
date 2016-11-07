@@ -2,7 +2,7 @@
 
 title: Week 44, 2016
 
-date: 2016-11-07
+date: 2016-11-08
 
 layout: post
 
@@ -79,3 +79,16 @@ module.exports = {
   },
 };
 ```
+
+## How to Write a Git Commit Message
+
+The article [How to Write a Git Commit Message](http://chris.beams.io/posts/git-commit/) by Chris Beams has already
+turned 2 years but still actual. I have read it previously and try to follow. But I do not recollect me shring the link
+to it. So, here it is.
+
+## 4 different kinds of React component style
+
+Setting up a new project I have scanned a lot of recent articles about React. One of them is [4 different kinds of React
+component style](https://www.peterbe.com/plog/4-different-kinds-of-react-component-styles). I had doubts if to put it in
+this blog post or not because it did not tell me much new. On the other hand, it's not a long read and finely summarizes
+different kinds of React components.
