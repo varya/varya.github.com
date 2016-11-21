@@ -2,7 +2,7 @@
 
 title: Simple yet promising structure for React/Redux project
 
-date: 2016-11-20
+date: 2016-11-21
 
 layout: post
 
@@ -14,19 +14,18 @@ meta:
 
 ---
 
-Two weeks ago, I have started an new project of migrating a large website to React. Although this is not developing from
-scratch but refactoring, there still was a great chance to reconsider the project file structuse in its client part.
+Two weeks ago, I have started a new project of migrating a large website to React. Although this is not developing from
+scratch but refactoring, there still was a great chance to reconsider the project file structure in its client part.
 
 As a proof-of-concept, I have chosen a pair of components: shopping cart and adding button. This is e-commerce what we
-are building here :-) My initial goal was to create simple components and demonstrate their reusage as well as introduce
-Redux as a glue to the components in the data area. As a result, I think I provided nice and neat structure which helps
-a developer to understand what serves what. On the otehr hand, I tried to keep it simple. In the beginning, there is
-no need in overcomplicated.
+are building here :-) My initial goal was to create simple components and demonstrate their reusing as well as introduce
+Redux as a glue to the components in the data area. As a result, I think I provided a nice and neat structure which
+helps a developer to understand what serves what. On the other hand, I tried to keep it simple. In the beginning, there
+is no need in overcomplicated.
 
 <excerpt/>
-
 In this post, I present the initial state of the project structure, extracted from the working repository. In our actual
-project it has already evolved to use other patterns and helping tools. I hope I will amke it to present these changes
+project, it has already evolved to use other patterns and helping tools. I hope I will make it to present these changes
 in the following posts.
 
 The demonstrative extract is a public repository at
@@ -57,18 +56,18 @@ src/
 ```
 
 The `components` folder is dedicated for representative, "static" components. The components can reuse one another. For
-example, in the project the `AddToCartButton` wraps the `Button`.
+example, in the project, the `AddToCartButton` wraps the `Button`.
 
-On the file system, each component is a folder. Inside there are usually `index.js`, alwast always `style.css` and other
+On the file system, each component is a folder. Inside there are usually `index.js`, almost always `style.css` and other
 files such as images if needed. I used to name the JavaScript file by the component name, like `Button.js` and
 `Button.css`. But in this
-project I tried more unified structure. It turned out to be very handy, especially in the beginning, when we make a lot
+project, I tried more unified structure. It turned out to be very handy, especially in the beginning, when we make a lot
 of small components. Now the component folders can be copied and renamed easily.
 
 Next folder is named `containers`. It is for the wrappers around the components. These wrappers often have the same
 names. Unlike representative components, which only know about how to render the data, the containers are for getting
 the data and passing it down. Technically the containers are also React components, but they are decorated with
-`connect` from Redux. This provides glue for view and data. You can see typical container here:
+`connect` from Redux. This provides the glue for view and data. You can see typical container here:
 [src/containers/AddToCartButton](https://github.com/varya/react-redux-project/blob/eb0e7a24ba8a723ce373d3763c299b95661fdfc6/src/containers/AddToCartButton/index.js)
 
 For the data, the containers use reducers from Redux. The project is made in a hope for future growing. This is why the
@@ -112,7 +111,7 @@ This style of organizing reducers is called [Ducks](https://github.com/erikras/d
 
 The entering file of the application [src/index.js](https://github.com/varya/react-redux-project/blob/master/src/index.js)
 takes the components or containers, makes the Redux store and creates the app with them. In here, you can also decorate
-representative components with Redux' `connect` if they do not have special container.
+representative components with Redux' `connect` if they do not have a special container.
 
-As the following weeks showed, this structure turned out to be very convinient. Of course, it has evolved more. I hope
+As the following weeks showed, this structure turned out to be very convenient. Of course, it has evolved more. I hope
 to cover the changes in the next posts.
