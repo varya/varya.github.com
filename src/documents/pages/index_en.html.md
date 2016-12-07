@@ -42,6 +42,6 @@ This site is available in both English and [Russian](/ru).
 
 Here are some obligatory (but useful) links as well:
 
- * [Github](https://github.com/varya)
- * [Twitter](https://twitter.com/toivonens)
+ * [GitHub](https://github.com/varya)
+ * [Twitter](https://twitter.com/varya_en)
  * [LinkedIn](http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b)
