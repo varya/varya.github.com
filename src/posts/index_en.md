@@ -1,7 +1,6 @@
 ---
 
-layout: posts
-template: posts.html
+rtemplate: Posts.js
 
 title: Tech Blog
 
