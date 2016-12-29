@@ -26,6 +26,8 @@
     "glob": "^4.3.5",
     "grunt": "~0.4.5",
     "grunt-contrib-copy": "^0.7.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
     "safeps": "~2.2.11",
     "sc5-styleguide": "^0.3.44"
   },
@@ -37,7 +39,8 @@
   "devDependencies": {
     "babel": "^6.0.15",
     "babel-core": "^6.1.2",
-    "babel-preset-es2015": "^6.1.2",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
     "borschik": "^1.3.2",
     "borschik-tech-cleancss": "^2.0.1",
     "enb-bem-techs": "^1.0.3",
@@ -58,6 +61,7 @@
     "metalsmith-multi-language": "^0.1.1",
     "metalsmith-paths": "^2.1.2",
     "metalsmith-permalinks": "^0.5.0",
+    "metalsmith-react-templates": "^5.0.1",
     "metalsmith-templates": "^0.7.0",
     "minimist": "^1.2.0",
     "sc5-styleguide-visualtest": "1.7.0"

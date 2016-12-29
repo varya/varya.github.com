@@ -19,6 +19,7 @@ import collections from "metalsmith-collections"
 import templates from "metalsmith-templates"
 import paths from "metalsmith-paths"
 import permalinks from "metalsmith-permalinks"
+import reactTemplates from "metalsmith-react-templates"
 
 import Handlebars from "handlebars"
 
@@ -120,7 +121,7 @@ gulp.task("metalsmith", ()=> {
         if (f.match(/^.*_ru.md/i)) {
           return 'ru/' + f.replace('_ru.md', '.md');
         }
-                console.log('returned', f);
+        console.log('returned', f);
       }
 
     }))
@@ -143,7 +144,15 @@ gulp.task("metalsmith", ()=> {
       gfm: true,
       tables: true
     }))
-    .use(templates('handlebars'))
+    .use(reactTemplates({
+      babel: true,
+      directory: 'src/templates',
+      baseFile: 'base.html',
+      defaultTemplate: 'Default.js',
+      extension: null,
+      static: true
+    }))
+    //.use(templates('handlebars'))
     .build((err, files) => {
       if (err) throw err;
     });
