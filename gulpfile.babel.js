@@ -136,6 +136,16 @@ gulp.task("metalsmith", ()=> {
         pattern: 'ru/posts/**/*.md',
         sortBy: 'date',
         reverse: true
+      },
+      LifeEn: {
+        pattern: 'life/**/*.md',
+        sortBy: 'date',
+        reverse: true
+      },
+      LifeRu: {
+        pattern: 'ru/posts/**/*.md',
+        sortBy: 'date',
+        reverse: true
       }
     }))
     .use(permalinks({

@@ -1,6 +1,7 @@
 ---
 
-layout: life
+rtemplate: LifePosts.js
+collection: LifeRu
 
 title: Про жизнь
 
