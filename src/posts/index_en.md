@@ -1,6 +1,6 @@
 ---
 
-rtemplate: Posts.js
+rtemplate: TechPosts.js
 
 title: Tech Blog
 

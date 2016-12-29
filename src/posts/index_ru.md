@@ -1,6 +1,6 @@
 ---
 
-layout: posts
+rtemplate: TechPosts.js
 
 title: Тех блог
 

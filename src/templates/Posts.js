@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 
-export default class Post extends Component {
+export default class Posts extends Component {
 
   render() {
-    const { title } = this.props
-
-    const posts = this.props.metadata.collections.posts
+    const { title, posts } = this.props
 
     let postsList = posts.map((post, i) => {
       const dir = `/${post.paths.dir}/`

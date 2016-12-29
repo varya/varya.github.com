@@ -127,8 +127,13 @@ gulp.task("metalsmith", ()=> {
 
     }))
     .use(collections({
-      posts: {
+      PostsEn: {
         pattern: 'posts/**/*.md',
+        sortBy: 'date',
+        reverse: true
+      },
+      PostsRu: {
+        pattern: 'ru/posts/**/*.md',
         sortBy: 'date',
         reverse: true
       }
