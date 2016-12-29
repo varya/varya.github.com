@@ -1,5 +1,6 @@
 ---
-layout: index
+rtemplate: Index.js
+
 htmlTitle: Varya Stepanova
 title: About me
 
@@ -8,6 +9,8 @@ order: 3
 meta:
   desc: >
     Yet another frontend developer's blog
+
+collection: PostsEn
 
 ---
 I am a front-end developer originally from the Utmost North

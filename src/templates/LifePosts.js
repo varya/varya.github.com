@@ -13,6 +13,7 @@ export default class LifePosts extends Component {
       <Posts
         title={title}
         posts={posts}
+        snippets={true}
         />
     )
 

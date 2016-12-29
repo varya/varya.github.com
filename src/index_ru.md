@@ -1,12 +1,13 @@
 ---
+rtemplate: Index.js
 
 htmlTitle: Варя Степанова
-
-layout: index
 
 title: Обо мне
 
 order: 3
+
+collection: PostsRu
 ---
 
 Я разработчик интерфейсов (фронтендер) из
