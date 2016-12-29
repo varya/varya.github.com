@@ -20,6 +20,7 @@ import templates from "metalsmith-templates"
 import paths from "metalsmith-paths"
 import permalinks from "metalsmith-permalinks"
 import reactTemplates from "metalsmith-react-templates"
+import snippet from "metalsmith-snippet"
 
 import Handlebars from "handlebars"
 
@@ -143,6 +144,11 @@ gulp.task("metalsmith", ()=> {
       smartypants: true,
       gfm: true,
       tables: true
+    }))
+    .use(snippet({
+      stop: ['<excerpt/>'],
+      stripHtml: false,
+      suffix: ''
     }))
     .use(reactTemplates({
       babel: true,

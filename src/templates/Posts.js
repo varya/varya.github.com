@@ -13,6 +13,7 @@ export default class Post extends Component {
       return (
         <li key={key}>
           <a href={dir}>{post.title}</a>
+          <div dangerouslySetInnerHTML={{ __html: post.snippet }}/>
         </li>
       )
     })
