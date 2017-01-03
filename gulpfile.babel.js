@@ -128,7 +128,7 @@ gulp.task("metalsmith", ()=> {
     }))
     .use(collections({
       PostsEn: {
-        pattern: 'posts/**/*.md',
+        pattern: ['posts/**/*.md', '!posts/index.md'],
         sortBy: 'date',
         reverse: true
       },
@@ -138,7 +138,7 @@ gulp.task("metalsmith", ()=> {
         reverse: true
       },
       LifeEn: {
-        pattern: 'life/**/*.md',
+        pattern: ['life/**/*.md', '!life/index.md'],
         sortBy: 'date',
         reverse: true
       },

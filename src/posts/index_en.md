@@ -1,6 +1,7 @@
 ---
 
 rtemplate: TechPosts.js
+collection: PostsEn
 
 title: Tech Blog
 
