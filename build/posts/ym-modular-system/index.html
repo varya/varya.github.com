@@ -1,0 +1,200 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>YM Modular System. Why?</h1><div><p>The recently published <a href="http://bem.info/tutorials/articles/bem-js-tutorial/">step-by-step tutorial on
+i-bem.js</a> mentioned <strong>YM
+modular system</strong> as a base for component JavaScript solution behind BEM. Why do
+we need another modular system? Let us see…</p>
+<excerpt/>
+
+<p>The author of YM modules, <a href="https://github.com/dfilatov">Dmitry Filatov</a> recently
+came up with an <a href="http://habrahabr.ru/post/213627/">article about YM modules</a> in
+Russian. And below you can find the translation.</p>
+<hr/>
+
+<p>So, one more modular system? Besides CommonJS and AMD? Why should we care?</p>
+<p>I will not write why modules and modular systems are needed, there are plenty of
+articles about it. Let us rather proceed to the main question: why do we need
+<em>another</em> modular system?<br/>
+For sure, there are CommonJS and AMD, but working on large projects with them I faced
+ large drawbacks. One is that they are synchronous. This is not fatal, but in my
+project we often had to provie different hacks for it.</p>
+<p>Let us say, we have 3 modules: moduleA, moduleB and moduleC. moduleC depends on
+both moduleA and moduleB. Initially I will describe this in code for all the
+three solutions:</p>
+<p>####CommonJS</p>
+<p><em>moduleA.js:</em></p>
+<pre><code class="lang-js">module.exports = &#39;A&#39;;
+</code></pre>
+<p><em>moduleB.js:</em></p>
+<pre><code class="lang-js">module.exports = &#39;B&#39;;
+</code></pre>
+<p><em>moduleC.js:</em></p>
+<pre><code class="lang-js">var moduleA = require(&#39;A&#39;);
+    moduleB = require(&#39;B&#39;);
+
+module.exports = moduleA + moduleB + &#39;C&#39;;
+</code></pre>
+<p><em>Linking and usage:</em></p>
+<pre><code class="lang-js">var moduleC = require(&#39;C&#39;);
+console.log(moduleC); // prints &quot;ABC&quot;
+</code></pre>
+<p>####AMD</p>
+<p><em>moduleA.js:</em></p>
+<pre><code class="lang-js">define(&#39;A&#39;, function() {
+    return &#39;A&#39;;
+});
+</code></pre>
+<p><em>moduleB.js:</em>:</p>
+<pre><code class="lang-js">define(&#39;B&#39;, function() {
+    return &#39;B&#39;;
+});
+</code></pre>
+<p><em>moduleC.js:</em></p>
+<pre><code class="lang-js">define(&#39;С&#39;, [&#39;A&#39;, &#39;B&#39;], function(moduleA, moduleB) {
+    return moduleA + moduleB + &#39;C&#39;;
+});
+</code></pre>
+<p><em>Linking and usage:</em></p>
+<pre><code class="lang-js">require([&#39;С&#39;], function(moduleC) {
+    console.log(moduleC); // prints &quot;ABC&quot;
+});
+</code></pre>
+<p>####YM</p>
+<p><em>moduleA.js:</em></p>
+<pre><code class="lang-js">modules.define(&#39;A&#39;, function(provide) {
+    provide(&#39;A&#39;);
+});
+</code></pre>
+<p><em>moduleB.js:</em></p>
+<pre><code class="lang-js">modules.define(&#39;B&#39;, function(provide) {
+    provide(&#39;B&#39;);
+});
+</code></pre>
+<p><em>moduleC.js:</em></p>
+<pre><code class="lang-js">modules.define(&#39;C&#39;, [&#39;A&#39;, &#39;B&#39;], function(provide, moduleA, moduleB) {
+    provide(moduleA + moduleB + &#39;C&#39;);
+});
+</code></pre>
+<p><em>Linking and usage:</em></p>
+<pre><code class="lang-js">modules.require([&#39;С&#39;], function(moduleC) {
+    console.log(moduleC); // prints &quot;ABC&quot;
+});
+</code></pre>
+<p>Nothing interesting yet. All three examples are similar, although you may
+notice the <code>provide</code> callback in the YM example. What is it for?</p>
+<p>Let us imagine a case that <code>moduleA</code> and <code>moduleB</code> cannot be resolved immediately
+(synchronously, as it is required by CommonJS and AMD). Sometimes you need to
+do an asynchronous action first. The simpliest example can be <code>setTimeout</code>.
+There is no way to implement it elegantly with CommonJS and AMD.
+But with <code>YM</code> it can be coded as follows:</p>
+<p><em>moduleA.js:</em></p>
+<pre><code class="lang-js">modules.define(&#39;A&#39;, function(provide) {
+    setTimeout(function() {
+        provide(&#39;A&#39;);
+   });
+});
+</code></pre>
+<p><em>moduleB.js:</em></p>
+<pre><code class="lang-js">modules.define(&#39;B&#39;, function(provide) {
+    setTimeout(function() {
+        provide(&#39;B&#39;);
+    });
+});
+</code></pre>
+<p><em>moduleC.js:</em></p>
+<pre><code class="lang-js">modules.define(&#39;C&#39;, [&#39;A&#39;, &#39;B&#39;], function(provide, moduleA, moduleB) {
+    provide(moduleA + moduleB + &#39;C&#39;);
+});
+</code></pre>
+<p>Interestingly <code>moduleC</code> does not know anything about asynchronous actions in
+its dependant modules. <em>Win!</em></p>
+<h3 id="real-life-example">Real life example</h3>
+<p>As for real file example, I often use the YandexMaps API
+(<a href="http://api.yandex.com/maps/">http://api.yandex.com/maps/</a>, API of
+<a href="http://maps.yandex.com/">Yandex.Maps</a>
+public service). Yandex.Maps API has a complex loading scheme and this cannot be
+done synchronously. This means that I cannot simply link it to a page
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;url-of-ymaps.js&quot;&gt;&lt;/script&gt;</code> and be sure that
+all the following scripts will get the API code ready. First I need to wait for
+the event <code>ymaps.ready</code> to fire.</p>
+<p>The project I am working for is quite complex; we have many classes inherited
+from the basic API. For example, we have a <code>ComplexLayer</code> class based on <code>ymaps.Layer</code>.
+With YM modules it is simple to implement. We define a <code>ymaps</code> module which loads
+the API code, waits for the <code>ymaps.ready</code> event and then provides itself. All
+the modules which have the <code>ymaps</code> module as a dependency only start to resolve
+after this. As you can see, other modules know nothing about the asynchronicity of the
+Yandex.Map API. <em>No hacks in code!</em></p>
+<p><em>ymaps.js:</em></p>
+<pre><code class="lang-js">modules.define(
+    &#39;ymaps&#39;,
+    [&#39;loader&#39;, &#39;config&#39;],
+    function(provide, loader, config) {
+
+    var url = config.hosts.ymaps + &#39;/2.1.4/?lang=ru-RU&#39; +
+              &#39;&amp;load=package.full&amp;coordorder=longlat&#39;;
+
+    loader(url, function() {
+        ymaps.ready(function() {
+            provide(ymaps);
+        });
+    });
+});
+</code></pre>
+<p>There are 2 other modules in use here: <code>loader</code> and <code>config</code>. I do not show
+their code, but the first one loads scripts and the second one is a hash with
+constant values.</p>
+<p><em>ComplexLayer.js:</em></p>
+<pre><code class="lang-js">modules.define(&#39;ComplexLayer&#39;, [&#39;inherit&#39;, &#39;ymaps&#39;], function(provide, inherit, ymaps) {
+    var ComplexLayer = inherit(ymaps.Layer, ...);
+
+    provide(ComplexLayer);
+});
+</code></pre>
+<p>We can do the same if jQuery is needed. There is a module to load jQuery:</p>
+<pre><code class="lang-js">modules.define(
+    &#39;jquery&#39;,
+    [&#39;loader&#39;,
+    function(provide, loader) {
+
+    loader(&#39;//yandex.st/jquery/2.1.0/jquery.min.js&#39;, function() {
+        provide(jQuery.noConflict(true));
+    });
+});
+</code></pre>
+<p>Then we make other modules dependent on <code>jquery</code> module.</p>
+<p>Thus, the whole project code is represented with modules. There is no global, no
+need for agreement on the order of linking the scripts (including third-party ones),
+no dirty hacks for asynchronicity.</p>
+<p>And to wrap up, let me demonstrate you the YM modular system API (indeed, it has more
+methods, and these are only the basic ones).</p>
+<p><em>Defining a module:</em></p>
+<pre><code class="lang-js">void modules.define(
+    String moduleName,
+    [String[] dependencies],
+    Function(
+        Function(Object objectToProvide) provide,
+        [Object resolvedDependency, ...],
+        [Object previousDeclaration]
+    ) declarationFunction
+)
+</code></pre>
+<p><em>Requiring a module:</em></p>
+<pre><code class="lang-js">void modules.require(
+    String[] dependencies,
+    Function(
+        [Object resolvedDependency, ...]
+    ) callbackFunction
+)
+</code></pre>
+<p>The project is open source and hosted at GitHub:
+<a href="https://github.com/ymaps/modules">github.com/ymaps/modules</a>.</p>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+

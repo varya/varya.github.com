@@ -1,0 +1,38 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>Switching to bem-core#v2</h1><div><p>The <code>bem-core</code> library goes futher and there already is <code>2.0.0</code> version
+available. This blog was safely switched to the new major version with
+<a href="https://github.com/varya/varya.github.com/commit/f21f810b7cb4e16206ef3d088a8b2c38b615f8f3">some diff to the
+code</a>.
+Now so can do you. Careful examination of the version changelog will help you
+with it. Look how I did this.<excerpt/></p>
+<p>When a new bem library version is released its changelog is published on the
+official BEM website. You can examine the <a href="http://bem.info/libs/bem-core/2.0.0/changelog/">list of changes for bem-core
+2.0.0</a>.</p>
+<p>The changelog is divided into 3 parts: breaking, marjor and minor changes.</p>
+<p>Breaking changes takes most of your attention. As you can see, they declare
+removing of some basic methods as well as hosting some code in different
+repositories. Thus, if you used some of the listed methods, the switch pushes
+you to refactor your code a little bit.</p>
+<p>The major changes are less critical but might case some code changes as well. In
+this version BEM team provided <a href="https://github.com/bem/bem-core/issues/382">new syntax for defining the blocks in
+JavaScript</a>. This change is not
+breaking as the old syntax still works. However it is nice to go through a small
+refactoring and switch to the new type of module declaration keeping your code
+neat for the future.</p>
+<p>The same goes for the <a href="https://github.com/bem/bem-core/issues/410">change to DOM
+helpers</a>. With getting the context
+as a result of using those helpers you can get rid of a couple of lines per
+block.</p>
+<p>Summing it up, switcing to the new version should be your happiest time as you
+have a ready-made excuse to dive into refactoring.</p>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+

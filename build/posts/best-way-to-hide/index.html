@@ -1,0 +1,109 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>The Best Way to Hide</h1><div><p>There is a well-known front-end pattern which is to have hidden elements in DOM
+and make them visible when necessary. As with any good pattern, it can be
+compromised by wrong implementation.</p>
+<excerpt/>
+
+<p>Most times, <strong>hidden</strong> means that the DOM element gets a <code>display: none</code> property.
+This approach has become even more widespread thanks to <code>.hide()</code> and <code>.show()</code> jQuery helpers.</p>
+<p>Whenever you need to hide a visible block you use the <code>.hide()</code> helper which in
+charge of assigning an inline <code>display: none</code> style property, making the block
+invisible. When it has to become visible again, the <code>.show()</code> helper changes the
+inline CSS <code>display</code> property.</p>
+<p>I believe this is a very nice example of wrong implementation.</p>
+<p>The solution unifies all the elements around the world and assumes all of them
+can be hidden in the same way. But this assumption is far from reality.</p>
+<p>Let us say we have an element in a visible state. Guess what will happen when we
+use <code>.hide()</code> and <code>.show()</code>?
+Yes, an inline style with a <code>display</code> property will be added.
+In other words, the element will not return back to its original visible state.</p>
+<pre><code class="lang-js">$(&#39;.my-block&#39;);
+
+// &lt;span class=&quot;my-block&quot;&gt;..&lt;/span&gt;
+
+$(&#39;.my-block&#39;).hide()
+
+// &lt;span class=&quot;my-block&quot; style=&quot;display: none;&quot;&gt;..&lt;/span&gt;
+
+$(&#39;.my-block&#39;).show()
+
+// &lt;span class=&quot;my-block&quot; style=&quot;display: block;&quot;&gt;..&lt;/span&gt;
+</code></pre>
+<p>jQuery is clever enough to detect inline elements. By applying <code>.hide()</code> and
+<code>.show()</code>, you get something like this:</p>
+<pre><code class="lang-js">$(&#39;.my-block&#39;);
+
+// &lt;span class=&quot;my-block&quot;&gt;...&lt;/span&gt;
+
+$(&#39;.my-block&#39;).hide();
+
+// &lt;span class=&quot;my-block&quot; style=&quot;display: none;&quot;&gt;...&lt;/span&gt;
+
+$(&#39;.my-block&#39;).show();
+
+// &lt;span class=&quot;my-block&quot; style=&quot;display: inline;&quot;&gt;...&lt;/span&gt;
+</code></pre>
+<p>Again, the block did not <strong>return</strong> to its original state after being shown. For
+sure, it became visible, but this state is not equivalent to the original one.
+Any new CSS class appended to the element with an intention to change its
+<code>display</code> property will not work as the inline style rule prevails.</p>
+<p>The other problem is that setting <code>display</code> property to <code>none</code> doesn’t always
+work for making an element invisible. Maybe for some reason it has to be hidden
+from a user with <code>left: -9999px</code>?</p>
+<p>It’s only the interface block implementation that should know about all the
+block states, including the hidden one.</p>
+<p>Modifiers (no matter if you prefer <a href="http://smacss.com/">SMACCS</a>,
+<a href="http://oocss.org/">OOCSS</a> or <a href="http://bem.info/">BEM</a>) are designed to express
+states of interface components. The same goes for the hidden state.</p>
+<p>Every block you would like to hide and show should be equipped with a proper
+modifier:</p>
+<pre><code class="lang-css">.my-block_hidden {
+    display: none;
+}
+</code></pre>
+<p>Then, by applying this modifier and removing it from a block you can be sure it
+transitions into one of its predefined states:</p>
+<pre><code class="lang-js">$(&#39;.my-block&#39;);
+
+// &lt;span class=&quot;my-block&quot;&gt;...&lt;/span&gt;
+
+$(&#39;.my-block&#39;).addClass(&#39;my-block_hidden&#39;);
+
+// &lt;span class=&quot;my-block my-block_hidden&quot;&gt;...&lt;/span&gt;
+
+$(&#39;.my-block&#39;).removeClass(&#39;my-block_hidden&#39;);
+
+// &lt;span class=&quot;my-block&quot;&gt;...&lt;/span&gt;
+</code></pre>
+<p>This enables you to provide any type of hiding, not necessarily <code>display: none</code>,
+and ensures the block returns to its original visible state when shown again.</p>
+<p>If you prefer not to mess with all those <code>.addClass()</code> and <code>.removeClass()</code>
+helpers, you can teach your JavaScript to work with modifiers (e.g. <a href="https://github.com/varya/bem-js-tutorial/blob/master/02-Modifiers.md">as
+BEM does
+it</a>) which
+will make your code even better:</p>
+<pre><code class="lang-js">$.block(&#39;my-block&#39;);
+
+// &lt;span class=&quot;my-block&quot;&gt;...&lt;/span&gt;
+
+$.block(&#39;my-block&#39;).setMod(&#39;hidden&#39;);
+
+// &lt;span class=&quot;my-block my-block_hidden&quot;&gt;...&lt;/span&gt;
+
+$.block(&#39;my-block&#39;).delMod(&#39;hidden&#39;);
+
+// &lt;span class=&quot;my-block&quot;&gt;...&lt;/span&gt;
+</code></pre>
+<p>That’s all. From now on you are not allowed to use <code>.hide()</code> and <code>.show()</code>.
+Even for prototyping :-)</p>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+

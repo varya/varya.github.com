@@ -1,0 +1,87 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>Custom fonts with no cramp</h1><div><p>A developer using custom fonts in web (don’t say this is evil) usually face a
+dilemma.</p>
+<p>The users’ main interest is the content of the page not the
+view. It is nice to provide it as fast as possible and then apply a custom font.
+This blog used to work this way. I provided a script among others in the bundle
+linked by the end of the page.</p>
+<excerpt/>
+
+<pre><code class="lang-js">(function(d){
+
+function addFont(url, h, l) {
+h = d.getElementsByTagName(&#39;head&#39;)[0];
+l = d.createElement(&#39;link&#39;);
+l.href = url;
+l.rel = &#39;stylesheet&#39;;
+h.appendChild(l);
+}
+
+addFont(&#39;//fonts.googleapis.com/css?&#39; +
+&#39;family=Noto+Serif&amp;subset=latin,cyrillic-ext,cyrillic&#39;);
+
+})(document);
+</code></pre>
+<p>The drawback is obvious. Once a font is loaded and apllied, a user notice
+twitching as a page is being re-rendering. It is recommended to define a
+suitable system font in the <code>font-face</code>. But there never is a good fit.
+Otherwise there was no need in a custom font.</p>
+<p>The only way to avoid the font rendering jerk is to provide the font in advance.
+With inlining a base64 of a font into CSS and linking it in <code>&lt;head&gt;</code> no
+twitching is guaranteed as well as increasing page loading time.</p>
+<p>For a while I was deciding between the two variants until my colleague <a href="http://kizu.ru/en/">Roman
+Komarov aka kizu</a> suggested an elegant solution which is in
+use right now.</p>
+<p>At the first time a user opens any page of this site, a CSS with the font is
+loaded and stored as a piece of text in the <code>localStorage</code>.</p>
+<pre><code class="lang-js">$(function(){
+
+    if (typeof(Storage) === &#39;undefined&#39;) {
+        return;
+    }
+    if (localStorage.getItem(&#39;varya.me.fonts&#39;) === null) {
+
+        $.ajax({
+            url: &#39;../../data/fonts.css&#39;,
+            success: function(response){
+                localStorage.setItem(&#39;varya.me.fonts&#39;, response);
+            },
+            dataType: &#39;text&#39;
+        });
+
+    }
+
+});
+</code></pre>
+<p>But I do not apply this CSS after loading. So, not jerks. As request is only to
+fill up the storage, it goes after the <code>domReady</code>.</p>
+<p>By the time of requesting the next page the custom font is already in the user’s
+computer. Checking that it is available I apply it to the page. The faster the
+better, and as the action costs almost nothing an inline <code>&lt;head&gt;</code> script goes
+here.</p>
+<pre><code class="lang-js">(function(d, s, l, r) {
+if (typeof(s) !== &#39;undefined&#39; &amp;&amp; l.getItem(&#39;varya.me.fonts&#39;)) {
+    r = [
+        &#39;&lt;style&gt;&#39;,
+        l.getItem(&#39;varya.me.fonts&#39;),
+        &#39;&lt;/style&gt;&#39;
+    ];
+    document.write(r.join(&#39;&#39;));
+}
+
+})(document, Storage, localStorage);
+</code></pre>
+<p>With that the blog looks as it should do with 2+ pages loaded. I consider this
+price for no-twitching custom font as reasonable.</p>
+<p>Any ideas of making it even better?</p>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+

@@ -1,0 +1,275 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>HTML5 mobile apps with native UI on Steroids</h1><div><p>Recently I attended <a href="http://2014.front-trends.com/">Front Trends 2014</a> in Warsaw.
+This is an awesome conference which you should (no, definitely have to!) attend
+in 2015. Besides incredible main programm Front Trends provides a set of Lighting Talks.
+This year I was a part of it presenting <a href="http://www.appgyver.com/steroids">Steroids</a>,
+a framework and a toolkit for developing HTML5 mobile apps. If you did not have
+a chance to hear it, this offline text presentation is for you.<excerpt/></p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#Cover">
+  </iframe>
+</div>
+
+<p>Being an absolute newbie in developing mobile apps I decided to showcase
+Steroids because it enables me to create pretty native-looking application
+and smoothly go through the developing and releasing flow in a few minutes.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#summary">
+  </iframe>
+</div>
+
+<p>The Steroids toolkit is a CLI; it brings Steroids JavaScript framewrok into
+your project and takes care of building an app, developing flow, debugging
+and releasing. It is based on NodeJs, so you have to have it installed.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#3">
+  </iframe>
+</div>
+
+<p>The required version for now is <code>0.10.25</code>. Follow the <a href="http://academy.appgyver.com/categories/1/contents/1">Installation and Setup
+Guide</a>.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#4">
+  </iframe>
+</div>
+
+<p>Your very first start would be creating a project using <code>steroids create</code>
+command. Then, typing <code>steroids connect --watch</code> in the gotten project
+folder launches steroids process. The <code>--watch</code> flag as you can guess tells
+Steroids to watch over the file changes, rebuild the app and push the results
+to the connected devices.</p>
+<p>You can connect a physical smartphone to the project. After running
+<code>steroids connect</code> you get a web page with a QR code opened in your browser.
+Use <code>AppGyver Scanner</code> to read this QR code, it will bring the application
+into your phone and keep it connected.</p>
+<div style="text-align:center;">
+<a href="https://itunes.apple.com/us/app/appgyver-scanner/id575076515?mt=8"
+target="_blank"><img alt="Appstore" class="appstore_icon"
+src="https://share.appgyver.com/assets/appstore-df950585b54bd081a7826913fc715cd4.png"></a>
+<a href="https://play.google.com/store/apps/details?id=com.appgyver.android&amp;feature=nav_result#?t=W251bGwsMSwxLDMsImNvbS5hcHBneXZlci5hbmRyb2lkIl0."
+target="_blank"><img alt="Googleplay" class="appstore_icon"
+src="https://share.appgyver.com/assets/googleplay-2cef882d62e402fbdbfe8cdac5794069.png"></a>
+</div>
+
+<p>Another way to watch the app is to bring it into a desktop simulator.
+To do this, type <code>simulator</code> in the terminal wich launched
+<code>steroids connect</code>.</p>
+<p>You can change the application source files. E.g. edit a text
+in <code>www/index.html</code> and make sure that the app in the connected device
+or in the simulator has been changed.</p>
+<p>To provide more powerful changes you can learn from the examples
+and tutorials. Run <code>steroids generate</code> command and get the relevant
+code.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#5">
+  </iframe>
+</div>
+
+<p>You can learn from this code examples, from <a href="http://academy.appgyver.com/">tutorials</a>
+and <a href="http://docs.appgyver.com/en/stable/index.html">API Docs</a>. 
+Below I demonstrated some of the features which enable
+to use <em>native UI</em>.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#examples-list">
+  </iframe>
+</div>
+
+<p>Let us start with showing the native tabs.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#7">
+  </iframe>
+</div>
+
+<p>In the <code>config/application.coffee</code> file you can find a commented
+example of defining a list of tabs with their icons and
+locations (URLs) they lead to.</p>
+<p>In my application I created 3 tabs. They are for</p>
+<ul>
+<li>index.html</li>
+<li>notificationExample.html</li>
+<li>knowledge.html</li>
+</ul>
+<pre><code class="lang-coffee">steroids.config.tabBar.enabled = true
+steroids.config.tabBar.tabs = [
+  {
+    title: &quot;Index&quot;
+    icon: &quot;icons/pill@2x.png&quot;
+    location: &quot;http://localhost/index.html&quot;
+  },
+  {
+    title: &quot;Notifications&quot;
+    icon: &quot;icons/bell.png&quot;
+    location: &quot;http://localhost/notificationExample.html&quot;
+  },
+  {
+    title: &quot;Knowledge base&quot;
+    icon: &quot;icons/coding.png&quot;
+    location: &quot;http://localhost/knowledge.html&quot;
+  }
+]
+</code></pre>
+<p>Place the pages into <code>www</code> directory and keep them empty yet.
+Do not forget the icons. You can borrow the whole <a href="https://github.com/varya/steroids-fronttrends2014/tree/master/www/icons">icon
+folder</a>.</p>
+<p>After making the change wait for rebuild and check.</p>
+<div style="text-align:center;">
+<img src="http://img-fotki.yandex.ru/get/9088/14441195.32/0_84262_ae854cb8_orig.png" width="340" height="89" border="0" title="" alt=""/>
+</div>
+
+<p>Next, we can play with notifications.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#8">
+  </iframe>
+</div>
+
+<p>Place these buttons inside the <code>&lt;body&gt;</code> container of the
+<code>www/notificationExample.html</code> file.</p>
+<pre><code class="lang-html">&lt;button
+  class=&quot;button button-block&quot;
+  ontouchend=&quot;showAlert()&quot;&gt;Show alert dialogue&lt;/button&gt;
+&lt;button
+  class=&quot;button button-block&quot;
+  ontouchend=&quot;showConfirm()&quot;&gt;Show confirm dialogue&lt;/button&gt;
+&lt;button
+  class=&quot;button button-block&quot;
+  ontouchend=&quot;showPrompt()&quot;&gt;Show prompt dialogue&lt;/button&gt;
+&lt;button
+  class=&quot;button button-block&quot;
+  ontouchend=&quot;vibrate()&quot;&gt;Vibrate the device&lt;/button&gt;
+</code></pre>
+<p>As you can see, they run different JavaScript functions on
+touch. To finish the page you need to define these functions
+in the <code>&lt;head&gt;</code> or linked <code>*.js</code> file. Each function demonstrates
+a kind of notification which are:</p>
+<ul>
+<li><code>navigator.notification.alert</code></li>
+<li><code>navigator.notification.confirm</code></li>
+<li><code>navigator.notification.prompt</code></li>
+<li><code>navigator.notification.vibrate</code></li>
+</ul>
+<p>Borrow the JavaScript code from <a href="https://github.com/varya/steroids-fronttrends2014/blob/master/www/notificationExample.html#L15">my repo</a>.</p>
+<p>Now you can navigate to this page using the tabs and try
+each type of notification with tapping.</p>
+<p>Another native element could be a button in the application navigation
+bar.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#9">
+  </iframe>
+</div>
+
+<p>The navigation bar can be modified with JavaScript on Steroids.
+If you want it to be the same across all the application pages,
+provide this JavaScript in the <code>www/javascripts/application.js</code> file
+which is linked to all the <code>*.html</code> files.</p>
+<pre><code class="lang-js">var loginButton = new steroids.buttons.NavigationBarButton();
+loginButton.title = &quot;the Button&quot;;
+
+loginButton.onTap = function() {
+    navigator.notification.alert(
+        &#39;You tapped the button!&#39;,
+        function(){},
+        &#39;the Alert&#39;,
+        &#39;I did!&#39;
+    );
+}
+
+steroids.view.navigationBar.update({
+    buttons: {
+      right: [loginButton]
+    }
+})
+</code></pre>
+<p>This will bring the button to the right side of the
+navigation bar. Tapping on it you can see a notification; one
+of those you studied recently.</p>
+<div style="text-align:center;">
+<img src="http://img-fotki.yandex.ru/get/9115/14441195.32/0_84264_7f27d435_L.png" width="282" height="500" border="0" title="" alt=""/>
+</div>
+
+<p>The last of native UI examples in this app is showing
+modal views.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#10">
+  </iframe>
+</div>
+
+<p>Add this button into <code>www/index.html</code>:</p>
+<pre><code class="lang-html">&lt;a
+  class=&quot;button button-block&quot;
+  ontouchend=&quot;showModal()&quot;&gt;Open modal&lt;/a&gt;
+</code></pre>
+<p>And code <code>showModal</code> method to open a view as a modal.</p>
+<pre><code class="lang-js">function showModal() {
+  var webView =
+    new steroids.views.WebView(&quot;/views/modalExample/show.html&quot;);
+  steroids.modal.show(webView);
+}
+</code></pre>
+<p>The related view is a piece of html, which you should place into
+<code>app/views/modalExample/show.html</code>. BTW, it has to have an interface
+element closing the view. To make the process faster, pick up the
+<a href="https://github.com/varya/steroids-fronttrends2014/blob/master/app/views/modalExample/show.html">code from the application repo</a>.</p>
+<p>With this and <a href="http://docs.appgyver.com/en/stable/steroids_Steroids%20Native%20UI_index.md.html#Steroids%C2%A0Native%C2%A0UI">other UI features</a>
+you can build a mobile interface which looks absolutely native for a
+device where you application runs.</p>
+<p>Once finished coding (or even in process) you may need to show the
+application to your friend, client or Mom.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#sharing">
+  </iframe>
+</div>
+
+<p>You can use the QR code from the beginning of our session which can
+bring your application to any any device directly from your computer.
+However this only will work if them both are connected to the same
+network.</p>
+<p>If you want to share with someone remotely, deploy your app into the cloud.
+The <code>steroids deploy</code> command serves for it. As a result you get
+a page (also with a QR code) which can be scanned with AppGyver Scaner on
+a phone and thus your pal get the same app from the cloud.</p>
+<p>All your applications in the cloud can be shared, tuned and built with
+web interface at <a href="https://cloud.appgyver.com/applications">cloud.appgyver.com</a>.</p>
+<p>From there you also push the app into AppStore and GooglePlay.</p>
+<div style="text-align:center;">
+<img src="http://img-fotki.yandex.ru/get/9062/14441195.32/0_84265_d03d686e_orig.png" width="500" height="327" border="0" title="" alt=""/>
+</div>
+
+<p>This is easy. As easy that a newbie can develop an app in a few minutes
+and show you the how-to.</p>
+<div class="slide">
+  <iframe class="slide__frame" scrolling="no"
+    src="http://varya.me/start-with-steroids/?full#links">
+  </iframe>
+</div>
+
+<p>You can learn more about Steroids and Cordova (Steroids is based on PhoneGap)
+at the <a href="http://academy.appgyver.com/">AppGyver Academy</a> where you find:</p>
+<ul>
+<li>detailed tutorials,</li>
+<li>documentation,</li>
+<li>big community of devs.</li>
+</ul>
+<p>And, of course, you can read <a href="/en/posts/">this blog</a>. I promise to share my next findings
+regarding Steroids soon :-)</p>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+

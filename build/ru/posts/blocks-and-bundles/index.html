@@ -1,0 +1,128 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>Блоки как кирпичи и бандлы как дома</h1><div><p>Некотрое время назад мой знакомый, который делает проект на полном стеке БЭМ
+(BEM-CSS, i-bem.js и BEMHTML-шаблоны),
+задал мне несколько вопросов об использовании
+<a href="https://github.com/bem/project-stub/tree/14e24fd17ba66a357a2f6fcdce045065b4eb5d6c">BEM project
+stub</a>.
+Отвечая на вопрос, я пообещала опубликовать ответ в виде текста, потому что
+многие вещи вокруг БЭМ не проговариваются, считаясь слишком простыми — и
+ошибочно!<excerpt/></p>
+<p>Вопрос был о конфигурационном файле <code>.bem/make.js</code>, который нужен при
+использовании
+<a href="http://bem.info/tools/bem/bem-tools/">bem tools</a>
+для сборки страниц.
+<a href="https://github.com/bem/project-stub/blob/14e24fd17ba66a357a2f6fcdce045065b4eb5d6c/.bem/make.js#L12">Строчки 12 и
+13</a>
+описывают регулярные выражения для <code>blocks</code> и <code>bundles</code>. Не сразу понятно,
+что это значит.</p>
+<p>Вообще эти выражения нужны, чтобы распознать папки на файловой системе. Те,
+которые заканчиваются на <code>.blocks</code> — для блоков, а те, что заканчиваются на
+<code>.bundles</code> — для бандлов (страниц). Под эти выражения, например, подходят папки
+<code>desktop.blocks</code> и <code>desktop.bundles</code> из project-stub.</p>
+<p>Для чего нужна папка <code>desktop.blocks</code>, должно быть понятно. Поскольку БЭМ —
+модульный паттерн, необходимо место для хранения модулей, то есть блоков. Каждый
+блок — это директория, содержащая все файлы, нужные для каждого конкретного
+интерфейсного модуля.</p>
+<p>Вот, например, <a href="https://github.com/varya/online-shop-dummy/tree/master/desktop.blocks">набор блоков одного
+проекта</a>.</p>
+<p>Папка <code>desktop.bundles</code> нуждается в пояснении. Она содержит страницы – результат
+использования блоков. Каждая страница помещена в отдельную директорию, внутри
+которой располагаются все файлы, нужные для страницы.
+Можно снова посмотреть
+<a href="https://github.com/varya/online-shop-dummy/tree/gh-pages/desktop.bundles">пример из предыдущего
+проекта</a>.</p>
+<p>Разница в том, что файлы блоков созданы разработчиком, а файлы бандлов созданы
+bem tools. Для блоков это знакомые нам CSS, JavaScript и иногда шаблоны.</p>
+<pre><code>├── desktop.blocks/
+│   ├── goods/
+│   │   ├── <a href="https://github.com/varya/online-shop-dummy/blob/master/desktop.blocks/goods/goods.bemhtml">goods.bemhtml</a>
+│   │   ├── <a href="https://github.com/varya/online-shop-dummy/blob/master/desktop.blocks/goods/goods.css">goods.css</a>
+│   │   ├── <a href="https://github.com/varya/online-shop-dummy/blob/master/desktop.blocks/goods/goods.deps.js">goods.deps.js</a>
+│   │   └── <a href="https://github.com/varya/online-shop-dummy/blob/master/desktop.blocks/goods/goods.ie.css">goods.ie.css</a></code></pre>
+
+<p>Проводя параллели для БЭМ (и любого другого модульного паттерна) в реальном
+мире, можно сказать, что блок — это кирпичик.</p>
+<p><img src="http://img-fotki.yandex.ru/get/6730/14441195.30/0_7e0f8_33c1c86c_L.jpg" alt=""></p>
+<p>Файлы бандлов — это тоже файлы, нужные для браузера: CSS, JavaScript, HTML. <em>Ни
+один из них не написан разработчиком, они созданы bem tools</em>. Можете посмотреть
+внутрь файлов и убедиться, что код абсолютно “роботный”.</p>
+<pre><code>├── desktop.bundles/
+│   ├── index/
+│   │   ├── <a href="https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/_index.css">_index.css</a>
+│   │   ├── <a href="https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/_index.js">_index.js</a>
+│   │   ├── <a href="https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/index.bemjson.js">index.bemjson.js</a>
+│   │   └── <a href="https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/index.html">index.html</a></code></pre>
+
+
+<p>Для понимания bem tools представьте, что это строительный кран. Он берет
+строительные блоки и возводит из них дом.</p>
+<p><img src="http://img-fotki.yandex.ru/get/9058/14441195.30/0_7e0f3_ff76f66a_L.jpg" alt=""></p>
+<p>Хотя, кроме <em>.js, </em>.css и *.html файлов, всё-таки есть один файл, написанный
+разрабочиком.
+Это
+<a href="https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/index.bemjson.js">index.bemjson.js</a>
+— JSON описание того, что за блоки нужны на странице и какова их древовидная
+структура. Звучит логично, ведь только человек знает, что нужно показать на
+странице. Всё остальное делают bem tools. Получив информацию о том, какие блоки
+нужны для страницы, они берут их код из <code>desktop.blocks</code> и формируют с их
+помощью страницу.</p>
+<p>Продолжая пример со строительством дома, можно сказать что <code>page.bemjson.js</code> —
+это чертеж.</p>
+<p><img src="http://img-fotki.yandex.ru/get/6704/14441195.30/0_7e1ba_9dacd537_L.jpg" alt=""></p>
+<p>Но почему же <code>bem tools</code> нужно регулярное выражение в настройках?</p>
+<p>Это несложно. Все папки, которыми оперирует <code>bem tools</code> — это <code>уровни
+переопределения</code>. Должно быть легче, если представлять уровень как набор
+сущностей. Уровень блоков представлен папкой <code>desktop.blocks</code>, а уровень страниц
+— папкой <code>desktop.pages</code>. В конфигурационной папке
+<a href="https://github.com/bem/project-stub/tree/14e24fd17ba66a357a2f6fcdce045065b4eb5d6c/.bem/levels">.bem/levels/</a>
+есть инструкции, по которым bem tools понимают, что делать с уровнями разных
+типов.</p>
+<p>Выделяя в проекте блоки и бандлы, можно делать разные наборы блоков и разные
+бандлы, собранные из этих наборов. Например, блоки для desktop и touch версий
+сайта могут храниться в одном репозитории. И страницы, собранные из таких блоков
+— тоже.</p>
+<pre><code>├── desktop.blocks/
+├── desktop.bundles/
+├── touch.blocks/
+└── touch.bundles/</code></pre>
+
+<p>Возвращаясь к примерам из реального мира, не только кирпичики могут быть
+модулями, но и детальки LEGO.</p>
+<p><img src="http://img-fotki.yandex.ru/get/6704/14441195.30/0_7e0f6_f69c7d44_L.jpg" alt=""></p>
+<p>Из них также можно построить дом. Немножечко другой, конечно.</p>
+<p><img src="http://img-fotki.yandex.ru/get/9326/14441195.30/0_7e0f4_3d999550_L.jpg" alt=""></p>
+<p>Если пойти дальше, вы можете выделить код блоков, общий для всех платформ, и
+хранить его отдельно.</p>
+<pre><code>├── common.blocks/
+├── desktop.blocks/
+├── desktop.bundles/
+├── touch.blocks/
+└── touch.bundles/</code></pre>
+
+<p>С такой структурой desktop версия формируется из кода блоков уровней
+<code>common.blocks</code> и <code>desktop.blocks</code>, а touch версия — из уровней <code>common.blocks</code>
+и <code>touch.blocks</code>.</p>
+<p><img src="http://img-fotki.yandex.ru/get/6725/14441195.30/0_7e0f5_3e107fd4_L.jpg" alt=""></p>
+<p>И в заключении, я не перестаю радоваться идее проекта
+<a href="https://github.com/bem/project-stub/">BEM project
+stub</a>. Сама постоянно использую его,
+начиная новые проекты. Туториал о
+<a href="http://ru.bem.info/articles/start-with-project-stub/">старте проекта на полном стеке
+БЭМ</a> показывает, как именно.
+Так же БЭМ использует и знакомый, задавший мне вопрос. Я никогда раньше не
+подозревала, что project stub позволяет начать работы с БЭМ без знания всего
+того, что описано выше. :-)</p>
+<p>Кстати, написав все это, я поняла, что описание основ БЭМ для меня несложно и
+занимает разумное время. При этом (я надеюсь!), это очень полезно для других.
+Так что спрашивайте всё, что вы хотите знать.</p>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+

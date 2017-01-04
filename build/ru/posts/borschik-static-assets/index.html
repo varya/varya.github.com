@@ -1,0 +1,103 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>Локальная разработка и удаленный хостинг статики</h1><div><p>На прошлой неделе мне понадобилось сделать сайт, статика которого раздаётся с
+другого сервера. Это касалось всех статических файлов: как подключенных к HTML
+документу CSS и JavaScript, так и изображений и шрифтов, использованных уже в
+их коде.<excerpt/> Хотя очевидно, что все они эти ресурсы должны быть локальными во
+время разработки. То есть задача была придумать магию, которая знает, где будет
+размещена статика, и преобразовывает относительные пути в коде в абсолютные
+согласно этому знанию.</p>
+<p>Эту задачу я решила при помощи инструмента
+<a href="http://bem.info/tools/optimizers/borschik/">Borschik</a>. Борщик-сборщик, всем
+должно быть понятно. :-)</p>
+<center>
+<iframe src="//embed.gettyimages.com/embed/135591409?et=B_T3l-shrE-pr9-ELe_wJw&sig=5haG67PAzCxGourA96ZB7m9LwSket1v9PpvXEXNIkBM=" width="508" height="407" frameborder="0" scrolling="no"></iframe>
+</center>
+
+<p>Демо-проект с этим решением находится в репозитории
+<a href="https://github.com/varya/st-deliverer">varya/st-deliverer</a></p>
+<h3 id="-">Структура проекта</h3>
+<p>Как вы позже увидите, <code>borschik</code> можно гибко настроить. Так что возможна любая
+структура проекта. В моём проекте все хранится в директории
+<a href="b.com/varya/st-deliverer/tree/master/src">src</a>.
+После сборки получается HTML-файлы в папке
+<a href="https://github.com/varya/st-deliverer/tree/gh-pages/dist/html">dist/html</a>.
+Проверьте его код, и вы убедитесь, что статические файлы подключены с другого
+хоста по абсолютному пути.</p>
+<pre><code class="lang-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Deliver static assets with Borschik&lt;/title&gt;
+    &lt;link
+      rel=&quot;stylesheet&quot;
+      href=&quot;http://varya.github.io/stor.../styles.css&quot;/&gt;
+  &lt;/head&gt;
+  &lt;body
+    class=&quot;page&quot;
+    background=&quot;http://varya.github.io/stor.../grungy.jpg&quot;&gt;
+  ...
+</code></pre>
+<p>Страничку можно <a href="http://varya.me/st-deliverer/dist/html/">открыть в браузере</a> и
+насладиться моим дизайном и прекрасным котиком.</p>
+<h3 id="borschik-">Borschik в вашем проекте</h3>
+<p>Borschik — это npm-пакет. Его можно установить глобально при помощи команды</p>
+<pre><code class="lang-bash">npm install -g borschik
+</code></pre>
+<p>Но лично я предпочитаю локальные зависимости, так что завожу в корне проекта
+файл
+<a href="https://github.com/varya/st-deliverer/blob/master/package.json">package.json</a>:</p>
+<pre><code class="lang-js">{
+  ...
+  &quot;dependencies&quot;: {
+    &quot;borschik&quot;: &quot;0.4.2&quot;
+  },
+  ...
+}
+</code></pre>
+<h3 id="-">Настройка</h3>
+<p>Прежде чем начинать преобразования, нужно проинструктировать <code>borschik</code>, что
+преобразовывать и как. Для этого нужен конфигурационный файл
+<a href="https://github.com/varya/st-deliverer/blob/master/.borschik">.borschik</a>:</p>
+<pre><code class="lang-js">{
+  &quot;paths&quot; : {
+    &quot;src/img/&quot;: &quot;http://varya.github.io/stor.../st-deliverer/img/&quot;,
+    &quot;src/css/&quot;: &quot;http://varya.github.io/stor.../st-deliverer/css/&quot;,
+    &quot;src/font/&quot;: &quot;http://varya.github.io/storage/fonts/&quot;
+
+  }
+}
+</code></pre>
+<p>Заметьте, для разных путей можно настроить разную замену. Здесь это видно на
+примере с фонами.</p>
+<h3 id="-">Запускаем!</h3>
+<p>Запустите <code>borschik</code> над файлом, содержащим ссылки на локальные статические
+ресурсы, и вы получите результат преобразования. Например,</p>
+<pre><code class="lang-bash">./node_modules/borschik/bin/borschik \
+  --input=src/css/styles.css
+</code></pre>
+<p>Чтобы использовать это в сборке, понадобится ещё один флаг <code>--output</code>,
+сообщающий куда записать получившееся.</p>
+<p><code>borschik</code> знаком с синтаксисом web-технологий. То есть “ссылки” размещенные в
+простом тексте останутся нетронутыми.</p>
+<h3 id="-">Система сборки</h3>
+<p>Теперь <code>borschik</code> можно включить в систему сборки проекта. В моём случае это
+небольшой
+<a href="https://github.com/varya/st-deliverer/blob/master/Makefile">Makefile</a>, спасибо
+<a href="https://github.com/alexeyten">@alexeyten</a> за 90% его содержания. :-) Но есть
+также и плагин для grunt <a href="https://github.com/megatolya/grunt-borschik">megatolya/grunt-borschik</a>.<br/>
+Конечно, <code>borschik</code> включен в системы сборки БЭМ-проектов
+<a href="http://bem.info/tools/bem/bem-tools/">bem-tools</a>
+и <a href="https://github.com/enb-make/enb">enb</a></p>
+<h3 id="-">Результат</h3>
+<p>Для закрепления <a href="http://varya.me/st-deliverer/dist/html/">проведайте котика ещё раз</a>.</p>
+<p>А узнать о многих других возможностях <code>borschik</code> можно из статьи
+<a href="http://ru.bem.info/articles/borschik/">http://ru.bem.info/articles/borschik/</a>.</p>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+

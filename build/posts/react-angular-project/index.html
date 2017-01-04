@@ -1,0 +1,86 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>Simple React Angular project</h1><div><p>Earlier this year, I participated in a development of a single page application. With the team, we started this
+project from scratch. This situation was the most suitable to practice the new technologies.</p>
+<p>The stack I’ve tried was React + ES2015 + postcss + webpack. However, keeping in mind that most of the
+team (who were supposed to maintain the project later) are mainly experienced in Angular, I was looking for some
+sort of combination of these frameworks.</p>
+<excerpt/>
+
+<p>Finally, I made a project with React used for the view and Angular governing the data layer. I
+believe that such project is ideal for the a bridge role. Often happens that the development team has a
+strict deadline. There is no time to invent new rocket science approaches. However, we can introduce them gradually.</p>
+<p>For that project, I decided that we can introduce React with ES2015. The project structure is easy to refactor
+into a React-only project in the next iterations.</p>
+<p>I cannot share the exact code of the project, but I created a dummy repository with the same structure:
+<a href="https://github.com/varya/angular-react-stub">varya/angular-react-stub</a>.</p>
+<p>A new project may be forked/copied from it. After installation of the required npm packages, the development starts with
+running</p>
+<pre><code>npm start
+</code></pre><p>It starts a local server that builds of html, js and css files related to the project. The magic
+happens with <code>webpack</code>. Let me explain it below.</p>
+<p>For now, let’s concentrate on the file structure.</p>
+<p>A human produced code of the project is placed in the <code>src</code> folder.</p>
+<pre><code>src/
+
+  _helpers/
+
+  modules/
+    menu/
+      menu.component.js
+      menu.css
+
+  pages/
+    contact/
+      contact.ctrl.js
+      contact.html
+
+  index.html
+  index.js
+</code></pre><p>The <a href="https://github.com/varya/angular-react-stub/blob/3870766a28adb61fc2f1fc86fbfbe538c00da1f9/src/index.js">index.js</a> file
+is ‘entering point’ of the building process. Here, the webpack finds out what the modules required for the
+app are.</p>
+<p>In this file, I create an Angular application and define the rules for routing. Roughly, each routing path corresponds
+to its page. It takes a page template (an <code>html</code> file) and a page controller (a <code>js</code> module), and make them work
+together.</p>
+<p>To keep everything neat, I made <code>pages</code> folder, where each page has a subfolder with a template
+and a controller.</p>
+<p>The controller is normal Angular code. It manipulates the data for future usage in the view. Also, controller is
+responsible for extraction the data fromthe server and any transformation of it.</p>
+<p>However, the given example contains no such
+heavy code. Anyway, you can see how the <code>$scope</code> is filled in
+<a href="https://github.com/varya/angular-react-stub/blob/3870766a28adb61fc2f1fc86fbfbe538c00da1f9/src/pages/components/components.ctrl.js">pages/components/components.ctrl.js</a>.</p>
+<p>The data from <code>$scope</code> is accessible in the template. From <a href="https://github.com/varya/angular-react-stub/blob/3870766a28adb61fc2f1fc86fbfbe538c00da1f9/src/pages/components/components.html">pages/components/components.html</a>
+you can see how it is passed down to the only used Angular directive, <code>react-component</code>. This directive is a bridge
+between Angular-cooked data and React-operated view. In the directive you declare what React component to render and
+pass the properties to it. After that, the React component operates independently from the Angular.</p>
+<h2 id="modules">Modules</h2>
+<p>There is a special <code>modules</code> folder at the same level as <code>pages</code>. It contains all the React modules used in the
+application. The modules can be complex and include other modules. However, the file structure is flat. Each component
+is represented by a folder with its JavaScript file and any other related content inside. Often, it is CSS, however
+the pictures and other required stuff may be in the same folder.</p>
+<p>You can check out a typical component code in the file
+<a href="https://github.com/varya/angular-react-stub/blob/3870766a28adb61fc2f1fc86fbfbe538c00da1f9/src/modules/menu/menu.component.js">modules/menu/menu.component.js</a>.</p>
+<p>Note that the required CSS is imported in the JavaScript as</p>
+<pre><code>import styles from &#39;./menu.css&#39;;
+</code></pre><p>This is one of the webpack’s features which makes developing with it so awesome. A component declares the CSS it uses.
+Then, the bundled CSS is built according to these declarations. In refactoring, the process will
+automatically exclude out-of-date CSS if its module is no longer in use.</p>
+<p><a href="https://github.com/varya/angular-react-stub/blob/3870766a28adb61fc2f1fc86fbfbe538c00da1f9/webpack.config.js">webpack.config.js</a>
+stores the data what files to process and how to do it.
+It gets the file types from their extensions. Thus, <code>*.js</code> and <code>*.jsx</code> files are ES2015 and transform
+into plain JavaScript. <code>*.html</code> files are inserted as raw strings. This is why they can be used as Angular templates.
+<code>*.css</code> files are required as styles but first transform with Postcss. I also use <code>precss</code> as a plugin, which
+makes possible to enjoy most of the usual pre-processing features.</p>
+<p>This covers pretty much all about the basic structure. A real project can use external libraries and modules as
+well as have more complex building process. But here is its starting point: <a href="https://github.com/varya/angular-react-stub/">varya/angular-react-stub</a>.</p>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+

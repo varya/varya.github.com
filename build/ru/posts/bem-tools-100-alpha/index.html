@@ -1,0 +1,82 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>Бложик на bem tools 1.0.0alpha</h1><div><p><a href="http://bem.info/tools/bem/">bem tools</a> &mdash; пакет для сборки проекта с
+БЭМ-структурой развивается семимильными шагами. На подходе версия 1.0.0. Точнее,
+уже сейчас её можно использовать как alpha. Я попробовала на блоге, и уже этот
+текст отображается со статикой, собранной <code>bem tools 1.0.0</code>.<excerpt/></p>
+<p>Воспользоваться этой версией можно из ветки
+<a href="https://github.com/bem/bem-tools/tree/release-1.0.0">release-1.0.0</a>, то есть
+вместо версии написать в package.json</p>
+<pre><code class="lang-js">  &quot;dependencies&quot;: {
+    ...
+    &quot;bem&quot;: &quot;git://github.com/bem/bem-tools.git#7b07045b17ff&quot;,
+    ...
+  },
+</code></pre>
+<p>Или, ещё легче, структуру проекта можно позаимстровать из
+<a href="https://github.com/bem/project-stub/tree/feature/bt-1.0.0">project-stub/feature/bt-1.0.0</a>.
+ Вообще <code>project-stub</code> очень удобное изобретение. Я все свои проекты начинаю с
+ него. Для перехода между версиями тоже отлично: просто делается сравнение
+ текущего проекта с другой веткой project-stub, и при применении всех изменений,
+ проект заводится из коробки.</p>
+<p>Итак, что у нас нового? Не принципиально в проекте, а с моей пользовательской
+точки зрения.</p>
+<p>Появилась возможность складывать минимизированные файлы не в
+<code>_page.css</code> и <code>_page.js</code>, а в файлы <code>page.min.css</code> и <code>page.min.js</code>. Кстати,
+project-stub <a href="https://github.com/bem/project-stub/blob/142e92c58e2ecf0ea3b658f71c203fee214df8d1/.bem/make.js#L34">именно так и
+настроен</a>.
+Это для меня критичное изменение, потому что оно наконец-то дало возможность
+использовать <code>bem tools</code> в блоге. Блог запущен на Jekyll, встроенном в GitHub,
+то есть хостится на технологии gh-pages. По умолчанию gh-pages не показывает
+файлы, начинающиеся с подчеркивания. Есть трюк — добавить в корень репозитория
+файл <code>.nojekyll</code>, но тогда перестаёт работать Jekyll :-) В общем, мне
+приходилось пользоваться <a href="https://github.com/enb-make/enb">ENB</a> ради единственной
+фичи - возможности минимизировать в <code>page.min.*</code>. ENB хорош, но мейнстрим есть
+мейнстрим, прехожу обратно на <code>bem tools</code>.</p>
+<p>Еще одно важное user friendly изменение &mdash; уровни страниц теперь не содержат
+папку <code>.bem</code> с настройками, по крайней мере по умолчанию. Все настройки
+сосредоточены в папке <code>.bem</code> <a href="https://github.com/bem/project-stub/tree/5231f6a2de35dabfd2017574673e40a2a36ed435/.bem">в корне
+проекта</a>.</p>
+<p>Это изменеие не заметно, если начинать проект с project-stub и ничего не
+менять. Тогда не важно, какая структура. А вот внесение изменений стало
+психологически комфортнее. По крайней мере точно известно, что надо менять
+<code>.bem</code> в корне.</p>
+<p>Для доставки библиотек на проект теперь использутеся
+<a href="https://github.com/bower/bower">Bower</a>, пакетный менеджер от Twitter. Про него
+тоже интересно почитать.</p>
+<p>Соответственно, в корне проекта появился файл
+<a href="https://github.com/bem/project-stub/blob/5231f6a2de35dabfd2017574673e40a2a36ed435/bower.json">bower.json</a>
+со списком библиотек.</p>
+<pre><code class="lang-js">{
+    &quot;name&quot;: &quot;bem-project-stub&quot;,
+    &quot;version&quot;: &quot;0.0.1&quot;,
+    &quot;dependencies&quot;: {
+        &quot;bem-core&quot;: &quot;9e5dc255421304fd652552c948cdf7af35dc8a68&quot;,
+        &quot;bem-components&quot;: &quot;bem/bem-components&quot;
+    }
+}
+</code></pre>
+<p>И служебный файл <a href="https://github.com/bem/project-stub/blob/5231f6a2de35dabfd2017574673e40a2a36ed435/.bowerrc">.bowerrc</a>.</p>
+<p>Вместе с новой версией <code>bem tools</code> блог теперь пользуется новыми библиотеками,
+хотя вообще это не взаимосвязано &mdash; библиотеки могут быть использованы и со старым
+сборщиком.</p>
+<p>Вместо <code>bem-bl</code> в основе лежат блоки библиотеки <a href="https://github.com/bem/bem-core/tree/v1">bem-core</a>.
+Она только только <a href="http://clubs.ya.ru/bem/replies.xml?item_no=4301">анонсирована</a>.
+Миграция на библиотеку делается <a href="https://github.com/bem/bem-core/blob/v1/MIGRATION.ru.md">по инструкции</a>,
+и она несложная. Несмотря на введение нового JavaScript-based синтаксиса для
+BEMHTML шаблонов, старый лаконичный синтаксис тоже поддерживается. Так что в моём
+случае нужно было только перевести JavaScript блоков на новую модульную систему.
+<a href="https://github.com/varya/bem-js-tutorial">Туториал по BEM JavaScript</a> как обычно
+&mdash; готовится.</p>
+<p>Таким образом, сборка блога наконец-то вошла в относительно стабильное состояние,
+а я теперь могу заниматься его контентом и улучшением frontend части.</p>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+

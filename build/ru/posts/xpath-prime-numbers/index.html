@@ -1,0 +1,83 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>Простые числа и XPath</h1><div><p>Иногда мы на работе решаем интересные задачки. Вот, например, одна (почти первая) в постановке
+<a href="http://alpha-san.ya.ru/"><span style="color: #000000;"><strong><span style="color: #ff0000;">n</span>op`а</strong></span></a>:</p>
+<excerpt/>
+
+<h2 id="-">Частный случай</h2>
+<p>Дан такой xml:</p>
+<pre><code class="lang-xml">&lt;items&gt;
+  &lt;item&gt;1&lt;/item&gt;
+  &lt;item&gt;2&lt;/item&gt;
+  ...
+  &lt;item&gt;N-1&lt;/item&gt;
+  &lt;item&gt;N&lt;/item&gt;
+&lt;/items&gt;
+</code></pre>
+<p>т.е. выписаны все натуральные числа от 1 до N включительно. Про N ничего заранее не известно –
+большое, маленькое, еще какое-то &mdash; мы не знаем.</p>
+<p>Нужно. Написать <strong>xpath</strong>, выбирающий все item’ы с простыми числами.
+Подчеркиваю - <strong>xpath</strong>.
+Т.е. внутри тега xsl:stylesheet должен быть один примерно такой шаблон:</p>
+<pre><code class="lang-xslt">&lt;xsl:template match=&quot;/&quot;&gt;
+  &lt;xsl:copy-of select=&quot;.......&quot;/&gt;
+&lt;/xsl:template&gt;
+</code></pre>
+<p>и больше ничего &mdash; ни переменных, ни других шаблонов, ни функций.</p>
+<p>На выходе будет что-то типа:</p>
+<pre><code class="lang-xml">&lt;item&gt;2&lt;/item&gt;
+&lt;item&gt;3&lt;/item&gt;
+&lt;item&gt;5&lt;/item&gt;
+&lt;item&gt;7&lt;/item&gt;
+...
+</code></pre>
+<p>Решение следующее:</p>
+<pre><code class="lang-xslt">&lt;xsl:template match=&quot;/&quot;&gt;
+  &lt;items&gt;
+    &lt;xsl:copy-of
+      select=&quot;items/item[
+        not(preceding-sibling::item[(last() + 1) mod . = 0 and . != 1])
+        and
+        . != 1
+      ]&quot;/&gt;
+  &lt;/items&gt;
+&lt;/xsl:template&gt;
+</code></pre>
+<h2 id="-">Общая задача</h2>
+<p>Усложненный вариант &mdash; все тоже самое, но в xml просто набор item’ов с какими-то натуральными числами
+в каком-то порядке, например:</p>
+<pre><code class="lang-xml">&lt;items&gt;
+  &lt;item&gt;142&lt;/item&gt;
+  &lt;item&gt;73&lt;/item&gt;
+  &lt;item&gt;10000341&lt;/item&gt;
+  &lt;item&gt;10&lt;/item&gt;
+  ...
+&lt;/items&gt;
+</code></pre>
+<p>Решение:</p>
+<pre><code class="lang-xslt">&lt;xsl:template match=&quot;/&quot;&gt;
+  &lt;items&gt;
+    &lt;xsl:copy-of select=&quot;items/item[
+      not(
+        str:tokenize(str:padding(. - 1, &#39;1&#39;), &#39;&#39;)[
+          (last() + 1 ) mod position()= 0
+          and position() != 1
+        ]
+      ) and . != 1
+      ]&quot;/&gt;
+  &lt;/items&gt;
+&lt;/xsl:template&gt;
+</code></pre>
+<p>Чтобы понять, что тут делается, надо прочитать про функции
+<a href="http://exslt.org/str/functions/padding/index.html">padding</a> и
+<a href="http://exslt.org/str/functions/tokenize/index.html">tokenize</a> на EXSLT.org.</p>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+

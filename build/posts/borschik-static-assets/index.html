@@ -1,0 +1,106 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>Borschik helps with remote static assets</h1><div><p>Last week I met the need to develop a web site which static assets have to be
+hosted on a different server and respond by different URLs than its HTML. This
+is the requirement to all the static files: stylesheets and JavaScript linked to
+the page as well as imges and fonts mentioned in HTML, CSS and JavaScript
+code.<excerpt/> However it is obvious that these resources should be local when developing.
+Thus, the challenge was to introduce a piece of magic which knows where we aim
+to host the statics and transforms all the relative paths into absolute ones
+according to it.</p>
+<p>The tools which helped me is called
+<a href="http://bem.info/tools/optimizers/borschik/">Borschik</a>. The name is funny.
+Besides it reffers to a famous Russian/Ukranian soup, it also alludes to a word
+“сборщик” [sborschik], and so might be translated as</p>
+<p><strike>ass</strike>embler. “Removing the ass part” as one of my friends says.
+:-)</p>
+<center>
+<iframe src="//embed.gettyimages.com/embed/135591409?et=B_T3l-shrE-pr9-ELe_wJw&sig=5haG67PAzCxGourA96ZB7m9LwSket1v9PpvXEXNIkBM=" width="508" height="407" frameborder="0" scrolling="no"></iframe>
+</center>
+
+<p>In the <a href="https://github.com/varya/st-deliverer">varya/st-deliverer</a> public repository
+you can find a stub project illustrating the solution.</p>
+<h3 id="project-structure">Project structure</h3>
+<p>As you will be able to see later <code>borschik</code> is very flexible. So you can use any
+project structure. In my project I store everything in
+<a href="b.com/varya/st-deliverer/tree/master/src">src folder</a>.
+When building I get HTML files in
+<a href="https://github.com/varya/st-deliverer/tree/gh-pages/dist/html">dist/html directory</a>.
+Check out the code and make sure that static files are linked from a different
+server by their absolute paths.</p>
+<pre><code class="lang-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Deliver static assets with Borschik&lt;/title&gt;
+    &lt;link
+      rel=&quot;stylesheet&quot;
+      href=&quot;http://varya.github.io/stor.../styles.css&quot;/&gt;
+  &lt;/head&gt;
+  &lt;body
+    class=&quot;page&quot;
+    background=&quot;http://varya.github.io/stor.../grungy.jpg&quot;&gt;
+  ...
+</code></pre>
+<p><a href="http://varya.me/st-deliverer/dist/html/">Open in your browser</a> to enjoy my visual
+design and a tom-cat.</p>
+<h3 id="bring-borschik-to-your-project">Bring borschik to your project</h3>
+<p>Borschik is an npm package. So, you can install it globally by runing</p>
+<pre><code class="lang-bash">npm install -g borschik
+</code></pre>
+<p>I personally prefer local project dependencies, so my project has a
+<a href="https://github.com/varya/st-deliverer/blob/master/package.json">package.json</a>
+file:</p>
+<pre><code class="lang-js">{
+  ...
+  &quot;dependencies&quot;: {
+    &quot;borschik&quot;: &quot;0.4.2&quot;
+  },
+  ...
+}
+</code></pre>
+<h3 id="configuration">Configuration</h3>
+<p>Before we start the magic transformation it is needed to instruct <code>borschik</code> what
+to transform and how to transform. The <a href="https://github.com/varya/st-deliverer/blob/master/.borschik">.borschik</a>
+configuration file serves for that.</p>
+<pre><code class="lang-js">{
+  &quot;paths&quot; : {
+    &quot;src/img/&quot;: &quot;http://varya.github.io/stor.../st-deliverer/img/&quot;,
+    &quot;src/css/&quot;: &quot;http://varya.github.io/stor.../st-deliverer/css/&quot;,
+    &quot;src/font/&quot;: &quot;http://varya.github.io/storage/fonts/&quot;
+
+  }
+}
+</code></pre>
+<p>Note that you can tune different replacements for different paths. Here I tried
+to illustrate with the fonts.</p>
+<h3 id="run-the-command">Run the command</h3>
+<p>Run borschik over a file which contains links to local static assets, and you
+will get the transformation result. For example,</p>
+<pre><code class="lang-bash">./node_modules/borschik/bin/borschik \
+  --input=src/css/styles.css
+</code></pre>
+<p>Fot the building process you will also need an <code>--output</code> flag to instruct
+<code>borschik</code> where to place the result.</p>
+<p>Borschik knows the syntax of web technologies. It will not touch the links
+mentioned in text, for example.</p>
+<h3 id="build-system">Build system</h3>
+<p>Now you can use <code>borschik</code> in your project build process. I simply wrote a
+<a href="https://github.com/varya/st-deliverer/blob/master/Makefile">Makefile</a> with a
+lot of help from <a href="https://github.com/alexeyten">@alexeyten</a> (tnx!).
+There is also a grunt plugin <a href="https://github.com/megatolya/grunt-borschik">megatolya/grunt-borschik</a>.<br/>
+Indeed, <code>borschik</code> is included into <a href="http://bem.info/tools/bem/bem-tools/">bem-tools</a>
+and <a href="https://github.com/enb-make/enb">enb</a> — the two competitive solutions for
+building the projects with BEM structure.</p>
+<h3 id="result">Result</h3>
+<p><a href="http://varya.me/st-deliverer/dist/html/">Check the cat again</a>. Still there?</p>
+<p>You also can learn about other features of <code>borschik</code> from the article:
+<a href="http://bem.info/articles/borschik/">http://bem.info/articles/borschik/</a>.</p>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+

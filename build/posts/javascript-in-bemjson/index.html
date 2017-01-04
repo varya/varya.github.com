@@ -1,0 +1,104 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>JavaScript in BEMJSON</h1><div><p>We usually start developing a web site prototyping the interface and then
+implementing HTML/CSS and bacis JavaScript. In case
+of using the full BEM stack a tranformation from prototype to a functioning web
+site goes smoothly. You can clone the project from
+<a href="https://github.com/bem/project-stub">project-stub</a> and create a static web page
+as it was <a href="http://bem.info/articles/start-with-project-stub/">described
+earlier</a>.</p>
+<excerpt/>
+
+<p>Thanks to <code>BEMHTML</code> templates, you do not need write all the HTML manually.
+Describing page sructure in <code>BEMJSON</code> rather than writing all the tags manually
+saves time. But sometimes this is still a lot of work to do, especially for large
+pages.</p>
+<p>Luckily BEMJSON can include JavaScript pieces to produce some blocks dymamically.
+I created an example of such usage:</p>
+<pre><code class="lang-js">({
+    block: &#39;page&#39;,
+    ...
+    content:[
+        ...
+        {
+            block: &#39;content&#39;,
+            content: (function() {
+                var res = [];
+                for(var i = 0; i &lt; 10; i++) {
+                    res.push({
+                        block: &#39;button&#39;,
+                        content: &#39;Button &#39; + (i + 1)
+                    });
+                }
+                return res;
+            })()
+        },
+        ...
+    ]
+})
+</code></pre>
+<p><a href="https://github.com/varya/dynamic-bemjson/blob/master/desktop.bundles/page1/page1.bemjson.js">full
+code</a></p>
+<p>This JavaScript creates 10 <code>button</code> blocks when the page is being built with
+<code>bem-tools</code>.
+Check the <a href="http://varya.me/dynamic-bemjson/desktop.bundles/page1/page1.html">result
+page</a>
+to see them.</p>
+<p>Another example is a <code>menu</code> block. Such interface pieces usually consist of a
+lot of items with minor differences which cases a lot of copy-paste on a page.
+With JavaScript in BEMJSON this can be easily reduced.</p>
+<pre><code class="lang-js">({
+    block: &#39;page&#39;,
+    ...
+    content:[
+        ...
+        {
+            block: &#39;menu&#39;,
+            content: [
+                {
+                    title: &#39;Index&#39;,
+                    isSelected: false,
+                },
+                {
+                    title: &#39;Products&#39;,
+                    isSelected: true
+                },
+                {
+                    title: &#39;Contact&#39;,
+                    isSelected: false
+                }
+            ].map(function(item){
+                var block = {
+                    block: &#39;menu&#39;,
+                    elem: &#39;item&#39;,
+                    content: item.title,
+                    mods: {
+                        selected: item.isSelected
+                    }
+                };
+                return block;
+            })
+        },
+        ...
+    ]
+})
+</code></pre>
+<p><a href="https://github.com/varya/dynamic-bemjson/blob/master/desktop.bundles/page2/page2.bemjson.js">full
+code</a></p>
+<p>This gives a <a href="http://varya.me/dynamic-bemjson/desktop.bundles/page2/page2.html">page with a menu of 3 items</a>.
+The bigger is the array of items, the more you save. Especially when the structure
+of every item changes while developing.</p>
+<p>Indeed, this feature is not needed when BEMJSON is a result of 1st layer templates
+(like BEMTREE, priv.js) you can produce as much BEMJSON as is necessary. But with
+initial development of a static web page, the JavaScript tricks help to avoid
+copy-paste.</p>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+

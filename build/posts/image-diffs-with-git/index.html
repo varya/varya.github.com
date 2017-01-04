@@ -1,0 +1,62 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>Visual diffs for the images in a git repo</h1><div><p>My first task for new projects is to create a git repository. Whether it is a new app, or conference slides, or even an
+article, I prefer to keep everything in Git. It is an excellent tool, and, personally, I enjoy its command line
+interface.</p>
+<p>However, there is always room for improvement. Recently I found an idea how to make my git visualize the changes that
+I’ve done to the images in a repository.</p>
+<excerpt/>
+
+<pre><code class="lang-sh">Varyas-MBP £ ~/path/to/project ⤳ master*
+  › git status
+On branch master
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+
+    modified:   desktop.blocks/social-ico/social-ico__rss.png
+    modified:   desktop.blocks/social-ico/social-ico__twitter.png
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+Varyas-MBP £ ~/path/to/project ⤳ master*
+</code></pre>
+<p>I can run <code>git diff</code> over each of the modified images to see the following:</p>
+<p><img src="/posts/image-diffs-with-git/diff1.png" alt=""></p>
+<p><img src="/posts/image-diffs-with-git/diff2.png" alt=""></p>
+<p>For every picture displayed, I can see a previous version (on the left side), a current version (on the right side) and
+visually represented difference (in between). This feature is useful for tracking exact changes in the image. Now, I can
+easily spot if some particular details were shifted, some colors were changed, or a picture was accidentally blended
+with another one.</p>
+<p>You can configure git to do the same. First, install ImageMagick to provide a visual comparison. Note that for the
+latest versions of OS X you need to install a package with a support of X11. To install with <code>brew</code>, do the following:</p>
+<pre><code>  › brew install imagemagick --with-x11
+</code></pre><p>Then, create a script to compare two given images. Run <code>cat ~/bin/git-imgdiff</code>, and paste inside:</p>
+<pre><code>#!/bin/sh
+compare $2 $1 png:- | montage -geometry +4+4 $2 - $1 png:- | display -title &quot;$1&quot; -
+</code></pre><p>Now, test the script. It should do the comparison of two processed images:</p>
+<pre><code>  › ~/bin/git-imgdiff img1.png img2.png
+</code></pre><p>At this step, you need to show git how to use compariing script. For that, define the image files their extensions
+in a special file. Run <code>cat ~/.gitattributes</code> and paste the following:</p>
+<pre><code>*.gif diff=image
+*.jpg diff=image
+*.png diff=image
+</code></pre><p>Provide git with this configuration by:</p>
+<pre><code>  › git config --global core.attributesfile &#39;~/.gitattributes&#39;
+</code></pre><p>The last step is to instruct git to use your script when <code>diff</code> command is applied to the matching files:</p>
+<pre><code>  › git config --global diff.image.command &#39;~/bin/git-imgdiff&#39;
+</code></pre><p>That’s it. Now, running a <code>git diff</code> over your images you will get a human-friendly output. Enjoy!</p>
+<h3 id="references">References</h3>
+<ul>
+<li>[1] <a href="http://www.akikoskinen.info/image-diffs-with-git/">http://www.akikoskinen.info/image-diffs-with-git/</a></li>
+<li>[2] <a href="http://paulmestemaker.com/imagemagick-display-mac-os-x/">http://paulmestemaker.com/imagemagick-display-mac-os-x/</a></li>
+</ul>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+

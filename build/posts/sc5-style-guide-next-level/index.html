@@ -1,0 +1,249 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>Living SC5 Styleguide, the next level</h1><div><p>When it comes to the large web applications, we often operate with complex components. Such components are not just CSS
+styles for the pieces of an interface but also their JavaScript interactions and templates. As documentation, the style
+guide should reflect them all. In other words, the components on the style guide’s pages should be the same living as in
+production.</p>
+<excerpt/>
+
+<p>At my recent project, we have been using <a href="http://styleguide.sc5.io/">SC5 Style Guide</a> in its simplest way - documenting
+the view of the components. For that, we provided the needed HTML in the KSS code and so has received the rendered
+component library.</p>
+<p>However, in the production code, these components appeared at the pages as a result of some templating transformations.
+Also, the project is massive and fast-developed, and the changes to the templates happened all the time. As a result,
+the style guide was always out of date.</p>
+<p>Moreover, much functionality could not be illustrated with plain HTML.
+To be rendered correctly and interact with a user, it also needs its JavaScript code.</p>
+<p>At this project, I have solved the problem using advanced configuration of SC5 Style Guide. Below you can find the
+tricks and explanation.</p>
+<h2 id="living-javascript-components">Living JavaScript components</h2>
+<p>Usually, a piece of an interface (often called ‘a component’) is a combination of HTML, CSS, and JavaScript. With the
+basic features if SC5 Style Guide you can easily document HTML and CSS. However, applying JavaScript to the components
+requires an additional configuration.</p>
+<p>In SC5 Styleguide, you can provide additional tags into the <code>&lt;head&gt;</code> section of the generated style guide’s page. They
+can be <code>&lt;script&gt;</code> tags linking the JavaScript you need.</p>
+<p>Assuming this, you can bundle the necessary JavaScript into one file, and link it to the style guide’s pages, like this:</p>
+<pre><code>gulp.task(&quot;styleguide:generate&quot;, function() {
+
+  return gulp.src([&quot;path/to/css/**/*.sass&quot;])
+    .pipe(styleguide.generate({
+      title: &quot;My Styleguide&quot;,
+      ...
+      extraHead: [
+        &#39;&lt;script src=&quot;/js/all-components.js&quot;&gt;&lt;/script&gt;&#39;,
+        ...
+      ]
+    ...
+</code></pre><p>Another option for you to use in the configuration is <code>disableEncapsulation: true</code>. By default, the tool wraps every
+component into a Shadow DOM container. It makes the components encapsulated and protects from unwanted impact of global CSS.
+Also, the Shadow DOM wrapper prevents global JavaScript to access the components. Disabling this function, you can give
+the JavaScript all the access, the same way as it works on a usual page.</p>
+<p>In most cases, JavaScript for the components requires initialization. On the style guide’s pages a <code>styleguide:onRendered</code>
+event emits when a component is rendered. You can listen for this event and initialize the components in the event’s
+handler function.</p>
+<p>For example, if using jQuery:</p>
+<pre><code>$(window).on(&#39;styleguide:onRendered&#39;, function(e) {
+  // e.originalEvent.detail.elements[0] - component&#39;s container
+  initComponent(e.originalEvent.detail.elements[0])
+});
+</code></pre><h2 id="additional-processors">Additional processors</h2>
+<p>The SC5 Style Guide parses the KSS documentation in your CSS (SASS, LESS) code, collects information about all the
+components and produces a JSON file with it. The documentation pages you can see are the Angular pages built
+on the information in this JSON.</p>
+<p>Generating the style guide, you can inject additional processors into transforming data for this JSON file. The
+custom processing functions can re-organize and modify this data. You can use this trick to provide a more clever
+generator, run templates and parametrized JavaScript components.</p>
+<p>Examine the generated <code>styleguide.json</code> file to see how the data is organized by default. You are going to find out that
+every component is represented by an object similar to the following:</p>
+<pre><code>{
+  header: &quot;Sub navigation tabs&quot;,
+  description: &quot;&lt;p class=&quot;sg&quot;&gt;Navigation item&lt;/p&gt; &quot;,
+  modifiers: [ ],
+  deprecated: false,
+  experimental: false,
+  reference: &quot;4.15.1&quot;,
+  markup: &quot;&lt;ul class=&quot;sub-navigation-tabs&quot;&gt;...&lt;ul&gt;&quot;,
+  css: &quot;.sub-navigation-tabs { /* some css */ }&quot;,
+  syntax: &quot;less&quot;,
+  file: &quot;tabs.less&quot;,
+  parentReference: &quot;4.15&quot;,
+  wrapper: &quot;&lt;sg-wrapper-content/&gt;&quot;,
+  renderMarkup: &quot;&lt;ul class=&quot;sub-navigation-tabs&quot;&gt;...&lt;ul&gt;&quot;,
+  variables: [
+    &quot;colorMain&quot;,
+    &quot;bgColorSecond&quot;,
+    &quot;textColor&quot;,
+    &quot;textColorHover&quot;
+  ],
+  fileHash: &quot;d00311f793d66a9e9dee9939dedd9fd9&quot;
+}
+</code></pre><p>To modify this data, provide additional processing function as <code>styleguideProcessors</code> option. For example,</p>
+<pre><code>gulp.task(&quot;styleguide:generate&quot;, function() {
+
+  return gulp.src([&quot;path/to/css/**/*.sass&quot;])
+    .pipe(styleguide.generate({
+      title: &quot;My Styleguide&quot;,
+      ...
+      styleguideProcessors: {
+        30: processTemplates
+      }
+    ...
+</code></pre><p>As a value of this option, you can list the processing functions. The given indexes matter for the order in which these
+functions are applied to the data.</p>
+<p>Check out <a href="https://github.com/SC5/sc5-styleguide#build-options">the documentation for options</a>.</p>
+<p>In my projects, I used additional processors to operate custom KSS parameters and modify data.</p>
+<h2 id="custom-kss-data">Custom KSS data</h2>
+<p>In the section descriptions, you can provide additional KSS parameters with the names prefixed with <code>sg-</code>. For example,
+you can provide a path to a template which produces the markup for the component:</p>
+<pre><code>// Button
+//
+// markup:
+// { title: &quot;Move on&quot;, type=&quot;submit&quot; }
+//
+// sg-template:
+// src/components/button/button.ejs
+//
+// Styleguide 1.2.3
+</code></pre><p>In here the markup works as an input value for the given template. You can teach Style Guide to apply the template to
+the declared object and put the result as a markup to render. To do it you need a custom processing function mentioned
+above.</p>
+<pre><code>var processTemplates = (styleguide) =&gt; {
+
+  styleguide.sections.forEach((section) =&gt; {
+
+    if (section[&#39;sg-template&#39;]) {
+      var templatePath = section[&#39;sg-template&#39;].trim()
+      templatePath = path.join(process.cwd(), templatePath)
+
+      var templateStr = fs.readFileSync(templatePath, &#39;utf8&#39;)
+      var inputData = eval(&#39;(&#39; + section.markup + &#39;)&#39;)
+
+      section.renderMarkup = ejs.render(templateStr, insertData)
+    }
+
+  }
+
+}
+</code></pre><h2 id="templates-on-fly">Templates on fly</h2>
+<p>In the single-page applications, templates work on the client side. In this case, it is better to process them
+in the style guide too. In other words, you should include the templates into the JavaScript bundle and initialize
+the components on containers.</p>
+<p>Combining this approach to the custom processors, you can store the code example for every compoentn in the <code>markup</code>
+KSS field.</p>
+<p>For example,</p>
+<pre><code>// Tabs
+//
+// markup:
+// var Tabs = require(&#39;src/components/tab.js&#39;)
+// Tabs.init($container, { items: [...] })
+//
+// sg-js-component:
+// &lt;div class=&quot;sg-tabs-container&quot;&gt;&lt;/div&gt;
+//
+// Styleguide 1.2.3
+</code></pre><p>With a custom processor, you can put the container’s code as a markup to render:</p>
+<pre><code>var processorForJsComponents = function(styleguide) {
+
+  styleguide.sections.forEach((section) =&gt; {
+    if (section[&#39;sg-js-component&#39;]) {
+      section.renderMarkup = section.wrapper.replace(
+        &#39;&lt;sg-wrapper-content/&gt;&#39;, section[&#39;sg-js-component&#39;]
+      );
+    }
+  }
+
+}
+</code></pre><h2 id="adjustable-initialization-for-javascript">Adjustable initialization for JavaScript</h2>
+<p>Usually, different components need to be initialized in differently. Also, they may require some fake data. You can
+run various Javascript functions on separate component containers to get this result.</p>
+<pre><code>var TabsInit = require(&#39;src/components/tabs/tabs.init.js&#39;)
+
+var knownComponents = {
+  &#39;.sg-tabs-container&#39;: TabsInit
+}
+
+$(window).on(&#39;styleguide:onRendered&#39;, function(e) {
+
+  knownComponents.forEach((componentInit, componentSelector) =&gt; {
+    var containingComponents = $(e.originalEvent.detail.elements[0]).find(componentSelector)
+    if (containingComponents.length &gt; 0) {
+      componentInit(containingComponents)
+    }
+  })
+
+})
+</code></pre><p>This code runs a corresponding function for every selector in the <code>knownComponents</code> object. The matching DOM element(s)
+passed into the initializing function as a parameter.</p>
+<pre><code>// src/components/tabs/tabs.sg-init.js
+
+var Tabs = require(&#39;./tabs.js&#39;)
+
+var fakeData = [
+  { title: &#39;Tab1&#39;, url: &#39;/index.html&#39; },
+  { title: &#39;Tab2&#39;, url: &#39;/contacts&#39; }
+]
+
+module.exports = function($container) {
+  // Real calling for initing function depends on
+  // you component system interface
+  Tabs.init($container, { items: fakeData })
+}
+</code></pre><p>In this system, you can have several containers with the same CSS class but parametrized with any other information, e.g.
+data attributes:</p>
+<pre><code>// Tabs, another version
+//
+// markup:
+// var Tabs = require(&#39;src/components/tab.js&#39;)
+// Tabs.init($container, { another: true, items: [...] })
+//
+// sg-js-component:
+// &lt;div class=&quot;sg-tabs-container&quot; data-type=&quot;another&quot;&gt;&lt;/div&gt;
+//
+// Styleguide 1.2.4
+</code></pre><pre><code>...
+module.exports = function($container) {
+  var type = $container.data(&#39;type&#39;)
+
+  if (type == &#39;another&#39;) {
+    Tabs.init($container, { another: true,  items: fakeData })
+  } else {
+    Tabs.init($container, { items: fakeData })
+  }
+}
+</code></pre><h2 id="file-structure">File structure</h2>
+<p>You may have noticed that I suggest storing everything related to the component under the same folder. This is also
+relevant to the style-guide-related files.</p>
+<p>For a user, a component is a consistent entity. They get it as a whole thing, no matter how many technologies
+are behind. For a developer, it is not that straightforward. We use CSS for styling, JavaScript for interactions and HTML
+for the view. The corresponding code is usually placed in a separate file for each technology. I find it quite
+distracting.</p>
+<p>However, the ‘component folder’ approach smoothes this situation. Storing everything (including the documentation) in
+the same place improves developer’s experience very much.</p>
+<pre><code>src/
+  components/
+    login/
+      login.ejs
+      login.js
+      login.sg-init.js
+    tabs/
+      tabs.ejs
+      tabs.js
+      tabs.sass
+      tabs.sg-init.js
+</code></pre><h2 id="enjoy">Enjoy</h2>
+<p>After ajusting the SC5 Style Guide, as shown above, you will get the double living documentation. Remember about the
+watching mode to re-generate the style guide on the file changes. It works as a nice development playground.</p>
+<p>Also, last but not least, I would like to thank the community which made these things possible. I used the SC5 Style Guide
+features by other developers and so feel very grateful. You may see their names <a href="https://github.com/SC5/sc5-styleguide/releases">at the releases’
+page</a>. If you want yours to appear here, please
+<a href="https://github.com/SC5/sc5-styleguide">contribute</a>.</p>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+

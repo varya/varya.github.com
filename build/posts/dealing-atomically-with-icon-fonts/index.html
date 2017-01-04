@@ -1,0 +1,205 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>Dealing atomically with icon fonts</h1><div><p>My recent huge project was developing a library of CSS and JavaScript components for sharing this code across a lot of
+web services and mobile apps. In most cases such work brings up question about how to avoid blocking the processes.</p>
+<p>The library has its own flow, and obviously the new things can only appear in new versions. Although I made my best to
+provide fast releases, and so the library has them 2-3 times a week, it is still understandable that the library
+customers sometimes cannot wait even an hour.</p>
+<p>I belive that one of the must-haves of UI library is the freedom which it should give to its customers. You can easily
+provide this if practice atomic approach everythere. For example, for the icon fonts.</p>
+<excerpt/>
+
+<h3 id="solid-piece">Solid piece</h3>
+<p>Soon or not SVG will conquer the world. But now we still have icon fonts in some projects. The same story was with that
+library.</p>
+<p>However the icon font perfectly suited for the displaying icons onto the web pages, it was integration and flow which
+created the problem. All the icons fit into one font file (well, in 4 different formats):</p>
+<pre><code>src/
+  fonts/
+    iconfont.eot
+    iconfont.svg
+    iconfont.ttf
+    iconfont.woff
+</code></pre><p>Also the library provided CSS to make the icon-symbol matching:</p>
+<pre><code class="lang-scss">.icon {
+  font-family: $global-font-icon;
+  &amp;:before {
+    /* Some common icon stuff */
+  }
+  &amp;--support {
+    &amp;:before {
+      content: &quot;a&quot;;
+    }
+  }
+  &amp;--chat {
+    &amp;:before {
+      content: &quot;b&quot;;
+    }
+  }
+  ...
+}
+</code></pre>
+<p>Customers get the library as a bower or npm package. When they need a new icon to be in the set, they might request this
+and wait for the package to update. As usual, the fastest way to get something happened is to do this yourself. So, it
+possible to contribute and even release yourself. But still any further change would need you to go through the
+development process.</p>
+<h3 id="atomic-and-buildable">Atomic and buildable</h3>
+<p>Often you need to divide into smaller pieces in order to make things more mantainable. The same goes with icons. In the
+library we changed it so that the source is now a set of SVG files:</p>
+<pre><code>src/
+  icons/
+    1000-support.svg
+    1010-chat.svg
+    1020-users.svg
+</code></pre><p>The file names are important, these words are used to generate the CSS classes, which are the API for the customer.
+Numbers are for the right order. If building the icon system from very beginning, they are not needed. But in the
+library case I wanted backward compatibility.</p>
+<p>Then, these icons are built into the same icon fonts with <code>gulp-iconfont</code> plugin:</p>
+<pre><code class="lang-js">var gulp = require(&quot;gulp&quot;);
+var iconfont = require(&quot;gulp-iconfont&quot;);
+var consolidate = require(&quot;gulp-consolidate&quot;);
+
+var sourcePath = &quot;src/&quot;;
+
+gulp.task(&quot;build:icons&quot;, function() {
+    return gulp.src([sourcePath + &quot;/icons/*.svg&quot;])
+      .pipe(iconfont({
+        fontName: &quot;myicons&quot;,
+        formats: [&quot;ttf&quot;, &quot;eot&quot;, &quot;woff&quot;, &quot;svg&quot;],
+        centerHorizontally: true,
+        fixedWidth: true
+      }))
+      .on(&quot;glyphs&quot;, (glyphs) =&gt; {
+
+        glyphs.forEach((icon) =&gt; {
+          icon.name = icon.name.replace(/^\d+\-/g, &quot;&quot;);
+        });
+
+        gulp.src(sourcePath + &quot;/icons/util/*.scss&quot;) // Template
+            .pipe(consolidate(&quot;lodash&quot;, {
+                glyphs: glyphs,
+                fontName: &quot;myiconfont&quot;,
+                fontPath: &quot;../fonts/&quot;
+            }))
+            .pipe(gulp.dest(sourcePath + &quot;/scss/&quot;));
+      })
+      .pipe(gulp.dest(sourcePath + &quot;/fonts/&quot;));
+});
+</code></pre>
+<p>Besides the icon files this task needs the templates to produce the CSS (or SCSS, as in this case) which makes the
+symbol-class matching. I found it logical to store it together with the icon files:</p>
+<pre><code>src/
+  icons/
+    utils/
+      iconfont__icons.scss
+      iconfont__variables.scss
+</code></pre><p>It’s possible to manage with one template only, but for even more flexibility I have two. The main one makes the
+classes:</p>
+<pre><code class="lang-css">@font-face {
+  font-family: $global-font-icon;
+  src:url(&quot;&lt;%= fontPath %&gt;&lt;%= fontName %&gt;..eot&quot;);
+  src:url(&quot;&lt;%= fontPath %&gt;&lt;%= fontName %&gt;.?#iefix&quot;) format(&quot;embedded-opentype&quot;),
+    url(&quot;&lt;%= fontPath %&gt;&lt;%= fontName %&gt;.woff&quot;) format(&quot;woff&quot;),
+    url(&quot;&lt;%= fontPath %&gt;&lt;%= fontName %&gt;.ttf&quot;) format(&quot;truetype&quot;),
+    url(&quot;&lt;%= fontPath %&gt;&lt;%= fontName %&gt;.#&lt;%= fontName %&gt;&quot;) format(&quot;svg&quot;);
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  font-family: $global-font-icon;
+
+  &amp;:before {
+    /* Some common icon stuff */
+  }
+&lt;% _.each(glyphs, function(glyph) { %&gt;
+  &amp;.--&lt;%= glyph.name %&gt; {
+    &amp;:before {
+      content: $icon--&lt;%= glyph.name %&gt;;
+    }
+  }&lt;% }); %&gt;
+
+}
+</code></pre>
+<p>And another one makes the varibles:</p>
+<pre><code class="lang-css">&lt;% _.each(glyphs, function(glyph) { %&gt;
+$icon-&lt;%= glyph.name %&gt;: &quot;\&lt;%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %&gt;&quot; !default;
+&lt;% }); %&gt;
+</code></pre>
+<p>Running the task produces the fonts and 2 generic SCSS files:</p>
+<pre><code>src/
+  font/
+    iconfont.eot
+    iconfont.svg
+    iconfont.ttf
+    iconfont.woff
+  scss/
+    icons.scss // Not generic
+    iconfont__icons.scss
+    iconfont__variables.scss
+</code></pre><p>In the <code>icons.scss</code>, which is normal SCSS file, the result is requested:</p>
+<pre><code class="lang-css">// Icons
+//
+// Lists all the icons that are used in the services.
+//
+// Styleguide 5
+
+@import &quot;iconfont__variables.scss&quot;;
+@import &quot;iconfont__icons.scss&quot;;
+</code></pre>
+<h3 id="extend-on-fly">Extend on fly</h3>
+<p>The variables may be redefined on the customer’s side. This makes is a fast way to change the icon, if the replacement
+already sit in the font bundle.</p>
+<p>If not, it is almost zero amout of work to implement this build-from-atoms process on the customer side.</p>
+<p>The customer has all the library code, let’s say in <code>bower_components</code>, and can have its own folder of icons:</p>
+<pre><code>bower_components/
+  ui-library/
+    dist/
+      icons/
+      scss/
+src/
+  icons/
+    2000-rabbit.svg
+    2010-gift.svg
+</code></pre><p>When building the font they need to use both their set of icons and the library icons:</p>
+<pre><code class="lang-js">
+var sourcePath = &quot;src/&quot;;
+
+gulp.task(&quot;build:icons&quot;, function() {
+    return gulp.src([sourcePath + &quot;/icons/*.svg&quot;, &quot;bower_components/ui-library/dist/icons/*.svg&quot;])
+      .pipe(iconfont({
+        /* The same as above */
+      }))
+      .on(&quot;glyphs&quot;, (glyphs) =&gt; {
+
+        gulp.src(&quot;bower_components/ui-library/dist/icons/util/*.scss&quot;)
+            .pipe(consolidate(&quot;lodash&quot;, {
+                /* The same as above */
+            }))
+            .pipe(gulp.dest(sourcePath + &quot;/scss/&quot;));
+      })
+      .pipe(gulp.dest(sourcePath + &quot;/fonts/&quot;));
+});
+</code></pre>
+<p>It is not even needed to implement template for the output SCSS, it comes in the library dist.</p>
+<p>With such a flow a UI library customer stays completely independent from the library release cycle and may bring a new
+icon into her product as soon as the atomic SVG file is copied into the needed folder. As a background process it is
+needed to contribute the same icon into the library, but not necessarily the same moment. And even the contributing
+process is changed to be better because it came to adding an SVG file.</p>
+<p>As other atomical things, such font flow makes git history more useful. Now it is easier to see
+if the provided change affected many or just one icon. Also, SVG images are rendered nicely in pull requests.</p>
+<p>Even simultaneous changes of the icons in both library and customer websites are possible and should not cause any
+conflict.</p>
+<p>And the last but not least nice thing: all the icons are now in the library as SVG files. Hopefully later we come up
+with using next century technologies and not the icons fonts. When this sweet moment comes, half of the work will have
+been done :-)</p>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+

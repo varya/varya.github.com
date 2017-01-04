@@ -1,0 +1,102 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>JavaScript в BEMJSON</h1><div><p>Обычно разработка страницы начинается с прототипирования интерфейса и затем
+продолжается созданием статической странички при помощи HTML/CSS и элементарного
+JavaScript. Если использууется полный стек БЭМ, переход от прототипирования к
+полноценному сайту происходит постепенно. Можно склонировать проект
+<a href="https://github.com/bem/project-stub">project-stub</a>
+и сделать статическую страницу, об этом уже опубликован
+<a href="http://bem.info/articles/start-with-project-stub/">туториал</a>.<excerpt/></p>
+<p>Благодаря <code>BEMHTML</code> вам не нужно писать весь HTML для страницы вручную. Описывая
+страницу в BEMJSON, вы экономите время, ведь не нужно писать каждый тег. Но в
+случае больших страниц этого мало.</p>
+<p>К счастью, в BEMJSON можно включать JavaScript, результатом которого будет
+описание блоков.
+Вот пример такой страницы:</p>
+<pre><code class="lang-js">({
+    block: &#39;page&#39;,
+    ...
+    content:[
+        ...
+        {
+            block: &#39;content&#39;,
+            content: (function() {
+                var res = [];
+                for(var i = 0; i &lt; 10; i++) {
+                    res.push({
+                        block: &#39;button&#39;,
+                        content: &#39;Button &#39; + (i + 1)
+                    });
+                }
+                return res;
+            })()
+        },
+        ...
+    ]
+})
+</code></pre>
+<p><a href="https://github.com/varya/dynamic-bemjson/blob/master/desktop.bundles/page1/page1.bemjson.js">полный
+код</a></p>
+<p>Когда страница собирается при помощи <code>bem-tools</code>, этот JavaScript создает 10
+блоков <code>button</code>.
+Можете проверить <a href="http://varya.me/dynamic-bemjson/desktop.bundles/page1/page1.html">результирующую страницу</a>
+чтобы увидеть их.</p>
+<p>Ещё одним примером может служить блок <code>menu</code>. Такой интерфейсный компонент
+обычно состоит из множества повторяющихся пунктов с минимальными различиями.
+Получается копипаст, которого можно избежать, используя JavaScript в BEMJSON.</p>
+<pre><code class="lang-js">({
+    block: &#39;page&#39;,
+    ...
+    content:[
+        ...
+        {
+            block: &#39;menu&#39;,
+            content: [
+                {
+                    title: &#39;Index&#39;,
+                    isSelected: false,
+                },
+                {
+                    title: &#39;Products&#39;,
+                    isSelected: true
+                },
+                {
+                    title: &#39;Contact&#39;,
+                    isSelected: false
+                }
+            ].map(function(item){
+                var block = {
+                    block: &#39;menu&#39;,
+                    elem: &#39;item&#39;,
+                    content: item.title,
+                    mods: {
+                        selected: item.isSelected
+                    }
+                };
+                return block;
+            })
+        },
+        ...
+    ]
+})
+</code></pre>
+<p><a href="https://github.com/varya/dynamic-bemjson/blob/master/desktop.bundles/page2/page2.bemjson.js">full
+code</a></p>
+<p>В результате получается <a href="http://varya.me/dynamic-bemjson/desktop.bundles/page2/page2.html">страница с меню из 3х пунктов</a>.
+Чем больше массив с пунктами меню, тем больше пользы. Особенно если структура
+меню меняется в процессе разработки.</p>
+<p>Конечно, этой возможностью не придется пользоваться, если BEMJSON — это
+результат первого слоя шаблонов (таких как BEMTREE или priv.js) — там вы можете
+произвести столько BEMJSON, сколько требуется. Но на первом этапе разработки,
+когда делается статическая страница, трюки с JavaScript в BEMJSON помогут
+избежат копипаста.</p>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+

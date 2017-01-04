@@ -1,0 +1,236 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>Style-guide the smaller things</h1><div><p>I’ve been presenting <a href="http://styleguide.sc5.io/">SC5 Style Guide</a> several times during this year sharing my experience of using it for one
+of the SC5’s clients, Elisa. Assuming that Elisa is a huge mobile operator with a lot of websites and a need
+to keep those websites visually consistent, there is no wonder that the SC5 Style Guide as a tool provides benefits
+there. But what about smaller websites? Would it be useful there? I did not know the answer to this question
+and wanted to experiment. The experiment was conducted on my blog codebase.</p>
+<excerpt/>
+
+<p>This is how the Living Style Guide looks like: <a href="http://varya.me/styleguide">varya.me/styleguide</a>. You can see the interface
+decomposed into block pieces, each of those representing a meaningful interface unit. I haven’t seen the interface of my blog
+from this perspective before. It gave me a lot of insight into the ways the CSS architecture of my blog should be designed.
+But, let’s consider things one by one.</p>
+<h2 id="fine-tuning-the-sc5-style-guide-tool">Fine-tuning the SC5 Style Guide tool</h2>
+<p>Everything starts with</p>
+<pre><code>npm install --save-dev sc5-styleguide
+</code></pre><p>Then, I was able to use the tool to build the interface representation. It required
+<a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/Gulpfile.js">a couple of Gulp tasks</a>.</p>
+<p>I had to deviate from the example configuration in a couple of places to make my Style Guide work as it does now. Let me
+name and explain these things.</p>
+<h3 id="providing-the-approot-parameter-">Providing the <code>appRoot</code> parameter.</h3>
+<p>As I am hosting the Style Guide website not it the root folder but in a subfolder named <code>styleguide</code>, I inform the
+  generator about that, so it can build the properly working app:</p>
+<pre><code class="lang-js">gulp.task(&quot;styleguide:generate&quot;, function() {
+
+  return gulp.src([&quot;desktop.blocks/**/*.css&quot;])
+    .pipe(styleguide.generate({
+      title: &quot;Varya.me Styleguide&quot;,
+      appRoot: &#39;/styleguide&#39;,
+      ...
+</code></pre>
+<h3 id="providing-scripts">Providing scripts</h3>
+<p>Under the <code>extraHead</code> parameter I list all the additions needed. Some of my components
+need JavaScript to function. It is indeed possible to ignore that and present
+their views only, but I wanted them to be exactly as they were used in the blog.
+Thanks to <code>extraHead</code> I could supply any code needed. I used it to
+link the same scripts that I have on my blog pages:</p>
+<pre><code class="lang-js">gulp.task(&quot;styleguide:generate&quot;, function() {
+
+  return gulp.src([&quot;desktop.blocks/**/*.css&quot;])
+    .pipe(styleguide.generate({
+      title: &quot;Varya.me Styleguide&quot;,
+      ...
+      extraHead: [
+        &#39;&lt;script src=&quot;http://yandex.st/jquery/1.7.2/jquery.min.js&quot;&gt;&lt;/script&gt;&#39;,
+        &#39;&lt;script src=&quot;/desktop.bundles/index/index.min.js&quot;&gt;&lt;/script&gt;&#39;,
+        ...
+      ]
+    ...
+</code></pre>
+<p>However, I needed yet another trick to make the scripts work properly. My components are written with <code>i-bem.js</code>
+framework which automatically initialises them on the <code>domReady</code> event. This is what I wanted for the static pages because the
+components markup is in HTML document. But for the Style Guide, which is architecturally a SPA, this did not work. The components
+are rendered on the fly, and this obviously happens after <code>domReady</code>; that is why by default they stay
+uninitialized. So they should be initialized after they had been rendered. Luckily, the Style Guide
+triggers an event on the <code>window</code> object named <code>styleguide:onRendered</code> every time a new component is re-rendered.
+By handling this event, I managed to get the components initialized right after they appear on the page. This code is needed
+for the Style Guide only, so I do not include it into the project bundle but provide as an additional script in the
+Style Guide configuration:</p>
+<pre><code>gulp.task(&quot;styleguide:generate&quot;, function() {
+
+  return gulp.src([&quot;desktop.blocks/**/*.css&quot;])
+    .pipe(styleguide.generate({
+      title: &quot;Varya.me Styleguide&quot;,
+      ...
+      extraHead: [
+        ...
+        &#39;&lt;script src=&quot;/styleguide/i-bem__init_styleguide.js&quot;&gt;&lt;/script&gt;&#39;
+      ]
+    ...
+</code></pre><p>You can check how the JavaScript components are working with the block which is initially empty and renders the list
+of repositories after querying the GitHub API: <a href="http://varya.me/styleguide/#/section/4.3">varya.me/styleguide/#/section/4.3</a>.
+Or try out the Candies randomly built with JavaScript <a href="http://varya.me/styleguide/#/section/5.1">varya.me/styleguide/#/section/5.1</a>.</p>
+<p>The last important thing to make JavaScript work is to use <code>disableEncapsulation: true</code> parameter. Normally the
+Style Guide wraps each component in the ShadowDOM because it lets us developers write component CSS without
+worrying about affecting the Style Guide interface. But it also makes the components scoped from the JavaScript linked
+to the Style Guide website — including that additional JavaScript I showed above. By disabling the encapsulation, I made
+the components to be inserted into the HTML page as they are, without any scoping. As for affecting the Style Guide
+interface, in my case it will never happen as I use BEM and all my components are already “encapsulated” thanks to that methodology.</p>
+<h3 id="hosting-a-static-page">Hosting a static page</h3>
+<p>The SC5 Style Guide provides a development server which routes all the paths to its root. When hosting it outside, you
+should care about the routing yourself as you would do for any other SPA. But my blog is hosted on GitHub Pages
+which is a simple static hosting and does not provide any routing capabilities. For managing this case, I use the
+<code>disableHtml5Mode: true</code> option. It makes the Style Guide application generate the old-school links with <code>#</code>. And so it
+works.</p>
+<h2 id="documenting-the-components">Documenting the components</h2>
+<p>As I used BEM for my website frontend from very beginning, the CSS was already written the component-way. I only
+needed to create a descriptive structure and document the blocks with KSS.</p>
+<h3 id="structuring-the-code">Structuring the code</h3>
+<p>Unfortunately the BEM way of storing components in folders turned out to be not good enough to see
+the code from the living-style-guide perspective. On a file system, all the components are represented at the same
+level which turns them into a long list without much structure:</p>
+<pre><code>desktop.blocks/
+├── article
+├── articles-list
+├── box
+├── ...
+└── text
+</code></pre><p><a href="https://github.com/varya/varya.github.com/tree/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks">github/varya/varya.github.com/desktop-blocks</a></p>
+<p>In this case the atomic components are not distinct from the structural interface pieces (such as Header or Footer),
+from the side blocks, or from CSS provided to style third-party things. Flat structure is indeed good for
+bundling tools but we humans need more logical nesting.</p>
+<p>For that I provide the <code>overview.css</code> file, which has nothing to do with the final product and only helps me arrange the
+blocks. I have 5 sections, in which I place the blocks depending on what they are:</p>
+<pre><code>/*
+Atoms
+
+Styleguide 1
+
+styleguide:ignore:start
+
+@import url(&quot;logo/logo.css&quot;); // 1.1
+@import url(&quot;text/text.css&quot;); // 1.2
+...
+
+styleguide:ignore:end
+*/
+
+/*
+Main blocks
+
+Styleguide 2
+
+styleguide:ignore:start
+
+@import url(&quot;header/header.css&quot;); // 2.1
+...
+
+styleguide:ignore:end
+*/
+</code></pre><p><a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/overview.css">github/varya/varya.github.com/desktop-blocks/overview.css</a></p>
+<p>There are only comments in this file in which I provide the documentation of every subset as a Style Guide section.
+Listing the paths of the dependant CSS files makes it easier to navigate through the code. The <code>@import</code> syntax is used just
+because :-)</p>
+<p>The only trick here is the magic <code>styleguide:ignore:start</code> and <code>styleguide:ignore:end</code> keywords. It is possible to
+place them inside comments in any piece of your CSS (or SASS or LESS) and make the Style Guide generator ignore 
+what is in between.</p>
+<p>In my case, I tell it skip my overview lists because they have nothing to do with the codebase. But the names of the
+sections and their possible descriptions (I just haven’t provided any) are in work.</p>
+<h3 id="describing-the-pieces">Describing the pieces</h3>
+<p>Everything else went smoothly. For every component I provided the KSS description. The <code>logo</code> block can be the
+simplest example:</p>
+<pre><code class="lang-css">/*
+
+Logo
+
+markup:
+&lt;logo class=&quot;logo&quot;&gt;···&lt;b class=&quot;var&quot;&gt;var&lt;/b&gt;·&lt;b class=&quot;ya&quot;&gt;ya&lt;/b&gt;;&lt;b class=&quot;cursor&quot;&gt;&lt;/b&gt;&lt;/logo&gt;
+
+Styleguide 1.1
+
+*/
+.logo
+{
+...
+</code></pre>
+<p><a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/logo/logo.css">github/varya/varya.github.com/desktop-blocks/logo/logo.css</a></p>
+<p>See it rendered: <a href="http://varya.me/styleguide/#/section/1.1">varya.me/styleguide/#/section/1.1</a></p>
+<p>In some other components I used extra features. For example, different social icons are the same <code>ico</code> element with different
+modifiers. In the Style Guide I could documents them all together:</p>
+<pre><code class="lang-css">/*
+Social icon
+
+.social-ico__ico_type_rss         - RSS
+.social-ico__ico_type_twitter     - Twitter
+.social-ico__ico_type_github      - Github
+.social-ico__ico_type_facebook    - Facebook
+.social-ico__ico_type_linkedin    - LinkedIn
+
+markup:
+&lt;a class=&quot;link social-ico__ico {$modifiers}&quot; href=&quot;#&quot; title=&quot;Icon title&quot;&gt;&lt;/a&gt;
+
+Styleguide 1.5.1
+*/
+
+.social-ico__ico
+{
+...
+</code></pre>
+<p><a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/social-ico/social-ico.css#L49">github/varya/varya.github.com/desktop-blocks/social-ico/social-ico.css</a></p>
+<p>In the website the component is rendered separately with every modifier possible:
+<a href="http://varya.me/styleguide/#/section/1.5.1">varya.me/styleguide/#/section/1.5.1</a></p>
+<p>For the complex components which contain other ones I used <code>&lt;sg-insert&gt;</code> keyword. It takes another component’s markup
+by its reference number.</p>
+<pre><code class="lang-css">/*
+Sidebar
+markup:
+&lt;nav class=&quot;sidebar&quot;&gt;
+  &lt;sg-insert&gt;4.2&lt;/sg-insert&gt;
+  &lt;sg-insert&gt;4.3&lt;/sg-insert&gt;
+&lt;/nav&gt;
+Styleguide 4.1
+*/
+
+.sidebar
+{
+...
+</code></pre>
+<p><a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/sidebar/sidebar.css">github/varya/varya.github.com/desktop-blocks/sidebar/sidebar.css</a></p>
+<p>This makes the markup examples pretty short, however it expands for rendering the component and showing the
+markup on the website: <a href="http://varya.me/styleguide/#/section/4.1">varya.me/styleguide/#/section/4.1</a></p>
+<h2 id="style-guide-driven-development">Style-Guide-Driven Development</h2>
+<p>If you type “logo” in the Style Guide search field, it will find and render all the components where <code>logo</code> is found!
+The search goes through all the CSS codebase. Similarly you can search for the components using <code>&lt;em&gt;</code> in their markup.
+Or <code>font:</code> in their CSS.</p>
+<p>I personally like that the search source is not only the CSS of components but also their markup examples. During the
+refactorings this, for example, makes possible to select all the components containing inputs and look how the changes affect them.</p>
+<p>However this is just a small addition to one major benefit I see in using the Style Guide. I find it far more important 
+that <strong>it reveals my mistakes</strong>.</p>
+<p>I already used the component way when building my blog. And I was pretty sure that my BEM experience is a 100%
+guarantee that I get this right. But even developing with a highly modular approach in mind, I did this from the page perspective.
+Before the components were integrated into the blog engine, I had developed a static page and this was where the
+components fitted first.</p>
+<p>I considered them independent and so tried to write my code. But <strong>sitting at the same page they never actually were
+independent</strong>.</p>
+<p>After the SC5 Style Guide magically represented each of them separately, I can see that the
+<a href="http://varya.me/styleguide/#/section/1.1">logo</a> is aligned to the right.
+And why should it be? Obviously, my mistake when I tried to made it fit into the Header.</p>
+<p>The same goes for the <a href="http://varya.me/styleguide/#/section/1.4">language switcher</a> positioned on the right.</p>
+<p>In the <a href="http://varya.me/styleguide/#/section/1.5">set of social icons</a>, the language switcher provided with the RSS
+icon was considered to stay with it. But this only happens because at the blog pages
+it is placed into a narrow container. The Style Guide represents it on its own and I can see that it is not that
+flawless as I thought.</p>
+<p>Such discoveries obviously lead to the refactoring :-)</p>
+<p>To top it off, I must say that the experiment does not end and there are already findings for further
+posts. Stay tuned!</p>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+

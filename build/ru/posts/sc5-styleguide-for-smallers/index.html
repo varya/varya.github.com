@@ -1,0 +1,233 @@
+<!doctype html>
+<html class='no-js' lang=''>
+    <head>
+        <title>Isomorphic Example</title>
+    </head>
+    <body>
+        <div id='contents'><div><h1>Стайл гайд для самых маленьких</h1><div><p>В этом году у меня было несколько презентаций про <a href="http://styleguide.sc5.io/">SC5 Style Guide</a>, в которых
+я делилась опытом использования инструмента на проектах одного их наших клиентов — мобильного оператора Elisa.
+Учитывая, что Elisa — огромная компания с массой вебсайтов, на которых нужно поддерживать единый стиль, не
+удивительно, что SC5 Style Guide как инструмент там очень полезен. Но как насчет небольших проектов? Стоит ли для них
+делать стайл гайды? Я сама не знала ответ на этот вопрос и захотела поэкспериментировать. В качестве подопытного
+сайта взяла собственный блог.</p>
+<excerpt/>
+
+<p>Живой стайл гайд моего блога выглядит вот так: <a href="http://varya.me/styleguide">varya.me/styleguide</a>. Вы можете видеть
+весь интерфейс, разделенный на блоки, каждый из которых подразумевает самостоятельный компонент. Я до сих пор не
+смотрела на интерфейс своего блога в таком ключе, и это заставляет меня даже пересмотреть CSS-архитектуру проекта. Но
+давайте обо всём по порядку.</p>
+<h2 id="-sc5-style-guide">Настройка SC5 Style Guide</h2>
+<p>Всё начинается с установки пакета</p>
+<pre><code>npm install --save-dev sc5-styleguide
+</code></pre><p>После этого я смогла сгенерировать веб-сайт стайл гайда. Для этого понадобилась
+<a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/Gulpfile.js">парочка gulp тасков</a>.</p>
+<p>Мне нужно было немного отступить от конфигурации, которая предлагается в документации, чтобы решить свои задачи. Напишу
+об этом подробно.</p>
+<h3 id="-approot-">Использование параметра <code>appRoot</code></h3>
+<p>Мой стайл гайд находится не в корне домена, а в папке, которая называется <code>styleguide</code>. Об этом нужно сообщить
+инструменту, чтобы сгенерированное им приложение использовало верные ссылки:</p>
+<pre><code class="lang-js">gulp.task(&quot;styleguide:generate&quot;, function() {
+
+  return gulp.src([&quot;desktop.blocks/**/*.css&quot;])
+    .pipe(styleguide.generate({
+      title: &quot;Varya.me Styleguide&quot;,
+      appRoot: &#39;/styleguide&#39;,
+      ...
+</code></pre>
+<h3 id="-javascript">Подключение JavaScript</h3>
+<p>В качестве значения параметра <code>extraHead</code> можно перечислить все, что нужно подключить к странице. У меня для некоторых
+компонент требуется JavaScript. Конечно, не обязательно делать так, чтобы он работал, можно просто делать стайл гайд
+только на базе CSS. Но мне хотелось, чтобы компоненты в документации выглядели бы абсолютно так же как в блоге. И
+благодаря <code>extraHead</code> я могу указать, какой JavaScript файл нужен.</p>
+<pre><code class="lang-js">gulp.task(&quot;styleguide:generate&quot;, function() {
+
+  return gulp.src([&quot;desktop.blocks/**/*.css&quot;])
+    .pipe(styleguide.generate({
+      title: &quot;Varya.me Styleguide&quot;,
+      ...
+      extraHead: [
+        &#39;&lt;script src=&quot;http://yandex.st/jquery/1.7.2/jquery.min.js&quot;&gt;&lt;/script&gt;&#39;,
+        &#39;&lt;script src=&quot;/desktop.bundles/index/index.min.js&quot;&gt;&lt;/script&gt;&#39;,
+        ...
+      ]
+    ...
+</code></pre>
+<p>Но на самом деле нужна ещё одна хитрость. Мои компоненты написаны на <code>i-bem.js</code> и автоматически инициализируются по
+<code>domReady</code>. Это как раз то что нужно для блога, ведь страницы статические и вся HTML-разметка сразу загружается. Но сайт
+стайл гайда — это SPA (одностраничное приложение), и там это не работало. Компоненты отрисовываются на страницах
+стайлгайда “на лету”, и очевидно, что это происходит позже <code>domReady</code>. То есть они не инициализируются автоматически.
+К счастью, можно использовать событие <code>styleguide:onRendered</code> на объекте <code>window</code>, которое SC5 Style Guide создаёт
+каждый раз, когда компонент перересовывается. Я сделала инициализацию компонент на это событие, то есть сразу после того
+как они появляются на странице. Такая инициализация нужна только на сайте стайл гайда, поэтому этот код не включается
+в общую сборку и подключается к стайл гайду как дополнительный файл.</p>
+<pre><code>gulp.task(&quot;styleguide:generate&quot;, function() {
+
+  return gulp.src([&quot;desktop.blocks/**/*.css&quot;])
+    .pipe(styleguide.generate({
+      title: &quot;Varya.me Styleguide&quot;,
+      ...
+      extraHead: [
+        ...
+        &#39;&lt;script src=&quot;/styleguide/i-bem__init_styleguide.js&quot;&gt;&lt;/script&gt;&#39;
+      ]
+    ...
+</code></pre><p>Вы можете посмотреть, как работают компоненты с JavaScript на примере блока, который показывает список репозиториев
+на GitHub после того как сделает запрос в GitHub API:
+<a href="http://varya.me/styleguide/#/section/4.3">varya.me/styleguide/#/section/4.3</a>. Или на странице блока с кружочками,
+которые генерируются случайным образом: <a href="http://varya.me/styleguide/#/section/5.1">varya.me/styleguide/#/section/5.1</a>.</p>
+<p>И последняя, очень важная деталь для того, чтобы заставить JavaScript работать — это использование параметра
+<code>disableEncapsulation: true</code>. По умолчанию Style Guide оборачивает каждый компонент в ShadowDOM. Это даёт разработчику
+возможность не беспокоиться о том, что его стили пересекутся со стилями сгенерированного веб-сайта. Но в то же время
+это инкапсулирует компонент, в том числе и от JavaScript, подключённого в <code>&lt;head&gt;</code>. Но благодаря специальному параметру
+эту инкапсуляцию можно предотвратить. Так что у меня компоненты просто вставляются в HTML-код сайта как есть. Что
+касается возможности перезаписать стили сайта, этого не случится. Я использую БЭМ, поэтому все компоненты уже
+“инкапсулированы” на уровне методологии.</p>
+<h3 id="-">Стайл гайд как статическая страница</h3>
+<p>Для режима разработки у SC5 Style Guide запускается сервер, который разруливает все пути в корневой каталог, откуда и
+раздаётся сгененированный SPA-сайт. Если вы хотите пользоваться результатом в своём сервере, о такой маршрутизации
+придется позаботиться самостоятельно. Но в моём случае сайт располагается на GitHub Pages, это статический хостинг и там
+никакой маршрутизации не предусмотрено. Однако на этот случай есть настройка <code>disableHtml5Mode: true</code>. Она говорит
+генератору, что в приложении должны быть старые добрые ссылки с решеткой <code>#</code>. Так что всё работает.</p>
+<h2 id="-">Документирование компонент</h2>
+<p>Ещё до внедрения стайл гайда, у меня весь CSS был написан по БЭМ, то есть с компонентым подходом. Для стайл гайда нужно
+было только задать компонентам структуру и задокументировать блоки при помощи KSS.</p>
+<h3 id="-">Структурирование кода</h3>
+<p>Оказалось, что файловая структура, которую предлагает БЭМ, не самое лучшее решение для разработки живого стайлгайда. На
+файловой системе все компоненты представлены длинным плоским списком:</p>
+<pre><code>desktop.blocks/
+├── article
+├── articles-list
+├── box
+├── ...
+└── text
+</code></pre><p><a href="https://github.com/varya/varya.github.com/tree/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks">github/varya/varya.github.com/desktop-blocks</a></p>
+<p>То есть маленькие атомарные компоненты никак не отличаются от блоков для структуры страницы (таких как Header или
+Footer), от блоков из сайдбара или от CSS для сторонних виджетов. Разумеется, плоская структура более удобна для
+сборщиков, но с точки зрения разработки нужна какая-то каталогизация.</p>
+<p>Для этого я сделала файл <code>overview.css</code>, в котором нет никакого активного CSS, но он помогает мне организовать блоки.
+У меня там 5 секций, и в каждой относящиеся к ней компоненты:</p>
+<pre><code>/*
+Atoms
+
+Styleguide 1
+
+styleguide:ignore:start
+
+@import url(&quot;logo/logo.css&quot;); // 1.1
+@import url(&quot;text/text.css&quot;); // 1.2
+...
+
+styleguide:ignore:end
+*/
+
+/*
+Main blocks
+
+Styleguide 2
+
+styleguide:ignore:start
+
+@import url(&quot;header/header.css&quot;); // 2.1
+...
+
+styleguide:ignore:end
+*/
+</code></pre><p><a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/overview.css">github/varya/varya.github.com/desktop-blocks/overview.css</a></p>
+<p>По сути в файле кроме комментариев ничего нет. А в комментариях — описание каждой секции. Также перечислены
+файлы блоков, имеющие к ней отношение. Это удобно для навигации по коду. В этом перечислении я использовала <code>@import</code>
+(просто потому что могу).</p>
+<p>Здесь только одна особенность — использование волшебных комментариев <code>styleguide:ignore:start</code> и
+<code>styleguide:ignore:end</code>. Ими можно обернуть любой кусок CSS (SASS или LESS) кода и таким образом сказать генератору SC5
+Style Guide, что этот кусок нужно проигнорировать.</p>
+<p>Я игнорирую свои списки блоков, потому что они никак не влияют на код. Но описания секций остаются.</p>
+<h3 id="-">Описание блоков</h3>
+<p>Все остальное легко. Перед каждым компонентом я размещаю комментарий с KSS описанием. Например, один из простых блоков,
+Logo:</p>
+<pre><code class="lang-css">/*
+
+Logo
+
+markup:
+&lt;logo class=&quot;logo&quot;&gt;···&lt;b class=&quot;var&quot;&gt;var&lt;/b&gt;·&lt;b class=&quot;ya&quot;&gt;ya&lt;/b&gt;;&lt;b class=&quot;cursor&quot;&gt;&lt;/b&gt;&lt;/logo&gt;
+
+Styleguide 1.1
+
+*/
+.logo
+{
+...
+</code></pre>
+<p><a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/logo/logo.css">github/varya/varya.github.com/desktop-blocks/logo/logo.css</a></p>
+<p>See it rendered: <a href="http://varya.me/styleguide/#/section/1.1">varya.me/styleguide/#/section/1.1</a></p>
+<p>В некоторых компонентах использованы дополнительные возможности. Например, социальные иконки — это один и тот же блок
+с разными модификаторыми. Такое можно задокументировать одним махом:</p>
+<pre><code class="lang-css">/*
+Social icon
+
+.social-ico__ico_type_rss         - RSS
+.social-ico__ico_type_twitter     - Twitter
+.social-ico__ico_type_github      - Github
+.social-ico__ico_type_facebook    - Facebook
+.social-ico__ico_type_linkedin    - LinkedIn
+
+markup:
+&lt;a class=&quot;link social-ico__ico {$modifiers}&quot; href=&quot;#&quot; title=&quot;Icon title&quot;&gt;&lt;/a&gt;
+
+Styleguide 1.5.1
+*/
+
+.social-ico__ico
+{
+...
+</code></pre>
+<p><a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/social-ico/social-ico.css#L49">github/varya/varya.github.com/desktop-blocks/social-ico/social-ico.css</a></p>
+<p>В документации компоненты прорисованны по отдельности для каждого модификатора:
+<a href="http://varya.me/styleguide/#/section/1.5.1">varya.me/styleguide/#/section/1.5.1</a></p>
+<p>Для сложносоставных компоненты, которые используют внутри себя другие, я использовала ключевой тег <code>&lt;sg-insert&gt;</code>.
+Он вставляет вместо себя код компонента с соответствующим номером.</p>
+<pre><code class="lang-css">/*
+Sidebar
+markup:
+&lt;nav class=&quot;sidebar&quot;&gt;
+  &lt;sg-insert&gt;4.2&lt;/sg-insert&gt;
+  &lt;sg-insert&gt;4.3&lt;/sg-insert&gt;
+&lt;/nav&gt;
+Styleguide 4.1
+*/
+
+.sidebar
+{
+...
+</code></pre>
+<p><a href="https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/sidebar/sidebar.css">github/varya/varya.github.com/desktop-blocks/sidebar/sidebar.css</a></p>
+<p>Благодаря этому документация в коде приемлемого размера, а на сайте все раскрывается в полном виде:
+<a href="http://varya.me/styleguide/#/section/4.1">varya.me/styleguide/#/section/4.1</a></p>
+<h2 id="style-guide-driven-development">Style-Guide-Driven Development</h2>
+<p>Если в получившемся стайл гайде в поле для поиска вы наберете “logo”, то увидите все компоненты, который используют
+логотип! Поиск проводится по всему коду. Точно так же можно поискать компоненты, в разметке которых используется <code>&lt;em&gt;</code>.
+Или в чьих стилях есть <code>font:</code>.</p>
+<p>Мне лично особенно нравится, что можно искать и по разметке. Этим можно пользоваться во время рефакторинга. Например,
+изменив input, я могу найти все использующие его блоки и посмотреть, не сломались ли они.</p>
+<p>Хотя на самом деле это лишь небольшое дополнение к главному преимуществу использования стайл гайда. По-моему, его
+основной плюс — <strong>демонстрация ошибок вёрстки</strong>.</p>
+<p>В CSS моего блога ещё до внедрения стайл гайда использовался компонентый подход. Учитывая мой БЭМ опыт, я была на 100%
+уверена, что компоненты написаны хорошо. Но даже такая компонентная разработка всё равно происходила с точки зрения
+страницы. До того как блоки были внедрены в блог, я делала их на отдельной статической странице. То есть отдельно, вне
+страницы, они никогда и не существовали.</p>
+<p>Блоки разрабатывались как независимые, я писала код, пытаясь этого достигнуть. Но <strong>будучи размещенными вместе на одной и
+той же странице, они никогда независимыми не были</strong>.</p>
+<p>После того как SC5 Style Guide волшебным образом отрисовал их по отдельности, я могу видеть, что блок
+<a href="http://varya.me/styleguide/#/section/1.1">logo</a> выровнен по правому краю. Хотя почему бы это? Очевидно, это моя ошибка,
+допущенная, когда я верстала логитип внутри блока Header.</p>
+<p>То же самое произошло с <a href="http://varya.me/styleguide/#/section/1.4">переключалкой языков</a>, она так же выровнена вправо.</p>
+<p>В <a href="http://varya.me/styleguide/#/section/1.5">блоке социальных иконок</a> переключалка языков подразумевалась рядом с
+иконкой RSS. Но на странице они располагаются близко друг к другу только потому что весь блок помещен в узкий контейнер.
+В стайл гайде блок отрисован отдельно, и мне теперь видно, что он свёрстан неидеально.</p>
+<p>Конечно, такие открытия подразумевают скорый рефакторинг :-)</p>
+<p>И в довершение нужно сказать, что эксперимент не закончен. Есть и другие открытия для новых постов.</p>
+</div></div></div>
+
+        <script src='bundle.js'></script>
+    </body>
+</html>
+
