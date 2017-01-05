@@ -127,23 +127,23 @@ gulp.task("metalsmith", ()=> {
 
     }))
     .use(collections({
-      PostsEn: {
+      posts_en: {
         pattern: ['posts/**/*.md', '!posts/index.md'],
         sortBy: 'date',
         reverse: true
       },
-      PostsRu: {
-        pattern: 'ru/posts/**/*.md',
+      posts_ru: {
+        pattern: ['ru/posts/**/*.md', '!ru/posts/index.md'],
         sortBy: 'date',
         reverse: true
       },
-      LifeEn: {
+      life_en: {
         pattern: ['life/**/*.md', '!life/index.md'],
         sortBy: 'date',
         reverse: true
       },
-      LifeRu: {
-        pattern: 'ru/posts/**/*.md',
+      life_ru: {
+        pattern: ['ru/life/**/*.md', '!ru/life/index.md'],
         sortBy: 'date',
         reverse: true
       }

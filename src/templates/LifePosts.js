@@ -5,9 +5,11 @@ import Posts from './Posts'
 export default class LifePosts extends Component {
 
   render() {
-    const { title, collection } = this.props
+    const { title, lang } = this.props
 
-    const posts = this.props.metadata.collections[collection[0]]
+    const collectionName = `life_${lang}`
+
+    const posts = this.props.metadata.collections[collectionName]
 
     return (
       <Posts

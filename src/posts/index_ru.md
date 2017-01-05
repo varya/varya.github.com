@@ -1,7 +1,7 @@
 ---
 
 rtemplate: TechPosts.js
-collection: PostsRu
+lang: ru
 
 title: Тех блог
 
