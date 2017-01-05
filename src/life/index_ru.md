@@ -1,7 +1,6 @@
 ---
 
 rtemplate: LifePosts.js
-lang: ru
 
 title: Про жизнь
 

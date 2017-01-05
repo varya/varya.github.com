@@ -1,7 +1,6 @@
 ---
 
 rtemplate: LifePosts.js
-lang: en
 
 title: My life
 

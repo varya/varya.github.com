@@ -21,6 +21,7 @@ import paths from "metalsmith-paths"
 import permalinks from "metalsmith-permalinks"
 import reactTemplates from "metalsmith-react-templates"
 import snippet from "metalsmith-snippet"
+import metadata from "metalsmith-collection-metadata"
 
 import Handlebars from "handlebars"
 
@@ -146,6 +147,20 @@ gulp.task("metalsmith", ()=> {
         pattern: ['ru/life/**/*.md', '!ru/life/index.md'],
         sortBy: 'date',
         reverse: true
+      },
+      en: {
+        pattern: ['**/*.md', '!ru/**/*.md']
+      },
+      ru: {
+        pattern: ['ru/**/*.md']
+      }
+    }))
+    .use(metadata({
+      'collections.en': {
+        lang: 'en'
+      },
+      'collections.ru': {
+        lang: 'ru'
       }
     }))
     .use(permalinks({

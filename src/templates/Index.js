@@ -5,8 +5,8 @@ import Posts from './Posts'
 export default class Index extends Component {
 
   render() {
-    const { title, contents, collection } = this.props
-    const posts = this.props.metadata.collections[collection[0]]
+    const { title, contents, lang } = this.props
+    const posts = this.props.metadata.collections[`posts_${lang}`]
 
     return (
       <div>

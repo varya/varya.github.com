@@ -6,8 +6,6 @@ htmlTitle: Варя Степанова
 title: Обо мне
 
 order: 3
-
-collection: PostsRu
 ---
 
 Я разработчик интерфейсов (фронтендер) из

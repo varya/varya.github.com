@@ -10,8 +10,6 @@ meta:
   desc: >
     Yet another frontend developer's blog
 
-collection: PostsEn
-
 ---
 I am a front-end developer originally from the Utmost North
 ([Petrozavodsk](http://maps.yandex.com/-/CVR3nIPf),
