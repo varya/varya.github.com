@@ -194,7 +194,9 @@ gulp.task("metalsmith", ()=> {
     });
 });
 
-gulp.task("dev", ["bem-watch", "styleguide-watch"]);
+gulp.task("dev", ["metalsmith"], () => {
+  gulp.watch(['src/**'], ['metalsmith'])
+});
 
 const productionUrl = "http://varya.me/styleguide/#";
 const styleGuidePath = outputPath;
