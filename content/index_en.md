@@ -1,5 +1,6 @@
 ---
-layout: index
+rtemplate: Index.js
+
 htmlTitle: Varya Stepanova
 title: About me
 
@@ -42,6 +43,6 @@ This site is available in both English and [Russian](/ru).
 
 Here are some obligatory (but useful) links as well:
 
- * [GitHub](https://github.com/varya)
+ * [Github](https://github.com/varya)
  * [Twitter](https://twitter.com/varya_en)
  * [LinkedIn](http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b)

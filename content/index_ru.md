@@ -1,8 +1,7 @@
 ---
+rtemplate: Index.js
 
 htmlTitle: Варя Степанова
-
-layout: index
 
 title: Обо мне
 
