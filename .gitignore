@@ -1,16 +1,5 @@
-.bem/tmp/cache.js
 node_modules/
 gemini-report/
-out/
 .DS_Store
-libs/
 
-.bem/cache/
-*.bundles/*/*.*
-!*.bundles/*/*.bemjson.js
-!*.bundles/.bem/*
-
-src/public/CNAME
-src/public/data/
-src/public/desktop.blocks/
-src/public/desktop.bundles/
+dist/
