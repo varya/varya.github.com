@@ -5,6 +5,8 @@ layout: page
 title: Статьи и презентации
 
 order: 2
+
+rtemplate: Page.js
 ---
 
 * [Doing nothing for visual regression testing](http://varya.me/doing-nothing-for-visual-regression-2015/)<br/>
