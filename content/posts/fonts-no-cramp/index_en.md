@@ -8,8 +8,6 @@ date: 2013-11-26
 
 layout: post
 
-old: true
-
 ---
 A developer using custom fonts in web (don't say this is evil) usually face a
 dilemma.
