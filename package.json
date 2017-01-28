@@ -19,7 +19,7 @@
     "version": "npm run build && git add -f dist",
     "postversion": "git push && git push --tags",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "deploy": "git-directory-deploy --directory ./dist/site --repo varya"
+    "deploy": "git-directory-deploy --directory ./dist/site --repo varya --branch master"
   },
   "repository": {
     "url": "https://github.com/varya/varya.github.com.git",
