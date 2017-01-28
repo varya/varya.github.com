@@ -1,6 +1,6 @@
 ---
 
-layout: life
+rtemplate: LifePosts.js
 
 title: My life
 
