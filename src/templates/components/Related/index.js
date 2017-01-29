@@ -11,12 +11,12 @@ export default class Related extends Component {
 
     return (
       <div className={style.related}>
-        <div className="box__body">
+        <div className={style.body}>
           <h4 className={style.header}>
             { texts.byTheWay }
           </h4>
         </div>
-        <div className="box__island">
+        <div className={style.island}>
           <a href={feedBackLink}>
             { texts.createIssue }
           </a>{ texts.spottedError }.

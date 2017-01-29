@@ -5,7 +5,7 @@ import style from './style.css'
 export default class Comments extends Component {
 
   render() {
-    const { title, link } = this.props
+    const { title, link, texts } = this.props
     const tumblr = !!this.props.tumblr
     const old = !!this.props.old
 
@@ -92,7 +92,12 @@ export default class Comments extends Component {
 
     return (
       <div className={style.comments}>
-        { Disqus }
+        <div className={style.body}>
+          <h4 className={style.header}>{ texts.commentsTitle }</h4>
+        </div>
+        <div className={style.island}>
+          { Disqus }
+        </div>
       </div>
     )
 

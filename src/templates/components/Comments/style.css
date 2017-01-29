@@ -21,6 +21,28 @@ Styleguide 3.2
     margin-top: 2em;
 }
 
+.body
+{
+    padding: 0 1em;
+}
+
+.island
+{
+    padding: 0 1em;
+    background-color: #f9f9f9;
+
+    padding: 1em;
+    margin-top: .25em;
+
+    border: rgba(0,0,0, .075) 1px solid;
+}
+
+@media screen and (max-width: 330px) {
+    .island {
+        border-width: 1px 0 0;
+    }
+}
+
 /*
 Comments' header
 
@@ -32,7 +54,7 @@ markup:
 Styleguide 3.2.1
 */
 
-.comments__header
+.header
 {
     margin: 0;
     font-size: 1.5em;

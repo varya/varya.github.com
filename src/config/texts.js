@@ -15,6 +15,10 @@ const texts = {
     en: 'Last updated repos',
     ru: 'Репозитории'
   },
+  commentsTitle: {
+    en: 'Comments',
+    ru: 'Комментарии',
+  },
   byTheWay: {
     en: 'By the way',
     ru: 'Кстати'

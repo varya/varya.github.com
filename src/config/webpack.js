@@ -16,7 +16,8 @@ const config = {
     head: join(paths.webpackSource, 'js', 'head.js'),
     page: join(paths.webpackSource, 'js', 'page.js'),
     styles: join(paths.webpackSource, 'css', 'page.css'),
-    index: join(paths.projectRoot, 'src', 'templates', 'Index.js')
+    index: join(paths.projectRoot, 'src', 'templates', 'Index.js'),
+    post: join(paths.projectRoot, 'src', 'templates', 'Post.js')
   },
   devtool: __DEV__ ? '#cheap-module-eval-source-map' : false,
   output: {
