@@ -102,23 +102,29 @@ export default new Metalsmith(paths.projectRoot)
   .use(metadata({
     'collections.en': {
       lang: 'en',
-      texts: require('../config/texts')('en')
+      texts: require('../config/texts')('en'),
+      locale: 'en_US',
     },
     'collections.ru': {
       lang: 'ru',
-      texts: require('../config/texts')('ru')
+      texts: require('../config/texts')('ru'),
+      locale: 'ru_RU',
     },
     'collections.posts_en': {
-      rtemplate: 'Post.js'
+      rtemplate: 'Post.js',
+      documentType: 'article',
     },
     'collections.posts_ru': {
-      rtemplate: 'Post.js'
+      rtemplate: 'Post.js',
+      documentType: 'article',
     },
     'collections.life_en': {
-      rtemplate: 'Post.js'
+      rtemplate: 'Post.js',
+      documentType: 'article',
     },
     'collections.life_ru': {
-      rtemplate: 'Post.js'
+      rtemplate: 'Post.js',
+      documentType: 'article',
     }
   }))
   .use(permalinks({
