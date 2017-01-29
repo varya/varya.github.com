@@ -40,7 +40,8 @@ export default new Metalsmith(paths.projectRoot)
         file.thumb = file.paths.dhref + dirFile
       }
     })
-    //console.log(111, dir, paths.metalsmithSource)
+
+    file.repoLinkEdit = `https://github.com/varya/varya.github.com/edit/develop/${dir}/${file.paths.base}`
   }))
   .use(copy({
     pattern: '**/*.md',

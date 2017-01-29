@@ -4,6 +4,7 @@ import Page from './components/Page'
 import Article, { ArticleDetails } from './components/Article'
 import Share from './components/Share'
 import Comments from './components/Comments'
+import Related from './components/Related'
 
 
 export default class Post extends Component {
@@ -22,6 +23,7 @@ export default class Post extends Component {
           <div dangerouslySetInnerHTML={{ __html: contents }}/>
         </Article>
         <Comments {...this.props}/>
+        <Related {...this.props}/>
       </Page>
     )
 

@@ -14,6 +14,26 @@ const texts = {
   githubTitle: {
     en: 'Last updated repos',
     ru: 'Репозитории'
+  },
+  byTheWay: {
+    en: 'By the way',
+    ru: 'Кстати'
+  },
+  createIssue: {
+    en: 'Create a GitHub issue for me',
+    ru: 'Создайте для меня issue на GitHub'
+  },
+  spottedError: {
+    en: ' if you\'ve spotted a typo or a mistake, or wish to add something on',
+    ru: ', если вы заметили ошибку или хотите дополнить статью'
+  },
+  youCan: {
+    en: 'Or you can ',
+    ru: 'Или вы можете ',
+  },
+  editYorself: {
+    en: 'edit this post yourself and make me a patch',
+    ru: 'отредактировать пост самостоятельно и послать мне патч'
   }
 }
 
