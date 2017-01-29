@@ -9,6 +9,9 @@ import mPaths from 'metalsmith-paths'
 import permalinks from 'metalsmith-permalinks'
 import snippet from 'metalsmith-snippet'
 import reactTemplates from 'metalsmith-react-templates'
+import each from 'metalsmith-each'
+
+import fs from 'fs'
 
 import paths from '../config/paths'
 
@@ -25,6 +28,20 @@ export default new Metalsmith(paths.projectRoot)
   .clean(__PROD__)
   .source(paths.metalsmithSource)
   .destination(paths.metalsmithDestination)
+  .use(mPaths({
+    property: "paths"
+  }))
+  .use(each(function(file, filename) {
+    const dir = paths.metalsmithSource + '/' + file.paths.dir
+    // check if has thumb
+    fs.readdirSync(dir).forEach(function(dirFile) {
+      const isThumb = /thumb\./.test(dirFile)
+      if (isThumb) {
+        file.thumb = file.paths.dhref + dirFile
+      }
+    })
+    //console.log(111, dir, paths.metalsmithSource)
+  }))
   .use(copy({
     pattern: '**/*.md',
     move: true,
@@ -118,6 +135,9 @@ export default new Metalsmith(paths.projectRoot)
     stop: ['<excerpt/>'],
     stripHtml: false,
     suffix: ''
+  }))
+  .use(each(function(file, filename) {
+    file.url = file.paths.dhref
   }))
   .use(reactTemplates({
     babel: true,
