@@ -146,6 +146,7 @@ export default new Metalsmith(paths.projectRoot)
     file.url = file.paths.dhref
   }))
   .use(reactTemplates({
+    pattern: '**/*.html',
     babel: true,
     directory: 'src/templates',
     baseFile: 'base.html',
@@ -191,6 +192,11 @@ export default new Metalsmith(paths.projectRoot)
 
     for (let fileName in files) {
       const file = files[fileName]
+
+      if (!/\.html$/.test(fileName)) {
+        continue
+      }
+
       const html = file.contents.toString()
         .replace('<!-- assets-head -->', assetsHead.join('\n'))
         .replace('<!-- assets-body -->', assetsBody.join('\n'))
