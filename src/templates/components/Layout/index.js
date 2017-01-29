@@ -12,7 +12,7 @@ export default class Layout extends Component {
     return (
       <div className={style.layout}>
         <section className={style.main}>
-          <LangSwitcher/>
+          <LangSwitcher {...this.props}/>
           { this.props.children }
         </section>
         <Sidebar {...this.props}/>

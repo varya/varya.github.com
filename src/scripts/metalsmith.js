@@ -12,6 +12,7 @@ import reactTemplates from 'metalsmith-react-templates'
 import each from 'metalsmith-each'
 
 import fs from 'fs'
+import path from 'path'
 
 import paths from '../config/paths'
 
@@ -24,6 +25,11 @@ const devOnly = (plugin, config) => {
   }
 }
 
+const otherLang = {
+  en: 'ru',
+  ru: 'en'
+}
+
 export default new Metalsmith(paths.projectRoot)
   .clean(__PROD__)
   .source(paths.metalsmithSource)
@@ -32,12 +38,25 @@ export default new Metalsmith(paths.projectRoot)
     property: "paths"
   }))
   .use(each(function(file, filename) {
+    const fileBasename = path.basename(filename)
     const dir = paths.metalsmithSource + '/' + file.paths.dir
-    // check if has thumb
+
+    file.translations = {}
+
     fs.readdirSync(dir).forEach(function(dirFile) {
+      // check if has thumb
       const isThumb = /thumb\./.test(dirFile)
       if (isThumb) {
         file.thumb = file.paths.dhref + dirFile
+      }
+      // check if has a translation
+      if (/_(ru|en)\.md$/.test(fileBasename)) {
+        const lang = fileBasename.match(/_(ru|en)\.md$/)[1]
+        const neededTranslation = fileBasename.split(`_${lang}.md`)[0] + '_' + otherLang[lang] + '.md'
+        file.translations[lang] = true
+        if (dirFile == neededTranslation) {
+          file.translations[otherLang[lang]] = true
+        }
       }
     })
 
