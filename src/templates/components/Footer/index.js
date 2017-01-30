@@ -14,7 +14,7 @@ export default class Footer extends Component {
       <a href="http://varya.me">&copy;&nbsp;{ (new Date).getFullYear() }Varya Stepanova</a>
       { ' ' }
       <a href="https://twitter.com/varya_en" title="@varya_en">
-        <img alt="Twitter" class="ico" src="http://favicon.yandex.net/favicon/twitter.com" title="Twitter"/>
+        <img alt="Twitter" className="ico" src="http://favicon.yandex.net/favicon/twitter.com" title="Twitter"/>
         { ' ' }
         Follow me on Twitter!
       </a>
