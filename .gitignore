@@ -2,4 +2,5 @@ node_modules/
 gemini-report/
 .DS_Store
 
+src/styleguide/
 dist/

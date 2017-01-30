@@ -178,6 +178,10 @@ export default new Metalsmith(paths.projectRoot)
     source: './dist/assets',
     destination: './assets'
   }))
+  .use(assets({
+    source: './dist/styleguide',
+    destination: './styleguide'
+  }))
   // Inject webpack bundles into your html.
   // Relies on <!-- assets-head --> & <!-- assets-body --> placeholders.
   .use((files, metalsmith, done) => {

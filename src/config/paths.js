@@ -10,5 +10,6 @@ module.exports = {
   webpackSource: join(projectRoot, 'src', 'assets'),
   webpackDestination: join(projectRoot, 'dist', 'assets'),
   webpackPublicPath: '/assets/',
+  styleguideDestination: join(projectRoot, 'dist'),
   serverRoot: join(projectRoot, 'dist', 'site')
 }
