@@ -4,21 +4,18 @@ import gulp from "gulp";
 import run from "gulp-run";
 import styleguide from "sc5-styleguide";
 import sc5VisualTest from "sc5-styleguide-visualtest";
-import shell from "gulp-shell";
-import clean from"gulp-clean";
-import fs from "fs";
 import minimist from "minimist";
 
-const outputPath = 'out/styleguide';
+const outputPath = 'src/styleguide';
 
 gulp.task("styleguide:generate", () => {
 
-  return gulp.src(["desktop.blocks/**/*.css"])
+  return gulp.src(["src/templates/**/*.css", "src/assets/**/*.css"])
     .pipe(styleguide.generate({
         title: "Varya.me Styleguide",
         rootPath: outputPath,
         appRoot: "/styleguide",
-        overviewPath: "src/styleguide/overview.md",
+        overviewPath: "src/data/styleguide.md",
         extraHead: [
           '<script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>',
           '<script src="/desktop.bundles/index/index.min.js"></script>',
@@ -44,7 +41,7 @@ gulp.task("styleguide:generate", () => {
 });
 
 gulp.task('styleguide:applystyles', () => {
-  return gulp.src("desktop.bundles/index/index.min.css")
+  return gulp.src("dist/assets/*.css")
     .pipe(styleguide.applyStyles())
     .pipe(gulp.dest(outputPath));
 });
@@ -54,34 +51,8 @@ gulp.task("styleguide", ["styleguide:generate", "styleguide:applystyles"]);
 gulp.task("styleguide-watch", ["styleguide"], () => {
   // Start watching changes and update styleguide whenever changes are detected
   // Styleguide automatically detects existing server instance
-  gulp.watch(["desktop.blocks/**/*.css"], ["styleguide"]);
+  gulp.watch(["src/templates/**/*.css", "src/assets/**/*.css"], ["styleguide"]);
 });
-
-gulp.task("bem-build", () => {
-  run("./node_modules/enb/bin/enb make --no-cache").exec();
-})
-
-gulp.task("bem-copy", ["bem-build"], () => {
-  gulp.src(["desktop.blocks/**/*", "desktop.bundles/**/*"], { base: "."})
-    .pipe(gulp.dest("out/"));
-});
-
-gulp.task("single-files", () => {
-  gulp.src(["CNAME", "data/**"], { base: "." })
-    .pipe(gulp.dest("out/"));
-});
-
-gulp.task("bem-watch", ["bem-watch-files", "bem-watch-build"]);
-
-gulp.task("bem-watch-files", () => {
-  gulp.watch(["desktop.blocks/**/*"], ["bem-build"]);
-});
-
-gulp.task("bem-watch-build", () => {
-  gulp.watch(["desktop.build/**/*"], ["bem-copy"]);
-});
-
-gulp.task("dev", ["bem-watch", "styleguide-watch"]);
 
 const productionUrl = "http://varya.me/styleguide/#";
 const styleGuidePath = outputPath;
@@ -107,7 +78,7 @@ gulp.task("test:visual", () => {
     .pipe(sc5VisualTest.test({
       configDir: "./tests/visual/config",
       gridScreenshotsDir: "./tests/visual/grid-screenshots",
-      rootUrl: "http://localhost:9778/styleguide/#",
+      rootUrl: "http://localhost:3000/styleguide/#",
       sections: options.section
     }));
 });
