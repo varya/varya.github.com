@@ -164,6 +164,7 @@ export default new Metalsmith(paths.projectRoot)
   }))
   .use(each(function(file, filename) {
     file.url = file.paths.dhref
+    file.desc = file.meta ? file.meta.desc : file.title
   }))
   .use(reactTemplates({
     pattern: '**/*.html',
