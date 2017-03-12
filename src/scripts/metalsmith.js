@@ -16,6 +16,9 @@ import path from 'path'
 
 import paths from '../config/paths'
 
+const domain = 'varya.me'
+const siteUrl = `http://${domain}`
+
 const __DEV__ = process.env.NODE_ENV !== 'production'
 const __PROD__ = process.env.NODE_ENV === 'production'
 
@@ -47,7 +50,7 @@ export default new Metalsmith(paths.projectRoot)
       // check if has thumb
       const isThumb = /thumb\./.test(dirFile)
       if (isThumb) {
-        file.thumb = file.paths.dhref + dirFile
+        file.thumb = siteUrl + file.paths.dhref + dirFile
       }
       // check if has a translation
       if (/_(ru|en)\.md$/.test(fileBasename)) {
@@ -163,7 +166,7 @@ export default new Metalsmith(paths.projectRoot)
     suffix: ''
   }))
   .use(each(function(file, filename) {
-    file.url = file.paths.dhref
+    file.url = siteUrl + file.paths.dhref
     file.desc = file.meta ? file.meta.desc : file.title
   }))
   .use(reactTemplates({
