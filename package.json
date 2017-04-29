@@ -19,7 +19,9 @@
     "version": "npm run build && git add -f dist",
     "postversion": "git push && git push --tags",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "deploy": "git-directory-deploy --directory ./dist/site --repo varya --branch master"
+    "deploy": "git-directory-deploy --directory ./dist/site --repo varya --branch master",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "repository": {
     "url": "https://github.com/varya/varya.github.com.git",
@@ -66,6 +68,7 @@
     "css-loader": "^0.26.1",
     "cz-conventional-changelog": "^1.2.0",
     "debug": "^2.5.2",
+    "es6-require": "^0.2.1",
     "eslint": "^3.12.2",
     "eslint-config-standard": "^6.2.0",
     "eslint-plugin-babel": "^4.0.0",
@@ -92,6 +95,7 @@
     "metalsmith-watch": "^1.0.3",
     "minimist": "^1.2.0",
     "nodemon": "^1.11.0",
+    "react-styleguidist": "^5.1.8",
     "rimraf": "^2.5.4",
     "sc5-styleguide": "^1.5.0",
     "sc5-styleguide-visualtest": "^1.9.0",
