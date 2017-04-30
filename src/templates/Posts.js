@@ -24,9 +24,9 @@ export default class Posts extends Component {
 
     return (
       <Page {...this.props}>
-      <div>
-        {postsList}
-      </div>
+        <div>
+          {postsList}
+        </div>
       </Page>
     )
 

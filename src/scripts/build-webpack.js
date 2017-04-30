@@ -2,7 +2,7 @@ import webpack from 'webpack'
 import Debug from 'debug'
 
 const debug = Debug('server-webpack')
-import webpackConfig from '../config/webpack'
+import webpackConfig from '../config/webpack.babel'
 
 function displayStats (stats) {
   debug(stats.toString({colors: true}))

@@ -5,11 +5,55 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import AssetsPlugin from 'assets-webpack-plugin'
 import WriteFilePlugin from 'write-file-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
+import UglifyJSPlugin from 'uglifyjs-webpack-plugin'
 
 import paths from './paths'
 
 const __DEV__ = process.env.NODE_ENV !== 'production'
 const __PROD__ = process.env.NODE_ENV === 'production'
+
+const __EXTRACT__ = process.env.NO_EXTRAXT !== '1'
+
+let cssLoaderOptions = [
+              {
+                loader: 'css-loader',
+                options: {
+                  modules: true,
+                  importLoaders: 1,
+                  localIdentName: '[name]__[local]___[hash:base64:5]'
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  plugins: function() {
+                    return [
+                        require('precss')
+                    ];
+                  }
+                }
+              }
+]
+
+if (!__EXTRACT__) {
+
+  cssLoaderOptions.unshift({
+    loader: 'style-loader'
+  })
+
+}
+
+let cssLoader = {
+    test: /\.css$/
+}
+
+if (__EXTRACT__) {
+  cssLoader.loader = ExtractTextPlugin.extract({
+    use: cssLoaderOptions
+  })
+} else {
+  cssLoader.use = cssLoaderOptions
+}
 
 const config = {
   entry: {
@@ -29,18 +73,57 @@ const config = {
     rules: [
       {
         test: /\.js$/,
+        use: [{
         loader: 'babel-loader',
-        query: {
+        options: {
           babelrc: false,
-          presets: ['es2015-node6', 'react', 'stage-0'],
-        }
+          presets: ['es2015', 'react', 'stage-0'],
+        }}
+        ]
       },
+      cssLoader,
+        /* Use for production loader: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [
+              {
+                loader: 'css-loader',
+                options: {
+                  modules: true,
+                  importLoaders: 1,
+                  localIdentName: '[name]__[local]___[hash:base64:5]'
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  plugins: function() {
+                    return [
+                        require('precss')
+                    ];
+                  }
+                }
+              }
+            ]
+          })*/
       {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
+        test: /\.css2$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+              {
+                loader: 'css-loader',
+                options: {
+                  modules: true,
+                  importLoaders: 1,
+                  localIdentName: '[name]__[local]___[hash:base64:5]'
+                }
+              }
+        ]
+        /*loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
           loader: 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
-        })
+        })*/
       },
       {
         test: /\.png$/,
