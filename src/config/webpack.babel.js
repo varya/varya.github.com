@@ -18,8 +18,8 @@ let cssLoaderOptions = [
               {
                 loader: 'css-loader',
                 options: {
+                    importLoaders: 1,
                   modules: true,
-                  importLoaders: 1,
                   localIdentName: '[name]__[local]___[hash:base64:5]'
                 }
               },
@@ -49,6 +49,7 @@ let cssLoader = {
 
 if (__EXTRACT__) {
   cssLoader.loader = ExtractTextPlugin.extract({
+    fallback: 'style-loader',
     use: cssLoaderOptions
   })
 } else {
@@ -73,12 +74,14 @@ const config = {
     rules: [
       {
         test: /\.js$/,
-        use: [{
-        loader: 'babel-loader',
-        options: {
-          babelrc: false,
-          presets: ['es2015', 'react', 'stage-0'],
-        }}
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              babelrc: false,
+              presets: ['es2015', 'react', 'stage-0'],
+            }
+          }
         ]
       },
       cssLoader,
