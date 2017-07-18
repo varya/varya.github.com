@@ -2,7 +2,7 @@
 
 title: Summer in Helsinki: citybikes, blueberries and everyday life.
 
-date: 2017-18-06
+date: 2017-06-18
 
 layout: post
 
