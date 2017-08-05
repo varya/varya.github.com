@@ -40,7 +40,7 @@ nurse is on her vacation (Finnish July, nothing surprising) and I did not want t
 check-up. At the end, they did not take the money. They told me that it was a special offer for that day, and they had
 some fun with me in that boring day. This way, it works everywhere!
 
-## Дом
+## Home
 
 <a href="https://fotki.yandex.ru/next/users/toivonens/album/168376/view/646061?page=0" target="_blank"><img
 src="https://img-fotki.yandex.ru/get/246987/14441195.52/0_9dbad_92c7f8ed_L.jpg" width="500" height="375" border="0"
