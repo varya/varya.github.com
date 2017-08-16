@@ -10,6 +10,7 @@ import permalinks from 'metalsmith-permalinks'
 import snippet from 'metalsmith-snippet'
 import reactTemplates from 'metalsmith-react-templates'
 import each from 'metalsmith-each'
+import feed from 'metalsmith-feed'
 
 import fs from 'fs'
 import path from 'path'
@@ -136,10 +137,16 @@ export default new Metalsmith(paths.projectRoot)
     'collections.posts_en': {
       rtemplate: 'Post.js',
       documentType: 'article',
+      categories: [
+        'frontend', 'ui', 'react', 'redux', 'javascript', 'js'
+      ],
     },
     'collections.posts_ru': {
       rtemplate: 'Post.js',
       documentType: 'article',
+      categories: [
+        'frontend', 'ui', 'react', 'redux', 'javascript', 'js'
+      ],
     },
     'collections.life_en': {
       rtemplate: 'Post.js',
@@ -177,6 +184,16 @@ export default new Metalsmith(paths.projectRoot)
     defaultTemplate: 'Default.js',
     extension: null,
     static: true
+  }))
+  .use(feed({
+    collection: 'posts_en',
+    site_url: 'http://varya.me',
+    destination: 'en/feed.xml'
+  }))
+  .use(feed({
+    collection: 'posts_ru',
+    site_url: 'http://varya.me/ru',
+    destination: 'ru/feed.xml'
   }))
   .use(assets({
     source: './dist/assets',
