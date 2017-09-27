@@ -9,6 +9,22 @@ order: 2
 rtemplate: Page.js
 ---
 
+* [Pattern libraries through trial and
+  error](https://www.dotconferences.com/2016/12/varya-stepanova-pattern-libraries-through-trial-and-error)<br/>
+  Презентация на DotCSS 2016 (Париж, Франция), где я рассказываю о 8-летнем опыте создания
+  библиотек компонентов для web. Опубликованы [видео](https://www.dotconferences.com/2016/12/varya-stepanova-pattern-libraries-through-trial-and-error)
+  и [слайды](http://varya.me/dotcss-2016/).
+* [Component development in CSS in 2016](http://varya.me/component-development-css-2016/)<br/>
+  Лекция для студентов отделения Computer Science университета Аалто об общей картине разработки
+  компонентов для web с использованием CSS.
+* [Doing nothing for visual regression testing](https://youtu.be/UPciXG1MoYw)<br/>
+  Презентация в Болонье (Италия) о применении визуального регрессионного тестирования на
+  проектах, использующих styleguide-driven development. Опубликованы [видео](https://youtu.be/UPciXG1MoYw)
+  и [слайды](http://varya.me/fromthefront-2016/).
+* [To BEM or not to BEM](http://www.didoo.net/to-bem-or-not-to-bem/05__interview-with--varya__stepanova.html)<br/>
+  Интервью для проекта Cristiano Rastelli об использовании БЭМ в разработке интерфейсов.
+* [ReactJS Hackathon @ SC5](http://varya.me/reactjs-hackathon/)<br/>
+  Материалы хакатона по ReactJS для начинаюших.
 * [Doing nothing for visual regression testing](http://varya.me/doing-nothing-for-visual-regression-2015/)<br/>
   Метод регрессионного визуального тестирования, который можно внедрить с использованием плагина к SC5 StyleGuide,
   представлен на HelsinkiJs в октябре 2015.

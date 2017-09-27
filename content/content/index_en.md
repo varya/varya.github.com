@@ -9,6 +9,23 @@ order: 2
 rtemplate: Page.js
 ---
 
+* [Pattern libraries through trial and
+  error](https://www.dotconferences.com/2016/12/varya-stepanova-pattern-libraries-through-trial-and-error)<br/>
+  The talk given at DotCSS 2016 (Paris, France) summarize my 8-year-long experience in building pattern libraries.
+  [Video](https://www.dotconferences.com/2016/12/varya-stepanova-pattern-libraries-through-trial-and-error) and
+  [slides](http://varya.me/dotcss-2016/) are available.
+* [Component development in CSS in 2016](http://varya.me/component-development-css-2016/)<br/>
+  Lecture for Computer Science students of Aalto University on overall picture of developing interface
+  components using CSS.
+* [Doing nothing for visual regression testing](https://youtu.be/UPciXG1MoYw)<br/>
+  Shaped talk about applying visual regression testing approach to the projects using
+  styleguide-driven development and a show-case how it is very helpful for preventing unwanted interface changes and
+  keeping websites making sense for users. Given in Bologna, Italy. [Video](https://youtu.be/UPciXG1MoYw) and
+  [slides](http://varya.me/fromthefront-2016/)
+* [To BEM or not to BEM](http://www.didoo.net/to-bem-or-not-to-bem/05__interview-with--varya__stepanova.html)<br/>
+  Interview to Cristiano Rastelli about using BEM in developing frontend.
+* [ReactJS Hackathon @ SC5](http://varya.me/reactjs-hackathon/)<br/>
+  Materials for making a hackathon on React for a beginner level.
 * [Doing nothing for visual regression testing](http://varya.me/doing-nothing-for-visual-regression-2015/)<br/>
   Visual regression testing approach wrapped into a nice and neat plugin for SC5 StyleGuide presented at HelsinkiJs
   meetup in October 2015.
