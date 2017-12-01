@@ -1,0 +1,32 @@
+/*
+Related infromation
+
+markup:
+<div class="related">
+  <div class="related__body box__body">
+    <h4 class="related__header">
+      Related info
+    </h4>
+  </div>
+  <div class="related__text box__island">
+    Related text and <sg-insert>1.3</sg-insert>
+  </div>
+</div>
+
+Styleguide 3.3
+*/
+
+.related
+{
+    margin-top: 2em;
+}
+
+.related__header
+{
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.related__text
+{
+}
