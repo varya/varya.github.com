@@ -12,8 +12,9 @@ layout: post
 
 Finns have started to eat crickets! This is not a figure of speech or an eye-catching headline but downright truth.
 Using insects for food is a new hot trend here in Finland. For some time, there have already been start-ups that offered
-food made of insects
+food made of insects.
 <excerpt/>
+
 <a href="https://fotki.yandex.ru/next/users/toivonens/album/169302/view/649374" target="_blank"><img
 src="https://img-fotki.yandex.ru/get/897139/14441195.53/0_9e89e_b8f3be37_L.jpg" width="375" height="500"
 border="0"/></a>
@@ -79,7 +80,8 @@ home. Burnt lamps we bring to a shop and put in the pile.
 src="https://img-fotki.yandex.ru/get/894110/14441195.53/0_9e8a1_f344ecc4_L.jpg" width="500" height="375"
 border="0"/></a>
 
-By the way, our poor metro was launched a week ago! We even celebrated drinking orange cocktails (metro is also orange).
+By the way, our poor metro was launched a couple of weeks ago! We even celebrated drinking orange cocktails (metro is
+also orange).
 
 <a href="https://fotki.yandex.ru/next/users/toivonens/album/169302/view/649378" target="_blank"><img
 src="https://img-fotki.yandex.ru/get/894414/14441195.53/0_9e8a2_84a31472_L.jpg" width="375" height="500"
