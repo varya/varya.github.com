@@ -93,7 +93,7 @@
     "metalsmith-watch": "^1.0.3",
     "minimist": "^1.2.0",
     "nodemon": "^1.11.0",
-    "rimraf": "^2.5.4",
+    "rimraf": "^2.6.2",
     "sc5-styleguide": "^1.5.0",
     "sc5-styleguide-visualtest": "^1.9.0",
     "semantic-release": "^6.3.2",
