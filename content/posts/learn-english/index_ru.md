@@ -257,7 +257,7 @@ Pod](http://www.eslpod.com/website/index_new.html). По темпу речи и
 Ещё подкасты:
 
   * [The English We Speak](http://www.bbc.co.uk/podcasts/series/tae) by BBC
-  * [Listen to English](http://www.listen-to-english.com/index.php?cat=podcasts) by Peter Carter
+  * [Effortless English Club](https://effortlessenglishclub.com/blog-and-video-podcast)
   * [TED Radio Hour](http://www.npr.org/programs/ted-radio-hour/)
   * [Ask Me Another](http://www.npr.org/programs/ask-me-another/)
 
