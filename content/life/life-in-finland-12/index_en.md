@@ -9,7 +9,7 @@ layout: post
 ---
 
 
-## Жильё
+## Living
 
 Finnish stanrads for the bathrooms in apartment houses is hydro-isolated floor with a drain. If the house is old, such
 isolation will be made in the nearest planned reconstruction. This is vey useful: no need to install a shower cabin with
@@ -27,7 +27,7 @@ In Finland, there is hygienic shower in almost all the toilets (in the flats, in
 <iframe width="560" height="315" src="https://www.youtube.com/embed/s5nTZ7IGNwU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
-## Транспорт
+## Тransport
 
 Helsinki transport agency encourages to give feedback about trams and offers to do so using NFC, or QR-application or on the website.
 
@@ -55,7 +55,7 @@ Infographics at a bus station. All the signs and the plan can be read by touchin
 <a href="https://fotki.yandex.ru/next/users/toivonens/album/169900/view/655818?page=0" target="_blank"><img src="https://img-fotki.yandex.ru/get/1016661/14441195.53/0_a01ca_7ee3162b_L.jpg" width="375" height="500" border="0" title="2018-04-17 20.22.44.jpg" alt="2018-04-17 20.22.44.jpg"/></a>
 
 
-## Разные мелочи
+## Little details
 
 Rubber boots in Helsinki surgery hospital. In cases the nurses need to help a patient in the shower room.
 
