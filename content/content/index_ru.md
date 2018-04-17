@@ -9,6 +9,12 @@ order: 2
 rtemplate: Page.js
 ---
 
+* [Hands-on with Design Systems](https://dsconference.com/ws-intergalactico/)<br/>
+  8-часовой мастер-класс о том как сделать свою дизайн-систему и библиотеку компонент (React) в команде из
+  дизайнеров и разработчиков.
+* [Component development in CSS in 2017](http://varya.me/component-development-css-2017/)<br/>
+  Лекция для студентов Computer Science университета Aalto, рассказывает о том, какие подходы и технологии
+  используются при написании CSS компонент в 2017 году.
 * [Pattern libraries through trial and
   error](https://www.dotconferences.com/2016/12/varya-stepanova-pattern-libraries-through-trial-and-error)<br/>
   Презентация на DotCSS 2016 (Париж, Франция), где я рассказываю о 8-летнем опыте создания

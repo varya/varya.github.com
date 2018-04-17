@@ -9,6 +9,11 @@ order: 2
 rtemplate: Page.js
 ---
 
+* [Hands-on with Design Systems](https://dsconference.com/ws-intergalactico/)<br/>
+  Full-day workshop about building design system and pattern library (React) in multidisciplinary team.
+* [Component development in CSS in 2017](http://varya.me/component-development-css-2017/)<br/>
+  Lecture for Computer Science students of Aalto University on overall picture of developing interface
+  components using modern CSS component approaches.
 * [Pattern libraries through trial and
   error](https://www.dotconferences.com/2016/12/varya-stepanova-pattern-libraries-through-trial-and-error)<br/>
   The talk given at DotCSS 2016 (Paris, France) summarize my 8-year-long experience in building pattern libraries.
