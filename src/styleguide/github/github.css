@@ -1,0 +1,49 @@
+/*
+ * Source: http://www.joepettersson.com/demo/jquery-github-widget/
+ */
+
+/*
+Github
+
+markup:
+<div class="github i-bem box github_not-ready"
+    data-bem='{ "github" : { "user" : "varya" } }'>
+    <div class="github__header box__title">
+      Last updated repos
+    </div>
+    <ul class="github__body"></ul>
+</div>
+
+Styleguide 4.3
+*/
+
+.github
+{
+    margin-top: 1em;
+}
+
+@media screen and (max-width: 768px) {
+    .github
+    {
+        display: none;
+    }
+}
+
+.github_not-ready
+{
+    display: none;
+}
+
+.github__body {
+    font-size: .8em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.github__repo
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

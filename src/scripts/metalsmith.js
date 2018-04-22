@@ -200,6 +200,10 @@ export default new Metalsmith(paths.projectRoot)
     destination: './assets'
   }))
   .use(assets({
+    source: './src/styleguide',
+    destination: './styleguide'
+  }))
+  .use(assets({
     source: './dist/styleguide',
     destination: './styleguide'
   }))
