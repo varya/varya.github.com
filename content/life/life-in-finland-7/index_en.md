@@ -79,7 +79,6 @@ replacement. In this case, there were a lot of buses going by, so the driver dec
 getting to the nearest bus stop. I complained and in three weeks got an answer that they had a discussion with a driver
 about safety.
 
-
 ## Cafe
 
 <a href="https://fotki.yandex.ru/next/users/toivonens/album/169066/view/648492?page=0" target="_blank"><img
