@@ -245,9 +245,22 @@ export default new Metalsmith(paths.projectRoot)
       if (!/\.html$/.test(fileName)) {
         continue
       }
+      const fileContent = file.contents.toString()
 
-      const html = file.contents.toString()
-        .replace('<!-- assets-head -->', assetsHead.join('\n'))
+      let fileAssetsHead = assetsHead.slice(0);
+
+      if (fileContent.includes('rtemplate="Post.js"')) {
+        fileAssetsHead.push(`<link rel="stylesheet" href="${assets.post.css}"/>`)
+      } else if (fileContent.includes('rtemplate="Index.js"')) {
+        fileAssetsHead.push(`<link rel="stylesheet" href="${assets.index.css}"/>`)
+      } else {
+        fileAssetsHead.push(`<link rel="stylesheet" href="${assets.page.css}"/>`)
+        fileAssetsHead.push(`<link rel="stylesheet" href="${assets.post.css}"/>`)
+      }
+
+
+      const html = fileContent
+        .replace('<!-- assets-head -->', fileAssetsHead.join('\n'))
         .replace('<!-- assets-body -->', assetsBody.join('\n'))
 
       file.contents = new Buffer(html)

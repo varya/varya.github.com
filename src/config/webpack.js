@@ -50,7 +50,7 @@ const config = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: 'page-[hash].css',
+      filename: '[name]-[hash].css',
       allChunks: true
     }),
     new AssetsPlugin({
