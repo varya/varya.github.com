@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
 
-import style from './style.css'
+const LinkS = styled.a`
+  color: #3B8DBD;
+`
 
 export default class Link extends Component {
 
@@ -8,9 +11,7 @@ export default class Link extends Component {
 
     const { href } = this.props
     return (
-      <a href={href} className={style.link}>
-        {this.props.children}
-      </a>
+      <LinkS href={href}>{this.props.children}</LinkS>
     )
 
   }
