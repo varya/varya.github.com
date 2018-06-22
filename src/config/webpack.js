@@ -33,6 +33,10 @@ const config = {
         query: {
           babelrc: false,
           presets: ['es2015-node6', 'react', 'stage-0'],
+          plugins: [
+["babel-plugin-styled-components", {
+        "ssr": true
+      }]]
         }
       },
       {
