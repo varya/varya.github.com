@@ -6,7 +6,10 @@
       {
         "config": "./webpack.ms.config.js",
       }
-    ]
+    ],
+    ["babel-plugin-styled-components", {
+      "ssr": true
+    }]
   ],
   "env": {
     "test": {

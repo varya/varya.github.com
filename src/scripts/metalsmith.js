@@ -183,7 +183,11 @@ export default new Metalsmith(paths.projectRoot)
     baseFile: 'base.html',
     defaultTemplate: 'Default.js',
     extension: null,
-    static: true
+    static: true,
+    postRenderHydrator: (app) => {
+      console.log(app)
+      return app
+    }
   }))
   .use(feed({
     collection: 'posts_en',
