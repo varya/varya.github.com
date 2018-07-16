@@ -1,8 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from 'styled-components';
+
+const Container = styled.div`
+  text-align: center;
+`;
+
 
 const Footer = props => (
-  <div>footer here</div>
+  <Container>
+    &copy;
+    Varya Stepanova, {(new Date()).getFullYear()}
+  </Container>
 )
 
 export default Footer;
