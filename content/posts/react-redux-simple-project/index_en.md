@@ -3,6 +3,8 @@
 title: Simple yet promising structure for React/Redux project
 
 date: 2016-11-21
+v2: true
+cover: thumb.png
 
 layout: post
 

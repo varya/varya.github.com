@@ -1,4 +1,0 @@
-
-```js
-<Article>Hahaha</Article>
-```

@@ -3,6 +3,7 @@
 title: Роттердам
 
 date: 2013-09-22
+v2: true
 
 layout: post
 

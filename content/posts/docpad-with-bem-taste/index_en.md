@@ -3,6 +3,7 @@
 title: Docpad with the taste of BEM
 
 date: 2014-06-04
+v2: true
 
 layout: post
 

@@ -3,6 +3,8 @@
 title: Конференции ScotlandCSS и ScotlandJS. Организация
 
 date: 2016-06-27
+v2: true
+cover: thumb.jpg
 
 layout: post
 

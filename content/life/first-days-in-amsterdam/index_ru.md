@@ -3,6 +3,7 @@
 title: Первые дни в Амстердаме
 
 date: 2013-09-08
+v2: true
 
 layout: post
 

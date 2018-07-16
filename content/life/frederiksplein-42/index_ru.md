@@ -3,6 +3,7 @@
 title: Frederiksplein 42, офис Hyves
 
 date: 2013-09-16
+v2: true
 
 layout: post
 

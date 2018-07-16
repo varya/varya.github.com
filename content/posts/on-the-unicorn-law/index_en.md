@@ -3,6 +3,8 @@
 title: An answer to the question which should not have been asked
 
 date: 2015-09-07
+v2: true
+cover: thumb.jpg
 
 layout: post
 

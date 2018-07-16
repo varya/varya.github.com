@@ -3,6 +3,7 @@
 title: Использование JSCS
 
 date: 2014-11-25
+v2: true
 
 layout: post
 

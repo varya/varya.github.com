@@ -3,6 +3,7 @@
 title: Про residence permit, потерянный за пределами Шенгена
 
 date: 2015-05-12
+v2: true
 
 layout: post
 

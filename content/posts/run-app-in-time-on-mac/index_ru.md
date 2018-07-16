@@ -3,6 +3,7 @@
 title: Запускать вовремя (о приложениях на Mac)
 
 date: 2014-09-10
+v2: true
 
 layout: post
 

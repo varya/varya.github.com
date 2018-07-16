@@ -3,6 +3,7 @@
 title: Finnish coolest trend - food made of insects; also a bit about weather and transport
 
 date: 2017-12-06
+v2: true
 
 layout: post
 

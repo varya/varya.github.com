@@ -3,6 +3,7 @@
 title: Увидеть Париж…
 
 date: 2013-12-18
+v2: true
 
 layout: post
 

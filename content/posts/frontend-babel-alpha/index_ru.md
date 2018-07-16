@@ -3,6 +3,7 @@
 title: Про дружбу народов во frontend сообществе
 
 date: 2014-06-30
+v2: true
 
 layout: post
 

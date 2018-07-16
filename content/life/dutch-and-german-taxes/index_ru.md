@@ -3,6 +3,7 @@
 title: 30% ruling и вообще голландские и немецкие налоги
 
 date: 2013-09-29
+v2: true
 
 layout: post
 

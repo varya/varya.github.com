@@ -3,6 +3,8 @@
 title: Visual diffs for the images in a git repo
 
 date: 2016-03-18
+v2: true
+cover: thumb.png
 
 layout: post
 
@@ -40,9 +42,9 @@ Varyas-MBP £ ~/path/to/project ⤳ master*
 
 I can run `git diff` over each of the modified images to see the following:
 
-![](/posts/image-diffs-with-git/diff1.png)
+![](./diff1.png)
 
-![](/posts/image-diffs-with-git/diff2.png)
+![](./diff2.png)
 
 For every picture displayed, I can see a previous version (on the left side), a current version (on the right side) and
 visually represented difference (in between). This feature is useful for tracking exact changes in the image. Now, I can

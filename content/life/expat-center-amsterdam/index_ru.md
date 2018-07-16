@@ -3,6 +3,7 @@
 title: Expat-центр в Амстердаме
 
 date: 2013-12-27
+v2: true
 
 layout: post
 

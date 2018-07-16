@@ -3,6 +3,7 @@
 title: Finnish standards for living areas and transport
 
 date: 2018-04-18
+v2: true
 
 layout: post
 

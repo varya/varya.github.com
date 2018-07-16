@@ -3,6 +3,7 @@
 title: HTML5 mobile apps with native UI on Steroids
 
 date: 2014-05-26
+v2: true
 
 layout: post
 
