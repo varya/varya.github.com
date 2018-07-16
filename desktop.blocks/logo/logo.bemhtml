@@ -1,6 +1,0 @@
-block logo {
-
-    tag: 'logo'
-
-    content: '&sdot;&sdot;&sdot;<b class="var">var</b>&sdot;<b class="ya">ya</b>;<b class="cursor"></b>'
-}
