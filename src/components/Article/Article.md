@@ -1,0 +1,5 @@
+```jsx
+<Article>
+Lalala
+</Article>
+```
