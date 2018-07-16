@@ -69,7 +69,7 @@ Such a long drive requires several stops. Here are the recommended:
 * [Jänismäki Ravintola in
   Värtsilä (the Russian one)](https://www.google.fi/maps/place/%D0%9A%D0%B0%D1%84%D0%B5+%C2%AB%D0%AF%D0%BD%D0%B8%D1%81%D0%BC%D1%8F%D0%BA%D0%B8%C2%BB+%D0%9A%D0%B0%D1%84%D0%B5+%C2%AB%D0%AF%D0%BD%D0%B8%D1%81%D0%BC%D1%8F%D0%BA%D0%B8%C2%BB/@62.1600155,30.6789698,17z/data=!4m2!3m1!1s0x0000000000000000:0x06646632e3861d01?hl=en)<br/>
   You can find it right after crossing the border. This is a good place to take full meal.<br/>
-  ![](/img/janismaki.jpg)
+  ![](./janismaki.jpg)
 * [Cafe in
   Kolatselga](https://www.google.fi/maps/place/61%C2%B040'43.4%22N+32%C2%B013'43.6%22E/@61.6786594,32.2283338,17z/data=!4m2!3m1!1s0x0:0x0?hl=en)<br/>
   It's not even in map, take the coordinates `[61.678716, 32.228778]`. You will have the cafe to the right side of the
@@ -100,13 +100,13 @@ You also need to have a "green card" insuarance for such a trip.
 To drive into the Russian checkpoint territory, you need to presend the passports of the driver and all the passengers
 at the entering point. You do not need to leave the car, just pass the documents in the opened driver's side window.
 
-![](/img/vyartsilya-enterance.jpg)
+![](./vyartsilya-enterance.jpg)
 
 At the Russian checkpoint stop in front of the line on the road, or in the queue. You can move forward when a border
 officer waves you. There are usually several paths open, they will show where to drive. First stop in the beginning of
-the path. Here you and your passengers can go to through the passport control in the first booth.
+ath. Here you and your passengers can go to through the passport control in the first booth.
 
-![](/img/vyartsilya-booths.jpg)
+![](./vyartsilya-booths.jpg)
 
 After that the passengers should go
 trough the building with their luggage, which goes to X-rays. You can also keep the luggage in the car, but in this
@@ -141,7 +141,7 @@ Going back happens in reverse order.
 When getting closer to the Russian checkpoint, take the curved side. The straigh one is for the tucks. And there is no
 sign about it, yes :-)
 
-![](/img/vyartsilya-gate.png)
+![](./vyartsilya-gate.png)
 
 At first, you drive to customs where you need to present your copy of the custom declaration. Then the car examination
 with opening all the doors and a dog (if you are lucky). Having passed the custom control, drive to the border control
