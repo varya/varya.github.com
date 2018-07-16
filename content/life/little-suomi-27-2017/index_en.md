@@ -3,6 +3,7 @@
 title: My little Suomi, week 27, year 2017
 
 date: 2017-07-06
+v2: true
 
 layout: post
 

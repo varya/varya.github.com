@@ -3,6 +3,7 @@
 title: "Финляндия: мелочи жизни"
 
 date: 2015-07-15
+v2: true
 
 layout: post
 

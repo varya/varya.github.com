@@ -3,6 +3,7 @@
 title: JSCS in use
 
 date: 2015-02-11
+v2: true
 
 layout: post
 

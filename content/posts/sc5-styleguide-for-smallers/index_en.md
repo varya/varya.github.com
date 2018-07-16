@@ -3,6 +3,7 @@
 title: Style-guide the smaller things
 
 date: 2015-07-30
+v2: true
 
 layout: post
 

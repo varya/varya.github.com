@@ -3,6 +3,7 @@
 title: How we save and spend
 
 date: 2017-03-27
+v2: true
 
 layout: post
 

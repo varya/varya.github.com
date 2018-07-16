@@ -3,6 +3,7 @@
 title:  Finland - self-service in cafes, lockers with refrigerators, recycling of botles...
 
 date: 2017-11-27
+v2: true
 
 layout: post
 

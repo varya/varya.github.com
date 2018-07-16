@@ -3,6 +3,8 @@
 title: Aspect of in-company communication for innovation
 
 date: 2018-01-11
+v2: true
+cover: thumb.png
 
 layout: post
 
@@ -23,7 +25,7 @@ communicational practices very much contributes to developing this kind of owner
 
 <excerpt/>
 
-![](/posts/communication-culture/communication.png)
+![](communication.png)
 
 It is important to contribute to all aspects of internal company communication which are: transparency, constant
 documenting, openness to feedback, cross-departmental communication, external events.

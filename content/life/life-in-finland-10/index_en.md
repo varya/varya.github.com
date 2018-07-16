@@ -3,6 +3,7 @@
 title: Finland - driverless busses, free-to-use public laptops, buying drugs in pharmacy
 
 date: 2017-12-01
+v2: true
 
 layout: post
 

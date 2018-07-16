@@ -3,6 +3,7 @@
 title: Run on time (about Mac applications)
 
 date: 2014-09-12
+v2: true
 
 layout: post
 

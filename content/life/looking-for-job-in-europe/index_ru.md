@@ -3,6 +3,7 @@
 title: Как я искала работу в Европе
 
 date: 2013-09-03
+v2: true
 
 layout: post
 

@@ -3,6 +3,7 @@
 title: Week 44, 2016
 
 date: 2016-11-08
+v2: true
 
 layout: post
 

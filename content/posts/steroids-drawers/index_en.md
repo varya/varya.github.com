@@ -3,6 +3,7 @@
 title: Using side drawers in mobile apps on Steroids.js
 
 date: 2014-06-09
+v2: true
 
 layout: post
 

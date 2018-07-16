@@ -3,6 +3,7 @@
 title: Стайл гайд для самых маленьких
 
 date: 2015-08-18
+v2: true
 
 layout: post
 

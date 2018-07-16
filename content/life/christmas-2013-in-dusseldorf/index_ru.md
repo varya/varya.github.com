@@ -3,6 +3,7 @@
 title: Рождество 2013 в Дюссельдорфе
 
 date: 2013-12-24
+v2: true
 
 layout: post
 

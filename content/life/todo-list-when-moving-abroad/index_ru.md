@@ -3,6 +3,7 @@
 title: Подчищаем хвосты
 
 date: 2014-07-31
+v2: true
 
 layout: post
 

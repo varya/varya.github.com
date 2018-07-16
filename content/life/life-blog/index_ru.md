@@ -3,6 +3,7 @@
 title: Персональный блог, теперь standalone
 
 date: 2015-08-25
+v2: true
 
 layout: post
 

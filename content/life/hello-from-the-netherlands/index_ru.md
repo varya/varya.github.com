@@ -3,6 +3,7 @@
 title: Привет из Голландии, фото
 
 date: 2013-10-03
+v2: true
 
 layout: post
 

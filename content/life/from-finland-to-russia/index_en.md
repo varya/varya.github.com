@@ -3,6 +3,7 @@
 title: From Finland to Russia by car
 
 date: 2015-10-08
+v2: true
 
 layout: post
 

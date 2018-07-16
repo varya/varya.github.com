@@ -3,6 +3,7 @@
 title: Маастрихт
 
 date: 2014-04-26
+v2: true
 
 layout: post
 

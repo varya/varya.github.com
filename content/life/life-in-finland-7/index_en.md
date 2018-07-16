@@ -3,6 +3,7 @@
 title:  Life in Finland - autumn sale, transport wins and failures, secret cafes
 
 date: 2017-10-30
+v2: true
 
 layout: post
 

@@ -3,6 +3,7 @@
 title: Weird Moscow
 
 date: 2015-09-03
+v2: true
 
 layout: post
 

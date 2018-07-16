@@ -3,6 +3,7 @@
 title: Переезжаем в Финляндию
 
 date: 2014-04-25
+v2: true
 
 layout: post
 

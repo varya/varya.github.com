@@ -3,6 +3,7 @@
 title: Хорошая Голландия
 
 date: 2014-05-16
+v2: true
 
 layout: post
 

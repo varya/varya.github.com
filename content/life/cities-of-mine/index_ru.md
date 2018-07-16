@@ -3,6 +3,7 @@
 title: «Мои» города
 
 date: 2014-10-15
+v2: true
 
 layout: post
 

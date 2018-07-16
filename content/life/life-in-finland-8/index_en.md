@@ -3,6 +3,7 @@
 title:  Finnish life - showers without curtains, cinnamon buns and parking habits
 
 date: 2017-11-10
+v2: true
 
 layout: post
 

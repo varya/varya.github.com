@@ -3,6 +3,7 @@
 title:  Жизнь в Финляндии, отрывок 3
 
 date: 2017-08-06
+v2: true
 
 layout: post
 

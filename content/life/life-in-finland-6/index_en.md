@@ -3,6 +3,7 @@
 title:  Life in Finland, part 6
 
 date: 2017-10-24
+v2: true
 
 layout: post
 

@@ -3,6 +3,7 @@
 title: Опять немного про Финлядию
 
 date: 2015-02-25
+v2: true
 
 layout: post
 

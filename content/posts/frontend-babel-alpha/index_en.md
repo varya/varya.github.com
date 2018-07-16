@@ -3,6 +3,7 @@
 title: The so different frontend community and how we deal with it
 
 date: 2014-06-30
+v2: true
 
 layout: post
 

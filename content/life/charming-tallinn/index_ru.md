@@ -3,6 +3,7 @@
 title: Вперед в прошлое (про Таллин)
 
 date: 2015-09-09
+v2: true
 
 layout: post
 
