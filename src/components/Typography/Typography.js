@@ -70,31 +70,57 @@ injectGlobal`
   src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+`;
 
+import LatoBoldEot from './fonts/lato-bold.eot';
+import LatoBoldTtf from './fonts/lato-bold.ttf';
+import LatoBoldSvg from './fonts/lato-bold.svg';
+import LatoBoldWoff from './fonts/lato-bold.woff';
+import LatoBoldWoff2 from './fonts/lato-bold.woff2';
+
+import LatoBoldItalicEot from './fonts/lato-bold.eot';
+import LatoBoldItalicTtf from './fonts/lato-bold.ttf';
+import LatoBoldItalicSvg from './fonts/lato-bold.svg';
+import LatoBoldItalicWoff from './fonts/lato-bold.woff';
+import LatoBoldItalicWoff2 from './fonts/lato-bold.woff2';
+
+import LatoRegularEot from './fonts/lato-bold.eot';
+import LatoRegularTtf from './fonts/lato-bold.ttf';
+import LatoRegularSvg from './fonts/lato-bold.svg';
+import LatoRegularWoff from './fonts/lato-bold.woff';
+import LatoRegularWoff2 from './fonts/lato-bold.woff2';
+
+import LatoItalicEot from './fonts/lato-bold.eot';
+import LatoItalicTtf from './fonts/lato-bold.ttf';
+import LatoItalicSvg from './fonts/lato-bold.svg';
+import LatoItalicWoff from './fonts/lato-bold.woff';
+import LatoItalicWoff2 from './fonts/lato-bold.woff2';
+
+injectGlobal`
 /* TODO: load from website for cyrillic pages only */
 
 @font-face {
   font-family: 'Lato';
-  src: url("./fonts/lato-bold.eot");
-  src: local("Lato Bold"), local("Lato-Bold"), url("./fonts/lato-bold.eot?#iefix") format("embedded-opentype"), url("./fonts/lato-bold.woff2") format("woff2"), url("./fonts/lato-bold.woff") format("woff"), url("./fonts/lato-bold.ttf") format("truetype"), url("./fonts/lato-bold.svg#lato") format("svg");
+  src: url("${LatoBoldEot}");
+  src: local("Lato Bold"), local("Lato-Bold"), url("${LatoBoldEot}") format("embedded-opentype"), url("${LatoBoldWoff2}") format("woff2"), url("${LatoBoldWoff}") format("woff"), url("${LatoBoldTtf}") format("truetype"), url("${LatoBoldSvg}#lato") format("svg");
   font-weight: 700;
   font-style: normal; }
 @font-face {
   font-family: 'Lato';
-  src: url("./fonts/lato-bolditalic.eot");
-  src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url("./fonts/lato-bolditalic.eot?#iefix") format("embedded-opentype"), url("./fonts/lato-bolditalic.woff2") format("woff2"), url("./fonts/lato-bolditalic.woff") format("woff"), url("./fonts/lato-bolditalic.ttf") format("truetype"), url("./fonts/lato-bolditalic.svg#lato") format("svg");
+  src: url("${LatoBoldItalicEot}");
+  src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url("${LatoBoldItalicEot}") format("embedded-opentype"), url("${LatoBoldItalicWoff2}") format("woff2"), url("${LatoBoldItalicWoff}") format("woff"), url("${LatoBoldItalicTtf}") format("truetype"), url("${LatoBoldItalicSvg}#lato") format("svg");
   font-weight: 700;
   font-style: italic; }
 @font-face {
   font-family: 'Lato';
-  src: url("./fonts/lato-regular.eot");
-  src: local("Lato Regular"), local("Lato-Regular"), url("./fonts/lato-regular.eot?#iefix") format("embedded-opentype"), url("./fonts/lato-regular.woff2") format("woff2"), url("./fonts/lato-regular.woff") format("woff"), url("./fonts/lato-regular.ttf") format("truetype"), url("./fonts/lato-regular.svg#lato") format("svg");
+  src: url("${LatoRegularEot}");
+  src: local("Lato Regular"), local("Lato-Regular"), url("${LatoRegularEot}") format("embedded-opentype"), url("${LatoRegularWoff2}") format("woff2"), url("${LatoRegularWoff}") format("woff"), url("${LatoRegularTtf}") format("truetype"), url("${LatoRegularSvg}#lato") format("svg");
   font-weight: 400;
   font-style: normal; }
 @font-face {
   font-family: 'Lato';
-  src: url("./fonts/lato-italic.eot");
-  src: local("Lato Italic"), local("Lato-Italic"), url("./fonts/lato-italic.eot?#iefix") format("embedded-opentype"), url("./fonts/lato-italic.woff2") format("woff2"), url("./fonts/lato-italic.woff") format("woff"), url("./fonts/lato-italic.ttf") format("truetype"), url("./fonts/lato-italic.svg#lato") format("svg");
+  src: url("${LatoItalicEot}");
+  src: local("Lato Italic"), local("Lato-Italic"), url("${LatoItalicEot}") format("embedded-opentype"), url("${LatoItalicWoff2}") format("woff2"), url("${LatoItalicWoff}") format("woff"), url("${LatoItalicTtf}") format("truetype"), url("${LatoItalicSvg}#lato") format("svg");
   font-weight: 400;
   font-style: italic; }
 
@@ -110,7 +136,7 @@ html, body {
 
 h1 {
   font-size: 2.4em;
-  font-weight: 300;
+  font-weight: 400;
   margin-top: 0;
 
   &::after {
