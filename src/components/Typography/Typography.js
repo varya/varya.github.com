@@ -76,25 +76,25 @@ injectGlobal`
 @font-face {
   font-family: 'Lato';
   src: url("./fonts/lato-bold.eot");
-  src: local("Lato Bold"), local("Lato-Bold"), url("./fonts/lato-bold.eot?#iefix") format("embedded-opentype"), url("../font/lato-bold.woff2") format("woff2"), url("../font/lato-bold.woff") format("woff"), url("../font/lato-bold.ttf") format("truetype"), url("../font/lato-bold.svg#lato") format("svg");
+  src: local("Lato Bold"), local("Lato-Bold"), url("./fonts/lato-bold.eot?#iefix") format("embedded-opentype"), url("./fonts/lato-bold.woff2") format("woff2"), url("./fonts/lato-bold.woff") format("woff"), url("./fonts/lato-bold.ttf") format("truetype"), url("./fonts/lato-bold.svg#lato") format("svg");
   font-weight: 700;
   font-style: normal; }
 @font-face {
   font-family: 'Lato';
   src: url("./fonts/lato-bolditalic.eot");
-  src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url("./fonts/lato-bolditalic.eot?#iefix") format("embedded-opentype"), url("../font/lato-bolditalic.woff2") format("woff2"), url("../font/lato-bolditalic.woff") format("woff"), url("../font/lato-bolditalic.ttf") format("truetype"), url("../font/lato-bolditalic.svg#lato") format("svg");
+  src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url("./fonts/lato-bolditalic.eot?#iefix") format("embedded-opentype"), url("./fonts/lato-bolditalic.woff2") format("woff2"), url("./fonts/lato-bolditalic.woff") format("woff"), url("./fonts/lato-bolditalic.ttf") format("truetype"), url("./fonts/lato-bolditalic.svg#lato") format("svg");
   font-weight: 700;
   font-style: italic; }
 @font-face {
   font-family: 'Lato';
   src: url("./fonts/lato-regular.eot");
-  src: local("Lato Regular"), local("Lato-Regular"), url("./fonts/lato-regular.eot?#iefix") format("embedded-opentype"), url("../font/lato-regular.woff2") format("woff2"), url("../font/lato-regular.woff") format("woff"), url("../font/lato-regular.ttf") format("truetype"), url("../font/lato-regular.svg#lato") format("svg");
+  src: local("Lato Regular"), local("Lato-Regular"), url("./fonts/lato-regular.eot?#iefix") format("embedded-opentype"), url("./fonts/lato-regular.woff2") format("woff2"), url("./fonts/lato-regular.woff") format("woff"), url("./fonts/lato-regular.ttf") format("truetype"), url("./fonts/lato-regular.svg#lato") format("svg");
   font-weight: 400;
   font-style: normal; }
 @font-face {
   font-family: 'Lato';
   src: url("./fonts/lato-italic.eot");
-  src: local("Lato Italic"), local("Lato-Italic"), url("./fonts/lato-italic.eot?#iefix") format("embedded-opentype"), url("../font/lato-italic.woff2") format("woff2"), url("../font/lato-italic.woff") format("woff"), url("../font/lato-italic.ttf") format("truetype"), url("../font/lato-italic.svg#lato") format("svg");
+  src: local("Lato Italic"), local("Lato-Italic"), url("./fonts/lato-italic.eot?#iefix") format("embedded-opentype"), url("./fonts/lato-italic.woff2") format("woff2"), url("./fonts/lato-italic.woff") format("woff"), url("./fonts/lato-italic.ttf") format("truetype"), url("./fonts/lato-italic.svg#lato") format("svg");
   font-weight: 400;
   font-style: italic; }
 
