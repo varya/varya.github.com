@@ -78,23 +78,23 @@ import LatoBoldSvg from './fonts/lato-bold.svg';
 import LatoBoldWoff from './fonts/lato-bold.woff';
 import LatoBoldWoff2 from './fonts/lato-bold.woff2';
 
-import LatoBoldItalicEot from './fonts/lato-bold.eot';
-import LatoBoldItalicTtf from './fonts/lato-bold.ttf';
-import LatoBoldItalicSvg from './fonts/lato-bold.svg';
-import LatoBoldItalicWoff from './fonts/lato-bold.woff';
-import LatoBoldItalicWoff2 from './fonts/lato-bold.woff2';
+import LatoBoldItalicEot from './fonts/lato-bolditalic.eot';
+import LatoBoldItalicTtf from './fonts/lato-bolditalic.ttf';
+import LatoBoldItalicSvg from './fonts/lato-bolditalic.svg';
+import LatoBoldItalicWoff from './fonts/lato-bolditalic.woff';
+import LatoBoldItalicWoff2 from './fonts/lato-bolditalic.woff2';
 
-import LatoRegularEot from './fonts/lato-bold.eot';
-import LatoRegularTtf from './fonts/lato-bold.ttf';
-import LatoRegularSvg from './fonts/lato-bold.svg';
-import LatoRegularWoff from './fonts/lato-bold.woff';
-import LatoRegularWoff2 from './fonts/lato-bold.woff2';
+import LatoRegularEot from './fonts/lato-regular.eot';
+import LatoRegularTtf from './fonts/lato-regular.ttf';
+import LatoRegularSvg from './fonts/lato-regular.svg';
+import LatoRegularWoff from './fonts/lato-regular.woff';
+import LatoRegularWoff2 from './fonts/lato-regular.woff2';
 
-import LatoItalicEot from './fonts/lato-bold.eot';
-import LatoItalicTtf from './fonts/lato-bold.ttf';
-import LatoItalicSvg from './fonts/lato-bold.svg';
-import LatoItalicWoff from './fonts/lato-bold.woff';
-import LatoItalicWoff2 from './fonts/lato-bold.woff2';
+import LatoItalicEot from './fonts/lato-italic.eot';
+import LatoItalicTtf from './fonts/lato-italic.ttf';
+import LatoItalicSvg from './fonts/lato-italic.svg';
+import LatoItalicWoff from './fonts/lato-italic.woff';
+import LatoItalicWoff2 from './fonts/lato-italic.woff2';
 
 injectGlobal`
 /* TODO: load from website for cyrillic pages only */
@@ -127,6 +127,7 @@ injectGlobal`
 * {
   font-family: 'Lato', 'Helvetica Neue', Helvetica;
   color: ${colorScheme.dark};
+  font-weight: 400;
 }
 
 html, body {
