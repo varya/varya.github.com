@@ -4,6 +4,7 @@ title: How we save and spend
 
 date: 2017-03-27
 v2: true
+cover: thumb.jpg
 
 layout: post
 
@@ -18,7 +19,7 @@ tighten the belts. Also, it looks like this method is applicable to any volume o
 
 <excerpt/>
 
-![](/life/home-finance/thumb.jpg)
+![](./thumb.jpg)
 
 I will describe simply as we are using the system, without defining overall rules. If you like the idea, there is no
 need to repeat it for 100%, just borrow the key features.

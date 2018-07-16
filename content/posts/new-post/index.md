@@ -23,7 +23,7 @@ the corporate world where such people are not co-founders but employees. (Sarasv
 communicational practices very much contributes to developing this kind of ownership and makes innovation possible.
 
 
-![](/posts/communication-culture/communication.png)
+![](./communication.png)
 
 It is important to contribute to all aspects of internal company communication which are: transparency, constant
 documenting, openness to feedback, cross-departmental communication, external events.

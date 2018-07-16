@@ -28,7 +28,7 @@ In Finland, the week numbers are widely used. People easily make agreements on l
 this purpose and also for the actual weekly reports, I have subscribed for a special Google calendar
 which provides a small week number at the top right corner or every monday.
 
-![](/posts/week-44-2016/CalendarWeekNumbers3.png)
+![](./CalendarWeekNumbers3.png)
 
 Here are the instructions:
 [http://www.daimto.com/how-to-add-week-numbers-to-your-google-calendar/](http://www.daimto.com/how-to-add-week-numbers-to-your-google-calendar/).
@@ -37,7 +37,7 @@ Here are the instructions:
 
 [ZenHub](https://www.zenhub.com/) is an add-on, which makes different boards with columns on top of GitHub issues.
 
-![](/posts/week-44-2016/zenhub-task-board.jpg)
+![](./zenhub-task-board.jpg)
 
 It looks like a competitor of embedded [GitHub
 Projects](https://github.com/blog/2256-a-whole-new-github-universe-announcing-new-tools-forums-and-features) but with
