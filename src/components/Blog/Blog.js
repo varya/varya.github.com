@@ -1,13 +1,20 @@
 import PropTypes from "prop-types";
 import React from "react";
+import styled from "styled-components";
 
 import Item from "./Item";
+
+const Container = styled.main`
+  a {
+    text-decoration: none;
+  }
+`;
 
 const Blog = props => {
   const { posts } = props;
 
   return (
-      <main className="main">
+      <Container>
         <ul>
           {posts.map(post => {
             const {
@@ -19,7 +26,7 @@ const Blog = props => {
             return <Item key={slug} post={node} />;
           })}
         </ul>
-      </main>
+      </Container>
 
   );
 };
