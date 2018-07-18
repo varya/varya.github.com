@@ -9,9 +9,11 @@ layout: post
 
 meta:
   desc: >
-    Company internal communication is a crucial aspect of forming innovation-friendly environment, in which employees can
-    effectively apply their expertise and creativity for achieving business goals.
-
+    Design systems standardise and simplify the process of interface design and development, they bring new
+    approaches and form their own ecosystem. However, there is no solid understanding of the concepts and terms forming
+    the design systems. To solve the term inconsistency and provide structured professional language, this article
+    focuses on the vocabulary used in the design systems domain by observing a range of materials on the topic, from
+    both academic and popular sources.
 
 ---
 
