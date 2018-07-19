@@ -36,8 +36,8 @@ const TextBlock = props => {
 };
 
 TextBlock.propTypes = {
-  title: PropTypes.object.isRequired,
-  html: PropTypes.object.isRequired
+  title: PropTypes.string.isRequired,
+  html: PropTypes.string.isRequired
 };
 
 export default TextBlock;
