@@ -1,6 +1,6 @@
 ---
 
-title: Design Systems — clarifying the terms
+title: Design Systems — review of vocabulary and terms
 
 date: 2018-07-19
 cover: thumb.jpg
