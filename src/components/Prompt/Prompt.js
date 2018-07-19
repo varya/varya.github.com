@@ -9,7 +9,7 @@ const Container = styled.div`
   display: block;
   padding-right: 1.5em;
   text-align: center;
-  ${breakpoint('desktop') `
+  ${breakpoint('desktop')`
     text-align: right;
   `}
 
@@ -29,10 +29,10 @@ const List = styled.ul`
 
   list-style: none;
 
-  ${breakpoint('tablet') `
+  ${breakpoint('tablet')`
     display: inline-block;
   `}
-  ${breakpoint('mobile') `
+  ${breakpoint('mobile')`
     display: inline-block;
   `}
 `;
@@ -55,7 +55,7 @@ const Item = styled.li`
     margin-right: 0;
   }
 
-  ${breakpoint('desktop') `
+  ${breakpoint('desktop')`
     display: list-item;
     margin-right: 0;
   `}
