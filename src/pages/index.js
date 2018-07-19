@@ -29,7 +29,7 @@ projects.</p>
 conferences, usually explaining the BEM methodology. I write articles in English and Russian, as well as
 tutorials and training projects to help developers perform their first dive into
 BEM.
-There are some links on the <a href="en/content/">content</a> page for your browsing pleasure.</p>
+There are some links on the <a href="/articles-and-talks/">Articles and Talks</a> page for your browsing pleasure.</p>
 <p>In my spare time (haha), I study in Aalto University at <a href="https://www.idbm.aalto.fi/">IDBM</a> programme which includes the
 topics of Business Design, Service Design, Industry and Market Researches and assumes a lot of project work.</p>
 <p>I am keen on traveling and dream of having friends all over the world.
