@@ -29,15 +29,17 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     // only for posts
     if (fileNode.sourceInstanceName === 'posts' || fileNode.sourceInstanceName === 'life') {
 
+      const folder = node.frontmatter.old ? 'issues' : fileNode.sourceInstanceName;
+
       if (node.frontmatter.v2 || node.frontmatter.old) {
 
         let paths = fileNode.relativePath.split('index_en.md');
         if (paths[1] === '') {
-          slug = `en/${fileNode.sourceInstanceName}/${paths[0]}`
+          slug = `en/${folder}/${paths[0]}`
         }
         paths = fileNode.relativePath.split('index_ru.md');
         if (paths[1] === '') {
-          slug = `ru/${fileNode.sourceInstanceName}/${paths[0]}`
+          slug = `ru/${folder}/${paths[0]}`
         }
       } else {
         slug = `blog${slug}`
