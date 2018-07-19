@@ -116,8 +116,7 @@ libraries” or “pattern libraries” and describe them only as a part of a de
 system. They interpret the design systems concept as more complex but have
 difficulties to give a straightforward definition for them. Saarinen (2016)
 focuses on the processes formed by design systems: “design systems are more
-systematic ways to guide and leverage our collective efforts” (Saarinen,
-20016). Braga partly supports this interpretation but also makes it wider by
+systematic ways to guide and leverage our collective efforts” (Saarinen, 2016). Braga partly supports this interpretation but also makes it wider by
 including the tools: “Design systems are basically a combination of tools and
 processes that will help our teams working better together” (Braga, 2017).
 Authors of the iconic “Design Systems Handbook” introduce a design system
