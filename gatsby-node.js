@@ -29,7 +29,8 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     // only for posts
     if (fileNode.sourceInstanceName === 'posts' || fileNode.sourceInstanceName === 'life') {
 
-      const folder = node.frontmatter.old ? 'issues' : fileNode.sourceInstanceName;
+      //const folder = node.frontmatter.old ? 'issues' : fileNode.sourceInstanceName;
+      const folder = fileNode.sourceInstanceName;
 
       if (node.frontmatter.v2 || node.frontmatter.old) {
 
@@ -74,6 +75,9 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       disqusIdentifier.push('index');
       disqusIdentifier.push(lang);
     }
+    if (node.frontmatter.old) {
+      disqusIdentifier = disqusIdentifier.map(item => item === 'posts' ? 'issues' : item)
+    }
     disqusIdentifier = disqusIdentifier.join('-');
 
     createNodeField({
@@ -110,7 +114,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     disqusIdentifier
                   }
                   frontmatter {
-                    title
+                    title,
+                    old
                   }
                 }
               }
@@ -129,6 +134,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         const posts = items.filter(item => /posts/.test(item.node.id));
         posts.forEach(({ node }, index) => {
           const slug = node.fields.slug;
+          const old = node.frontmatter.old;
           const next = index === 0 ? undefined : posts[index - 1].node;
           const prev = index === posts.length - 1 ? undefined : posts[index + 1].node;
 
