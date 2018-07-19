@@ -111,7 +111,7 @@ components:
 build any number of applications.” (Fanguy, 2017) “A design system is a collection of reusable components to tie whole
 products together” (Baskanderi, 2018)
 
-At the same time, other authors interpret call such collections “component
+At the same time, other authors call such collections “component
 libraries” or “pattern libraries” and describe them only as a part of a design
 system. They interpret the design systems concept as more complex but have
 difficulties to give a straightforward definition for them. Saarinen (2016)
