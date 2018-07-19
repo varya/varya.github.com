@@ -36,12 +36,11 @@ topics of Business Design, Service Design, Industry and Market Researches and as
 If you're interested, here's the first personal thing to learn about me: I am passionate about cats, all of them (lions included).</p>
 <p>On this site I publish my day-to-day writings as well as links to
 articles, projects and presentations.</p>
-<p>This site is available in both English and <a href="/ru">Russian</a>.</p>
 <p>Here are some obligatory (but useful) links as well:</p>
 <ul>
-<li><a href="https://github.com/varya">Github</a></li>
 <li><a href="https://twitter.com/varya_en">Twitter</a></li>
 <li><a href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b">LinkedIn</a></li>
+<li><a href="https://github.com/varya">Github</a></li>
 </ul>
 </div>
       </Content>
