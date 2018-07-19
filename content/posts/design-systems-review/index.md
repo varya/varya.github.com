@@ -172,14 +172,14 @@ Source: https://blog.producthive.org/anatomy-of-a-design-system-7a6b0677bf5
 
 </div>
 
-In many other source, authors do not provide schemas but operate the terms.
+In many other sources, authors do not provide schemas but operate the terms.
 This article introduces these sub-concepts and their naming, summarize them to
 represent as building blocks of one bigger system and explain their
 contribution into the UI developing current problems.In many other source,
 authors do not provide schemas but operate the terms. This article introduces
 these sub-concepts and their naming, summarize them to represent as building
-blocks of one bigger system and explain their contribution into the UI
-developing current problems.
+blocks of one bigger system and explain their contribution into the modern problems
+of UI developing.
 
 ## 2. Blocks of a design system
 
@@ -187,7 +187,7 @@ developing current problems.
 
 The *component* is the most solid term of the design systems concept. It
 originates from the development field and has the most univocal meaning.
-Multiple authors define component from the implementation perspective, as
+Multiple authors define a component from the implementation perspective, as
 “portion of reusable code, serving as building blocks for the application
 interface” (Suarez, Anne, Sylor-Miller, Mounter, and Stanfield, 2017).
 Important to note that represented as pieces of code, components encapsulate a
@@ -254,7 +254,8 @@ Source: http://carbondesignsystem.com/style/spacing
 Some authors use the term “pattern” when speaking about components. However,
 they still face the need to distinguish solutions for repeatable UI elements
 and more general ones. One of such authors, Alla Kholmatova (2017) introduces
-functional patterns as “tangible building blocks of the interface” (Kholmatova, 2017) and perceptual patterns, which she does not define but provides examples
+*functional patterns* as “tangible building blocks of the interface” (Kholmatova, 2017) and
+*perceptual patterns*, which she does not define but provides examples
 such as “tone of voice, typography, color palette, layouts, illustrations and
 iconography styles, shapes and textures, spacing, imagery, interactions or
 animations, and all the specific ways in which those elements are combined and
@@ -299,7 +300,7 @@ libraries, based on the difference between component and pattern explained
 above. This way, a pattern library is “a subclass in the design system, this is
 the set of design patterns for use across a company” (Rutherford, 2017).
 
-Similarly to that component libraries are collections of components, pattern
+Similarly to  component libraries being collections of components, pattern
 libraries are collections of patterns. However, due to more abstract nature of
 patterns, it is harder to visualize such collections.
 
@@ -339,7 +340,7 @@ The designers can provide new solutions, consistent to the others, in the
 amateur fashion making them by analogy with the old ones. However, on the
 industry level, producing adequate design solutions requires special methods
 and tooling. In the design systems concept, the is a subclass serving for this
-purposes. It is called a visual language.
+purposes. It is called a *visual language*.
 
 The following content forms visual language:
 * Design principles.<br/>
