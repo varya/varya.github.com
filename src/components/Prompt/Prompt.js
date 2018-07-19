@@ -1,12 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import breakpoint from 'styled-components-breakpoint'
+
 import { colorScheme } from '../Colors/Colors.js';
 
 const Container = styled.div`
   display: block;
   padding-right: 1.5em;
-  text-align: right;
+  text-align: center;
+  ${breakpoint('desktop') `
+    text-align: right;
+  `}
 
   &:before {
     content: '';
@@ -17,12 +22,19 @@ const Container = styled.div`
 `;
 
 const List = styled.ul`
-    padding-top: 2em;
+  padding-top: 2em;
 
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
-    list-style: none;
+  list-style: none;
+
+  ${breakpoint('tablet') `
+    display: inline-block;
+  `}
+  ${breakpoint('mobile') `
+    display: inline-block;
+  `}
 `;
 
 const Icon = styled.a`
@@ -35,7 +47,19 @@ const Icon = styled.a`
     background-image: url(${props => props.image});
 `;
 
-const Item = styled.li``;
+const Item = styled.li`
+  display: inline-block;
+  margin-right: 1em;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  ${breakpoint('desktop') `
+    display: list-item;
+    margin-right: 0;
+  `}
+`;
 
 const Prompt = props => {
 
@@ -62,13 +86,11 @@ const Prompt = props => {
   return (
     <Container>
       <List>
-        <Item>
-          {data.map(item => <Icon
-            key={item.href}
+          {data.map(item => <Item key={`${item.href}-item`}><Icon
+            key={`${item.href}-icon`}
             target="_blank"
             { ...item }
-              />)}
-        </Item>
+              /></Item>)}
       </List>
     </Container>
 )
