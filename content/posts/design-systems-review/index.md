@@ -1,6 +1,6 @@
 ---
 
-title: Design Systems — review of the topic
+title: Design Systems — clarifying the terms
 
 date: 2018-07-19
 cover: thumb.jpg
