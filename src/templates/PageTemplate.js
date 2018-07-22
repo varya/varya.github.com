@@ -5,12 +5,16 @@ import { Container, LeftSide, Content, RightSide } from "../components/Layout/La
 
 import Article from "../components/Article";
 import TextBlock from "../components/TextBlock";
+import BreadCrumbs from "../components/BreadCrumbs";
 import Prompt from "../components/Prompt";
 
 const PageTemplate = props => {
   const {
     data: {
       page
+    },
+    pathContext: {
+      breadCrumbs
     }
   } = props;
 
@@ -20,6 +24,7 @@ const PageTemplate = props => {
         <Article>
           <TextBlock title={page.frontmatter.title} html={page.htmlAst} subTitle={page.frontmatter.subTitle}/>
         </Article>
+        <BreadCrumbs data={breadCrumbs} />
       </Content>
       <RightSide></RightSide>
       <LeftSide>
@@ -42,6 +47,9 @@ export const pageQuery = graphql`
       id
       html
       htmlAst
+      fields {
+        slug
+      }
       frontmatter {
         title
         subTitle

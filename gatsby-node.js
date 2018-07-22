@@ -181,12 +181,34 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         const pages = items.filter(item => /pages/.test(item.node.id));
         pages.forEach(({ node }) => {
           const slug = node.fields.slug;
+          let breadCrumbs = [];
+          /* making bread crumbs */
+          if (node.fields.level > 1) {
+            const slugItems = node.fields.slug.split('/').filter(item => item !== '');
+            slugItems.reduce((acc, val) => {
+              /* find parent page */
+              const p = pages.find(item => item.node.fields.slug === acc) || {
+                node: {
+                  fields: {
+                    slug: '/'
+                  },
+                  frontmatter: {
+                    title: 'Home'
+                  }
+                }
+              }
+              breadCrumbs.push(p);
+              return acc + val + '/';
+            }, '/')
+            breadCrumbs.push({node, last: true});
+          }
 
           createPage({
             path: slug,
             component: pageTemplate,
             context: {
-              slug
+              slug,
+              breadCrumbs
             }
           });
         });
