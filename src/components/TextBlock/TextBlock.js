@@ -1,8 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
+import rehypeReact from "rehype-react";
+
 import styled from "styled-components";
 
 import Typography from "../Typography";
+import Logo from "../Logo";
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: { "comp-logo": Logo },
+}).Compiler
 
 const Container = styled.div`
 
@@ -25,12 +33,13 @@ const TextBlock = props => {
     html
   } = props;
 
+
   return (
     <Container>
       <header>
         <h1>{title}</h1>
       </header>
-      <div className="bodytext" dangerouslySetInnerHTML={{ __html: html }} />
+      {renderAst(html)}
     </Container>
   );
 };

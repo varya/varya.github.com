@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
+import rehypeReact from "rehype-react";
 
 import { Container, LeftSide, Content, RightSide } from "../components/Layout/Layout";
 
@@ -56,6 +57,7 @@ export const postQuery = graphql`
     post: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
+      htmlAst
       fields {
         slug
         prefix

@@ -18,7 +18,7 @@ const PageTemplate = props => {
     <Container>
       <Content>
         <Article>
-          <TextBlock title={page.frontmatter.title} html={page.html} />
+          <TextBlock title={page.frontmatter.title} html={page.htmlAst} />
         </Article>
       </Content>
       <RightSide></RightSide>
@@ -41,6 +41,7 @@ export const pageQuery = graphql`
     page: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
+      htmlAst
       frontmatter {
         title
       }
