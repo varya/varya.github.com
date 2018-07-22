@@ -6,9 +6,19 @@ import styled from "styled-components";
 
 import { colorScheme } from '../Colors/Colors.js';
 
+/* Register components for using in markdown */
+
 import Typography from "../Typography";
-import PatternJourney from "../PatternJourney";
 import Logo from "../Logo";
+import PatternJourney from "../PatternJourney";
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: {
+    "comp-logo": Logo,
+    "comp-pattern-journey": PatternJourney
+  },
+}).Compiler;
 
 const Title = styled.header`
   margin-bottom: 1.5em;
@@ -35,14 +45,6 @@ const SubHeader = styled.p`
   font-size: 1.2em;
  }
 `;
-
-const renderAst = new rehypeReact({
-  createElement: React.createElement,
-  components: {
-    "comp-logo": Logo,
-    "comp-pattern-journey": PatternJourney
-  },
-}).Compiler
 
 const Container = styled.div`
 
