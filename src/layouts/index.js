@@ -65,6 +65,7 @@ export const postQuery = graphql`
           fields {
             slug
             prefix
+            level
           }
           frontmatter {
             title

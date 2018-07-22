@@ -86,6 +86,13 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       value: disqusIdentifier
     });
 
+    const level = (fileNode.relativePath.match(/\//g) || []).length;
+    createNodeField({
+      node,
+      name: `level`,
+      value: level
+    });
+
   }
 };
 
@@ -112,6 +119,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     prefix
                     lang
                     disqusIdentifier
+                    level
                   }
                   frontmatter {
                     title
