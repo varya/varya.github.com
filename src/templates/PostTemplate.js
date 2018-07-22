@@ -65,6 +65,7 @@ export const postQuery = graphql`
       }
       frontmatter {
         title
+        subTitle
         date(formatString: "DD MMMM YYYY")
         v2
         old

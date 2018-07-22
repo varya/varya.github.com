@@ -114,7 +114,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     disqusIdentifier
                   }
                   frontmatter {
-                    title,
+                    title
+                    subTitle
+                    v2
                     old
                   }
                 }

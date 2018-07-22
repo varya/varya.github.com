@@ -18,7 +18,7 @@ const PageTemplate = props => {
     <Container>
       <Content>
         <Article>
-          <TextBlock title={page.frontmatter.title} html={page.htmlAst} />
+          <TextBlock title={page.frontmatter.title} html={page.htmlAst} subTitle={page.frontmatter.subTitle}/>
         </Article>
       </Content>
       <RightSide></RightSide>
@@ -44,6 +44,7 @@ export const pageQuery = graphql`
       htmlAst
       frontmatter {
         title
+        subTitle
       }
     }
   }

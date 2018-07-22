@@ -138,16 +138,8 @@ html, body {
 h1 {
   font-size: 2.4em;
   font-weight: 400;
+  line-height: 1.25em;
   margin-top: 0;
-
-  &::after {
-    content: '';
-    display: block;
-    background-color: ${colorScheme.secondary};
-    height: 2px;
-    width: 50%;
-    margin-top: 0.25em;
-  }
 }
 
 h2 {
@@ -173,4 +165,4 @@ a {
   color: ${colorScheme.primary}
   text-decoration: underline;
 }
-`
+`;

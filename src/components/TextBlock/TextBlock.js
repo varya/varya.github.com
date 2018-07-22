@@ -4,9 +4,37 @@ import rehypeReact from "rehype-react";
 
 import styled from "styled-components";
 
+import { colorScheme } from '../Colors/Colors.js';
+
 import Typography from "../Typography";
 import PatternJourney from "../PatternJourney";
 import Logo from "../Logo";
+
+const Title = styled.header`
+  margin-bottom: 1.5em;
+  &::after {
+    content: '';
+    display: block;
+    background-color: ${colorScheme.secondary};
+    height: 2px;
+    width: 50%;
+    margin-top: 0.25em;
+  }
+`;
+
+const Header = styled.h1`
+  margin-bottom: 0.5em;
+`;
+
+const SubHeader = styled.p`
+  text-transform: uppercase;
+  color: ${colorScheme.darkShadow}
+  margin-top: -0.75em;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 1.2em;
+ }
+`;
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
@@ -34,15 +62,18 @@ margin-bottom: 3em;
 const TextBlock = props => {
   const {
     title,
+    subTitle,
     html
   } = props;
 
 
   return (
     <Container>
-      <header>
-        <h1>{title}</h1>
-      </header>
+
+      <Title>
+        <Header>{title}</Header>
+        { subTitle && <SubHeader>{subTitle}</SubHeader> }
+      </Title>
       {renderAst(html)}
     </Container>
   );
@@ -50,7 +81,7 @@ const TextBlock = props => {
 
 TextBlock.propTypes = {
   title: PropTypes.string.isRequired,
-  html: PropTypes.string.isRequired
+  html: PropTypes.object.isRequired
 };
 
 export default TextBlock;
