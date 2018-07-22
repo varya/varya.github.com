@@ -5,11 +5,15 @@ import rehypeReact from "rehype-react";
 import styled from "styled-components";
 
 import Typography from "../Typography";
+import PatternJourney from "../PatternJourney";
 import Logo from "../Logo";
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: { "comp-logo": Logo },
+  components: {
+    "comp-logo": Logo,
+    "comp-pattern-journey": PatternJourney
+  },
 }).Compiler
 
 const Container = styled.div`
