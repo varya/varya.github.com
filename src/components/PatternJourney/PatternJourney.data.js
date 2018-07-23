@@ -16,12 +16,12 @@ const data = {
       "y": "50",
       "info": `
         <p>
-        You can search for patterns at the <a href="http://stylebook.elisa.fi" target="_blank">Pattern Library website</a>.
+        You can search for patterns at the <i>Design System / Pattern Libarary website</i>.
         Figure out what could be a name or a keyword for the pattern you are looking for, and use if in the website search.
         </p>
         <p>
-        If you don't find anything suitable, you can also ask other people in the 
-        <a href="https://mattermost.elisa.fi/elisa/channels/design_system" target="_blank">Mattermost channel "Design System"</a>.
+        If you don't find anything suitable, you can also ask other people in the
+        <i>instant communication channels</i> like Slack / Flowdock / Mattermost etc.
         </p>
         `
     },
@@ -35,14 +35,14 @@ const data = {
       "info": `
         <p>
         Study the pattern documentation at the
-        <a href="http://stylebook.elisa.fi" target="_blank">Pattern Library website</a>
+        <i>Design System / Pattern Library website</i>
         and all the examples provided. This way, you can understand if the pattern is suitable
         for your specific task.
         </p>
         <p>
         If there is no example covering your case, but you suppose that it is still possible
         without changing its code, play around with example HTML. For confirmation, ask in the
-        <a href="https://mattermost.elisa.fi/elisa/channels/design_system" target="_blank">Mattermost channel "Design System"</a>
+        people in communication channels (Slack, Flowdock, etc)
         if the pattern examples can be extended with your case. If they can, it would be nice if you
         make a pull request illustrating your specific usage.
         </p>
@@ -57,7 +57,7 @@ const data = {
       "y": "125",
       "info": `
         Ask around if people at other projects implement anything similar. You can instantly ask in the
-        <a href="https://mattermost.elisa.fi/elisa/channels/design_system" target="_blank">Mattermost channel "Design System"</a>
+        instant communication channels (Slack, Flowdock, etc)
         or raise this quesion in regular Design or Develoment meetings. Also, you can ask people directly.
         `
     },
@@ -69,10 +69,11 @@ const data = {
       "x": "-100",
       "y": "525",
       "info": `
-        Your desired pattern is already in Elisa Pattern library. Check the
-        <a href="http://stylebook.elisa.fi" target="_blank">Pattern Library website</a> for its documentation.
+        Your desired pattern is already a part of the Design System / Pattern Library. Check the
+        <i>Design System / Pattern Library website</i>
+        for its documentation.
         Use the component as it is documented. If you have question, do not hesitate to ask in the
-        <a href="https://mattermost.elisa.fi/elisa/channels/design_system" target="_blank">Mattermost channel "Design System"</a>.
+        instant communication channels (Slack, Flowdock, etc).
         The suggestions and pull requests for the documentation improvement are very welcome.
         `
     },
@@ -87,7 +88,7 @@ const data = {
       "info": `
         <p>
         Figure out the requirements for the existing component based on the documentation and examples. If you have doubts, ask in the
-        <a href="https://mattermost.elisa.fi/elisa/channels/design_system" target="_blank">Mattermost channel "Design System"</a>, at regular meetings
+        instant communication channels (Slack, Flowdock, etc), at regular meetings
         or in person.
         </p>
         <p>
@@ -103,10 +104,10 @@ const data = {
       "y": "400",
       "info": `
         It seems that you need to add this pattern into the
-        <a href="http://stylebook.elisa.fi" target="_blank">Pattern Library</a>.
-        Start this process by creating a new ticket for
-        <a href="https://atlas.elisa.fi/jira/projects/DS/summary" target="_blank">DS project in JIRA</a>.
-        Follow the workflow for implementing new patterns which includes JIRA practises, communication standards and code flow.
+        Design System / Pattern Library.
+        To start with process, usually you need to create a ticket in the task tracker system
+        (JIRA, Trello, etc) and/or communicate about what you are going to do directly to the people.
+        Follow the workflow for implementing new patterns which usually includes task flow, communication standards and code style.
         `
     },
     {
@@ -134,7 +135,7 @@ const data = {
         are the current users of it able to use the altered version?
         Ask them directly or raise this question publically. As usual,
         you can communicate in the
-        <a href="https://mattermost.elisa.fi/elisa/channels/design_system" target="_blank">Mattermost channel "Design System"</a>.
+        communication channels (Slack, Flowdock, etc).
         `
     },
     {
@@ -147,7 +148,7 @@ const data = {
       "info": `
         Is there future need for such component at other projects? Discuss this with the other teams, and
         do this publically in the
-        <a href="https://mattermost.elisa.fi/elisa/channels/design_system" target="_blank">Mattermost channel "Design System"</a>.
+        communication channels (Slack, Flowdock, etc).
         You can also ask people directly or raise this question at regular cross-company Design or Development meetings.
         `
     },
