@@ -55,6 +55,13 @@ export const pageQuery = graphql`
       frontmatter {
         title
         subTitle
+        cover {
+          childImageSharp {
+            resize(width: 300) {
+              src
+            }
+          }
+        }
         meta {
           desc
         }

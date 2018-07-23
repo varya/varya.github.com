@@ -2,6 +2,8 @@
 title: Pattern Journey
 subTitle: A process of maintaining and extending design systems
 
+cover: thumb.png
+
 meta:
   desc: >
     Visual illustration and explanation of what happens to a pattern on its way from identifying to actual implementation
