@@ -127,12 +127,12 @@ injectGlobal`
 * {
   font-family: 'Lato', 'Helvetica Neue', Helvetica;
   color: ${colorScheme.dark};
-  font-weight: 400;
 }
 
 html, body {
   font-size: 20px;
   line-height: 2em;
+  font-weight: 400;
 }
 
 h1 {
