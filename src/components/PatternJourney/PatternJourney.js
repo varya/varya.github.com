@@ -5,14 +5,38 @@ import Spider from 'rc-spider';
 import data from './PatternJourney.data.js';
 const { Node, Circle, Text, Link, Rect} = Spider.Shape;
 const { darken } = Spider.Color;
+import FaClose from "react-icons/lib/fa/close";
+
+import { colorScheme } from '../Colors/Colors.js';
 
 const Container = styled.div`
   width: 900px;
   margin: 2em auto;
+  position: relative;
+`;
+
+const Modal = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.75);
 `;
 
 const ModalContent = styled.div`
+  position: relative;
   height: auto;
+  width: 50%;
+  margin: 1.5em auto;
+  background-color: ${colorScheme.light};
+  padding: 2em;
+  border: ${colorScheme.shadow} 1px solid;
+`;
+
+const Close = styled.a`
+  position: absolute;
+  right: 1em;
+  top: 0.5em;
+  cursor: pointer;
 `;
 
 data.nodes.map(item => {
@@ -72,7 +96,6 @@ class PatternJourney extends React.Component {
     return (
       <Container>
 
-        <div className="ea-pad ea-pad--pad-v-2" />
 
         <Spider
           width={width}
@@ -83,16 +106,14 @@ class PatternJourney extends React.Component {
           linkCreator={this.linkCreator}
         />
         { this.state.toggleNotification &&
-          <div className="ea-modal ea-modal--open styleguide-dialog-position">
-           <div className="ea-modal__overlay"></div>
-           <ModalContent className="ea-modal__content">
-             <a className="ea-modal__close" onClick={() => {this.setState({toggleNotification: false})}} href="#">
-               <span className="ea-icon ea-icon--cross ea-modal__close-cross"></span>
-             </a>
-             <div className="ea-modal__box" dangerouslySetInnerHTML={{__html: this.state.text}}>
-             </div>
+        <Modal>
+          <ModalContent>
+            <Close onClick={() => {this.setState({toggleNotification: false})}}>
+              <FaClose/>
+            </Close>
+            <div dangerouslySetInnerHTML={{__html: this.state.text}}></div>
           </ModalContent>
-          </div>
+        </Modal>
         }
       </Container>
     );
