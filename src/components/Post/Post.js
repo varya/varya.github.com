@@ -21,7 +21,7 @@ const Post = props => {
 
   return (
     <div>
-      <TextBlock title={title} html={html} />
+      <TextBlock title={title} html={props.post.htmlAst} />
       <Comments {...props} />
     </div>
   );

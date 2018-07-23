@@ -1,8 +1,50 @@
 import React from "react";
 import PropTypes from "prop-types";
+import rehypeReact from "rehype-react";
+
 import styled from "styled-components";
 
+import { colorScheme } from '../Colors/Colors.js';
+
+/* Register components for using in markdown */
+
 import Typography from "../Typography";
+import Logo from "../Logo";
+import PatternJourney from "../PatternJourney";
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: {
+    "comp-logo": Logo,
+    "comp-pattern-journey": PatternJourney
+  },
+}).Compiler;
+
+const Title = styled.header`
+  margin-bottom: 1.5em;
+  &::after {
+    content: '';
+    display: block;
+    background-color: ${colorScheme.secondary};
+    height: 2px;
+    width: 50%;
+    margin-top: 0.25em;
+  }
+`;
+
+const Header = styled.h1`
+  margin-bottom: 0.5em;
+`;
+
+const SubHeader = styled.p`
+  text-transform: uppercase;
+  color: ${colorScheme.darkShadow}
+  margin-top: -0.75em;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 1.2em;
+ }
+`;
 
 const Container = styled.div`
 
@@ -22,22 +64,26 @@ margin-bottom: 3em;
 const TextBlock = props => {
   const {
     title,
+    subTitle,
     html
   } = props;
 
+
   return (
     <Container>
-      <header>
-        <h1>{title}</h1>
-      </header>
-      <div className="bodytext" dangerouslySetInnerHTML={{ __html: html }} />
+
+      <Title>
+        <Header>{title}</Header>
+        { subTitle && <SubHeader>{subTitle}</SubHeader> }
+      </Title>
+      {renderAst(html)}
     </Container>
   );
 };
 
 TextBlock.propTypes = {
   title: PropTypes.string.isRequired,
-  html: PropTypes.string.isRequired
+  html: PropTypes.object.isRequired
 };
 
 export default TextBlock;

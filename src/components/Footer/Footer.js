@@ -10,7 +10,10 @@ const Container = styled.div`
 const Footer = props => (
   <Container>
     &copy;
-    Varya Stepanova, {(new Date()).getFullYear()}
+    Varya Stepanova, {(new Date()).getFullYear()}.
+    To contact, <a href="mailto:mail@varya.me">
+    email me
+    </a>.
   </Container>
 )
 

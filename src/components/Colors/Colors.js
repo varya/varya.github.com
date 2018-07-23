@@ -7,8 +7,8 @@ export const colorScheme = {
     primary: '#EC4E4B',
     secondary: '#85D8F3',
     highlight: '#F8D179',
-    shadow: '#A9AAAD'
-
+    shadow: '#A9AAAD',
+	darkShadow: '#666666'
 
 }
 

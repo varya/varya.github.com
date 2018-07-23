@@ -42,7 +42,9 @@ class Menu extends React.Component {
   constructor(props) {
     super(props);
 
-    const pages = props.pages.map(page => ({
+    const pages = props.pages
+    .filter(page => page.node.fields.level == 1)
+    .map(page => ({
       to: page.node.fields.slug,
       label: page.node.frontmatter.menuTitle
         ? page.node.frontmatter.menuTitle
@@ -51,7 +53,8 @@ class Menu extends React.Component {
 
     this.items = [
       { to: "/", label: "Home", icon: FaHome },
-      { to: "/blog/", label: "Tech blog", icon: FaTag },
+      { to: "/blog/", label: "Blog", icon: FaTag },
+      /*{ to: "/design-systems/", label: "Design Systems" },*/
       ...pages
     ];
 
