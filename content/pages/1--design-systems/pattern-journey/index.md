@@ -1,6 +1,13 @@
 ---
 title: Pattern Journey
 subTitle: A process of maintaining and extending design systems
+
+meta:
+  desc: >
+    Visual illustration and explanation of what happens to a pattern on its way from identifying to actual implementation
+    and how different the path might be depending on the situation. The Pattern Journey interactive tool helps to make
+    more people in the organization involved into co-creation of design and development value under the Design Systems
+    umbrella.
 ---
 
 Design System artifacts whether it is a library of components, UI kit in Sketch, description of UI tokens or pieces of

@@ -7,6 +7,7 @@ import Article from "../components/Article";
 import TextBlock from "../components/TextBlock";
 import BreadCrumbs from "../components/BreadCrumbs";
 import Prompt from "../components/Prompt";
+import Seo from "../components/Seo";
 
 const PageTemplate = props => {
   const {
@@ -30,6 +31,7 @@ const PageTemplate = props => {
       <LeftSide>
         <Prompt />
       </LeftSide>
+      <Seo data={page} />
     </Container>
   );
 };
@@ -53,6 +55,14 @@ export const pageQuery = graphql`
       frontmatter {
         title
         subTitle
+        meta {
+          desc
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }
