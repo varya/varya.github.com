@@ -10,7 +10,7 @@ const data = {
     },
     {
       "id": 10,
-      "text": "Is the component in\nthe libtrary?",
+      "text": "Is the pattern in\nthe libtrary?",
       "color": "#00baf2",
       "x": "0",
       "y": "50",
@@ -97,7 +97,7 @@ const data = {
     },
     {
       "id": 60,
-      "text": "Implement\n the component",
+      "text": "Implement\n the pattern",
       "color": "#ff7f3f",
       "x": "-100",
       "y": "400",
