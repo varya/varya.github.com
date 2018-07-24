@@ -145,6 +145,7 @@ h1 {
 h2 {
   font-size: 2em;
   font-weight: bold;
+
 }
 
 h3 {
@@ -159,6 +160,18 @@ h4 {
 h5 {
   font-size: 1em;
   font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  .anchor {
+    font-size: 0.75em;
+    margin-left: -1em;
+
+    svg {
+      width: 0.75em;
+      height: 0.75em;
+    }
+  }
 }
 
 a {

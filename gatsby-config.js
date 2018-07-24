@@ -96,7 +96,13 @@ module.exports = {
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`
+          `gatsby-remark-smartypants`,
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              offsetY: `100`,
+            },
+          }
         ]
       }
     },
