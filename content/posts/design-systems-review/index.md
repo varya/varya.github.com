@@ -174,11 +174,7 @@ Source: https://blog.producthive.org/anatomy-of-a-design-system-7a6b0677bf5
 In many other sources, authors do not provide schemas but operate the terms.
 This article introduces these sub-concepts and their naming, summarize them to
 represent as building blocks of one bigger system and explain their
-contribution into the UI developing current problems.In many other source,
-authors do not provide schemas but operate the terms. This article introduces
-these sub-concepts and their naming, summarize them to represent as building
-blocks of one bigger system and explain their contribution into the modern problems
-of UI developing.
+contribution into the UI developing current problems.
 
 ## 2. Blocks of a design system
 
