@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint'
 import Spider from 'rc-spider';
 import data from './PatternJourney.data.js';
 const { Node, Circle, Text, Link, Rect} = Spider.Shape;
@@ -25,7 +26,10 @@ const Modal = styled.div`
 const ModalContent = styled.div`
   position: relative;
   height: auto;
-  width: 50%;
+  width: 80%;
+  ${breakpoint('tablet') `
+    width: 50%;
+  `}
   margin: 1.5em auto;
   background-color: ${colorScheme.light};
   padding: 2em;
