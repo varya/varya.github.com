@@ -14,13 +14,14 @@ meta:
 
 Design System artifacts whether it is a library of components, UI kit in Sketch, description of UI tokens or pieces of
 documentation for the visual language are maintained and developed similarly to regular products. However, usually,
-there is a difference. Bridging the gap between disciplines and between the teams across the organization, a Design
-System requires their mutual involvement and contribution to its extending and growth. To make this the most successful,
+there is a difference. A Design Systems bridges the gap between disciplines and between the teams across the organization, so
+it requires involvement of all those stakeholders and their mutual contribution. To make this the most successful, a
 Design System needs transparent processes and tools communicating these processes to all the people involved.
 
-A research made on the real projects I am a part of revealed that the lack of information is the most painful point for
+According to a research I made in several oragnizations,
+the lack of information is the most painful point for
 the usual Design System users. Even well-documented Design Systems face this problem. Often a potential design-system
-contributor does not have a focus on Design Systems as a concept and sometimes even experience in maintaining the
+contributor does not have a focus on Design Systems as a concept and experience in maintaining the
 libraries. At the same time, these representatives of the projects using Design Systems are the most important people to
 be involved. Developing the actual projects, they have the most knowledge about the business needs of the company
 applications and are much more connected to the users than abstract design-system developers. Making these people
@@ -35,8 +36,8 @@ Brad Frost presents a decision tree:
 ![](./pattern-addition-flowchart.png)<br/>
 Source: "Maintaining Design Systems" http://atomicdesign.bradfrost.com/chapter-5/
 
-Below, I offer an altered version in a form an interactive component. This is a visual illustration of what happens to a
-pattern on its way from identifying to actual implementation and how different the path might be depending on the
+Below, I show an altered version in a form of an interactive component. This is a visual illustration of what happens to a
+pattern on its way from identifying the need to actual implementation and how different the path might be depending on the
 situation.
 This process is called **Pattern Journey**.
 
