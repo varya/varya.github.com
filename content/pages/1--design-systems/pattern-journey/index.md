@@ -14,7 +14,7 @@ meta:
 
 Design System artifacts whether it is a library of components, UI kit in Sketch, description of UI tokens or pieces of
 documentation for the visual language are maintained and developed similarly to regular products. However, usually,
-there is a difference. A Design Systems bridges the gap between disciplines and between the teams across the organization, so
+there is a difference. A design system bridges the gap between disciplines and between the teams across the organization, so
 it requires involvement of all those stakeholders and their mutual contribution. To make this the most successful, a
 Design System needs transparent processes and tools communicating these processes to all the people involved.
 
