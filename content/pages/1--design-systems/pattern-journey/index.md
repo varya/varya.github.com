@@ -18,7 +18,7 @@ there is a difference. A design system bridges the gap between disciplines and b
 it requires involvement of all those stakeholders and their mutual contribution. To make this the most successful, a
 Design System needs transparent processes and tools communicating these processes to all the people involved.
 
-According to a research I made in several oragnizations,
+According to a research I made in several organizations,
 the lack of information is the most painful point for
 the usual Design System users. Even well-documented Design Systems face this problem. Often a potential design-system
 contributor does not have a focus on Design Systems as a concept and experience in maintaining the
