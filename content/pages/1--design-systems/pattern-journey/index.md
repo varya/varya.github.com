@@ -41,7 +41,7 @@ pattern on its way from identifying the need to actual implementation and how di
 situation.
 This process is called **Pattern Journey**.
 
-## Pattern Journey - interactive Scheme
+## Pattern Journey - Interactive Scheme
 
 <comp-pattern-journey></comp-pattern-journey>
 
