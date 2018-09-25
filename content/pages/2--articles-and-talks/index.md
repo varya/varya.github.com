@@ -3,6 +3,13 @@ title: Articles and talks
 menuTitle: Articles and talks
 ---
 
+
+* [Building design systems that leverage your designers, developers and
+  products](http://varya.me/ds-in-wild-tallinn/)<br/>
+  Brief talk about applying design thinking approaches when managing and pushing forward design system in Finnish
+  telecommunication company Elisa.
+* [Component development with CSS in 2018](http://varya.me/component-development-css-2018/)<br/>
+  Slightly updated annual lecture given in University of Turku. [Video is available](https://youtu.be/bD3MNue38pg).
 * [Hands-on with Design Systems](https://dsconference.com/ws-intergalactico/)<br/>
   Full-day workshop about building design system and pattern library (React) in multidisciplinary team.
 * [Component development in CSS in 2017](http://varya.me/component-development-css-2017/)<br/>
