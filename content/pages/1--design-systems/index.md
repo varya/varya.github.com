@@ -20,11 +20,16 @@ the public artifacts of my design-systems activity.
 
 ## Workshops
 
-* [Hands-on with Design Systems](https://dsconference.com/ws-intergalactico/)<br/>
+* [Hands-on with Design Systems](/design-systems/hands-on-workshop/)<br/>
 Full-day workshop about building design system and pattern library (React) in multidisciplinary team. This workshop was
 given twice - as a part of DFConf Helsini, and the second time on its own.
 
-For private running, I shape workshops up to the need of a specific company.
+* [How to build a Design System as a team](/design-systems/team-process-workshop/)<br/>
+Half-day workshop for teams and individuals interested in managing design system teams and running smooth processes for
+such projects.
+
+For private running, I shape workshop editions tailored to the needs of a specific company. The same applies to
+the conferences.
 
 ## Articles and posts
 
