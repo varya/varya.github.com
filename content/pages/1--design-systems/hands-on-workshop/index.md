@@ -47,7 +47,7 @@ This time, on 12th of June 2018, 5 teams worked hard to dive into design systems
 
 ### Hands-on workshop for you
 
-Various edditions of this workshop were also used in a range of private workshops I gave for
+Various editions of this workshop were also used in a range of private workshops I gave for
 [Intergalactico](https://www.intergalactico.io/) clients. If you are interested in such kind of workshop tailored for
-your organization, feel free to [email me](mailto:mail@varya.me). I am also open to run similar workshops at design or
+your organization, feel free to [email me to mail@varya.me](mailto:mail@varya.me). I am also open to run similar workshops at design or
 development conferences.
