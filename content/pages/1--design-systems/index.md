@@ -7,7 +7,7 @@ regular organizations. It means inventing and shaping the processes through user
 the management tools and running new ones, working on company culture and increasing people's involvement, providing
 technical infranstructure and guiding in design and development.
 
-On this way, I make a lot of research and dicsoveries in technical, design and managing aspects. On this page, I present
+In this way, I make a lot of research and discoveries in technical, design and managing aspects. On this page, I present
 the public artifacts of my design-systems activity.
 
 ## Concepts
