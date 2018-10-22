@@ -73,9 +73,11 @@
     "stylelint": "stylelint src/**/*.js",
     "styleguidist:server": "cd styleguide && npm run styleguidist:server",
     "generate-app-icons": "sh ./scripts/generate-app-icons.sh",
-    "deploy:build": "gatsby build --prefix-paths",
+    "deploy:clean": "rm -rf public/*",
+    "deploy:build": "npm run deploy:clean && gatsby build --prefix-paths && npm run deploy:remove-extra",
     "deploy:release": "git-directory-deploy --directory ./public --repo varya --branch master",
-    "deploy": "npm run build && npm run deploy:release",
+    "deploy:remove-extra": "rm public/*.js.map",
+    "deploy": "npm run deploy:build && npm run deploy:release",
     "test:visual": "cd styleguide/ && npx styleguidist-visual test --url http://localhost:6060/",
     "test:visual:approve": "cd styleguide/ && npx styleguidist-visual approve"
   },
