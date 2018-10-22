@@ -20,7 +20,7 @@ the public artifacts of my design-systems activity.
 
 ## Workshops
 
-* [Hands-on with Design Systems](https://dsconference.com/ws-intergalactico/)<br/>
+* [Hands-on with Design Systems](/design-systems/hands-on-workshop/)<br/>
 Full-day workshop about building design system and pattern library (React) in multidisciplinary team. This workshop was
 given twice - as a part of DFConf Helsini, and the second time on its own.
 
