@@ -15,10 +15,8 @@ class IndexPage extends React.Component {
 (<a href="http://maps.yandex.com/-/CVR3nIPf">Petrozavodsk</a>,
 Karelia); currently living in Helsinki
 and working for <a href="https://www.intergalactico.io/">Intergalactico – Nordcloud Design Studio</a>.<br/>
-Before, I had been living Amsterdam for less than a year and previously in
-<a href="http://images.yandex.com/yandsearch?text=Moscow">Moscow</a>, Russia for 5 years
-and working for
-<a href="http://www.yandex.com/">Yandex</a>.<br/>
+Before, I had been living Amsterdam for less than a year and previously in  <a href="http://images.yandex.com/yandsearch?text=Moscow">Moscow</a>, Russia for 5 years
+and working for <a href="http://www.yandex.com/">Yandex</a>.<br/>
 According to official papers, my name is <code>Varvara Stepanova</code>, although most people just call me <code>Varya</code>.</p>
 <p>More than 4 years I was a member of
 the <a href="http://bem.info/">BEM</a> team.
