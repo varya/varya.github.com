@@ -34,7 +34,7 @@ the conferences.
 ## Talks, articles and posts
 
 * [Building design systems that leverage your designers, developers and
-  products](http://varya.me/design-systems-thinking/)<br/>
+  products](https://varya.me/design-systems-thinking/)<br/>
 If we compare design systems of several companies, it is visible that this concept has different meanings to different
 people. So, how to decide which path to follow and what aspects of design systems should be in focus at your
 organisation? In this talk given at WEBdeLDN meetup in London I told a story of managing a design system in a large
