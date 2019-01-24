@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint'
 import Spider from 'rc-spider';
 import data from './PatternJourney.data.js';
+import FaClose from "react-icons/lib/fa/close";
+import { colorScheme } from '../Colors/Colors.js';
+
 const { Node, Circle, Text, Link, Rect} = Spider.Shape;
 const { darken } = Spider.Color;
-import FaClose from "react-icons/lib/fa/close";
-
-import { colorScheme } from '../Colors/Colors.js';
 
 const Container = styled.div`
   width: 900px;

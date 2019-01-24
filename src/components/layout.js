@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import styled from "styled-components";
-import { grid } from 'styled-components-grid'
 import breakpoint from 'styled-components-breakpoint'
 
 import Footer from "../components/Footer/";
