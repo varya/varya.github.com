@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 
+import Layout from "../components/layout.js";
 import { Container, LeftSide, Content, RightSide } from "../components/Layout/Layout";
 import Prompt from "../components/Prompt";
 
@@ -9,6 +10,7 @@ class IndexPage extends React.Component {
   render() {
 
     return (
+      <Layout location={this.props.location} history={this.props.history}>
       <Container>
         <Content>
 <div><p>I am a design systems specialist and a front-end developer originally from the Utmost North
@@ -47,6 +49,7 @@ articles, projects and presentations.</p>
         <Prompt />
       </LeftSide>
     </Container>
+    </Layout>
     );
   }
 }
