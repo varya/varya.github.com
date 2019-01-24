@@ -20,7 +20,7 @@ const PostTemplate = props => {
         siteMetadata
       }
     },
-    pathContext: { next, prev }
+    pageContext: { next, prev }
   } = props;
 
   return (
