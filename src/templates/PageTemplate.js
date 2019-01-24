@@ -75,4 +75,5 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
+  }
 `;
