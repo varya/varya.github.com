@@ -1,7 +1,7 @@
 import FaArrowRight from "react-icons/lib/fa/arrow-right";
 import FaCalendar from "react-icons/lib/fa/calendar";
 import Img from "gatsby-image";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 
