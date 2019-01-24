@@ -107,13 +107,14 @@ exports.createPages = ({ graphql, actions }) => {
         `
           {
             allMarkdownRemark(
-              filter: { id: { regex: "//posts|pages|life//" } }
+              filter: { fileAbsolutePath: { regex: "//posts|pages|life//" } }
               sort: { fields: [fields___prefix], order: DESC }
               limit: 1000
             ) {
               edges {
                 node {
                   id
+                  fileAbsolutePath
                   fields {
                     slug
                     prefix
@@ -141,7 +142,7 @@ exports.createPages = ({ graphql, actions }) => {
         const items = result.data.allMarkdownRemark.edges;
 
         // Create posts
-        const posts = items.filter(item => /posts/.test(item.node.id));
+        const posts = items.filter(item => /posts/.test(item.node.fileAbsolutePath));
         posts.forEach(({ node }, index) => {
           const slug = node.fields.slug;
           const old = node.frontmatter.old;
@@ -160,7 +161,7 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         // Create life  posts
-        const lifePosts = items.filter(item => /life/.test(item.node.id));
+        const lifePosts = items.filter(item => /life/.test(item.node.fileAbsolutePath));
         lifePosts.forEach(({ node }, index) => {
           const slug = node.fields.slug;
           const next = index === 0 ? undefined : lifePosts[index - 1].node;
@@ -178,7 +179,7 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         // and pages.
-        const pages = items.filter(item => /pages/.test(item.node.id));
+        const pages = items.filter(item => /pages/.test(item.node.fileAbsolutePath));
         pages.forEach(({ node }) => {
           const slug = node.fields.slug;
           let breadCrumbs = [];

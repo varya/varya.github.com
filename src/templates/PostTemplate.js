@@ -55,6 +55,7 @@ export const postQuery = graphql`
   query PostBySlug($slug: String!) {
     post: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
+      fileAbsolutePath
       html
       htmlAst
       fields {
@@ -81,7 +82,7 @@ export const postQuery = graphql`
         }
       }
     }
-    authornote: markdownRemark(id: { regex: "/author/" }) {
+    authornote: markdownRemark(fileAbsolutePath: { regex: "/author/" }) {
       id
       html
     }

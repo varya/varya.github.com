@@ -42,7 +42,7 @@ class Layout extends React.Component {
 }
 
 Layout.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.object,
   data: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired
 };
@@ -53,7 +53,7 @@ export default Layout;
 export const postQuery = graphql`
   query LayoutQuery {
     pages: allMarkdownRemark(
-      filter: { id: { regex: "//pages//" }, fields: { prefix: { regex: "/^\\d+$/" } } }
+      filter: { fileAbsolutePath: { regex: "//pages//" }, fields: { prefix: { regex: "/^\\d+$/" } } }
       sort: { fields: [fields___prefix], order: ASC }
     ) {
       edges {
