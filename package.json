@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "antd": "^3.12.1",
+    "core-js": "^2.6.3",
     "disqus-react": "^1.0.5",
     "fontfaceobserver": "^2.1.0",
     "gatsby": "^2.0.91",
