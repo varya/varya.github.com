@@ -2,13 +2,37 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import Layout from "../components/layout.js";
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Blog from "../components/Blog";
 
-const BlogPage = ({ children, location, history }) => (
-  <StaticQuery
-    query={graphql`
+class BlogPage extends React.Component {
+
+  render() {
+    const {
+      data: {
+        posts: { edges: posts = [] }
+      }
+    } = this.props;
+
+    return (
+      <Layout location={this.props.location} history={this.props.history}>
+
+        <Blog posts={posts} />
+
+      </Layout>
+    );
+  }
+}
+
+BlogPage.propTypes = {
+  data: PropTypes.object.isRequired
+};
+
+export default BlogPage;
+
+//eslint-disable-next-line no-undef
+export const guery = graphql`
       query BlogQuery {
         posts: allMarkdownRemark(
           filter: { fileAbsolutePath: { regex: "//posts/.*/" }, fields: { lang: {eq: "en" } } }
@@ -29,24 +53,4 @@ const BlogPage = ({ children, location, history }) => (
           }
         }
       }
-    `}
-    render={(data) => {
-      const {
-        posts: { edges: posts }
-      } = data;
-      return (
-      <Layout location={this.props.location} history={this.props.history}>
-
-        <Blog posts={posts} />
-
-      </Layout>
-      );
-    }}
-  />
-);
-
-BlogPage.propTypes = {
-  data: PropTypes.object.isRequired
-};
-
-export default BlogPage;
+`;
