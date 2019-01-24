@@ -16,9 +16,6 @@ export const Container = styled.div`
 `
 
 class Layout extends React.Component {
-  constructor() {
-    super();
-  }
 
   isHomePage = () => {
     if (this.props.location.pathname === "/") {
