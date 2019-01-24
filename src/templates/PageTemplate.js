@@ -15,6 +15,9 @@ const PageTemplate = props => {
   const {
     data: {
       page
+    },
+    pathContext: {
+      breadCrumbs
     }
   } = props;
 
