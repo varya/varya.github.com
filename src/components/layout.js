@@ -2,6 +2,8 @@ import "typeface-open-sans";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { StaticQuery, graphql } from 'gatsby';
+
 import styled from "styled-components";
 import breakpoint from 'styled-components-breakpoint'
 
@@ -15,45 +17,12 @@ export const Container = styled.div`
   `}
 `
 
-class Layout extends React.Component {
-
-  isHomePage = () => {
-    if (this.props.location.pathname === "/") {
-      return true;
-    }
-
-    return false;
-  };
-
-  render() {
-    const { children, data } = this.props;
-    const {
-      pages: { edges: pages }
-    } = data;
-
-    return (
-      <Container>
-        <Header path={this.props.location.pathname} pages={pages}/>
-        <main>{children()}</main>
-        <Footer />
-      </Container>
-    );
-  }
-}
-
-Layout.propTypes = {
-  children: PropTypes.object,
-  data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
-};
-
-export default Layout;
-
-//eslint-disable-next-line no-undef
-export const postQuery = graphql`
+const Layout = ({ children, location, history }) => (
+  <StaticQuery
+    query={graphql`
   query LayoutQuery {
     pages: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "//pages//" }, fields: { prefix: { regex: "/^\\d+$/" } } }
+      filter: { fileAbsolutePath: { regex: "//pages//" }, fields: { prefix: { regex: "" } } }
       sort: { fields: [fields___prefix], order: ASC }
     ) {
       edges {
@@ -75,4 +44,25 @@ export const postQuery = graphql`
       html
     }
   }
-`;
+    `}
+    render={(data) => {
+      const {
+        pages: { edges: pages }
+      } = data;
+      return (
+      <Container>
+        <Header path={location.pathname} pages={pages}/>
+        <main>{children}</main>
+        <Footer />
+      </Container>
+      )
+    }}
+  />
+)
+
+Layout.propTypes = {
+  children: PropTypes.object,
+  location: PropTypes.object.isRequired
+};
+
+export default Layout;
