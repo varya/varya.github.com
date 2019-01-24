@@ -6,8 +6,8 @@ const Promise = require("bluebird");
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
-exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
     const fileNode = getNode(node.parent);
     let slug = createFilePath({ node, getNode, basePath: `pages` });
@@ -96,8 +96,8 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   }
 };
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
     const postTemplate = path.resolve("./src/templates/PostTemplate.js");
@@ -217,7 +217,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   });
 };
 
-exports.modifyWebpackConfig = ({ config, stage }) => {
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
   switch (stage) {
     case "build-javascript":
       {
@@ -240,21 +240,28 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
         //   }
         // ]);
 
-        config.plugin("BundleAnalyzerPlugin", BundleAnalyzerPlugin, [
-          {
-            analyzerMode: "static",
-            reportFilename: "./report/treemap.html",
-            openAnalyzer: true,
-            logLevel: "error",
-            defaultSizes: "gzip"
-          }
-        ]);
 
-        config.loader("yaml-loader", {
-          test: /\.yaml$/,
-          include: path.resolve("data"),
-          loader: "yaml"
-        });
+        actions.setWebpackConfig({
+          module: {
+            rules: [
+              {
+                test: /\.yaml$/,
+                include: path.resolve("data"),
+                loader: "yaml"
+              },
+            ],
+          },
+          plugins: [
+            new BundleAnalyzerPlugin({
+              analyzerMode: "static",
+              reportFilename: "./report/treemap.html",
+              openAnalyzer: true,
+              logLevel: "error",
+              defaultSizes: "gzip"
+            })
+          ],
+        })
+
       }
       break;
   }
@@ -262,53 +269,47 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
   return config;
 };
 
-exports.modifyBabelrc = ({ babelrc }) => {
-  return {
-    ...babelrc,
-    plugins: babelrc.plugins.concat([
-      [
-        "styled-jsx/babel",
-        {
-          plugins: [
-            "styled-jsx-plugin-postcss",
-            [
-              "styled-jsx-plugin-stylelint",
-              {
-                stylelint: {
-                  rules: {
-                    "block-no-empty": true,
-                    "color-no-invalid-hex": true,
-                    "unit-no-unknown": true,
-                    "property-no-unknown": true,
-                    "declaration-block-no-shorthand-property-overrides": true,
-                    "selector-pseudo-element-no-unknown": true,
-                    "selector-type-no-unknown": true,
-                    "media-feature-name-no-unknown": true,
-                    "no-empty-source": true,
-                    "no-extra-semicolons": true,
-                    "function-url-no-scheme-relative": true,
-                    "declaration-no-important": true,
-                    "selector-pseudo-class-no-unknown": [true, { ignorePseudoClasses: ["global"] }],
-                    "shorthand-property-no-redundant-values": true,
-                    "no-duplicate-selectors": null,
-                    "declaration-block-no-duplicate-properties": null,
-                    "no-descending-specificity": null
-                  }
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPlugin({
+      name: "syntax-dynamic-import",
+      name: "dynamic-import-webpack",
+      name: "import",
+      options: {
+        libraryName: "antd",
+        style: "css"
+      },
+      name: "styled-jsx/babel",
+      options: {
+        plugins: [
+          "styled-jsx-plugin-postcss",
+          [
+            "styled-jsx-plugin-stylelint",
+            {
+              stylelint: {
+                rules: {
+                  "block-no-empty": true,
+                  "color-no-invalid-hex": true,
+                  "unit-no-unknown": true,
+                  "property-no-unknown": true,
+                  "declaration-block-no-shorthand-property-overrides": true,
+                  "selector-pseudo-element-no-unknown": true,
+                  "selector-type-no-unknown": true,
+                  "media-feature-name-no-unknown": true,
+                  "no-empty-source": true,
+                  "no-extra-semicolons": true,
+                  "function-url-no-scheme-relative": true,
+                  "declaration-no-important": true,
+                  "selector-pseudo-class-no-unknown": [true, { ignorePseudoClasses: ["global"] }],
+                  "shorthand-property-no-redundant-values": true,
+                  "no-duplicate-selectors": null,
+                  "declaration-block-no-duplicate-properties": null,
+                  "no-descending-specificity": null
                 }
               }
-            ]
+            }
           ]
-        }
-      ],
-      [
-        "import",
-        {
-          libraryName: "antd",
-          style: "css"
-        }
-      ],
-      `syntax-dynamic-import`,
-      `dynamic-import-webpack`
-    ])
-  };
+        ]
+      }
+  });
 };
+
