@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { StaticQuery, graphql } from 'gatsby';
+
 import { Container, LeftSide, Content, RightSide } from "../components/Layout/Layout";
 
 import Article from "../components/Article";
@@ -9,17 +11,43 @@ import BreadCrumbs from "../components/BreadCrumbs";
 import Prompt from "../components/Prompt";
 import Seo from "../components/Seo";
 
-const PageTemplate = props => {
-  const {
-    data: {
-      page
-    },
-    pathContext: {
-      breadCrumbs
+const PageTemplate = ({ children, location, history }) => (
+  <StaticQuery
+    query={graphql`
+      query PageByPath($slug: String!) {
+    page: markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      html
+      htmlAst
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+        subTitle
+        cover {
+          childImageSharp {
+            resize(width: 300) {
+              src
+            }
+          }
+        }
+        meta {
+          desc
+        }
+      }
     }
-  } = props;
-
-  return (
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+    `}
+    render={(data) => {
+      const {
+        page
+      } = data;
+      return (
     <Container>
       <Content>
         <Article>
@@ -33,6 +61,31 @@ const PageTemplate = props => {
       </LeftSide>
       <Seo data={page} />
     </Container>
+      );
+    }}
+  />
+);
+
+PageTemplate.propTypes = {
+  data: PropTypes.object.isRequired
+};
+
+export default PageTemplate;
+
+
+
+
+const PageTemplate = props => {
+  const {
+    data: {
+      page
+    },
+    pathContext: {
+      breadCrumbs
+    }
+  } = props;
+
+  return (
   );
 };
 
