@@ -1,4 +1,5 @@
 import React from "react";
+// eslint-disable-next-line
 import PropTypes from "prop-types";
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint'
@@ -7,7 +8,7 @@ import data from './PatternJourney.data.js';
 import FaClose from "react-icons/lib/fa/close";
 import { colorScheme } from '../Colors/Colors.js';
 
-const { Node, Circle, Text, Link, Rect} = Spider.Shape;
+const { Node, Text, Link, Rect} = Spider.Shape;
 const { darken } = Spider.Color;
 
 const Container = styled.div`
@@ -45,9 +46,7 @@ const Close = styled.a`
   cursor: pointer;
 `;
 
-data.nodes.map(item => {
-  item.x = parseInt(item.x) + 450;
-})
+data.nodes.map(item => item.x = parseInt(item.x) + 450)
 
 if (typeof window !== 'undefined') {
   window.GLOBAL_LINK_STROKE = '#ccc';

@@ -1,4 +1,4 @@
-import styled, { injectGlobal } from 'styled-components'
+import { injectGlobal } from 'styled-components'
 
 import { colorScheme } from '../Colors/Colors.js';
 
@@ -183,3 +183,5 @@ a {
   text-decoration: underline;
 }
 `;
+
+export default {};

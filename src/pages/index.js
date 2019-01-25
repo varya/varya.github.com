@@ -1,5 +1,6 @@
-import PropTypes from "prop-types";
 import React from "react";
+// eslint-disable-next-line
+import PropTypes from "prop-types";
 
 import Layout from "../components/layout.js";
 import { Container, LeftSide, Content, RightSide } from "../components/Layout/Layout";

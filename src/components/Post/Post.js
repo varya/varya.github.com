@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Meta from "./Meta";
-import NextPrev from "./NextPrev";
 import TextBlock from "../TextBlock";
 import Comments from "../Comments";
 
@@ -10,18 +8,13 @@ const Post = props => {
   const {
     post,
     post: {
-      html,
-      fields: { prefix, slug },
-      frontmatter: { title, category, date }
+      frontmatter: { title }
     },
-    authornote,
-    next: nextPost,
-    prev: prevPost,
   } = props;
 
   return (
     <div>
-      <TextBlock title={title} html={props.post.htmlAst} />
+      <TextBlock title={title} html={post.htmlAst} />
       <Comments {...props} />
     </div>
   );

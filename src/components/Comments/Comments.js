@@ -1,10 +1,8 @@
 import React from "react";
+// eslint-disable-next-line
 import PropTypes from "prop-types";
-import styled from "styled-components";
 
-import { DiscussionEmbed, CommentCount } from "disqus-react";
-
-import { colorScheme } from '../Colors/Colors.js';
+import { DiscussionEmbed } from "disqus-react";
 
 const Comments = props => {
  
