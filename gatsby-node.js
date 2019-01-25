@@ -266,8 +266,6 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
       }
       break;
   }
-
-  return config;
 };
 
 exports.onCreateBabelConfig = ({ actions }) => {
