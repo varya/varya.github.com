@@ -6,6 +6,7 @@ import breakpoint from 'styled-components-breakpoint'
 import Spider from 'rc-spider';
 import data from './PatternJourney.data.js';
 import FaClose from "react-icons/lib/fa/close";
+
 import { colorScheme } from '../Colors/Colors.js';
 
 const { Node, Text, Link, Rect} = Spider.Shape;
