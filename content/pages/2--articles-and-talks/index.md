@@ -5,7 +5,7 @@ menuTitle: Articles and talks
 
 
 * [Building design systems that leverage your designers, developers and
-  products](http://varya.me/design-systems-thinking)<br/>
+  products](http://varya.me/design-systems-thinking/)<br/>
   Longer talk on how we pushed Elisa's design system forward with design thinking, user centered methods and creative
   ways of presenting boring documentation. This talk was given in London on 17th October 2018 at [WEBdeLDN
   meetup](https://www.eventbrite.co.uk/e/webdeldn-20-design-systems-the-hard-choices-tickets-49644052698).

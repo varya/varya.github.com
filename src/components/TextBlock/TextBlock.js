@@ -8,6 +8,7 @@ import { colorScheme } from '../Colors/Colors.js';
 
 /* Register components for using in markdown */
 
+// eslint-disable-next-line
 import Typography from "../Typography";
 import Logo from "../Logo";
 import PatternJourney from "../PatternJourney";

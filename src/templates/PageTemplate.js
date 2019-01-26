@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { graphql } from 'gatsby';
+
 import { Container, LeftSide, Content, RightSide } from "../components/Layout/Layout";
 
 import Article from "../components/Article";
@@ -8,18 +10,20 @@ import TextBlock from "../components/TextBlock";
 import BreadCrumbs from "../components/BreadCrumbs";
 import Prompt from "../components/Prompt";
 import Seo from "../components/Seo";
+import Layout from "../components/layout.js";
 
 const PageTemplate = props => {
   const {
     data: {
       page
     },
-    pathContext: {
+    pageContext: {
       breadCrumbs
     }
   } = props;
 
   return (
+    <Layout location={props.location} history={props.history}>
     <Container>
       <Content>
         <Article>
@@ -33,6 +37,7 @@ const PageTemplate = props => {
       </LeftSide>
       <Seo data={page} />
     </Container>
+    </Layout>
   );
 };
 
@@ -47,6 +52,7 @@ export const pageQuery = graphql`
   query PageByPath($slug: String!) {
     page: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
+      fileAbsolutePath
       html
       htmlAst
       fields {

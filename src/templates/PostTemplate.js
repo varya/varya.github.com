@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
-import rehypeReact from "rehype-react";
+
+import { graphql } from 'gatsby';
 
 import { Container, LeftSide, Content, RightSide } from "../components/Layout/Layout";
 
@@ -8,6 +9,7 @@ import Seo from "../components/Seo";
 import Article from "../components/Article";
 import Post from "../components/Post";
 import Prompt from "../components/Prompt";
+import Layout from "../components/layout.js";
 
 const PostTemplate = props => {
   const {
@@ -18,10 +20,11 @@ const PostTemplate = props => {
         siteMetadata
       }
     },
-    pathContext: { next, prev }
+    pageContext: { next, prev }
   } = props;
 
   return (
+    <Layout location={props.location} history={props.history}>
       <Container>
         <Content>
           <Article>
@@ -41,12 +44,13 @@ const PostTemplate = props => {
         </LeftSide>
       <Seo data={post} />
     </Container>
+    </Layout>
   );
 };
 
 PostTemplate.propTypes = {
   data: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired
+  pageContext: PropTypes.object.isRequired
 };
 
 export default PostTemplate;
@@ -56,6 +60,7 @@ export const postQuery = graphql`
   query PostBySlug($slug: String!) {
     post: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
+      fileAbsolutePath
       html
       htmlAst
       fields {
@@ -82,7 +87,7 @@ export const postQuery = graphql`
         }
       }
     }
-    authornote: markdownRemark(id: { regex: "/author/" }) {
+    authornote: markdownRemark(fileAbsolutePath: { regex: "/author/" }) {
       id
       html
     }

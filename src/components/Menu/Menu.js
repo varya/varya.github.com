@@ -1,6 +1,7 @@
 import React from "react";
+// eslint-disable-next-line
 import PropTypes from "prop-types";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 
 import styled from "styled-components";
 import { colorScheme } from '../Colors/Colors.js';
@@ -43,7 +44,7 @@ class Menu extends React.Component {
     super(props);
 
     const pages = props.pages
-    .filter(page => page.node.fields.level == 1)
+    .filter(page => page.node.fields.level === 1)
     .map(page => ({
       to: page.node.fields.slug,
       label: page.node.frontmatter.menuTitle

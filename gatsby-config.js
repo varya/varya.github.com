@@ -38,7 +38,12 @@ module.exports = {
     }
   },
   plugins: [
-    `gatsby-plugin-react-next`,
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
+      },
+    },
     // `gatsby-plugin-styled-jsx`, // the plugin's code is inserted directly to gatsby-node.js and gatsby-ssr.js files
     // 'gatsby-plugin-styled-jsx-postcss', // as above
     {
@@ -196,7 +201,7 @@ module.exports = {
                 allMarkdownRemark(
                   limit: 1000,
                   sort: { order: DESC, fields: [fields___prefix] },
-                  filter: { id: { regex: "//posts//" } }
+                  filter: { fileAbsolutePath: { regex: "//posts//" } }
                 ) {
                   edges {
                     node {

@@ -1,5 +1,10 @@
+const postcssImport = require(`postcss-import`);
+const postcssCssNext = require(`postcss-cssnext`);
+const postcssBrowserReporter = require(`postcss-browser-reporter`);
+const postcssReporter = require(`postcss-reporter`);
+
 module.exports = ctx => ({
-  plugins: {
+  plugins: [{
     "postcss-easy-media-query": {
       breakpoints: {
         tablet: 600,
@@ -11,8 +16,12 @@ module.exports = ctx => ({
       defaultLineHeight: "0"
     },
     "postcss-nested": {},
-    "postcss-cssnext": {}
-  }
+  },
+    postcssImport(),
+    postcssCssNext(),
+    postcssBrowserReporter(),
+    postcssReporter(),
+  ]
 });
 
 // "postcss-nested": {},

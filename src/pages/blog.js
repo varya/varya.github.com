@@ -1,6 +1,9 @@
 import PropTypes from "prop-types";
 import React from "react";
 
+import Layout from "../components/layout.js";
+import { graphql } from 'gatsby';
+
 import Blog from "../components/Blog";
 
 class BlogPage extends React.Component {
@@ -13,11 +16,11 @@ class BlogPage extends React.Component {
     } = this.props;
 
     return (
-      <div>
+      <Layout location={this.props.location} history={this.props.history}>
 
         <Blog posts={posts} />
 
-      </div>
+      </Layout>
     );
   }
 }
@@ -51,5 +54,3 @@ export const guery = graphql`
     }
   }
 `;
-
-//hero-background

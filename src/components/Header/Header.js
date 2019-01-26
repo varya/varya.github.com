@@ -1,11 +1,8 @@
-import Link from "gatsby-link";
-import PropTypes from "prop-types";
 import React from "react";
+import PropTypes from "prop-types";
 import styled from 'styled-components'
 import { grid } from 'styled-components-grid'
-import breakpoint from 'styled-components-breakpoint'
 
-import config from "../../../content/meta/config";
 import Menu from "../Menu";
 import Logo from "../Logo";
 
