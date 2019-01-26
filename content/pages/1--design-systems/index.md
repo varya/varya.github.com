@@ -33,6 +33,11 @@ the conferences.
 
 ## Talks, articles and posts
 
+* [Maintaining design systems with proper user
+  research](https://medium.com/elisa-design/maintaining-design-systems-with-user-research-3ba5feafc336)<br/>
+  Article in Elisa's Medium Publication about the design thinking methods to help when choosing the next steps for the
+  design system development and growth.
+
 * [Building design systems that leverage your designers, developers and
   products](http://varya.me/design-systems-thinking/)<br/>
 If we compare design systems of several companies, it is visible that this concept has different meanings to different
