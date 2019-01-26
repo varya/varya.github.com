@@ -135,6 +135,7 @@ injectGlobal`
   font-family: 'Lato', 'Helvetica Neue', Helvetica;
   color: ${colorScheme.dark};
 }
+
 html, body {
   font-size: 20px;
   line-height: 2em;
