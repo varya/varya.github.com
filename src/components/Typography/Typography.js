@@ -2,7 +2,7 @@ import { injectGlobal } from 'styled-components'
 
 import { colorScheme } from '../Colors/Colors.js';
 
-
+/*
 import LatoBoldEot from './fonts/lato-bold.eot';
 import LatoBoldTtf from './fonts/lato-bold.ttf';
 import LatoBoldSvg from './fonts/lato-bold.svg';
@@ -26,6 +26,7 @@ import LatoItalicTtf from './fonts/lato-italic.ttf';
 import LatoItalicSvg from './fonts/lato-italic.svg';
 import LatoItalicWoff from './fonts/lato-italic.woff';
 import LatoItalicWoff2 from './fonts/lato-italic.woff2';
+*/
 
 
 injectGlobal`
@@ -105,34 +106,35 @@ injectGlobal`
 
 @font-face {
   font-family: 'Lato';
-  src: url("${LatoBoldEot}");
-  src: local("Lato Bold"), local("Lato-Bold"), url("${LatoBoldEot}") format("embedded-opentype"), url("${LatoBoldWoff2}") format("woff2"), url("${LatoBoldWoff}") format("woff"), url("${LatoBoldTtf}") format("truetype"), url("${LatoBoldSvg}#lato") format("svg");
+  src: url("/static/fonts/lato-bold.eot");
+  src: local("Lato Bold"), local("Lato-Bold"), url("/static/fonts/lato-bold.eot") format("embedded-opentype"), url("/static/fonts/lato-bold.woff2") format("woff2"), url("/static/fonts/lato-bold.woff") format("woff"), url("/static/fonts/lato-bold.ttf") format("truetype"), url("/static/fonts/lato-bold.svg#lato") format("svg");
   font-weight: 700;
   font-style: normal; }
 @font-face {
   font-family: 'Lato';
-  src: url("${LatoBoldItalicEot}");
-  src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url("${LatoBoldItalicEot}") format("embedded-opentype"), url("${LatoBoldItalicWoff2}") format("woff2"), url("${LatoBoldItalicWoff}") format("woff"), url("${LatoBoldItalicTtf}") format("truetype"), url("${LatoBoldItalicSvg}#lato") format("svg");
+  src: url("/static/fonts/lato-bolditalic.eot");
+  src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url("/static/fonts/lato-bolditalic.eot") format("embedded-opentype"), url("/static/fonts/lato-bolditalic.woff2") format("woff2"), url("/static/fonts/lato-bolditalic.woff") format("woff"), url("/static/fonts/lato-bolditalic.ttf") format("truetype"), url("/static/fonts/lato-bolditalic.svg#lato") format("svg");
   font-weight: 700;
   font-style: italic; }
 @font-face {
   font-family: 'Lato';
-  src: url("${LatoRegularEot}");
-  src: local("Lato Regular"), local("Lato-Regular"), url("${LatoRegularEot}") format("embedded-opentype"), url("${LatoRegularWoff2}") format("woff2"), url("${LatoRegularWoff}") format("woff"), url("${LatoRegularTtf}") format("truetype"), url("${LatoRegularSvg}#lato") format("svg");
+  src: url("/static/fonts/lato-regular.eot");
+  src: local("Lato Regular"), local("Lato-Regular"), url("/static/fonts/lato-regular.eot") format("embedded-opentype"), url("/static/fonts/lato-regular.woff2") format("woff2"), url("/static/fonts/lato-regular.woff") format("woff"), url("/static/fonts/lato-regular.ttf") format("truetype"), url("/static/fonts/lato-regular.svg#lato") format("svg");
   font-weight: 400;
   font-style: normal; }
 @font-face {
   font-family: 'Lato';
-  src: url("${LatoItalicEot}");
-  src: local("Lato Italic"), local("Lato-Italic"), url("${LatoItalicEot}") format("embedded-opentype"), url("${LatoItalicWoff2}") format("woff2"), url("${LatoItalicWoff}") format("woff"), url("${LatoItalicTtf}") format("truetype"), url("${LatoItalicSvg}#lato") format("svg");
+  src: url("/static/fonts/lato-italic.eot");
+  src: local("Lato Italic"), local("Lato-Italic"), url("/static/fonts/lato-italic.eot") format("embedded-opentype"), url("/static/fonts/lato-italic.woff2") format("woff2"), url("/static/fonts/lato-italic.woff") format("woff"), url("/static/fonts/lato-italic.ttf") format("truetype"), url("/static/fonts/lato-italic.svg#lato") format("svg");
   font-weight: 400;
   font-style: italic; }
+`;
 
+injectGlobal`
 * {
   font-family: 'Lato', 'Helvetica Neue', Helvetica;
   color: ${colorScheme.dark};
 }
-
 html, body {
   font-size: 20px;
   line-height: 2em;
