@@ -10,6 +10,7 @@ import TextBlock from "../components/TextBlock";
 import BreadCrumbs from "../components/BreadCrumbs";
 import Prompt from "../components/Prompt";
 import Seo from "../components/Seo";
+import Layout from "../components/layout.js";
 
 const PageTemplate = props => {
   const {
@@ -22,6 +23,7 @@ const PageTemplate = props => {
   } = props;
 
   return (
+    <Layout location={props.location} history={props.history}>
     <Container>
       <Content>
         <Article>
@@ -35,6 +37,7 @@ const PageTemplate = props => {
       </LeftSide>
       <Seo data={page} />
     </Container>
+    </Layout>
   );
 };
 

@@ -9,6 +9,7 @@ import Seo from "../components/Seo";
 import Article from "../components/Article";
 import Post from "../components/Post";
 import Prompt from "../components/Prompt";
+import Layout from "../components/layout.js";
 
 const PostTemplate = props => {
   const {
@@ -23,6 +24,7 @@ const PostTemplate = props => {
   } = props;
 
   return (
+    <Layout location={props.location} history={props.history}>
       <Container>
         <Content>
           <Article>
@@ -42,6 +44,7 @@ const PostTemplate = props => {
         </LeftSide>
       <Seo data={post} />
     </Container>
+    </Layout>
   );
 };
 
