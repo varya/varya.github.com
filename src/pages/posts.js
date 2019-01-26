@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import React from "react";
 
+import { graphql } from 'gatsby';
+
 import Blog from "../components/Blog";
 
 class PostsPage extends React.Component {
