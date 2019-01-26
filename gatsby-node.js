@@ -311,4 +311,3 @@ exports.onCreateBabelConfig = ({ actions }) => {
       }
   });
 };
-
