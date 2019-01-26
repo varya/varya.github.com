@@ -5,39 +5,39 @@ menuTitle: Articles and talks
 
 
 * [Building design systems that leverage your designers, developers and
-  products](/design-systems-thinking/)<br/>
+  products](http://varya.me/design-systems-thinking/)<br/>
   Longer talk on how we pushed Elisa's design system forward with design thinking, user centered methods and creative
   ways of presenting boring documentation. This talk was given in London on 17th October 2018 at [WEBdeLDN
   meetup](https://www.eventbrite.co.uk/e/webdeldn-20-design-systems-the-hard-choices-tickets-49644052698).
 * [Building design systems that leverage your designers, developers and
-  products](/ds-in-wild-tallinn/)<br/>
+  products](http://varya.me/ds-in-wild-tallinn/)<br/>
   Brief talk about applying design thinking approaches when managing and pushing forward design system in Finnish
   telecommunication company Elisa.
-* [Component development with CSS in 2018](/component-development-css-2018/)<br/>
+* [Component development with CSS in 2018](http://varya.me/component-development-css-2018/)<br/>
   Slightly updated annual lecture given in University of Turku. [Video is available](https://youtu.be/bD3MNue38pg).
 * [Hands-on with Design Systems](https://dsconference.com/ws-intergalactico/)<br/>
   Full-day workshop about building design system and pattern library (React) in multidisciplinary team.
-* [Component development in CSS in 2017](/component-development-css-2017/)<br/>
+* [Component development in CSS in 2017](http://varya.me/component-development-css-2017/)<br/>
   Lecture for Computer Science students of Aalto University on overall picture of developing interface
   components using modern CSS component approaches.
 * [Pattern libraries through trial and
   error](https://www.dotconferences.com/2016/12/varya-stepanova-pattern-libraries-through-trial-and-error)<br/>
   The talk given at DotCSS 2016 (Paris, France) summarize my 8-year-long experience in building pattern libraries.
   [Video](https://www.dotconferences.com/2016/12/varya-stepanova-pattern-libraries-through-trial-and-error) and
-  [slides](/dotcss-2016/) are available.
-* [Component development in CSS in 2016](/component-development-css-2016/)<br/>
+  [slides](http://varya.me/dotcss-2016/) are available.
+* [Component development in CSS in 2016](http://varya.me/component-development-css-2016/)<br/>
   Lecture for Computer Science students of Aalto University on overall picture of developing interface
   components using CSS.
 * [Doing nothing for visual regression testing](https://youtu.be/UPciXG1MoYw)<br/>
   Shaped talk about applying visual regression testing approach to the projects using
   styleguide-driven development and a show-case how it is very helpful for preventing unwanted interface changes and
   keeping websites making sense for users. Given in Bologna, Italy. [Video](https://youtu.be/UPciXG1MoYw) and
-  [slides](/fromthefront-2016/)
+  [slides](http://varya.me/fromthefront-2016/)
 * [To BEM or not to BEM](http://www.didoo.net/to-bem-or-not-to-bem/05__interview-with--varya__stepanova.html)<br/>
   Interview to Cristiano Rastelli about using BEM in developing frontend.
-* [ReactJS Hackathon @ SC5](/reactjs-hackathon/)<br/>
+* [ReactJS Hackathon @ SC5](http://varya.me/reactjs-hackathon/)<br/>
   Materials for making a hackathon on React for a beginner level.
-* [Doing nothing for visual regression testing](/doing-nothing-for-visual-regression-2015/)<br/>
+* [Doing nothing for visual regression testing](http://varya.me/doing-nothing-for-visual-regression-2015/)<br/>
   Visual regression testing approach wrapped into a nice and neat plugin for SC5 StyleGuide presented at HelsinkiJs
   meetup in October 2015.
 * [Driving Style-Guide-Driven Development](https://youtu.be/bKI0amimw-k)<br/>
@@ -46,7 +46,7 @@ menuTitle: Articles and talks
   New York and ScotlandJS 2015, Edinburgh.
   * [Video from EmpireJS, New York](https://youtu.be/bKI0amimw-k)
   * [Video from ScotlandJs, Edinburgh](https://youtu.be/gWzYMJjtx-Y)
-  * [Slides](/empirejs-2015/)
+  * [Slides](http://varya.me/empirejs-2015/)
 * [Automating Style-Guide-Driven
   Development](http://www.smashingmagazine.com/2015/03/05/automating-style-guide-driven-development/)<br/>
   This article at *SmashingMagazine* was published on 5th March 2105. It explained the motivation and benefits
@@ -56,7 +56,7 @@ With this presentation I introduced SC5 StyleGuide to frontend developers at [Ve
 and [Elisa](http://elisa.fi/) in December 2014 and January 2015 and [Frontend.fi](http://frontend.fi/) on January 2015.
 * [BEM FAQ](http://getbem.com/faq/)<br/>
 A list of frequently asked questions about BEM and detailed answers to them.
-* [JSCS in use at SC5 Online](/jscs-talk/)<br/>
+* [JSCS in use at SC5 Online](http://varya.me/jscs-talk/)<br/>
 This talk given 18th on November at [HelsinkiJS
 meetup](http://www.eventbrite.com/e/helsinkijs-november-2014-tickets-14262484475?utm_campaign=event_reminder&utm_medium=email&ref=eemaileventremind&utm_source=eb_email&utm_term=eventname)
 presents JSCS, a tool for checking JavaScript code style, and describes experience of useing it
