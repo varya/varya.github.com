@@ -41,10 +41,10 @@ export const guery = graphql`
       edges {
         node {
           excerpt
-            fields {
-              slug
-              prefix
-            }
+          fields {
+            slug
+            prefix
+          }
           frontmatter {
             title
             date(formatString: "DD MMMM YYYY")
