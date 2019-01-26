@@ -33,24 +33,24 @@ export default BlogPage;
 
 //eslint-disable-next-line no-undef
 export const guery = graphql`
-      query BlogQuery {
-        posts: allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex: "//posts/.*/" }, fields: { lang: {eq: "en" } } }
-          sort: { fields: [frontmatter___date], order: DESC }
-        ) {
-          edges {
-            node {
-              excerpt
-              fields {
-                slug
-                prefix
-              }
-              frontmatter {
-                title
-                date(formatString: "DD MMMM YYYY")
-              }
+  query BlogQuery {
+    posts: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "//posts/.*/" }, fields: { lang: {eq: "en" } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          excerpt
+            fields {
+              slug
+              prefix
             }
+          frontmatter {
+            title
+            date(formatString: "DD MMMM YYYY")
           }
         }
       }
+    }
+  }
 `;
