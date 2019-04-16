@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import Layout from "../components/layout.js";
 import { Container, LeftSide, Content, RightSide } from "../components/Layout/Layout";
 import Prompt from "../components/Prompt";
+import Avatar from "../components/Avatar";
 
 class IndexPage extends React.Component {
 
@@ -14,35 +15,57 @@ class IndexPage extends React.Component {
       <Layout location={this.props.location} history={this.props.history}>
       <Container>
         <Content>
-<div><p>I am a design systems specialist and a front-end developer originally from the Utmost North
-(<a href="http://maps.yandex.com/-/CVR3nIPf">Petrozavodsk</a>,
-Karelia); currently living in Helsinki
-and working for <a href="https://www.intergalactico.io/">Intergalactico – Nordcloud Design Studio</a>.<br/>
-Before, I had been living Amsterdam for less than a year and previously in  <a href="http://images.yandex.com/yandsearch?text=Moscow">Moscow</a>, Russia for 5 years
-and working for <a href="http://www.yandex.com/">Yandex</a>.<br/>
-According to official papers, my name is <code>Varvara Stepanova</code>, although most people just call me <code>Varya</code>.</p>
-<p>More than 4 years I was a member of
-the <a href="http://bem.info/">BEM</a> team.
-In there, I worked on  open-sourcing the full technological stack that powers the Yandex UI framework.
-As a BEM adept, I still use the solutions in my current work and personal
-projects.</p>
-<p>Besides the actual development of components, libraries and tools, I frequently speak at tech
-conferences, usually explaining the BEM methodology. I write articles in English and Russian, as well as
-tutorials and training projects to help developers perform their first dive into
-BEM.
-There are some links on the <a href="/articles-and-talks/">Articles and Talks</a> page for your browsing pleasure.</p>
-<p>In my spare time (haha), I study in Aalto University at <a href="https://www.idbm.aalto.fi/">IDBM</a> programme which includes the
-topics of Business Design, Service Design, Industry and Market Researches and assumes a lot of project work.</p>
-<p>I am keen on traveling and dream of having friends all over the world.
-If you're interested, here's the first personal thing to learn about me: I am passionate about cats, all of them (lions included).</p>
-<p>On this site I publish my day-to-day writings as well as links to
-articles, projects and presentations.</p>
-<p>Here are some obligatory (but useful) links as well:</p>
+<div>
+
+<h2>Varya Stepanova — a design systems expert</h2>
+
+<Avatar />
+
+<p>
+  I am Varya Stepanova, a design systems expert with over 10 years of experience in frontend development,
+  component-focused UI design and development, creating helpful tooling for the subject and spreading the
+  practices across large organizations. I have two Master degrees — in physics and service design (Aalto University, 
+  <a href="https://www.idbm.aalto.fi/">IDBM</a> programme), years of engineering experience and several leading
+  roles behind.<br/>
+  Nowadays my focus is on bringing design systems to the next level of success which includes cooperative work
+  in the company development community and bridging the gap for designers, developers, and business specialists.
+</p>
+
+<p>
+  At the moment, I am working as an independent consultant open for new projects.
+  My roles include team leading of the design systems projects,
+  technical leadership in frontend and building development infrastructure, evangelism and advocacy. My experience offers
+  to launch and maintain design systems projects, run <a href="/design-systems/#workshops">training sessions and workshops</a>,
+  cherish in-house design and development culture in the organizations and so on.
+  I am based in Helsinki (Finland), flexible for both on-site and remote projects and don't mind traveling.
+</p>
+
+<p>
+  Besides, I frequently speak at tech and design conferences and meetups. The topics I cover are related to my
+  own experience. You can find here <a href="/articles-and-talks/">the list of my articles and talks</a>.
+</p>
+
+<p>If you got interested to explore my social networks and/or to contact me, here there are some links:</p>
 <ul>
-<li><a href="https://twitter.com/varya_en">Twitter</a></li>
-<li><a href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b">LinkedIn</a></li>
-<li><a href="https://github.com/varya">Github</a></li>
+<li><a href="https://twitter.com/varya_en">@varya_en on Twitter</a></li>
+<li><a href="http://www.linkedin.com/pub/varvara-stepanova/">Varya Stepanova on LinkedIn</a></li>
+<li><a href="https://github.com/varya">@varya on Github</a></li>
+<li><a href="mailto:mail@varya.me">Email: mail@varya.me</a></li>
 </ul>
+
+<h2>Random facts</h2>
+
+<p>I originally from the Utmost North
+(<a href="http://maps.yandex.com/-/CVR3nIPf">Petrozavodsk</a>,
+Karelia).</p>
+
+<p>More than 4 years, I was a member of
+the <a href="http://bem.info/">BEM</a> team.</p>
+
+<p>So far, I have lived in four cities and three countries but still open for new horizons.</p>
+
+<p>Keen on cats, good food and city tourism.</p>
+
 </div>
       </Content>
       <RightSide></RightSide>
