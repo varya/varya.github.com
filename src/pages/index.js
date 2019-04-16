@@ -48,7 +48,7 @@ class IndexPage extends React.Component {
 <p>If you got interested to explore my social networks and/or to contact me, here there are some links:</p>
 <ul>
 <li><a href="https://twitter.com/varya_en">@varya_en on Twitter</a></li>
-<li><a href="http://www.linkedin.com/pub/varvara-stepanova/">Varya Stepanova on LinkedIn</a></li>
+<li><a href="https://www.linkedin.com/in/varyastepanova/">Varya Stepanova on LinkedIn</a></li>
 <li><a href="https://github.com/varya">@varya on Github</a></li>
 <li><a href="mailto:mail@varya.me">Email: mail@varya.me</a></li>
 </ul>
