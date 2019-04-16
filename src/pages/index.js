@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import Layout from "../components/layout.js";
 import { Container, LeftSide, Content, RightSide } from "../components/Layout/Layout";
 import Prompt from "../components/Prompt";
+import Avatar from "../components/Avatar";
 
 class IndexPage extends React.Component {
 
@@ -14,7 +15,11 @@ class IndexPage extends React.Component {
       <Layout location={this.props.location} history={this.props.history}>
       <Container>
         <Content>
-<div><p>I am a design systems specialist and a front-end developer originally from the Utmost North
+<div>
+
+<Avatar />
+
+<p>I am a design systems specialist and a front-end developer originally from the Utmost North
 (<a href="http://maps.yandex.com/-/CVR3nIPf">Petrozavodsk</a>,
 Karelia); currently living in Helsinki
 and working for <a href="https://www.intergalactico.io/">Intergalactico – Nordcloud Design Studio</a>.<br/>
