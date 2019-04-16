@@ -55,7 +55,7 @@ class IndexPage extends React.Component {
 
 <h2>Random facts</h2>
 
-<p>I originally from the Utmost North
+<p>I am originally from the Utmost North
 (<a href="http://maps.yandex.com/-/CVR3nIPf">Petrozavodsk</a>,
 Karelia).</p>
 
