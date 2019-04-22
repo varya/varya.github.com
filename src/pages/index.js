@@ -34,7 +34,9 @@ class IndexPage extends React.Component {
 <p>
   At the moment, I am working as an independent consultant open for new projects.
   My roles include team leading of the design systems projects,
-  technical leadership in frontend and building development infrastructure, evangelism and advocacy. My experience offers
+  technical leadership in frontend and building development infrastructure, evangelism and advocacy.
+  You can find our more <a href="/design-systems/#projects">in a short description of the most significant design-system related projects</a>.
+  My experience offers
   to launch and maintain design systems projects, run <a href="/design-systems/#workshops">training sessions and workshops</a>,
   cherish in-house design and development culture in the organizations and so on.
   I am based in Helsinki (Finland), flexible for both on-site and remote projects and don't mind traveling.

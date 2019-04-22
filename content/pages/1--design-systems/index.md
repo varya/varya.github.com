@@ -52,3 +52,43 @@ approaches and form their own ecosystem. However, there is no solid understandin
 the design systems. To solve the term inconsistency and provide structured professional language, this article
 focuses on the vocabulary used in the design systems domain by observing a range of materials on the topic, from
 both academic and popular sources.
+
+## Projects
+
+### Design system at Elisa
+
+Elisa design system is represented by several UI libraries implemented in plain HTML/CSS and ReactJs, UI kit in
+Sketch, shared design and development tools, and tailored collaboration processes. My role there was to lead a
+multidisciplinary team which craft, standardize and champion the company-wide UI solutions and approaches. In
+particular, this meant aligning the strategy of the design system project together with Elisa Design Lead, organizing
+inner user researches, develop detailed project plans and managing their implementing. Altogether, the achievements of
+the project were:
+
+* Clear strategy and developed year, quoter and monthly plans for the design system projects.
+* Constant work with in-house design and development community.
+* Implementing in-house open source model for maintaining the design system projects.
+* Organizing effective but simple project management practices and routines.
+* Developing design system inner website.
+* Introducing and adopting management, communication, and development tools.
+* Leading developing of CSS and React libraries.
+* Creating infrastructure for smooth contribution into the design system projects.
+
+### BEM project by Yandex
+
+At Yandex, I worked in BEM team on [methodology, technologies, libraries and a toolbox of BEM](https://en.bem.info/).
+
+* Shaping the concept of BEM as methodology.
+* Developing open source libraries of components.
+* Providing documemntation for the methodology, technologies, tools and libraries.
+* Public speaking and writing articles about the project items.
+
+### Lego project by Yandex
+
+At Yandex, I led the team of 5 developers to craft, maintain and evangelise company-standartised UI solutions. This
+project included:
+
+* UI framework of 150+ standalone visual components for Yandex-style web sites.<br/>
+  The framework is used by 150+ developers at 100+ Yandex services. As a product, it was packed together with
+  supplementary tools also developed by the team.
+* On-site trainings.
+* Evangelising at in-house events.
