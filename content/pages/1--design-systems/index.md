@@ -59,7 +59,7 @@ both academic and popular sources.
 
 Elisa design system is represented by several UI libraries implemented in plain HTML/CSS and ReactJs, UI kit in
 Sketch, shared design and development tools, and tailored collaboration processes. My role there was to lead a
-multidisciplinary team which craft, standardize and champion the company-wide UI solutions and approaches. In
+multidisciplinary team which crafts, standardises and champions the company-wide UI solutions and approaches. In
 particular, this meant aligning the strategy of the design system project together with Elisa Design Lead, organizing
 inner user researches, develop detailed project plans and managing their implementing. Altogether, the achievements of
 the project were:
