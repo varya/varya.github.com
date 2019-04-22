@@ -22,7 +22,7 @@ class IndexPage extends React.Component {
 <Avatar />
 
 <p>
-  I am Varya Stepanova, a design systems expert with over 10 years of experience in frontend development,
+  I am Varya Stepanova, a design systems expert with nearly 15 years of experience in frontend development,
   component-focused UI design and development, creating helpful tooling for the subject and spreading the
   practices across large organizations. I have two Master degrees — in physics and service design (Aalto
   University, <a href="https://www.idbm.aalto.fi/">IDBM</a> programme), years of engineering experience and several leading
