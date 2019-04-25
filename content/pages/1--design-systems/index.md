@@ -33,21 +33,37 @@ the conferences.
 
 ## Talks, articles and posts
 
+* [A practical guide to building your design system infrastructure](https://varya.me/react-finland-2019/)<br/>
+
+  Design systems bridge the gap between designers and developers, communicate shared practices to all the company levels
+and significantly decrease production costs. We all have heard this but how to achieve that in practice?
+
+  React ecosystem and community already provide a lot of efficient open source tools which can be used for building your
+design system infrastructure. With them, you can have the most automated development process, high-level interactive
+documentation for the libraries in your system and support contribution practices within your organisation.
+
+  This practical guide presented at [React Finland 2019](https://react-finland.fi/) shows how to apply existing
+development tools to your system and what is the value you can get. [Video recording](https://youtu.be/gDkUpx0dVc0) can be
+  found from the first day's stream.
+
 * [Maintaining design systems with proper user
-  research](https://medium.com/elisa-design/maintaining-design-systems-with-user-research-3ba5feafc336)<br/>
+  research](https://medium.com/elisa-design/maintaining-design-systems-with-user-research-3ba5feafc336)
+
   Article in Elisa's Medium Publication about the design thinking methods to help when choosing the next steps for the
   design system development and growth.
 
 * [Building design systems that leverage your designers, developers and
-  products](http://varya.me/design-systems-thinking/)<br/>
-If we compare design systems of several companies, it is visible that this concept has different meanings to different
+  products](http://varya.me/design-systems-thinking/)
+
+  If we compare design systems of several companies, it is visible that this concept has different meanings to different
 people. So, how to decide which path to follow and what aspects of design systems should be in focus at your
 organisation? In this talk given at WEBdeLDN meetup in London I told a story of managing a design system in a large
 company, making decision on its further focus and approaches behind the implementing which include design thinking
 methods, community management, and technical tips.
 
-* [Design Systems — review of vocabulary and terms](/blog/design-systems-review/)<br/>
-Design systems standardise and simplify the process of interface design and development, they bring new
+* [Design Systems — review of vocabulary and terms](/blog/design-systems-review/)
+
+  Design systems standardise and simplify the process of interface design and development, they bring new
 approaches and form their own ecosystem. However, there is no solid understanding of the concepts and terms forming
 the design systems. To solve the term inconsistency and provide structured professional language, this article
 focuses on the vocabulary used in the design systems domain by observing a range of materials on the topic, from
