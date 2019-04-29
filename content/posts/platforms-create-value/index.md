@@ -9,10 +9,9 @@ layout: post
 
 meta:
   desc: >
-    Effectual thinking widely used by entrepreneurs very much reminds design thinking concept. With a closer look,
-    also other design principles and strategies are found out as a typical entrepreneurial behavior. By the end of the
-    day, as designers, entrepreneurs solve the problems and determining the future.
-
+   Platforms form special kinds of markets and play the role of facilitators. They are innovative themselves and also
+   provide opportunities for further innovations for their actors. Platform provide  right environment,
+   opportunities and tools for their end users, empowering them to create new value.
 
 ---
 
