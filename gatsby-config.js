@@ -230,7 +230,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
-        include: /svg-icons/
+        include: /src/
       }
     },
     'gatsby-plugin-styled-components'
