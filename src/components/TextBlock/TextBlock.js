@@ -12,12 +12,14 @@ import { colorScheme } from '../Colors/Colors.js';
 import Typography from "../Typography";
 import Logo from "../Logo";
 import PatternJourney from "../PatternJourney";
+import ProjectRoles from "../ProjectRoles";
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
     "comp-logo": Logo,
-    "comp-pattern-journey": PatternJourney
+    "comp-pattern-journey": PatternJourney,
+    "comp-project-roles": ProjectRoles
   },
 }).Compiler;
 
