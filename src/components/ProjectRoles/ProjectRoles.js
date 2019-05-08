@@ -13,15 +13,12 @@ class ProjectRoles extends React.Component {
 
   render() {
 
-    const Icon = (() => {
-      switch(this.props.role) {
-        case 'developer': return Developer;
-        case 'designer': return Designer;
-        case 'owner': return Owner;
-        case 'business': return Business;
-        default: return Developer;
-      }
-    })();
+    const Icon = {
+        'developer': Developer,
+        'designer': Designer,
+        'owner': Owner,
+        'business': Business,
+      }[this.props.role] || Developer;
 
     return <Icon/>;
   }
