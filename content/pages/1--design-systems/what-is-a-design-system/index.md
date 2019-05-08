@@ -36,16 +36,23 @@ this context.
 
 As a developer using a design system, I would like to have access to release notes, maybe some general documentation
 about the system, not only about components separately.
+<div style="clear: both;"></div>
 
 <comp-project-roles role="designer" side="right"></comp-project-roles>
 
 As a designer, I also want to be involved, and have not so much tenhnical but design-focused information.
+<div style="clear: both;"></div>
+
 
 <comp-project-roles role="owner" side="left"></comp-project-roles>
 As a project manager or owner, I need shrinked prepresentation but more information about the upcoming content in the
 design system, their roadmap and such plans.
+<div style="clear: both;"></div>
+
 
 <comp-project-roles role="business" side="right"></comp-project-roles>
 And let's keep in mind that there are also business levels. People there would like to have a larger scale picture,
 maybe even with numbers of how much we earn or
 save.
+<div style="clear: both;"></div>
+
