@@ -16,6 +16,9 @@ const Container = styled.div`
   background-color: ${props => props.color};
   padding: 15px;
   border-radius: 50%;
+  margin-right: ${props => props.side === 'left' ? '15px' : '0'};
+  margin-left: ${props => props.side === 'right' ? '15px' : '0'};
+  float: ${props => props.side};
 `;
 
 class ProjectRoles extends React.Component {
@@ -35,7 +38,7 @@ class ProjectRoles extends React.Component {
       'owner': colorScheme.shadow,
     }[this.props.role] || colorScheme.primary;
 
-    return <Container color={color}><Icon/></Container>;
+    return <Container color={color} side={this.props.side || 'left'}><Icon/></Container>;
   }
 }
 
