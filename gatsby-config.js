@@ -107,7 +107,8 @@ module.exports = {
             options: {
               offsetY: `100`,
             },
-          }
+          },
+          `gatsby-remark-bracketed-spans`,
         ]
       }
     },
