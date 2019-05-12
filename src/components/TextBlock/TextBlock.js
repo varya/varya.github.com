@@ -13,13 +13,15 @@ import Typography from "../Typography";
 import Logo from "../Logo";
 import PatternJourney from "../PatternJourney";
 import ProjectRoles from "../ProjectRoles";
+import BwIcon from "../BwIcon";
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
     "comp-logo": Logo,
     "comp-pattern-journey": PatternJourney,
-    "comp-project-roles": ProjectRoles
+    "comp-project-roles": ProjectRoles,
+    "comp-bw-icon": BwIcon
   },
 }).Compiler;
 
