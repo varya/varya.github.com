@@ -24,7 +24,7 @@ class BwIcon extends React.Component {
   componentDidMount() {
     const { path } = this.props;
     import('../BwIcon/' + path)
-      .then(Icon => this.setState({ icon: Icon }));
+      .then(Icon => this.setState({ icon: Icon.default }));
   }
 
   render() {
