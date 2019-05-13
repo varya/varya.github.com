@@ -95,5 +95,5 @@ The last step is to instruct git to use your script when `diff` command is appli
 That's it. Now, running a `git diff` over your images you will get a human-friendly output. Enjoy!
 
 ### References
-* [1] http://www.akikoskinen.info/image-diffs-with-git/
-* [2] http://paulmestemaker.com/imagemagick-display-mac-os-x/
+* [1]{.zero} http://www.akikoskinen.info/image-diffs-with-git/
+* [2]{.zero} http://paulmestemaker.com/imagemagick-display-mac-os-x/

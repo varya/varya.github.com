@@ -21,7 +21,7 @@ according to it.
 The tools which helped me is called
 [Borschik](http://bem.info/tools/optimizers/borschik/). The name is funny.
 Besides it reffers to a famous Russian/Ukranian soup, it also alludes to a word
-"сборщик" [sborschik], and so might be translated as
+"сборщик" [sborschik]{.zero}, and so might be translated as
 <strike>ass</strike>embler. "Removing the ass part" as one of my friends says.
 :-)
 
