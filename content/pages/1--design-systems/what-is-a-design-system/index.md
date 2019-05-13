@@ -1,12 +1,16 @@
 ---
 title: What is a design system?
-subTitle: A process of maintaining and extending design systems
+subTitle: And why it is more than just a library or a style guide
 
 cover: thumb.png
 
 meta:
   desc: >
-    Description
+    The concept of design systems is much wider than how it is often understood. Design systems are shared practices -
+    so they mean components and patterns; design systems are shared tools - so they mean automations and optimizations;
+    design systems are processes - so they are in the management domain; and design systems are people - so they are
+    about the community and collaboration.
+
 ---
 
 Let's start with a story.
