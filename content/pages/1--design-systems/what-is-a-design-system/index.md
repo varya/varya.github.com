@@ -115,3 +115,14 @@ to smoothen the routines as well as own community-related documentations, instru
 Design system as a concept, the scheme from [Design Systems — review of vocabulary and terms](/blog/design-systems-review/).
 
 </div>
+
+##### Credits
+
+<div class="small png--transparent" markdown="1">
+
+This article is using icons made by [Freepik](https://www.freepik.com/) and
+[Eucalyp](https://creativemarket.com/eucalyp) from [www.flaticon.com](https://www.flaticon.com/).
+They are licensed by
+[CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
+
+</div>
