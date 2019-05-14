@@ -12,6 +12,9 @@ the public artifacts of my design-systems activity.
 
 ## Concepts
 
+* [What is a design system?](/design-systems/what-is-a-design-system/)<br/>
+  Experience-proven explanation on what is (or should be) a design system from design, development and business
+  perspective. If we want to shape the product so that it is useful, first we must understand it on all its levels.
 * [Pattern journey](/design-systems/pattern-journey/)<br/>
   Visual illustration and explanation of what happens to a pattern on its way from identifying to actual implementation
   and how different the path might be depending on the situation. The Pattern Journey interactive tool helps to make
