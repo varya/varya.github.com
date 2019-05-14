@@ -107,8 +107,7 @@ module.exports = {
             options: {
               offsetY: `100`,
             },
-          },
-          `gatsby-remark-bracketed-spans`,
+          }
         ]
       }
     },
@@ -231,7 +230,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
-        include: /src/
+        include: /svg-icons/
       }
     },
     'gatsby-plugin-styled-components'
