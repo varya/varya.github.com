@@ -114,7 +114,7 @@ documentation and helpful tools for all the practices to follow, outlined and tu
 to smoothen the routines as well as own community-related documentations, instruments, and actions.
 
 Creating and maintaining the design system is not limited to making visual designs and coding but does include service
-design, project and community management. Moreover, beign tightly connected to brand and business of the company, the
+design, project and community management. Moreover, being tightly connected to brand and business of the company, the
 methods of running the design system have to be tailored for specific organization and teams. These are the topics for
 many more articles and discussions (yet published [Maintaining design systems with proper user
 research](https://medium.com/elisa-design/maintaining-design-systems-with-user-research-3ba5feafc336) and presented
@@ -123,7 +123,7 @@ products](http://varya.me/design-systems-thinking/)).
 
 <i>
 
-Coming back to the story in very beginning, my talk was about documenting all the listed aspects at a company desgin
+Coming back to the story in very beginning, my talk was about documenting all the listed aspects at a company design
 system website and  organizing the processes for its constant evolving: [slides](https://varya.me/react-finland-2019/),
 [video](https://youtu.be/gDkUpx0dVc0?t=9993).
 
