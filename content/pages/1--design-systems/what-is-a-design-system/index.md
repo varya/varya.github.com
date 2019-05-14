@@ -113,12 +113,23 @@ A comprehensive design system would have all the aspects listed above; not only 
 documentation and helpful tools for all the practices to follow, outlined and tuned processes for achieving the goals and
 to smoothen the routines as well as own community-related documentations, instruments, and actions.
 
-<div class="small png--transparent" markdown="1">
+Creating and maintaining the design system is not limited to making visual designs and coding but does include service
+design, project and community management. Moreover, beign tightly connected to brand and business of the company, the
+methods of running the design system have to be tailored for specific organization and teams. These are the topics for
+many more articles and discussions (yet published [Maintaining design systems with proper user
+research](https://medium.com/elisa-design/maintaining-design-systems-with-user-research-3ba5feafc336) and presented
+[Building design systems that leverage your designers, developers, and
+products](http://varya.me/design-systems-thinking/)).
 
-![Design systems as a concept, the scheme](./figure11.png)<br/>
-Design system as a concept, the scheme from [Design Systems — review of vocabulary and terms](/blog/design-systems-review/).
+<i>
 
-</div>
+Coming back to the story in very beginning, my talk was about documenting all the listed aspects at a company desgin
+system website and  organizing the processes for its constant evolving: [slides](https://varya.me/react-finland-2019/),
+[video](https://youtu.be/gDkUpx0dVc0?t=9993).
+
+</i>
+
+![](./ds-infrastructure.png)
 
 ##### Credits
 
