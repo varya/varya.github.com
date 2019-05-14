@@ -78,7 +78,7 @@ system is not equal to a library of components or to a style guide, it is someth
 functioning and living design system means the following.
 
 #### Shared practices
-<comp-bw-icon path="icons/web-design/i042-solution.svg" side="left"></comp-bw-icon> [
+<comp-ds-aspects aspect="shared-practices" side="left"></comp-ds-aspects>[
 Design system provides and documents shared practices, based on which you design your product or a bunch of products under
 the same brand. A library of components and style guide as their documentation are such shared practices. However,
 shared practices are not limited to them but also include more abstract or more design related things such as visual
@@ -87,21 +87,21 @@ style).
 ]{.clearfix}
 
 #### Tools
-<comp-bw-icon path="icons/web-design/i029-settings.svg" side="left"></comp-bw-icon> [
+<comp-ds-aspects aspect="tools" side="left"></comp-ds-aspects>[
 This brings us to the tools which our company could have for all the developers and designers to share. This means
 professional software to use and its plugins, scripts for processing and optimizing visuals and code, development and
 design environment, etc.
 ]{.clearfix}
 
 #### Processes
-<comp-bw-icon path="icons/user-experience/i040-algorithm.svg" side="left"></comp-bw-icon> [
+<comp-ds-aspects aspect="processes" side="left"></comp-ds-aspects>[
 At the next level, design systems would mean the processes which are followed in the company to achieve the outlined
 goals. Often spoken that design systems bridge the gap between specializations. This means that the design system should
 establish the processes in a team or even on a company level.
 ]{.clearfix}
 
 #### Community
-<comp-bw-icon path="icons/web-design/i039-sharing.svg" side="left"></comp-bw-icon> [
+<comp-ds-aspects aspect="community" side="left"></comp-ds-aspects>[
 The processes bring us to those for whom they are created, or to the people. As mentioned above, design systems bridge
 the gap between specializations and are meant to help the working collective as a whole. In this regard, having a design
 system implies constant work with our fellow developers, designers and project owners as with a community.
