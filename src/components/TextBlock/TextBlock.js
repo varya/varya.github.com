@@ -13,7 +13,7 @@ import Typography from "../Typography";
 import Logo from "../Logo";
 import PatternJourney from "../PatternJourney";
 import ProjectRoles from "../ProjectRoles";
-import BwIcon from "../BwIcon";
+//import BwIcon from "../BwIcon";
 import DsAspects from "../DsAspects";
 
 const renderAst = new rehypeReact({
@@ -22,7 +22,7 @@ const renderAst = new rehypeReact({
     "comp-logo": Logo,
     "comp-pattern-journey": PatternJourney,
     "comp-project-roles": ProjectRoles,
-    "comp-bw-icon": BwIcon,
+//    "comp-bw-icon": BwIcon,
     "comp-ds-aspects": DsAspects
   },
 }).Compiler;
