@@ -185,6 +185,14 @@ a {
   color: ${colorScheme.primary}
   text-decoration: underline;
 }
+
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
 `;
 
 export default {};
