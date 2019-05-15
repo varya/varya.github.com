@@ -39,7 +39,7 @@ this context.
 
 <comp-project-roles role="developer" side="left"></comp-project-roles>[
 Design systems are often understood as libraries of components. In this regard, the developers are seeing the system
-mostly from this perspective. Developers would like to have documentaion for every component, examples of usage and
+mostly from this perspective. Developers would like to have documentation for every component, examples of usage and
 maybe explanation of the implementation details. Apart from that, they would need information related to the whole
 system. Such as release notes, instructions for linking the library to the project, etc. For contribution, they need to
 know what is the library code style and contribution policy. To give feedback, they need the contact information of the design system team and/or access to relevant boards or chats.
@@ -115,7 +115,7 @@ design, project and community management. Moreover, a design system  tightly con
 methods of running it have to be tailored for the specific organization and its teams. These are the topics for
 many more articles and discussions (yet published [Maintaining design systems with proper user
 research](https://medium.com/elisa-design/maintaining-design-systems-with-user-research-3ba5feafc336) and presented
-[Building design systems that leverage your designers, sdevelopers, and
+[Building design systems that leverage your designers, developers, and
 products](http://varya.me/design-systems-thinking/)).
 
 <i>
