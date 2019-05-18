@@ -36,6 +36,68 @@ help of their library, and driven by an effective process to ensure smooth updat
 Publically, this workshop was
 given twice - as a part of DFConf Helsinki, and the second time on its own.
 
+<details><summary>Open full workshop description</summary>
+<p>
+
+##### Workshop Details
+Dive into the world of Design Systems through Storybook and React. You will be
+a part of a multidisciplinary team with your focus either on development or
+design. Together, you will create a well-documented pattern library and build a
+modular website out of its components as a final product.
+
+In the workshop, we will start by creating a visual design language for the
+team to share. Together, you will go through the iterative design process and
+build modular UI for the product. You will implement a pattern library using
+React and optionally styled-components, and document it with Storybook. The
+exercise contains managing collaborative updates and keeping the code in sync
+with the design reality. By the end of the day, you will have the product
+ready, built with the help of your library, and driven by an effective process
+to ensure smooth updates.
+
+This workshop is all about hands-on doing and somewhat about development, but
+no pattern library can be built without design or designer, so ideal team will
+consist of both. A designer and a developer can, of course, co-exist in the
+same person 🙂 For people with the development mindset some prior experience in
+React or ES6, and CSS is appreciated.
+
+To participate in the workshop,  you will need your own laptop. As a developer
+or as a designer-developer, you should also have your favorite IDE installed.
+
+The workshop is held at Nordcloud Helsinki Office. You will be in the capable
+of hands of our design system experts Varya Stepanova, Rami Ertimo, Junaid
+Rasheed and Mikko Rajala. Other Intergalactico colleagues will offer a helping
+hand when needed. Teams of about five people will be formed during the
+workshop. You can come alone or with your friend.
+
+We will serve breakfast, lunch, and coffee + snacks to keep you going the whole day. See you at the Workshop!
+
+##### Why Attend
+
+* Creating a pattern library is one of the crucial tools for making a living
+design system. Design system is all about communication, and pattern library
+can only be built and iterated with a collaborative team.
+* During the day you will learn key points how to start creating a pattern
+library, how to make it living, and how to utilize it to create and change
+product designs.
+
+##### For Whom
+
+Anyone interested in getting hands-on experience in creating a pattern library
+for a design system. Ideal team consists of designers and developers, but
+anyone with interest in pattern libraries is welcome.
+
+##### Content
+
+* How to define and name patterns in a consistent manner
+* How to rapidly kickstart a pattern library with Storybook
+* How to use a pattern library in a product
+* How to make changes to a pattern library in a coordinated fashion
+
+##### Source: [Original workshop page](https://dsconference.com/ws-intergalactico/)
+
+</p>
+</details>
+
 #### [At Design Systems Conference](https://dsconference.com/ws-intergalactico/)
 
 On the 15th of March 2018, the workshop gathered 30 attendees. Working in 6 teams, by the end of the day they delivered
