@@ -11,7 +11,7 @@ import Designer from './designer.svg';
 import Owner from './owner.svg';
 import Business from './business.svg';
 
-const Container = styled.div`
+const Container = styled.span`
   width: 150px;
   background-color: ${props => props.color};
   padding: 15px;

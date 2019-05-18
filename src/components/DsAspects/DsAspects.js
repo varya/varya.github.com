@@ -11,7 +11,7 @@ import Tools from './tools.svg';
 import Processes from './processes.svg';
 import Community from './community.svg';
 
-const Container = styled.div`
+const Container = styled.span`
   width: 150px;
   padding: 15px;
   margin-right: ${props => props.side === 'left' ? '15px' : '0'};
