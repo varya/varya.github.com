@@ -33,9 +33,6 @@ help of their library, and driven by an effective process to ensure smooth updat
 * Building a product based on the given design system;
 * Providing brand changes to the product via the design system.
 
-Publically, this workshop was
-given twice - as a part of DFConf Helsinki, and the second time on its own.
-
 <details><summary>Open full workshop description</summary>
 <p>
 
@@ -97,6 +94,9 @@ anyone with interest in pattern libraries is welcome.
 
 </p>
 </details>
+
+Publically, this workshop was
+given twice - as a part of DFConf Helsinki, and the second time on its own.
 
 #### [At Design Systems Conference](https://dsconference.com/ws-intergalactico/)
 
