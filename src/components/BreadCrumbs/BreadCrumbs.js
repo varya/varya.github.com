@@ -71,10 +71,9 @@ const BreadCrumbs = props => {
     data
   } = props;
 
-
   return (
     <BreadCrumbsList>
-      {data.map(item => <Item data={item}/>)}
+      {data.map(item => <Item data={item} key={`breadcrums-${item.node.id || 'home'}`}/>)}
     </BreadCrumbsList>
   );
 };
