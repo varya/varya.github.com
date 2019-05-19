@@ -2,7 +2,7 @@
 title: Design systems
 ---
 
-My work as a **design system specialist** includes running the processes related to the design and development in large or
+My work as a **design system expert** includes running the processes related to the design and development in large or
 regular organizations. It means inventing and shaping the processes through user interviews and data analysis, tuning
 the management tools and running new ones, working on company culture and increasing people's involvement, providing
 the technical infrastructure and guiding in design and development.
