@@ -6,7 +6,7 @@ menuTitle: Articles and talks
 
 * [A practical guide to building your design system infrastructure](https://varya.me/react-finland-2019/)<br/>
   A bunch of ideas and suggestions about implementing infrastructure and tools for building your design system,
-  presented at [React Finland 2019](https://react-finland.fi/). [Video recording](https://youtu.be/gDkUpx0dVc0) can be
+  presented at [React Finland 2019](https://react-finland.fi/). [Video recording](https://youtu.be/gDkUpx0dVc0?t=9987) can be
   found from the first day's stream.
 * [Maintaining design systems with proper user
   research](https://medium.com/elisa-design/maintaining-design-systems-with-user-research-3ba5feafc336)<br/>
