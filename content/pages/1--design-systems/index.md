@@ -25,7 +25,7 @@ the public artifacts of my design-systems activity.
 
 * [Hands-on with Design Systems](/design-systems/hands-on-workshop/)<br/>
 Full-day workshop about building design system and pattern library (React) in multidisciplinary team. This workshop was
-given twice - as a part of DFConf Helsini, and the second time on its own.
+given twice - as a part of DSConf Helsinki, and the second time on its own.
 
 * [How to build a Design System as a team](/design-systems/team-process-workshop/)<br/>
 Half-day workshop for teams and individuals interested in managing design system teams and running smooth processes for
@@ -98,7 +98,7 @@ At Yandex, I worked in BEM team on [methodology, technologies, libraries and a t
 
 * Shaping the concept of BEM as methodology.
 * Developing open source libraries of components.
-* Providing documemntation for the methodology, technologies, tools and libraries.
+* Providing documentation for the methodology, technologies, tools and libraries.
 * Public speaking and writing articles about the project items.
 
 ### Lego project by Yandex
