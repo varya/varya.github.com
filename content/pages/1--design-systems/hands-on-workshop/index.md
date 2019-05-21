@@ -13,7 +13,7 @@ meta:
     help of their library, and driven by an effective process to ensure smooth updates.
 ---
 
-Full-day workshop about building design system and pattern library (React) in a multidisciplinary team.
+Full-day workshop about building a design system and a pattern library (React) in a multidisciplinary team.
 
 In the workshop, teams start by creating a visual design language to share. Together, they go through the iterative
 design process and build modular UI for the product. Teams implement a pattern library using React and optionally

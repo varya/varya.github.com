@@ -25,7 +25,7 @@ class IndexPage extends React.Component {
   I am Varya Stepanova, a design systems expert with nearly 15 years of experience in frontend development,
   component-focused UI design and development, creating helpful tooling for the subject and spreading the
   practices across large organizations. I have two Master degrees — in physics and service design (Aalto
-  University, <a href="https://www.idbm.aalto.fi/">IDBM</a> programme), years of engineering experience and several leading
+  University, <a href="https://www.idbm.aalto.fi/">IDBM</a> program), years of engineering experience and several leading
   roles behind.<br/>
   Nowadays my focus is on bringing design systems to the next level of success which includes cooperative work
   in the company development community and bridging the gap for designers, developers, and business specialists.
