@@ -7,6 +7,7 @@ import { Container, LeftSide, Content, RightSide } from "../components/Layout/La
 
 import Seo from "../components/Seo";
 import Article from "../components/Article";
+import GithubEdit from "../components/GithubEdit";
 import Post from "../components/Post";
 import Prompt from "../components/Prompt";
 import Layout from "../components/layout.js";
@@ -26,8 +27,6 @@ const PostTemplate = props => {
       fileSourceUrl
     }
   } = props;
-  
-    console.log(fileSourceUrl);
 
   return (
     <Layout location={props.location} history={props.history}>
@@ -42,6 +41,7 @@ const PostTemplate = props => {
               siteMetadata={siteMetadata}
             />
           </Article>
+          <GithubEdit link={fileSourceUrl} />
         </Content>
         <RightSide>
         </RightSide>

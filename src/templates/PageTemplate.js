@@ -8,6 +8,7 @@ import { Container, LeftSide, Content, RightSide } from "../components/Layout/La
 import Article from "../components/Article";
 import TextBlock from "../components/TextBlock";
 import BreadCrumbs from "../components/BreadCrumbs";
+import GithubEdit from "../components/GithubEdit";
 import Prompt from "../components/Prompt";
 import Seo from "../components/Seo";
 import Layout from "../components/layout.js";
@@ -23,8 +24,6 @@ const PageTemplate = props => {
     }
   } = props;
 
-  console.log(fileSourceUrl);
-
   return (
     <Layout location={props.location} history={props.history}>
     <Container>
@@ -33,6 +32,7 @@ const PageTemplate = props => {
           <TextBlock title={page.frontmatter.title} html={page.htmlAst} subTitle={page.frontmatter.subTitle}/>
         </Article>
         <BreadCrumbs data={breadCrumbs} />
+        <GithubEdit link={fileSourceUrl} />
       </Content>
       <RightSide></RightSide>
       <LeftSide>
