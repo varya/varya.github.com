@@ -6,6 +6,9 @@ const Promise = require("bluebird");
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
+const REPO_URL = 'https://github.com/varya/varya.github.com';
+const REPO_BRANCH = 'develop';
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
@@ -25,6 +28,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: `lang`,
       value: lang
     });
+
+    createNodeField({
+      node,
+      name: 'fileRelativePath',
+      value: fileNode.relativePath
+    })
 
     // only for posts
     if (fileNode.sourceInstanceName === 'posts' || fileNode.sourceInstanceName === 'life') {
@@ -121,6 +130,7 @@ exports.createPages = ({ graphql, actions }) => {
                     lang
                     disqusIdentifier
                     level
+                    fileRelativePath
                   }
                   frontmatter {
                     title
@@ -149,14 +159,17 @@ exports.createPages = ({ graphql, actions }) => {
           const next = index === 0 ? undefined : posts[index - 1].node;
           const prev = index === posts.length - 1 ? undefined : posts[index + 1].node;
 
+          const fileSourceUrl = `${REPO_URL}/edit/${REPO_BRANCH}/content/posts/${node.fields.fileRelativePath}`;
+
           createPage({
             path: slug,
             component: postTemplate,
             context: {
               slug,
               prev,
-              next
-            }
+              next,
+              fileSourceUrl
+            },
           });
         });
 
@@ -167,13 +180,16 @@ exports.createPages = ({ graphql, actions }) => {
           const next = index === 0 ? undefined : lifePosts[index - 1].node;
           const prev = index === lifePosts.length - 1 ? undefined : lifePosts[index + 1].node;
 
+          const fileSourceUrl = `${REPO_URL}/edit/${REPO_BRANCH}/content/life/${node.fields.fileRelativePath}`;
+
           createPage({
             path: slug,
             component: postTemplate,
             context: {
               slug,
               prev,
-              next
+              next,
+              fileSourceUrl
             }
           });
         });
@@ -204,12 +220,15 @@ exports.createPages = ({ graphql, actions }) => {
             breadCrumbs.push({node, last: true});
           }
 
+          const fileSourceUrl = `${REPO_URL}/edit/${REPO_BRANCH}/content/pages/${node.fields.fileRelativePath}`;
+
           createPage({
             path: slug,
             component: pageTemplate,
             context: {
               slug,
-              breadCrumbs
+              breadCrumbs,
+              fileSourceUrl
             }
           });
         });

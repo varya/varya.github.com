@@ -20,8 +20,14 @@ const PostTemplate = props => {
         siteMetadata
       }
     },
-    pageContext: { next, prev }
+    pageContext: {
+      next,
+      prev,
+      fileSourceUrl
+    }
   } = props;
+  
+    console.log(fileSourceUrl);
 
   return (
     <Layout location={props.location} history={props.history}>

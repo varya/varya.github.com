@@ -18,9 +18,12 @@ const PageTemplate = props => {
       page
     },
     pageContext: {
-      breadCrumbs
+      breadCrumbs,
+      fileSourceUrl
     }
   } = props;
+
+  console.log(fileSourceUrl);
 
   return (
     <Layout location={props.location} history={props.history}>
