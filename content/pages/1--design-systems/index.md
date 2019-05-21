@@ -83,7 +83,7 @@ particular, this meant aligning the strategy of the design system project togeth
 inner user researches, develop detailed project plans and managing their implementing. Altogether, the achievements of
 the project were:
 
-* Clear strategy and developed year, quoter and monthly plans for the design system projects.
+* Clear strategy and developed an yearly, quarter and monthly plans for the design system projects.
 * Constant work with in-house design and development community.
 * Implementing in-house open source model for maintaining the design system projects.
 * Organizing effective but simple project management practices and routines.
