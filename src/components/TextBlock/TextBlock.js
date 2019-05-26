@@ -68,10 +68,15 @@ margin-bottom: 3em;
 }
 `;
 
+const MetaData = styled.p`
+  font-size: 0.75em;
+`;
+
 const TextBlock = props => {
   const {
     title,
     subTitle,
+    readingTime,
     html
   } = props;
 
@@ -83,6 +88,9 @@ const TextBlock = props => {
         <Header>{title}</Header>
         { subTitle && <SubHeader>{subTitle}</SubHeader> }
       </Title>
+      <MetaData>
+        { Math.round(readingTime.minutes) } min read
+      </MetaData>
       {renderAst(html)}
     </Container>
   );

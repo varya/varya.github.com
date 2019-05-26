@@ -16,7 +16,8 @@ import Layout from "../components/layout.js";
 const PageTemplate = props => {
   const {
     data: {
-      page
+      page,
+      page: { fields: { readingTime } }
     },
     pageContext: {
       breadCrumbs,
@@ -29,7 +30,7 @@ const PageTemplate = props => {
     <Container>
       <Content>
         <Article>
-          <TextBlock title={page.frontmatter.title} html={page.htmlAst} subTitle={page.frontmatter.subTitle}/>
+          <TextBlock title={page.frontmatter.title} html={page.htmlAst} subTitle={page.frontmatter.subTitle} readingTime={readingTime}/>
         </Article>
         <BreadCrumbs data={breadCrumbs} />
         <GithubEdit link={fileSourceUrl} />
@@ -60,6 +61,9 @@ export const pageQuery = graphql`
       htmlAst
       fields {
         slug
+        readingTime {
+          minutes
+        }
       }
       frontmatter {
         title
