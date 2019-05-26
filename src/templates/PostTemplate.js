@@ -70,7 +70,9 @@ export const postQuery = graphql`
       html
       htmlAst
       fields {
-        slug
+        readingTime {
+          minutes
+        }
         prefix
         disqusIdentifier
       }

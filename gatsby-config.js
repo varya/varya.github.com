@@ -109,6 +109,7 @@ module.exports = {
             },
           },
           `gatsby-remark-bracketed-spans`,
+          `gatsby-remark-reading-time`,
         ]
       }
     },
