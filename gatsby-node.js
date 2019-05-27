@@ -55,14 +55,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         slug = `blog${slug}`
       }
 
-      // make excerpt
-      if (node.rawMarkdownBody) {
-        const excerpt = node.rawMarkdownBody.split('<excerpt/>');
-        if (excerpt[1]) {
-          node.excerpt = excerpt[0];
-        }
-      }
-
     }
 
     createNodeField({
@@ -124,6 +116,7 @@ exports.createPages = ({ graphql, actions }) => {
                 node {
                   id
                   fileAbsolutePath
+                  excerpt(format: HTML)
                   fields {
                     slug
                     prefix

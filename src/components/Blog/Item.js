@@ -29,7 +29,7 @@ const Item = props => {
               <FaCalendar size={18} /> {date}
             </span>
           </p>
-          <p>{excerpt}</p>
+          <div dangerouslySetInnerHTML={{ __html: excerpt }} />
         </Link>
       </li>
   );

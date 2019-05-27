@@ -40,7 +40,7 @@ export const guery = graphql`
     ) {
       edges {
         node {
-          excerpt
+          excerpt(format: HTML)
           fields {
             slug
             prefix
