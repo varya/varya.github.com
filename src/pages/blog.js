@@ -48,6 +48,13 @@ export const guery = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM YYYY")
+            cover {
+              childImageSharp{
+                sizes(maxWidth: 250) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }
