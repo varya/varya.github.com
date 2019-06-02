@@ -74,6 +74,9 @@ const Item = props => {
     }
   } = props;
 
+  // Clean excerpt tags
+  const excerptClean = excerpt.replace(/(<h2[^>]*>|<h3[^>]*>)(.+)(<\/h2>|<\/h3>)/gm, '');
+
   return (
       <li>
         <Link to={`/${slug}`} key={slug} className="link">
@@ -93,9 +96,9 @@ const Item = props => {
           }
           {
             cover ?
-              <TextByCover><div dangerouslySetInnerHTML={{ __html: excerpt }} /></TextByCover>
+              <TextByCover><div dangerouslySetInnerHTML={{ __html: excerptClean }} /></TextByCover>
                 :
-              <Text><div dangerouslySetInnerHTML={{ __html: excerpt }} /></Text>
+              <Text><div dangerouslySetInnerHTML={{ __html: excerptClean }} /></Text>
           }
           </Container>
         </Link>
