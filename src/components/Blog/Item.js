@@ -67,9 +67,6 @@ const Item = props => {
         title,
         date,
         cover,
-        /*cover: {
-          children: [{ sizes }]
-        }*/
       }
     }
   } = props;
