@@ -67,39 +67,37 @@ const Item = props => {
         title,
         date,
         cover,
-        /*cover: {
-          children: [{ sizes }]
-        }*/
       }
     }
   } = props;
 
+  // Clean excerpt tags
+  const excerptClean = excerpt.replace(/(<h2[^>]*>|<h3[^>]*>)(.+)(<\/h2>|<\/h3>)/gm, '');
+
   return (
-      <li>
-        <Link to={`/${slug}`} key={slug} className="link">
-          <Container>
-          <PostHeader>
-            <h3>
-              {title}
-            </h3>
-            <p className="meta">
-              <span>
-                <FaCalendar size={18} /> {date}
-              </span>
-            </p>
-          </PostHeader>
-          {
-            cover && <Cover><Img sizes={cover.childImageSharp.sizes} /></Cover>
-          }
-          {
-            cover ?
-              <TextByCover><div dangerouslySetInnerHTML={{ __html: excerpt }} /></TextByCover>
-                :
-              <Text><div dangerouslySetInnerHTML={{ __html: excerpt }} /></Text>
-          }
-          </Container>
-        </Link>
-      </li>
+    <Link to={`/${slug}`} key={slug} className="link">
+      <Container>
+        <PostHeader>
+          <h3>
+            {title}
+          </h3>
+          <p className="meta">
+            <span>
+              <FaCalendar size={18} /> {date}
+            </span>
+          </p>
+        </PostHeader>
+        {
+          cover && <Cover><Img sizes={cover.childImageSharp.sizes} /></Cover>
+        }
+        {
+          cover ?
+            <TextByCover><div dangerouslySetInnerHTML={{ __html: excerptClean }} /></TextByCover>
+              :
+            <Text><div dangerouslySetInnerHTML={{ __html: excerptClean }} /></Text>
+        }
+      </Container>
+    </Link>
   );
 };
 

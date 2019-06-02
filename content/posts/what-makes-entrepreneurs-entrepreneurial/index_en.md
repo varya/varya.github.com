@@ -23,6 +23,7 @@ interested in the answer to the question “What is so special about entrepreneu
 I have tried to summarize the knowledge I got and answer this question.
 
 <excerpt/>
+
 Very interesting article by prof. Saras D. Sarasvathy introduces and explains the concept of “effectual thinking” as a
 special property of entrepreneurial mindset which affects entrepreneurs’ decision-making process and the way they
 address problems and overcome challenges. Unlike causal thinking, the effectual thinking assumes set of given means

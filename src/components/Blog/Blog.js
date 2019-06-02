@@ -15,17 +15,15 @@ const Blog = props => {
 
   return (
       <Container>
-        <ul>
-          {posts.map(post => {
-            const {
-              node,
-              node: {
-                fields: { slug }
-              }
-            } = post;
-            return <Item key={slug} post={node} />;
-          })}
-        </ul>
+        {posts.map(post => {
+          const {
+            node,
+            node: {
+              fields: { slug }
+            }
+          } = post;
+          return <Item key={slug} post={node} />;
+        })}
       </Container>
 
   );
