@@ -4,7 +4,7 @@ menuTitle: Articles and talks
 ---
 
 
-* [A practical guide to building your design system infrastructure](https://varya.me/patterns-day-2019/)<br/>
+* [A practical guide to building your design system infrastructure](https://varya.me/patterns-day-2019)<br/>
   A bunch of ideas and suggestions about implementing infrastructure and tools for building your design system,
   presented at [Patterns Day 2019](https://patternsday.com/) in Brighton, England. The talk was
   [recorded](https://vimeo.com/345906543).
