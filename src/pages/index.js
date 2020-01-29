@@ -20,7 +20,7 @@ class IndexPage extends React.Component {
 <Helmet title="Varya Stepanova — design systems architect and engineering manager" defer={false} />
 <div>
 
-<h2>Varya Stepanova — a design systems expert</h2>
+<h2>Varya Stepanova — a design systems architect</h2>
 
 <Avatar />
 
