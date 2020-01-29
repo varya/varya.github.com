@@ -2,6 +2,8 @@ import React from "react";
 // eslint-disable-next-line
 import PropTypes from "prop-types";
 
+import Helmet from "react-helmet";
+
 import Layout from "../components/layout.js";
 import { Container, LeftSide, Content, RightSide } from "../components/Layout/Layout";
 import Prompt from "../components/Prompt";
@@ -15,6 +17,7 @@ class IndexPage extends React.Component {
       <Layout location={this.props.location} history={this.props.history}>
       <Container>
         <Content>
+<Helmet title="Varya Stepanova — design systems architect and engineering manager" defer={false} />
 <div>
 
 <h2>Varya Stepanova — a design systems expert</h2>
@@ -22,7 +25,7 @@ class IndexPage extends React.Component {
 <Avatar />
 
 <p>
-  I am Varya Stepanova, a design systems expert with nearly 15 years of experience in frontend development,
+  I am Varya Stepanova, a <b>design systems architect</b> with nearly 15 years of experience in frontend development,
   component-focused UI design and development, creating helpful tooling for the subject and spreading the
   practices across large organizations. I have two Master degrees — in physics and service design (Aalto
   University, <a href="https://www.idbm.aalto.fi/">IDBM</a> program), years of engineering experience and several leading

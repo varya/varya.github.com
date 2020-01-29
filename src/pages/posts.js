@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import React from "react";
 
+import Helmet from "react-helmet";
+
 import { graphql } from 'gatsby';
 
 import Blog from "../components/Blog";
@@ -16,6 +18,8 @@ class PostsPage extends React.Component {
 
     return (
       <div>
+
+        <Helmet title="Blog posts on design, engineering and management — Varya Stepanova" defer={false} />
 
         <Blog posts={posts} />
 
