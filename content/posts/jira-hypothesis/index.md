@@ -28,9 +28,9 @@ Image source:
 
 </div>
 
-JIRA is a very much customisable tool and introdusing suitable issue types should not be any problem. However, the is always a "but". Often happens, especially in large organizations, that project managers do not have necessary admin rights to change such settings but they need to make a request to those who have, say IT support or even special JIRA administrators. In this case, it is better to be sure when asking for changes. This was exactly our case. So, we should have somehow prototype the settings we want, try them out and decide if we want to request them.
+JIRA is a very much customisable tool and introducing suitable issue types should not be any problem. However, the is always a "but". Often happens, especially in large organizations, that project managers do not have necessary admin rights to change such settings but they need to make a request to those who have, say IT support or even special JIRA administrators. In this case, it is better to be sure when asking for changes. This was exactly our case. So, we should have somehow prototype the settings we want, try them out and decide if we want to request them.
 
-The case I am describing needed custom issue types, filters based on those types and a Kanban board with swimlanes filtered by the types. The prototyping meant that the filters and swimlanes would be done by some other properties but assiming that they are future-to-be issue types. Usually, project managers and often other team members have no restrictions to managing the project JIRA components and adding new ones. This was out case as well.
+The case I am describing needed custom issue types, filters based on those types and a Kanban board with swimlanes filtered by the types. The prototyping meant that the filters and swimlanes would be done by some other properties but assuming that they are future-to-be issue types. Usually, project managers and often other team members have no restrictions to managing the project JIRA components and adding new ones. This was out case as well.
 
 So, the way out would be to use components instead of issue types, try out the hypothesis and then decide. But as components were already in use for representing ... actual components, this could have made a mess. Unless there is a way to separate components from *components*. And this can be done in conventional mode by using prefixes.
 
@@ -52,6 +52,6 @@ Future-to-be issue types were also implemented as issue components but with a di
 * \# Development
 * \# Education
 
-Voilà! Good enough for marking all the issues accrodingly, making filters and board(s) and trying out for a sprint or two. As the components can be changed any time, their final list can also be formed while experiment goes. After a while, we had *certain request* about the needed issue types for our JIRA administrators. And we were *fully certain* that we are asking about something we were going to use for a long time.
+Voilà! Good enough for marking all the issues accordingly, making filters and board(s) and trying out for a sprint or two. As the components can be changed any time, their final list can also be formed while experiment goes. After a while, we had *certain request* about the needed issue types for our JIRA administrators. And we were *fully certain* that we are asking about something we were going to use for a long time.
 
-PS: Lately, we continued use such prefixes for groupping our components. But that's different story.
+PS: Lately, we continued use such prefixes for grouping our components. But that's different story.
