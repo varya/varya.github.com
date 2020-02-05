@@ -73,6 +73,7 @@ export const postQuery = graphql`
         readingTime {
           minutes
         }
+        slug
         prefix
         disqusIdentifier
       }
