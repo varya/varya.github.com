@@ -4,13 +4,22 @@ import Helmet from "react-helmet";
 import config from "../../../content/meta/config";
 
 const Seo = props => {
-  const { data } = props;
+  const {
+    data,
+    title,
+    keywords,
+  } = props;
   const postTitle = ((data || {}).frontmatter || {}).title;
   const postDescription = ((data || {}).frontmatter || {}).description || (((data || {}).frontmatter || {}).meta || {}).desc;
   const postCover = ((data || {}).frontmatter || {}).cover;
   const postSlug = ((data || {}).fields || {}).slug;
 
-  const title = postTitle ? `${postTitle} - ${config.shortSiteTitle}` : config.siteTitle;
+  let fullTitle;
+  if (!title) {
+    fullTitle = postTitle ? `${postTitle} - ${config.shortSiteTitle}` : config.siteTitle;
+  } else {
+    fullTitle = title;
+  }
   const description = postDescription ? postDescription : config.siteDescription;
   const image = postCover ? postCover.childImageSharp.resize.src : config.siteImage;
   const url = config.siteUrl + config.pathPrefix + postSlug;
@@ -21,13 +30,24 @@ const Seo = props => {
         lang: config.siteLanguage,
         prefix: "og: http://ogp.me/ns#"
       }}
+      meta={[
+
+      ]
+      .concat(
+        (keywords && keywords.length > 0)
+          ? {
+              name: 'keywords',
+              content: keywords.join(', '),
+            }
+            : []
+        )}
     >
       {/* General tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
       {/* OpenGraph tags */}
       <meta property="og:url" content={url} />
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       <meta property="og:type" content="website" />

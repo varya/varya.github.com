@@ -69,10 +69,10 @@ Guide](http://academy.appgyver.com/categories/1/contents/1)
 <div style="text-align:center;">
 <a href="https://itunes.apple.com/us/app/appgyver-scanner/id575076515?mt=8"
 target="_blank"><img alt="Appstore" class="appstore_icon"
-src="https://share.appgyver.com/assets/appstore-df950585b54bd081a7826913fc715cd4.png"></a>
+src="https://share.appgyver.com/assets/appstore-df950585b54bd081a7826913fc715cd4.png"/></a>
 <a href="https://play.google.com/store/apps/details?id=com.appgyver.android&amp;feature=nav_result#?t=W251bGwsMSwxLDMsImNvbS5hcHBneXZlci5hbmRyb2lkIl0."
 target="_blank"><img alt="Googleplay" class="appstore_icon"
-src="https://share.appgyver.com/assets/googleplay-2cef882d62e402fbdbfe8cdac5794069.png"></a>
+src="https://share.appgyver.com/assets/googleplay-2cef882d62e402fbdbfe8cdac5794069.png"/></a>
 </div>
 
 Другой способ — открыть проект в Simulator. Для этого наберите `simulator`

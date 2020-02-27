@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styled from 'styled-components'
 import { grid } from 'styled-components-grid'
 
@@ -50,10 +49,5 @@ class Header extends React.Component {
     );
   }
 }
-
-Header.propTypes = {
-  pages: PropTypes.array.isRequired,
-  path: PropTypes.string.isRequired,
-};
 
 export default Header;

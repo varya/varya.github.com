@@ -12,6 +12,8 @@ meta:
     umbrella.
 ---
 
+import PatternJourney from '../../../../src/components/PatternJourney'
+
 Design System artifacts whether it is a library of components, UI kit in Sketch, description of UI tokens or pieces of
 documentation for the visual language are maintained and developed similarly to regular products. However, usually,
 there is a difference. A design system bridges the gap between disciplines and between the teams across the organization, so
@@ -43,7 +45,7 @@ This process is called **Pattern Journey**.
 
 ## Pattern Journey - Interactive Scheme
 
-<comp-pattern-journey></comp-pattern-journey>
+<PatternJourney/>
 
 The scheme shows possible paths from identifying the need in a pattern to implementing it. Answers to the displayed questions help to
 choose the right way. Note that **you can click on the questions** to get additional guidance on how to get the answer.

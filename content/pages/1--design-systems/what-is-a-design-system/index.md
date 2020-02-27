@@ -13,6 +13,9 @@ meta:
 
 ---
 
+import ProjectRoles from '../../../../src/components/ProjectRoles'
+import DsAspects from '../../../../src/components/DsAspects'
+
 Let's start with a story.
 
 <i>
@@ -37,36 +40,36 @@ different perspectives: design, development, project and even business.
 We can have a look at who are the actual or potential users of design systems, and what are their professional needs in
 this context.
 
-<comp-project-roles role="developer" side="left"></comp-project-roles>[
+<ProjectRoles role="developer" side="left"/><div class="clearfix">
 Design systems are often understood as libraries of components. In this regard, the developers are seeing the system
 mostly from this perspective. Developers would like to have documentation for every component, examples of usage and
 maybe explanation of the implementation details. Apart from that, they would need information related to the whole
 system. Such as release notes, instructions for linking the library to the project, etc. For contribution, they need to
 know what is the library code style and contribution policy. To give feedback, they need the contact information of the design system team and/or access to relevant boards or chats.
-]{.clearfix}
+</div>
 
-<comp-project-roles role="designer" side="right"></comp-project-roles>[
+<ProjectRoles role="designer" side="right"/><div class="clearfix">
 Designers also need documentation for every pattern, especially the reasons behind them. Other design-related
 documentation such as color palette, spacing examples, tone of voice, and many more helps them to create new patterns
 which are coherent with the rest of the system. They also need information about how to collaborate with other fellow
 designers and what are the tools to use. Designers are interested in seeing their creations alive, thus they
 need to know how the process goes further on the development and later stages.
-]{.clearfix}
+</div>
 
-<comp-project-roles role="owner" side="left"></comp-project-roles> [
+<ProjectRoles role="owner" side="left"/><div class="clearfix">
 Project managers or owners need to have a basic representation of the design system since this is what is used to build the
 interface for their product. They are also interested in release notes as in something that has been implemented. Apart from that, managers need to know the design system's nearest future or, in particular, what new components are going to be
 released and what are the upcoming changes to the existing ones. For that, managers need to see the design system's
 roadmap and learn its strategy as well as be able to discuss this with the relevant people.
-]{.clearfix}
+</div>
 
-<comp-project-roles role="business" side="right"></comp-project-roles> [
+<ProjectRoles role="business" side="right"/><div class="clearfix">
 On the business levels of the company, especially if speaking about mid-size or large companies, design systems are seen
 as internal products and tools. People of this specialization need to have a larger scale picture of the system.
 Also, they must be especially interested into design system's meta information such as what is its impact, how it helps
 in-team and cross-team collaboration and maybe even the numbers of how much the company earns and saves thanks to the
 design system.
-]{.clearfix}
+</div>
 
 ## Design system — what is behind?
 
@@ -76,33 +79,33 @@ system is not equal to a library of components or to a style guide, it is someth
 functioning and living design system means the following.
 
 #### Shared practices
-<comp-ds-aspects aspect="shared-practices" side="left"></comp-ds-aspects>[
+<DsAspects aspect="shared-practices" side="left"/><div class="clearfix">
 Design system provides and documents shared practices, based on which you design your product or a bunch of products under
 the same brand. A library of components and style guide as their documentation are such shared practices. However,
 shared practices are not limited to them but also include more abstract or more design related things such as visual
 language or tone of voice. Or on the contrary, they can be deeply technical and reflect your approach to code (aka code
 style).
-]{.clearfix}
+</div>
 
 #### Tools
-<comp-ds-aspects aspect="tools" side="left"></comp-ds-aspects>[
+<DsAspects aspect="tools" side="left"/><div class="clearfix">
 This brings us to the tools which our company could have for all the developers and designers to share. This means
 professional software to use and its plugins, scripts for processing and optimizing visuals and code, development and
 design environment, etc.
-]{.clearfix}
+</div>
 
 #### Processes
-<comp-ds-aspects aspect="processes" side="left"></comp-ds-aspects>[
+<DsAspects aspect="processes" side="left"/><div class="clearfix">
 At the next level, design systems would mean the processes which are followed in the company to achieve the outlined
 goals. Often spoken that design systems bridge the gap between specializations. This means that the design system should
 establish the processes in teams or even on the company level.
-]{.clearfix}
+</div>
 
 #### Community
-<comp-ds-aspects aspect="community" side="left"></comp-ds-aspects>[
+<DsAspects aspect="community" side="left"/><div class="clearfix">
 The processes bring us to those for whom they are created, or to the people. As mentioned above, design systems ensure multidisciplinary collaboration and are meant to help the working collective as a whole. In this regard, having a design
 system implies constant work with our fellow developers, designers and project owners as with a community.
-]{.clearfix}
+</div>
 
 ## Way to go
 

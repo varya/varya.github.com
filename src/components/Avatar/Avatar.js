@@ -1,6 +1,4 @@
 import React from "react";
-// eslint-disable-next-line
-import PropTypes from "prop-types";
 import styled from "styled-components";
 import breakpoint from 'styled-components-breakpoint'
 

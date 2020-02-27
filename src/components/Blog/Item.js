@@ -72,7 +72,7 @@ const Item = props => {
   } = props;
 
   // Clean excerpt tags
-  const excerptClean = excerpt.replace(/(<h2[^>]*>|<h3[^>]*>)(.+)(<\/h2>|<\/h3>)/gm, '');
+  const excerptClean = excerpt ? excerpt.replace(/(<h2[^>]*>|<h3[^>]*>)(.+)(<\/h2>|<\/h3>)/gm, '') : 'read more';
 
   return (
     <Link to={`/${slug}`} key={slug} className="link">

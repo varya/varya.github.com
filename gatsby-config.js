@@ -1,31 +1,5 @@
-require("dotenv").config();
+const path = require('path')
 const config = require("./content/meta/config");
-
-const query = `{
-  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/posts|pages|life/[0-9]+.*--/"}}) {
-    edges {
-      node {
-        objectID: fileAbsolutePath
-        fields {
-          slug
-        }
-        internal {
-          content
-        }
-        frontmatter {
-          title
-        }
-      }
-    }
-  }
-}`;
-
-const queries = [
-  {
-    query,
-    transformer: ({ data }) => data.allMarkdownRemark.edges.map(({ node }) => node)
-  }
-];
 
 module.exports = {
   siteMetadata: {
@@ -34,8 +8,9 @@ module.exports = {
     siteUrl: config.siteUrl,
     pathPrefix: config.pathPrefix,
     facebook: {
-      appId: process.env.FB_APP_ID ? process.env.FB_APP_ID : ""
-    }
+      appId: process.env.FB_APP_ID ? process.env.FB_APP_ID : "",
+    },
+    author: "Varya Stepanova",
   },
   plugins: [
     {
@@ -44,49 +19,12 @@ module.exports = {
         postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
       },
     },
-    // `gatsby-plugin-styled-jsx`, // the plugin's code is inserted directly to gatsby-node.js and gatsby-ssr.js files
-    // 'gatsby-plugin-styled-jsx-postcss', // as above
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images/`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/posts/`,
-        name: "posts"
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/life/`,
-        name: "life"
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/pages/`,
-        name: "pages"
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `parts`,
-        path: `${__dirname}/content/parts/`
-      }
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        "excerpt_separator": `<excerpt/>`,
-        plugins: [
-          `gatsby-plugin-sharp`,
+        extensions: [`.mdx`, `.md`],
+        defaultLayouts: { default: path.resolve('./src/components/Layout/Layout--outer') },
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -94,30 +32,41 @@ module.exports = {
               backgroundColor: "transparent"
             }
           },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 2em`
-            }
-          },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-          {
-            resolve: `gatsby-remark-autolink-headers`,
-            options: {
-              offsetY: `100`,
-            },
-          },
-          `gatsby-remark-bracketed-spans`,
-          `gatsby-remark-reading-time`,
         ]
-      }
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/content/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `life`,
+        path: `${__dirname}/content/life`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/content/pages`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/content/pages`,
+      },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
+    `gatsby-remark-reading-time`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -162,80 +111,19 @@ module.exports = {
             src: "/icons/icon-512x512.png",
             sizes: "512x512",
             type: "image/png"
-          }
+          },
         ]
       }
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID
-      }
-    },
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }]
-                });
-              });
-            },
-            query: `
-              {
-                allMarkdownRemark(
-                  limit: 1000,
-                  sort: { order: DESC, fields: [fields___prefix] },
-                  filter: { fileAbsolutePath: { regex: "//posts//" } }
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields {
-                        slug
-                        prefix
-                      }
-                      frontmatter {
-                        title
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-            output: "/rss.xml"
-          }
-        ]
-      }
-    },
-    {
-      resolve: `gatsby-plugin-sitemap`
-    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.app/offline
+    // 'gatsby-plugin-offline',
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
         include: /src/
       }
     },
-    'gatsby-plugin-styled-components'
-  ]
-};
+    `gatsby-plugin-styled-components`
+  ],
+}
