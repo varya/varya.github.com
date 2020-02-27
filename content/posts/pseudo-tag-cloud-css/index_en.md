@@ -13,6 +13,9 @@ meta:
     Tag cloud of different with random sizes of the words with pure CSS.
 
 ---
+
+import PureHtml from '../../../src/components/PureHtml'
+
 Last week I faced a need to make a fake tag cloud, where the words need to be of different size. This was needed for
 a presentation slide, and as my slides are always in HTML/CSS, must be implemented with these technologies. It is always
 possible to inject some JavaScript and code anything. But what about pure CSS, do we get random sizes there?
@@ -39,7 +42,7 @@ possible to inject some JavaScript and code anything. But what about pure CSS, d
 
 </div>
 
-<style>
+<PureHtml html={`<style>
 .testings {
     text-align: center;
     width: 400px;
@@ -53,9 +56,6 @@ possible to inject some JavaScript and code anything. But what about pure CSS, d
     list-style: none;
     display: inline;
 }
-
-/* Random sizes */
-
 .testings .cloud li:nth-of-type(3n + 1) {
     font-size: 1.25em;
 }
@@ -65,8 +65,10 @@ possible to inject some JavaScript and code anything. But what about pure CSS, d
 .testings .cloud li:nth-of-type(5n - 3) {
     font-size: 1em;
 }
+</style>`}/>
 
-</style>
+
+
 
 The tag cloud you see above is what I get. You may notice it's not real random; after refreshing you will always get the
 same result. But still looks like a tag cloud of different sizes and works perfectly as an example.

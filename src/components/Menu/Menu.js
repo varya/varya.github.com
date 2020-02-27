@@ -1,6 +1,4 @@
 import React from "react";
-// eslint-disable-next-line
-import PropTypes from "prop-types";
 import { Link } from "gatsby";
 
 import styled from "styled-components";

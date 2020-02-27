@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import TextBlock from "../TextBlock";
 import Comments from "../Comments";
@@ -15,17 +15,14 @@ const Post = props => {
 
   return (
     <div>
-      <TextBlock title={title} html={post.htmlAst} readingTime={readingTime} />
+      <TextBlock
+        title={title}
+        readingTime={readingTime}>
+        <MDXRenderer>{post.body}</MDXRenderer>
+      </TextBlock>
       <Comments {...props} />
     </div>
   );
-};
-
-Post.propTypes = {
-  post: PropTypes.object.isRequired,
-  authornote: PropTypes.string.isRequired,
-  next: PropTypes.object,
-  prev: PropTypes.object,
 };
 
 export default Post;
