@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
+import { StaticQuery, graphql } from "gatsby";
 
 import Item from "./Item";
 
@@ -11,26 +12,51 @@ const Container = styled.main`
 `;
 
 const Blog = props => {
-  const { posts } = props;
+  //const { posts } = props;
 
-  return (
-      <Container>
-        {posts.map(post => {
-          const {
-            node,
-            node: {
-              fields: { slug }
+  return (<StaticQuery
+      query={graphql`
+      query BlogQuery {
+        posts: allMdx(
+          filter: { fileAbsolutePath: { regex: "//posts/.*/" }, fields: { lang: {eq: "en" } } }
+          sort: { fields: [frontmatter___date], order: DESC }
+        ) {
+          edges {
+            node {
+              excerpt
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                date(formatString: "DD MMMM YYYY")
+                cover {
+                  childImageSharp{
+                    sizes(maxWidth: 250) {
+                      ...GatsbyImageSharpSizes
+                    }
+                  }
+                }
+              }
             }
-          } = post;
-          return <Item key={slug} post={node} />;
-        })}
-      </Container>
-
-  );
-};
-
-Blog.propTypes = {
-  posts: PropTypes.array.isRequired,
+          }
+        }
+      }
+      `}
+      render={(data) => {
+        const posts = data.posts.edges;
+        return(
+          <Container>
+            {posts.map(post => {
+              const node = post.node;
+              const slug = post.node.fields.slug;
+              return <Item key={slug} post={node} />;
+            })}
+          </Container>
+        )
+      }
+    }
+  />);
 };
 
 export default Blog;
