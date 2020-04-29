@@ -140,7 +140,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     const posts = items.filter(item => /posts/.test(item.node.fileAbsolutePath));
     posts.forEach(({ node }, index) => {
-      const slug = node.fields.slug;
+      const slug = node.fields && node.fields.slug;
       const next = index === 0 ? undefined : posts[index - 1].node;
       const prev = index === posts.length - 1 ? undefined : posts[index + 1].node;
       const fileSourceUrl = `${REPO_URL}/edit/${REPO_BRANCH}/content/posts/${node.fields.fileRelativePath}`;
