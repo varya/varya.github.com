@@ -1,0 +1,111 @@
+---
+
+title: Using web fonts with SASS and Webpack
+
+date: 2020-05-12
+cover: thumb.png
+
+layout: post
+
+meta:
+  desc: >
+    TODO
+
+
+---
+
+Intro
+
+<excerpt/>
+
+<div class="small" markdown="1">
+
+![](thumb.png)<br/>
+Image source:
+[https://processtypefoundry.com/blog/2011/02/five-new-webfonts/](https://processtypefoundry.com/blog/2011/02/five-new-webfonts/)
+
+</div>
+
+
+##  Load fonts
+
+Instruct your webpack how to load font with `file-loader`:
+
+```
+{
+    test: /\.(ttf|eot|woff|woff2|svg)$/,
+    use: {
+        loader: 'file-loader',
+        options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+        },
+    },
+},
+```
+More info about loading fonts options on [SurviveJs project](https://survivejs.com/webpack/loading/fonts/).
+
+## SVG, I caught you!
+
+Note that the above configuration also applies to SVG files. You may have other SVG files which you do not want to process as fonts. In this case, do not forget use `include` and `exclude` options.
+
+For the fonts, include only the files from a directory where you keep fonts:
+
+```
+{
+    test: /\.(ttf|eot|woff|woff2|svg)$/,
+    use: {
+        loader: 'file-loader',
+        include: path.resolve(__dirname, './src/webfonts'),
+        options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+        },
+    },
+},
+```
+
+For SVG illustrations, exclude the font folder:
+
+```
+{
+    test: /\.svg$/,
+    exclude: path.resolve(__dirname, './src/webfonts'),
+    use: ['@svgr/webpack'],
+},
+```
+
+## Resolve URLs
+
+If you use SASS, you must face a problem of resolving URLs. Let's say you webpack configuration for processin SASS files is like the following.
+
+```
+{
+    test: /\.scss$/,
+    loaders: [
+        'style-loader',
+        'css-loader',
+        'sass-loader',
+    ]
+},
+```
+
+In this case, you need to add `resolve-url-loader` because SASS itself does not do url rewriting.
+
+```
+{
+    test: /\.scss$/,
+    loaders: [
+        'style-loader',
+        'css-loader',
+        'resolve-url-loader', // add this before sass-loader
+        'sass-loader',
+    ]
+},
+```
+
+For more information you can check [Problems with url(...)](https://webpack.js.org/loaders/sass-loader/#problems-with-url) in Webpack official documentation.
+
+## Production
+
+For production mode, you need to add `devtool: 'source-map'` to the root of your Webpack configuration. This is for the `resolve-url-loader` to work correctly also when building for production.
