@@ -15,7 +15,7 @@ meta:
 
 ---
 
-Linking web fonts in SASS when uding Webpack might not work as expected. The most common problem is incorrect URL resolving if a font is linked with `url()`. This post covers this and the following traps on your way to nice fonts on your webpage.
+Linking web fonts in SASS when using Webpack might not work as expected. The most common problem is incorrect URL resolving if a font is linked with `url()`. This post covers this and the following traps on your way to nice fonts on your webpage.
 
 <excerpt/>
 
@@ -48,7 +48,7 @@ More info about loading fonts options on [SurviveJs project](https://survivejs.c
 
 ## SVG, I caught you!
 
-Note that the above configuration also applies to SVG files. You may have other SVG files which you do not want to process as fonts. In this case, do not forget use `include` and `exclude` options.
+Note that the above configuration also applies to SVG files. You may have other SVG files that you do not want to process as fonts. In this case, do not forget to use `include` and `exclude` options.
 
 For the fonts, include only the files from a directory where you keep fonts:
 
@@ -78,7 +78,7 @@ For SVG illustrations, exclude the font folder:
 
 ## Resolve URLs
 
-If you use SASS, you must face a problem of resolving URLs. Let's say you webpack configuration for processin SASS files is like the following.
+If you use SASS, you must face a problem of resolving URLs. Let's say your Webpack configuration for processing SASS files is like the following.
 
 ```javascript
 {
@@ -105,8 +105,10 @@ In this case, you need to add `resolve-url-loader` because SASS itself does not 
 },
 ```
 
-For more information you can check [Problems with url(...)](https://webpack.js.org/loaders/sass-loader/#problems-with-url) in Webpack official documentation.
+For more information, you can check [Problems with url(...)](https://webpack.js.org/loaders/sass-loader/#problems-with-url) in Webpack official documentation.
 
 ## Production
 
 For production mode, you need to add `devtool: 'source-map'` to the root of your Webpack configuration. This is for the `resolve-url-loader` to work correctly also when building for production.
+
+![](./enjoy.png)
