@@ -31,7 +31,7 @@ Image source:
 
 Instruct your webpack how to load font with `file-loader`:
 
-```
+```javascript
 {
     test: /\.(ttf|eot|woff|woff2|svg)$/,
     use: {
@@ -51,7 +51,7 @@ Note that the above configuration also applies to SVG files. You may have other 
 
 For the fonts, include only the files from a directory where you keep fonts:
 
-```
+```javascript
 {
     test: /\.(ttf|eot|woff|woff2|svg)$/,
     use: {
@@ -67,7 +67,7 @@ For the fonts, include only the files from a directory where you keep fonts:
 
 For SVG illustrations, exclude the font folder:
 
-```
+```javascript
 {
     test: /\.svg$/,
     exclude: path.resolve(__dirname, './src/webfonts'),
@@ -79,7 +79,7 @@ For SVG illustrations, exclude the font folder:
 
 If you use SASS, you must face a problem of resolving URLs. Let's say you webpack configuration for processin SASS files is like the following.
 
-```
+```javascript
 {
     test: /\.scss$/,
     loaders: [
@@ -92,7 +92,7 @@ If you use SASS, you must face a problem of resolving URLs. Let's say you webpac
 
 In this case, you need to add `resolve-url-loader` because SASS itself does not do url rewriting.
 
-```
+```javascript
 {
     test: /\.scss$/,
     loaders: [

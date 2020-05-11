@@ -32,6 +32,7 @@ module.exports = {
               backgroundColor: "transparent"
             }
           },
+          `gatsby-remark-prismjs`,
         ]
       },
     },
