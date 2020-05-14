@@ -45,6 +45,49 @@ Instruct your webpack how to load font with `file-loader`:
 ```
 More info about loading fonts options on [SurviveJs project](https://survivejs.com/webpack/loading/fonts/).
 
+## Resolve URLs
+
+If you use SASS, you must face a problem of resolving URLs. Let's say your Webpack configuration for processing SASS files is like the following.
+
+```javascript
+{
+    test: /\.scss$/,
+    loaders: [
+        'style-loader',
+        'css-loader',
+        'sass-loader',
+    ]
+},
+```
+
+Everything looks normal but you still get the following error for every single SASS file.
+
+```
+configuration you must get the familiar error for every single SASS file.
+
+```bash
+ERROR in ./src/styles.scss (./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/resolve-url-loader!./node_modules/sass-loader/dist/cjs.js??ref--5-3!./src/styles.scss)
+Module not found: Error: Can't resolve './open-sans-v10-latin-regular.woff' in '/Users/varya/WebDev/my-pet-project'
+    @ ./src/styles.scss (./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/resolve-url-loader!./node_modules/sass-loader/dist/cjs.js??ref--5-3!./src/styles.scss) 19:42-87
+```
+
+
+In this case, you need to add `resolve-url-loader` because SASS itself does not do url rewriting.
+
+```javascript
+{
+    test: /\.scss$/,
+    loaders: [
+        'style-loader',
+        'css-loader',
+        'resolve-url-loader', // add this before sass-loader
+        'sass-loader',
+    ]
+},
+```
+
+For more information, you can check [Problems with url(...)](https://webpack.js.org/loaders/sass-loader/#problems-with-url) in Webpack official documentation.
+
 ## SVG, I caught you!
 
 Note that the above configuration also applies to SVG files. You may have other SVG files that you do not want to process as fonts. In this case, do not forget to use `include` and `exclude` options.
@@ -75,44 +118,21 @@ For SVG illustrations, exclude the font folder:
 },
 ```
 
-## Resolve URLs
-
-If you use SASS, you must face a problem of resolving URLs. Let's say your Webpack configuration for processing SASS files is like the following.
-
-```javascript
-{
-    test: /\.scss$/,
-    loaders: [
-        'style-loader',
-        'css-loader',
-        'sass-loader',
-    ]
-},
-```
-
-In this case, you need to add `resolve-url-loader` because SASS itself does not do url rewriting.
-
-```javascript
-{
-    test: /\.scss$/,
-    loaders: [
-        'style-loader',
-        'css-loader',
-        'resolve-url-loader', // add this before sass-loader
-        'sass-loader',
-    ]
-},
-```
-
-For more information, you can check [Problems with url(...)](https://webpack.js.org/loaders/sass-loader/#problems-with-url) in Webpack official documentation.
-
 ## Production: resolve URLs
+
+Now everything works in the development environment, but with production webpack configuration you must get the familiar error for every single SASS file.
+
+```bash
+ERROR in ./src/styles.scss (./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/resolve-url-loader!./node_modules/sass-loader/dist/cjs.js??ref--5-3!./src/styles.scss)
+Module not found: Error: Can't resolve './open-sans-v10-latin-regular.woff' in '/Users/varya/WebDev/my-pet-project'
+    @ ./src/styles.scss (./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/resolve-url-loader!./node_modules/sass-loader/dist/cjs.js??ref--5-3!./src/styles.scss) 19:42-87
+```
 
 For production mode, you need to add `devtool: 'source-map'` to the root of your Webpack configuration. This is for the `resolve-url-loader` to work correctly also when building for production.
 
-## Production: no ES modules
+## Turn off ES modules
 
-By default, file-loader generates JS modules that use the ES modules syntax. But for the fonts, you do not need it here. Use `esModule: false,`
+By default, file-loader generates JS modules that use the ES modules syntax. But in the fonts case it would give you `src: url([object Module]);`. To avoid it, use `esModule: false,`
 
 ```javascript
 {
