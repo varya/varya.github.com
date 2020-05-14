@@ -27,8 +27,7 @@ Image source:
 
 </div>
 
-
-##  Load fonts
+## Load fonts
 
 Instruct your webpack how to load font with `file-loader`:
 
@@ -107,8 +106,27 @@ In this case, you need to add `resolve-url-loader` because SASS itself does not 
 
 For more information, you can check [Problems with url(...)](https://webpack.js.org/loaders/sass-loader/#problems-with-url) in Webpack official documentation.
 
-## Production
+## Production: resolve URLs
 
 For production mode, you need to add `devtool: 'source-map'` to the root of your Webpack configuration. This is for the `resolve-url-loader` to work correctly also when building for production.
+
+## Production: no ES modules
+
+By default, file-loader generates JS modules that use the ES modules syntax. But for the fonts, you do not need it here. Use `esModule: false,`
+
+```javascript
+{
+    test: /\.(ttf|eot|woff|woff2|svg)$/,
+    use: {
+        loader: 'file-loader',
+        include: path.resolve(__dirname, './src/webfonts'),
+        options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/',
+            esModule: false,
+        },
+    },
+},
+```
 
 ![](./enjoy.png)
