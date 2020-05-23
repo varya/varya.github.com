@@ -112,7 +112,7 @@ class PatternJourney extends React.Component {
         { this.state.toggleNotification &&
         <Modal>
           <ModalContent>
-            <Close onClick={() => {this.setState({toggleNotification: false})}}>
+            <Close onClick={(e) => {e.preventDefault();this.setState({toggleNotification: false})}}>
               <FaClose/>
             </Close>
             <div dangerouslySetInnerHTML={{__html: this.state.text}}></div>
