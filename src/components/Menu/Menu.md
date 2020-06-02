@@ -1,6 +1,6 @@
 ```js
-var createHistory = require('history').createMemoryHistory;
-var Router = require('react-router').Router;
+// var createHistory = require('history').createMemoryHistory;
+// var Router = require('react-router').Router;
 
 var pages = [
    {
@@ -17,9 +17,11 @@ var pages = [
    },
 ];
 var path = '/';
-var history = createHistory();
+// var history = createHistory();
 
-<Router history={history}>
-  <Menu pages={pages} path={path}/>
-</Router>
+// <Router history={history}>
+//   <Menu pages={pages} path={path}/>
+// </Router>
+
+<Menu pages={pages} path={path}/>
 ```

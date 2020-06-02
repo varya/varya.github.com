@@ -9,8 +9,13 @@
     "frontmatter": {
       "title": "Blocks are bricks, and bundles are buildings",
       "category": null,
-      "cover": null
-    }
+      "cover": null,
+    },
+    "fields": {
+      "readingTime": {
+        "minutes": 5,
+      },
+    },
   };
 const next = {
     "id": "/Users/varya/WebDev/Personal/varya-gatsby/content/posts/blocks-and-bundles/index_ru.md absPath of file >>> MarkdownRemark",

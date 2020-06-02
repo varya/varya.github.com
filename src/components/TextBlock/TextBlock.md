@@ -17,6 +17,6 @@ const page = {
   </p>`
 };
 
-<TextBlock title={page.frontmatter.title} html={page.html} />
+<TextBlock title={page.frontmatter.title} html={page.html} readingTime="5" />
 
 ```

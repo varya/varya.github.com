@@ -50,7 +50,6 @@
     "design systems"
   ],
   "scripts": {
-    "postinstall": "cd styleguide/ && npm install && cd -",
     "build": "gatsby build",
     "start": "npm run develop",
     "develop": "gatsby develop",
@@ -80,7 +79,9 @@
     "gatsby-plugin-styled-jsx-postcss": "^2.0.2",
     "gatsby-remark-autolink-headers": "^2.3.3",
     "git-directory-deploy": "^1.5.1",
+    "img-loader": "^3.0.1",
     "prettier": "^1.18.2",
+    "react-styleguidist": "^11.0.8",
     "styled-components-breakpoint": "^2.1.1",
     "styled-components-grid": "^2.2.1",
     "styled-jsx": "^3.2.4",
