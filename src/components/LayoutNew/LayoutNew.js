@@ -20,6 +20,9 @@ const MyGrid = styled(Grid)`
       "footer footer";
     grid-gap: 16px;
   `}
+  ${breakpoint('desktop') `
+    grid-gap: 24px;
+  `}
 `;
 
 export const LayoutSimple = (props) => (

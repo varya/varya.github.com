@@ -7,6 +7,7 @@ import Typography from "../Typography";
 import Header from "../Header";
 import Footer from "../Footer/";
 import { Container, LeftSide, Content, RightSide } from "./Layout--elements";
+import { LayoutSimple } from "../LayoutNew/LayoutNew";
 import Prompt from "../Prompt";
 
 export const SiteContainer = styled.div`
@@ -52,21 +53,16 @@ export default function LayoutCommon({
       } = data;
       return (
         <SiteContainer>
-          <Header path={location.pathname} pages={pages}/>
-          <main>
-            <Container>
-              <Content>
-                {content}
-              </Content>
-              <RightSide>
-                {right}
-              </RightSide>
-              <LeftSide>
-                {left}
-              </LeftSide>
-            </Container>
-          </main>
-          <Footer />
+          <LayoutSimple
+            header={(
+              <Header path={location.pathname} pages={pages}/>
+            )}
+            content={content}
+            prompt={left}
+            footer={(
+              <Footer />
+            )}
+          />
         </SiteContainer>
       )
     }}
