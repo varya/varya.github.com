@@ -9,7 +9,7 @@ import SEO from '../../src/components/Seo'
   keywords={['design systems', 'design system', 'frontend']}
   defer={false}/>
 
-## Varya Stepanova — a design systems architect
+# Varya Stepanova — a design systems architect
 
 <Avatar />
 

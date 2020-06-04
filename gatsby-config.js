@@ -33,7 +33,14 @@ module.exports = {
             }
           },
           `gatsby-remark-prismjs`,
-          `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              elements: [
+                `h2`, `h3`, `h4`, `h5`, `h6`,
+              ]
+            }
+          }
         ]
       },
     },
