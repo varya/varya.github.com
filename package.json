@@ -41,7 +41,8 @@
     "react-helmet": "^5.2.1",
     "react-icons": "2.2.7",
     "styled": "^1.0.0",
-    "styled-components": "^3.4.10"
+    "styled-components": "^3.4.10",
+    "styled-css-grid": "^1.2.1"
   },
   "keywords": [
     "gatsby",
