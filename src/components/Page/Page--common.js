@@ -16,7 +16,7 @@ export const SiteContainer = styled.div`
   `}
 `
 
-export default function LayoutCommon({
+export default function PageCommon({
     content,
     right,
     left,

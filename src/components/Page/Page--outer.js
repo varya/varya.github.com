@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import PageCommon from './Page--common'
 
-const Layout = ({ children, location }) => (
+const Page = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -23,4 +23,4 @@ const Layout = ({ children, location }) => (
   />
 )
 
-export default Layout
+export default Page
