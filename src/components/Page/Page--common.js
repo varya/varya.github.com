@@ -6,7 +6,7 @@ import breakpoint from 'styled-components-breakpoint'
 import Typography from "../Typography";
 import Header from "../Header";
 import Footer from "../Footer";
-import { LayoutSimple } from "../LayoutNew/LayoutNew";
+import { LayoutSimple } from "../Layout/Layout";
 import Prompt from "../Prompt";
 
 export const SiteContainer = styled.div`
