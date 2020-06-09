@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   // components: './src/components/*/[A-Z]*.js',
+  styleguideDir: "./static/styleguide",
   components: "./src/components/*/[A-Z]*.js",
   ignore: [
     "./src/components/Post/Share.js",
