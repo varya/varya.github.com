@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import LayoutCommon from './Layout--common'
+import PageCommon from './Page--common'
 
 export default function PageTemplate({
     data: {
@@ -12,7 +12,7 @@ export default function PageTemplate({
   }) {
   return (
     <>
-      <LayoutCommon
+      <PageCommon
         content={(<MDXRenderer>{mdx.body}</MDXRenderer>)}
         location={location}
       />

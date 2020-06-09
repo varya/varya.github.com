@@ -147,7 +147,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
       createPage({
         path: slug,
-        component: path.resolve(`./src/components/Layout/Layout--post.js`),
+        component: path.resolve(`./src/components/Page/Page--post.js`),
         context: {
           slug,
           prev,
@@ -168,7 +168,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
       createPage({
         path: slug,
-        component: path.resolve(`./src/components/Layout/Layout--post.js`),
+        component: path.resolve(`./src/components/Page/Page--post.js`),
         context: {
           slug,
           prev,
@@ -213,7 +213,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         // (or `node.frontmatter.slug`)
         path: node.fields.slug,
         // This component will wrap our MDX content
-        component: path.resolve(node.frontmatter.layout || `./src/components/Layout/Layout--page.js`),
+        component: path.resolve(node.frontmatter.layout || `./src/components/Page/Page--page.js`),
         // You can use the values in this context in
         // our page layout component
         context: {

@@ -1,6 +1,7 @@
 ---
 title: Articles and talks
 menuTitle: Articles and talks
+layout: './src/components/Page/Page--base.js'
 ---
 
 

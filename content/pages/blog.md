@@ -1,5 +1,5 @@
 ---
-layout: './src/components/Layout/Layout--base.js'
+layout: './src/components/Page/Page--base.js'
 ---
 import { Link } from 'gatsby'
 

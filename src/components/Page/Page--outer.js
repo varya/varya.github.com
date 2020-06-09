@@ -1,7 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
-import LayoutCommon from './Layout--common'
+import PageCommon from './Page--common'
 
 const Layout = ({ children, location }) => (
   <StaticQuery
@@ -15,7 +15,7 @@ const Layout = ({ children, location }) => (
       }
     `}
     render={data => (
-      <LayoutCommon
+      <PageCommon
         content={children}
         location={location}
         />

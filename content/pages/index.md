@@ -1,6 +1,8 @@
+---
+layout: './src/components/Page/Page--base.js'
+---
 import { Link } from 'gatsby'
 
-import Layout from '../../src/components/Layout/Layout--outer'
 import Avatar from '../../src/components/Avatar'
 import SEO from '../../src/components/Seo'
 

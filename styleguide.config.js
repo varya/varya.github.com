@@ -5,9 +5,9 @@ module.exports = {
   components: "./src/components/*/[A-Z]*.js",
   ignore: [
     "./src/components/Post/Share.js",
-    "./src/components/Layout/Layout--base.js",
-    "./src/components/Layout/Layout--page.js",
-    "./src/components/Layout/Layout--post.js",
+    "./src/components/Page/Page--base.js",
+    "./src/components/Page/Page--page.js",
+    "./src/components/Page/Page--post.js",
   ],
   webpackConfig: {
   resolve: {

@@ -9,7 +9,7 @@ import BreadCrumbs from "../BreadCrumbs";
 import GithubEdit from "../GithubEdit";
 import Seo from "../Seo";
 
-import LayoutCommon from './Layout--common'
+import PageCommon from './Page--common'
 
 export default function PageTemplate({
     data: {
@@ -23,7 +23,7 @@ export default function PageTemplate({
   }) {
   return (
     <>
-      <LayoutCommon
+      <PageCommon
         content={(
           <>
             <Article>

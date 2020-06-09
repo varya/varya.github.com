@@ -1,5 +1,6 @@
 ---
 title: Design systems
+layout: './src/components/Page/Page--base.js'
 ---
 
 My work as a **design system expert** includes running the processes related to the design and development in large or

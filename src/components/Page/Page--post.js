@@ -7,7 +7,7 @@ import Article from "../Article";
 import Post from "../Post";
 import GithubEdit from "../GithubEdit";
 
-import LayoutCommon from './Layout--common'
+import PageCommon from './Page--common'
 
 export default function PostTemplate({
     data: {
@@ -25,7 +25,7 @@ export default function PostTemplate({
   }) {
   return (
     <>
-      <LayoutCommon
+      <PageCommon
         content={(
           <>
             <Article>
