@@ -59,7 +59,7 @@
     "lint-errors": "eslint src/**/*.{js,jsx} --quiet",
     "lint": "eslint src/**/*.{js,jsx}",
     "stylelint": "stylelint src/**/*.js",
-    "styleguidist:server": "cd styleguide && npm run styleguidist:server",
+    "styleguidist:server": "npx styleguidist server",
     "generate-app-icons": "sh ./scripts/generate-app-icons.sh",
     "deploy:build": "gatsby build --prefix-paths && npm run deploy:remove-extra",
     "deploy:release": "git-directory-deploy --directory ./public --repo varya --branch master",
