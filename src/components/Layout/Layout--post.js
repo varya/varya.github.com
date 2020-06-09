@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { Container, LeftSide, Content, RightSide } from "./Layout--elements";
 import Seo from "../Seo"
 import Prompt from "../Prompt";
 import Article from "../Article";

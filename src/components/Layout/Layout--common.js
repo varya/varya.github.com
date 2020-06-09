@@ -6,7 +6,6 @@ import breakpoint from 'styled-components-breakpoint'
 import Typography from "../Typography";
 import Header from "../Header";
 import Footer from "../Footer/";
-import { Container, LeftSide, Content, RightSide } from "./Layout--elements";
 import { LayoutSimple } from "../LayoutNew/LayoutNew";
 import Prompt from "../Prompt";
 
