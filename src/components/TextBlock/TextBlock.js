@@ -49,40 +49,6 @@ margin-bottom: 3em;
 .png--transparent .gatsby-resp-image-background-image {
   background-image: none !important;
 }
-
-h2, h3, h4, h5, h6 {
-  padding-left: 1em;
-  margin-left: -1em;
-}
-
-h2 a.anchor,
-h3 a.anchor,
-h4 a.anchor,
-h5 a.anchor,
-h6 a.anchor
-{
-  position: absolute;
-  display: none;
-}
-
-h2:hover a.anchor,
-h3:hover a.anchor,
-h4:hover a.anchor,
-h5:hover a.anchor,
-h6:hover a.anchor
-{
-  display: inline;
-}
-
-
-h2 a.anchor svg,
-h3 a.anchor svg,
-h4 a.anchor svg,
-h5 a.anchor svg,
-h6 a.anchor svg
-{
-  fill: #999;
-}
 `;
 
 const MetaData = styled.p`
