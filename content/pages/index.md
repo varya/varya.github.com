@@ -13,7 +13,7 @@ import SEO from '../../src/components/Seo'
 
 # Varya Stepanova — a design systems architect
 
-<Avatar />
+<Avatar align="right" />
 
 <p>
   I am Varya Stepanova, a <b>design systems architect</b> with nearly 15 years of experience in frontend development,
