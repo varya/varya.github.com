@@ -3,38 +3,9 @@ import PropTypes from "prop-types";
 
 import styled from "styled-components";
 
-import { colorScheme } from '../Colors/Colors.js';
-
-/* Register components for using in markdown */
-
 // eslint-disable-next-line
 import Typography from "../Typography";
 
-const Title = styled.header`
-  margin-bottom: 1.5em;
-  &::after {
-    content: '';
-    display: block;
-    background-color: ${colorScheme.secondary};
-    height: 2px;
-    width: 50%;
-    margin-top: 0.25em;
-  }
-`;
-
-const Header = styled.h1`
-  margin-bottom: 0.5em;
-`;
-
-const SubHeader = styled.p`
-  text-transform: uppercase;
-  color: ${colorScheme.darkShadow}
-  margin-top: -0.75em;
-  margin-bottom: 0;
-  font-weight: 400;
-  font-size: 1.2em;
- }
-`;
 
 const Container = styled.div`
 
@@ -49,38 +20,56 @@ margin-bottom: 3em;
 .png--transparent .gatsby-resp-image-background-image {
   background-image: none !important;
 }
-`;
 
-const MetaData = styled.p`
-  font-size: 0.75em;
+h2, h3, h4, h5, h6 {
+  padding-left: 1em;
+  margin-left: -1em;
+}
+
+h2 a.anchor,
+h3 a.anchor,
+h4 a.anchor,
+h5 a.anchor,
+h6 a.anchor
+{
+  position: absolute;
+  display: none;
+}
+
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor
+{
+  display: inline;
+}
+
+
+h2 a.anchor svg,
+h3 a.anchor svg,
+h4 a.anchor svg,
+h5 a.anchor svg,
+h6 a.anchor svg
+{
+  fill: #999;
+}
 `;
 
 const TextBlock = props => {
   const {
-    title,
-    subTitle,
-    readingTime,
     children,
   } = props;
 
 
   return (
     <Container>
-
-      <Title>
-        <Header>{title}</Header>
-        { subTitle && <SubHeader>{subTitle}</SubHeader> }
-      </Title>
-      <MetaData>
-        { Math.round(readingTime.minutes) } min read
-      </MetaData>
       {children}
     </Container>
   );
 };
 
 TextBlock.propTypes = {
-  title: PropTypes.string.isRequired,
   children: PropTypes.object.isRequired
 };
 

@@ -28,7 +28,7 @@ export default function PostTemplate({
       <PageCommon
         content={(
           <>
-            <Article>
+            <Article title={mdx.frontmatter.title} readingTime={mdx.fields.readingTime}>
               <Post
                 post={mdx}
                 next={next}

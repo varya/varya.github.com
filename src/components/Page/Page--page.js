@@ -26,8 +26,8 @@ export default function PageTemplate({
       <PageCommon
         content={(
           <>
-            <Article>
-              <TextBlock title={mdx.frontmatter.title} subTitle={mdx.frontmatter.subTitle} readingTime={mdx.fields.readingTime}>
+            <Article title={mdx.frontmatter.title} subTitle={mdx.frontmatter.subTitle} readingTime={mdx.fields.readingTime}>
+              <TextBlock>
                 <MDXRenderer>{mdx.body}</MDXRenderer>
               </TextBlock>
             </Article>

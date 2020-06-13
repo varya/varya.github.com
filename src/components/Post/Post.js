@@ -7,17 +7,11 @@ import Comments from "../Comments";
 const Post = props => {
   const {
     post,
-    post: {
-      frontmatter: { title },
-      fields: { readingTime }
-    },
   } = props;
 
   return (
     <div>
-      <TextBlock
-        title={title}
-        readingTime={readingTime}>
+      <TextBlock>
         <MDXRenderer>{post.body}</MDXRenderer>
       </TextBlock>
       <Comments {...props} />

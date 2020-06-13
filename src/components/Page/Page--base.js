@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import PageCommon from './Page--common'
+import TextBlock from "../TextBlock";
 
 export default function PageTemplate({
     data: {
@@ -13,7 +14,10 @@ export default function PageTemplate({
   return (
     <>
       <PageCommon
-        content={(<MDXRenderer>{mdx.body}</MDXRenderer>)}
+        content={(
+          <TextBlock>
+            <MDXRenderer>{mdx.body}</MDXRenderer>
+          </TextBlock>)}
         location={location}
       />
     </>
