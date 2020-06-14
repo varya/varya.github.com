@@ -12,7 +12,6 @@ const Container = styled.main`
 `;
 
 const Blog = props => {
-  //const { posts } = props;
 
   return (<StaticQuery
       query={graphql`
@@ -43,20 +42,22 @@ const Blog = props => {
         }
       }
       `}
-      render={(data) => {
-        const posts = data.posts.edges;
-        return(
-          <Container>
-            {posts.map(post => {
-              const node = post.node;
-              const slug = post.node.fields.slug;
-              return <Item key={slug} post={node} />;
-            })}
-          </Container>
-        )
-      }
+      render={(data) => <BlogComponent data={data} />
     }
   />);
 };
 
 export default Blog;
+
+export const BlogComponent = (props) => {
+  const posts = props.data.posts.edges;
+  return (
+    <Container>
+      {posts.map(post => {
+        const node = post.node;
+        const slug = post.node.fields.slug;
+        return <Item key={slug} post={node} />;
+      })}
+    </Container>
+  )
+}
