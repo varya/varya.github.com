@@ -6,6 +6,8 @@ import React from "react";
 
 import styled from 'styled-components'
 import { grid } from 'styled-components-grid'
+import { MDXRenderer } from "gatsby-plugin-mdx"
+
 
 export const Container = styled.div`
   ${grid({})}
@@ -60,6 +62,7 @@ export const Text = styled.div`
 
 const Item = props => {
   const {
+    post,
     post: {
       excerpt,
       fields: { slug },
@@ -92,9 +95,13 @@ const Item = props => {
         }
         {
           cover ?
-            <TextByCover><div dangerouslySetInnerHTML={{ __html: excerptClean }} /></TextByCover>
+            <TextByCover>
+              <MDXRenderer onlyExcerpt={true} excerptBackup={excerptClean}>{post.body}</MDXRenderer>
+            </TextByCover>
               :
-            <Text><div dangerouslySetInnerHTML={{ __html: excerptClean }} /></Text>
+            <Text>
+              <MDXRenderer onlyExcerpt={true} excerptBackup={excerptClean}>{post.body}</MDXRenderer>
+            </Text>
         }
       </Container>
     </Link>

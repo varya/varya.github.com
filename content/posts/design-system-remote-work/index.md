@@ -16,9 +16,11 @@ meta:
 
 ---
 
+<div data-excerpt>
+
 In these unique times, well-organized remote work becomes one of the key factors for success. This applies to any kind of work, and managing design systems is no exception. Although it is a huge challenge, I very much like how things are going in our team. So that I collected here some tips which may help you as well.
 
-<excerpt/>
+</div>
 
 <div class="small" markdown="1">
 

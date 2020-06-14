@@ -4,6 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import PageCommon from './Page--common'
 import TextBlock from "../TextBlock";
+import {MDXProvider} from '@mdx-js/react'
 
 export default function PageTemplate({
     data: {
@@ -12,7 +13,23 @@ export default function PageTemplate({
     location,
   }) {
   return (
-    <>
+    <MDXProvider components={{
+      wrapper: ({ onlyExcerpt = false, excerptBackup, children }) => {
+        let updatedChildren = [ ...children ];
+
+        if (onlyExcerpt) {
+          updatedChildren = children.filter((child, _) => {
+            return child.props && child.props["data-excerpt"];
+          });
+
+          if (updatedChildren.length === 0) {
+            updatedChildren.push(<div dangerouslySetInnerHTML={{ __html: excerptBackup }}/>)
+          }
+        }
+
+        return (<>{updatedChildren}</>)
+      }
+    }}>
       <PageCommon
         content={(
           <TextBlock>
@@ -20,7 +37,7 @@ export default function PageTemplate({
           </TextBlock>)}
         location={location}
       />
-    </>
+    </MDXProvider>
   )
 }
 

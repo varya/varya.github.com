@@ -22,6 +22,7 @@ const Blog = props => {
         ) {
           edges {
             node {
+              body
               excerpt
               fields {
                 slug
