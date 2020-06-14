@@ -15,12 +15,14 @@ meta:
 
 ---
 
+<div data-excerpt>
+
 Nested structures are useful for managing and editing. But when it comes to representation in UI, it might
 not be trivial to iterate through all the deep levels. Often happens, that it is more useful to have
 a flat structure which probably preserves the depth of the items. In JavaScript, easiest way to transform such structure is
 `reduce` method.
 
-<excerpt/>
+</div>
 
 <div class="small" markdown="1">
 

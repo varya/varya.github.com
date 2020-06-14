@@ -16,9 +16,11 @@ meta:
 
 ---
 
+<div data-excerpt>
+
 It may happen that default JIRA project settings or board does not fully respond the needs of your project, similarly to how it was for the project I am currently working at. Our team once realised that we would benefit from custom issue types which we use for filtering and organising our Kanban board. However, "realised" is maybe not 100% suitable word since initially that was more kind of *hypothesis* which we could prove or not. Simply speaking, we must try before we know.
 
-<excerpt/>
+</div>
 
 <div class="small" markdown="1">
 

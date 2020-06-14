@@ -8,10 +8,15 @@ v2: true
 layout: post
 
 ---
+
+<div data-excerpt>
+
 I use the same laptop for both work and personal needs. This is useful but makes me see to keeping my
 work-life balance. I do this simply — turn off all the applications running when I finish my working day
 in the evening. The only issue is not to forget to open them again next day. But this process can be automatized. :-)
-<excerpt/>
+
+</div>
+
 The most important is to run the applications which are in use by the other team members. For example, I a Jabber app
 has to be running since the workday has started. The same goes for any other messenger.
 

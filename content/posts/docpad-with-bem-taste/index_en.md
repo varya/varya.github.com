@@ -8,11 +8,15 @@ v2: true
 layout: post
 
 ---
+
+<div data-excerpt>
+
 Let me present a stub for **docpad-run** project with
 **bem-built** static assets. If you ever wanted to be
 a generic blog holder equiped with nice and neat static
 files, here we go.
-<excerpt/>
+
+</div>
 
 ## How to start
 

@@ -17,10 +17,14 @@ meta:
     presentation already brings a lot of stress.
 
 ---
+
+<div data-excerpt>
+
 I never thought that I would write a post about diversity. But as the **unicorn law** says that being a woman in tech you
 will be eventually speaking about women in tech, I do so now. However I'm doing this not because it is a strong will of
 mine. Something happened which makes me to respond.
-<excerpt/>
+
+</div>
 
 I was recently speaking at a conference (a very good conference, I must say this) and during the asking session after
 the talk I got this question:

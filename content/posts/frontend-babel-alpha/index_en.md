@@ -8,9 +8,13 @@ v2: true
 layout: post
 
 ---
+<div data-excerpt>
+
 Long time ago I could read and learn about web development in Russian only. Later, having completed an English language course, I began to read articles and blogs in English more and more. The same went for conferences: I visited
 Russian-speaking conferences at first and later switched to English-speaking conferences in Europe. In both articles and conference talks, I noticed how the content was different depending on the language used. Sometime I even thought that the communities evolve in different ways and follow different directions.
-<excerpt/>
+
+</div>
+
 My Russian-speaking colleagues indeed know the "[HTML/CSS markup with independent blocks](http://vitaly.harisov.name/article/independent-blocks.html)"
 article by Vitaly Harisov. He published
 this in 2008 and outlined the main principles of HTML/CSS development which is known as BEM nowadays. We can say

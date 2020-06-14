@@ -8,11 +8,15 @@ v2: true
 layout: post
 
 ---
+
+<div data-excerpt>
+
 As a mobile apps user you may be already familiar to drawers.
 They are quite popular solution for a side menu. Using `Steroids`
 HTML5/JavaScript framework for hybrid mobile applications, you
 can bring such an interface solution into your product very easy.
-<excerpt/>
+
+</div>
 
 The usage of drawers explained here is demonstrated in the [Steroids
 Kitchensink](https://github.com/AppGyver/kitchensink) open source application.

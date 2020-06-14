@@ -15,6 +15,8 @@ meta:
 
 ---
 
+<div data-excerpt>
+
 From the economic perspective, platforms are “special kinds of markets that play the role of facilitators of exchange
 between different types of consumers that could not otherwise transact with each other”. *(Gawer, 2014)*
 
@@ -23,7 +25,7 @@ In most cases, there are two types of consumers operating on the platform in two
 of the service, and who may or may not pay for the service”. *(Muzellec, Ronteau, and Lambkin, 2015)* For example, this
 pattern is very common for the modern Internet platforms.
 
-<excerpt/>
+</div>
 
 <div class="small" markdown="1">
 

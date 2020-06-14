@@ -15,12 +15,14 @@ meta:
 
 ---
 
+<div data-excerpt>
+
 When it comes to the large web applications, we often operate with complex components. Such components are not just CSS
 styles for the pieces of an interface but also their JavaScript interactions and templates. As documentation, the style
 guide should reflect them all. In other words, the components on the style guide's pages should be the same living as in
 production.
 
-<excerpt/>
+</div>
 
 At my recent project, we have been using [SC5 Style Guide](http://styleguide.sc5.io/) in its simplest way - documenting
 the view of the components. For that, we provided the needed HTML in the KSS code and so has received the rendered

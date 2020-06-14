@@ -16,11 +16,13 @@ meta:
 
 import PureHtml from '../../../src/components/PureHtml'
 
+<div data-excerpt>
+
 Last week I faced a need to make a fake tag cloud, where the words need to be of different size. This was needed for
 a presentation slide, and as my slides are always in HTML/CSS, must be implemented with these technologies. It is always
 possible to inject some JavaScript and code anything. But what about pure CSS, do we get random sizes there?
 
-<excerpt/>
+</div>
 
 <div class="testings" markdown="1">
 

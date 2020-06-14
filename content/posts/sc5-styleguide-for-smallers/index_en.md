@@ -13,12 +13,16 @@ meta:
     architecture from completety different perspective.
 
 ---
+
+<div data-excerpt>
+
 I've been presenting [SC5 Style Guide](http://styleguide.sc5.io/) several times during this year sharing my experience of using it for one
 of the SC5's clients, Elisa. Assuming that Elisa is a huge mobile operator with a lot of websites and a need
 to keep those websites visually consistent, there is no wonder that the SC5 Style Guide as a tool provides benefits
 there. But what about smaller websites? Would it be useful there? I did not know the answer to this question
 and wanted to experiment. The experiment was conducted on my blog codebase.
-<excerpt/>
+
+</div>
 
 This is how the Living Style Guide looks like: [varya.me/styleguide](http://varya.me/styleguide). You can see the interface
 decomposed into block pieces, each of those representing a meaningful interface unit. I haven't seen the interface of my blog

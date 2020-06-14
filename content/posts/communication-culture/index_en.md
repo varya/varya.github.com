@@ -16,6 +16,8 @@ meta:
 
 ---
 
+<div data-excerpt>
+
 Company internal communication is a crucial aspect of forming innovation-friendly environment, in which employees can
 effectively apply their expertise and creativity for achieving business goals.
 
@@ -23,7 +25,7 @@ Creative people need “emotional ownership” in the goals and objectives, whic
 the corporate world where such people are not co-founders but employees. (Sarasvathy, 2008) Establishing right
 communicational practices very much contributes to developing this kind of ownership and makes innovation possible.
 
-<excerpt/>
+</div>
 
 ![](communication.png)
 

@@ -9,6 +9,9 @@ date: 2014-04-09
 layout: post
 
 ---
+
+<div data-excerpt>
+
 Depending on a project people prefer different ways to adapt BEM.
 This results
 into a range of tools for our choice. Today, I am translating Maxim Shkalin's
@@ -16,7 +19,9 @@ description of the `BEML` templating pre-processor.
 
 Willing to lighten the development with BEM I propose a tiny extension for the
 HTML syntax (yes, I used to writ all those long CSS classes manually). As the
-name `BEMHTML` is greedily taken by the Yandex guys, let us call it `BEML`.<excerpt/>
+name `BEMHTML` is greedily taken by the Yandex guys, let us call it `BEML`.
+
+</div>
 
 ## Objective
 

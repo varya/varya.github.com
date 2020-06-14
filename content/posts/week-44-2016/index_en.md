@@ -13,14 +13,15 @@ meta:
 
 ---
 
+<div data-excerpt>
+
 First thing first, I'm staring weekly posts about findings that are somehow related to work. This is a mature but not yet
 implemented idea. Although, a friend of mine [Vladimir Starkov sometimes practises the same](https://iamstarkov.com/).
 
 In this issue there are tips on organizing Google Calendar, nice project management addition for GitHub, Styleguide
 solutions for React projects and a couple of good reads.
 
-<excerpt/>
-
+</div>
 
 ## Week numbers in Google calendar
 

@@ -15,6 +15,8 @@ meta:
 
 ---
 
+<div data-excerpt>
+
 Earlier this year, I participated in a development of a single page application. With the team, we started this
 project from scratch. This situation was the most suitable to practice the new technologies.
 
@@ -22,7 +24,7 @@ The stack I've tried was React + ES2015 + postcss + webpack. However, keeping in
 team (who were supposed to maintain the project later) are mainly experienced in Angular, I was looking for some
 sort of combination of these frameworks.
 
-<excerpt/>
+</div>
 
 Finally, I made a project with React used for the view and Angular governing the data layer. I
 believe that such project is ideal for the a bridge role. Often happens that the development team has a

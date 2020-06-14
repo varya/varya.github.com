@@ -17,12 +17,14 @@ meta:
 
 ---
 
+<div data-excerpt>
+
 Last year, during my studies of IDBM program at Aalto University, I took a course "Design in Innovation Context" which
 covered entrepreneurial innovations and behavior. Even out of study context but in everyday life I have always been
 interested in the answer to the question “What is so special about entrepreneurs that makes them who they are?”. Below,
 I have tried to summarize the knowledge I got and answer this question.
 
-<excerpt/>
+</div>
 
 Very interesting article by prof. Saras D. Sarasvathy introduces and explains the concept of “effectual thinking” as a
 special property of entrepreneurial mindset which affects entrepreneurs’ decision-making process and the way they

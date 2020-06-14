@@ -16,6 +16,8 @@ meta:
 
 ---
 
+<div data-excerpt>
+
 My first task for new projects is to create a git repository. Whether it is a new app, or conference slides, or even an
 article, I prefer to keep everything in Git. It is an excellent tool, and, personally, I enjoy its command line
 interface.
@@ -23,7 +25,7 @@ interface.
 However, there is always room for improvement. Recently I found an idea how to make my git visualize the changes that
 I've done to the images in a repository.
 
-<excerpt/>
+</div>
 
 ```sh
 Varyas-MBP £ ~/path/to/project ⤳ master*

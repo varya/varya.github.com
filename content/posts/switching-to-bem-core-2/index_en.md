@@ -9,12 +9,17 @@ date: 2014-04-16
 layout: post
 
 ---
+
+<div data-excerpt>
+
 The `bem-core` library goes futher and there already is `2.0.0` version
 available. This blog was safely switched to the new major version with
 [some diff to the
 code](https://github.com/varya/varya.github.com/commit/f21f810b7cb4e16206ef3d088a8b2c38b615f8f3).
 Now so can do you. Careful examination of the version changelog will help you
-with it. Look how I did this.<excerpt/>
+with it. Look how I did this.
+
+</div>
 
 When a new bem library version is released its changelog is published on the
 official BEM website. You can examine the [list of changes for bem-core

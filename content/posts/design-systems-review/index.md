@@ -17,12 +17,14 @@ meta:
 
 ---
 
+<div data-excerpt>
+
 ## Introduction
 
 In general, *design systems* is a systematic approach to creating and maintaining consistent user interfaces which
 coherently communicate the brand values and empower user experience.
 
-<excerpt/>
+</div>
 
 Similarly to physical things, such as sewing a dress, a web application can be created not in a factory but by an
 amateur. To do this, a person certainly needs some skills but a systematic approach can be out of use. The situation

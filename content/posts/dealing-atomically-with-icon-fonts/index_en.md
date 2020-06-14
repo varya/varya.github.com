@@ -17,6 +17,8 @@ meta:
 
 ---
 
+<div data-excerpt>
+
 My recent huge project was developing a library of CSS and JavaScript components for sharing this code across a lot of
 web services and mobile apps. In most cases such work brings up question about how to avoid blocking the processes.
 
@@ -27,7 +29,7 @@ customers sometimes cannot wait even an hour.
 I belive that one of the must-haves of UI library is the freedom which it should give to its customers. You can easily
 provide this if practice atomic approach everythere. For example, for the icon fonts.
 
-<excerpt/>
+</div>
 
 ### Solid piece
 Soon or not SVG will conquer the world. But now we still have icon fonts in some projects. The same story was with that

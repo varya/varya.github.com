@@ -15,11 +15,13 @@ meta:
 
 ---
 
+<div data-excerpt>
+
 The examples of great business models are rarely static but most often those that demonstrate changes responding to the
 market and competition challenges. As we cannot foresee the future, it is not possible to design a static business model
 once and forever. Thus, to achieve and keep their business success, companies need ongoing innovative activity.
 
-<excerpt/>
+</div>
 
 <div class="small" markdown="1">
 

@@ -8,12 +8,16 @@ v2: true
 layout: post
 
 ---
+<div data-excerpt>
+
 Recently I attended [Front Trends 2014](http://2014.front-trends.com/) in Warsaw.
 This is an awesome conference which you should (no, definitely have to!) attend
 in 2015. Besides incredible main programm Front Trends provides a set of Lighting Talks.
 This year I was a part of it presenting [Steroids](http://www.appgyver.com/steroids),
 a framework and a toolkit for developing HTML5 mobile apps. If you did not have
-a chance to hear it, this offline text presentation is for you.<excerpt/>
+a chance to hear it, this offline text presentation is for you.
+
+</div>
 
 <div class="slide">
   <iframe class="slide__frame" scrolling="no"

@@ -15,9 +15,11 @@ meta:
 
 ---
 
+<div data-excerpt>
+
 Linking web fonts in SASS when using Webpack might not work as expected. The most common problem is incorrect URL resolving if a font is linked with `url()`. This post covers this and the following traps on your way to nice fonts on your webpage.
 
-<excerpt/>
+</div>
 
 <div class="small" markdown="1">
 

@@ -8,9 +8,13 @@ v2: true
 layout: post
 
 ---
+
+<div data-excerpt>
+
 This time I would like to share my experience of keeping a codestyle in one of my working projects. This is about a new
 tool called **JSCS** which we have recently chosen with the team and now are very pleased with the result.
-<excerpt/>
+
+</div>
 
 Once I joined [SC5 Styleguide](http://styleguide.sc5.io/) project, I discovered that it was not consistent enough from
 its codestyle perspective. It was not frightening by that time, but it was already clear that the project was going to

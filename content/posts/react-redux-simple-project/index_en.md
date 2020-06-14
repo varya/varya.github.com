@@ -16,6 +16,8 @@ meta:
 
 ---
 
+<div data-excerpt>
+
 Two weeks ago, I have started a new project of migrating a large website to React. Although this is not developing from
 scratch but refactoring, there still was a great chance to reconsider the project file structure in its client part.
 
@@ -25,7 +27,8 @@ Redux as a glue to the components in the data area. As a result, I think I provi
 helps a developer to understand what serves what. On the other hand, I tried to keep it simple. In the beginning, there
 is no need in overcomplicated.
 
-<excerpt/>
+</div>
+
 In this post, I present the initial state of the project structure, extracted from the working repository. In our actual
 project, it has already evolved to use other patterns and helping tools. I hope I will make it to present these changes
 in the following posts.

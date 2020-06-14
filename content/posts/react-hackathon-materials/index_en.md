@@ -15,6 +15,8 @@ meta:
 
 ---
 
+<div data-excerpt>
+
 Being a frontend developer these days means to learn the new things every day. We read articles and blog posts,
 examine the changelogs, follow the Twitter announcements and participate in the GitHub discussions.
 This helps to keep up.
@@ -25,7 +27,7 @@ The perfect solution is to organize a whole day hackathon for the developers in 
 At SC5 online, we took this advantage mastering the React development. Few ecosystem components such as
 webpack and redux came along.
 
-<excerpt/>
+</div>
 
 The private companies have hard time to find an opportunity and organize such event.
 Moreover, the preparations for the hackathon consume a lot of resources. To ease the hardship, I've decided to share
