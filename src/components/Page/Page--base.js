@@ -15,9 +15,10 @@ export default function PageTemplate({
   return (
     <MDXProvider components={{
       wrapper: ({ onlyExcerpt = false, excerptBackup, children }) => {
-        let updatedChildren = [ ...children ];
 
         if (onlyExcerpt) {
+          let updatedChildren = [ ...children ];
+
           updatedChildren = children.filter((child, _) => {
             return child.props && child.props["data-excerpt"];
           });
@@ -25,9 +26,11 @@ export default function PageTemplate({
           if (updatedChildren.length === 0) {
             updatedChildren.push(<div dangerouslySetInnerHTML={{ __html: excerptBackup }}/>)
           }
+
+          return (<>{updatedChildren}</>)
         }
 
-        return (<>{updatedChildren}</>)
+        return (<>{children}</>)
       }
     }}>
       <PageCommon
