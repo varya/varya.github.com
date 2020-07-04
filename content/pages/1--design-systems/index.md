@@ -109,6 +109,10 @@ the project were:
 * Leading developing of CSS and React libraries.
 * Creating infrastructure for smooth contribution into the design system projects.
 
+### Business Finland Design System
+
+Making a [design system for Business Finland](https://designsystem.businessfinland.fi/#/) included workshop and co-creation sessions, UI inventory based on the existing product, implementing and taking into use a light-weight HTML documenting tool, automating testing and updating routines and polishing the maintenance processes. Note the on-site accessibility tests available at the very pages of the components.
+
 ### BEM project by Yandex
 
 At Yandex, I worked in BEM team on [methodology, technologies, libraries and a toolbox of BEM](https://en.bem.info/).
