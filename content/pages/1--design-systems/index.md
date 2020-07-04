@@ -3,13 +3,25 @@ title: Design systems
 layout: './src/components/Page/Page--base.js'
 ---
 
-My work as a **design system expert** includes running the processes related to the design and development in large or
+My work as a **design system architect** includes running the processes related to the design and development in large or
 regular organizations. It means inventing and shaping the processes through user interviews and data analysis, tuning
 the management tools and running new ones, working on company culture and increasing people's involvement, providing
 the technical infrastructure and guiding in design and development.
 
 In this way, I make a lot of research and discoveries in technical, design and managing aspects. On this page, I present
 the public artifacts of my design-systems activity.
+
+## Services
+
+As an independent consultant, I am offering a wide range of design-systems and front-end related services:
+
+* Audit of existing products and development processes
+* Coaching to boots your design operations and development to the next level
+* Custom-tailored workshops on the related topics
+* Design systems production
+* Development of the UI components
+
+You can contact me by email [mail@varya.me](mailto:mail@varya.me) or phone +358 50 5750907 on these and related topics.
 
 ## Concepts
 
