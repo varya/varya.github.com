@@ -24,6 +24,10 @@ the public artifacts of my design-systems activity.
 
 ## Workshops
 
+* [Design systems 101](/design-systems/design-systems-101/)<br/>
+Introductary non-technical workshop for all the specialists (designers, developers, managers) to get common understanding
+on the concept of design systems and figure out the first steps towards your own.
+
 * [Hands-on with Design Systems](/design-systems/hands-on-workshop/)<br/>
 Full-day workshop about building design system and pattern library (React) in multidisciplinary team. This workshop was
 given twice - as a part of DSConf Helsinki, and the second time on its own.
