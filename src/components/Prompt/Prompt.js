@@ -70,7 +70,7 @@ const Prompt = props => {
     },
     {
       image: require('./facebook.png'),
-      href: "http://www.facebook.com/varvara.stepanova.9",
+      href: "https://www.facebook.com/toivonens",
     },
     {
       image: require('./linkedin.png'),
