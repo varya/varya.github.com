@@ -50,10 +50,6 @@ const Item = styled.li`
   display: inline-block;
   margin-right: 1em;
 
-  &:last-child {
-    margin-right: 0;
-  }
-
   ${breakpoint('desktop')`
     display: list-item;
     margin-right: 0;
