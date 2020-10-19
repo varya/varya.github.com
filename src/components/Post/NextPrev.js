@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
-// import { IconContext } from "react-icons"
 import FaArrowRight from "react-icons/lib/fa/arrow-right";
 import FaArrowLeft from "react-icons/lib/fa/arrow-left";
 
@@ -26,13 +25,12 @@ const NextLink = styled(NavLink)`
 `;
 
 const NavLinkIcon = styled.span`
- margin-right: ${props => props.left && '1em'};
- margin-left: ${props => props.right && '1em'};
- flex: 0 0 auto;
+	margin-right: ${props => props.left && '1em'};
+	margin-left: ${props => props.right && '1em'};
+	flex: 0 0 auto;
 `
 
 const NextPrev = props => {
-console.log("props", props);
   const {
     next: {
       fields: { prefix: nextPrefix, slug: nextSlug } = {},
