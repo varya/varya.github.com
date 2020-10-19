@@ -14,30 +14,32 @@ const NavLink = styled(Link)`
   display: inline-flex;
   flex-basis: 50%;
   margin: 0;
+  & > * {
+    margin-right: 1em;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 `;
+
 const PrevLink = styled(NavLink)`
   margin-right: 0.25em;
   text-align: left;
 `;
+
 const NextLink = styled(NavLink)`
   margin-left: 0.25em;
   text-align: right;
 `;
 
-const NavLinkIcon = styled.span`
-	margin-right: ${props => props.left && '1em'};
-	margin-left: ${props => props.right && '1em'};
-	flex: 0 0 auto;
-`
-
 const NextPrev = props => {
   const {
     next: {
-      fields: { prefix: nextPrefix, slug: nextSlug } = {},
+      fields: { slug: nextSlug } = {},
       frontmatter: { title: nextTitle } = {}
     } = {},
     prev: {
-      fields: { prefix: prevPrefix, slug: prevSlug } = {},
+      fields: { slug: prevSlug } = {},
       frontmatter: { title: prevTitle } = {}
     } = {}
   } = props;
@@ -46,22 +48,18 @@ const NextPrev = props => {
       <NextPrevContainer>
         {prevSlug && (
           <PrevLink to={`/${prevSlug}`} title="Read previous post">
-            <NavLinkIcon left>
-              <FaArrowLeft size='1.5em' aria-hidden="true"/>
-            </NavLinkIcon>  
-            <h4 style={{margin: 0}}>
+            <FaArrowLeft size='1.5em' aria-hidden="true" style={{flexShrink: 0, paddingTop: '.25em'}}/>
+            <h4 style={{marginTop: 0, marginBottom: 0}}>
               {prevTitle}
             </h4>
           </PrevLink>
         )}
         {nextSlug && (
           <NextLink to={`/${nextSlug}`} title="Read next post">     
-            <h4 style={{margin: 0}}>
+            <h4 style={{marginTop: 0, marginBottom: 0}}>
               {nextTitle}
             </h4>
-            <NavLinkIcon right>
-              <FaArrowRight size='1.5em' aria-hidden="true"/>
-            </NavLinkIcon>  
+            <FaArrowRight size='1.5em' aria-hidden="true" style={{flexShrink: 0, paddingTop: '.25em'}}/>
           </NextLink>
         )}
       </NextPrevContainer>

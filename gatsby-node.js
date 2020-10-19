@@ -105,7 +105,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       query {
         allMdx(
           filter: { fileAbsolutePath: { regex: "//posts|pages|life//" } }
-          sort: { fields: [fields___prefix], order: DESC }
+          sort: { fields: [fields___prefix, frontmatter___date], order: [DESC, DESC] }
         ) {
           edges {
             node {
@@ -139,10 +139,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const items = result.data.allMdx.edges;
 
     const posts = items.filter(item => /posts/.test(item.node.fileAbsolutePath));
-    // Sort posts by date
-    posts.sort((a, b) => {
-        return new Date(a.node.frontmatter.date).getTime() > new Date(b.node.frontmatter.date).getTime() ? -1 : 1
-    });
     posts.forEach(({ node }, index) => {
       const slug = node.fields && node.fields.slug;
       const next = index === 0 ? undefined : posts[index - 1].node;
