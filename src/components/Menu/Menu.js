@@ -1,8 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { Link } from "gatsby";
 
 import styled from "styled-components";
-import { colorScheme } from '../Colors/Colors.js';
+import { colorScheme } from "../Colors/Colors.js";
 
 import FaHome from "react-icons/lib/fa/home";
 import FaTag from "react-icons/lib/fa/tag";
@@ -42,45 +44,45 @@ class Menu extends React.Component {
     super(props);
 
     const pages = props.pages
-    .filter(page => page.node.fields.level === 1)
-    .map(page => ({
-      to: page.node.fields.slug,
-      label: page.node.frontmatter.menuTitle
-        ? page.node.frontmatter.menuTitle
-        : page.node.frontmatter.title
-    }));
+      .filter((page) => page.node.fields.level === 1)
+      .map((page) => ({
+        to: page.node.fields.slug,
+        label: page.node.frontmatter.menuTitle
+          ? page.node.frontmatter.menuTitle
+          : page.node.frontmatter.title,
+      }));
 
     this.items = [
       { to: "/", label: "Home", icon: FaHome },
       { to: "/blog/", label: "Blog", icon: FaTag },
       /*{ to: "/design-systems/", label: "Design Systems" },*/
-      ...pages
+      ...pages,
     ];
 
     this.renderedItems = []; // will contain references to rendered DOM elements of menu
   }
 
   render() {
-
     return (
-        <MenuContainer>
-          <MenuList>
-            {this.items.map(item => {
-              const Icon = item.icon
-              return (
-                <MenuItem key={item.label}>
-                  {Icon && <Icon />}
-                  <MenuLink to={item.to}>
-                    {item.label}
-                  </MenuLink>
-                </MenuItem>
-              )}
-            )}
-          </MenuList>
-        </MenuContainer>
-
+      <MenuContainer>
+        <MenuList>
+          {this.items.map((item) => {
+            const Icon = item.icon;
+            return (
+              <MenuItem key={item.label}>
+                {Icon && <Icon />}
+                <MenuLink to={item.to}>{item.label}</MenuLink>
+              </MenuItem>
+            );
+          })}
+        </MenuList>
+      </MenuContainer>
     );
   }
 }
+
+Menu.propTypes = {
+  pages: PropTypes.array,
+};
 
 export default Menu;

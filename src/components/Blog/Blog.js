@@ -11,29 +11,33 @@ const Container = styled.main`
   }
 `;
 
-const Blog = props => {
-
-  return (<StaticQuery
+const Blog = () => {
+  return (
+    <StaticQuery
       query={graphql`
-      query BlogQuery {
-        posts: allMdx(
-          filter: { fileAbsolutePath: { regex: "//posts/.*/" }, fields: { lang: {eq: "en" } } }
-          sort: { fields: [frontmatter___date], order: DESC }
-        ) {
-          edges {
-            node {
-              body
-              excerpt
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                date(formatString: "DD MMMM YYYY")
-                cover {
-                  childImageSharp{
-                    sizes(maxWidth: 250) {
-                      ...GatsbyImageSharpSizes
+        query BlogQuery {
+          posts: allMdx(
+            filter: {
+              fileAbsolutePath: { regex: "//posts/.*/" }
+              fields: { lang: { eq: "en" } }
+            }
+            sort: { fields: [frontmatter___date], order: DESC }
+          ) {
+            edges {
+              node {
+                body
+                excerpt
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                  date(formatString: "DD MMMM YYYY")
+                  cover {
+                    childImageSharp {
+                      sizes(maxWidth: 250) {
+                        ...GatsbyImageSharpSizes
+                      }
                     }
                   }
                 }
@@ -41,11 +45,10 @@ const Blog = props => {
             }
           }
         }
-      }
       `}
-      render={(data) => <BlogComponent data={data} />
-    }
-  />);
+      render={(data) => <BlogComponent data={data} />}
+    />
+  );
 };
 
 export default Blog;
@@ -54,11 +57,15 @@ export const BlogComponent = (props) => {
   const posts = props.data.posts.edges;
   return (
     <Container>
-      {posts.map(post => {
+      {posts.map((post) => {
         const node = post.node;
         const slug = post.node.fields.slug;
         return <Item key={slug} post={node} />;
       })}
     </Container>
-  )
-}
+  );
+};
+
+BlogComponent.propTypes = {
+  data: PropTypes.object,
+};

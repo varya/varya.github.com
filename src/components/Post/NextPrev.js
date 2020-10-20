@@ -32,37 +32,41 @@ const NextLink = styled(NavLink)`
   text-align: right;
 `;
 
-const NextPrev = props => {
+const NextPrev = (props) => {
   const {
     next: {
       fields: { slug: nextSlug } = {},
-      frontmatter: { title: nextTitle } = {}
+      frontmatter: { title: nextTitle } = {},
     } = {},
     prev: {
       fields: { slug: prevSlug } = {},
-      frontmatter: { title: prevTitle } = {}
-    } = {}
+      frontmatter: { title: prevTitle } = {},
+    } = {},
   } = props;
 
   return (
-      <NextPrevContainer>
-        {prevSlug && (
-          <PrevLink to={`/${prevSlug}`} title="Read previous post">
-            <FaArrowLeft size='1.5em' aria-hidden="true" style={{flexShrink: 0, paddingTop: '.25em'}}/>
-            <h4 style={{marginTop: 0, marginBottom: 0}}>
-              {prevTitle}
-            </h4>
-          </PrevLink>
-        )}
-        {nextSlug && (
-          <NextLink to={`/${nextSlug}`} title="Read next post">     
-            <h4 style={{marginTop: 0, marginBottom: 0}}>
-              {nextTitle}
-            </h4>
-            <FaArrowRight size='1.5em' aria-hidden="true" style={{flexShrink: 0, paddingTop: '.25em'}}/>
-          </NextLink>
-        )}
-      </NextPrevContainer>
+    <NextPrevContainer>
+      {prevSlug && (
+        <PrevLink to={`/${prevSlug}`} title="Read previous post">
+          <FaArrowLeft
+            size="1.5em"
+            aria-hidden="true"
+            style={{ flexShrink: 0, paddingTop: ".25em" }}
+          />
+          <h4 style={{ marginTop: 0, marginBottom: 0 }}>{prevTitle}</h4>
+        </PrevLink>
+      )}
+      {nextSlug && (
+        <NextLink to={`/${nextSlug}`} title="Read next post">
+          <h4 style={{ marginTop: 0, marginBottom: 0 }}>{nextTitle}</h4>
+          <FaArrowRight
+            size="1.5em"
+            aria-hidden="true"
+            style={{ flexShrink: 0, paddingTop: ".25em" }}
+          />
+        </NextLink>
+      )}
+    </NextPrevContainer>
   );
 };
 

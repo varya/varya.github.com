@@ -1,34 +1,33 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
 
-import Seo from "../Seo"
+import { graphql } from "gatsby";
+
+import Seo from "../Seo";
 import Prompt from "../Prompt";
 import Article from "../Article";
 import Post from "../Post";
 import GithubEdit from "../GithubEdit";
 
-import PageCommon from './Page--common'
+import PageCommon from "./Page--common";
 
 export default function PostTemplate({
-    data: {
-      mdx,
-      site: {
-        siteMetadata,
-      },
-    },
-    pageContext: {
-      next,
-      prev,
-      fileSourceUrl,
-    },
-    location,
-  }) {
+  data: {
+    mdx,
+    site: { siteMetadata },
+  },
+  pageContext: { next, prev, fileSourceUrl },
+  location,
+}) {
   return (
     <>
       <PageCommon
-        content={(
+        content={
           <>
-            <Article title={mdx.frontmatter.title} readingTime={mdx.fields.readingTime}>
+            <Article
+              title={mdx.frontmatter.title}
+              readingTime={mdx.fields.readingTime}
+            >
               <Post
                 post={mdx}
                 next={next}
@@ -38,16 +37,14 @@ export default function PostTemplate({
             </Article>
             <GithubEdit link={fileSourceUrl} />
           </>
-        )}
+        }
         right=""
-        left={(
-          <Prompt />
-        )}
+        left={<Prompt />}
         location={location}
       />
       <Seo data={mdx} />
     </>
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -88,4 +85,10 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
+
+PostTemplate.propTypes = {
+  data: PropTypes.object,
+  pageContext: PropTypes.object,
+  location: PropTypes.object,
+};

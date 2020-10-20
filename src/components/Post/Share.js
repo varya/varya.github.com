@@ -11,24 +11,24 @@ import {
   FacebookIcon,
   TwitterIcon,
   GooglePlusIcon,
-  LinkedinIcon
+  LinkedinIcon,
 } from "react-share";
 
 import config from "../../../content/meta/config";
 
-const PostShare = props => {
+const PostShare = (props) => {
   const {
     post: {
       fields: { slug },
       frontmatter: { title },
-      excerpt
+      excerpt,
     },
   } = props;
 
   const url = config.siteUrl + config.pathPrefix + slug;
 
   const iconSize = 36;
-  const filter = count => (count > 0 ? count : "");
+  const filter = (count) => (count > 0 ? count : "");
 
   return (
     <React.Fragment>
@@ -39,7 +39,7 @@ const PostShare = props => {
             url={url}
             title={title}
             additionalProps={{
-              "aria-label": "Twitter share"
+              "aria-label": "Twitter share",
             }}
           >
             <TwitterIcon round size={iconSize} />
@@ -47,24 +47,24 @@ const PostShare = props => {
           <GooglePlusShareButton
             url={url}
             additionalProps={{
-              "aria-label": "Google share"
+              "aria-label": "Google share",
             }}
           >
             <GooglePlusIcon round size={iconSize} />
             <GooglePlusShareCount url={url}>
-              {count => <div className="share-count">{filter(count)}</div>}
+              {(count) => <div className="share-count">{filter(count)}</div>}
             </GooglePlusShareCount>
           </GooglePlusShareButton>
           <FacebookShareButton
             url={url}
             quote={`${title} - ${excerpt}`}
             additionalProps={{
-              "aria-label": "Facebook share"
+              "aria-label": "Facebook share",
             }}
           >
             <FacebookIcon round size={iconSize} />
             <FacebookShareCount url={url}>
-              {count => <div className="share-count">{filter(count)}</div>}
+              {(count) => <div className="share-count">{filter(count)}</div>}
             </FacebookShareCount>
           </FacebookShareButton>
           <LinkedinShareButton
@@ -72,17 +72,16 @@ const PostShare = props => {
             title={title}
             description={excerpt}
             additionalProps={{
-              "aria-label": "LinkedIn share"
+              "aria-label": "LinkedIn share",
             }}
           >
             <LinkedinIcon round size={iconSize} />
             <LinkedinShareCount url={url}>
-              {count => <div className="share-count">{filter(count)}</div>}
+              {(count) => <div className="share-count">{filter(count)}</div>}
             </LinkedinShareCount>
           </LinkedinShareButton>
         </div>
       </div>
-
     </React.Fragment>
   );
 };

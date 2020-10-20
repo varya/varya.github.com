@@ -3,10 +3,9 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 
 import FaCalendar from "react-icons/lib/fa/calendar";
-import FaUser from "react-icons/lib/fa/user";
 import FaTag from "react-icons/lib/fa/tag";
 
-const Meta = props => {
+const Meta = (props) => {
   const { prefix, category } = props;
 
   return (
@@ -20,7 +19,6 @@ const Meta = props => {
           <Link to={`/category/${category}`}>{category}</Link>
         </span>
       )}
-
     </p>
   );
 };

@@ -1,6 +1,8 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { MDXRenderer } from "gatsby-plugin-mdx"
+import React from "react";
+import PropTypes from "prop-types";
+
+import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import Prompt from "../Prompt";
 import Article from "../Article";
@@ -9,24 +11,23 @@ import BreadCrumbs from "../BreadCrumbs";
 import GithubEdit from "../GithubEdit";
 import Seo from "../Seo";
 
-import PageCommon from './Page--common'
+import PageCommon from "./Page--common";
 
 export default function PageTemplate({
-    data: {
-      mdx,
-    },
-    pageContext: {
-      breadCrumbs,
-      fileSourceUrl,
-    },
-    location,
-  }) {
+  data: { mdx },
+  pageContext: { breadCrumbs, fileSourceUrl },
+  location,
+}) {
   return (
     <>
       <PageCommon
-        content={(
+        content={
           <>
-            <Article title={mdx.frontmatter.title} subTitle={mdx.frontmatter.subTitle} readingTime={mdx.fields.readingTime}>
+            <Article
+              title={mdx.frontmatter.title}
+              subTitle={mdx.frontmatter.subTitle}
+              readingTime={mdx.fields.readingTime}
+            >
               <TextBlock>
                 <MDXRenderer>{mdx.body}</MDXRenderer>
               </TextBlock>
@@ -34,16 +35,14 @@ export default function PageTemplate({
             <BreadCrumbs data={breadCrumbs} />
             <GithubEdit link={fileSourceUrl} />
           </>
-        )}
+        }
         right=""
-        left={(
-          <Prompt />
-        )}
+        left={<Prompt />}
         location={location}
       />
       <Seo data={mdx} />
     </>
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -63,4 +62,10 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
+
+PageTemplate.propTypes = {
+  data: PropTypes.object,
+  pageContext: PropTypes.object,
+  location: PropTypes.object,
+};

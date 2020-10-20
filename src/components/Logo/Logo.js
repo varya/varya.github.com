@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { colorScheme } from '../Colors/Colors.js';
+import { colorScheme } from "../Colors/Colors.js";
 
 const LogoContainer = styled.div`
   font-size: 2em;
@@ -9,22 +9,21 @@ const LogoContainer = styled.div`
 `;
 const LogoVar = styled.b`
   color: ${colorScheme.primary};
-  font-family: 'Monaco';
+  font-family: "Monaco";
   &:after {
-    content: ' ';
+    content: " ";
   }
 `;
 const LogoYa = styled.b`
   color: ${colorScheme.highlight};
-  font-family: 'Monaco';
+  font-family: "Monaco";
   &:after {
-    content: ';';
+    content: ";";
     color: ${colorScheme.shadow};
   }
 `;
 
-const Logo = props => {
-
+const Logo = () => {
   return (
     <LogoContainer>
       <LogoVar>var</LogoVar>
