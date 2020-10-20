@@ -105,7 +105,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       query {
         allMdx(
           filter: { fileAbsolutePath: { regex: "//posts|pages|life//" } }
-          sort: { fields: [fields___prefix], order: DESC }
+          sort: { fields: [fields___prefix, frontmatter___date], order: [DESC, DESC] }
         ) {
           edges {
             node {

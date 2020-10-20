@@ -1,42 +1,68 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
+import styled from "styled-components";
 
 import FaArrowRight from "react-icons/lib/fa/arrow-right";
 import FaArrowLeft from "react-icons/lib/fa/arrow-left";
 
+const NextPrevContainer = styled.div`
+  display: flex;
+`;
+
+const NavLink = styled(Link)`
+  display: inline-flex;
+  flex-basis: 50%;
+  margin: 0;
+  & > * {
+    margin-right: 1em;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+`;
+
+const PrevLink = styled(NavLink)`
+  margin-right: 0.25em;
+  text-align: left;
+`;
+
+const NextLink = styled(NavLink)`
+  margin-left: 0.25em;
+  text-align: right;
+`;
+
 const NextPrev = props => {
   const {
     next: {
-      fields: { prefix: nextPrefix, slug: nextSlug } = {},
+      fields: { slug: nextSlug } = {},
       frontmatter: { title: nextTitle } = {}
     } = {},
     prev: {
-      fields: { prefix: prevPrefix, slug: prevSlug } = {},
+      fields: { slug: prevSlug } = {},
       frontmatter: { title: prevTitle } = {}
     } = {}
   } = props;
 
   return (
-      <div className="links">
-        {nextSlug && (
-          <Link to={nextSlug}>
-            <FaArrowRight />
-            <h4>
-              {nextTitle} <time>{nextPrefix} </time>
-            </h4>
-          </Link>
-        )}
+      <NextPrevContainer>
         {prevSlug && (
-          <Link to={prevSlug}>
-            <FaArrowLeft />
-            <h4>
-              {prevTitle} <time>{prevPrefix}</time>
+          <PrevLink to={`/${prevSlug}`} title="Read previous post">
+            <FaArrowLeft size='1.5em' aria-hidden="true" style={{flexShrink: 0, paddingTop: '.25em'}}/>
+            <h4 style={{marginTop: 0, marginBottom: 0}}>
+              {prevTitle}
             </h4>
-          </Link>
+          </PrevLink>
         )}
-      </div>
-
+        {nextSlug && (
+          <NextLink to={`/${nextSlug}`} title="Read next post">     
+            <h4 style={{marginTop: 0, marginBottom: 0}}>
+              {nextTitle}
+            </h4>
+            <FaArrowRight size='1.5em' aria-hidden="true" style={{flexShrink: 0, paddingTop: '.25em'}}/>
+          </NextLink>
+        )}
+      </NextPrevContainer>
   );
 };
 
