@@ -9,7 +9,11 @@
     "strict": 0,
     "no-console": 1
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:markdown/recommended"
+  ],
   "settings": {
     "react": {
       "version": "detect"
