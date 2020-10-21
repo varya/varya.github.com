@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require("path");
 const config = require("./content/meta/config");
 
 module.exports = {
@@ -23,25 +23,25 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
-        defaultLayouts: { default: path.resolve('./src/components/Page/Page--outer') },
+        defaultLayouts: {
+          default: path.resolve("./src/components/Page/Page--outer"),
+        },
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
-              backgroundColor: "transparent"
-            }
+              backgroundColor: "transparent",
+            },
           },
           `gatsby-remark-prismjs`,
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
-              elements: [
-                `h2`, `h3`, `h4`, `h5`, `h6`,
-              ]
-            }
-          }
-        ]
+              elements: [`h2`, `h3`, `h4`, `h5`, `h6`],
+            },
+          },
+        ],
       },
     },
     {
@@ -89,40 +89,40 @@ module.exports = {
           {
             src: "/icons/icon-48x48.png",
             sizes: "48x48",
-            type: "image/png"
+            type: "image/png",
           },
           {
             src: "/icons/icon-96x96.png",
             sizes: "96x96",
-            type: "image/png"
+            type: "image/png",
           },
           {
             src: "/icons/icon-144x144.png",
             sizes: "144x144",
-            type: "image/png"
+            type: "image/png",
           },
           {
             src: "/icons/icon-192x192.png",
             sizes: "192x192",
-            type: "image/png"
+            type: "image/png",
           },
           {
             src: "/icons/icon-256x256.png",
             sizes: "256x256",
-            type: "image/png"
+            type: "image/png",
           },
           {
             src: "/icons/icon-384x384.png",
             sizes: "384x384",
-            type: "image/png"
+            type: "image/png",
           },
           {
             src: "/icons/icon-512x512.png",
             sizes: "512x512",
-            type: "image/png"
+            type: "image/png",
           },
-        ]
-      }
+        ],
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
@@ -130,9 +130,12 @@ module.exports = {
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
-        include: /src/
-      }
+        include: /src/,
+      },
     },
-    `gatsby-plugin-styled-components`
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: "gatsby-plugin-no-sourcemaps",
+    },
   ],
-}
+};
