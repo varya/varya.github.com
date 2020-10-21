@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Grid, Cell } from "styled-css-grid";
 import styled from "styled-components";
 import breakpoint from "styled-components-breakpoint";
@@ -10,30 +11,26 @@ const MyGrid = styled(Grid)`
     "prompt prompt"
     "footer footer";
 
-  ${breakpoint('mobile') `
+  ${breakpoint("mobile")`
     grid-gap: 8px;
   `}
-  ${breakpoint('tablet') `
+  ${breakpoint("tablet")`
     grid-template-areas:
       "header header"
       "prompt content"
       "footer footer";
     grid-gap: 16px;
   `}
-  ${breakpoint('desktop') `
+  ${breakpoint("desktop")`
     grid-gap: 24px;
   `}
 `;
 
 export const LayoutSimple = (props) => (
-  <MyGrid
-    columns={"48px 1fr"}
-    rows={"minmax(48px,auto) 1fr minmax(48px,auto)"}
-    >
+  <MyGrid columns={"48px 1fr"} rows={"minmax(48px,auto) 1fr minmax(48px,auto)"}>
     <Cell area="header" width={2}>
       {props.header}
     </Cell>
-
 
     <Cell area="content" width={1}>
       {props.content}
@@ -46,4 +43,11 @@ export const LayoutSimple = (props) => (
       {props.footer}
     </Cell>
   </MyGrid>
-)
+);
+
+LayoutSimple.propTypes = {
+  header: PropTypes.node,
+  content: PropTypes.node,
+  prompt: PropTypes.node,
+  footer: PropTypes.node,
+};

@@ -1,47 +1,55 @@
-import React from "react"
+import React from "react";
+import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx"
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import PageCommon from './Page--common'
+import PageCommon from "./Page--common";
 import TextBlock from "../TextBlock";
-import {MDXProvider} from '@mdx-js/react'
+import { MDXProvider } from "@mdx-js/react";
 
-export default function PageTemplate({
-    data: {
-      mdx,
-    },
-    location,
-  }) {
-  return (
-    <MDXProvider components={{
-      wrapper: ({ onlyExcerpt = false, excerptBackup, children }) => {
+export default function PageTemplate({ data: { mdx }, location }) {
+  const MdxWrapper = ({ onlyExcerpt = false, excerptBackup, children }) => {
+    if (onlyExcerpt) {
+      let updatedChildren = [...children];
 
-        if (onlyExcerpt) {
-          let updatedChildren = [ ...children ];
+      updatedChildren = children.filter((child) => {
+        return child.props && child.props["data-excerpt"];
+      });
 
-          updatedChildren = children.filter((child, _) => {
-            return child.props && child.props["data-excerpt"];
-          });
-
-          if (updatedChildren.length === 0) {
-            updatedChildren.push(<div dangerouslySetInnerHTML={{ __html: excerptBackup }}/>)
-          }
-
-          return (<>{updatedChildren}</>)
-        }
-
-        return (<>{children}</>)
+      if (updatedChildren.length === 0) {
+        updatedChildren.push(
+          <div dangerouslySetInnerHTML={{ __html: excerptBackup }} />
+        );
       }
-    }}>
+
+      return <>{updatedChildren}</>;
+    }
+
+    return <>{children}</>;
+  };
+
+  MdxWrapper.propTypes = {
+    onlyExcerpt: PropTypes.bool,
+    excerptBackup: PropTypes.object,
+    children: PropTypes.array,
+  };
+
+  return (
+    <MDXProvider
+      components={{
+        wrapper: MdxWrapper,
+      }}
+    >
       <PageCommon
-        content={(
+        content={
           <TextBlock>
             <MDXRenderer>{mdx.body}</MDXRenderer>
-          </TextBlock>)}
+          </TextBlock>
+        }
         location={location}
       />
     </MDXProvider>
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -51,4 +59,9 @@ export const pageQuery = graphql`
       body
     }
   }
-`
+`;
+
+PageTemplate.propTypes = {
+  data: PropTypes.object,
+  location: PropTypes.object,
+};

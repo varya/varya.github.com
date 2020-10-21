@@ -1,3 +1,3 @@
-import Colors from './Colors.js'
+import Colors from "./Colors.js";
 
-export default Colors
+export default Colors;

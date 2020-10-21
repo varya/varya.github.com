@@ -3,44 +3,45 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import config from "../../../content/meta/config";
 
-const Seo = props => {
-  const {
-    data,
-    title,
-    keywords,
-  } = props;
+const Seo = (props) => {
+  const { data, title, keywords } = props;
   const postTitle = ((data || {}).frontmatter || {}).title;
-  const postDescription = ((data || {}).frontmatter || {}).description || (((data || {}).frontmatter || {}).meta || {}).desc;
+  const postDescription =
+    ((data || {}).frontmatter || {}).description ||
+    (((data || {}).frontmatter || {}).meta || {}).desc;
   const postCover = ((data || {}).frontmatter || {}).cover;
   const postSlug = ((data || {}).fields || {}).slug;
 
   let fullTitle;
   if (!title) {
-    fullTitle = postTitle ? `${postTitle} - ${config.shortSiteTitle}` : config.siteTitle;
+    fullTitle = postTitle
+      ? `${postTitle} - ${config.shortSiteTitle}`
+      : config.siteTitle;
   } else {
     fullTitle = title;
   }
-  const description = postDescription ? postDescription : config.siteDescription;
-  const image = postCover ? postCover.childImageSharp.resize.src : config.siteImage;
+  const description = postDescription
+    ? postDescription
+    : config.siteDescription;
+  const image = postCover
+    ? postCover.childImageSharp.resize.src
+    : config.siteImage;
   const url = config.siteUrl + config.pathPrefix + postSlug;
 
   return (
     <Helmet
       htmlAttributes={{
         lang: config.siteLanguage,
-        prefix: "og: http://ogp.me/ns#"
+        prefix: "og: http://ogp.me/ns#",
       }}
-      meta={[
-
-      ]
-      .concat(
-        (keywords && keywords.length > 0)
+      meta={[].concat(
+        keywords && keywords.length > 0
           ? {
-              name: 'keywords',
-              content: keywords.join(', '),
+              name: "keywords",
+              content: keywords.join(", "),
             }
-            : []
-        )}
+          : []
+      )}
     >
       {/* General tags */}
       <title>{title}</title>
@@ -63,6 +64,8 @@ const Seo = props => {
 
 Seo.propTypes = {
   data: PropTypes.object,
+  title: PropTypes.string,
+  keywords: PropTypes.object,
 };
 
 export default Seo;

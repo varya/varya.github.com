@@ -1,29 +1,18 @@
 import React from "react";
-// eslint-disable-next-line
 import PropTypes from "prop-types";
 
 import { DiscussionEmbed } from "disqus-react";
 
-const Comments = props => {
- 
+const Comments = (props) => {
   const {
     post: {
-      fields: {
-        slug,
-        title,
-        disqusIdentifier
-      },
-      frontmatter: {
-        tumblr,
-      }
+      fields: { slug, title, disqusIdentifier },
+      frontmatter: { tumblr },
     },
-    siteMetadata: {
-      siteUrl
-    }
+    siteMetadata: { siteUrl },
   } = props;
 
-  const disqusShortname = tumblr ? 'varyadaily' : 'varya';
-
+  const disqusShortname = tumblr ? "varyadaily" : "varya";
 
   const disqusConfig = {
     url: `${siteUrl}${slug}`,
@@ -35,8 +24,12 @@ const Comments = props => {
     <div>
       <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
     </div>
-)
+  );
+};
 
+Comments.propTypes = {
+  post: PropTypes.object,
+  siteMetadata: PropTypes.object,
 };
 
 export default Comments;

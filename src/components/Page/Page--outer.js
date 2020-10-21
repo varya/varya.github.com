@@ -1,7 +1,8 @@
-import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import React from "react";
+import PropTypes from "prop-types";
+import { StaticQuery, graphql } from "gatsby";
 
-import PageCommon from './Page--common'
+import PageCommon from "./Page--common";
 
 const Page = ({ children, location }) => (
   <StaticQuery
@@ -14,13 +15,13 @@ const Page = ({ children, location }) => (
         }
       }
     `}
-    render={data => (
-      <PageCommon
-        content={children}
-        location={location}
-        />
-    )}
+    render={() => <PageCommon content={children} location={location} />}
   />
-)
+);
 
-export default Page
+Page.propTypes = {
+  children: PropTypes.node,
+  location: PropTypes.object,
+};
+
+export default Page;

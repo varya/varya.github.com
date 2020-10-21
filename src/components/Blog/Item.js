@@ -4,42 +4,41 @@ import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
 
-import styled from 'styled-components'
-import { grid } from 'styled-components-grid'
-import { MDXRenderer } from "gatsby-plugin-mdx"
-
+import styled from "styled-components";
+import { grid } from "styled-components-grid";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 export const Container = styled.div`
   ${grid({})}
   margin-bottom: 3em;
-`
+`;
 export const PostHeader = styled.div`
   ${grid.unit({
     size: {
-        desktop: 12 / 12
-    }
+      desktop: 12 / 12,
+    },
   })}
 
   h3 {
     margin-top: 0;
     margin-bottom: 0.5em;
   }
-`
+`;
 
 export const Cover = styled.div`
   padding: 0.5em 2em 0 0;
   ${grid.unit({
     size: {
-        desktop: 4 / 12
-    }
+      desktop: 4 / 12,
+    },
   })}
-`
+`;
 
 export const TextByCover = styled.div`
   ${grid.unit({
     size: {
-        desktop: 8 / 12
-    }
+      desktop: 8 / 12,
+    },
   })}
 
   p:first-child {
@@ -48,61 +47,61 @@ export const TextByCover = styled.div`
   p:last-child {
     margin-bottom: 0;
   }
-`
+`;
 
 export const Text = styled.div`
-
   p:first-child {
     margin-top: 0;
   }
   p:last-child {
     margin-bottom: 0;
   }
-`
+`;
 
-const Item = props => {
+const Item = (props) => {
   const {
     post,
     post: {
       excerpt,
       fields: { slug },
-      frontmatter: {
-        title,
-        date,
-        cover,
-      }
-    }
+      frontmatter: { title, date, cover },
+    },
   } = props;
 
   // Clean excerpt tags
-  const excerptClean = excerpt ? excerpt.replace(/(<h2[^>]*>|<h3[^>]*>)(.+)(<\/h2>|<\/h3>)/gm, '') : 'read more';
+  const excerptClean = excerpt
+    ? excerpt.replace(/(<h2[^>]*>|<h3[^>]*>)(.+)(<\/h2>|<\/h3>)/gm, "")
+    : "read more";
 
   return (
     <Link to={`/${slug}`} key={slug} className="link">
       <Container>
         <PostHeader>
-          <h3>
-            {title}
-          </h3>
+          <h3>{title}</h3>
           <p className="meta">
             <span>
               <FaCalendar size={18} /> {date}
             </span>
           </p>
         </PostHeader>
-        {
-          cover && <Cover><Img sizes={cover.childImageSharp.sizes} /></Cover>
-        }
-        {
-          cover ?
-            <TextByCover>
-              <MDXRenderer onlyExcerpt={true} excerptBackup={excerptClean}>{post.body}</MDXRenderer>
-            </TextByCover>
-              :
-            <Text>
-              <MDXRenderer onlyExcerpt={true} excerptBackup={excerptClean}>{post.body}</MDXRenderer>
-            </Text>
-        }
+        {cover && (
+          <Cover>
+            <Img sizes={cover.childImageSharp.sizes} />
+          </Cover>
+        )}
+        {cover ? (
+          <TextByCover>
+            <MDXRenderer onlyExcerpt={true} excerptBackup={excerptClean}>
+              {post.body}
+            </MDXRenderer>
+          </TextByCover>
+        ) : (
+          <Text>
+            <MDXRenderer onlyExcerpt={true} excerptBackup={excerptClean}>
+              {post.body}
+            </MDXRenderer>
+          </Text>
+        )}
       </Container>
     </Link>
   );

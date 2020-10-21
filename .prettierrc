@@ -1,0 +1,15 @@
+{
+  "overrides": [
+    {
+      "files": [
+        "*.md, *.mdx"
+      ],
+      "options": {
+        "printWidth": 70,
+        "useTabs": false,
+        "trailingComma": "none",
+        "proseWrap": "never"
+      }
+    }
+  ]
+}
