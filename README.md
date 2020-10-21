@@ -3,38 +3,18 @@
 Social icons by Victor Gonzalez
 http://www.iconarchive.com/show/so-smooth-social-icons-by-minisoft.es.html
 
-## Install blog:
+## Install dependencies:
 
     npm install
-    docpad run --env static
+
+## Run locally:
+
+    npm start
 
 ## Build static files
 
-    ./node_modules/.bin/enb make --no-cache
+    npm run build
 
-## Deploy
+## Build and deploy
 
-    docpad deploy-ghpages --env static
-
-## Run visual tests
-
-### Check up interface
-
-Run blog locally
-
-```
-docpad run
-```
-
-Run test in another terminal window/tab:
-
-```
-gulp test
-```
-
-### Update reference screenshots
-
-```
-gulp test:update
-```
-
+    npm run deploy
