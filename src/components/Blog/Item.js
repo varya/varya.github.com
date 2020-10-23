@@ -86,7 +86,7 @@ const Item = (props) => {
         </PostHeader>
         {cover && (
           <Cover>
-            <Img sizes={cover.childImageSharp.sizes} />
+            <Img fluid={cover.childImageSharp.sizes} />
           </Cover>
         )}
         {cover ? (

@@ -2,10 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXProvider } from "@mdx-js/react";
+import Children from "react-children-utilities";
 
 import PageCommon from "./Page--common";
 import TextBlock from "../TextBlock";
-import { MDXProvider } from "@mdx-js/react";
 
 export default function PageTemplate({ data: { mdx }, location }) {
   const MdxWrapper = ({ onlyExcerpt = false, excerptBackup, children }) => {
@@ -17,12 +18,10 @@ export default function PageTemplate({ data: { mdx }, location }) {
       });
 
       if (updatedChildren.length === 0) {
-        updatedChildren.push(
-          <div dangerouslySetInnerHTML={{ __html: excerptBackup }} />
-        );
+        return <>{excerptBackup}</>;
       }
-
-      return <>{updatedChildren}</>;
+      // Keep only text from excerpt to avoid side effects of inner html tags
+      return <>{Children.onlyText(updatedChildren)}</>;
     }
 
     return <>{children}</>;
@@ -30,7 +29,7 @@ export default function PageTemplate({ data: { mdx }, location }) {
 
   MdxWrapper.propTypes = {
     onlyExcerpt: PropTypes.bool,
-    excerptBackup: PropTypes.object,
+    excerptBackup: PropTypes.string,
     children: PropTypes.array,
   };
 
