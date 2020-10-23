@@ -23,20 +23,21 @@ help of their library, and driven by an effective process to ensure smooth updat
 
 ### Workshop contains
 
-* Introduction to the topic of design systems;
-* Creating a visual design language via UI inventory exercise;
-* Going through the iterative design process involving team members of different disciplines;
-* Working on React UI library;
-* Practicing styled-components;
-* Using styleguide-driven development for code production;
-* Training design system release process;
-* Building a product based on the given design system;
-* Providing brand changes to the product via the design system.
+- Introduction to the topic of design systems;
+- Creating a visual design language via UI inventory exercise;
+- Going through the iterative design process involving team members of different disciplines;
+- Working on React UI library;
+- Practicing styled-components;
+- Using styleguide-driven development for code production;
+- Training design system release process;
+- Building a product based on the given design system;
+- Providing brand changes to the product via the design system.
 
 <details><summary>Open full workshop description</summary>
-<p>
+<div>
 
 ##### Workshop Details
+
 Dive into the world of Design Systems through Storybook and React. You will be
 a part of a multidisciplinary team with your focus either on development or
 design. Together, you will create a well-documented pattern library and build a
@@ -57,7 +58,7 @@ consist of both. A designer and a developer can, of course, co-exist in the
 same person 🙂 For people with the development mindset some prior experience in
 React or ES6, and CSS is appreciated.
 
-To participate in the workshop,  you will need your own laptop. As a developer
+To participate in the workshop, you will need your own laptop. As a developer
 or as a designer-developer, you should also have your favorite IDE installed.
 
 The workshop is held at Nordcloud Helsinki Office. You will be in the capable
@@ -70,12 +71,12 @@ We will serve breakfast, lunch, and coffee + snacks to keep you going the whole 
 
 ##### Why Attend
 
-* Creating a pattern library is one of the crucial tools for making a living
-design system. Design system is all about communication, and pattern library
-can only be built and iterated with a collaborative team.
-* During the day you will learn key points how to start creating a pattern
-library, how to make it living, and how to utilize it to create and change
-product designs.
+- Creating a pattern library is one of the crucial tools for making a living
+  design system. Design system is all about communication, and pattern library
+  can only be built and iterated with a collaborative team.
+- During the day you will learn key points how to start creating a pattern
+  library, how to make it living, and how to utilize it to create and change
+  product designs.
 
 ##### For Whom
 
@@ -85,14 +86,14 @@ anyone with interest in pattern libraries is welcome.
 
 ##### Content
 
-* How to define and name patterns in a consistent manner
-* How to rapidly kickstart a pattern library with Storybook
-* How to use a pattern library in a product
-* How to make changes to a pattern library in a coordinated fashion
+- How to define and name patterns in a consistent manner
+- How to rapidly kickstart a pattern library with Storybook
+- How to use a pattern library in a product
+- How to make changes to a pattern library in a coordinated fashion
 
 ##### Source: [Original workshop page](https://dsconference.com/ws-intergalactico/)
 
-</p>
+</div>
 </details>
 
 Publically, this workshop was
