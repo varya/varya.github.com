@@ -3,25 +3,26 @@ const postcssCssNext = require(`postcss-cssnext`);
 const postcssBrowserReporter = require(`postcss-browser-reporter`);
 const postcssReporter = require(`postcss-reporter`);
 
-module.exports = ctx => ({
-  plugins: [{
-    "postcss-easy-media-query": {
-      breakpoints: {
-        tablet: 600,
-        desktop: 1024
-      }
+module.exports = () => ({
+  plugins: [
+    {
+      "postcss-easy-media-query": {
+        breakpoints: {
+          tablet: 600,
+          desktop: 1024,
+        },
+      },
+      "postcss-text-remove-gap": {
+        defaultFontFamily: "Open Sans",
+        defaultLineHeight: "0",
+      },
+      "postcss-nested": {},
     },
-    "postcss-text-remove-gap": {
-      defaultFontFamily: "Open Sans",
-      defaultLineHeight: "0"
-    },
-    "postcss-nested": {},
-  },
     postcssImport(),
     postcssCssNext(),
     postcssBrowserReporter(),
     postcssReporter(),
-  ]
+  ],
 });
 
 // "postcss-nested": {},
