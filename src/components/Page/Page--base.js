@@ -30,7 +30,7 @@ export default function PageTemplate({ data: { mdx }, location }) {
   MdxWrapper.propTypes = {
     onlyExcerpt: PropTypes.bool,
     excerptBackup: PropTypes.string,
-    children: PropTypes.array,
+    children: PropTypes.node,
   };
 
   return (
