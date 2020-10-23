@@ -1,5 +1,4 @@
 const path = require("path");
-
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 const REPO_URL = "https://github.com/varya/varya.github.com";
@@ -140,6 +139,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (result.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
   }
+
   // Create blog post pages.
   const items = result.data.allMdx.edges;
 
@@ -160,6 +160,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         prev,
         next,
         fileSourceUrl,
+      },
+    });
+  });
+
+  // Create paginated blog index pages
+  const postsPerPage = 10;
+  const numPages = Math.ceil(posts.length / postsPerPage);
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+      component: path.resolve("./src/components/Blog/Blog.js"),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+        pathPrefix: "/blog/",
       },
     });
   });
