@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import breakpoint from "styled-components-breakpoint";
+import { MDXProvider } from "@mdx-js/react";
 
 // eslint-disable-next-line
 import Typography from "../Typography";
@@ -17,6 +18,32 @@ export const SiteContainer = styled.div`
     margin: 0 auto;
   `}
 `;
+
+const MdxWrapper = ({ onlyExcerpt = false, excerptBackup, children }) => {
+  if (onlyExcerpt) {
+    let updatedChildren = [...children];
+
+    updatedChildren = children.filter((child) => {
+      return child.props && child.props["data-excerpt"];
+    });
+
+    if (updatedChildren.length === 0) {
+      updatedChildren.push(
+        <div dangerouslySetInnerHTML={{ __html: excerptBackup }} />
+      );
+    }
+
+    return <>{updatedChildren}</>;
+  }
+
+  return <>{children}</>;
+};
+
+MdxWrapper.propTypes = {
+  onlyExcerpt: PropTypes.bool,
+  excerptBackup: PropTypes.object,
+  children: PropTypes.array,
+};
 
 export default function PageCommon({ content, left, location }) {
   left = left || <Prompt />;
@@ -49,14 +76,20 @@ export default function PageCommon({ content, left, location }) {
           pages: { edges: pages },
         } = data;
         return (
-          <SiteContainer>
-            <LayoutSimple
-              header={<Header path={location.pathname} pages={pages} />}
-              content={content}
-              prompt={left}
-              footer={<Footer />}
-            />
-          </SiteContainer>
+          <MDXProvider
+            components={{
+              wrapper: MdxWrapper,
+            }}
+          >
+            <SiteContainer>
+              <LayoutSimple
+                header={<Header path={location.pathname} pages={pages} />}
+                content={content}
+                prompt={left}
+                footer={<Footer />}
+              />
+            </SiteContainer>
+          </MDXProvider>
         );
       }}
     />
