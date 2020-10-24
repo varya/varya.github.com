@@ -7,9 +7,7 @@ old: true
 date: 2014-01-06
 
 layout: post
-
----
-A couple of days ago I was asked about some basic things of using [BEM project
+---A couple of days ago I was asked about some basic things of using [BEM project
 stub](https://github.com/bem/project-stub/tree/14e24fd17ba66a357a2f6fcdce045065b4eb5d6c)
 from someone who is enjoying the full BEM stack (BEM-CSS, i-bem.js and BEMHTML
 templates) for their projects. Answering the questions I promised to turn the
@@ -67,13 +65,12 @@ inside to be sure that this is robot's code.
 │   │   ├── <a href="https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/index.bemjson.js">index.bemjson.js</a>
 │   │   └── <a href="https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/index.html">index.html</a></code></pre>
 
-
 Think about bem tools as about building crane to pick up the bricks and make a
 house with them.
 
 ![](http://img-fotki.yandex.ru/get/9058/14441195.30/0_7e0f3_ff76f66a_L.jpg)
 
-Besides *.js, *.css and *.html files there is the only one here written by a
+Besides _.js, _.css and \*.html files there is the only one here written by a
 developer. This is
 [index.bemjson.js](https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/index.bemjson.js),
 the JSON decription of what are the blocks on a page and what it their nested

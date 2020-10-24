@@ -6,10 +6,7 @@ date: 2014-06-09
 v2: true
 
 layout: post
-
----
-
-<div data-excerpt>
+---<div data-excerpt>
 
 As a mobile apps user you may be already familiar to drawers.
 They are quite popular solution for a side menu. Using `Steroids`
@@ -27,9 +24,10 @@ at [28 May 2014](https://github.com/AppGyver/kitchensink/tree/ceacb0ea80799b1d81
 To explore the application in your mobile device or in a
 simulator clone the repository and run the project. You may need some information
 about how to start Steroids projects. That can be learned from tutorials:
-* [Installing
+
+- [Installing
   Steroids](https://academy.appgyver.com/categories/1-setup-and-getting-started/contents/1-installing-steroids)
-* [Hello World application](https://academy.appgyver.com/categories/1-setup-and-getting-started/contents/2-hello-world)
+- [Hello World application](https://academy.appgyver.com/categories/1-setup-and-getting-started/contents/2-hello-world)
 
 Or from my recent article about [HTML5 mobile apps with native UI on
 Steroids](/en/posts/html5-mobile-app-width-native-ui/).
@@ -48,8 +46,7 @@ This is an angular view with directives for the list and for the navigation bar.
 ```html
 <div ng-controller="IndexCtrl">
   <navigation-bar title="Steroids Kitchensink">
-    <left-button icon="/vendor/icons8/menu-32"
-        onTap="showMenu()"></left-button>
+    <left-button icon="/vendor/icons8/menu-32" onTap="showMenu()"></left-button>
   </navigation-bar>
   ...
 </div>
@@ -113,9 +110,10 @@ corresponding view with the list of menu items. Here it is defined
 in [`app/views/sidemenu/index.html`](https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/app/views/sidemenu/index.html).
 This is pretty similar to the list of examples in the initial view. To make it function
 we provide:
-* a list of items and the corresponding view in [`www/data/sidemenu.json`](https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/www/data/sidemenu.json);
-* data model in [`app/models/sidemenu.js`](https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/app/models/sidemenu.js);
-* controller in [`app/controllers/sidemenu.coffee`](https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/app/controllers/sidemenu.coffee).
+
+- a list of items and the corresponding view in [`www/data/sidemenu.json`](https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/www/data/sidemenu.json);
+- data model in [`app/models/sidemenu.js`](https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/app/models/sidemenu.js);
+- controller in [`app/controllers/sidemenu.coffee`](https://github.com/AppGyver/kitchensink/blob/ceacb0ea80799b1d81454e2e966b553b807fbadc/app/controllers/sidemenu.coffee).
 
 From the drawers perspective the most important piece of code
 to study is the controller. It says to hide the opened drawer if you
@@ -153,7 +151,7 @@ steroids.config.preloads = [
 ]
 ```
 
-Thus, with tapping on the *Settings* menu item you will get the settings
+Thus, with tapping on the _Settings_ menu item you will get the settings
 page shown.
 
 <img class="article__image" src="http://img-fotki.yandex.ru/get/9667/14441195.32/0_8477f_2aafe347_L.png" width="282" height="500" border="0"/>

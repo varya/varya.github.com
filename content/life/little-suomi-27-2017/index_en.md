@@ -6,10 +6,7 @@ date: 2017-07-06
 v2: true
 
 layout: post
-
----
-
-A couple of years ago, during our first time in Finland, I published a few posts about small things I noticed in my new
+---A couple of years ago, during our first time in Finland, I published a few posts about small things I noticed in my new
 basic life. Sometimes, there is a lot to share, but these things are not on the same topic. However, still
 interesting.
 
@@ -96,18 +93,18 @@ apartment, we got a lot of brochures with different options.
 In Finland, they make public viewings for the apartments. Usually, you can organize a private viewing for the next time
 if you got interested. For the first time, people go to public viewings which time is published in the advertisement.
 
-  Everyone who comes gets such a brochure from a real estate agent. It has the same information as the advertisement.
-  Also, there is floor plan and sometimes photos. We found it very convenient to ask for some additional information
-  following the info in the brochure. After the viewing, it can be taken home.
+Everyone who comes gets such a brochure from a real estate agent. It has the same information as the advertisement.
+Also, there is floor plan and sometimes photos. We found it very convenient to ask for some additional information
+following the info in the brochure. After the viewing, it can be taken home.
 
-  If the apartment is being sold by an owner without a real estate agent, they make such a brochure anyway. This is a
-  standard. However, real estate agents usually use a template with their brand design whereas an individual makes in a
-  simple way. After placing the advertisement onto a special website, there is an option to download PDF with such a
-  brochure in a simple design.
+If the apartment is being sold by an owner without a real estate agent, they make such a brochure anyway. This is a
+standard. However, real estate agents usually use a template with their brand design whereas an individual makes in a
+simple way. After placing the advertisement onto a special website, there is an option to download PDF with such a
+brochure in a simple design.
 
-  By the way, if you are going to look for an apartment, I recommend taking your own pictures. Later you will be
-  recollecting what was the apartment and how you liked it. You can look for its photos in the advertisement or on the
-  brochure. But these photos are usually either better or worse than reality. Your own photos will be the most useful.
+By the way, if you are going to look for an apartment, I recommend taking your own pictures. Later you will be
+recollecting what was the apartment and how you liked it. You can look for its photos in the advertisement or on the
+brochure. But these photos are usually either better or worse than reality. Your own photos will be the most useful.
 
 ## Suomi 100
 

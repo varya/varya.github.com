@@ -7,9 +7,7 @@ old: true
 date: 2013-10-31
 
 layout: post
-
----
-There is a well-known front-end pattern which is to have hidden elements in DOM
+---There is a well-known front-end pattern which is to have hidden elements in DOM
 and make them visible when necessary. As with any good pattern, it can be
 compromised by wrong implementation.
 <excerpt/>
@@ -33,36 +31,34 @@ Yes, an inline style with a `display` property will be added.
 In other words, the element will not return back to its original visible state.
 
 ```js
-$('.my-block');
+$(".my-block");
 
 // <span class="my-block">..</span>
 
-$('.my-block').hide()
+$(".my-block").hide();
 
 // <span class="my-block" style="display: none;">..</span>
 
-$('.my-block').show()
+$(".my-block").show();
 
 // <span class="my-block" style="display: block;">..</span>
-
 ```
 
 jQuery is clever enough to detect inline elements. By applying `.hide()` and
 `.show()`, you get something like this:
 
 ```js
-$('.my-block');
+$(".my-block");
 
 // <span class="my-block">...</span>
 
-$('.my-block').hide();
+$(".my-block").hide();
 
 // <span class="my-block" style="display: none;">...</span>
 
-$('.my-block').show();
+$(".my-block").show();
 
 // <span class="my-block" style="display: inline;">...</span>
-
 ```
 
 Again, the block did not **return** to its original state after being shown. For
@@ -86,7 +82,7 @@ modifier:
 
 ```css
 .my-block_hidden {
-    display: none;
+  display: none;
 }
 ```
 
@@ -94,15 +90,15 @@ Then, by applying this modifier and removing it from a block you can be sure it
 transitions into one of its predefined states:
 
 ```js
-$('.my-block');
+$(".my-block");
 
 // <span class="my-block">...</span>
 
-$('.my-block').addClass('my-block_hidden');
+$(".my-block").addClass("my-block_hidden");
 
 // <span class="my-block my-block_hidden">...</span>
 
-$('.my-block').removeClass('my-block_hidden');
+$(".my-block").removeClass("my-block_hidden");
 
 // <span class="my-block">...</span>
 ```
@@ -117,15 +113,15 @@ it](https://github.com/varya/bem-js-tutorial/blob/master/02-Modifiers.md)) which
 will make your code even better:
 
 ```js
-$.block('my-block');
+$.block("my-block");
 
 // <span class="my-block">...</span>
 
-$.block('my-block').setMod('hidden');
+$.block("my-block").setMod("hidden");
 
 // <span class="my-block my-block_hidden">...</span>
 
-$.block('my-block').delMod('hidden');
+$.block("my-block").delMod("hidden");
 
 // <span class="my-block">...</span>
 ```

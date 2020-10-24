@@ -8,20 +8,17 @@ cover: thumb.jpg
 layout: post
 
 meta:
-  desc: >
-    Design systems standardise and simplify the process of interface design and development, they bring new
-    approaches and form their own ecosystem. However, there is no solid understanding of the concepts and terms forming
-    the design systems. To solve the term inconsistency and provide structured professional language, this article
-    focuses on the vocabulary used in the design systems domain by observing a range of materials on the topic, from
-    both academic and popular sources.
-
----
-
-<div data-excerpt>
+desc: >
+Design systems standardise and simplify the process of interface design and development, they bring new
+approaches and form their own ecosystem. However, there is no solid understanding of the concepts and terms forming
+the design systems. To solve the term inconsistency and provide structured professional language, this article
+focuses on the vocabulary used in the design systems domain by observing a range of materials on the topic, from
+both academic and popular sources.
+---<div data-excerpt>
 
 ## Introduction
 
-In general, *design systems* is a systematic approach to creating and maintaining consistent user interfaces which
+In general, _design systems_ is a systematic approach to creating and maintaining consistent user interfaces which
 coherently communicate the brand values and empower user experience.
 
 </div>
@@ -84,22 +81,24 @@ without aligning with existing ones, and many other reasons. All of those lead t
 which fail to communicate the brand and provide a good user experience.
 
 ### 2. Large costs of design
+
 Mostly, the reason for user interface inconsistency mentioned above is creating same or
 similar things again and again without references to the work already done. Besides bad results, it also costs a lot.
 
 ### 3. Low-level multidisciplinary collaboration
+
 Web products are created by multidisciplinary teams which include
 designers, developers, copywriters, managers, etc. On one hand, they all are working on the same product. On the other
 hand, each of these disciplines has its own fashion barely interconnected with the others. To achieve a good level of
 collaboration, such team needs to follow special working approaches and use appropriate and efficient tooling.
 
 ### 4. Non-efficient design-team work
+
 In larger products, many designers work on the same product. This case brings the
 collaboration problem even down to a single-disciplinary team. This becomes especially visible on the scale. Rapidly
 growing companies need to scale their design teams fastly and even place them in multiple locations. Ensuring the design
 consistency and quality when experiencing such growth is a great challenge. At the same time, the products themselves
 have to be created “in a scalable and repeatable way” (Saarinen, 2016).
-
 
 ## 1. The concept of design systems
 
@@ -158,7 +157,7 @@ it.
 
 ![Figure 2. Jan Toman (2017) The Design System Schema](./figure2.png)<br/>
 Figure 2. Jan Toman (2017) The Design System Schema.<br/>
-Source: https://product-unicorn.com/design-systems-style-guides-all-those-libraries-what-the-hell-is-the-difference-4c2741193fdc 
+Source: https://product-unicorn.com/design-systems-style-guides-all-those-libraries-what-the-hell-is-the-difference-4c2741193fdc
 
 </div>
 
@@ -169,7 +168,7 @@ Nate Baldwin (2016) provides the schema (Figure 3) with many intersections and i
 
 ![Figure 3. Nate Baldwin (2016) Design System Schema](./figure3.jpeg)<br/>
 Figure 3. Nate Baldwin (2016) Design System Schema.<br/>
-Source: https://blog.producthive.org/anatomy-of-a-design-system-7a6b0677bf5 
+Source: https://blog.producthive.org/anatomy-of-a-design-system-7a6b0677bf5
 
 </div>
 
@@ -182,7 +181,7 @@ contribution into the UI developing current problems.
 
 ### 2.1 Component
 
-The *component* is the most solid term of the design systems concept. It
+The _component_ is the most solid term of the design systems concept. It
 originates from the development field and has the most univocal meaning.
 Multiple authors define a component from the implementation perspective, as
 “portion of reusable code, serving as building blocks for the application
@@ -199,7 +198,7 @@ demonstrates a dropdown as an example.
 
 ![Figure 4. Example of a component — dropdown UI element](./figure4.png)<br/>
 Figure 4. Example of a component — dropdown UI element. Carbon Design System for IBM Cloud products.<br/>
-Source: http://carbondesignsystem.com/components/dropdown/code 
+Source: http://carbondesignsystem.com/components/dropdown/code
 
 </div>
 
@@ -236,7 +235,7 @@ implementation.
 
 ![Figure 6. Example of a color pattern](./figure6.png)<br/>
 Figure 6. Example of a color pattern. Carbon Design System for IBM Cloud products.<br/>
-Source: http://carbondesignsystem.com/style/color/swatches 
+Source: http://carbondesignsystem.com/style/color/swatches
 
 </div>
 
@@ -244,15 +243,15 @@ Source: http://carbondesignsystem.com/style/color/swatches
 
 ![Figure 7. Example of a Spacing pattern](./figure7.png)<br/>
 Figure 7. Example of a Spacing pattern. Carbon Design System for IBM Cloud products.<br/>
-Source: http://carbondesignsystem.com/style/spacing 
+Source: http://carbondesignsystem.com/style/spacing
 
 </div>
 
 Some authors use the term “pattern” when speaking about components. However,
 they still face the need to distinguish solutions for repeatable UI elements
 and more general ones. One of such authors, Alla Kholmatova (2017) introduces
-*functional patterns* as “tangible building blocks of the interface” (Kholmatova, 2017) and
-*perceptual patterns*, which she does not define but provides examples
+_functional patterns_ as “tangible building blocks of the interface” (Kholmatova, 2017) and
+_perceptual patterns_, which she does not define but provides examples
 such as “tone of voice, typography, color palette, layouts, illustrations and
 iconography styles, shapes and textures, spacing, imagery, interactions or
 animations, and all the specific ways in which those elements are combined and
@@ -271,7 +270,6 @@ Figure 8. Patterns.
 </div>
 
 ### 2.3 Component library
-
 
 As described above, a component solves a specific design problem by providing a
 piece of code for rendering a specific functioning UI element, or a set of
@@ -297,7 +295,7 @@ libraries, based on the difference between component and pattern explained
 above. This way, a pattern library is “a subclass in the design system, this is
 the set of design patterns for use across a company” (Rutherford, 2017).
 
-Similarly to  component libraries being collections of components, pattern
+Similarly to component libraries being collections of components, pattern
 libraries are collections of patterns. However, due to more abstract nature of
 patterns, it is harder to visualize such collections.
 
@@ -337,14 +335,15 @@ The designers can provide new solutions, consistent to the others, in the
 amateur fashion making them by analogy with the old ones. However, on the
 industry level, producing adequate design solutions requires special methods
 and tooling. In the design systems concept, the is a subclass serving for this
-purposes. It is called a *visual language*.
+purposes. It is called a _visual language_.
 
 The following content forms visual language:
-* Design principles.<br/>
+
+- Design principles.<br/>
   They define the core value of the product and team.
-* Best practices.<br/>
+- Best practices.<br/>
   Outline the best methods to be used for achieving the team goals.
-* Specifications.
+- Specifications.
 
 Unlike the pattern libraries which instruct what are the patterns to form a
 good product, visual language also articulates why these patterns should be
@@ -358,7 +357,7 @@ solutions towards evolving ecosystem (Saarinen, 2016).
 ### 2.6 Style guide
 
 Well documented pattern library and visual language, accompanied by additional
-attributes such as editorial instructions, form a *style guide*. A style guide is
+attributes such as editorial instructions, form a _style guide_. A style guide is
 an internal company website which “represents the styles, patterns, practices,
 and principles of a design system and teaches how to use it” (Grainer, 2017).
 Such a website contains “static documentation which describes the design system
@@ -432,7 +431,7 @@ For the designers, design systems define the skeleton of the work on both
 abstract and practical levels. They give tools and processes for systematic
 design, ensure design coherency, serve for documenting design solutions,
 guarantee end quality of design implementation and make possible to focus on
-*solving business problems*.
+_solving business problems_.
 
 ## Conclusion
 
@@ -446,7 +445,7 @@ libraries and a major of guidelines.
 
 The value of design systems, proven and outlined by many authors, was
 represented from different perspectives: of a user, of a manager, of a
-developer and of a designer. 
+developer and of a designer.
 
 As a yet evolving concept, design systems can change their shape in near
 future. In this regard, the provided summary is not final and requires
@@ -465,19 +464,19 @@ Braga, G. (2017). Pattern library, Style guides, Design Systems. Do you need one
 
 Carbon Design System for IBM Cloud products (2018). [online]{.zero} Available at: http://carbondesignsystem.com/ [Accessed 27 March 2018]{.zero}.
 
-Fanguy, W. (2017). A comprehensive guide to design systems. InVision design blog. [online]{.zero} Available at: https://www.invisionapp.com/blog/guide-to-design-systems/ [Accessed 27 March 2018]{.zero}. 
+Fanguy, W. (2017). A comprehensive guide to design systems. InVision design blog. [online]{.zero} Available at: https://www.invisionapp.com/blog/guide-to-design-systems/ [Accessed 27 March 2018]{.zero}.
 
 Federman, S. (2017). Distilling How We Think About Design Systems. Design Systems Publications. [online]{.zero} Available at: https://publication.design.systems/distilling-how-we-think-about-design-systems-b26432eefef9 [Accessed 27 March 2018]{.zero}.
 
-Grainer, S. (2017). Design Systems, Style Guides, and Pattern Libraries: Oh My! UXcellence journal. [online]{.zero} Available at: https://uxcellence.com/2017/design-systems-style-guides-pattern-libraries  [Accessed 27 March 2018]{.zero}.
+Grainer, S. (2017). Design Systems, Style Guides, and Pattern Libraries: Oh My! UXcellence journal. [online]{.zero} Available at: https://uxcellence.com/2017/design-systems-style-guides-pattern-libraries [Accessed 27 March 2018]{.zero}.
 
 Granlund., Å, Lafrenière D. and Carr, D. (2001). A Pattern-Supported Approach to the User Interface Design Process. Proceedings of HCI International 2001 9th International Conference on Human-Computer Interaction, August 5-10, 2001, New Orleans, USA.
 
-Grundhoefer, A. (2016). Design Systems: Enterprise UX Evolution. [online]{.zero} Available at: https://speakerdeck.com/annegrundhoefer/design-systems-enterprise-ux-evolution [Accessed 27 March 2018]{.zero}. 
+Grundhoefer, A. (2016). Design Systems: Enterprise UX Evolution. [online]{.zero} Available at: https://speakerdeck.com/annegrundhoefer/design-systems-enterprise-ux-evolution [Accessed 27 March 2018]{.zero}.
 
 Kholmatova, A. (2017). Design Systems. A practical guide to creating design languages for digital products. Freiburg, Germany: Smashing Media AG.
 
-Lopes, M. (2017). Setup a design system. Prototypr online blog. [online]{.zero} Available at: https://blog.prototypr.io/design-system-ac88c6740f53 [Accessed 27 March 2018]{.zero}. 
+Lopes, M. (2017). Setup a design system. Prototypr online blog. [online]{.zero} Available at: https://blog.prototypr.io/design-system-ac88c6740f53 [Accessed 27 March 2018]{.zero}.
 
 Robson, S. (2016). Styleguides, Pattern Libraries and Design Languages. Medium blog. [online]{.zero} Available at: https://medium.com/@sturobson/styleguides-pattern-libraries-and-design-languages-84746902c51c [Accessed 27 March 2018]{.zero}.
 
@@ -488,4 +487,3 @@ Saarinen, K. (2016). Building a Visual Language. AirBNB Design, online portal.[o
 Simpson, N. (1999). Managing the use of style guides in an organisational setting: practical lessons in ensuring UI consistency. Interacting with Computers 11 (1999) 323–351.
 
 Suarez, M., Anne, J., Sylor-Miller, K., Mounter, D., and Stanfield, R. (2017). Design Systems Handbook. DesignBetter.Co, online journal. [online]{.zero} Available at: https://www.designbetter.co/design-systems-handbook [Accessed 27 March 2018]{.zero}.
-

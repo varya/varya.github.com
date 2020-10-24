@@ -18,14 +18,12 @@ teams usually face when working with design systems. Hosts and participants will
 discuss possible solutions and outline best practises. All to empower participants to champion smooth and successful
 building and managing of design systems.
 
-
 ### Workshop contains
 
-* Introduction to design systems, up to the level of the participants;
-* Deciding design system content;
-* Working with the backlogs;
-* Tailoring process via Pattern Journey exercise.
-
+- Introduction to design systems, up to the level of the participants;
+- Deciding design system content;
+- Working with the backlogs;
+- Tailoring process via Pattern Journey exercise.
 
 This workshop had a great run [on the 18th of October 2018 in Intergalactico
 office](https://www.intergalactico.io/workshops/building-design-systems-london) in

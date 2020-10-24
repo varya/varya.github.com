@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import breakpoint from "styled-components-breakpoint";
 import { MDXProvider } from "@mdx-js/react";
-
+import Children from "react-children-utilities";
 // eslint-disable-next-line
 import Typography from "../Typography";
 import Header from "../Header";
@@ -28,12 +28,10 @@ const MdxWrapper = ({ onlyExcerpt = false, excerptBackup, children }) => {
     });
 
     if (updatedChildren.length === 0) {
-      updatedChildren.push(
-        <div dangerouslySetInnerHTML={{ __html: excerptBackup }} />
-      );
+      return <>{excerptBackup}</>;
     }
-
-    return <>{updatedChildren}</>;
+    // Keep only text from excerpt to avoid side effects of inner html tags
+    return <>{Children.onlyText(updatedChildren)}</>;
   }
 
   return <>{children}</>;

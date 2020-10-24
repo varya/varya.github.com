@@ -7,10 +7,7 @@ old: true
 date: 2014-04-09
 
 layout: post
-
----
-
-<div data-excerpt>
+---<div data-excerpt>
 
 Depending on a project people prefer different ways to adapt BEM.
 This results
@@ -26,13 +23,13 @@ name `BEMHTML` is greedily taken by the Yandex guys, let us call it `BEML`.
 ## Objective
 
 1. Smooth learning curve<br/>
-HTML-syntax with no need to transform one language into another.
+   HTML-syntax with no need to transform one language into another.
 1. Portability<br/>
-The tool has to be easy to use with other languages.
+   The tool has to be easy to use with other languages.
 1. Compatiblity with template engines<br/>
-Instead of trying to replace them.
+   Instead of trying to replace them.
 1. Simplicity<br/>
-Easy to use at any project.
+   Easy to use at any project.
 
 It might be my habit, but I do not see the need to transform JSON into HTML.
 BEMJSON page description usually looks like spaghetti and is very hard to read
@@ -50,6 +47,7 @@ which can be used for creating the prototypes. Then, with transforming to PHP
 you can use the same templates in the backend.
 
 ## Concept
+
 I had a lot of ideas how to extend HTML with inheritance, includes and loops.
 But finally I cut them off. It would be too complex to support and then provide
 the portability. Besides, there is a lot of other template engines; I would
@@ -66,6 +64,7 @@ chached copy with your dear template engine. Indeed, the pre-processor does not
 touch the template engine code.
 
 ## Syntax
+
 This is very simple, you just use 4 more attributes like `block`, `elem`, `mod`
 and `mix`. I suppose it is clear what each of them is responsible for. For the
 complex values you can use light JSON dialect with no quotation marks and
@@ -81,10 +80,12 @@ into the following HTML.
 
 ```html
 <div class="b-animals">
-  <div class="b-animals__cat
+  <div
+    class="b-animals__cat
               b-animals__cat_size_big
               b-animals__cat_color_red
-              "></div>
+              "
+  ></div>
 </div>
 ```
 
@@ -99,15 +100,16 @@ npm install beml
 ```
 
 ```js
-var beml = require('beml');
+var beml = require("beml");
 var template = '<div block="b-block" mod="size:big"></div>';
 
-beml.process(template, function(err, html) {
+beml.process(template, function (err, html) {
   console.log(html);
 });
 ```
 
 ## Author
+
 This article is a translaton.
 The original article by Maxim Shkalin was [posted in his
 blog](http://zenwalker.ru/blog/2014/1/html-preprocessor-for-bem.html). Follow him in the social networks:

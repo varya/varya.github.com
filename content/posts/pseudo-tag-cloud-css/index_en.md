@@ -9,12 +9,9 @@ cover: thumb.png
 layout: post
 
 meta:
-  desc: >
-    Tag cloud of different with random sizes of the words with pure CSS.
-
----
-
-import PureHtml from '../../../src/components/PureHtml'
+desc: >
+Tag cloud of different with random sizes of the words with pure CSS.
+---import PureHtml from '../../../src/components/PureHtml'
 
 <div data-excerpt>
 
@@ -44,33 +41,7 @@ possible to inject some JavaScript and code anything. But what about pure CSS, d
 
 </div>
 
-<PureHtml html={`<style>
-.testings {
-    text-align: center;
-    width: 400px;
-}
-.testings .cloud {
-    display: inline;
-    list-style-type: none;
-    width: 400px;
-}
-.testings .cloud li {
-    list-style: none;
-    display: inline;
-}
-.testings .cloud li:nth-of-type(3n + 1) {
-    font-size: 1.25em;
-}
-.testings .cloud li:nth-of-type(4n+3) {
-    font-size: 1.5em;
-}
-.testings .cloud li:nth-of-type(5n - 3) {
-    font-size: 1em;
-}
-</style>`}/>
-
-
-
+<PureHtml html={`<style> .testings { text-align: center; width: 400px; } .testings .cloud { display: inline; list-style-type: none; width: 400px; } .testings .cloud li { list-style: none; display: inline; } .testings .cloud li:nth-of-type(3n + 1) { font-size: 1.25em; } .testings .cloud li:nth-of-type(4n+3) { font-size: 1.5em; } .testings .cloud li:nth-of-type(5n - 3) { font-size: 1em; } </style>`}/>
 
 The tag cloud you see above is what I get. You may notice it's not real random; after refreshing you will always get the
 same result. But still looks like a tag cloud of different sizes and works perfectly as an example.
@@ -79,12 +50,12 @@ This is a list, it's easy to generate from markdown:
 
 ```html
 <ul class="cloud">
-    <li>performance testing</li>
-    <li>stress testing</li>
-    <li>conformance testing</li>
-    <li>acceptane testing</li>
-    <li>smoke testing</li>
-    ...
+  <li>performance testing</li>
+  <li>stress testing</li>
+  <li>conformance testing</li>
+  <li>acceptane testing</li>
+  <li>smoke testing</li>
+  ...
 </ul>
 ```
 
@@ -92,13 +63,13 @@ Then, flattened as usual:
 
 ```css
 .cloud {
-    display: inline;
-    list-style-type: none;
-    width: 400px;
+  display: inline;
+  list-style-type: none;
+  width: 400px;
 }
 .cloud li {
-    list-style: none;
-    display: inline;
+  list-style: none;
+  display: inline;
 }
 ```
 
@@ -106,13 +77,13 @@ And then different sizes are made with a few `nth-of-type` combined in different
 
 ```css
 .cloud li:nth-of-type(3n + 1) {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
-.cloud li:nth-of-type(4n+3) {
-    font-size: 1.5em;
+.cloud li:nth-of-type(4n + 3) {
+  font-size: 1.5em;
 }
 .cloud li:nth-of-type(5n - 3) {
-    font-size: 1em;
+  font-size: 1em;
 }
 ```
 

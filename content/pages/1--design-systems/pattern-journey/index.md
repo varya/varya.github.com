@@ -77,7 +77,7 @@ Figure out what could be a name or a keyword for the pattern you are looking for
 If you don't find anything suitable, you can also ask other people in the
 <i>instant communication channels</i> like Slack / Flowdock / Mattermost etc.
 
-Answer: *No. There is no pattern in the library.*
+Answer: _No. There is no pattern in the library._
 
 #### 2. Anything similar at other projects?
 
@@ -85,7 +85,7 @@ Ask around if people at other projects implement anything similar. You can insta
 instant communication channels (Slack, Flowdock, etc)
 or raise this quesion in regular Design or Develoment meetings. Also, you can ask people directly.
 
-Answer: *No. I could not find anything similar.*
+Answer: _No. I could not find anything similar._
 
 #### 3. Can it be used by other projects in the future?
 
@@ -94,7 +94,7 @@ do this publically in the
 communication channels (Slack, Flowdock, etc).
 You can also ask people directly or raise this question at regular cross-company Design or Development meetings.
 
-Answer: *Yes. There are at least two more teams interested in the pattern.*
+Answer: _Yes. There are at least two more teams interested in the pattern._
 
 #### 4. Implement the pattern
 
@@ -104,7 +104,7 @@ To start with process, usually you need to create a ticket in the task tracker s
 (JIRA, Trello, etc) and/or communicate about what you are going to do directly to the people.
 Follow the workflow for implementing new patterns which usually includes task flow, communication standards and code style.
 
-*Wait for release*
+_Wait for release_
 
 #### 5. Use it
 
@@ -121,18 +121,18 @@ The suggestions and pull requests for the documentation improvement are very wel
 
 #### 1. Is the pattern in the library?
 
-Answer: *No. There is no pattern in the library.*
+Answer: _No. There is no pattern in the library._
 
 #### 2. Anything similar at other projects?
 
-Answer: *Yes. The is similar pattern at other project.*
+Answer: _Yes. The is similar pattern at other project._
 
 #### 3. Can you take it as it is?
 
 Can you borrow the code of this component and use it without any change? So that both you and the "donor" project would
 be using the same code?
 
-Answer: *No. It is similar to what I need but I have to alter it.*
+Answer: _No. It is similar to what I need but I have to alter it._
 
 #### 4. Do other teams ready to use new altered version?
 
@@ -142,11 +142,11 @@ Ask them directly or raise this question publically. As usual,
 you can communicate in the
 communication channels (Slack, Flowdock, etc).
 
-Answer: *Yes. They are happy with my changes.*
+Answer: _Yes. They are happy with my changes._
 
 #### 5. Implement the pattern
 
-*Wait for release*
+_Wait for release_
 
 #### 6. Use it
 
@@ -156,7 +156,7 @@ Answer: *Yes. They are happy with my changes.*
 
 #### 1. Is the pattern in the library?
 
-Answer: *Yes. I found its documenttaion and examples.*
+Answer: _Yes. I found its documenttaion and examples._
 
 #### 2. Does it fulfill all the requirements?
 
@@ -171,9 +171,9 @@ people in communication channels (Slack, Flowdock, etc)
 if the pattern examples can be extended with your case. If they can, it would be nice if you
 make a pull request illustrating your specific usage.
 
-Answer: *No. It is close what I need but I need extended functionality.*
+Answer: _No. It is close what I need but I need extended functionality._
 
-#### 3. Can it be changed to suit your new requirements while still  fitting existing requirements?
+#### 3. Can it be changed to suit your new requirements while still fitting existing requirements?
 
 Figure out the requirements for the existing component based on the documentation and examples. If you have doubts, ask in the
 instant communication channels (Slack, Flowdock, etc), at regular meetings
@@ -181,11 +181,11 @@ or in person.
 
 Does it look that you can provide changes and the component will not be broken in the places it is used now?
 
-Answer: *Yes. I can provide changes, and nothing will be broken.*
+Answer: _Yes. I can provide changes, and nothing will be broken._
 
 #### 4. Implement the pattern
 
-*Wait for release*
+_Wait for release_
 
 ## Usage
 

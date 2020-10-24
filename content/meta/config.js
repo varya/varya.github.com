@@ -20,6 +20,6 @@ module.exports = {
   authorSocialLinks: [
     { name: "github", url: "https://github.com/varya" },
     { name: "twitter", url: "https://twitter.com/varya_en" },
-    { name: "facebook", url: "http://facebook.com/varyastepanova" }
-  ]
+    { name: "facebook", url: "http://facebook.com/varyastepanova" },
+  ],
 };

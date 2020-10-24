@@ -6,10 +6,7 @@ date: 2017-11-27
 v2: true
 
 layout: post
-
----
-
-## Self-service
+---## Self-service
 
 Here in Finland, there is a very rational attitude to lunches. Many people don't take little details into account, they
 care more about food taste and choice, and a possibility to eat fast.
@@ -35,7 +32,6 @@ economical perspective, but I would pay one or two euro more for not to sort lea
 market does not consider table service as an addition which is possible to sell. Lunch costs the same in the places
 where customers are required to deal with dishes and where they are not.
 
-
 ## Shopping malls
 
 These are storage lockers in a shopping center. There are +4C and -13C options. In there buyers can store their cool or
@@ -48,7 +44,6 @@ border="0"/></a>
 <a href="https://fotki.yandex.ru/next/users/toivonens/album/169234/view/649018?page=0" target="_blank"><img
 src="https://img-fotki.yandex.ru/get/370846/14441195.53/0_9e73a_4af5fc9c_L.jpg" width="500" height="375"
 border="0"/></a>
-
 
 ## Culture
 
@@ -63,7 +58,6 @@ picture, there is an image of this character by Russian artist Tamara Ufa.
 <a href="https://fotki.yandex.ru/next/users/toivonens/album/169234/view/649017?page=0" target="_blank"><img
 src="https://img-fotki.yandex.ru/get/931298/14441195.53/0_9e739_e177c831_L.jpg" width="400" height="500"
 border="0"/></a>
-
 
 ## Recycling
 
@@ -90,7 +84,6 @@ border="0"/></a>
 <a href="https://fotki.yandex.ru/next/users/toivonens/album/169234/view/649015?page=0" target="_blank"><img
 src="https://img-fotki.yandex.ru/get/897385/14441195.53/0_9e737_32895a88_L.jpg" width="375" height="500"
 border="0"/></a>
-
 
 ## University
 
@@ -124,18 +117,17 @@ border="0"/></a>
 src="https://img-fotki.yandex.ru/get/880375/14441195.52/0_9e730_344e7f2e_L.jpg" width="500" height="375"
 border="0"/></a>
 
-
 ## In previous episodes
 
 Interested? Write previous episodes:
 
-* [Finnish life - showers without curtains, cinnamon buns and parking habits](/en/life/life-in-finland-8/)
-* [Life in Finland - autumn sale, transport wins and failures, secret cafes](/en/life/life-in-finland-7/)
-* [Life in Finland, part 6](/en/life/life-in-finland-6/)
-* [Life in Finland, part 5](/en/life/life-in-finland-5/)
-* [Life in Finland, part 4](/en/life/life-in-finland-4/)
-* [Life in Finland, part 3](/en/life/life-in-finland-3/)
-* [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
-* [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
+- [Finnish life - showers without curtains, cinnamon buns and parking habits](/en/life/life-in-finland-8/)
+- [Life in Finland - autumn sale, transport wins and failures, secret cafes](/en/life/life-in-finland-7/)
+- [Life in Finland, part 6](/en/life/life-in-finland-6/)
+- [Life in Finland, part 5](/en/life/life-in-finland-5/)
+- [Life in Finland, part 4](/en/life/life-in-finland-4/)
+- [Life in Finland, part 3](/en/life/life-in-finland-3/)
+- [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
+- [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
 
 There posts are made of the materiald from my Telegram channel [@suomi_en](https://t.me/suomi_en).

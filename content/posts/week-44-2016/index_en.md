@@ -8,12 +8,9 @@ v2: true
 layout: post
 
 meta:
-  desc: >
-    TODO: Description
-
----
-
-<div data-excerpt>
+desc: >
+TODO: Description
+---<div data-excerpt>
 
 First thing first, I'm staring weekly posts about findings that are somehow related to work. This is a mature but not yet
 implemented idea. Although, a friend of mine [Vladimir Starkov sometimes practises the same](https://iamstarkov.com/).

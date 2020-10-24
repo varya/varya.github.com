@@ -65,7 +65,7 @@ const Seo = (props) => {
 Seo.propTypes = {
   data: PropTypes.object,
   title: PropTypes.string,
-  keywords: PropTypes.object,
+  keywords: PropTypes.any,
 };
 
 export default Seo;

@@ -7,9 +7,7 @@ old: true
 date: 2013-11-26
 
 layout: post
-
----
-A developer using custom fonts in web (don't say this is evil) usually face a
+---A developer using custom fonts in web (don't say this is evil) usually face a
 dilemma.
 
 The users' main interest is the content of the page not the
@@ -19,19 +17,19 @@ linked by the end of the page.
 <excerpt/>
 
 ```js
-(function(d){
+(function (d) {
+  function addFont(url, h, l) {
+    h = d.getElementsByTagName("head")[0];
+    l = d.createElement("link");
+    l.href = url;
+    l.rel = "stylesheet";
+    h.appendChild(l);
+  }
 
-function addFont(url, h, l) {
-h = d.getElementsByTagName('head')[0];
-l = d.createElement('link');
-l.href = url;
-l.rel = 'stylesheet';
-h.appendChild(l);
-}
-
-addFont('//fonts.googleapis.com/css?' +
-'family=Noto+Serif&subset=latin,cyrillic-ext,cyrillic');
-
+  addFont(
+    "//fonts.googleapis.com/css?" +
+      "family=Noto+Serif&subset=latin,cyrillic-ext,cyrillic"
+  );
 })(document);
 ```
 
@@ -52,23 +50,19 @@ At the first time a user opens any page of this site, a CSS with the font is
 loaded and stored as a piece of text in the `localStorage`.
 
 ```js
-$(function(){
-
-    if (typeof(Storage) === 'undefined') {
-        return;
-    }
-    if (localStorage.getItem('varya.me.fonts') === null) {
-
-        $.ajax({
-            url: '../../data/fonts.css',
-            success: function(response){
-                localStorage.setItem('varya.me.fonts', response);
-            },
-            dataType: 'text'
-        });
-
-    }
-
+$(function () {
+  if (typeof Storage === "undefined") {
+    return;
+  }
+  if (localStorage.getItem("varya.me.fonts") === null) {
+    $.ajax({
+      url: "../../data/fonts.css",
+      success: function (response) {
+        localStorage.setItem("varya.me.fonts", response);
+      },
+      dataType: "text",
+    });
+  }
 });
 ```
 
@@ -81,16 +75,11 @@ better, and as the action costs almost nothing an inline `<head>` script goes
 here.
 
 ```js
-(function(d, s, l, r) {
-if (typeof(s) !== 'undefined' && l.getItem('varya.me.fonts')) {
-    r = [
-        '<style>',
-        l.getItem('varya.me.fonts'),
-        '</style>'
-    ];
-    document.write(r.join(''));
-}
-
+(function (d, s, l, r) {
+  if (typeof s !== "undefined" && l.getItem("varya.me.fonts")) {
+    r = ["<style>", l.getItem("varya.me.fonts"), "</style>"];
+    document.write(r.join(""));
+  }
 })(document, Storage, localStorage);
 ```
 

@@ -7,9 +7,7 @@ old: true
 date: 2014-01-21
 
 layout: post
-
----
-We usually start developing a web site prototyping the interface and then
+---We usually start developing a web site prototyping the interface and then
 implementing HTML/CSS and bacis JavaScript. In case
 of using the full BEM stack a tranformation from prototype to a functioning web
 site goes smoothly. You can clone the project from
@@ -49,6 +47,7 @@ I created an example of such usage:
     ]
 })
 ```
+
 [full
 code](https://github.com/varya/dynamic-bemjson/blob/master/desktop.bundles/page1/page1.bemjson.js)
 
@@ -99,6 +98,7 @@ With JavaScript in BEMJSON this can be easily reduced.
     ]
 })
 ```
+
 [full
 code](https://github.com/varya/dynamic-bemjson/blob/master/desktop.bundles/page2/page2.bemjson.js)
 

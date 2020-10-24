@@ -7,15 +7,14 @@ old: true
 date: 2013-06-28
 
 layout: post
-
----
-This article features common problems that developers often face, or maybe used
+---This article features common problems that developers often face, or maybe used
 to face before the current open source era, when writing JavaScript for the
 client side; showcase of possible solutions to these problems and explanations
 of my choices.
 <excerpt/>
 
 ## Client-side magic
+
 I am going to write about client-side JavaScript code only which runs under a
 browser and empowers an interface with interactivity.
 
@@ -32,10 +31,12 @@ So, when developing a piece of interface, we write:
    component.)
 
 ## A few ways to matchmake
+
 Thus, the so-called 'linking' joins designated piece of JavaScript to its
 corresponding piece of HTML. There are different ways around this.
 
 ### Linking with event attributes. The old school way.
+
 Since, in most cases running JavaScript is a reaction to some events firing,
 there is an obvious way to declare in HTML what the reaction should be. These
 are the [intrinsic event
@@ -48,9 +49,7 @@ that. Then, call it in with an `onclick` attribute.
 ```html
 <a href="/login-page" onclick="return showLogin()">log in</a>
 <div id="login-form">
-    <form name="login" ... >
-    ...
-    </form>
+  <form name="login" ...>...</form>
 </div>
 ```
 
@@ -58,8 +57,8 @@ that. Then, call it in with an `onclick` attribute.
 dom = document.getElementById ? true : false;
 
 function showLogin() {
-  if ( dom && document.forms['login'] ) {
-    document.getElementById('login-form').style.display = 'block';
+  if (dom && document.forms["login"]) {
+    document.getElementById("login-form").style.display = "block";
     return false;
   } else return true;
 }
@@ -74,6 +73,7 @@ HTML code, whose main purpose is to describe the document structure, not page
 behavior.
 
 ### Moving JavaScript into JavaScript
+
 Therefore, a better way would be to stack everything related to JavaScript into
 the page `.js` file.
 
@@ -99,6 +99,7 @@ more, which makes maintenance easier. But for every single element you still
 have to write a line of code to apply the plugin.
 
 ### Declaring behavior with CSS classes
+
 When having many controls per page it's not useful to initialize each of them
 separately. A better way would be to mark HTML block with a matching CSS class.
 
@@ -121,17 +122,14 @@ With that you need your 'linking' code only once for a plugin; it can be written
 in the plugin file to maintain consistency.
 
 ### One CSS class to rule them all
+
 However, when the variety of components grows, the 'linking' solution should be
 even more declarative. If there is JavaScript to run for a component, it will be
 visible from the block HTML structure. You can mark all the 'alive' parts of
 your page with a special CSS class; for now let’s stick with `js` class.
 
 ```html
-<input
-  class="inpt js"
-  data-component="myPlugin"
-  name="login"
-  value=""/>
+<input class="inpt js" data-component="myPlugin" name="login" value="" />
 ```
 
 The step up of this method is the need of information which plugin is to apply
@@ -143,27 +141,27 @@ With minor change there is the code initializing a proper JavaScript component
 for all the blocks on a page:
 
 ```js
-$('.js').each(function() {
-    var $this = $(this);
-    $this[$this.data('component')]();
-})
+$(".js").each(function () {
+  var $this = $(this);
+  $this[$this.data("component")]();
+});
 ```
 
 ## Parametrizing
+
 Not only a component name has to be provided when initializing with `js` CSS
 class. Different instances of the same component also may need to pass some
 information. For example, an input plugin can validate the field value. But
 depending on the input different kinds of data can be expected.
 
 ```js
-$.fn.myInput = function() {
-    // ...
-}
+$.fn.myInput = function () {
+  // ...
+};
 ```
 
 ```html
-<input name="login" value=""/>
-<input name="zipcode" value=""/>
+<input name="login" value="" /> <input name="zipcode" value="" />
 ```
 
 It is easy to provide per-instance parameters when initializing every instance
@@ -171,14 +169,15 @@ separately.
 
 ```js
 $('input[name="login"]').myInput({
-  validator: 'login'
+  validator: "login",
 });
 $('input[name="zipcode"]').myInput({
-  validator: 'zipcode'
+  validator: "zipcode",
 });
 ```
 
 ### data attributes
+
 With more declarative manner you need to include such information into a
 component HTML structure. Already mentioned data attributes can help with that.
 
@@ -188,14 +187,16 @@ component HTML structure. Already mentioned data attributes can help with that.
   data-component="myInput"
   data-validator="login"
   name="login"
-  value=""/>
+  value=""
+/>
 
 <input
   class="inpt js"
   data-component="myInput"
   data-validator="zipcode"
   name="login"
-  value=""/>
+  value=""
+/>
 ```
 
 ```js
@@ -203,6 +204,7 @@ $.fn.myInput = function() {
     if (this.data('validator') === 'login') // Supported by many frameworks
 }
 ```
+
 Data attributes is a brainchild of HTML5, so carry a doctype when using them.
 
 As a widespread solution with many libraries providing helpers for them, data
@@ -210,17 +212,19 @@ attributes make parametrizing not difficult. Although the limitation of being
 able to use key-value pairs only can affect the plugin architecture.
 
 ### onclick
+
 An elegant way is to provide data for a JavaScript component using natural
 JavaScript format, such as hashes. Here the event attributes can serve us again.
 
 ```html
 <input
-    class="myInput"
-    onclick="return {
+  class="myInput"
+  onclick="return {
         validator: 'login'
     }"
-    name="login"
-    value=""/>
+  name="login"
+  value=""
+/>
 ```
 
 When a user normally clicks, the hash is booleanized into `true`, so the default
@@ -229,8 +233,8 @@ event-named method and get the data in its native JavaScript format without any
 need to parse and convert.
 
 ```js
-$.fn.myInput = function() {
- this[0].onclick().validator === 'login'
+$.fn.myInput = function () {
+  this[0].onclick().validator === "login";
 };
 ```
 
@@ -241,13 +245,14 @@ customization.
 
 ```html
 <input
-    class="inpt js"
-    onclick="return {
+  class="inpt js"
+  onclick="return {
         component: 'myInput',
         validator: function() { ... }
     }"
-    name="login"
-    value=""/>
+  name="login"
+  value=""
+/>
 ```
 
 With nested hashes an HTML block can be operated by 2 or more different
@@ -255,19 +260,22 @@ JavaScript components, each with its own set of parameters.
 
 ```html
 <input
-    class="inpt js"
-    onclick="return {
+  class="inpt js"
+  onclick="return {
         'myInput' : {
             validator: function() { ... }
         },
         'anotherPlugin' : {}
     }"
-    name="login"
-    value=""/>
+  name="login"
+  value=""
+/>
 ```
 
 ## Start fast
+
 ### Initializing components
+
 Applying plugins to elements is only possible when the page is loaded and your
 library can look for these elements in the document.
 
@@ -275,12 +283,13 @@ First, you can link the script file after its related piece of HTML code.
 
 ```html
 <input
-    class="myInput"
-    onclick="return {
+  class="myInput"
+  onclick="return {
         validator: 'login'
     }"
-    name="login"
-    value=""/>
+  name="login"
+  value=""
+/>
 <script src="js/plugins/myInput.js"></script>
 ```
 
@@ -293,12 +302,12 @@ The page needs to be loaded when running scripts. So, logically an `onload` even
 on the `window` object can help.
 
 ```js
-$(window).load(function(){
-    $('.js').each(function() {
-        var $this = $(this);
-        $this[$this.data('component')]();
-    })
-})
+$(window).load(function () {
+  $(".js").each(function () {
+    var $this = $(this);
+    $this[$this.data("component")]();
+  });
+});
 ```
 
 The drawback is that `window.onload` occurs when all the content is loaded.
@@ -308,12 +317,12 @@ The time to safely initialize your components is right after the document has
 been loaded and parsed into DOM, which is accompanied by a `document.ready` event.
 
 ```js
-$(function() {
-    $('.js').each(function() {
-        var $this = $(this);
-        $this[$this.data('component')]();
-    })
-})
+$(function () {
+  $(".js").each(function () {
+    var $this = $(this);
+    $this[$this.data("component")]();
+  });
+});
 ```
 
 With that all the plugins used can be bundled into one JavaScript file and
@@ -321,6 +330,7 @@ linked to a page within the `<head>` element as usual. Purposely loaded in
 advance, the script will be run when the page is ready.
 
 ### Loading scripts
+
 Although, putting `<script>` tag into `<head>` also delays page loading. A better
 strategy is to draw a page as fast as possible and then introduce JavaScript
 magic. Reach that by placing `<script>` before the closing `</body>` tag.
@@ -332,7 +342,9 @@ into 2. The first one linked in `<head>` provides major functionality. And the
 second, placed before `</body>` contains all the magic tricks.
 
 ## Common best practises
+
 ### Cover up
+
 In this article, I switched from calling `showLogin` function to jQuery plugins
 and some improvements were made in linking components to HTML code. But more
 than this, giving JavaScript responsibility for the page behavior also enables
@@ -357,6 +369,7 @@ access them from JavaScript. This makes code more declarative, introduces
 flexibility and is easier to maintain in the long run.
 
 ### Doublecheck you don't double-do
+
 Initializing components can take time and resources. So, when first initialized,
 the result can be saved and reused later. jQuery provides a nice `data` method
 suitable for that.
@@ -373,6 +386,7 @@ $.fn.myPlugin = function() { return this.each(function() {
 ```
 
 ### Life beyond the element
+
 If the corresponding block has been removed from a page, it's the component's
 responsibility to clean up. Event listeners, constant background calculations
 and even layout changes, that could have happend before. When being deactivated,
@@ -392,6 +406,7 @@ $.fn.myPlugin = function() { return this.each(function() {
 ```
 
 ### Initializing by request
+
 With dynamically changed pages it's not enough to initialize components just the
 ones after `domReady`. There has to be some code to run every time you append
 new block onto a page, which turns HTML fragment into a functioning component.
@@ -420,6 +435,7 @@ $.fn.myDestroy = function() {
 ```
 
 ### Lazy initialization
+
 One more trick is a [lazy
 initialization](http://en.wikipedia.org/wiki/Lazy_initialization) of components.
 The idea is similar to [lazy
@@ -435,6 +451,7 @@ slow down page rendering and the work of other components. Objects corresponding
 to never-used components won't be created, which saves memory.
 
 ## Component core
+
 Many code practises above would be repeated again and again when implementing
 a lot of components. As you can guess, all the common things can be wrapped with
 a framework representing the core code for the components.
@@ -443,6 +460,7 @@ One of the examples of this is jQuery UI. As many other frameworks it provides
 API to create your own JavaScript components.
 
 ### Predefined component structure
+
 With a component framework a developer uses API and describes a predefined
 component structure. All the common things are in the core.
 
@@ -455,19 +473,20 @@ $.widget('my.component', {
 ```
 
 ### High-level patterns
+
 Besides predefined structure, frameworks also provide architectural solutions to
 different problems.<br/>
 For example, with the releaving modules a core can provide an API to extend the
 main component functionality.
 
 ```js
-$.widget('ui.dialog', $.ui.dialog, {
-    close: function() {
-        if(confirm('Close???')) {
-            this._super('close')
-        }
+$.widget("ui.dialog", $.ui.dialog, {
+  close: function () {
+    if (confirm("Close???")) {
+      this._super("close");
     }
-})
+  },
+});
 ```
 
 Component frameworks define basics for reusing code and implementing reusable
@@ -480,29 +499,32 @@ component and extend their functionality and reuse basics with super calls.
 
 ```js
 BEM.DOM.decl(
-    { block: 'my-dialog', baseBlock: 'dialog' },
-    {
-        myMethod: function() {
-            this.__base();
-            this.__self.myStaticMethod();
-        }
+  { block: "my-dialog", baseBlock: "dialog" },
+  {
+    myMethod: function () {
+      this.__base();
+      this.__self.myStaticMethod();
     },
-    {
-    myStaticMethod: function() { /*...*/ }
-    }
+  },
+  {
+    myStaticMethod: function () {
+      /*...*/
+    },
+  }
 );
 ```
 
 ## From now on
+
 A number of JavaScript frameworks and libraries were created last years.
 Generally they contain the solutions to the problems listed and also cover
 others, like:
 
-* loading by request
-* building page `.js` files
-* dependency system
-* complex component relations and data sharing
-* data binding
+- loading by request
+- building page `.js` files
+- dependency system
+- complex component relations and data sharing
+- data binding
 
 With comparing articles like [Rich JavaScript Applications – the Seven
 Frameworks](http://blog.stevensanderson.com/2012/08/01/rich-javascript-applications-the-seven-frameworks-throne-of-js-2012/)
@@ -510,6 +532,7 @@ by Steven Sanderson you can choose the one you like and have a quick look under
 the hood.
 
 ## Credits
+
 Before I wrap up, let me
 thank [Sergey Berezhnoy](https://github.com/veged) also known as
 [@veged](https://twitter.com/veged) for his presentation about creating

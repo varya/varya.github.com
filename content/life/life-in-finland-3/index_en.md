@@ -6,10 +6,7 @@ date: 2017-08-06
 v2: true
 
 layout: post
-
----
-
-## Life hacks and life habits
+---## Life hacks and life habits
 
 All say that Finland is incredibly expensive. But I think that not so much, sometimes even cheap.
 
@@ -88,7 +85,7 @@ Here is the [recipe](https://www.myllynparas.fi/reseptit/marjapaistos), in Finni
 
 Interested? Write previous episodes:
 
-* [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
-* [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
+- [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
+- [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
 
 There posts are made of the materiald from my Telegram channel [@suomi_en](https://t.me/suomi_en).

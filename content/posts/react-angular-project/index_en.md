@@ -9,13 +9,10 @@ cover: thumb.png
 layout: post
 
 meta:
-  desc: >
-    The detailed explanation of React+Angular starting project. Optimal bridge to React, ES2015 and webpack
-    for the developers with Angular background.
-
----
-
-<div data-excerpt>
+desc: >
+The detailed explanation of React+Angular starting project. Optimal bridge to React, ES2015 and webpack
+for the developers with Angular background.
+---<div data-excerpt>
 
 Earlier this year, I participated in a development of a single page application. With the team, we started this
 project from scratch. This situation was the most suitable to practice the new technologies.

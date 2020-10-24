@@ -9,14 +9,10 @@ cover: thumb.png
 layout: post
 
 meta:
-  desc: >
-    Company internal communication is a crucial aspect of forming innovation-friendly environment, in which employees can
-    effectively apply their expertise and creativity for achieving business goals.
-
-
----
-
-<div data-excerpt>
+desc: >
+Company internal communication is a crucial aspect of forming innovation-friendly environment, in which employees can
+effectively apply their expertise and creativity for achieving business goals.
+---<div data-excerpt>
 
 Company internal communication is a crucial aspect of forming innovation-friendly environment, in which employees can
 effectively apply their expertise and creativity for achieving business goals.
@@ -77,14 +73,14 @@ into their micro-environments which, in turn, form the whole company ecosystem.
 
 ### References
 
-Bovet C, (2017) *17 Internal Communications Best Practices for 2017*<br/>
+Bovet C, (2017) _17 Internal Communications Best Practices for 2017_<br/>
 [https://blog.enplug.com/internal-communications-best-practices-2017](https://blog.enplug.com/internal-communications-best-practices-2017)
 
-Milinovich J. (2015) *How Fast-Growing Startups Can Fix Internal Communication Before It Breaks*<br/>
+Milinovich J. (2015) _How Fast-Growing Startups Can Fix Internal Communication Before It Breaks_<br/>
 [http://firstround.com/review/How-Fast-Growing-Startups-Can-Fix-Internal-Communication-Before-It-Breaks/](http://firstround.com/review/How-Fast-Growing-Startups-Can-Fix-Internal-Communication-Before-It-Breaks/)
 
-Rozen M. (2016) *How to Create a Company Culture of Communication*<br/>
+Rozen M. (2016) _How to Create a Company Culture of Communication_<br/>
 [https://www.huffingtonpost.com/michelle-rozen/how-to-create-a-company-c_b_11055992.html](https://www.huffingtonpost.com/michelle-rozen/how-to-create-a-company-c_b_11055992.html)
 
-Sarasvathy, S. D. (2008) *What makes entrepreneurs entrepreneurial?*<br/>
+Sarasvathy, S. D. (2008) _What makes entrepreneurs entrepreneurial?_<br/>
 [http://www.effectuation.org/sites/default/files/research_papers/what-makes-entrepreneurs-entrepreneurial-sarasvathy_0.pdf](http://www.effectuation.org/sites/default/files/research_papers/what-makes-entrepreneurs-entrepreneurial-sarasvathy_0.pdf)

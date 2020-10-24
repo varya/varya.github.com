@@ -1,5 +1,5 @@
 ```jsx
-<Avatar/>
+<Avatar />
 ```
 
 ```jsx

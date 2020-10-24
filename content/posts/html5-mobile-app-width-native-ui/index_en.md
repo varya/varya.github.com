@@ -6,9 +6,7 @@ date: 2014-05-26
 v2: true
 
 layout: post
-
----
-<div data-excerpt>
+---<div data-excerpt>
 
 Recently I attended [Front Trends 2014](http://2014.front-trends.com/) in Warsaw.
 This is an awesome conference which you should (no, definitely have to!) attend
@@ -95,7 +93,7 @@ code.
 You can learn from this code examples, from [tutorials](http://academy.appgyver.com/)
 and [API Docs](http://docs.appgyver.com/en/stable/index.html).
 Below I demonstrated some of the features which enable
-to use *native UI*.
+to use _native UI_.
 
 <div class="slide">
   <iframe class="slide__frame" scrolling="no"
@@ -116,9 +114,10 @@ example of defining a list of tabs with their icons and
 locations (URLs) they lead to.
 
 In my application I created 3 tabs. They are for
-* index.html
-* notificationExample.html
-* knowledge.html
+
+- index.html
+- notificationExample.html
+- knowledge.html
 
 ```coffee
 steroids.config.tabBar.enabled = true
@@ -163,28 +162,29 @@ Place these buttons inside the `<body>` container of the
 `www/notificationExample.html` file.
 
 ```html
-<button
-  class="button button-block"
-  ontouchend="showAlert()">Show alert dialogue</button>
-<button
-  class="button button-block"
-  ontouchend="showConfirm()">Show confirm dialogue</button>
-<button
-  class="button button-block"
-  ontouchend="showPrompt()">Show prompt dialogue</button>
-<button
-  class="button button-block"
-  ontouchend="vibrate()">Vibrate the device</button>
+<button class="button button-block" ontouchend="showAlert()">
+  Show alert dialogue
+</button>
+<button class="button button-block" ontouchend="showConfirm()">
+  Show confirm dialogue
+</button>
+<button class="button button-block" ontouchend="showPrompt()">
+  Show prompt dialogue
+</button>
+<button class="button button-block" ontouchend="vibrate()">
+  Vibrate the device
+</button>
 ```
 
 As you can see, they run different JavaScript functions on
 touch. To finish the page you need to define these functions
 in the `<head>` or linked `*.js` file. Each function demonstrates
 a kind of notification which are:
-* `navigator.notification.alert`
-* `navigator.notification.confirm`
-* `navigator.notification.prompt`
-* `navigator.notification.vibrate`
+
+- `navigator.notification.alert`
+- `navigator.notification.confirm`
+- `navigator.notification.prompt`
+- `navigator.notification.vibrate`
 
 Borrow the JavaScript code from [my repo](https://github.com/varya/steroids-fronttrends2014/blob/master/www/notificationExample.html#L15).
 
@@ -209,20 +209,20 @@ which is linked to all the `*.html` files.
 var loginButton = new steroids.buttons.NavigationBarButton();
 loginButton.title = "the Button";
 
-loginButton.onTap = function() {
-    navigator.notification.alert(
-        'You tapped the button!',
-        function(){},
-        'the Alert',
-        'I did!'
-    );
-}
+loginButton.onTap = function () {
+  navigator.notification.alert(
+    "You tapped the button!",
+    function () {},
+    "the Alert",
+    "I did!"
+  );
+};
 
 steroids.view.navigationBar.update({
-    buttons: {
-      right: [loginButton]
-    }
-})
+  buttons: {
+    right: [loginButton],
+  },
+});
 ```
 
 This will bring the button to the right side of the
@@ -245,20 +245,18 @@ modal views.
 Add this button into `www/index.html`:
 
 ```html
-<a
-  class="button button-block"
-  ontouchend="showModal()">Open modal</a>
+<a class="button button-block" ontouchend="showModal()">Open modal</a>
 ```
 
 And code `showModal` method to open a view as a modal.
 
 ```js
 function showModal() {
-  var webView =
-    new steroids.views.WebView("/views/modalExample/show.html");
+  var webView = new steroids.views.WebView("/views/modalExample/show.html");
   steroids.modal.show(webView);
 }
 ```
+
 The related view is a piece of html, which you should place into
 `app/views/modalExample/show.html`. BTW, it has to have an interface
 element closing the view. To make the process faster, pick up the
@@ -307,9 +305,10 @@ and show you the how-to.
 
 You can learn more about Steroids and Cordova (Steroids is based on PhoneGap)
 at the [AppGyver Academy](http://academy.appgyver.com/) where you find:
-* detailed tutorials,
-* documentation,
-* big community of devs.
+
+- detailed tutorials,
+- documentation,
+- big community of devs.
 
 And, of course, you can read [this blog](/en/posts/). I promise to share my next findings
 regarding Steroids soon :-)

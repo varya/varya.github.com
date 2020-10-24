@@ -9,10 +9,7 @@ cover: thumb.jpg
 layout: post
 
 tumblr: true
-
----
-
-For years, we in the family have tried different approaches to organizing home finances. Some did not work for us, some
+---For years, we in the family have tried different approaches to organizing home finances. Some did not work for us, some
 were not interesting to follow, some were not giving any result. But the last couple of years we have been using something
 that looks fully suitable. This method is transparent, it works for saving and at the same time, it does not make us
 tighten the belts. Also, it looks like this method is applicable to any volume of income.
@@ -41,20 +38,20 @@ accounts we set up some rules, which help us to reach the goal, I describe it be
 
 As a result, we have such accounts:
 
-* Account plan #1 (Bank #1)
-  * Checking account
-  * Buffer
-  * Home saving account
-  * Vacations saving account
-  * General saving account
-* Account plan #2 (Bank #2)
-  * Checking account (out of usage)
-  * Emergency savings
+- Account plan #1 (Bank #1)
+  - Checking account
+  - Buffer
+  - Home saving account
+  - Vacations saving account
+  - General saving account
+- Account plan #2 (Bank #2)
+  - Checking account (out of usage)
+  - Emergency savings
 
 We can create more saving accounts if needed, or remove those which are not actual anymore. For example, we used to
 have "Car saving account". Initially, we used it to save money for buying a car and later topped it up every month to use
 for serving the car. But finally, we decided that we will serve the car from our regular budget and removed the
-  Car-saving account.
+Car-saving account.
 
 We get our incomes to the checking accounts. Right after getting the salary we pay regular bills such as rent, car loan,
 gym membership etc.
@@ -97,7 +94,7 @@ We have been using this system for almost two years. I like that it balances our
 too much, because the weekly €N amount is big enough to afford restaurants and jamons. On the other hand, there are some
 boundaries. They make us keep saving accounts full. This results in higher quality of our lives. We have saved quite a lot
 for our future home, and at the same time, we always have enough for good vacations. Moreover, when we come back from
-  such vacations, there still are money for daily basics.
+such vacations, there still are money for daily basics.
 
 In theory, this system should also work for lower income. The savings will progress slower but the idea of financial
 balance should still be working.

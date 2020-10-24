@@ -1,6 +1,6 @@
 ---
 
-title: What   makes   entrepreneurs   entrepreneurial?
+title: What makes entrepreneurs entrepreneurial?
 
 date: 2018-01-04
 v2: true
@@ -9,15 +9,11 @@ cover: thumb.jpg
 layout: post
 
 meta:
-  desc: >
-    Effectual thinking widely used by entrepreneurs very much reminds design thinking concept. With a closer look,
-    also other design principles and strategies are found out as a typical entrepreneurial behavior. By the end of the
-    day, as designers, entrepreneurs solve the problems and determining the future.
-
-
----
-
-<div data-excerpt>
+desc: >
+Effectual thinking widely used by entrepreneurs very much reminds design thinking concept. With a closer look,
+also other design principles and strategies are found out as a typical entrepreneurial behavior. By the end of the
+day, as designers, entrepreneurs solve the problems and determining the future.
+---<div data-excerpt>
 
 Last year, during my studies of IDBM program at Aalto University, I took a course "Design in Innovation Context" which
 covered entrepreneurial innovations and behavior. Even out of study context but in everyday life I have always been
@@ -105,4 +101,3 @@ Grant A., 2013. Give and Take
 
 Paasonen J., 2017. Design Leader’s Cookbook<br/>
 [https://www.slideshare.net/JuhoPaasonen/design-leaders-cookbook-building-highperforming-and-happy-creative-teams](https://www.slideshare.net/JuhoPaasonen/design-leaders-cookbook-building-highperforming-and-happy-creative-teams)
-
