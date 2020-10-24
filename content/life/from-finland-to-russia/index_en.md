@@ -6,9 +6,7 @@ date: 2015-10-08
 v2: true
 
 layout: post
-
----
-Recently we managed to go to Russia by car for a long weekend. This was a trip to my husband's and my hometown
+---Recently we managed to go to Russia by car for a long weekend. This was a trip to my husband's and my hometown
 [Petrozavodsk](https://en.wikipedia.org/wiki/Petrozavodsk) (Petroskoi in Finnish). Trips to there are quite a challenge
 as the trasport connection is not the best. Apparently the go-by-car option turned out to be the most comfortable. I
 recommend all my Finnish friends to have such a trip, at least once in a lifetime. You will see the Russian region which
@@ -64,13 +62,13 @@ Russia is legendary, so it matters to take the better route.
 
 Such a long drive requires several stops. Here are the recommended:
 
-* [ABC Viipurinportti near
+- [ABC Viipurinportti near
   Lappeenranta](https://www.google.fi/maps/place/ABC+Viipurinportti+Lappeenranta/@61.052776,28.260175,17z/data=!3m1!4b1!4m2!3m1!1s0x4690be3c263e712b:0x12804594829a161?hl=en)
-* [Jänismäki Ravintola in
+- [Jänismäki Ravintola in
   Värtsilä (the Russian one)](https://www.google.fi/maps/place/%D0%9A%D0%B0%D1%84%D0%B5+%C2%AB%D0%AF%D0%BD%D0%B8%D1%81%D0%BC%D1%8F%D0%BA%D0%B8%C2%BB+%D0%9A%D0%B0%D1%84%D0%B5+%C2%AB%D0%AF%D0%BD%D0%B8%D1%81%D0%BC%D1%8F%D0%BA%D0%B8%C2%BB/@62.1600155,30.6789698,17z/data=!4m2!3m1!1s0x0000000000000000:0x06646632e3861d01?hl=en)<br/>
   You can find it right after crossing the border. This is a good place to take full meal.<br/>
   ![](./janismaki.jpg)
-* [Cafe in
+- [Cafe in
   Kolatselga](https://www.google.fi/maps/place/61%C2%B040'43.4%22N+32%C2%B013'43.6%22E/@61.6786594,32.2283338,17z/data=!4m2!3m1!1s0x0:0x0?hl=en)<br/>
   It's not even in map, take the coordinates `[61.678716, 32.228778]`. You will have the cafe to the right side of the
   road. Don't miss. This might be your only chance to go to normal toilet before you reach Petrozavodsk. Not a joke.<br/>

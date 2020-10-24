@@ -6,10 +6,7 @@ date: 2015-08-18
 v2: true
 
 layout: post
-
----
-
-В этом году у меня было несколько презентаций про [SC5 Style Guide](http://styleguide.sc5.io/), в которых
+---В этом году у меня было несколько презентаций про [SC5 Style Guide](http://styleguide.sc5.io/), в которых
 я делилась опытом использования инструмента на проектах одного их наших клиентов — мобильного оператора Elisa.
 Учитывая, что Elisa — огромная компания с массой вебсайтов, на которых нужно поддерживать единый стиль, не
 удивительно, что SC5 Style Guide как инструмент там очень полезен. Но как насчет небольших проектов? Стоит ли для них
@@ -173,6 +170,7 @@ styleguide:ignore:start
 styleguide:ignore:end
 */
 ```
+
 [github/varya/varya.github.com/desktop-blocks/overview.css](https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/overview.css)
 
 По сути в файле кроме комментариев ничего нет. А в комментариях — описание каждой секции. Также перечислены
@@ -205,6 +203,7 @@ Styleguide 1.1
 {
 ...
 ```
+
 [github/varya/varya.github.com/desktop-blocks/logo/logo.css](https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/logo/logo.css)
 
 See it rendered: [varya.me/styleguide/#/section/1.1](http://varya.me/styleguide/#/section/1.1)
@@ -256,11 +255,11 @@ Styleguide 4.1
 {
 ...
 ```
+
 [github/varya/varya.github.com/desktop-blocks/sidebar/sidebar.css](https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/sidebar/sidebar.css)
 
 Благодаря этому документация в коде приемлемого размера, а на сайте все раскрывается в полном виде:
 [varya.me/styleguide/#/section/4.1](http://varya.me/styleguide/#/section/4.1)
-
 
 ## Style-Guide-Driven Development
 

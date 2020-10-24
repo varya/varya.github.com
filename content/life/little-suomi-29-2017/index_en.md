@@ -6,10 +6,7 @@ date: 2017-07-18
 v2: true
 
 layout: post
-
----
-
-The telegram channel [@suomi_en](https://t.me/suomi_en) gets updates every day. Here there is the last portion. You will
+---The telegram channel [@suomi_en](https://t.me/suomi_en) gets updates every day. Here there is the last portion. You will
 be able to read new posts from the blog, but if you want to get it sooner, [subscribe](https://t.me/suomi_en).
 
 This time: shops, city bikes and summer pleasures :-)
@@ -61,10 +58,10 @@ transport pass. The cost is more than affordable, just €25 for the whole seaso
 Helsinki city bikes can be used by tourists as well. One day costs €5, one week — €10. Then, you can get a bike for free
 if a ride is less than 30 minutes. Longer rides cost something.
 
-  Using the city bikes is very handy because there is no need to care about where to park the bike. You can practice
-  short rides together with using public transport or going on foot. This year, Helsinki got more stations than the last
-  year; whole city center is covered, and also some neighboring areas. There are even some bikes in Espoo (Helsinki's
-  neighboring city). We hope that next year we will get even more.
+Using the city bikes is very handy because there is no need to care about where to park the bike. You can practice
+short rides together with using public transport or going on foot. This year, Helsinki got more stations than the last
+year; whole city center is covered, and also some neighboring areas. There are even some bikes in Espoo (Helsinki's
+neighboring city). We hope that next year we will get even more.
 
 Here is their website: [https://www.hsl.fi/en/citybikes](https://www.hsl.fi/en/citybikes).
 

@@ -7,9 +7,7 @@ old: true
 date: 2014-02-25
 
 layout: post
-
----
-The recently published [step-by-step tutorial on
+---The recently published [step-by-step tutorial on
 i-bem.js](http://bem.info/tutorials/articles/bem-js-tutorial/) mentioned **YM
 modular system** as a base for component JavaScript solution behind BEM. Why do
 we need another modular system? Let us see...
@@ -25,9 +23,9 @@ So, one more modular system? Besides CommonJS and AMD? Why should we care?
 
 I will not write why modules and modular systems are needed, there are plenty of
 articles about it. Let us rather proceed to the main question: why do we need
-*another* modular system?<br/>
+_another_ modular system?<br/>
 For sure, there are CommonJS and AMD, but working on large projects with them I faced
- large drawbacks. One is that they are synchronous. This is not fatal, but in my
+large drawbacks. One is that they are synchronous. This is not fatal, but in my
 project we often had to provie different hacks for it.
 
 Let us say, we have 3 modules: moduleA, moduleB and moduleC. moduleC depends on
@@ -36,99 +34,99 @@ three solutions:
 
 ####CommonJS
 
-*moduleA.js:*
+_moduleA.js:_
 
 ```js
-module.exports = 'A';
+module.exports = "A";
 ```
 
-*moduleB.js:*
+_moduleB.js:_
 
 ```js
-module.exports = 'B';
+module.exports = "B";
 ```
 
-*moduleC.js:*
+_moduleC.js:_
 
 ```js
-var moduleA = require('A');
-    moduleB = require('B');
+var moduleA = require("A");
+moduleB = require("B");
 
-module.exports = moduleA + moduleB + 'C';
+module.exports = moduleA + moduleB + "C";
 ```
 
-*Linking and usage:*
+_Linking and usage:_
 
 ```js
-var moduleC = require('C');
+var moduleC = require("C");
 console.log(moduleC); // prints "ABC"
 ```
 
 ####AMD
 
-*moduleA.js:*
+_moduleA.js:_
 
 ```js
-define('A', function() {
-    return 'A';
+define("A", function () {
+  return "A";
 });
 ```
 
-*moduleB.js:*:
+_moduleB.js:_:
 
 ```js
-define('B', function() {
-    return 'B';
+define("B", function () {
+  return "B";
 });
 ```
 
-*moduleC.js:*
+_moduleC.js:_
 
 ```js
-define('С', ['A', 'B'], function(moduleA, moduleB) {
-    return moduleA + moduleB + 'C';
+define("С", ["A", "B"], function (moduleA, moduleB) {
+  return moduleA + moduleB + "C";
 });
 ```
 
-*Linking and usage:*
+_Linking and usage:_
 
 ```js
-require(['С'], function(moduleC) {
-    console.log(moduleC); // prints "ABC"
+require(["С"], function (moduleC) {
+  console.log(moduleC); // prints "ABC"
 });
 ```
 
 ####YM
 
-*moduleA.js:*
+_moduleA.js:_
 
 ```js
-modules.define('A', function(provide) {
-    provide('A');
+modules.define("A", function (provide) {
+  provide("A");
 });
 ```
 
-*moduleB.js:*
+_moduleB.js:_
 
 ```js
-modules.define('B', function(provide) {
-    provide('B');
+modules.define("B", function (provide) {
+  provide("B");
 });
 ```
 
-*moduleC.js:*
+_moduleC.js:_
 
 ```js
-modules.define('C', ['A', 'B'], function(provide, moduleA, moduleB) {
-    provide(moduleA + moduleB + 'C');
+modules.define("C", ["A", "B"], function (provide, moduleA, moduleB) {
+  provide(moduleA + moduleB + "C");
 });
 ```
 
-*Linking and usage:*
+_Linking and usage:_
 
 ```js
-modules.require(['С'], function(moduleC) {
-    console.log(moduleC); // prints "ABC"
+modules.require(["С"], function (moduleC) {
+  console.log(moduleC); // prints "ABC"
 });
 ```
 
@@ -141,36 +139,36 @@ do an asynchronous action first. The simpliest example can be `setTimeout`.
 There is no way to implement it elegantly with CommonJS and AMD.
 But with `YM` it can be coded as follows:
 
-*moduleA.js:*
+_moduleA.js:_
 
 ```js
-modules.define('A', function(provide) {
-    setTimeout(function() {
-        provide('A');
-   });
+modules.define("A", function (provide) {
+  setTimeout(function () {
+    provide("A");
+  });
 });
 ```
 
-*moduleB.js:*
+_moduleB.js:_
 
 ```js
-modules.define('B', function(provide) {
-    setTimeout(function() {
-        provide('B');
-    });
+modules.define("B", function (provide) {
+  setTimeout(function () {
+    provide("B");
+  });
 });
 ```
 
-*moduleC.js:*
+_moduleC.js:_
 
 ```js
-modules.define('C', ['A', 'B'], function(provide, moduleA, moduleB) {
-    provide(moduleA + moduleB + 'C');
+modules.define("C", ["A", "B"], function (provide, moduleA, moduleB) {
+  provide(moduleA + moduleB + "C");
 });
 ```
 
 Interestingly `moduleC` does not know anything about asynchronous actions in
-its dependant modules. *Win!*
+its dependant modules. _Win!_
 
 ### Real life example
 
@@ -189,24 +187,26 @@ With YM modules it is simple to implement. We define a `ymaps` module which load
 the API code, waits for the `ymaps.ready` event and then provides itself. All
 the modules which have the `ymaps` module as a dependency only start to resolve
 after this. As you can see, other modules know nothing about the asynchronicity of the
-Yandex.Map API. *No hacks in code!*
+Yandex.Map API. _No hacks in code!_
 
-*ymaps.js:*
+_ymaps.js:_
 
 ```js
-modules.define(
-    'ymaps',
-    ['loader', 'config'],
-    function(provide, loader, config) {
+modules.define("ymaps", ["loader", "config"], function (
+  provide,
+  loader,
+  config
+) {
+  var url =
+    config.hosts.ymaps +
+    "/2.1.4/?lang=ru-RU" +
+    "&load=package.full&coordorder=longlat";
 
-    var url = config.hosts.ymaps + '/2.1.4/?lang=ru-RU' +
-              '&load=package.full&coordorder=longlat';
-
-    loader(url, function() {
-        ymaps.ready(function() {
-            provide(ymaps);
-        });
+  loader(url, function () {
+    ymaps.ready(function () {
+      provide(ymaps);
     });
+  });
 });
 ```
 
@@ -214,7 +214,7 @@ There are 2 other modules in use here: `loader` and `config`. I do not show
 their code, but the first one loads scripts and the second one is a hash with
 constant values.
 
-*ComplexLayer.js:*
+_ComplexLayer.js:_
 
 ```js
 modules.define('ComplexLayer', ['inherit', 'ymaps'], function(provide, inherit, ymaps) {
@@ -247,7 +247,7 @@ no dirty hacks for asynchronicity.
 And to wrap up, let me demonstrate you the YM modular system API (indeed, it has more
 methods, and these are only the basic ones).
 
-*Defining a module:*
+_Defining a module:_
 
 ```js
 void modules.define(
@@ -261,7 +261,7 @@ void modules.define(
 )
 ```
 
-*Requiring a module:*
+_Requiring a module:_
 
 ```js
 void modules.require(

@@ -9,14 +9,11 @@ cover: thumb.png
 layout: post
 
 meta:
-  desc: >
-    The modified images in git repositories can have a decent visual representation of file changes. For that, you
-    simply run `git diff` command. However, to get this output, you have to do a little configuration.
-    This article shows how.
-
----
-
-<div data-excerpt>
+desc: >
+The modified images in git repositories can have a decent visual representation of file changes. For that, you
+simply run `git diff` command. However, to get this output, you have to do a little configuration.
+This article shows how.
+---<div data-excerpt>
 
 My first task for new projects is to create a git repository. Whether it is a new app, or conference slides, or even an
 article, I prefer to keep everything in Git. It is an excellent tool, and, personally, I enjoy its command line
@@ -97,5 +94,6 @@ The last step is to instruct git to use your script when `diff` command is appli
 That's it. Now, running a `git diff` over your images you will get a human-friendly output. Enjoy!
 
 ### References
-* [1]{.zero} http://www.akikoskinen.info/image-diffs-with-git/
-* [2]{.zero} http://paulmestemaker.com/imagemagick-display-mac-os-x/
+
+- [1]{.zero} http://www.akikoskinen.info/image-diffs-with-git/
+- [2]{.zero} http://paulmestemaker.com/imagemagick-display-mac-os-x/

@@ -6,10 +6,7 @@ date: 2015-02-11
 v2: true
 
 layout: post
-
----
-
-<div data-excerpt>
+---<div data-excerpt>
 
 This time I would like to share my experience of keeping a codestyle in one of my working projects. This is about a new
 tool called **JSCS** which we have recently chosen with the team and now are very pleased with the result.
@@ -29,6 +26,7 @@ story.
 Interesting enough that JSHint authors liked JSCS so much that they prefered to contribute into it rather than develop
 style checkings in their tool. So they removed all the style enforcement rules out of JSHint and keep it now for
 more complex things not about coding style but about programming patterns.
+
 <blockquote class="twitter-tweet" lang="en"><p>And with that, JSCS now has all the style enforcement rules that are
 being dropped in <a href="https://twitter.com/JSHint">@JSHint</a> 3.0: <a
 href="https://t.co/W98EMSiTN5">https://t.co/W98EMSiTN5</a> cc <a
@@ -40,14 +38,11 @@ This means that there is no question if you choose JSLint, JSHint **or** JSCS. C
 JSLint and JSHint + JSCS working together.
 
 ```js
-gulp.task('jslint',
-  [ 'jshint', 'jscs' ]
-  );
+gulp.task("jslint", ["jshint", "jscs"]);
 ```
 
 Assuming that JSCS is a new tool with not yet spoiled structure, I suppose that it would be a pleasure to contribute
 into it. Also, the tool's youth promises that future possible bugs would be fixed soon as there is no legacy.
-
 
 Moreover, I personally find encouraging that JSCS has been already chosen by such respectable teams as jQuery, Bootsrap
 and AngularJS.
@@ -65,13 +60,13 @@ JSCS support tonns of rules. Nethertheless, your config file would not be too he
 choose from popular JavaScript styles and so there is no need to define the rules over and over again. You only need to
 write who you prefer to look like:
 
-* airbnb
-* crockford
-* google
-* jquery
-* mdcs
-* wikimedia
-* yandex
+- airbnb
+- crockford
+- google
+- jquery
+- mdcs
+- wikimedia
+- yandex
 
 Even if you want to be special, you still can choose the most similar preset and redefine some of its rules below.
 

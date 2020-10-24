@@ -9,13 +9,10 @@ cover: thumb.png
 layout: post
 
 meta:
-  desc: >
-    Living documentaion for CSS, JavaScript and templates of your components with SC5 Style Guide. In this post I share
-    my experience from the recent large project.
-
----
-
-<div data-excerpt>
+desc: >
+Living documentaion for CSS, JavaScript and templates of your components with SC5 Style Guide. In this post I share
+my experience from the recent large project.
+---<div data-excerpt>
 
 When it comes to the large web applications, we often operate with complex components. Such components are not just CSS
 styles for the pieces of an interface but also their JavaScript interactions and templates. As documentation, the style

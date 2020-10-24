@@ -1,15 +1,16 @@
 ---
-layout: './src/components/Page/Page--base.js'
+layout: "./src/components/Page/Page--base.js"
 ---
+
 import { Link } from 'gatsby'
 
 import Avatar from '../../src/components/Avatar'
 import SEO from '../../src/components/Seo'
 
 <SEO
-  title="Varya Stepanova — design systems architect and engineering manager"
-  keywords={['design systems', 'design system', 'frontend']}
-  defer={false}/>
+title="Varya Stepanova — design systems architect and engineering manager"
+keywords={['design systems', 'design system', 'frontend']}
+defer={false}/>
 
 # Varya Stepanova — a design systems architect
 
@@ -61,4 +62,3 @@ the <a href="http://bem.info/">BEM</a> team.</p>
 <p>So far, I have lived in four cities and three countries but still open for new horizons.</p>
 
 <p>Keen on cats, good food and city tourism.</p>
-

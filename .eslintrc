@@ -5,6 +5,7 @@
     "commonjs": true
   },
   "parser": "babel-eslint",
+  "ignorePatterns": ["public", ".cache", "node_modules"],
   "rules": {
     "strict": 0,
     "no-console": 1

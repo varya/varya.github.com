@@ -7,10 +7,7 @@ old: true
 date: 2014-03-10
 
 layout: post
-
----
-
-Last week I met the need to develop a web site which static assets have to be
+---Last week I met the need to develop a web site which static assets have to be
 hosted on a different server and respond by different URLs than its HTML. This
 is the requirement to all the static files: stylesheets and JavaScript linked to
 the page as well as imges and fonts mentioned in HTML, CSS and JavaScript
@@ -34,6 +31,7 @@ In the [varya/st-deliverer](https://github.com/varya/st-deliverer) public reposi
 you can find a stub project illustrating the solution.
 
 ### Project structure
+
 As you will be able to see later `borschik` is very flexible. So you can use any
 project structure. In my project I store everything in
 [src folder](b.com/varya/st-deliverer/tree/master/src).
@@ -46,20 +44,19 @@ server by their absolute paths.
 <html>
   <head>
     <title>Deliver static assets with Borschik</title>
-    <link
-      rel="stylesheet"
-      href="http://varya.github.io/stor.../styles.css"/>
+    <link rel="stylesheet" href="http://varya.github.io/stor.../styles.css" />
   </head>
-  <body
-    class="page"
-    background="http://varya.github.io/stor.../grungy.jpg">
-  ...
+  <body class="page" background="http://varya.github.io/stor.../grungy.jpg">
+    ...
+  </body>
+</html>
 ```
 
 [Open in your browser](http://varya.me/st-deliverer/dist/html/) to enjoy my visual
 design and a tom-cat.
 
 ### Bring borschik to your project
+
 Borschik is an npm package. So, you can install it globally by runing
 
 ```bash
@@ -81,6 +78,7 @@ file:
 ```
 
 ### Configuration
+
 Before we start the magic transformation it is needed to instruct `borschik` what
 to transform and how to transform. The [.borschik](https://github.com/varya/st-deliverer/blob/master/.borschik)
 configuration file serves for that.
@@ -95,10 +93,12 @@ configuration file serves for that.
   }
 }
 ```
+
 Note that you can tune different replacements for different paths. Here I tried
 to illustrate with the fonts.
 
 ### Run the command
+
 Run borschik over a file which contains links to local static assets, and you
 will get the transformation result. For example,
 
@@ -106,6 +106,7 @@ will get the transformation result. For example,
 ./node_modules/borschik/bin/borschik \
   --input=src/css/styles.css
 ```
+
 Fot the building process you will also need an `--output` flag to instruct
 `borschik` where to place the result.
 
@@ -113,6 +114,7 @@ Borschik knows the syntax of web technologies. It will not touch the links
 mentioned in text, for example.
 
 ### Build system
+
 Now you can use `borschik` in your project build process. I simply wrote a
 [Makefile](https://github.com/varya/st-deliverer/blob/master/Makefile) with a
 lot of help from [@alexeyten](https://github.com/alexeyten) (tnx!).
@@ -122,6 +124,7 @@ and [enb](https://github.com/enb-make/enb) — the two competitive solutions for
 building the projects with BEM structure.
 
 ### Result
+
 [Check the cat again](http://varya.me/st-deliverer/dist/html/). Still there?
 
 You also can learn about other features of `borschik` from the article:

@@ -7,9 +7,7 @@ old: true
 date: 2014-01-15
 
 layout: post
-
----
-Некотрое время назад мой знакомый, который делает проект на полном стеке БЭМ
+---Некотрое время назад мой знакомый, который делает проект на полном стеке БЭМ
 (BEM-CSS, i-bem.js и BEMHTML-шаблоны),
 задал мне несколько вопросов об использовании
 [BEM project
@@ -73,13 +71,12 @@ bem tools. Для блоков это знакомые нам CSS, JavaScript и
 │   │   ├── <a href="https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/index.bemjson.js">index.bemjson.js</a>
 │   │   └── <a href="https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/index.html">index.html</a></code></pre>
 
-
 Для понимания bem tools представьте, что это строительный кран. Он берет
 строительные блоки и возводит из них дом.
 
 ![](http://img-fotki.yandex.ru/get/9058/14441195.30/0_7e0f3_ff76f66a_L.jpg)
 
-Хотя, кроме *.js, *.css и *.html файлов, всё-таки есть один файл, написанный
+Хотя, кроме _.js, _.css и \*.html файлов, всё-таки есть один файл, написанный
 разрабочиком.
 Это
 [index.bemjson.js](https://github.com/varya/online-shop-dummy/blob/gh-pages/desktop.bundles/index/index.bemjson.js)
@@ -96,8 +93,7 @@ bem tools. Для блоков это знакомые нам CSS, JavaScript и
 
 Но почему же `bem tools` нужно регулярное выражение в настройках?
 
-Это несложно. Все папки, которыми оперирует `bem tools` — это `уровни
-переопределения`. Должно быть легче, если представлять уровень как набор
+Это несложно. Все папки, которыми оперирует `bem tools` — это `уровни переопределения`. Должно быть легче, если представлять уровень как набор
 сущностей. Уровень блоков представлен папкой `desktop.blocks`, а уровень страниц
 — папкой `desktop.pages`. В конфигурационной папке
 [.bem/levels/](https://github.com/bem/project-stub/tree/14e24fd17ba66a357a2f6fcdce045065b4eb5d6c/.bem/levels)

@@ -8,15 +8,11 @@ cover: thumb.png
 layout: post
 
 meta:
-  desc: >
-    Collection of tips, helpful resources, and thoughts on how to organize remote work in a design system team. Habits which
-    help you to be a good connector for the different project teams
-    and better perform the role of "single source of truth".
-
-
----
-
-<div data-excerpt>
+desc: >
+Collection of tips, helpful resources, and thoughts on how to organize remote work in a design system team. Habits which
+help you to be a good connector for the different project teams
+and better perform the role of "single source of truth".
+---<div data-excerpt>
 
 In these unique times, well-organized remote work becomes one of the key factors for success. This applies to any kind of work, and managing design systems is no exception. Although it is a huge challenge, I very much like how things are going in our team. So that I collected here some tips which may help you as well.
 
@@ -30,7 +26,6 @@ Image source:
 
 </div>
 
-
 ## Keep in touch
 
 Design systems connect people, and a design system team works as a conductor. Regular communication makes it all for us — meeting people in the office corridors, by cooler, at coffee we get new information from here and there. Often, that is a stronger source of demanded data than the official channels.
@@ -41,13 +36,11 @@ Remote work brings limited communication options, and we miss these spontaneous 
 
 At the same time, we have to be pro-active and not just wait when people come to us with their requests. On-time learning what other teams are working on makes a huge difference. Now they also work remotely and share a lot of information in text in their channels. Actively participating in all of them would be too much work but occasional reading is possible. So, **check how other teams are doing reading their channels** and contact specific people on specific topics if the need arises.
 
-
 ## Spread information
 
 In a large company, there can be dozens if not hundreds of people interested in updates about a design system. To respond to their interest, our team performed monthly presentations on the topic. Moving to all-remote, we faced the problem that not all the meeting systems can handle that many participants, even if everyone switches off the video and mutes their mic.
 
 How then spread information? There are several options. You can simply share the slides of your presentation but make them more detailed. Or you can present alone in your room, **make a screencast of your presentation** and post the video in the company channels. If security policy allows, you can **use streaming services** like YouTube and present there.
-
 
 ## Better meetings
 
@@ -63,13 +56,11 @@ Whenever possible, **share your screen**. In our team, we took this as a habit f
 
 **Make meeting notes and share them** after the meeting. You can put the notes into a team channel or send an email to all the participants. Good documentation will stand you in good stead.
 
-
 ## Socialize
 
 When working onsite, we interact not only as working units but also as people. This is the part many of us miss a lot nowadays. If there is enough time, I like to **start a meeting with a quick casual chat** as we normally did in our previous life. We often switch off the video because it ensures better sound quality but for the first few minutes I prefer to have it on and see my colleagues alive :-)
 
 Once a week, we in the team have a **team lunch by video**. We start 12:15 (quarter past noon) so that everyone has time to prepare their food. We still often discuss work but anyways keep it much more casual then dailies and other work meetings.
-
 
 ## Use the right tools
 
@@ -81,15 +72,14 @@ From the developer perspective, we are also trying to make our work visible so t
 
 One more discovery is the tools for collaborative online boards. Today they are must-have. It does not matter much which one you use, for example, advanced Figma users can even do everything there. But the market nowadays offers plenty of specific solutions — some are paid, some are free. We in the team are using [Mural](https://www.mural.co/), it allows anonymous contributors so we are sure that we can invite anyone from other teams with no additional cost. But I checked out many others, and this is the full list:
 
-* [Mural](https://www.mural.co/)<br/>
+- [Mural](https://www.mural.co/)<br/>
   It offers a 30-day trial and has plenty of nice board templates.
-* [Miro](https://miro.com/)<br/>
+- [Miro](https://miro.com/)<br/>
   A very popular tool recommended by many design teams.
-* [Jamboard](https://edu.google.com/products/jamboard/?modal_active=none)<br/>
+- [Jamboard](https://edu.google.com/products/jamboard/?modal_active=none)<br/>
   This is a product by Google mostly oriented to students.
-* [BitPaper](https://www.bitpaper.io/)<br/>
+- [BitPaper](https://www.bitpaper.io/)<br/>
   Whiteboard and video chat solution.
-
 
 ## Nice habits
 
@@ -104,7 +94,6 @@ If your colleagues are using not only the in-company calendar but also other cal
 **Document everything you are doing**, not only the gotten results but also the reasons behind the decisions were made.
 
 **Record important meetings** but do not forget to ask permission from every attendee.
-
 
 ## More to read
 

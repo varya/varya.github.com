@@ -9,13 +9,10 @@ cover: thumb.png
 layout: post
 
 meta:
-  desc: >
-    Hackathon is a perfect solution for getting hands on React quickly. These materials ease the
-    hardship of preparations. Take it to deliver a whole day hackathon into your company.
-
----
-
-<div data-excerpt>
+desc: >
+Hackathon is a perfect solution for getting hands on React quickly. These materials ease the
+hardship of preparations. Take it to deliver a whole day hackathon into your company.
+---<div data-excerpt>
 
 Being a frontend developer these days means to learn the new things every day. We read articles and blog posts,
 examine the changelogs, follow the Twitter announcements and participate in the GitHub discussions.
@@ -44,7 +41,6 @@ check them out. Also, we had a special Slack channel where the links were shared
 
 The next slide showed the plan of event to the participants:
 
-
 1. About the event
 1. Choosing the projects
 1. Introduction to React
@@ -62,14 +58,14 @@ On the next stage, I offered the applications that we could write using React du
 
 Here are the listed options:
 
-* Instagram-like
-* Twitter dashboard
-* Shopping list
-* [Bars on map](http://kipp.is/map)
-* [2048](https://claudiopro.github.io/2048-react/)
-* Tetris
-* [Snake game](https://reake-react-snake.firebaseapp.com/)
-* Your own idea
+- Instagram-like
+- Twitter dashboard
+- Shopping list
+- [Bars on map](http://kipp.is/map)
+- [2048](https://claudiopro.github.io/2048-react/)
+- Tetris
+- [Snake game](https://reake-react-snake.firebaseapp.com/)
+- Your own idea
 
 I believe that the product goals should be defined at the start. It is especially important for the React hackathon.
 People start to think how they would code it in the way they are used to work. When it comes to React, they are
@@ -92,11 +88,11 @@ made in the introduction.
 
 When it came to the React buzz words, we had not a solo talk but a proper discussion.
 
-* ES2015 (ES6)
-* React
-* webpack
-* Flux / Redux
-* Relay & GraphQL
+- ES2015 (ES6)
+- React
+- webpack
+- Flux / Redux
+- Relay & GraphQL
 
 To save the developers' time in the codung section, I gave the definitions and explanations in advance.
 Also, the most of the applications usually start with cloning the starter project. In the hackathon, I aimed not to give
@@ -130,14 +126,14 @@ things. However it took some time, which is not availabe during the one day even
 So, 'ES5 + builder' solution is reasonable for the developers who want get their hands on React quickly.
 To provide the different options, I gave the links to the other starter kits:
 
-* [with webpack](https://github.com/petehunt/ReactHack)
-* [with gulp](https://github.com/artyomtrityak/react-hackathon)
+- [with webpack](https://github.com/petehunt/ReactHack)
+- [with gulp](https://github.com/artyomtrityak/react-hackathon)
 
 The last stubs 'ES2015 + webpack' type. I've given two:
 
-* [Essential](https://github.com/pheuter/essential-react)
-* [varya/react-stub](https://github.com/varya/react-stub)
-  * ES2015, BEM, PostCSS, webpack
+- [Essential](https://github.com/pheuter/essential-react)
+- [varya/react-stub](https://github.com/varya/react-stub)
+  - ES2015, BEM, PostCSS, webpack
 
 Despite the existence of a good starter project Essential, I've created my own and recommended it.
 I keep it minimalistic, so there is no redux linking there. I believe that the first project is better without
@@ -148,11 +144,11 @@ within the React project. Honestly, I don't see any ideal solution for the React
 The ecosystem misses a crucial part, but the existing libraries can help at the initial bootstrapping stage.
 Moreover, it provides a knowledge to use when it comes to building your own UI library for the React projects.
 
-* [React ToolBox](http://react-toolbox.com/#/) -
+- [React ToolBox](http://react-toolbox.com/#/) -
   [react-stub@with-react-toolbox](https://github.com/varya/react-stub/tree/with-react-toolbox)
-* [Material UI](http://www.material-ui.com/#/) -
+- [Material UI](http://www.material-ui.com/#/) -
   [react-stub@with-material-ui](https://github.com/varya/react-stub/tree/with-material-ui)
-* [Belle](http://nikgraf.github.io/belle/#/?_k=xvldj2) -
+- [Belle](http://nikgraf.github.io/belle/#/?_k=xvldj2) -
   [react-stub@with-belle](https://github.com/varya/react-stub/tree/with-belle)
 
 To demonstrate how React works with UI libraries, I prepared a branch for each option. These branches
@@ -168,7 +164,6 @@ than exploring APIs.
 During the hackathon, we had React Native and Relay & GraphQL sections for the advanced React users. These topics
 were covered by my colleague [Anssi Herranen](https://fi.linkedin.com/in/anssiherranen) and our quest [Mikhail
 Novikov](https://fi.linkedin.com/in/freiksenet) from [Reindex](https://www.reindex.io/).
-
 
 After all the presentations, it was time to code. It is important that the hackathon organizers take care of the
 developers' basic needs and let the people be focused on the programming. I'm thankful for our Head of Technology

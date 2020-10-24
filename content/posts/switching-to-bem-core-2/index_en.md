@@ -7,10 +7,7 @@ old: true
 date: 2014-04-16
 
 layout: post
-
----
-
-<div data-excerpt>
+---<div data-excerpt>
 
 The `bem-core` library goes futher and there already is `2.0.0` version
 available. This blog was safely switched to the new major version with

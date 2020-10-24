@@ -6,19 +6,16 @@ date: 2017-12-01
 v2: true
 
 layout: post
-
----
-
-## Innovations!
+---## Innovations!
 
 I ride a bus without driver! University makes experiment. Hope they will launch this as a service. It’s very good, it
 drove me from parking lot to cafe and I saved 7 minutes. Will use on the way back.
 
 Video below:
 <excerpt/>
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2Jxsyc_P6WA" frameborder="0" gesture="media"
 allow="encrypted-media" allowfullscreen></iframe>
-
 
 ## Paper SPAM
 
@@ -80,7 +77,6 @@ is very much useful for integration. Also, reading the catalogs you can study Fi
 src="https://img-fotki.yandex.ru/get/368754/14441195.53/0_9e799_197eb5d4_L.jpg" width="500" height="500"
 border="0"/></a>
 
-
 ## Services
 
 In a library, it is possible to borrow a laptop. Just beep with your library card, authorize on the touchscreen, and a
@@ -93,7 +89,6 @@ border="0"/></a>
 <a href="https://fotki.yandex.ru/next/users/toivonens/album/169282/view/649112?page=0" target="_blank"><img
 src="https://img-fotki.yandex.ru/get/368754/14441195.53/0_9e798_a87e7b63_L.jpg" width="375" height="500"
 border="0"/></a>
-
 
 ## Medicine
 
@@ -126,19 +121,18 @@ factors such as customer's needs, wellness, and overall sum. Perhaps, I will dis
 src="https://img-fotki.yandex.ru/get/477594/14441195.53/0_9e794_2d67cec4_L.jpg" width="375" height="500"
 border="0"/></a>
 
-
 ## In previous episodes
 
 Interested? Write previous episodes:
 
-* [Finland - self-service in cafes, lockers with refrigerators, recycling of botles](/en/life/life-in-finland-9/)
-* [Finnish life - showers without curtains, cinnamon buns and parking habits](/en/life/life-in-finland-8/)
-* [Life in Finland - autumn sale, transport wins and failures, secret cafes](/en/life/life-in-finland-7/)
-* [Life in Finland, part 6](/en/life/life-in-finland-6/)
-* [Life in Finland, part 5](/en/life/life-in-finland-5/)
-* [Life in Finland, part 4](/en/life/life-in-finland-4/)
-* [Life in Finland, part 3](/en/life/life-in-finland-3/)
-* [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
-* [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
+- [Finland - self-service in cafes, lockers with refrigerators, recycling of botles](/en/life/life-in-finland-9/)
+- [Finnish life - showers without curtains, cinnamon buns and parking habits](/en/life/life-in-finland-8/)
+- [Life in Finland - autumn sale, transport wins and failures, secret cafes](/en/life/life-in-finland-7/)
+- [Life in Finland, part 6](/en/life/life-in-finland-6/)
+- [Life in Finland, part 5](/en/life/life-in-finland-5/)
+- [Life in Finland, part 4](/en/life/life-in-finland-4/)
+- [Life in Finland, part 3](/en/life/life-in-finland-3/)
+- [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
+- [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
 
 There posts are made of the materiald from my Telegram channel [@suomi_en](https://t.me/suomi_en).

@@ -6,9 +6,7 @@ date: 2014-05-28
 v2: true
 
 layout: post
-
----
-Недавно я побывала на конференции [Front Trends 2014](http://2014.front-trends.com/)
+---Недавно я побывала на конференции [Front Trends 2014](http://2014.front-trends.com/)
 в Варшаве. Конференция очень крутая, обязательно посетите её в следующем году.
 У них всегда интересная основная программа, и кроме неё есть ещё
 мини-доклады от всех желающих. В этом году одним из таких докладов был мой,
@@ -97,7 +95,7 @@ src="https://share.appgyver.com/assets/googleplay-2cef882d62e402fbdbfe8cdac57940
 [API документации](http://docs.appgyver.com/en/stable/index.html).
 Дальше я покажу как использовать в вашем приложении
 некоторые штатные элементы интерфейса, то есть
-писать на HTML5/JavaScript приложение с *native UI*.
+писать на HTML5/JavaScript приложение с _native UI_.
 
 <div class="slide">
   <iframe class="slide__frame"
@@ -118,9 +116,10 @@ src="https://share.appgyver.com/assets/googleplay-2cef882d62e402fbdbfe8cdac57940
 с их иконками и ссылками, на которые они ведут.
 
 В моём приложении я создаю 3 таба для следующих страниц:
-* index.html
-* notificationExample.html
-* knowledge.html
+
+- index.html
+- notificationExample.html
+- knowledge.html
 
 ```coffee
 steroids.config.tabBar.enabled = true
@@ -167,18 +166,18 @@ folder](https://github.com/varya/steroids-fronttrends2014/tree/master/www/icons)
 `www/notificationExample.html`.
 
 ```html
-<button
-  class="button button-block"
-  ontouchend="showAlert()">Show alert dialogue</button>
-<button
-  class="button button-block"
-  ontouchend="showConfirm()">Show confirm dialogue</button>
-<button
-  class="button button-block"
-  ontouchend="showPrompt()">Show prompt dialogue</button>
-<button
-  class="button button-block"
-  ontouchend="vibrate()">Vibrate the device</button>
+<button class="button button-block" ontouchend="showAlert()">
+  Show alert dialogue
+</button>
+<button class="button button-block" ontouchend="showConfirm()">
+  Show confirm dialogue
+</button>
+<button class="button button-block" ontouchend="showPrompt()">
+  Show prompt dialogue
+</button>
+<button class="button button-block" ontouchend="vibrate()">
+  Vibrate the device
+</button>
 ```
 
 Кнопки реагируют на прикосновения пользователя и запускают
@@ -187,10 +186,11 @@ folder](https://github.com/varya/steroids-fronttrends2014/tree/master/www/icons)
 Каждая из них иллюстрирует работу своего вида нотификации, такого
 как:
 a kind of notification which are:
-* `navigator.notification.alert`
-* `navigator.notification.confirm`
-* `navigator.notification.prompt`
-* `navigator.notification.vibrate`
+
+- `navigator.notification.alert`
+- `navigator.notification.confirm`
+- `navigator.notification.prompt`
+- `navigator.notification.vibrate`
 
 Код функций можете взять
 [из моего репозитория](https://github.com/varya/steroids-fronttrends2014/blob/master/www/notificationExample.html#L15).
@@ -216,20 +216,20 @@ a kind of notification which are:
 var loginButton = new steroids.buttons.NavigationBarButton();
 loginButton.title = "the Button";
 
-loginButton.onTap = function() {
-    navigator.notification.alert(
-        'You tapped the button!',
-        function(){},
-        'the Alert',
-        'I did!'
-    );
-}
+loginButton.onTap = function () {
+  navigator.notification.alert(
+    "You tapped the button!",
+    function () {},
+    "the Alert",
+    "I did!"
+  );
+};
 
 steroids.view.navigationBar.update({
-    buttons: {
-      right: [loginButton]
-    }
-})
+  buttons: {
+    right: [loginButton],
+  },
+});
 ```
 
 Этот код вставит кнопку в правую часть навигационной панели.
@@ -252,9 +252,7 @@ steroids.view.navigationBar.update({
 Разместите эту кнопку в файле `www/index.html`:
 
 ```html
-<a
-  class="button button-block"
-  ontouchend="showModal()">Open modal</a>
+<a class="button button-block" ontouchend="showModal()">Open modal</a>
 ```
 
 И определите функцию `showModal`, которая открывает модальное
@@ -262,11 +260,11 @@ steroids.view.navigationBar.update({
 
 ```js
 function showModal() {
-  var webView =
-    new steroids.views.WebView("/views/modalExample/show.html");
+  var webView = new steroids.views.WebView("/views/modalExample/show.html");
   steroids.modal.show(webView);
 }
 ```
+
 Что показывать в модальном окне, должно быть написано в файле
 `app/views/modalExample/show.html`. Кстати, не забудьте, что там
 должна быть кнопка закрывания модального окна. Чтобы всё прошло
@@ -318,9 +316,10 @@ function showModal() {
 
 Узнать больше о Steroids и Cordova (в основе Steroids лежит PhoneGap)
 можно в [AppGyver Academy](http://academy.appgyver.com/). Там есть:
-* подробные обучающие материалы,
-* документация,
-* сообщество разработчиков.
+
+- подробные обучающие материалы,
+- документация,
+- сообщество разработчиков.
 
 И, конечно, вы можете читать [этот блог](/ru/posts). Я собираюсь
 делиться своими следующими открытиями относительно Steroids в ближайшее время :-)

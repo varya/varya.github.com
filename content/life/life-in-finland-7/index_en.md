@@ -6,10 +6,7 @@ date: 2017-10-30
 v2: true
 
 layout: post
-
----
-
-## Shops
+---## Shops
 
 In Finland, October is a month for autumn sales. They are not so huge as winter or summer sales, but still a lot of fun.
 The main sale event of autumns and springs is "Hullut päivät" (Crazy days) in all the Stockmann shops. They last 5 days,
@@ -42,7 +39,6 @@ every time a week before Crazy days.
 Some people even save money to spend them at 3+1 or Crazy Days. Folks at work discuss their catch. And after the sales,
 people visit each other at home — someone needs to eat everything bought in the Deli department.
 
-
 ## Health services
 
 <a href="https://fotki.yandex.ru/next/users/toivonens/album/169066/view/648502?page=0" target="_blank"><img
@@ -58,7 +54,6 @@ themselves. Competition makes private medic very good at their services!
 <a href="https://fotki.yandex.ru/next/users/toivonens/album/169066/view/648491?page=0" target="_blank"><img
 src="https://img-fotki.yandex.ru/get/892702/14441195.52/0_9e52b_909e44bb_L.jpg" width="282" height="500"
 border="0"/></a>
-
 
 ## Transport
 
@@ -132,16 +127,15 @@ as a tourist. They are often located outside the city and require a special trip
 by booking in advance. We visited 2 more similar but more touristic places, one in Savonlinna and another one in
 Fiskars. I will show photos if we visit again.
 
-
 ## In previous episodes
 
 Interested? Write previous episodes:
 
-* [Life in Finland, part 6](/en/life/life-in-finland-6/)
-* [Life in Finland, part 5](/en/life/life-in-finland-5/)
-* [Life in Finland, part 4](/en/life/life-in-finland-4/)
-* [Life in Finland, part 3](/en/life/life-in-finland-3/)
-* [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
-* [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
+- [Life in Finland, part 6](/en/life/life-in-finland-6/)
+- [Life in Finland, part 5](/en/life/life-in-finland-5/)
+- [Life in Finland, part 4](/en/life/life-in-finland-4/)
+- [Life in Finland, part 3](/en/life/life-in-finland-3/)
+- [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
+- [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
 
 There posts are made of the materiald from my Telegram channel [@suomi_en](https://t.me/suomi_en).

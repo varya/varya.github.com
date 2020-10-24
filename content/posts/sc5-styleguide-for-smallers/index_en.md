@@ -8,13 +8,10 @@ v2: true
 layout: post
 
 meta:
-  desc: >
-    A story about how I tried to use SC5 Style Guide on my tiny tiny blog project and aparently got see the CSS
-    architecture from completety different perspective.
-
----
-
-<div data-excerpt>
+desc: >
+A story about how I tried to use SC5 Style Guide on my tiny tiny blog project and aparently got see the CSS
+architecture from completety different perspective.
+---<div data-excerpt>
 
 I've been presenting [SC5 Style Guide](http://styleguide.sc5.io/) several times during this year sharing my experience of using it for one
 of the SC5's clients, Elisa. Assuming that Elisa is a huge mobile operator with a lot of websites and a need
@@ -46,7 +43,7 @@ name and explain these things.
 ### Providing the `appRoot` parameter.
 
 As I am hosting the Style Guide website not it the root folder but in a subfolder named `styleguide`, I inform the
-  generator about that, so it can build the properly working app:
+generator about that, so it can build the properly working app:
 
 ```js
 gulp.task("styleguide:generate", function() {
@@ -125,10 +122,12 @@ which is a simple static hosting and does not provide any routing capabilities. 
 works.
 
 ## Documenting the components
+
 As I used BEM for my website frontend from very beginning, the CSS was already written the component-way. I only
 needed to create a descriptive structure and document the blocks with KSS.
 
 ### Structuring the code
+
 Unfortunately the BEM way of storing components in folders turned out to be not good enough to see
 the code from the living-style-guide perspective. On a file system, all the components are represented at the same
 level which turns them into a long list without much structure:
@@ -179,6 +178,7 @@ styleguide:ignore:start
 styleguide:ignore:end
 */
 ```
+
 [github/varya/varya.github.com/desktop-blocks/overview.css](https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/overview.css)
 
 There are only comments in this file in which I provide the documentation of every subset as a Style Guide section.
@@ -186,13 +186,14 @@ Listing the paths of the dependant CSS files makes it easier to navigate through
 because :-)
 
 The only trick here is the magic `styleguide:ignore:start` and `styleguide:ignore:end` keywords. It is possible to
-place them inside comments in any piece of your CSS (or SASS or LESS) and make the Style Guide generator ignore 
+place them inside comments in any piece of your CSS (or SASS or LESS) and make the Style Guide generator ignore
 what is in between.
 
 In my case, I tell it skip my overview lists because they have nothing to do with the codebase. But the names of the
 sections and their possible descriptions (I just haven't provided any) are in work.
 
 ### Describing the pieces
+
 Everything else went smoothly. For every component I provided the KSS description. The `logo` block can be the
 simplest example:
 
@@ -211,6 +212,7 @@ Styleguide 1.1
 {
 ...
 ```
+
 [github/varya/varya.github.com/desktop-blocks/logo/logo.css](https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/logo/logo.css)
 
 See it rendered: [varya.me/styleguide/#/section/1.1](http://varya.me/styleguide/#/section/1.1)
@@ -262,12 +264,14 @@ Styleguide 4.1
 {
 ...
 ```
+
 [github/varya/varya.github.com/desktop-blocks/sidebar/sidebar.css](https://github.com/varya/varya.github.com/blob/af38b1fb0bd6e5a1b043d002ad5dbf107f17e6c1/desktop.blocks/sidebar/sidebar.css)
 
 This makes the markup examples pretty short, however it expands for rendering the component and showing the
 markup on the website: [varya.me/styleguide/#/section/4.1](http://varya.me/styleguide/#/section/4.1)
 
 ## Style-Guide-Driven Development
+
 If you type "logo" in the Style Guide search field, it will find and render all the components where `logo` is found!
 The search goes through all the CSS codebase. Similarly you can search for the components using `<em>` in their markup.
 Or `font:` in their CSS.
@@ -275,7 +279,7 @@ Or `font:` in their CSS.
 I personally like that the search source is not only the CSS of components but also their markup examples. During the
 refactorings this, for example, makes possible to select all the components containing inputs and look how the changes affect them.
 
-However this is just a small addition to one major benefit I see in using the Style Guide. I find it far more important 
+However this is just a small addition to one major benefit I see in using the Style Guide. I find it far more important
 that **it reveals my mistakes**.
 
 I already used the component way when building my blog. And I was pretty sure that my BEM experience is a 100%

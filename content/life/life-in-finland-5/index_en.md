@@ -6,10 +6,7 @@ date: 2017-10-19
 v2: true
 
 layout: post
-
----
-
-## Housekeeping
+---## Housekeeping
 
 This is a laundry room in our house. We take schedule times and come washing. We also have our own machine but these are
 professional, up to my chest. They run so fast that seem starting fly to stars.
@@ -124,9 +121,9 @@ border="0"/></a>
 
 Interested? Write previous episodes:
 
-* [Life in Finland, part 4](/en/life/life-in-finland-4/)
-* [Life in Finland, part 3](/en/life/life-in-finland-3/)
-* [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
-* [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
+- [Life in Finland, part 4](/en/life/life-in-finland-4/)
+- [Life in Finland, part 3](/en/life/life-in-finland-3/)
+- [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
+- [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
 
 There posts are made of the materiald from my Telegram channel [@suomi_en](https://t.me/suomi_en).

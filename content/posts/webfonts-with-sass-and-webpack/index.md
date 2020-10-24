@@ -8,14 +8,10 @@ cover: thumb.png
 layout: post
 
 meta:
-  desc: >
-    Full instruction on Webpack configuration for fonts with SASS as a CSS solution, for both
-    development and production mode.
-
-
----
-
-<div data-excerpt>
+desc: >
+Full instruction on Webpack configuration for fonts with SASS as a CSS solution, for both
+development and production mode.
+---<div data-excerpt>
 
 Linking web fonts in SASS when using Webpack might not work as expected. The most common problem is incorrect URL resolving if a font is linked with `url()`. This post covers this and the following traps on your way to nice fonts on your webpage.
 
@@ -65,7 +61,6 @@ If you use SASS, you must face a problem of resolving URLs. Let's say your Webpa
 
 Everything looks normal but you still get the following error for every single SASS file.
 
-
 ```bash
 ERROR in ./src/styles.scss (./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/resolve-url-loader!./node_modules/sass-loader/dist/cjs.js??ref--5-3!./src/styles.scss)
 Module not found: Error: Can't resolve './open-sans-v10-latin-regular.woff' in '/Users/varya/WebDev/my-pet-project'
@@ -87,7 +82,6 @@ In this case, you need to add `resolve-url-loader` because SASS itself does not 
 ```
 
 For more information, you can check [Problems with url(...)](https://webpack.js.org/loaders/sass-loader/#problems-with-url) in Webpack official documentation.
-
 
 ## SVG, I caught you!
 

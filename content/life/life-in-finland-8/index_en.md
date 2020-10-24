@@ -6,10 +6,7 @@ date: 2017-11-10
 v2: true
 
 layout: post
-
----
-
-## University
+---## University
 
 Here in Finland in the university, communication and the whole process feels much less formal compared to my previous
 experience in Russia.<br/>
@@ -30,7 +27,6 @@ professor solved the problem, and I was added there as an extra.
 
 After a little gap, in two weeks my studies start again. I hope to bring here more little updates :-)
 
-
 ## Food
 
 <a href="https://fotki.yandex.ru/next/users/toivonens/album/169134/view/648737?page=0" target="_blank"><img
@@ -39,7 +35,6 @@ border="0"/></a>
 
 On Mondays, I have my Swedish courses starting quite late and use this chance to get traditional Finnish cinnamon roll
 with a cup of coffee. Gives me a lot of sugar to stimulate my brains :-)
-
 
 ## Naked body culture
 
@@ -53,7 +48,6 @@ Basically, the strangers can see how you soap your butt. This might be explained
 Finnish culture but still sounds awkward to me :-/ Especially the fact that even expensive SPA centers do not provide
 additional privacy in this sense. I guess, this is not considered needed and there is a doubt that people would pay
 extra for that.
-
 
 ## Consumerism
 
@@ -76,7 +70,6 @@ border="0"/></a>
 src="https://img-fotki.yandex.ru/get/893904/14441195.52/0_9e61e_bcaa7a87_L.jpg" width="500" height="375"
 border="0"/></a>
 
-
 ## Parking habits
 
 I have mentioned electrical heaters Finns use for cars. This also developed a habit to park in front direction. I follow
@@ -85,7 +78,6 @@ my Moscow pattern but in general back parking happens here less often.
 <a href="https://fotki.yandex.ru/next/users/toivonens/album/169134/view/648732?page=0" target="_blank"><img
 src="https://img-fotki.yandex.ru/get/892397/14441195.52/0_9e61c_9ade64ef_L.jpg" width="500" height="375"
 border="0"/></a>
-
 
 ## News in Finnish
 
@@ -97,20 +89,18 @@ version, you can turn on the regular one. In there, the language is normal and s
 two are not 100% similar, but it is still the same context. Knowing what are the topics, you will get the regular news
 easier.
 
-You can find Finnish news in simplified language [in iTunes](
-https://itunes.apple.com/fi/podcast/yle-uutiset-selkosuomeksi/id994123795?mt=2https://itunes.apple.com/fi/podcast/yle-uutiset-selkosuomeksi/id994123795?mt=2).
-
+You can find Finnish news in simplified language [in iTunes](https://itunes.apple.com/fi/podcast/yle-uutiset-selkosuomeksi/id994123795?mt=2https://itunes.apple.com/fi/podcast/yle-uutiset-selkosuomeksi/id994123795?mt=2).
 
 ## In previous episodes
 
 Interested? Write previous episodes:
 
-* [Life in Finland - autumn sale, transport wins and failures, secret cafes](/en/life/life-in-finland-7/)
-* [Life in Finland, part 6](/en/life/life-in-finland-6/)
-* [Life in Finland, part 5](/en/life/life-in-finland-5/)
-* [Life in Finland, part 4](/en/life/life-in-finland-4/)
-* [Life in Finland, part 3](/en/life/life-in-finland-3/)
-* [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
-* [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
+- [Life in Finland - autumn sale, transport wins and failures, secret cafes](/en/life/life-in-finland-7/)
+- [Life in Finland, part 6](/en/life/life-in-finland-6/)
+- [Life in Finland, part 5](/en/life/life-in-finland-5/)
+- [Life in Finland, part 4](/en/life/life-in-finland-4/)
+- [Life in Finland, part 3](/en/life/life-in-finland-3/)
+- [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
+- [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
 
 There posts are made of the materiald from my Telegram channel [@suomi_en](https://t.me/suomi_en).

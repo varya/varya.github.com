@@ -9,14 +9,11 @@ cover: thumb.png
 layout: post
 
 meta:
-  desc: >
-    Very simple React/Redux project structure with a lot of space for evolving into bigger but still neat project. This
-    is an extract from real project of migrating large e-commerce website from old-school stack to modern cutting edge
-    solutions.
-
----
-
-<div data-excerpt>
+desc: >
+Very simple React/Redux project structure with a lot of space for evolving into bigger but still neat project. This
+is an extract from real project of migrating large e-commerce website from old-school stack to modern cutting edge
+solutions.
+---<div data-excerpt>
 
 Two weeks ago, I have started a new project of migrating a large website to React. Although this is not developing from
 scratch but refactoring, there still was a great chance to reconsider the project file structure in its client part.
@@ -85,30 +82,28 @@ combines them all.
 Take a look at the module code.
 
 ```js
-const ADD = 'cart/ADD';
+const ADD = "cart/ADD";
 
 const initialState = {
-  goods: 0
+  goods: 0,
 };
 
 export default function cart(state = initialState, action = {}) {
-
   switch (action.type) {
     case ADD:
       return {
         ...state,
-        goods: ++state.goods
-      }
+        goods: ++state.goods,
+      };
     default:
       return state;
   }
-
 }
 
 export function add() {
   return {
-    type: ADD
-  }
+    type: ADD,
+  };
 }
 ```
 

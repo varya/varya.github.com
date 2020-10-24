@@ -6,10 +6,7 @@ date: 2017-10-24
 v2: true
 
 layout: post
-
----
-
-## University
+---## University
 
 As I promised, here is some university photos. This is one of the workspaces in the Design Factory of Aalto. Not sure
 what the equipment is for but I will soon learn.
@@ -166,10 +163,10 @@ article](http://www.hs.fi/paivanlehti/21092017/art-2000005376203.html?share=e9cc
 
 Interested? Write previous episodes:
 
-* [Life in Finland, part 5](/en/life/life-in-finland-5/)
-* [Life in Finland, part 4](/en/life/life-in-finland-4/)
-* [Life in Finland, part 3](/en/life/life-in-finland-3/)
-* [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
-* [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
+- [Life in Finland, part 5](/en/life/life-in-finland-5/)
+- [Life in Finland, part 4](/en/life/life-in-finland-4/)
+- [Life in Finland, part 3](/en/life/life-in-finland-3/)
+- [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
+- [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
 
 There posts are made of the materiald from my Telegram channel [@suomi_en](https://t.me/suomi_en).

@@ -6,10 +6,7 @@ date: 2017-08-11
 v2: true
 
 layout: post
-
----
-
-## History
+---## History
 
 At the weekend, we walk around our area and found this monument /in the bushes/. During the war, when it was going to
 the end, some territory to the west of Espoo was "rented" by Soviet Union ant they set up there a naval base.
@@ -94,8 +91,8 @@ questions you can call there.
 
 Interested? Write previous episodes:
 
-* [Life in Finland, part 3](/en/life/life-in-finland-3/)
-* [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
-* [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
+- [Life in Finland, part 3](/en/life/life-in-finland-3/)
+- [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
+- [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
 
 There posts are made of the materiald from my Telegram channel [@suomi_en](https://t.me/suomi_en).

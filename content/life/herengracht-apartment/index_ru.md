@@ -8,15 +8,13 @@ v2: true
 layout: post
 
 tumblr: true
-
----
-Наконец-то сняли квартиру, вот только сегодня утром. Процесс поиска был интересным и увлекательным, мы много узнали, стоит отдельного поста.
+---Наконец-то сняли квартиру, вот только сегодня утром. Процесс поиска был интересным и увлекательным, мы много узнали, стоит отдельного поста.
 
 В общем, сняли на Herengracht 256. Кто был в Амстердаме, может заценить.
 
 <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Herengracht+256,+Amsterdam,+The+Netherlands&amp;aq=0&amp;oq=here&amp;sll=37.0625,-95.677068&amp;sspn=51.355924,92.724609&amp;ie=UTF8&amp;hq=&amp;hnear=Herengracht+256,+Amsterdam,+Noord-Holland,+The+Netherlands&amp;ll=52.371602,4.886875&amp;spn=0.01952,0.045276&amp;t=m&amp;z=14&amp;output=embed" width="425" height="350" frameborder="0"></iframe>
 
-<small>[View Larger Map](https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Herengracht+256,+Amsterdam,+The+Netherlands&amp;aq=0&amp;oq=here&amp;sll=37.0625,-95.677068&amp;sspn=51.355924,92.724609&amp;ie=UTF8&amp;hq=&amp;hnear=Herengracht+256,+Amsterdam,+Noord-Holland,+The+Netherlands&amp;ll=52.371602,4.886875&amp;spn=0.01952,0.045276&amp;t=m&amp;z=14)</small>
+<small>[View Larger Map](https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Herengracht+256,+Amsterdam,+The+Netherlands&aq=0&oq=here&sll=37.0625,-95.677068&sspn=51.355924,92.724609&ie=UTF8&hq=&hnear=Herengracht+256,+Amsterdam,+Noord-Holland,+The+Netherlands&ll=52.371602,4.886875&spn=0.01952,0.045276&t=m&z=14)</small>
 
 <excerpt/>
 

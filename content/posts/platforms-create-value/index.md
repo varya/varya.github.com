@@ -8,21 +8,18 @@ cover: thumb.jpg
 layout: post
 
 meta:
-  desc: >
-   Platforms form special kinds of markets and play the role of facilitators. They are innovative themselves and also
-   provide opportunities for further innovations for their actors. Platform provide  right environment,
-   opportunities and tools for their end users, empowering them to create new value.
-
----
-
-<div data-excerpt>
+desc: >
+Platforms form special kinds of markets and play the role of facilitators. They are innovative themselves and also
+provide opportunities for further innovations for their actors. Platform provide right environment,
+opportunities and tools for their end users, empowering them to create new value.
+---<div data-excerpt>
 
 From the economic perspective, platforms are “special kinds of markets that play the role of facilitators of exchange
-between different types of consumers that could not otherwise transact with each other”. *(Gawer, 2014)*
+between different types of consumers that could not otherwise transact with each other”. _(Gawer, 2014)_
 
 In most cases, there are two types of consumers operating on the platform in two different contexts: “a business side
 (B2B), which very often is the business customer (they pay for a service) and an end-user side (B2C) who is the consumer
-of the service, and who may or may not pay for the service”. *(Muzellec, Ronteau, and Lambkin, 2015)* For example, this
+of the service, and who may or may not pay for the service”. _(Muzellec, Ronteau, and Lambkin, 2015)_ For example, this
 pattern is very common for the modern Internet platforms.
 
 </div>
@@ -36,22 +33,22 @@ Image source:
 </div>
 
 The innovative impact of the platforms is done in the forms of “governance” and “structure”. Platforms innovate “by
-linking activities in novel ways” and “by changing one or more parties that perform any of the activities” *(Amit and
-Zott, 2012)*. These changes contribute to developing new business models, which results in the value creation. But the
+linking activities in novel ways” and “by changing one or more parties that perform any of the activities” _(Amit and
+Zott, 2012)_. These changes contribute to developing new business models, which results in the value creation. But the
 important attribute of the platforms is the mechanisms for creating this value.
 
 Even though the platforms form value proposition for the both (or more) sides, their key feature is that they do not
 purely create that value themselves. Instead, they provide the environment for these sides (or at least one of them) to
 contribute and co-create the value. However, without platform existence this value does not appear either. Thus,
 “platforms fundamentally create value by acting as conduits between two (or more) categories of consumers who would not
-have been able to connect or transact without the platform” *(Gawer, 2014)*.
+have been able to connect or transact without the platform” _(Gawer, 2014)_.
 
 Almost any Internet service can be given as an example to demonstrate the platforms. AirBNB operates on hospitality
 domain linking guests and accommodation providers. Unlike other aggregators, it is targeted not to the hotels but to
 ordinary people providing their homes for temporary renting. This way, AirBNB links two sides, which previously never
 acted on the same area, and propose a new value — an experience of “living like a local” for the guests and flexible and
 easy way or earning for the homeowners. This illustrates how “each side generally derives positive externalities from
-the participation of members on the other side” *(Muzellec, Ronteau, and Lambkin, 2015)*. Even though AirBNB faced some
+the participation of members on the other side” _(Muzellec, Ronteau, and Lambkin, 2015)_. Even though AirBNB faced some
 legal challenges in many cities, in general, they have changed the industry patterns and have developed a new market.
 
 Another aspect of the platforms is that besides being innovative themselves, they also provide opportunities for further
@@ -70,7 +67,7 @@ disruptive effects to the others are yet coming.
 
 Both AirBNB and Facebook are game-changers. As the platforms, they are complex modular systems mostly providing
 opportunities. In the platforms, the value creation is made by the parties involved whereas the role of the platform is
-to provide the environment and ensure the linking. 
+to provide the environment and ensure the linking.
 
 ### References
 

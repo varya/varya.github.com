@@ -7,9 +7,7 @@ old: true
 date: 2014-03-12
 
 layout: post
-
----
-На прошлой неделе мне понадобилось сделать сайт, статика которого раздаётся с
+---На прошлой неделе мне понадобилось сделать сайт, статика которого раздаётся с
 другого сервера. Это касалось всех статических файлов: как подключенных к HTML
 документу CSS и JavaScript, так и изображений и шрифтов, использованных уже в
 их коде.<excerpt/> Хотя очевидно, что все они эти ресурсы должны быть локальными во
@@ -29,6 +27,7 @@ layout: post
 [varya/st-deliverer](https://github.com/varya/st-deliverer)
 
 ### Структура проекта
+
 Как вы позже увидите, `borschik` можно гибко настроить. Так что возможна любая
 структура проекта. В моём проекте все хранится в директории
 [src](b.com/varya/st-deliverer/tree/master/src).
@@ -41,20 +40,19 @@ layout: post
 <html>
   <head>
     <title>Deliver static assets with Borschik</title>
-    <link
-      rel="stylesheet"
-      href="http://varya.github.io/stor.../styles.css"/>
+    <link rel="stylesheet" href="http://varya.github.io/stor.../styles.css" />
   </head>
-  <body
-    class="page"
-    background="http://varya.github.io/stor.../grungy.jpg">
-  ...
+  <body class="page" background="http://varya.github.io/stor.../grungy.jpg">
+    ...
+  </body>
+</html>
 ```
 
 Страничку можно [открыть в браузере](http://varya.me/st-deliverer/dist/html/) и
 насладиться моим дизайном и прекрасным котиком.
 
 ### Borschik в вашем проекте
+
 Borschik — это npm-пакет. Его можно установить глобально при помощи команды
 
 ```bash
@@ -76,6 +74,7 @@ npm install -g borschik
 ```
 
 ### Настройка
+
 Прежде чем начинать преобразования, нужно проинструктировать `borschik`, что
 преобразовывать и как. Для этого нужен конфигурационный файл
 [.borschik](https://github.com/varya/st-deliverer/blob/master/.borschik):
@@ -95,6 +94,7 @@ npm install -g borschik
 примере с фонами.
 
 ### Запускаем!
+
 Запустите `borschik` над файлом, содержащим ссылки на локальные статические
 ресурсы, и вы получите результат преобразования. Например,
 
@@ -110,6 +110,7 @@ npm install -g borschik
 простом тексте останутся нетронутыми.
 
 ### Система сборки
+
 Теперь `borschik` можно включить в систему сборки проекта. В моём случае это
 небольшой
 [Makefile](https://github.com/varya/st-deliverer/blob/master/Makefile), спасибо
@@ -120,6 +121,7 @@ npm install -g borschik
 и [enb](https://github.com/enb-make/enb)
 
 ### Результат
+
 Для закрепления [проведайте котика ещё раз](http://varya.me/st-deliverer/dist/html/).
 
 А узнать о многих других возможностях `borschik` можно из статьи

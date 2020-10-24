@@ -9,15 +9,12 @@ cover: thumb.png
 layout: post
 
 meta:
-  desc: >
-    Fixing the "using UI library" workflow with building icon fonts from atomic SVG icons. The library has its own flow,
-    and obviously the new things can only appear in new versions. However the library
-    customers sometimes cannot wait even an hour. With the atomic builds you can easily provide library customer with
-    the freedom to modify everything. Even icon fonts.
-
----
-
-<div data-excerpt>
+desc: >
+Fixing the "using UI library" workflow with building icon fonts from atomic SVG icons. The library has its own flow,
+and obviously the new things can only appear in new versions. However the library
+customers sometimes cannot wait even an hour. With the atomic builds you can easily provide library customer with
+the freedom to modify everything. Even icon fonts.
+---<div data-excerpt>
 
 My recent huge project was developing a library of CSS and JavaScript components for sharing this code across a lot of
 web services and mobile apps. In most cases such work brings up question about how to avoid blocking the processes.
@@ -32,6 +29,7 @@ provide this if practice atomic approach everythere. For example, for the icon f
 </div>
 
 ### Solid piece
+
 Soon or not SVG will conquer the world. But now we still have icon fonts in some projects. The same story was with that
 library.
 
@@ -100,29 +98,34 @@ var consolidate = require("gulp-consolidate");
 
 var sourcePath = "src/";
 
-gulp.task("build:icons", function() {
-    return gulp.src([sourcePath + "/icons/*.svg"])
-      .pipe(iconfont({
+gulp.task("build:icons", function () {
+  return gulp
+    .src([sourcePath + "/icons/*.svg"])
+    .pipe(
+      iconfont({
         fontName: "myicons",
         formats: ["ttf", "eot", "woff", "svg"],
         centerHorizontally: true,
-        fixedWidth: true
-      }))
-      .on("glyphs", (glyphs) => {
-
-        glyphs.forEach((icon) => {
-          icon.name = icon.name.replace(/^\d+\-/g, "");
-        });
-
-        gulp.src(sourcePath + "/icons/util/*.scss") // Template
-            .pipe(consolidate("lodash", {
-                glyphs: glyphs,
-                fontName: "myiconfont",
-                fontPath: "../fonts/"
-            }))
-            .pipe(gulp.dest(sourcePath + "/scss/"));
+        fixedWidth: true,
       })
-      .pipe(gulp.dest(sourcePath + "/fonts/"));
+    )
+    .on("glyphs", (glyphs) => {
+      glyphs.forEach((icon) => {
+        icon.name = icon.name.replace(/^\d+\-/g, "");
+      });
+
+      gulp
+        .src(sourcePath + "/icons/util/*.scss") // Template
+        .pipe(
+          consolidate("lodash", {
+            glyphs: glyphs,
+            fontName: "myiconfont",
+            fontPath: "../fonts/",
+          })
+        )
+        .pipe(gulp.dest(sourcePath + "/scss/"));
+    })
+    .pipe(gulp.dest(sourcePath + "/fonts/"));
 });
 ```
 
@@ -228,23 +231,30 @@ src/
 When building the font they need to use both their set of icons and the library icons:
 
 ```js
-
 var sourcePath = "src/";
 
-gulp.task("build:icons", function() {
-    return gulp.src([sourcePath + "/icons/*.svg", "bower_components/ui-library/dist/icons/*.svg"])
-      .pipe(iconfont({
+gulp.task("build:icons", function () {
+  return gulp
+    .src([
+      sourcePath + "/icons/*.svg",
+      "bower_components/ui-library/dist/icons/*.svg",
+    ])
+    .pipe(
+      iconfont({
         /* The same as above */
-      }))
-      .on("glyphs", (glyphs) => {
-
-        gulp.src("bower_components/ui-library/dist/icons/util/*.scss")
-            .pipe(consolidate("lodash", {
-                /* The same as above */
-            }))
-            .pipe(gulp.dest(sourcePath + "/scss/"));
       })
-      .pipe(gulp.dest(sourcePath + "/fonts/"));
+    )
+    .on("glyphs", (glyphs) => {
+      gulp
+        .src("bower_components/ui-library/dist/icons/util/*.scss")
+        .pipe(
+          consolidate("lodash", {
+            /* The same as above */
+          })
+        )
+        .pipe(gulp.dest(sourcePath + "/scss/"));
+    })
+    .pipe(gulp.dest(sourcePath + "/fonts/"));
 });
 ```
 

@@ -6,10 +6,7 @@ date: 2017-12-06
 v2: true
 
 layout: post
-
----
-
-## Food of insects
+---## Food of insects
 
 Finns have started to eat crickets! This is not a figure of speech or an eye-catching headline but downright truth.
 Using insects for food is a new hot trend here in Finland. For some time, there have already been start-ups that offered
@@ -36,7 +33,6 @@ As you can see, Finnish customers like the product; I only could catch empty she
 src="https://img-fotki.yandex.ru/get/369718/14441195.53/0_9e89d_b8e30e45_L.jpg" width="500" height="375"
 border="0"/></a>
 
-
 ## Christmas
 
 <a href="https://fotki.yandex.ru/next/users/toivonens/album/169302/view/649380" target="_blank"><img
@@ -45,7 +41,6 @@ border="0"/></a>
 
 The xMas markets in Helsinki have started! Now we can drink mulled wine :-) It is a bit pricy, €6 for a glass. For the
 real xMas market spirit people travel to Germany or, if look closer, to Tallinn.
-
 
 ## Погода
 
@@ -64,7 +59,6 @@ border="0"/></a>
 src="https://img-fotki.yandex.ru/get/894110/14441195.53/0_9e89f_69694521_L.jpg" width="500" height="375"
 border="0"/></a>
 
-
 ## Dangerous garbage
 
 <a href="https://fotki.yandex.ru/next/users/toivonens/album/169302/view/649376" target="_blank"><img
@@ -73,7 +67,6 @@ border="0"/></a>
 
 In Finland, people sort garbage. It’s not obligatory but everyone does it. However, not everything you can throw away at
 home. Burnt lamps we bring to a shop and put in the pile.
-
 
 ## Транспорт
 
@@ -98,20 +91,19 @@ drivers use. There is also a display with numbers which shows 00.0, or 86.5, it 
 src="https://img-fotki.yandex.ru/get/896349/14441195.53/0_9e899_db6852ac_L.jpg" width="375" height="500"
 border="0"/></a>
 
-
 ## In previous episodes
 
 Interested? Write previous episodes:
 
-* [Finland - driverless busses, free-to-use public laptops, buying drugs in pharmacy](/en/life/life-in-finland-10)
-* [Finland - self-service in cafes, lockers with refrigerators, recycling of botles](/en/life/life-in-finland-9/)
-* [Finnish life - showers without curtains, cinnamon buns and parking habits](/en/life/life-in-finland-8/)
-* [Life in Finland - autumn sale, transport wins and failures, secret cafes](/en/life/life-in-finland-7/)
-* [Life in Finland, part 6](/en/life/life-in-finland-6/)
-* [Life in Finland, part 5](/en/life/life-in-finland-5/)
-* [Life in Finland, part 4](/en/life/life-in-finland-4/)
-* [Life in Finland, part 3](/en/life/life-in-finland-3/)
-* [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
-* [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
+- [Finland - driverless busses, free-to-use public laptops, buying drugs in pharmacy](/en/life/life-in-finland-10)
+- [Finland - self-service in cafes, lockers with refrigerators, recycling of botles](/en/life/life-in-finland-9/)
+- [Finnish life - showers without curtains, cinnamon buns and parking habits](/en/life/life-in-finland-8/)
+- [Life in Finland - autumn sale, transport wins and failures, secret cafes](/en/life/life-in-finland-7/)
+- [Life in Finland, part 6](/en/life/life-in-finland-6/)
+- [Life in Finland, part 5](/en/life/life-in-finland-5/)
+- [Life in Finland, part 4](/en/life/life-in-finland-4/)
+- [Life in Finland, part 3](/en/life/life-in-finland-3/)
+- [Summer in Helsinki - citybikes, blueberries and everyday life](/en/life/little-suomi-29-2017/)
+- [My little Suomi, week 27, year 2017](/en/life/little-suomi-27-2017/)
 
 There posts are made of the materiald from my Telegram channel [@suomi_en](https://t.me/suomi_en).

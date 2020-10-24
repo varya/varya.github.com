@@ -8,14 +8,11 @@ cover: thumb.png
 layout: post
 
 meta:
-  desc: >
-    Making generic stories for a component in Storybook to demonstrate how it renders on different viewports.
-    This step-by-step instruction explains how to use viewports addon and re-export the stories to have a 
-    unique URL for each of them on a certain screen size.
-
----
-
-<div data-excerpt>
+desc: >
+Making generic stories for a component in Storybook to demonstrate how it renders on different viewports.
+This step-by-step instruction explains how to use viewports addon and re-export the stories to have a
+unique URL for each of them on a certain screen size.
+---<div data-excerpt>
 
 Making the components responsive is usually one of the key requirements for any design system or a pattern library.
 This means that the documentation system has to follow and show how the components are rendered on small to large screens.
@@ -28,7 +25,7 @@ Storybook provides essential add-ons, and one of them is for working with differ
 you a viewport toolbar where you can select how to render your stories.
 
 The [documentation page](https://storybook.js.org/docs/react/essentials/viewport) explains how to get it working
-and how to configure for your specific case. 
+and how to configure for your specific case.
 
 You may enjoy the default set up and manually change the viewport settings when developing or checking documentation
 of the components.
@@ -54,38 +51,38 @@ my `.storybook/preview.js` file:
 ```js
 const customViewports = {
   xs: {
-    name: 'XS',
+    name: "XS",
     styles: {
-      width: '480px',
-      height: '600px',
+      width: "480px",
+      height: "600px",
     },
   },
   s: {
-    name: 'S',
+    name: "S",
     styles: {
-      width: '640px',
-      height: '801px',
+      width: "640px",
+      height: "801px",
     },
   },
   m: {
-    name: 'M',
+    name: "M",
     styles: {
-      width: '960px',
-      height: '700px',
+      width: "960px",
+      height: "700px",
     },
   },
   l: {
-    name: 'L',
+    name: "L",
     styles: {
-      width: '1200px',
-      height: '800px',
+      width: "1200px",
+      height: "800px",
     },
   },
   xl: {
-    name: 'XL',
+    name: "XL",
     styles: {
-      width: '1400px',
-      height: '900px',
+      width: "1400px",
+      height: "900px",
     },
   },
 };
@@ -94,7 +91,7 @@ addParameters({
   viewport: {
     viewports: {
       ...customViewports,
-    }
+    },
   },
 });
 ```
@@ -118,11 +115,11 @@ export const story3 = () => <Grid>Example 3</Grid>
 
 The generic stories can be re-used with different viewport settings. I have a separate `.stories.js` file for each of them:
 
-* `Grid.viewport-xs.stories.js`
-* `Grid.viewport-s.stories.js`
-* `Grid.viewport-m.stories.js`
-* `Grid.viewport-l.stories.js`
-* `Grid.viewport-xl.stories.js`
+- `Grid.viewport-xs.stories.js`
+- `Grid.viewport-s.stories.js`
+- `Grid.viewport-m.stories.js`
+- `Grid.viewport-l.stories.js`
+- `Grid.viewport-xl.stories.js`
 
 The content of these files is similar but the viewport settings are different:
 
