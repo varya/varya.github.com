@@ -1,36 +1,14 @@
-import PropTypes from "prop-types";
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
-import { graphql } from "gatsby";
 import { Link } from "gatsby";
 import Item from "./Item";
-import PageCommon from "../Page/Page--common.js";
 
-import SEO from "../Seo";
 const Container = styled.main`
   a {
     text-decoration: none;
   }
 `;
-
-const Blog = ({ data, location, pageContext }) => {
-  return (
-    <PageCommon
-      content={
-        <>
-          <SEO
-            title="Varya Stepanova — Blog"
-            keywords={["blog", "design systems", "design system", "frontend"]}
-            defer={false}
-          />
-          <BlogComponent data={data} />
-          <BlogNav pageContext={pageContext} location={location} />
-        </>
-      }
-      location={location}
-    ></PageCommon>
-  );
-};
 
 const BlogNav = ({ pageContext }) => {
   const { currentPage, numPages, pathPrefix } = pageContext;
@@ -52,11 +30,14 @@ const BlogNav = ({ pageContext }) => {
         padding: 0,
       }}
     >
-      {!isFirst && (
-        <Link to={prevPage} rel="prev">
-          ← Previous Page
-        </Link>
-      )}
+      <Link
+        to={prevPage}
+        rel="prev"
+        style={{ visibility: isFirst && "hidden" }}
+      >
+        ← Previous Page
+      </Link>
+
       {Array.from({ length: numPages }, (_, i) => (
         <li
           key={`pagination-number${i + 1}`}
@@ -77,62 +58,28 @@ const BlogNav = ({ pageContext }) => {
           </Link>
         </li>
       ))}
-      {!isLast && (
-        <Link to={nextPage} rel="next">
-          Next Page →
-        </Link>
-      )}
+      <Link to={nextPage} rel="next" style={{ visibility: isLast && "hidden" }}>
+        Next Page →
+      </Link>
     </ul>
   );
 };
 
-const BlogComponent = (props) => {
-  const posts = props.data.posts.edges;
+const Blog = ({ data, pageContext }) => {
+  const posts = data.posts.edges;
   return (
-    <Container>
-      {posts.map((post) => {
-        const node = post.node;
-        const slug = post.node.fields.slug;
-        return <Item key={slug} post={node} />;
-      })}
-    </Container>
+    <>
+      <Container>
+        {posts.map((post) => {
+          const node = post.node;
+          const slug = post.node.fields.slug;
+          return <Item key={slug} post={node} />;
+        })}
+      </Container>
+      <BlogNav pageContext={pageContext} />
+    </>
   );
 };
-
-export const query = graphql`
-  query BlogQuery($skip: Int!, $limit: Int!) {
-    posts: allMdx(
-      filter: {
-        fileAbsolutePath: { regex: "//posts/.*/" }
-        fields: { lang: { eq: "en" } }
-      }
-      sort: { fields: [frontmatter___date], order: DESC }
-      skip: $skip
-      limit: $limit
-    ) {
-      edges {
-        node {
-          body
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            date(formatString: "DD MMMM YYYY")
-            cover {
-              childImageSharp {
-                sizes(maxWidth: 250) {
-                  ...GatsbyImageSharpSizes
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 Blog.propTypes = {
   data: PropTypes.object,
@@ -140,13 +87,9 @@ Blog.propTypes = {
   pageContext: PropTypes.object,
 };
 
-BlogComponent.propTypes = {
-  data: PropTypes.object,
-  location: PropTypes.object,
-  pageContext: PropTypes.object,
-};
 BlogNav.propTypes = {
   location: PropTypes.object,
   pageContext: PropTypes.object,
 };
+
 export default Blog;

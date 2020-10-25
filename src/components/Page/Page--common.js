@@ -39,7 +39,7 @@ const MdxWrapper = ({ onlyExcerpt = false, excerptBackup, children }) => {
 
 MdxWrapper.propTypes = {
   onlyExcerpt: PropTypes.bool,
-  excerptBackup: PropTypes.object,
+  excerptBackup: PropTypes.string,
   children: PropTypes.array,
 };
 
