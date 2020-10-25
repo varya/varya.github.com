@@ -1,5 +1,4 @@
 ---
-
 title: The Best Way to Hide
 
 categories: en issues
@@ -7,7 +6,9 @@ old: true
 date: 2013-10-31
 
 layout: post
----There is a well-known front-end pattern which is to have hidden elements in DOM
+---
+
+There is a well-known front-end pattern which is to have hidden elements in DOM
 and make them visible when necessary. As with any good pattern, it can be
 compromised by wrong implementation.
 <excerpt/>

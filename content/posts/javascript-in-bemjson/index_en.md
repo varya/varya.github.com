@@ -1,5 +1,4 @@
 ---
-
 title: JavaScript in BEMJSON
 
 categories: en issues
@@ -7,7 +6,9 @@ old: true
 date: 2014-01-21
 
 layout: post
----We usually start developing a web site prototyping the interface and then
+---
+
+We usually start developing a web site prototyping the interface and then
 implementing HTML/CSS and bacis JavaScript. In case
 of using the full BEM stack a tranformation from prototype to a functioning web
 site goes smoothly. You can clone the project from

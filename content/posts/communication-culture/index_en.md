@@ -1,5 +1,4 @@
 ---
-
 title: Aspect of in-company communication for innovation
 
 date: 2018-01-11
@@ -9,10 +8,12 @@ cover: thumb.png
 layout: post
 
 meta:
-desc: >
-Company internal communication is a crucial aspect of forming innovation-friendly environment, in which employees can
-effectively apply their expertise and creativity for achieving business goals.
----<div data-excerpt>
+  desc: >
+    Company internal communication is a crucial aspect of forming innovation-friendly environment, in which employees can
+    effectively apply their expertise and creativity for achieving business goals.
+---
+
+<div data-excerpt>
 
 Company internal communication is a crucial aspect of forming innovation-friendly environment, in which employees can
 effectively apply their expertise and creativity for achieving business goals.

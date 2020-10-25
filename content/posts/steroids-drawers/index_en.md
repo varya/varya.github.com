@@ -1,12 +1,13 @@
 ---
-
 title: Using side drawers in mobile apps on Steroids.js
 
 date: 2014-06-09
 v2: true
 
 layout: post
----<div data-excerpt>
+---
+
+<div data-excerpt>
 
 As a mobile apps user you may be already familiar to drawers.
 They are quite popular solution for a side menu. Using `Steroids`

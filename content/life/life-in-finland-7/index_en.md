@@ -1,12 +1,13 @@
 ---
-
 title:  Life in Finland - autumn sale, transport wins and failures, secret cafes
 
 date: 2017-10-30
 v2: true
 
 layout: post
----## Shops
+---
+
+## Shops
 
 In Finland, October is a month for autumn sales. They are not so huge as winter or summer sales, but still a lot of fun.
 The main sale event of autumns and springs is "Hullut päivät" (Crazy days) in all the Stockmann shops. They last 5 days,

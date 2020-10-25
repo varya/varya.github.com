@@ -1,12 +1,13 @@
 ---
-
 title: Docpad with the taste of BEM
 
 date: 2014-06-04
 v2: true
 
 layout: post
----<div data-excerpt>
+---
+
+<div data-excerpt>
 
 Let me present a stub for **docpad-run** project with
 **bem-built** static assets. If you ever wanted to be

@@ -1,12 +1,13 @@
 ---
-
 title: HTML5 mobile apps with native UI on Steroids
 
 date: 2014-05-26
 v2: true
 
 layout: post
----<div data-excerpt>
+---
+
+<div data-excerpt>
 
 Recently I attended [Front Trends 2014](http://2014.front-trends.com/) in Warsaw.
 This is an awesome conference which you should (no, definitely have to!) attend

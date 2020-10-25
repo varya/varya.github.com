@@ -1,12 +1,13 @@
 ---
-
 title: Finnish coolest trend - food made of insects; also a bit about weather and transport
 
 date: 2017-12-06
 v2: true
 
 layout: post
----## Food of insects
+---
+
+## Food of insects
 
 Finns have started to eat crickets! This is not a figure of speech or an eye-catching headline but downright truth.
 Using insects for food is a new hot trend here in Finland. For some time, there have already been start-ups that offered

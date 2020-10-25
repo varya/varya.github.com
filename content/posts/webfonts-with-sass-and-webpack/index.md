@@ -1,5 +1,4 @@
 ---
-
 title: Using web fonts with SASS and Webpack
 
 date: 2020-05-12
@@ -8,10 +7,12 @@ cover: thumb.png
 layout: post
 
 meta:
-desc: >
-Full instruction on Webpack configuration for fonts with SASS as a CSS solution, for both
-development and production mode.
----<div data-excerpt>
+  desc: >
+    Full instruction on Webpack configuration for fonts with SASS as a CSS solution, for both
+    development and production mode.
+---
+
+<div data-excerpt>
 
 Linking web fonts in SASS when using Webpack might not work as expected. The most common problem is incorrect URL resolving if a font is linked with `url()`. This post covers this and the following traps on your way to nice fonts on your webpage.
 

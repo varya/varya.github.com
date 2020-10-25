@@ -1,5 +1,4 @@
 ---
-
 title: Generic Storybook stories with different viewports
 
 date: 2020-08-12
@@ -8,11 +7,13 @@ cover: thumb.png
 layout: post
 
 meta:
-desc: >
-Making generic stories for a component in Storybook to demonstrate how it renders on different viewports.
-This step-by-step instruction explains how to use viewports addon and re-export the stories to have a
-unique URL for each of them on a certain screen size.
----<div data-excerpt>
+  desc: >
+    Making generic stories for a component in Storybook to demonstrate how it renders on different viewports.
+    This step-by-step instruction explains how to use viewports addon and re-export the stories to have a 
+    unique URL for each of them on a certain screen size.
+---
+
+<div data-excerpt>
 
 Making the components responsive is usually one of the key requirements for any design system or a pattern library.
 This means that the documentation system has to follow and show how the components are rendered on small to large screens.

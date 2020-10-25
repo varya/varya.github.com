@@ -1,5 +1,4 @@
 ---
-
 title: Dealing atomically with icon fonts
 
 date: 2015-11-10
@@ -9,12 +8,14 @@ cover: thumb.png
 layout: post
 
 meta:
-desc: >
-Fixing the "using UI library" workflow with building icon fonts from atomic SVG icons. The library has its own flow,
-and obviously the new things can only appear in new versions. However the library
-customers sometimes cannot wait even an hour. With the atomic builds you can easily provide library customer with
-the freedom to modify everything. Even icon fonts.
----<div data-excerpt>
+  desc: >
+    Fixing the "using UI library" workflow with building icon fonts from atomic SVG icons. The library has its own flow,
+    and obviously the new things can only appear in new versions. However the library
+    customers sometimes cannot wait even an hour. With the atomic builds you can easily provide library customer with
+    the freedom to modify everything. Even icon fonts.
+---
+
+<div data-excerpt>
 
 My recent huge project was developing a library of CSS and JavaScript components for sharing this code across a lot of
 web services and mobile apps. In most cases such work brings up question about how to avoid blocking the processes.

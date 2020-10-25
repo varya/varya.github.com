@@ -1,12 +1,13 @@
 ---
-
 title:  Life in Finland, part 3
 
 date: 2017-08-06
 v2: true
 
 layout: post
----## Life hacks and life habits
+---
+
+## Life hacks and life habits
 
 All say that Finland is incredibly expensive. But I think that not so much, sometimes even cheap.
 

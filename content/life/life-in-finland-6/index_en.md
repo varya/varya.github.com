@@ -1,12 +1,13 @@
 ---
-
 title:  Life in Finland, part 6
 
 date: 2017-10-24
 v2: true
 
 layout: post
----## University
+---
+
+## University
 
 As I promised, here is some university photos. This is one of the workspaces in the Design Factory of Aalto. Not sure
 what the equipment is for but I will soon learn.

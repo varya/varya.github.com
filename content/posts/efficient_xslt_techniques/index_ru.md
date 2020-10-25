@@ -1,5 +1,4 @@
 ---
-
 title: XSLT - результативные технологии программирования
 
 categories: ru issues
@@ -7,7 +6,9 @@ old: true
 date: 2009-07-25
 
 layout: post
----Перевод документа [XSLT - Efficient Programming
+---
+
+Перевод документа [XSLT - Efficient Programming
 Techniques](http://www.xml.org/sites/www.xml.org/files/xslt_efficient_programming_techniques.pdf),
 который мне очень помог.
 
@@ -291,7 +292,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <td></td>
   </tr>
 </table>
-
 <table>
   <tr id="2">
     <td></td>

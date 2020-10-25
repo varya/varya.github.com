@@ -1,12 +1,13 @@
 ---
-
 title: Finnish standards for living areas and transport
 
 date: 2018-04-18
 v2: true
 
 layout: post
----## Living
+---
+
+## Living
 
 Finnish stanrads for the bathrooms in apartment houses is hydro-isolated floor with a drain. If the house is old, such
 isolation will be made in the nearest planned reconstruction. This is vey useful: no need to install a shower cabin with

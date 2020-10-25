@@ -1,5 +1,4 @@
 ---
-
 title: Simple yet promising structure for React/Redux project
 
 date: 2016-11-21
@@ -9,11 +8,13 @@ cover: thumb.png
 layout: post
 
 meta:
-desc: >
-Very simple React/Redux project structure with a lot of space for evolving into bigger but still neat project. This
-is an extract from real project of migrating large e-commerce website from old-school stack to modern cutting edge
-solutions.
----<div data-excerpt>
+  desc: >
+    Very simple React/Redux project structure with a lot of space for evolving into bigger but still neat project. This
+    is an extract from real project of migrating large e-commerce website from old-school stack to modern cutting edge
+    solutions.
+---
+
+<div data-excerpt>
 
 Two weeks ago, I have started a new project of migrating a large website to React. Although this is not developing from
 scratch but refactoring, there still was a great chance to reconsider the project file structure in its client part.

@@ -1,12 +1,13 @@
 ---
-
 title: Summer in Helsinki - citybikes, blueberries and everyday life
 
 date: 2017-07-18
 v2: true
 
 layout: post
----The telegram channel [@suomi_en](https://t.me/suomi_en) gets updates every day. Here there is the last portion. You will
+---
+
+The telegram channel [@suomi_en](https://t.me/suomi_en) gets updates every day. Here there is the last portion. You will
 be able to read new posts from the blog, but if you want to get it sooner, [subscribe](https://t.me/suomi_en).
 
 This time: shops, city bikes and summer pleasures :-)

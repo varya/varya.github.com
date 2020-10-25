@@ -1,5 +1,4 @@
 ---
-
 title: Tag cloud of random sizes in pure CSS
 
 date: 2015-11-02
@@ -9,9 +8,11 @@ cover: thumb.png
 layout: post
 
 meta:
-desc: >
-Tag cloud of different with random sizes of the words with pure CSS.
----import PureHtml from '../../../src/components/PureHtml'
+  desc: >
+    Tag cloud of different with random sizes of the words with pure CSS.
+---
+
+import PureHtml from '../../../src/components/PureHtml'
 
 <div data-excerpt>
 

@@ -1,5 +1,4 @@
 ---
-
 title: Materials for your React hackathon
 
 date: 2016-04-16
@@ -9,10 +8,12 @@ cover: thumb.png
 layout: post
 
 meta:
-desc: >
-Hackathon is a perfect solution for getting hands on React quickly. These materials ease the
-hardship of preparations. Take it to deliver a whole day hackathon into your company.
----<div data-excerpt>
+  desc: >
+    Hackathon is a perfect solution for getting hands on React quickly. These materials ease the
+    hardship of preparations. Take it to deliver a whole day hackathon into your company.
+---
+
+<div data-excerpt>
 
 Being a frontend developer these days means to learn the new things every day. We read articles and blog posts,
 examine the changelogs, follow the Twitter announcements and participate in the GitHub discussions.

@@ -1,12 +1,13 @@
 ---
-
 title:  Finnish life - showers without curtains, cinnamon buns and parking habits
 
 date: 2017-11-10
 v2: true
 
 layout: post
----## University
+---
+
+## University
 
 Here in Finland in the university, communication and the whole process feels much less formal compared to my previous
 experience in Russia.<br/>

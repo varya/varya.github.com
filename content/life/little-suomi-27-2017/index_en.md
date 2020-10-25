@@ -1,12 +1,13 @@
 ---
-
 title: My little Suomi, week 27, year 2017
 
 date: 2017-07-06
 v2: true
 
 layout: post
----A couple of years ago, during our first time in Finland, I published a few posts about small things I noticed in my new
+---
+
+A couple of years ago, during our first time in Finland, I published a few posts about small things I noticed in my new
 basic life. Sometimes, there is a lot to share, but these things are not on the same topic. However, still
 interesting.
 

@@ -1,12 +1,13 @@
 ---
-
 title: JSCS in use
 
 date: 2015-02-11
 v2: true
 
 layout: post
----<div data-excerpt>
+---
+
+<div data-excerpt>
 
 This time I would like to share my experience of keeping a codestyle in one of my working projects. This is about a new
 tool called **JSCS** which we have recently chosen with the team and now are very pleased with the result.
