@@ -165,12 +165,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   });
 
   // Create paginated blog index pages
+  // consider only english posts, russian ones are not displayed at /blog page
+  const postsEng = posts.filter((post) => post.node.fields.lang === "en");
   const postsPerPage = 10;
-  const numPages = Math.ceil(posts.length / postsPerPage);
+  const numPages = Math.ceil(postsEng.length / postsPerPage);
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-      component: path.resolve("./src/components/Blog/Blog.js"),
+      component: path.resolve("./src/components/Page/Page--blog.js"),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
