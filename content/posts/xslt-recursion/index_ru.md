@@ -1,5 +1,4 @@
 ---
-
 title: Эффективное использование рекурсии в XSL
 
 categories: ru issues
@@ -7,7 +6,9 @@ old: true
 date: 2009-08-01
 
 layout: post
----Перевод статьи [Use recursion effectively in XSL](http://www.ibm.com/developerworks/xml/library/x-xslrecur/).
+---
+
+Перевод статьи [Use recursion effectively in XSL](http://www.ibm.com/developerworks/xml/library/x-xslrecur/).
 Введение в XSL-рекурсию и приёмы для оптимизации её использования.
 
 Эффективное и рациональное использование XSL-преобразований требует понимания,

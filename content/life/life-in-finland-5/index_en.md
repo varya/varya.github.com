@@ -1,12 +1,13 @@
 ---
-
 title:  Life in Finland, part 5
 
 date: 2017-10-19
 v2: true
 
 layout: post
----## Housekeeping
+---
+
+## Housekeeping
 
 This is a laundry room in our house. We take schedule times and come washing. We also have our own machine but these are
 professional, up to my chest. They run so fast that seem starting fly to stars.

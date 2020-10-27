@@ -1,5 +1,4 @@
 ---
-
 title: An answer to the question which should not have been asked
 
 date: 2015-09-07
@@ -9,13 +8,15 @@ cover: thumb.jpg
 layout: post
 
 meta:
-desc: >
-As the unicorn law says that being a woman in tech you will be eventually speaking about women in tech, I do so now.
-However I am doing this not because it is a strong will of mine. I was recently speaking at a conference
-and during the asking session after the talk I got this question: How to solve the diversity problem and get more
-women in our industry? I was absolutely not ready to this question. No wonder, being at stage and giving a
-presentation already brings a lot of stress.
----<div data-excerpt>
+  desc: >
+    As the unicorn law says that being a woman in tech you will be eventually speaking about women in tech, I do so now.
+    However I am doing this not because it is a strong will of mine. I was recently speaking at a conference
+    and during the asking session after the talk I got this question: How to solve the diversity problem and get more
+    women in our industry? I was absolutely not ready to this question. No wonder, being at stage and giving a
+    presentation already brings a lot of stress.
+---
+
+<div data-excerpt>
 
 I never thought that I would write a post about diversity. But as the **unicorn law** says that being a woman in tech you
 will be eventually speaking about women in tech, I do so now. However I'm doing this not because it is a strong will of

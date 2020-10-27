@@ -1,5 +1,4 @@
 ---
-
 title: Flatten array with JavaScript reduce function
 
 date: 2020-06-01
@@ -8,10 +7,12 @@ cover: thumb.jpg
 layout: post
 
 meta:
-desc: >
-Javascript reduce function helps to transform data array structures, for example flatten them
-into 1-level arrays which are easier to iterate.
----<div data-excerpt>
+  desc: >
+    Javascript reduce function helps to transform data array structures, for example flatten them
+    into 1-level arrays which are easier to iterate.
+---
+
+<div data-excerpt>
 
 Nested structures are useful for managing and editing. But when it comes to representation in UI, it might
 not be trivial to iterate through all the deep levels. Often happens, that it is more useful to have

@@ -1,5 +1,4 @@
 ---
-
 title: Checking your JIRA hypothesis
 
 date: 2020-02-04
@@ -8,12 +7,14 @@ cover: thumb.jpg
 layout: post
 
 meta:
-desc: >
-With JIRA, you can make a custom set up for your project or board. But that requires admin
-rights which you may not have. Before you ask an administrator for the needed changes, you
-can try how it is going to be with the new settings. Prefixing the components may help you
-and your team model the situation and try out the new approach.
----<div data-excerpt>
+  desc: >
+    With JIRA, you can make a custom set up for your project or board. But that requires admin
+    rights which you may not have. Before you ask an administrator for the needed changes, you
+    can try how it is going to be with the new settings. Prefixing the components may help you
+    and your team model the situation and try out the new approach.
+---
+
+<div data-excerpt>
 
 It may happen that default JIRA project settings or board does not fully respond the needs of your project, similarly to how it was for the project I am currently working at. Our team once realised that we would benefit from custom issue types which we use for filtering and organising our Kanban board. However, "realised" is maybe not 100% suitable word since initially that was more kind of _hypothesis_ which we could prove or not. Simply speaking, we must try before we know.
 

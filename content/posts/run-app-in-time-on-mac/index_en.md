@@ -1,12 +1,13 @@
 ---
-
 title: Run on time (about Mac applications)
 
 date: 2014-09-12
 v2: true
 
 layout: post
----<div data-excerpt>
+---
+
+<div data-excerpt>
 
 I use the same laptop for both work and personal needs. This is useful but makes me see to keeping my
 work-life balance. I do this simply — turn off all the applications running when I finish my working day

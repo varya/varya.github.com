@@ -1,12 +1,13 @@
 ---
-
 title:  Finland - self-service in cafes, lockers with refrigerators, recycling of botles...
 
 date: 2017-11-27
 v2: true
 
 layout: post
----## Self-service
+---
+
+## Self-service
 
 Here in Finland, there is a very rational attitude to lunches. Many people don't take little details into account, they
 care more about food taste and choice, and a possibility to eat fast.

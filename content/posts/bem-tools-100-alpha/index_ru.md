@@ -1,5 +1,4 @@
 ---
-
 title: Бложик на bem tools 1.0.0alpha
 
 categories: ru issues
@@ -7,7 +6,9 @@ old: true
 date: 2013-11-01
 
 layout: post
----[bem tools](http://bem.info/tools/bem/) &mdash; пакет для сборки проекта с
+---
+
+[bem tools](http://bem.info/tools/bem/) &mdash; пакет для сборки проекта с
 БЭМ-структурой развивается семимильными шагами. На подходе версия 1.0.0. Точнее,
 уже сейчас её можно использовать как alpha. Я попробовала на блоге, и уже этот
 текст отображается со статикой, собранной `bem tools 1.0.0`.<excerpt/>

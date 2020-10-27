@@ -1,5 +1,4 @@
 ---
-
 title: How we save and spend
 
 date: 2017-03-27
@@ -9,7 +8,9 @@ cover: thumb.jpg
 layout: post
 
 tumblr: true
----For years, we in the family have tried different approaches to organizing home finances. Some did not work for us, some
+---
+
+For years, we in the family have tried different approaches to organizing home finances. Some did not work for us, some
 were not interesting to follow, some were not giving any result. But the last couple of years we have been using something
 that looks fully suitable. This method is transparent, it works for saving and at the same time, it does not make us
 tighten the belts. Also, it looks like this method is applicable to any volume of income.

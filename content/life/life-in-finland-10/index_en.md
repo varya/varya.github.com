@@ -1,12 +1,13 @@
 ---
-
 title: Finland - driverless busses, free-to-use public laptops, buying drugs in pharmacy
 
 date: 2017-12-01
 v2: true
 
 layout: post
----## Innovations!
+---
+
+## Innovations!
 
 I ride a bus without driver! University makes experiment. Hope they will launch this as a service. It’s very good, it
 drove me from parking lot to cafe and I saved 7 minutes. Will use on the way back.

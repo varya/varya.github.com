@@ -1,5 +1,4 @@
 ---
-
 title: YM Modular System. Why?
 
 categories: en issues
@@ -7,7 +6,9 @@ old: true
 date: 2014-02-25
 
 layout: post
----The recently published [step-by-step tutorial on
+---
+
+The recently published [step-by-step tutorial on
 i-bem.js](http://bem.info/tutorials/articles/bem-js-tutorial/) mentioned **YM
 modular system** as a base for component JavaScript solution behind BEM. Why do
 we need another modular system? Let us see...

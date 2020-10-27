@@ -1,5 +1,4 @@
 ---
-
 title: Automatic releases of npm packages with GitHub actions
 
 date: 2020-08-17
@@ -8,11 +7,13 @@ cover: thumb.png
 layout: post
 
 meta:
-desc: >
-How to tune GitHub workflows for automatic releases of an npm package. The npm publish
-can be run on every change to the master branch keeping your npm package up-to-date
-with its repository.
----<div data-excerpt>
+  desc: >
+    How to tune GitHub workflows for automatic releases of an npm package. The npm publish
+    can be run on every change to the master branch keeping your npm package up-to-date
+    with its repository.
+---
+
+<div data-excerpt>
 
 Recently I implemented a new cool feature to one of the npm packages I develop. Later this day, I was
 showing it to a friend, and ... nothing worked. What a shame, I forgot to publish the package. The

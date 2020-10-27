@@ -1,5 +1,4 @@
 ---
-
 title: PropTypes documentation in ZeroHeight
 
 date: 2020-06-16
@@ -8,10 +7,12 @@ cover: thumb.jpg
 layout: post
 
 meta:
-desc: >
-Detailed instruction on how to output the PropTypes table for a component in ZeroHeight and so
-keep your design system documentation up-to-date from both design and development perspectives.
----<div data-excerpt>
+  desc: >
+    Detailed instruction on how to output the PropTypes table for a component in ZeroHeight and so
+    keep your design system documentation up-to-date from both design and development perspectives.
+---
+
+<div data-excerpt>
 
 One of the main focuses in my recent work is to keep documentation for designers and developers
 in the same place. How exactly to achieve this, depends on what are the chosen documenting tools.

@@ -1,5 +1,4 @@
 ---
-
 title: Remote work in a design system team
 
 date: 2020-04-30
@@ -8,11 +7,13 @@ cover: thumb.png
 layout: post
 
 meta:
-desc: >
-Collection of tips, helpful resources, and thoughts on how to organize remote work in a design system team. Habits which
-help you to be a good connector for the different project teams
-and better perform the role of "single source of truth".
----<div data-excerpt>
+  desc: >
+    Collection of tips, helpful resources, and thoughts on how to organize remote work in a design system team. Habits which
+    help you to be a good connector for the different project teams
+    and better perform the role of "single source of truth".
+---
+
+<div data-excerpt>
 
 In these unique times, well-organized remote work becomes one of the key factors for success. This applies to any kind of work, and managing design systems is no exception. Although it is a huge challenge, I very much like how things are going in our team. So that I collected here some tips which may help you as well.
 

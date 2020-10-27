@@ -1,5 +1,4 @@
 ---
-
 title: 10 ошибок XSLT-программистов
 
 categories: ru issues
@@ -7,7 +6,9 @@ old: true
 date: 2010-08-12
 
 layout: post
----Перевод [статьи "The ten most common XSLT programming
+---
+
+Перевод [статьи "The ten most common XSLT programming
 mistakes"](http://saxonica.blogharbor.com/blog/_archives/2010/6/11/4550606.html),
 ссылка на которую недавно опубликована в [клубе XSLT на
 Я.ру](http://clubs.ya.ru/xslt/).

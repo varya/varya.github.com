@@ -1,5 +1,4 @@
 ---
-
 title: Using the concept of business models for innovation
 
 date: 2019-03-22
@@ -8,11 +7,13 @@ cover: business-model-canvas.png
 layout: post
 
 meta:
-desc: >
-The concept of business models plays significant role when it comes to innovation of different types. Using the
-concept helps to innovate businesses of new activities as well as businesses connecting existing
-stakeholders into new structures and businesses which changes the roles of existing parties.
----<div data-excerpt>
+  desc: >
+    The concept of business models plays significant role when it comes to innovation of different types. Using the
+    concept helps to innovate businesses of new activities as well as businesses connecting existing
+    stakeholders into new structures and businesses which changes the roles of existing parties.
+---
+
+<div data-excerpt>
 
 The examples of great business models are rarely static but most often those that demonstrate changes responding to the
 market and competition challenges. As we cannot foresee the future, it is not possible to design a static business model

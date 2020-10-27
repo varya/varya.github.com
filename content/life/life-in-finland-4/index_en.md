@@ -1,12 +1,13 @@
 ---
-
 title:  Life in Finland, part 4
 
 date: 2017-08-11
 v2: true
 
 layout: post
----## History
+---
+
+## History
 
 At the weekend, we walk around our area and found this monument /in the bushes/. During the war, when it was going to
 the end, some territory to the west of Espoo was "rented" by Soviet Union ant they set up there a naval base.

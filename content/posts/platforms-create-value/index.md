@@ -1,5 +1,4 @@
 ---
-
 title: How business platforms can create new value?
 
 date: 2019-04-30
@@ -8,11 +7,13 @@ cover: thumb.jpg
 layout: post
 
 meta:
-desc: >
-Platforms form special kinds of markets and play the role of facilitators. They are innovative themselves and also
-provide opportunities for further innovations for their actors. Platform provide right environment,
-opportunities and tools for their end users, empowering them to create new value.
----<div data-excerpt>
+  desc: >
+    Platforms form special kinds of markets and play the role of facilitators. They are innovative themselves and also
+    provide opportunities for further innovations for their actors. Platform provide  right environment,
+    opportunities and tools for their end users, empowering them to create new value.
+---
+
+<div data-excerpt>
 
 From the economic perspective, platforms are “special kinds of markets that play the role of facilitators of exchange
 between different types of consumers that could not otherwise transact with each other”. _(Gawer, 2014)_

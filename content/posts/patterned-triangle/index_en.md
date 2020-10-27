@@ -1,13 +1,14 @@
 ---
-
-title: Patterned triangles with CSS
+title: Patterned triangles with  CSS
 
 categories: en issues
 old: true
 date: 2013-03-19
 
 layout: post
----As you might know, I recently run the [BEM
+---
+
+As you might know, I recently run the [BEM
 LOVE](https://github.com/toivonen/bem-love) project to demonstrate how blocks
 can communicate with JavaScript.<excerpt/>
 

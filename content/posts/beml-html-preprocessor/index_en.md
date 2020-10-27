@@ -1,5 +1,4 @@
 ---
-
 title: BEML - an HTML preprocessor for BEM
 
 categories: en issues
@@ -7,7 +6,9 @@ old: true
 date: 2014-04-09
 
 layout: post
----<div data-excerpt>
+---
+
+<div data-excerpt>
 
 Depending on a project people prefer different ways to adapt BEM.
 This results

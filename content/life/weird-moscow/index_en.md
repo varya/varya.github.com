@@ -1,12 +1,13 @@
 ---
-
 title: Weird Moscow
 
 date: 2015-09-03
 v2: true
 
 layout: post
----Last weekend I spent in Moscow. This was a short visit after 2 years since I left the city for Amsterdam. I had some
+---
+
+Last weekend I spent in Moscow. This was a short visit after 2 years since I left the city for Amsterdam. I had some
 business to do but there was also time for walking round the city. It has been changed a lot. However I still think that
 coming in there with someone without Soviet Union background would surprise them in many cases.
 

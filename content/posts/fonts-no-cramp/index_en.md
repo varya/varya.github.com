@@ -1,5 +1,4 @@
 ---
-
 title: Custom fonts with no cramp
 
 categories: en issues
@@ -7,7 +6,9 @@ old: true
 date: 2013-11-26
 
 layout: post
----A developer using custom fonts in web (don't say this is evil) usually face a
+---
+
+A developer using custom fonts in web (don't say this is evil) usually face a
 dilemma.
 
 The users' main interest is the content of the page not the

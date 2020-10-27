@@ -1,5 +1,4 @@
 ---
-
 title: Design Systems — review of vocabulary and terms
 
 date: 2018-07-19
@@ -8,13 +7,15 @@ cover: thumb.jpg
 layout: post
 
 meta:
-desc: >
-Design systems standardise and simplify the process of interface design and development, they bring new
-approaches and form their own ecosystem. However, there is no solid understanding of the concepts and terms forming
-the design systems. To solve the term inconsistency and provide structured professional language, this article
-focuses on the vocabulary used in the design systems domain by observing a range of materials on the topic, from
-both academic and popular sources.
----<div data-excerpt>
+  desc: >
+    Design systems standardise and simplify the process of interface design and development, they bring new
+    approaches and form their own ecosystem. However, there is no solid understanding of the concepts and terms forming
+    the design systems. To solve the term inconsistency and provide structured professional language, this article
+    focuses on the vocabulary used in the design systems domain by observing a range of materials on the topic, from
+    both academic and popular sources.
+---
+
+<div data-excerpt>
 
 ## Introduction
 

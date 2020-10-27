@@ -1,5 +1,4 @@
 ---
-
 title: Blocks are bricks, and bundles are buildings
 
 categories: en issues
@@ -7,7 +6,9 @@ old: true
 date: 2014-01-06
 
 layout: post
----A couple of days ago I was asked about some basic things of using [BEM project
+---
+
+A couple of days ago I was asked about some basic things of using [BEM project
 stub](https://github.com/bem/project-stub/tree/14e24fd17ba66a357a2f6fcdce045065b4eb5d6c)
 from someone who is enjoying the full BEM stack (BEM-CSS, i-bem.js and BEMHTML
 templates) for their projects. Answering the questions I promised to turn the

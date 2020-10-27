@@ -1,5 +1,4 @@
 ---
-
 title: Borschik helps with remote static assets
 
 categories: en issues
@@ -7,7 +6,9 @@ old: true
 date: 2014-03-10
 
 layout: post
----Last week I met the need to develop a web site which static assets have to be
+---
+
+Last week I met the need to develop a web site which static assets have to be
 hosted on a different server and respond by different URLs than its HTML. This
 is the requirement to all the static files: stylesheets and JavaScript linked to
 the page as well as imges and fonts mentioned in HTML, CSS and JavaScript
