@@ -63,13 +63,21 @@
     "generate-app-icons": "sh ./scripts/generate-app-icons.sh",
     "deploy:build": "gatsby build --prefix-paths",
     "deploy:release": "git-directory-deploy --directory ./public --repo varya --branch master",
-    "deploy": "run-s deploy:build deploy:release"
+    "deploy": "run-s deploy:build deploy:release",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "gatsby": ">=1"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@storybook/addon-actions": "^6.0.27",
+    "@storybook/addon-essentials": "^6.0.27",
+    "@storybook/addon-links": "^6.0.27",
+    "@storybook/react": "^6.0.27",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
     "babel-plugin-dynamic-import-webpack": "^1.1.0",
     "babel-plugin-import": "^1.13.0",
     "babel-plugin-styled-components": "^1.10.0",
@@ -88,6 +96,7 @@
     "lint-staged": "^10.4.2",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.1.2",
+    "react-is": "^17.0.1",
     "styled-components-breakpoint": "^2.1.1",
     "styled-components-grid": "^2.2.1",
     "styled-jsx": "^3.2.4",
