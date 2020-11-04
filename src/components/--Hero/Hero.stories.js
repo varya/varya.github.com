@@ -3,7 +3,7 @@ import React from "react";
 import Hero from "./Hero";
 
 export default {
-  title: "Hero",
+  title: "Components/Hero",
   component: Hero,
   args: {
     imageUrl: "https://source.unsplash.com/random",

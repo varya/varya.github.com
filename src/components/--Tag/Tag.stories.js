@@ -1,10 +1,13 @@
 import React from "react";
-import { colorScheme } from "../tokens";
+import { colors } from "../tokens";
 import Tag from "./Tag";
 
 export default {
-  title: "Tag",
+  title: "Components/Tag",
   component: Tag,
+  args: {
+    name: "tag",
+  },
 };
 
 export const Basic = (args) => {
@@ -13,7 +16,7 @@ export const Basic = (args) => {
 
 export const All = () => (
   <>
-    {Object.entries(colorScheme).map(
+    {Object.entries(colors).map(
       ([colorName, color]) =>
         colorName !== "light" && ( // white color is not visible
           <Tag key={colorName} name={colorName} color={color} />

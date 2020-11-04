@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import styled from "styled-components";
+import { colors } from "../tokens";
+
 const defaultCover = require("./../../images/jpg/cover-default.jpg");
 
 const HeroHeader = styled.header`
@@ -29,9 +31,14 @@ const HeroHeader = styled.header`
 `;
 
 const HeroHeaderContent = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   position: relative;
   z-index: 1;
   text-align: center;
+  padding: 3rem;
+  color: ${(props) => props.hasOverlay && colors.character.light};
 `;
 
 const Hero = ({ hasOverlay, imageUrl, children }) => {

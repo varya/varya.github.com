@@ -1,0 +1,78 @@
+import { Meta, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+
+import { typography } from "../tokens";
+import { Title, Text, Paragraph } from "./Typography";
+
+<Meta title="Design System/Typography" />
+
+# Typography
+
+**Font:** Roboto
+
+**Weights:** 300(regular), 700(bold)
+
+## Headings
+
+{" "}
+<Canvas>
+  <div style={{ display: "flex", flexDirection: "column" }}>
+    <Title>h1. Ant Design</Title>
+    <Title level={2}>h2. Ant Design</Title>
+    <Title level={3}>h3. Ant Design</Title>
+    <Title level={4}>h4. Ant Design</Title>
+    <Title level={5}>h5. Ant Design</Title>
+  </div>
+</Canvas>
+
+## Text Variations
+
+{" "}
+<Canvas>
+  <div style={{ display: "flex", flexDirection: "column" }}>
+    <Text>Ant Design (default)</Text>
+    <Text type="secondary">Ant Design (secondary)</Text>
+    <Text type="success">Ant Design (success)</Text>
+    <Text type="warning">Ant Design (warning)</Text>
+    <Text type="danger">Ant Design (danger)</Text>
+    <Text mark>Ant Design (mark)</Text>
+    <Text code>Ant Design (code)</Text>
+    <Text underline>Ant Design (underline)</Text>
+    <Text delete>Ant Design (delete)</Text>
+    <Text strong>Ant Design (strong)</Text>
+    <Link>Link</Link>
+  </div>
+</Canvas>
+
+## Paragraph
+
+### Basic
+
+{" "}
+<Canvas>
+  <Paragraph>
+    Bacon ipsum dolor amet venison shank shankle tri-tip flank. Turkey jerky
+    rump meatloaf jowl, venison filet mignon cow shoulder pork flank ham hock
+    swine drumstick pancetta. Tongue drumstick andouille bresaola ham ribeye
+    chicken swine jowl shoulder meatloaf picanha short loin rump. Rump shank
+    picanha ball tip tenderloin meatball pork belly pork chop cow bacon. Pork
+    loin pork chop capicola picanha tongue rump hamburger kevin ham hock t-bone.
+    Kevin spare ribs swine capicola. Shank pork loin tri-tip spare ribs short
+    ribs landjaeger corned beef burgdoggen shoulder.
+  </Paragraph>
+</Canvas>
+
+### With ellipsis
+
+{" "}
+<Canvas>
+  <Paragraph ellipsis={6}>
+    Bacon ipsum dolor amet venison shank shankle tri-tip flank. Turkey jerky
+    rump meatloaf jowl, venison filet mignon cow shoulder pork flank ham hock
+    swine drumstick pancetta. Tongue drumstick andouille bresaola ham ribeye
+    chicken swine jowl shoulder meatloaf picanha short loin rump. Rump shank
+    picanha ball tip tenderloin meatball pork belly pork chop cow bacon. Pork
+    loin pork chop capicola picanha tongue rump hamburger kevin ham hock t-bone.
+    Kevin spare ribs swine capicola. Shank pork loin tri-tip spare ribs short
+    ribs landjaeger corned beef burgdoggen shoulder.
+  </Paragraph>
+</Canvas>

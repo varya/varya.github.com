@@ -7,13 +7,13 @@ import styled from "styled-components";
 import { Tag as AntTag } from "antd";
 
 const StyledTag = styled(AntTag)`
-  && {
-    border-radius: 15px;
-    text-transform: uppercase;
-    font-size: 10px;
-    line-height: 20px;
-    letter-spacing: 2px;
-  }
+  // && {
+  border-radius: 15px;
+  text-transform: uppercase;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  // }
 `;
 
 const Tag = ({ name, color }) => {
