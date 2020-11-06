@@ -71,6 +71,7 @@ const StyledParagraph = styled(AntTypography.Paragraph)`
   color: ${colors.character.primary};
   line-height: 1.8;
   font-size: 1rem;
+  text-align: justify;
 `;
 
 const Paragraph = (props) => <StyledParagraph {...props} />;

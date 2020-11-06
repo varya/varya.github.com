@@ -9,17 +9,19 @@ const StyledMetaGroup = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  & > *{
+  & > * {
     &:after {
-    content: "|";
-    padding: 0 1em;
+      content: "|";
+      padding: 0 1em;
+    }
+    &:last-child:after {
+      content: "";
+    }
   }
-  &:last-child:after {
-    content: "";
-  }
-  
 `;
-
+/**
+ * General component description in JSDoc format. Markdown is *supported*.
+ */
 const MetaGroup = ({ children }) => (
   <StyledMetaGroup>{children}</StyledMetaGroup>
 );

@@ -1,4 +1,15 @@
+const colorScheme = {
+  white: "#FFFFFF",
+  black: "#000000",
+  "big-stone": "#17293E",
+  cinnabar: "#EC4E4B",
+  malibu: "#85D8F3",
+  goldenrod: "#F8D179",
+  bombay: "#A9AAAD",
+  "dove-gray": "#666666",
+};
 export const colors = {
+  /* TODO: remove old colors */
   light: "#FFFFFF",
   dark: "#17293E",
   primary: "#EC4E4B",
@@ -11,8 +22,14 @@ export const colors = {
     title: "rgba(0, 0, 0, 0.85)",
     primary: "rgba(0, 0, 0, 0.65)",
     secondary: "rgba(0, 0, 0, 0.45)",
-    light: "#ffffff",
+    light: colorScheme.white,
   },
+  socialIcon: {
+    primary: "rgba(0, 0, 0, 0.25)",
+    active: "rgba(0, 0, 0, 0.45)",
+  },
+  accent: colorScheme.cinnabar,
+  complementary: colorScheme.goldenrod,
 };
 
 export const typography = {
@@ -26,17 +43,5 @@ export const typography = {
     bold: "700",
     extrabold: "800",
     black: "900",
-  },
-  size: {
-    s1: 12,
-    s2: 14,
-    s3: 16,
-    m1: 20,
-    m2: 24,
-    m3: 28,
-    l1: 32,
-    l2: 40,
-    l3: 48,
-    code: 90,
   },
 };
