@@ -63,6 +63,7 @@
     "lint": "eslint \"**/*.{js,jsx}\"",
     "stylelint": "stylelint src/**/*.js",
     "generate-app-icons": "sh ./scripts/generate-app-icons.sh",
+    "add-component": "node ./scripts/generate-component $1", 
     "deploy:build": "gatsby build --prefix-paths",
     "deploy:release": "git-directory-deploy --directory ./public --repo varya --branch master",
     "deploy": "run-s deploy:build deploy:release",
