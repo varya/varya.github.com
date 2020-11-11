@@ -1,29 +1,23 @@
-import React from "react";
+import { Box } from "grommet";
 import PropTypes from "prop-types";
+import React from "react";
 
-import styled from "styled-components";
-
-const StyledMetaGroup = styled.div`
-  width: 100%;
-  padding: 0 20%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  & > * {
-    &:after {
-      content: "|";
-      padding: 0 1em;
-    }
-    &:last-child:after {
-      content: "";
-    }
-  }
-`;
 /**
- * General component description in JSDoc format. Markdown is *supported*.
+ * A wrapper for meta tags, providing separators.
+ * To be placed in post header.
  */
 const MetaGroup = ({ children }) => (
-  <StyledMetaGroup>{children}</StyledMetaGroup>
+  <>
+    <Box
+      justify="center"
+      fill="horizontal"
+      direction="row-responsive"
+      gap="large"
+      border={{ side: "between", size: "xsmall", color: "text-invert" }}
+    >
+      {children}
+    </Box>
+  </>
 );
 
 MetaGroup.propTypes = {

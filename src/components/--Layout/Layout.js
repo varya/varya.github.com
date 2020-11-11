@@ -1,30 +1,32 @@
-import React from "react";
+import { Box, Grommet, Main } from "grommet";
 import PropTypes from "prop-types";
-import styled from "styled-components";
-
-import { Layout as AntLayout } from "antd";
-const { Content: AntContent } = AntLayout;
-
-import Header from "../--Header";
+import React from "react";
 import Footer from "../--Footer";
-
+import Header from "../--Header";
+import theme from "../theme";
 /**
  * A container component for layout partials
  *
  */
 
-const StyledLayout = styled(AntLayout)`
-  background-color: transparent;
-`;
-
-const StyledContent = styled(AntContent)``;
-
-const Layout = ({ children, ...props }) => (
-  <StyledLayout {...props}>
-    <Header />
-    <StyledContent>{children}</StyledContent>
-    <Footer />
-  </StyledLayout>
+const Layout = ({ children }) => (
+  <Grommet theme={theme} full>
+    <Box fill>
+      <Header
+        background="brand"
+        pad="small"
+        elevation="small"
+        justify="between"
+        direction="row"
+        align="center"
+        flex={false}
+      />
+      <Box flex={true} overflow="auto">
+        <Main>{children}</Main>
+        <Footer />
+      </Box>
+    </Box>
+  </Grommet>
 );
 
 Layout.propTypes = {

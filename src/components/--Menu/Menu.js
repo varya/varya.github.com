@@ -1,10 +1,7 @@
-import React from "react";
+import { Button, Menu as GrommetMenu, Nav } from "grommet";
 import PropTypes from "prop-types";
-import styled from "styled-components";
-
-import { Nav as GrommetNav, Menu as GrommetMenu, Button } from "grommet";
+import React from "react";
 import Link from "../--Link";
-// const { SubMenu } = AntMenu;
 
 const menuData = [
   {
@@ -29,7 +26,8 @@ const menuData = [
  */
 const Menu = ({ items = menuData, current, mode = "horizontal", ...props }) => {
   return (
-    <GrommetNav
+    <Nav
+      align="center"
       justify="end"
       direction="row"
       gap="medium"
@@ -40,13 +38,12 @@ const Menu = ({ items = menuData, current, mode = "horizontal", ...props }) => {
       {items.map((item) => (
         <MenuItem item={item} key={item.label} />
       ))}
-    </GrommetNav>
+    </Nav>
   );
 };
 
 /**
  * Menu Item.
- * Recursively resolves to Link or Submenu with nested Items
  *
  * @param {String} item.label - Menu item name to display; required
  * @param {String} item.href - Path to the page in case item represents a link
@@ -57,22 +54,16 @@ const MenuItem = ({ item, ...props }) => {
   const { label, href, children = [] } = item;
   return children.length > 0 ? (
     <GrommetMenu
-      a11yTitle="Navigation Menu"
-      dropProps={{ align: { top: "bottom", right: "right" } }}
       label={label}
-      items={children}
+      a11yTitle="Navigation Menu"
+      dropProps={{ align: { top: "bottom", left: "left" } }}
       {...props}
+      items={children.map((child) => Object.assign(child, { plain: true }))}
     />
   ) : (
-    // <Anchor key={label} {...props}>
-    <Link key={label} to={href} {...props}>
-      <Button plain hoverIndicator label={label} />
-    </Link>
-    // </AntMenu.Item>
+    <Button plain as={Link} key={label} to={href} {...props} label={label} />
   );
 };
-
-const StyledMenu = styled(Menu)``;
 
 MenuItem.propTypes = {
   item: PropTypes.shape({
@@ -93,4 +84,4 @@ Menu.propTypes = {
   mode: PropTypes.string,
 };
 
-export default StyledMenu;
+export default Menu;

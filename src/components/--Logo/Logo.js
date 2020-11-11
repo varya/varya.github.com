@@ -1,56 +1,49 @@
+import { Box, Grommet, Text } from "grommet";
+import { deepMerge } from "grommet/utils";
 import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-
-import { colors } from "../tokens";
-
+import theme from "../theme";
 /**
- * Logo for the header.
+ * Logo
  *
- * @param {"small" | "default" | "big"} size
+ * @param {"small" | "medium" | "large"} size
  */
 
-const sizes = {
-  default: "40px",
-  small: "30px",
-  big: "50px",
-};
+const logoTheme = deepMerge(theme, {
+  text: {
+    font: {
+      family: "Monaco",
+    },
+    small: {
+      size: "30px",
+      height: "30px",
+    },
+    medium: {
+      size: "40px",
+      height: "40px",
+    },
+    large: {
+      size: "50px",
+      height: "50px",
+    },
+  },
+});
 
-const StyledLogo = styled.div`
-  font-size: ${({ size }) => sizes[size]};
-  line-height: 40px;
-  font-weight: bold;
-`;
-
-const LogoVar = styled.b`
-  color: ${colors.primary};
-  font-family: "Monaco";
-  &:after {
-    content: " ";
-  }
-`;
-
-const LogoYa = styled.b`
-  color: ${colors.highlight};
-  font-family: "Monaco";
-  &:after {
-    content: ";";
-    color: ${colors.shadow};
-  }
-`;
-
-const Logo = ({ size = "default" }) => {
+const Logo = ({ size = "medium" }) => {
   return (
-    <StyledLogo size={size}>
-      <LogoVar>var</LogoVar>
-      <LogoYa>ya</LogoYa>
-    </StyledLogo>
+    <Grommet theme={logoTheme}>
+      <Box direction="row" size="large">
+        <Text weight="bold" color="brand" size={size}>
+          var&nbsp;
+        </Text>
+        <Text weight="bold" color="accent" size={size}>
+          ya
+        </Text>
+        <Text weight="bold" color="text-xweak" size={size}>
+          ;
+        </Text>
+      </Box>
+    </Grommet>
   );
-};
-
-Logo.propTypes = {
-  children: PropTypes.node,
-  size: PropTypes.string,
 };
 
 export default Logo;

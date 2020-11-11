@@ -28,6 +28,7 @@
     "gatsby-source-filesystem": "^2.3.35",
     "gatsby-transformer-sharp": "^2.5.18",
     "grommet": "^2.15.2",
+    "grommet-icons": "^4.5.0",
     "import": "^0.0.6",
     "postcss-browser-reporter": "^0.6.0",
     "postcss-easy-media-query": "^1.0.0",
@@ -70,8 +71,6 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "npx chromatic --project-token=skp9osmq6dc"
-
-
   },
   "peerDependencies": {
     "gatsby": ">=1"

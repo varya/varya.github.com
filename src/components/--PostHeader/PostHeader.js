@@ -1,22 +1,26 @@
-import React from "react";
+import { Box, Heading, Text } from "grommet";
 import PropTypes from "prop-types";
-
+import React from "react";
 import Hero from "../--Hero";
-import Tag from "../--Tag";
 import MetaGroup from "../--MetaGroup";
-import { Title, Text } from "../--Typography";
-import { colors } from "../tokens";
+import Tag from "../--Tag";
 
 const PostHeader = ({ imageUrl, tags, date, readingTime, title }) => (
   <Hero imageUrl={imageUrl} hasOverlay>
-    <div style={{ marginBottom: "auto" }}>
+    <Box
+      direction="row"
+      fill="horizontal"
+      justify="center"
+      gap="medium"
+      margin={{ bottom: "auto" }}
+    >
       {tags.length > 0 && tags.map((tag) => <Tag key={tag} name={tag} />)}
-    </div>
+    </Box>
     <MetaGroup>
-      <Text style={{ color: colors.character.light }}>{date}</Text>
-      <Text style={{ color: colors.character.light }}>{readingTime}</Text>
+      <Text color="text-invert">{date}</Text>
+      <Text color="text-invert">{readingTime}</Text>
     </MetaGroup>
-    <Title style={{ color: colors.character.light }}>{title}</Title>
+    <Heading color="text-invert">{title}</Heading>
   </Hero>
 );
 

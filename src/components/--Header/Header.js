@@ -1,11 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
 import { Header as GrommetHeader } from "grommet";
+import PropTypes from "prop-types";
+import React from "react";
 import Logo from "../--Logo";
 import Menu from "../--Menu";
 
-import { colors } from "../tokens";
 /**
  * Header component based on Grommet Header
  *
@@ -13,7 +11,13 @@ import { colors } from "../tokens";
 
 const Header = () => {
   return (
-    <GrommetHeader pad="medium" height="xsmall" direction="row" full responsive>
+    <GrommetHeader
+      responsive
+      pad="medium"
+      height="xsmall"
+      direction="row"
+      fill="horizontal"
+    >
       <Logo />
       <Menu />
     </GrommetHeader>

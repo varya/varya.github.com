@@ -1,26 +1,24 @@
+import { Box, Text } from "grommet";
 import React from "react";
 import MetaGroup from "./MetaGroup";
-import Link from "gatsby-link";
-
 export default {
   title: "Components/Meta Group",
   component: MetaGroup,
 };
 
 export const Basic = () => (
-  <>
+  <Box align="center" fill background={"dark-4"} pad="medium">
     <MetaGroup>
-      <Link to="/somewhere"> Meta 1</Link>
-      <Link to="/somewhere"> Meta 2</Link>
-      <Link to="/somewhere"> Meta 3</Link>
+      <Text color="text-invert">Meta 1</Text>
+      <Text color="text-invert">Meta 2</Text>
+      <Text color="text-invert">Meta 3</Text>
     </MetaGroup>
-    <div style={{ height: "50px" }} />
     <MetaGroup>
-      <Link to="/somewhere"> Longer meta data </Link>
-      <Link to="/somewhere"> Another really long meta data</Link>
-      <Link to="/somewhere">
+      <Text color="text-invert">Longer meta data </Text>
+      <Text color="text-invert">Another really long meta data</Text>
+      <Text color="text-invert">
         Seriously long meta data which is supposed to wrap
-      </Link>
+      </Text>
     </MetaGroup>
-  </>
+  </Box>
 );

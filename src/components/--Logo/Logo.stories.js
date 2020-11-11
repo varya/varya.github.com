@@ -1,3 +1,4 @@
+import { Box } from "grommet";
 import React from "react";
 import Logo from "./Logo";
 
@@ -6,9 +7,9 @@ export default {
   component: Logo,
 };
 export const All = () => (
-  <>
+  <Box width="xlarge" direction="row" gap="medium">
     <Logo />
     <Logo size="small" />
-    <Logo size="big" />
-  </>
+    <Logo size="large" />
+  </Box>
 );
