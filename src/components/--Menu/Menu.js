@@ -4,6 +4,7 @@ import React from "react";
 import Link from "../--Link";
 
 const menuData = [
+  { label: "Home", href: "/" },
   {
     label: "Services",
     children: [
@@ -54,12 +55,15 @@ const MenuItem = ({ item, ...props }) => {
   const { label, href, children = [] } = item;
   return children.length > 0 ? (
     <GrommetMenu
-      label={label}
+      style={{ paddingRight: 0 }}
+      // label={label}
       a11yTitle="Navigation Menu"
       dropProps={{ align: { top: "bottom", left: "left" } }}
       {...props}
       items={children.map((child) => Object.assign(child, { plain: true }))}
-    />
+    >
+      <Button plain key={label} {...props} label={label} />
+    </GrommetMenu>
   ) : (
     <Button plain as={Link} key={label} to={href} {...props} label={label} />
   );
