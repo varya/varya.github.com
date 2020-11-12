@@ -5,10 +5,10 @@ import Link from "../--Link";
 const Tag = ({ name, color = undefined }) => {
   return (
     <Button
+      primary
       color={color}
       fill={false}
       basis="small"
-      primary
       size="small"
       label={name}
       as={Link}
@@ -20,7 +20,6 @@ const Tag = ({ name, color = undefined }) => {
 Tag.propTypes = {
   name: PropTypes.string,
   color: PropTypes.string,
-  children: PropTypes.node,
 };
 
 export default Tag;

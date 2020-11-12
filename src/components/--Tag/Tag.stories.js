@@ -14,7 +14,7 @@ export default {
 export const Basic = (args) => {
   return (
     <Box>
-      <Tag {...args} />;
+      <Tag {...args} />
     </Box>
   );
 };

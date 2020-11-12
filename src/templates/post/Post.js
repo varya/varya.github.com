@@ -2,8 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Layout from "../../components/--Layout";
+import Paragraph from "../../components/--Paragraph";
+
 import PostHeader from "../../components/--PostHeader";
-import { Box, Paragraph, Text, Image } from "grommet";
+import { Box, Image } from "grommet";
 import Img1 from "../../../content/posts/webfonts-with-sass-and-webpack/thumb.png";
 import Img2 from "../../../content/posts/webfonts-with-sass-and-webpack/enjoy.png";
 
@@ -17,24 +19,22 @@ const Post = ({ imageUrl, tags, date, readingTime, title }) => (
       title={title}
     />
     <Box width="xlarge">
-      <Paragraph fill>
-        <Text weight="bold">
-          Bacon ipsum dolor amet chislic filet mignon cow, spare ribs short loin
-          beef ribs pork chop. Tail frankfurter ribeye pork chop pig rump short
-          ribs pork bresaola tongue shoulder jerky alcatra jowl. Boudin swine
-          filet mignon, fatback kielbasa leberkas pork belly pig salami alcatra
-          doner prosciutto t-bone. Ham bacon prosciutto, pork belly turkey
-          tri-tip pancetta. Alcatra tenderloin t-bone buffalo beef ribs fatback
-          burgdoggen spare ribs pork loin pork chop salami capicola hamburger
-          pork drumstick. Drumstick jerky jowl, short ribs chislic turducken
-          burgdoggen kevin venison shoulder pancetta cupim tongue meatball ham.
-        </Text>
+      <Paragraph lead>
+        Bacon ipsum dolor amet chislic filet mignon cow, spare ribs short loin
+        beef ribs pork chop. Tail frankfurter ribeye pork chop pig rump short
+        ribs pork bresaola tongue shoulder jerky alcatra jowl. Boudin swine
+        filet mignon, fatback kielbasa leberkas pork belly pig salami alcatra
+        doner prosciutto t-bone. Ham bacon prosciutto, pork belly turkey tri-tip
+        pancetta. Alcatra tenderloin t-bone buffalo beef ribs fatback burgdoggen
+        spare ribs pork loin pork chop salami capicola hamburger pork drumstick.
+        Drumstick jerky jowl, short ribs chislic turducken burgdoggen kevin
+        venison shoulder pancetta cupim tongue meatball ham.
       </Paragraph>
 
       <Box fill height="large" flex={false}>
         <Image src={Img1} fit="contain" />
       </Box>
-      <Paragraph fill>
+      <Paragraph>
         Turkey t-bone pork belly ball tip alcatra pork chop. Capicola meatloaf
         short loin burgdoggen ball tip, kevin andouille meatball biltong boudin
         landjaeger shoulder corned beef buffalo. Pork strip steak hamburger,
