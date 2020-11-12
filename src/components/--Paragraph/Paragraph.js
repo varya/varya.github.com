@@ -10,7 +10,6 @@ import { Paragraph as GrommetParagraph } from "grommet";
 
 const Paragraph = ({ children, lead = false }, ...props) => {
   const style = lead ? { fontWeight: "bold" } : {};
-  console.log("Paragraph -> style", style);
 
   return (
     <GrommetParagraph fill style={style} {...props}>

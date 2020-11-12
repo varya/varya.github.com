@@ -1,16 +1,16 @@
 import React from "react";
 
-import Text from "./Text";
-import Box from "../--Box";
-import Heading from "../--Heading";
-import { colors as colortokens } from "../tokens";
+import { Box, Heading, Text } from "grommet";
+import { colors as colortokens } from "./tokens";
 export default {
-  title: "Typography/Text",
+  title: "Typography/Grommet",
   component: Text,
 };
 const sizes = ["xlarge", "large", "medium", "small"];
 const colors = Object.entries(colortokens.character);
-export const All = () => {
+const aligns = ["start", "center", "end"];
+
+export const GrommetText = () => {
   return (
     <>
       <Box>
@@ -27,9 +27,11 @@ export const All = () => {
       </Box>
       <Box>
         <Heading level="2">Align:</Heading>
-        {["start", "center", "end"].map(([name, color]) => (
-          <Text key={name} color={color}>{`Text ${name}`}</Text>
-        ))}
+        <Box width="xlarge">
+          {aligns.map((align) => (
+            <Text key={name} textAlign={align}>{`Text aligned ${align}`}</Text>
+          ))}
+        </Box>
       </Box>
       <Heading level="2">Truncated text:</Heading>
       <Box background="light-3" align="end" width="small" pad="small">
