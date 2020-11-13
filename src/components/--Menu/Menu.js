@@ -1,7 +1,15 @@
-import { Button, Menu as GrommetMenu, Nav } from "grommet";
+import {
+  Button,
+  Menu as GrommetMenu,
+  Nav,
+  Grommet,
+  ResponsiveContext,
+} from "grommet";
 import PropTypes from "prop-types";
 import React from "react";
 import Link from "../--Link";
+import theme from "../theme";
+import { deepMerge } from "grommet/utils";
 
 const menuData = [
   { label: "Home", href: "/" },
@@ -19,6 +27,52 @@ const menuData = [
   { label: "Contact", href: "/contact" },
 ];
 
+const menuTheme = deepMerge(theme, {
+  button: {
+    disabled: {
+      opacity: 1,
+      color: "text-xweak",
+      border: {
+        width: "3px",
+      },
+    },
+    extend: ({ plain, theme, disabled }) =>
+      plain &&
+      !disabled &&
+      `&:hover {
+        color: ${theme.global.colors.brand};
+        text-decoration: underline;
+        background: transparent;
+        }
+      `,
+  },
+});
+
+/**
+ * Helper function to flatten array of menu items and extend styles accordingly
+ *
+ * @param {array} arr - menu items array
+ * @param {boolean} [isSecondLevel=false] - if an item is located below the first level
+ * @returns {array}   new array
+ */
+function flatten(arr, isSecondLevel = false) {
+  return arr
+    ? arr.reduce(
+        (result, item) => [
+          ...result,
+          {
+            label: item.label,
+            href: item.href,
+            disabled: !item.href,
+            margin: { left: isSecondLevel && "small" },
+          },
+          ...flatten(item.children, true),
+        ],
+        []
+      )
+    : [];
+}
+
 /**
  * Basic site navigation.
  *
@@ -27,19 +81,29 @@ const menuData = [
  */
 const Menu = ({ items = menuData, current, mode = "horizontal", ...props }) => {
   return (
-    <Nav
-      align="center"
-      justify="end"
-      direction="row"
-      gap="medium"
-      selectedKeys={current}
-      mode={mode}
-      {...props}
-    >
-      {items.map((item) => (
-        <MenuItem item={item} key={item.label} />
-      ))}
-    </Nav>
+    <Grommet theme={menuTheme}>
+      <ResponsiveContext.Consumer>
+        {(size) =>
+          size === "small" ? (
+            <GrommetMenu label="Menu" items={flatten(items)} />
+          ) : (
+            <Nav
+              align="center"
+              justify="end"
+              direction="row"
+              gap="medium"
+              selectedKeys={current}
+              mode={mode}
+              {...props}
+            >
+              {items.map((item) => (
+                <MenuItem item={item} key={item.label} />
+              ))}
+            </Nav>
+          )
+        }
+      </ResponsiveContext.Consumer>
+    </Grommet>
   );
 };
 
@@ -56,7 +120,6 @@ const MenuItem = ({ item, ...props }) => {
   return children.length > 0 ? (
     <GrommetMenu
       style={{ paddingRight: 0 }}
-      // label={label}
       a11yTitle="Navigation Menu"
       dropProps={{ align: { top: "bottom", left: "left" } }}
       {...props}

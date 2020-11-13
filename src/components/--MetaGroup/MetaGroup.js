@@ -6,19 +6,33 @@ import React from "react";
  * A wrapper for meta tags, providing separators.
  * To be placed in post header.
  */
-const MetaGroup = ({ children }) => (
-  <>
-    <Box
-      justify="center"
-      fill="horizontal"
-      direction="row-responsive"
-      gap="large"
-      border={{ side: "between", size: "xsmall", color: "text-invert" }}
-    >
-      {children}
-    </Box>
-  </>
-);
+const MetaGroup = ({ children }) => {
+  const childrenWithProps = React.Children.map(children, (child) => {
+    if (React.isValidElement(child)) {
+      return React.cloneElement(child, {
+        color: "text-invert",
+        size: "small",
+        weight: "bold",
+      });
+    }
+    return child;
+  });
+  return (
+    <>
+      <Box
+        justify="center"
+        fill="horizontal"
+        direction="row"
+        gap="large"
+        border={{ side: "between", size: "xsmall", color: "text-invert" }}
+        color="text-invert"
+        alignContent="center"
+      >
+        {childrenWithProps}
+      </Box>
+    </>
+  );
+};
 
 MetaGroup.propTypes = {
   children: PropTypes.node,

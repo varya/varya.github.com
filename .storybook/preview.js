@@ -3,7 +3,7 @@ import { withGrommet } from "storybook-addon-grommet";
 import theme from "../src/components/theme.js";
 import { grommet } from "grommet";
 
-// import "../static/fonts.css";
+import "../static/fonts.css";
 
 addDecorator(
   withGrommet({
@@ -20,6 +20,11 @@ addDecorator(
     },
   })
 );
+
+addDecorator((story) => {
+  document.body.style.padding = 0; //remove story container padding
+  return story();
+});
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

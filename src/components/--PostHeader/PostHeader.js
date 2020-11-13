@@ -11,10 +11,11 @@ const PostHeader = ({ imageUrl, tags, date, readingTime, title }) => (
       direction="row"
       fill="horizontal"
       justify="center"
-      gap="medium"
       margin={{ bottom: "auto" }}
+      wrap="true"
     >
-      {tags.length > 0 && tags.map((tag) => <Tag key={tag} name={tag} />)}
+      {tags.length > 0 &&
+        tags.map((tag) => <Tag key={tag} name={tag} margin="xsmall" />)}
     </Box>
     <MetaGroup>
       <Text color="text-invert">{date}</Text>

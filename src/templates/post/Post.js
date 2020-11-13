@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import Layout from "../../components/--Layout";
 import Paragraph from "../../components/--Paragraph";
 
@@ -18,7 +17,7 @@ const Post = ({ imageUrl, tags, date, readingTime, title }) => (
       readingTime={readingTime}
       title={title}
     />
-    <Box width="xlarge" margin={{ horizontal: "auto" }}>
+    <Box width="xlarge" margin={{ horizontal: "auto" }} pad="medium">
       <Paragraph lead>
         Bacon ipsum dolor amet chislic filet mignon cow, spare ribs short loin
         beef ribs pork chop. Tail frankfurter ribeye pork chop pig rump short
