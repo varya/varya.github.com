@@ -1,31 +1,26 @@
-import React from "react";
+import { Header as GrommetHeader } from "grommet";
 import PropTypes from "prop-types";
-import styled from "styled-components";
-
+import React from "react";
 import Logo from "../--Logo";
 import Menu from "../--Menu";
 
-import { colors } from "../tokens";
 /**
- * Header component based on Ant Header
+ * Header component based on Grommet Header
  *
  */
 
-const StyledHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  height: 64px;
-  position: sticky;
-  top: 0;
-  background: ${colors.light};
-`;
-
 const Header = () => {
   return (
-    <StyledHeader>
+    <GrommetHeader
+      responsive
+      pad="medium"
+      height="xsmall"
+      direction="row"
+      fill="horizontal"
+    >
       <Logo />
       <Menu />
-    </StyledHeader>
+    </GrommetHeader>
   );
 };
 

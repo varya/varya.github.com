@@ -1,6 +1,7 @@
 import React from "react";
-import { colors } from "../tokens";
+import { Box } from "grommet";
 import Tag from "./Tag";
+import theme from "../theme";
 
 export default {
   title: "Components/Tag",
@@ -11,16 +12,17 @@ export default {
 };
 
 export const Basic = (args) => {
-  return <Tag {...args} />;
+  return (
+    <Box>
+      <Tag {...args} />
+    </Box>
+  );
 };
 
 export const All = () => (
   <>
-    {Object.entries(colors).map(
-      ([colorName, color]) =>
-        colorName !== "light" && ( // white color is not visible
-          <Tag key={colorName} name={colorName} color={color} />
-        )
-    )}
+    {Object.entries(theme.global.colors).map(([colorName, color]) => (
+      <Tag key={colorName} name={colorName} color={color} />
+    ))}
   </>
 );

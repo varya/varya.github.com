@@ -1,16 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
 
 import Layout from "../../components/--Layout";
-import PostHeader from "../../components/--PostHeader";
-import { Paragraph } from "../../components/--Typography";
-import Img1 from "../../../content/posts/webfonts-with-sass-and-webpack/thumb.png";
+import Paragraph from "../../components/--Paragraph";
 
-const PostContent = styled.div`
-  max-width: 1140px;
-  margin: 2em auto 0 auto;
-`;
+import PostHeader from "../../components/--PostHeader";
+import { Box, Image } from "grommet";
+import Img1 from "../../../content/posts/webfonts-with-sass-and-webpack/thumb.png";
+import Img2 from "../../../content/posts/webfonts-with-sass-and-webpack/enjoy.png";
+
 const Post = ({ imageUrl, tags, date, readingTime, title }) => (
   <Layout>
     <PostHeader
@@ -20,8 +18,8 @@ const Post = ({ imageUrl, tags, date, readingTime, title }) => (
       readingTime={readingTime}
       title={title}
     />
-    <PostContent>
-      <Paragraph strong>
+    <Box width="xlarge" margin={{ horizontal: "auto" }}>
+      <Paragraph lead>
         Bacon ipsum dolor amet chislic filet mignon cow, spare ribs short loin
         beef ribs pork chop. Tail frankfurter ribeye pork chop pig rump short
         ribs pork bresaola tongue shoulder jerky alcatra jowl. Boudin swine
@@ -32,7 +30,10 @@ const Post = ({ imageUrl, tags, date, readingTime, title }) => (
         Drumstick jerky jowl, short ribs chislic turducken burgdoggen kevin
         venison shoulder pancetta cupim tongue meatball ham.
       </Paragraph>
-      <img src={Img1} />
+
+      <Box fill height="large" flex={false}>
+        <Image src={Img1} fit="contain" />
+      </Box>
       <Paragraph>
         Turkey t-bone pork belly ball tip alcatra pork chop. Capicola meatloaf
         short loin burgdoggen ball tip, kevin andouille meatball biltong boudin
@@ -42,7 +43,7 @@ const Post = ({ imageUrl, tags, date, readingTime, title }) => (
         ribs strip steak, flank jerky ground round prosciutto pork loin rump
         capicola drumstick tail. Ground round porchetta sirloin jerky flank.
       </Paragraph>
-      <Paragraph>
+      <Paragraph fill>
         Brisket jowl ground round drumstick ribeye corned beef pork chop tongue
         meatloaf beef ribs biltong rump buffalo. Porchetta pork leberkas, ham
         landjaeger boudin filet mignon short ribs shankle pastrami cow beef ribs
@@ -52,7 +53,10 @@ const Post = ({ imageUrl, tags, date, readingTime, title }) => (
         Cupim beef andouille picanha chislic, shoulder filet mignon sirloin
         shankle frankfurter.
       </Paragraph>
-    </PostContent>
+      <Box fill height="large" flex={false}>
+        <Image src={Img2} fit="contain" />
+      </Box>
+    </Box>
   </Layout>
 );
 

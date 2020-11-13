@@ -1,33 +1,25 @@
-import React from "react";
+import { Button } from "grommet";
 import PropTypes from "prop-types";
-
-import Link from "gatsby-link";
-import styled from "styled-components";
-
-import { Tag as AntTag } from "antd";
-
-const StyledTag = styled(AntTag)`
-  // && {
-  border-radius: 15px;
-  text-transform: uppercase;
-  font-size: 10px;
-  line-height: 20px;
-  letter-spacing: 2px;
-  // }
-`;
-
-const Tag = ({ name, color }) => {
+import React from "react";
+import Link from "../--Link";
+const Tag = ({ name, color = undefined }) => {
   return (
-    <StyledTag color={color}>
-      <Link to={`/blog/${name.toLowerCase()}`}>{name}</Link>
-    </StyledTag>
+    <Button
+      primary
+      color={color}
+      fill={false}
+      basis="small"
+      size="small"
+      label={name}
+      as={Link}
+      to={`/blog/${name.toLowerCase()}`}
+    />
   );
 };
 
 Tag.propTypes = {
   name: PropTypes.string,
   color: PropTypes.string,
-  children: PropTypes.node,
 };
 
 export default Tag;

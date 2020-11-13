@@ -1,35 +1,81 @@
+import { Button, Footer as GrommetFooter, Grommet, Nav, Text } from "grommet";
+import { Facebook, Linkedin, Mail, Twitter } from "grommet-icons";
 import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-
-import { Text } from "../--Typography";
-import Logo from "../--Logo";
-import SocialLinks from "../--SocialLinks";
 
 /**
  * Footer component
  *
  */
 
-const StyledFooter = styled.div`
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-`;
+const socialLinks = [
+  {
+    title: "Email",
+    icon: <Mail />,
+    href: "mailto:mail@varya.me",
+  },
+  {
+    title: "Twitter",
+    icon: <Twitter />,
+    href: "https://twitter.com/varya_en",
+  },
+  {
+    title: "Linkedin",
+    icon: <Linkedin />,
+    href: "https://www.linkedin.com/in/varyastepanova/",
+  },
+  {
+    title: "Facebook",
+    icon: <Facebook />,
+    href: "http://www.facebook.com/varvara.stepanova.9",
+  },
+];
+
+const theme = {
+  button: {
+    default: {
+      color: "light-4",
+    },
+    hover: {
+      default: {
+        color: "dark-4",
+      },
+    },
+    active: {
+      default: {
+        color: "dark-4",
+      },
+    },
+    size: {
+      medium: {
+        pad: {
+          horizontal: "16px",
+        },
+      },
+    },
+  },
+};
 
 const Footer = () => {
   return (
-    <StyledFooter>
-      <Logo size="small" />
-      <Text disabled>© Varvara Stepanova {new Date().getFullYear()}</Text>
-      <SocialLinks />
-    </StyledFooter>
+    <Grommet theme={theme}>
+      <GrommetFooter responsive basis="full" align="end">
+        <Text color="text-xweak" size="small">
+          © Varvara Stepanova {new Date().getFullYear()}
+        </Text>
+        <Nav direction="row" gap="xxsmall">
+          {socialLinks.map((link) => (
+            <Button
+              size="medium"
+              key={link.title}
+              icon={link.icon}
+              a11yTitle={link.title}
+              href={link.href}
+            />
+          ))}
+        </Nav>
+      </GrommetFooter>
+    </Grommet>
   );
-};
-
-Footer.propTypes = {
-  children: PropTypes.node,
 };
 
 export default Footer;

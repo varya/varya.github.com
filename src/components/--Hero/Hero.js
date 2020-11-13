@@ -1,12 +1,12 @@
-import React from "react";
+import { Box } from "grommet";
 import PropTypes from "prop-types";
-
+import React from "react";
 import styled from "styled-components";
 import { colors } from "../tokens";
 
 const defaultCover = require("./../../images/jpg/cover-default.jpg");
 
-const HeroHeader = styled.header`
+const HeroHeader = styled(Box)`
   background-image: url(${(props) => props.imageUrl || defaultCover});
   background-size: cover;
   height: 480px;
@@ -43,7 +43,7 @@ const HeroHeaderContent = styled.div`
 
 const Hero = ({ hasOverlay, imageUrl, children }) => {
   return (
-    <HeroHeader hasOverlay={hasOverlay} imageUrl={imageUrl}>
+    <HeroHeader hasOverlay={hasOverlay} imageUrl={imageUrl} flex={false}>
       <HeroHeaderContent>{children}</HeroHeaderContent>
     </HeroHeader>
   );
