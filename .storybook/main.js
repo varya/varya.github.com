@@ -30,12 +30,6 @@ module.exports = {
     // Prefer Gatsby ES6 entrypoint (module) over commonjs (main) entrypoint
     config.resolve.mainFields = ["browser", "module", "main"];
 
-    // fonts
-    config.module.rules.push({
-      test: /\.(woff|woff2|eot|ttf|svg)$/,
-      loaders: ["file-loader"],
-      include: path.resolve(__dirname, "../"),
-    });
     return config;
   },
 };

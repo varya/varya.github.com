@@ -34,7 +34,8 @@ const theme = deepMerge(grommet, {
       medium: { value: 1440 },
     }),
     font: {
-      family: "Roboto Light",
+      family: "Roboto",
+      weight: 300,
     },
     active: {
       background: "active-background",
@@ -51,7 +52,14 @@ const theme = deepMerge(grommet, {
   },
   heading: {
     font: {
-      family: "Roboto Black",
+      family: "Roboto",
+    },
+    level: {
+      1: {
+        font: {
+          weight: 900,
+        },
+      },
     },
   },
   paragraph: {
