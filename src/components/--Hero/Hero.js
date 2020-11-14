@@ -9,7 +9,7 @@ const defaultCover = require("./../../images/jpg/cover-default.jpg");
 const HeroHeader = styled(Box)`
   background-image: url(${(props) => props.imageUrl || defaultCover});
   background-size: cover;
-  height: 480px;
+  height: 320px;
   width: 100%;
   position: relative;
   &::after {
@@ -24,7 +24,7 @@ const HeroHeader = styled(Box)`
       `linear-gradient(
         180deg,
         rgba(255, 255, 255, 0) 0%,
-        rgba(0, 0, 0, 0.7) 60%,
+        rgba(0, 0, 0, 0.7) 40%,
         rgba(0, 0, 0, 0.85) 100%
       )`};
   }

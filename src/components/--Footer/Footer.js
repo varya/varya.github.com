@@ -26,7 +26,7 @@ const ResponsiveGrid = ({ children, areas, ...props }) => {
 
 const Footer = () => {
   return (
-    <GrommetFooter pad="medium">
+    <GrommetFooter pad="medium" background="light-1">
       <ResponsiveGrid
         columns={["25%", "25%", "25%", "25%"]}
         rows={["auto", "auto", "auto"]}
@@ -37,6 +37,11 @@ const Footer = () => {
             { name: "copyright", start: [0, 2], end: [3, 2] },
           ],
           medium: [
+            { name: "call-to-action", start: [0, 0], end: [2, 0] },
+            { name: "social", start: [3, 0], end: [3, 0] },
+            { name: "copyright", start: [0, 1], end: [3, 1] },
+          ],
+          large: [
             { name: "call-to-action", start: [0, 0], end: [2, 0] },
             { name: "social", start: [3, 0], end: [3, 0] },
             { name: "copyright", start: [0, 1], end: [3, 1] },
@@ -60,14 +65,10 @@ const Footer = () => {
           />
         </Box>
         <Box gridArea="social" alignSelf="center" justify="end">
-          <SocialLinks />
+          <SocialLinks background="light-1" />
         </Box>
 
-        <Box
-          gridArea="copyright"
-          align="center"
-          margin={{ vertical: "medium" }}
-        >
+        <Box gridArea="copyright" align="center" margin={{ top: "medium" }}>
           <Text color="text-xweak" size="small">
             © Varvara Stepanova {new Date().getFullYear()}
           </Text>
