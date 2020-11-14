@@ -1,4 +1,4 @@
-import { grommet } from "grommet";
+import { defaultProps, grommet } from "grommet";
 import { deepMerge } from "grommet/utils";
 
 const theme = deepMerge(grommet, {
@@ -11,7 +11,9 @@ const theme = deepMerge(grommet, {
       brand: "#EC4E4B",
       background: "#FFFFFF",
       "background-contrast": "text-xxweak",
-      text: "rgba(0, 0, 0, 0.85)",
+      text: {
+        light: "rgba(0, 0, 0, 0.85)",
+      },
       "text-strong": "rgba(0, 0, 0, 1)",
       "text-weak": "rgba(0, 0, 0, 0.65)",
       "text-xweak": "rgba(0, 0, 0, 0.45)",
@@ -28,6 +30,9 @@ const theme = deepMerge(grommet, {
       "selected-background": "brand",
       "selected-text": "text-strong",
     },
+    breakpoints: deepMerge(defaultProps.theme.global.breakpoints, {
+      medium: { value: 1440 },
+    }),
     font: {
       family: "Roboto Light",
     },
@@ -56,17 +61,13 @@ const theme = deepMerge(grommet, {
     border: {
       radius: `5px`,
     },
-
-    extend: ({ plain, theme }) =>
-      plain
-        ? `&:hover {
-      color: ${theme.global.colors.brand};
-      text-decoration: underline;
-      background: transparent;
-      }
-    `
-        : `font-weight: bold;
-        color: ${theme.global.colors["text-invert"]}`,
+    primary: {
+      padding: {
+        horizontal: "medium",
+        vertical: "large",
+      },
+    },
+    extend: () => `font-weight: bold;`,
   },
 });
 

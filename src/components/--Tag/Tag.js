@@ -2,7 +2,7 @@ import { Button } from "grommet";
 import PropTypes from "prop-types";
 import React from "react";
 import Link from "../--Link";
-const Tag = ({ name, color = undefined }) => {
+const Tag = ({ name, color = undefined, ...props }) => {
   return (
     <Button
       primary
@@ -13,6 +13,7 @@ const Tag = ({ name, color = undefined }) => {
       label={name}
       as={Link}
       to={`/blog/${name.toLowerCase()}`}
+      {...props}
     />
   );
 };
