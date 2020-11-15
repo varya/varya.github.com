@@ -5,6 +5,7 @@ import Paragraph from "../../components/--Paragraph";
 
 import PostHeader from "../../components/--PostHeader";
 import { Box, Image } from "grommet";
+import Tag from "../../components/--Tag";
 import Img1 from "../../../content/posts/webfonts-with-sass-and-webpack/thumb.png";
 import Img2 from "../../../content/posts/webfonts-with-sass-and-webpack/enjoy.png";
 
@@ -17,7 +18,13 @@ const Post = ({ imageUrl, tags, date, readingTime, title }) => (
       readingTime={readingTime}
       title={title}
     />
-    <Box width="xlarge" margin={{ horizontal: "auto" }} pad="medium">
+    <Box
+      flex="grow"
+      width="xlarge"
+      margin={{ horizontal: "auto" }}
+      pad="medium"
+      direction="column"
+    >
       <Paragraph lead>
         Bacon ipsum dolor amet chislic filet mignon cow, spare ribs short loin
         beef ribs pork chop. Tail frankfurter ribeye pork chop pig rump short
@@ -30,7 +37,7 @@ const Post = ({ imageUrl, tags, date, readingTime, title }) => (
         venison shoulder pancetta cupim tongue meatball ham.
       </Paragraph>
 
-      <Box fill height="large" flex={false}>
+      <Box flex={false}>
         <Image src={Img1} fit="contain" />
       </Box>
       <Paragraph>
@@ -52,8 +59,18 @@ const Post = ({ imageUrl, tags, date, readingTime, title }) => (
         Cupim beef andouille picanha chislic, shoulder filet mignon sirloin
         shankle frankfurter.
       </Paragraph>
-      <Box fill height="large" flex={false}>
+      <Box flex={false}>
         <Image src={Img2} fit="contain" />
+      </Box>
+      <Box
+        direction="row"
+        fill="horizontal"
+        justify="center"
+        margin={{ bottom: "auto" }}
+        wrap="true"
+      >
+        {tags.length > 0 &&
+          tags.map((tag) => <Tag key={tag} name={tag} margin="xsmall" />)}
       </Box>
     </Box>
   </Layout>

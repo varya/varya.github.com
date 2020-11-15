@@ -26,7 +26,7 @@ const ResponsiveGrid = ({ children, areas, ...props }) => {
 
 const Footer = () => {
   return (
-    <GrommetFooter pad="medium" background="light-1">
+    <GrommetFooter pad="medium" background="light-1" justify="center">
       <ResponsiveGrid
         columns={["25%", "25%", "25%", "25%"]}
         rows={["auto", "auto", "auto"]}
