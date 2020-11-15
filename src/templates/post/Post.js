@@ -4,8 +4,10 @@ import Layout from "../../components/--Layout";
 import Paragraph from "../../components/--Paragraph";
 
 import PostHeader from "../../components/--PostHeader";
-import { Box, Image } from "grommet";
+import { Box } from "grommet";
 import Tag from "../../components/--Tag";
+import Image from "../../components/--Image";
+import PrevNextNav from "../../components/--PrevNextNav";
 import Img1 from "../../../content/posts/webfonts-with-sass-and-webpack/thumb.png";
 import Img2 from "../../../content/posts/webfonts-with-sass-and-webpack/enjoy.png";
 
@@ -38,7 +40,11 @@ const Post = ({ imageUrl, tags, date, readingTime, title }) => (
       </Paragraph>
 
       <Box flex={false}>
-        <Image src={Img1} fit="contain" />
+        <Image
+          src={Img1}
+          caption="test caption"
+          copyright={{ text: "Jane Doe" }}
+        />
       </Box>
       <Paragraph>
         Turkey t-bone pork belly ball tip alcatra pork chop. Capicola meatloaf
@@ -68,10 +74,19 @@ const Post = ({ imageUrl, tags, date, readingTime, title }) => (
         justify="center"
         margin={{ bottom: "auto" }}
         wrap="true"
+        pad={{ vertical: "medium" }}
       >
         {tags.length > 0 &&
           tags.map((tag) => <Tag key={tag} name={tag} margin="xsmall" />)}
       </Box>
+      <PrevNextNav
+        flex={false}
+        prevSlug="#"
+        nextSlug="#"
+        prevTitle="Remote work in a design system team"
+        nextTitle="Flatten array with Javascript reduce function"
+        pad={{ vertical: "medium" }}
+      />
     </Box>
   </Layout>
 );

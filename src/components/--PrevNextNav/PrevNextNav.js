@@ -27,15 +27,21 @@ const StyledLinkHeading = styled(Heading)`
   line-height: 30px;
 `;
 
-const PrevNextNav = ({ prevSlug, prevTitle, nextSlug, nextTitle }) => {
+const PrevNextNav = ({
+  prevSlug,
+  prevTitle,
+  nextSlug,
+  nextTitle,
+  ...props
+}) => {
   return (
-    <>
+    <Box direction="column" flex={false} {...props}>
       <Box
         direction="row"
-        pad={{ horizontal: "medium" }}
         gap="large"
-        fill
+        fill="horizontal"
         justify="between"
+        flex={false}
       >
         {prevSlug && (
           <StyledLinkHeading color="text-weak" level="3" textAlign="start">
@@ -48,16 +54,10 @@ const PrevNextNav = ({ prevSlug, prevTitle, nextSlug, nextTitle }) => {
           </StyledLinkHeading>
         )}
       </Box>
-      <Nav
-        direction="row"
-        pad={{ horizontal: "medium" }}
-        justify="between"
-        gap="large"
-        fill
-      >
+      <Nav direction="row" justify="between" gap="large" fill="horizontal">
         {prevSlug && (
           <Box direction="row" textAlign="start" margin={{ right: "auto" }}>
-            <Box align="start" flex={false}>
+            <Box align="start" flex={false} color="brand">
               ←
             </Box>
             <Anchor as={Link} to={prevSlug}>
@@ -70,13 +70,13 @@ const PrevNextNav = ({ prevSlug, prevTitle, nextSlug, nextTitle }) => {
             <Anchor as={Link} to={nextSlug}>
               <StyledLinkText textAlign="end">{nextTitle}</StyledLinkText>
             </Anchor>
-            <Box align="end" flex={false}>
+            <Box align="end" flex={false} color="brand">
               →
             </Box>
           </Box>
         )}
       </Nav>
-    </>
+    </Box>
   );
 };
 
