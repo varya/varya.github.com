@@ -24,10 +24,15 @@ const StyledCaption = styled(Box)`
   left: 0;
   right: 0;
 `;
-const Image = ({ src, alt, caption, copyright }) => {
+const Image = ({ src, alt, caption, copyright, fill, ...props }) => {
   return (
     <StyledFigure>
-      <GrommetImage src={src} alt={alt || caption || ""} fill />
+      <GrommetImage
+        src={src}
+        alt={alt || caption || ""}
+        fill={fill || true}
+        {...props}
+      />
       {(caption || copyright) && (
         <figcaption>
           <StyledCaption
@@ -63,6 +68,7 @@ Image.propTypes = {
     text: PropTypes.string.isRequired,
     link: PropTypes.string,
   }),
+  fill: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
 };
 
 export default Image;

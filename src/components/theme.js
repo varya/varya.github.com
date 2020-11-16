@@ -23,7 +23,8 @@ const theme = deepMerge(grommet, {
       border: "text-xweak",
       control: "brand",
       accent: "#f8d179",
-      "accent-1": "accent", //an override for
+      "accent-1": "accent", //an override for grommet style
+      "accent-2": "rgba(248, 209, 121, 0.25)",
       neutral: "#85D8F3",
       focus: "neutral",
 
