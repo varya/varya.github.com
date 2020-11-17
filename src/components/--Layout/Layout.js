@@ -28,7 +28,7 @@ const Layout = ({ children }) => (
         overflow="auto"
         height="90%" // Real height is 100% - header height. Any value less then that will work because of flex-grow
       >
-        <Box as="main" flex="grow">
+        <Box as="main" flex="grow" pad={{ bottom: "medium" }}>
           {children}
         </Box>
         <Footer />
