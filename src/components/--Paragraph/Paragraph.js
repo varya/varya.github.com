@@ -10,24 +10,45 @@ import styled from "styled-components";
  *
  */
 
+/* css line-clamp trick: https://css-tricks.com/line-clampin/ */
 const StyledParagraph = styled(GrommetParagraph)`
+  line-height: ${({ standout }) => standout && "200%"};
   font-weight: ${({ lead }) => (lead ? "bold" : "normal")};
   font-style: ${({ lead }) => (lead ? "italic" : "normal")};
-  text-overflow: ${({ truncate }) => (truncate ? "ellipsis" : "clip")};
-  overflow: ${({ truncate }) => (truncate ? "hidden" : "visible")};
-  height: ${({
+  position: relative;
+  ${({
     truncate,
     theme: {
       global: {
         font: { height },
       },
     },
-  }) => truncate && parseInt(height) * truncate + "px"};
+  }) =>
+    truncate &&
+    `display: -webkit-box;
+     -webkit-line-clamp: ${truncate};
+     -webkit-box-orient: vertical;
+     text-overflow: ellipsis;
+     overflow: hidden;
+     height: ${parseInt(height) * truncate + "px"};
+     `}
 `;
 
-const Paragraph = ({ children, lead, truncate = false, ...props }) => {
+const Paragraph = ({
+  children,
+  lead,
+  truncate = false,
+  textAlign = "justify",
+  ...props
+}) => {
   return (
-    <StyledParagraph fill lead={lead} truncate={truncate} {...props}>
+    <StyledParagraph
+      fill
+      lead={lead}
+      truncate={truncate}
+      textAlign={textAlign}
+      {...props}
+    >
       {children}
     </StyledParagraph>
   );
@@ -37,6 +58,7 @@ Paragraph.propTypes = {
   children: PropTypes.node,
   lead: PropTypes.bool,
   truncate: PropTypes.number,
+  textAlign: PropTypes.string,
 };
 
 export default Paragraph;
