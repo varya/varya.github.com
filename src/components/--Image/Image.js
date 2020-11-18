@@ -17,6 +17,7 @@ import { Image as GrommetImage, Text, Anchor, Box } from "grommet";
 const StyledFigure = styled.figure`
   margin: 0;
   position: relative;
+  overflow: hidden;
 `;
 const StyledCaption = styled(Box)`
   position: absolute;
