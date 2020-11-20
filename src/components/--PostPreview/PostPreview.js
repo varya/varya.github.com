@@ -8,7 +8,9 @@ import Link from "../--Link";
 import { Calendar } from "grommet-icons";
 /**
  * Post Preview widget with cover image and excerpt
- *
+ * @param  {string} cover, title, excerpt, slug, readingTime, date - post data
+ * @param {string} direction - horizontal/vertical layout
+ * @param {string} height - in row layot, height of the whole widget. In column layout - height of a cover
  */
 
 const StyledPostPreview = styled(Box)`
@@ -28,6 +30,7 @@ const StyledPostPreview = styled(Box)`
 `;
 
 const PostPreview = ({
+  children,
   cover,
   title,
   excerpt,
@@ -35,59 +38,73 @@ const PostPreview = ({
   readingTime,
   date,
   height = "small",
+  direction = "row",
   ...props
 }) => {
   return (
-    <StyledPostPreview
-      {...props}
-      direction="row-responsive"
-      wrap={true}
-      background="background"
-      pad="medium"
-    >
-      <Link unstyled href={slug}>
-        <Heading level="3" margin={{ top: "none", bottom: "small" }}>
-          {title}
-        </Heading>
+    <StyledPostPreview {...props} direction={direction} pad="medium">
+      <Link unstyled href={slug} style={{ width: "100%" }}>
+        {title && (
+          <Heading level="3" margin={{ top: "none", bottom: "small" }}>
+            {title}
+          </Heading>
+        )}
         <Box
-          height={height}
-          direction="row"
+          height={direction === "row" ? height : "auto"}
+          direction={direction}
           fill="horizontal"
           overflow="hidden"
           gap="medium"
         >
           {cover && (
-            <Box basis="1/3" flex={false} fill>
-              <Stack anchor="top-right">
-                <Image src={cover} fit="contain" />
-                <Box
-                  background="accent-2"
-                  margin="small"
-                  pad="xsmall"
-                  size="small"
-                >
-                  <Text color="text" size="small" weight="bold">
-                    {readingTime}
-                  </Text>
-                </Box>
-              </Stack>
+            <Box
+              basis="1/3"
+              flex={false}
+              overflow="hidden"
+              fill={direction === "column" ? "horizontal" : "vertical"}
+              height={direction === "column" && height}
+            >
+              {direction === "row" ? (
+                <Stack anchor="top-right">
+                  <Image src={cover} fit="contain" />
+                  <Box
+                    background="accent-2"
+                    margin="small"
+                    pad="xsmall"
+                    size="small"
+                  >
+                    {readingTime && (
+                      <Text color="text" size="small" weight="bold">
+                        {readingTime}
+                      </Text>
+                    )}
+                  </Box>
+                </Stack>
+              ) : (
+                <Image src={cover} fit="cover" height="medium" />
+              )}
             </Box>
           )}
           <Box direction="column">
-            <Box direction="row" align="baseline" size="small">
-              <Calendar size="small" color="brand" />
-              <Text color="brand" size="small" margin={{ left: "xsmall" }}>
-                {date}
-              </Text>
-            </Box>
-            <Paragraph
-              fill
-              truncate={6}
-              flex={false}
-              margin={{ vertical: "xsmall" }}
-            >
-              {excerpt}
-            </Paragraph>
+            {date && (
+              <Box direction="row" align="baseline" size="small">
+                <Calendar size="small" color="brand" />
+                <Text color="brand" size="small" margin={{ left: "xsmall" }}>
+                  {date}
+                </Text>
+              </Box>
+            )}
+            {excerpt && (
+              <Paragraph
+                fill
+                truncate={6}
+                flex={false}
+                margin={{ vertical: "xsmall" }}
+              >
+                {excerpt}
+              </Paragraph>
+            )}
+            {children}
           </Box>
         </Box>
       </Link>
@@ -96,6 +113,7 @@ const PostPreview = ({
 };
 
 PostPreview.propTypes = {
+  children: PropTypes.node,
   slug: PropTypes.string,
   cover: PropTypes.string,
   title: PropTypes.string,
@@ -103,6 +121,7 @@ PostPreview.propTypes = {
   date: PropTypes.string,
   readingTime: PropTypes.number,
   height: PropTypes.string,
+  direction: PropTypes.oneOf(["row", "column"]),
 };
 
 export default PostPreview;
