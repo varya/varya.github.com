@@ -37,7 +37,7 @@ const paginationTheme = deepMerge(theme, {
       },
     },
     hover: {
-      background: { color: "accent-2" },
+      background: { color: "accent-4" },
       color: "text-weak",
     },
   },
