@@ -67,18 +67,20 @@ const PostPreview = ({
               {direction === "row" ? (
                 <Stack anchor="top-right">
                   <Image src={cover} fit="contain" />
-                  <Box
-                    background="accent-2"
-                    margin="small"
-                    pad="xsmall"
-                    size="small"
-                  >
-                    {readingTime && (
-                      <Text color="text" size="small" weight="bold">
-                        {readingTime}
-                      </Text>
-                    )}
-                  </Box>
+                  {readingTime && (
+                    <Box
+                      background="accent-2"
+                      margin="small"
+                      pad="xsmall"
+                      size="small"
+                    >
+                      {readingTime && (
+                        <Text color="text" size="small" weight="bold">
+                          {readingTime}
+                        </Text>
+                      )}
+                    </Box>
+                  )}
                 </Stack>
               ) : (
                 <Image src={cover} fit="cover" height="medium" />
