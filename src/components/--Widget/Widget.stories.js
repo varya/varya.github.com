@@ -1,23 +1,21 @@
 import React from "react";
-import PostPreview from "./PostPreview.js";
-import { Box } from "grommet";
+import Widget from "./Widget.js";
+import WidgetContainer from "../--WidgetContainer";
 
 export default {
-  title: "Composed/Post Preview",
-  component: PostPreview,
+  title: "Composed/Widget",
+  component: Widget,
 };
 export const Default = (args) => (
-  <Box width="100%" height="large" pad="medium" justify="center">
-    <PostPreview {...args} />
-  </Box>
+  <WidgetContainer>
+    <Widget {...args} />
+  </WidgetContainer>
 );
 
 export const Vertical = (args) => (
-  <>
-    <Box width="large" height="large" pad="medium" justify="center">
-      <PostPreview {...args} direction="column" />
-    </Box>
-  </>
+  <WidgetContainer>
+    <Widget {...args} direction="column" />
+  </WidgetContainer>
 );
 
 Default.args = {

@@ -2,9 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import Layout from "../../components/--Layout";
 
-import PostPreview from "../../components/--PostPreview";
+import Widget from "../../components/--Widget";
+import WidgetContainer from "../../components/--WidgetContainer";
 import Pagination from "../../components/--Pagination";
-import { Box, ResponsiveContext } from "grommet";
+import { ResponsiveContext } from "grommet";
 
 const visiblePages = {
   small: 2,
@@ -16,16 +17,9 @@ const Blog = ({ posts, currentPage, totalPages }) => (
   <ResponsiveContext.Consumer>
     {(size) => (
       <Layout>
-        <Box
-          flex="grow"
-          width="xlarge"
-          margin={{ horizontal: "auto" }}
-          pad="medium"
-          direction="column"
-          gap="small"
-        >
+        <WidgetContainer>
           {posts.map((post) => (
-            <PostPreview
+            <Widget
               key={post.title}
               cover={post.cover}
               title={post.title}
@@ -33,7 +27,7 @@ const Blog = ({ posts, currentPage, totalPages }) => (
               excerpt={post.excerpt}
             />
           ))}
-        </Box>
+        </WidgetContainer>
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}

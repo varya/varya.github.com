@@ -8,10 +8,10 @@ import { childrenWithProps, isObject } from "../../utils";
  *
  * @param {number[1-4]|object} items - number of items per row.
  * Can be either a static number for all breakpoints or an object for "small", "medium" and "large" screen respectively
- * @example <PostPreviewContainer items={{"small": 3, "medium": 2, "large": 1}}
+ * @example <WidgetContainer items={{"small": 3, "medium": 2, "large": 1}}
  */
 
-const PostPreviewContainer = ({ children, items = 1 }) => {
+const WidgetContainer = ({ children, items = 1 }) => {
   return (
     <ResponsiveContext.Consumer>
       {(size) => {
@@ -29,9 +29,9 @@ const PostPreviewContainer = ({ children, items = 1 }) => {
   );
 };
 
-PostPreviewContainer.propTypes = {
+WidgetContainer.propTypes = {
   children: PropTypes.node,
   items: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 };
 
-export default PostPreviewContainer;
+export default WidgetContainer;

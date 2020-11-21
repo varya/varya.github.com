@@ -13,7 +13,7 @@ import { Calendar } from "grommet-icons";
  * @param {string} height - in row layot, height of the whole widget. In column layout - height of a cover
  */
 
-const StyledPostPreview = styled(Box)`
+const StyledWidget = styled(Box)`
   transition: all 0.2s ease;
   img {
     transition: all 0.5s ease-out;
@@ -28,7 +28,7 @@ const StyledPostPreview = styled(Box)`
   }
 `;
 
-const PostPreview = ({
+const Widget = ({
   children,
   cover,
   title,
@@ -41,7 +41,7 @@ const PostPreview = ({
   ...props
 }) => {
   return (
-    <StyledPostPreview {...props} direction={direction} pad="medium">
+    <StyledWidget {...props} direction={direction} pad="medium">
       <Link unstyled href={slug} style={{ width: "100%" }}>
         {title && (
           <Heading level="3" margin={{ top: "none", bottom: "small" }}>
@@ -109,11 +109,11 @@ const PostPreview = ({
           </Box>
         </Box>
       </Link>
-    </StyledPostPreview>
+    </StyledWidget>
   );
 };
 
-PostPreview.propTypes = {
+Widget.propTypes = {
   children: PropTypes.node,
   slug: PropTypes.string,
   cover: PropTypes.string,
@@ -125,4 +125,4 @@ PostPreview.propTypes = {
   direction: PropTypes.oneOf(["row", "column"]),
 };
 
-export default PostPreview;
+export default Widget;

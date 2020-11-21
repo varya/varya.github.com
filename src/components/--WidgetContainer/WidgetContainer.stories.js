@@ -1,12 +1,12 @@
 import React from "react";
-import PostPreviewContainer from "./PostPreviewContainer.js";
-import PostPreview from "../--PostPreview";
+import WidgetContainer from "./WidgetContainer.js";
+import Widget from "../--Widget";
 import Paragraph from "../--Paragraph";
 import { Box, Heading, Button } from "grommet";
 
 export default {
-  title: "Composed/PostPreviewContainer",
-  component: PostPreviewContainer,
+  title: "Composed/WidgetContainer",
+  component: WidgetContainer,
 };
 
 export const Default = (args) => (
@@ -14,40 +14,40 @@ export const Default = (args) => (
     <Heading level="2" color="brand" alignText="center">
       Default grid: one full-width item in a row
     </Heading>
-    <PostPreviewContainer>
-      <PostPreview {...args} />
-      <PostPreview {...args} />
-    </PostPreviewContainer>
+    <WidgetContainer>
+      <Widget {...args} />
+      <Widget {...args} />
+    </WidgetContainer>
 
     <Heading level="2" color="brand" justify="center">
       Two items in a row
     </Heading>
-    <PostPreviewContainer items={2}>
-      <PostPreview {...args} />
-      <PostPreview {...args} />
-      <PostPreview {...args} />
-    </PostPreviewContainer>
+    <WidgetContainer items={2}>
+      <Widget {...args} />
+      <Widget {...args} />
+      <Widget {...args} />
+    </WidgetContainer>
 
     <Heading level="2" color="brand" justify="center">
       3 items in a row
     </Heading>
-    <PostPreviewContainer items={3}>
-      <PostPreview {...args} />
-      <PostPreview {...args} />
-      <PostPreview {...args} />
-      <PostPreview {...args} />
-    </PostPreviewContainer>
+    <WidgetContainer items={3}>
+      <Widget {...args} />
+      <Widget {...args} />
+      <Widget {...args} />
+      <Widget {...args} />
+    </WidgetContainer>
 
     <Heading level="2" color="brand" justify="center">
       4 items in a row
     </Heading>
-    <PostPreviewContainer items={4}>
-      <PostPreview {...args} />
-      <PostPreview {...args} />
-      <PostPreview {...args} />
-      <PostPreview {...args} />
-      <PostPreview {...args} />
-    </PostPreviewContainer>
+    <WidgetContainer items={4}>
+      <Widget {...args} />
+      <Widget {...args} />
+      <Widget {...args} />
+      <Widget {...args} />
+      <Widget {...args} />
+    </WidgetContainer>
   </Box>
 );
 
@@ -66,11 +66,11 @@ export const Responsive = (args) => (
     <Heading level="2" color="brand" justify="center">
       Responsive number of items
     </Heading>
-    <PostPreviewContainer items={{ small: 1, medium: 2, large: 3 }}>
-      <PostPreview {...args} />
-      <PostPreview {...args} />
-      <PostPreview {...args} />
-    </PostPreviewContainer>
+    <WidgetContainer items={{ small: 1, medium: 2, large: 3 }}>
+      <Widget {...args} />
+      <Widget {...args} />
+      <Widget {...args} />
+    </WidgetContainer>
   </Box>
 );
 
@@ -90,23 +90,23 @@ export const Colored = (args) => (
       Colored
     </Heading>
     <Heading level="4">Using title and excerpt props:</Heading>
-    <PostPreviewContainer items={{ small: 1, medium: 2, large: 3 }}>
-      <PostPreview {...args} background="brand" align="center" />
-      <PostPreview {...args} background="accent" justify="center" />
-      <PostPreview {...args} background="neutral" />
-    </PostPreviewContainer>
+    <WidgetContainer items={{ small: 1, medium: 2, large: 3 }}>
+      <Widget {...args} background="brand" align="center" />
+      <Widget {...args} background="accent" justify="center" />
+      <Widget {...args} background="neutral" />
+    </WidgetContainer>
 
     <Heading level="4">Using nested children:</Heading>
-    <PostPreviewContainer items={{ small: 1, medium: 2, large: 3 }}>
-      <PostPreview slug="/test" background="brand" align="center">
+    <WidgetContainer items={{ small: 1, medium: 2, large: 3 }}>
+      <Widget slug="/test" background="brand" align="center">
         <Heading level="3" size="large">
           Consultancy
         </Heading>
         <Paragraph size="large">
           Read more about consultancy services I provide
         </Paragraph>
-      </PostPreview>
-      <PostPreview slug="/test" background="accent-3" align="center">
+      </Widget>
+      <Widget slug="/test" background="accent-3" align="center">
         <Heading
           level="3"
           size="large"
@@ -119,8 +119,8 @@ export const Colored = (args) => (
           Find more about how I can help you develop design system for your next
           project.
         </Paragraph>
-      </PostPreview>
-      <PostPreview slug="/test" background="neutral" justify="center">
+      </Widget>
+      <Widget slug="/test" background="neutral" justify="center">
         <Heading level="3" size="large" margin={{ vertical: "small" }}>
           Consultancy
         </Heading>
@@ -129,8 +129,8 @@ export const Colored = (args) => (
           project.
         </Paragraph>
         <Button size="large" primary label="Read more" />
-      </PostPreview>
-    </PostPreviewContainer>
+      </Widget>
+    </WidgetContainer>
   </Box>
 );
 
