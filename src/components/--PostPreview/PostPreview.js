@@ -19,10 +19,9 @@ const StyledPostPreview = styled(Box)`
     transition: all 0.5s ease-out;
   }
   &:hover {
-    outline-width: 1em;
-    background: ${({ theme }) => theme.global.colors["light-1"]};
-    color: inherit;
-    transform: scale(1.03);
+    background: ${({ background, theme }) =>
+      !background && theme.global.colors["light-1"]};
+    transform: scale(1.05);
     img {
       transform: scale(1.3);
     }
