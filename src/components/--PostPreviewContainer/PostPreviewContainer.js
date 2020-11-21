@@ -20,7 +20,7 @@ const PostPreviewContainer = ({ children, items = 1 }) => {
           <Box pad="medium" justify="start" direction="row" wrap={true}>
             {childrenWithProps(children, {
               basis: itemsPerRow > 1 ? `1/${itemsPerRow}` : "full",
-              direction: itemsPerRow > 1 ? "column" : "row",
+              direction: itemsPerRow > 1 || size === "small" ? "column" : "row",
             })}
           </Box>
         );
