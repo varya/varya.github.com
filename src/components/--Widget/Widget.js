@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Box, Heading, Stack, Text } from "grommet";
+import { Box, Stack, Text } from "grommet";
 import Image from "../--Image";
 import Paragraph from "../--Paragraph";
+import Heading from "../--Paragraph";
 import Link from "../--Link";
 import { Calendar } from "grommet-icons";
 /**

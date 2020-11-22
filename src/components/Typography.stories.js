@@ -3,7 +3,7 @@ import React from "react";
 import { Box, Heading, Text } from "grommet";
 import { colors as colortokens } from "./tokens";
 export default {
-  title: "Typography/Grommet",
+  title: "Typography/Text (Grommet)",
   component: Text,
 };
 const sizes = ["xlarge", "large", "medium", "small"];

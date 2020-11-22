@@ -2,7 +2,8 @@ import React from "react";
 import WidgetContainer from "./WidgetContainer.js";
 import Widget from "../--Widget";
 import Paragraph from "../--Paragraph";
-import { Box, Heading, Button } from "grommet";
+import Heading from "../--Heading";
+import { Box, Button } from "grommet";
 
 export default {
   title: "Composed/WidgetContainer",
