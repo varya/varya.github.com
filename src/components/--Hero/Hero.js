@@ -2,12 +2,9 @@ import { Box } from "grommet";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
-import { colors } from "../tokens";
-
-const defaultCover = require("./../../images/jpg/cover-default.jpg");
 
 const HeroHeader = styled(Box)`
-  background-image: url(${(props) => props.imageUrl || defaultCover});
+  background-image: url(${(props) => props.imageUrl});
   background-size: cover;
   height: 320px;
   width: 100%;
@@ -38,12 +35,17 @@ const HeroHeaderContent = styled.div`
   z-index: 1;
   text-align: center;
   padding: 3rem;
-  color: ${(props) => props.hasOverlay && colors.character.light};
+  color: ${(props) => props.hasOverlay && "#fff"};
 `;
 
-const Hero = ({ hasOverlay, imageUrl, children }) => {
+const Hero = ({ hasOverlay, imageUrl, children, ...props }) => {
   return (
-    <HeroHeader hasOverlay={hasOverlay} imageUrl={imageUrl} flex={false}>
+    <HeroHeader
+      hasOverlay={hasOverlay}
+      imageUrl={imageUrl}
+      flex={false}
+      {...props}
+    >
       <HeroHeaderContent>{children}</HeroHeaderContent>
     </HeroHeader>
   );

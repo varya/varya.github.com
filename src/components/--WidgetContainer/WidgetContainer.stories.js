@@ -107,7 +107,7 @@ export const Colored = (args) => (
           Read more about consultancy services I provide
         </Paragraph>
       </Widget>
-      <Widget slug="/test" background="accent-3" align="center">
+      <Widget slug="/test" background="accent-50" align="center">
         <Heading
           level="3"
           size="large"

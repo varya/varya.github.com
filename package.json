@@ -70,7 +70,8 @@
     "deploy": "run-s deploy:build deploy:release",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy-storybook": "npx chromatic --project-token=skp9osmq6dc"
+    "deploy-storybook": "npx chromatic --project-token=skp9osmq6dc",
+    "chromatic": "npx chromatic --project-token skp9osmq6dc"
   },
   "peerDependencies": {
     "gatsby": ">=1"

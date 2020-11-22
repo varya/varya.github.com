@@ -34,7 +34,7 @@ WithOverlay.args = {
 
 export const Colored = (args) => (
   <Hero {...args}>
-    <Heading level={1}>Sample Heading on colored hero</Heading>;
+    <Heading level={1}>Sample Heading on colored hero</Heading>
     <Paragraph level={4}>
       Sample paragraph on colored hero. Color can be switched to any other
       string defined in theme

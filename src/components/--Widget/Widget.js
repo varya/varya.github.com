@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Box, Stack, Text } from "grommet";
 import Image from "../--Image";
 import Paragraph from "../--Paragraph";
-import Heading from "../--Paragraph";
+import Heading from "../--Heading";
 import Link from "../--Link";
 import { Calendar } from "grommet-icons";
 /**
@@ -69,7 +69,7 @@ const Widget = ({
                   <Image src={cover} fit="contain" />
                   {readingTime && (
                     <Box
-                      background="accent-2"
+                      background="accent-75"
                       margin="small"
                       pad="xsmall"
                       size="small"

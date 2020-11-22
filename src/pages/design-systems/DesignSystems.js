@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Heading, Text } from "grommet";
+import { Text } from "grommet";
 import Layout from "../../components/--Layout";
 import Paragraph from "../../components/--Paragraph";
-import PostPreview from "../../components/--PostPreview";
-import PostPreviewContainer from "../../components/--PostPreviewContainer";
+import Heading from "../../components/--Heading";
+import Widget from "../../components/--Widget";
+import WidgetContainer from "../../components/--WidgetContainer";
 import Pagination from "../../components/--Pagination";
 import { Box } from "grommet";
 
@@ -47,9 +48,9 @@ const DesignSystems = ({ posts }) => (
         </Paragraph>
       </Box>
 
-      <PostPreviewContainer items={{ small: 1, medium: 1, large: 2 }}>
+      <WidgetContainer items={{ small: 1, medium: 1, large: 2 }}>
         {posts.map((post) => (
-          <PostPreview
+          <Widget
             key={post.title}
             title={post.title}
             slug={post.slug}
@@ -57,7 +58,7 @@ const DesignSystems = ({ posts }) => (
             height="auto"
           />
         ))}
-      </PostPreviewContainer>
+      </WidgetContainer>
     </Box>
     <Pagination totalPages={3} currentPage={1} />
   </Layout>

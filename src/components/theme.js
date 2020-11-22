@@ -8,7 +8,7 @@ const theme = deepMerge(grommet, {
   defaultMode: "light",
   global: {
     colors: {
-      brand: "#EC4E4B",
+      brand: "rgb(236, 78, 75, 1)",
       background: "#FFFFFF",
       "background-contrast": "text-xxweak",
       text: {
@@ -20,16 +20,16 @@ const theme = deepMerge(grommet, {
       "text-xweak": "rgba(0, 0, 0, 0.45)",
       "text-xxweak": "rgba(0, 0, 0, 0.25)",
       "text-invert": "#ffffff",
-      border: "text-xweak",
-      control: "brand",
       accent: "#f8d179",
+      "accent-25": "rgba(248, 209, 121, 0.25)",
+      "accent-50": "rgba(248, 209, 121, 0.5)",
+      "accent-75": "rgba(248, 209, 121, 0.75)",
       "accent-1": "accent", //an override for grommet style
-      "accent-2": "rgba(248, 209, 121, 0.75)",
-      "accent-3": "rgba(248, 209, 121, 0.5)",
-      "accent-4": "rgba(248, 209, 121, 0.25)",
+
       neutral: "#85D8F3",
       focus: "neutral",
-
+      border: "text-xweak",
+      control: "brand",
       "active-background": "background-contrast",
       "active-text": "text-strong",
       "selected-background": "brand",
@@ -71,10 +71,16 @@ const theme = deepMerge(grommet, {
           weight: 900,
         },
       },
+      6: {
+        font: { weight: 400 },
+        small: {
+          size: "12px",
+        },
+      },
     },
   },
   paragraph: {
-    // extend: () => "text-align: justify",
+    extend: () => "text-align: justify",
   },
   button: {
     border: {
