@@ -3,8 +3,6 @@ import { withGrommet } from "storybook-addon-grommet";
 import theme from "../src/components/theme.js";
 import { grommet } from "grommet";
 
-import "../static/fonts.css";
-
 addDecorator(
   withGrommet({
     theme: "theme",

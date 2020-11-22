@@ -13,6 +13,7 @@ const theme = deepMerge(grommet, {
       "background-contrast": "text-xxweak",
       text: {
         light: "rgba(0, 0, 0, 0.85)",
+        dark: "#ffffff",
       },
       "text-strong": "rgba(0, 0, 0, 1)",
       "text-weak": "rgba(0, 0, 0, 0.65)",
@@ -22,6 +23,7 @@ const theme = deepMerge(grommet, {
       border: "text-xweak",
       control: "brand",
       accent: "#f8d179",
+      "accent-1": "accent", //an override for
       neutral: "#85D8F3",
       focus: "neutral",
 
@@ -34,7 +36,8 @@ const theme = deepMerge(grommet, {
       medium: { value: 1440 },
     }),
     font: {
-      family: "Roboto Light",
+      family: "Roboto",
+      weight: 300,
     },
     active: {
       background: "active-background",
@@ -49,9 +52,22 @@ const theme = deepMerge(grommet, {
       color: "selected-text",
     },
   },
+  anchor: {
+    color: {
+      dark: "accent",
+      light: "brand",
+    },
+  },
   heading: {
     font: {
-      family: "Roboto Black",
+      family: "Roboto",
+    },
+    level: {
+      1: {
+        font: {
+          weight: 900,
+        },
+      },
     },
   },
   paragraph: {

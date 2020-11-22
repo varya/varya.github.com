@@ -35,16 +35,16 @@ const socialLinksData = [
 const socialLinksTheme = deepMerge(theme, {
   button: {
     default: {
-      color: "light-4",
+      color: "dark-4",
     },
     hover: {
       default: {
-        color: "dark-4",
+        color: "accent",
       },
     },
     active: {
       default: {
-        color: "dark-4",
+        color: "accent",
       },
     },
     size: {
@@ -63,7 +63,6 @@ const SocialLinks = (props) => {
       <Nav responsive direction="row" justify="center" gap="xxsmall" {...props}>
         {socialLinksData.map((link) => (
           <Button
-            color="light-4"
             size="medium"
             key={link.title}
             icon={link.icon}

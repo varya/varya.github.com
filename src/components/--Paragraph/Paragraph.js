@@ -8,8 +8,8 @@ import { Paragraph as GrommetParagraph } from "grommet";
  *
  */
 
-const Paragraph = ({ children, lead = false }, ...props) => {
-  const style = lead ? { fontWeight: "bold" } : {};
+const Paragraph = ({ children, lead = false, ...props }) => {
+  const style = lead ? { fontWeight: "bold", fontStyle: "italic" } : {};
 
   return (
     <GrommetParagraph fill style={style} {...props}>
