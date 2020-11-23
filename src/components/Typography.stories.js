@@ -1,13 +1,12 @@
 import React from "react";
 
 import { Box, Heading, Text } from "grommet";
-import { colors as colortokens } from "./tokens";
 export default {
-  title: "Typography/Grommet",
+  title: "Typography/Text (Grommet)",
   component: Text,
 };
 const sizes = ["xlarge", "large", "medium", "small"];
-const colors = Object.entries(colortokens.character);
+const colors = ["brand", "neutral", "accent"];
 const aligns = ["start", "center", "end"];
 
 export const GrommetText = () => {

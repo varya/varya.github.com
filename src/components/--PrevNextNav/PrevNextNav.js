@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Anchor, Heading, Nav, Box, Text } from "grommet";
+import { Anchor, Nav, Box, Text } from "grommet";
 import Link from "../--Link";
+import Heading from "../--Heading";
 
 /**
  * Navigation to previous/next post in blog
@@ -14,17 +15,6 @@ const StyledLinkText = styled(Text)`
   font-weight: normal;
   display: block;
   padding: 0 0.5em;
-`;
-
-const StyledLinkHeading = styled(Heading)`
-  letter-spacing: 0.2em;
-  font-size: 12px;
-  text-transform: uppercase;
-  text-decoration: underline;
-  font-weight: 400;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  line-height: 30px;
 `;
 
 const PrevNextNav = ({
@@ -42,16 +32,33 @@ const PrevNextNav = ({
         fill="horizontal"
         justify="between"
         flex={false}
+        pad={{ bottom: "small" }}
       >
         {prevSlug && (
-          <StyledLinkHeading color="text-weak" level="3" textAlign="start">
+          <Heading
+            color="text-weak"
+            level="6"
+            margin="none"
+            textAlign="start"
+            spaced
+            underline
+            textCase="uppercase"
+          >
             Previous Post
-          </StyledLinkHeading>
+          </Heading>
         )}
         {nextSlug && (
-          <StyledLinkHeading color="text-weak" level="3" textAlign="end">
+          <Heading
+            color="text-weak"
+            level="6"
+            margin="none"
+            textAlign="start"
+            spaced
+            underline
+            textCase="uppercase"
+          >
             Next Post
-          </StyledLinkHeading>
+          </Heading>
         )}
       </Box>
       <Nav direction="row" justify="between" gap="large" fill="horizontal">
