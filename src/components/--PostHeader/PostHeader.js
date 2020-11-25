@@ -11,8 +11,9 @@ const PostHeader = ({ imageUrl, date, readingTime, title }) => (
       {title}
     </Heading>
     <MetaGroup>
-      <Text color="text-invert">{date}</Text>
-      <Text color="text-invert">{readingTime}</Text>
+      {[date, readingTime].map(
+        (metaitem) => metaitem && <Text color="text-invert">{metaitem}</Text>
+      )}
     </MetaGroup>
   </Hero>
 );
