@@ -1,7 +1,7 @@
-import { defaultProps, grommet } from "grommet";
+import { defaultProps } from "grommet";
 import { deepMerge } from "grommet/utils";
 
-const theme = deepMerge(grommet, {
+const theme = {
   name: "varya.me",
   rounding: 4,
   spacing: 24,
@@ -27,6 +27,10 @@ const theme = deepMerge(grommet, {
       "accent-1": "accent", //an override for grommet style
 
       neutral: "#85D8F3",
+      "neutral-1": "rgba(133, 216, 243, 1)",
+      "neutral-75": "rgba(133, 216, 243, 0.75)",
+      "neutral-50": "rgba(133, 216, 243, 0.5)",
+      "neutral-25": "rgba(133, 216, 243, 0.25)",
       focus: "neutral",
       border: "text-xweak",
       control: "brand",
@@ -41,6 +45,42 @@ const theme = deepMerge(grommet, {
     font: {
       family: "Roboto",
       weight: 300,
+      face: `/* roboto-300 - latin_cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local(''),
+       url('../fonts/roboto-v20-latin_cyrillic-ext-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/roboto-v20-latin_cyrillic-ext-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-300italic - latin_cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  src: local(''),
+       url('../fonts/roboto-v20-latin_cyrillic-ext-300italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/roboto-v20-latin_cyrillic-ext-300italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-regular - latin_cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/roboto-v20-latin_cyrillic-ext-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/roboto-v20-latin_cyrillic-ext-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-900 - latin_cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: local(''),
+       url('../fonts/roboto-v20-latin_cyrillic-ext-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/roboto-v20-latin_cyrillic-ext-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}`,
     },
     active: {
       background: "active-background",
@@ -79,9 +119,7 @@ const theme = deepMerge(grommet, {
       },
     },
   },
-  paragraph: {
-    extend: () => "text-align: justify",
-  },
+
   button: {
     border: {
       radius: `5px`,
@@ -92,8 +130,15 @@ const theme = deepMerge(grommet, {
         vertical: "large",
       },
     },
+    size: {
+      large: {
+        border: {
+          radius: `5px`,
+        },
+      },
+    },
     extend: () => `font-weight: bold;`,
   },
-});
+};
 
 export default theme;
