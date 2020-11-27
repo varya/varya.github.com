@@ -15,6 +15,7 @@ const StyledParagraph = styled(GrommetParagraph)`
   line-height: ${({ standout }) => standout && "200%"};
   font-weight: ${({ lead }) => (lead ? "bold" : "inherit")};
   font-style: ${({ lead }) => (lead ? "italic" : "normal")};
+  text-align: justify;
   position: relative;
   ${({
     truncate,
@@ -38,7 +39,7 @@ const Paragraph = ({
   children,
   lead,
   truncate = false,
-  textAlign = "justify",
+  textAlign = "start",
   ...props
 }) => {
   return (

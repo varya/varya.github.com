@@ -16,6 +16,9 @@ const StyledFigure = styled.figure`
   margin: 0;
   position: relative;
   overflow: hidden;
+  & img {
+    background: white;
+  }
 `;
 const StyledCaption = styled(Box)`
   position: absolute;

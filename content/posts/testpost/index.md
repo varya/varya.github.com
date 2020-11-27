@@ -1,6 +1,7 @@
 ---
 title: Design Systems — review of vocabulary and terms
-
+subTitle: And why it is more than just a library or a style guide
+# tags: design systems
 date: 2018-07-19
 cover: thumb.jpg
 

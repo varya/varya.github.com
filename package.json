@@ -23,6 +23,7 @@
     "gatsby-remark-images": "^3.3.36",
     "gatsby-remark-prismjs": "^3.5.1",
     "gatsby-remark-reading-time": "^1.1.0",
+    "gatsby-remark-unwrap-images": "^1.0.2",
     "gatsby-source-filesystem": "^2.3.35",
     "gatsby-transformer-sharp": "^2.5.18",
     "grommet": "^2.15.2",

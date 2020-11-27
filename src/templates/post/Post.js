@@ -1,53 +1,65 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import PropTypes from "prop-types";
+
+import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXProvider } from "@mdx-js/react";
+
+import { Box } from "grommet";
 import Layout from "../../components/--Layout";
 import Paragraph from "../../components/--Paragraph";
-
 import PostHeader from "../../components/--PostHeader";
-import { Box } from "grommet";
+import Link from "../../components/--Link";
 import Tag from "../../components/--Tag";
-import Image from "../../components/--Image";
+import Heading from "../../components/--Heading";
+import GithubEdit from "../../components/--GithubEdit";
 import PrevNextNav from "../../components/--PrevNextNav";
-import Img1 from "../../../content/posts/webfonts-with-sass-and-webpack/thumb.png";
-import Img2 from "../../../content/posts/webfonts-with-sass-and-webpack/enjoy.png";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+
+const _Heading = (level) => {
+  const component = ({ children }) => (
+    <Heading level={level}>{children}</Heading>
+  );
+  component.propTypes = { children: PropTypes.node };
+  return component;
+};
+
+// Apply styling to excerpt
+const _div = ({ "data-excerpt": dataExcerpt, children }) =>
+  dataExcerpt ? <Paragraph lead>{children}</Paragraph> : <div>{children}</div>;
+
+const postComponents = {
+  h1: _Heading(1),
+  h2: _Heading(2),
+  h3: _Heading(3),
+  h4: _Heading(4),
+  h5: _Heading(5),
+  h6: _Heading(6),
+  p: Paragraph,
+  a: Link,
+  div: _div,
+};
+
+postComponents.h1.propTypes = {
+  children: PropTypes.node,
+};
 
 const Post = ({
-  data: {
-    mdx,
-    site: { siteMetadata },
-  },
+  data: { mdx },
   pageContext: { next, prev, fileSourceUrl },
-  location,
 }) => {
-  const { tags, date, readingTime } = mdx.fields;
-  console.log(
-    "🚀 ~ file: Post.js ~ line 24 ~ tags, date, readingTime",
-    tags,
-    date,
-    readingTime
-  );
-  const { title, subTitle, cover } = mdx.frontmatter;
-  console.log(
-    "🚀 ~ file: Post.js ~ line 31 ~ mdx.frontmatter",
-    mdx.frontmatter
-  );
-  console.log(
-    "🚀 ~ file: Post.js ~ line 26 ~ title, subTitle, cover",
-    title,
-    subTitle,
-    cover
-  );
+  const { date, readingTime } = mdx.fields;
+  const { title, subTitle, cover, tags } = mdx.frontmatter;
 
-  // pageContext: { imageUrl, tags = [], date, readingTime, title },
   return (
     <Layout>
       <PostHeader
-        // imageUrl={cover}
+        imageUrl={cover.childImageSharp.fluid.src}
         tags={tags}
         date={date}
-        // readingTime={`${Math.round(readingTime.minutes)} min`}
+        readingTime={`${Math.round(readingTime.minutes)} min read`}
         title={title}
+        subTitle={subTitle}
       />
       <Box
         flex="grow"
@@ -56,49 +68,10 @@ const Post = ({
         pad="medium"
         direction="column"
       >
-        <MDXRenderer>{mdx.body}</MDXRenderer>
-        <Paragraph lead>
-          Bacon ipsum dolor amet chislic filet mignon cow, spare ribs short loin
-          beef ribs pork chop. Tail frankfurter ribeye pork chop pig rump short
-          ribs pork bresaola tongue shoulder jerky alcatra jowl. Boudin swine
-          filet mignon, fatback kielbasa leberkas pork belly pig salami alcatra
-          doner prosciutto t-bone. Ham bacon prosciutto, pork belly turkey
-          tri-tip pancetta. Alcatra tenderloin t-bone buffalo beef ribs fatback
-          burgdoggen spare ribs pork loin pork chop salami capicola hamburger
-          pork drumstick. Drumstick jerky jowl, short ribs chislic turducken
-          burgdoggen kevin venison shoulder pancetta cupim tongue meatball ham.
-        </Paragraph>
+        <MDXProvider components={postComponents}>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
+        </MDXProvider>
 
-        <Box flex={false}>
-          <Image
-            src={Img1}
-            caption="test caption"
-            copyright={{ text: "Jane Doe" }}
-          />
-        </Box>
-        <Paragraph>
-          Turkey t-bone pork belly ball tip alcatra pork chop. Capicola meatloaf
-          short loin burgdoggen ball tip, kevin andouille meatball biltong
-          boudin landjaeger shoulder corned beef buffalo. Pork strip steak
-          hamburger, sausage jerky pork chop ham drumstick kielbasa sirloin.
-          Brisket pork chop rump fatback, jowl ball tip jerky swine boudin
-          biltong. Chuck spare ribs strip steak, flank jerky ground round
-          prosciutto pork loin rump capicola drumstick tail. Ground round
-          porchetta sirloin jerky flank.
-        </Paragraph>
-        <Paragraph fill>
-          Brisket jowl ground round drumstick ribeye corned beef pork chop
-          tongue meatloaf beef ribs biltong rump buffalo. Porchetta pork
-          leberkas, ham landjaeger boudin filet mignon short ribs shankle
-          pastrami cow beef ribs ribeye jowl sirloin. Chicken swine picanha
-          doner ball tip strip steak sirloin ham hock tail chislic jowl t-bone
-          alcatra. Doner ham hock short ribs, salami pork chop flank turkey ham
-          ribeye frankfurter kielbasa. Cupim beef andouille picanha chislic,
-          shoulder filet mignon sirloin shankle frankfurter.
-        </Paragraph>
-        <Box flex={false}>
-          <Image src={Img2} fit="contain" />
-        </Box>
         <Box
           direction="row"
           fill="horizontal"
@@ -111,32 +84,28 @@ const Post = ({
             tags.length > 0 &&
             tags.map((tag) => <Tag key={tag} name={tag} margin="xsmall" />)}
         </Box>
+
         <PrevNextNav
           flex={false}
-          prevSlug="#"
-          nextSlug="#"
-          prevTitle="Remote work in a design system team"
-          nextTitle="Flatten array with Javascript reduce function"
+          prevSlug={`/${prev.fields.slug}`}
+          nextSlug={`/${next.fields.slug}`}
+          prevTitle={prev.frontmatter.title}
+          nextTitle={next.frontmatter.title}
           pad={{ vertical: "medium" }}
         />
+        <GithubEdit link={fileSourceUrl} />
       </Box>
     </Layout>
   );
 };
 Post.propTypes = {
-  data: PropTypes.object,
-  location: PropTypes.object,
-  imageUrl: PropTypes.string,
-  tags: PropTypes.array,
-  date: PropTypes.string,
-  readingTime: PropTypes.string,
-  title: PropTypes.string,
+  location: PropTypes.any,
 };
 
 export default Post;
 
-export const pageQuery = graphql`
-  query PostBySlug2($slug: String!) {
+export const query = graphql`
+  query PostQuery($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       id
       body
@@ -155,21 +124,17 @@ export const pageQuery = graphql`
         v2
         old
         tumblr
+        tags
         meta {
           desc
         }
         cover {
           childImageSharp {
-            resize(width: 300) {
+            fluid(maxWidth: 1200) {
               src
             }
           }
         }
-      }
-    }
-    site {
-      siteMetadata {
-        siteUrl
       }
     }
   }

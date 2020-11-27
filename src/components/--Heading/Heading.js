@@ -17,7 +17,7 @@ const StyledHeading = styled(GrommetHeading)`
   letter-spacing: ${({ spaced }) => (spaced ? "0.2em" : "normal")};
 `;
 
-const Heading = (props) => <StyledHeading {...props} />;
+const Heading = (props) => <StyledHeading fill={true} {...props} />;
 
 Heading.propTypes = {
   textCase: PropTypes.string,
