@@ -125,7 +125,7 @@ const MenuItem = ({ item, ...props }) => {
       {...props}
       items={children.map((child) => Object.assign(child, { plain: true }))}
     >
-      <Button plain key={label} {...props} label={label} />
+      <Button plain key={label} {...props} label={label} color="brand" />
     </GrommetMenu>
   ) : (
     <Button plain as={Link} key={label} to={href} {...props} label={label} />

@@ -106,6 +106,7 @@ const theme = {
       dark: "accent",
       light: "brand",
     },
+    extend: () => `font-weight: 300;`,
   },
   heading: {
     font: {
@@ -125,7 +126,6 @@ const theme = {
       },
     },
   },
-
   button: {
     border: {
       radius: `5px`,
