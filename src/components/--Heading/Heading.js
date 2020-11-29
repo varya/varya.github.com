@@ -15,6 +15,26 @@ const StyledHeading = styled(GrommetHeading)`
   text-transform: ${({ textCase }) => textCase};
   text-decoration: ${({ underline }) => underline && "underline"};
   letter-spacing: ${({ spaced }) => (spaced ? "0.2em" : "normal")};
+
+  ${({ level }) =>
+    level !== 1 &&
+    `
+  position: relative;
+  & > a.anchor {
+    position: absolute;
+    left: -16px;
+    display: none;
+    height: 100%;
+  }
+
+  &:hover a.anchor {
+    display: flex;
+    align-items: center;
+  }
+
+  & a.anchor svg {
+    fill: #999;
+  }`}
 `;
 
 const Heading = (props) => <StyledHeading fill={true} {...props} />;
