@@ -63,8 +63,6 @@ const Image = ({ children, caption = undefined, copyright = undefined }) => {
 };
 
 Image.propTypes = {
-  src: PropTypes.string.isRequired,
-  alt: PropTypes.string,
   caption: PropTypes.string,
   copyright: PropTypes.shape({
     text: PropTypes.string.isRequired,

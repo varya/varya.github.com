@@ -12,9 +12,12 @@ import Paragraph from "../../components/--Paragraph";
 import PostHeader from "../../components/--PostHeader";
 import Link from "../../components/--Link";
 import Tag from "../../components/--Tag";
+import Image from "../../components/--Image";
 import Heading from "../../components/--Heading";
 import GithubEdit from "../../components/--GithubEdit";
 import PrevNextNav from "../../components/--PrevNextNav";
+
+import { deepFind } from "react-children-utilities";
 
 const _Heading = (level) => {
   const component = ({ children }) => (
@@ -28,6 +31,37 @@ const _Heading = (level) => {
 const _div = ({ "data-excerpt": dataExcerpt, children }) =>
   dataExcerpt ? <Paragraph lead>{children}</Paragraph> : <div>{children}</div>;
 
+const spanResolver = (props) => {
+  // Select image wrappers, processed with 'gatsby-remark-image' plugin
+  if (props.className && props.className === "gatsby-resp-image-wrapper") {
+    // Find img tag among children
+    const image = deepFind(
+      props.children,
+      ({ props }) =>
+        props &&
+        props.className &&
+        props.className === "gatsby-resp-image-image"
+    );
+
+    const {
+      "data-caption": captionAttr,
+      "data-credit": creditAttr,
+      "data-creditlink": creditLinkAttr,
+    } = image.props;
+
+    // Read attributes and pass them to Image component
+    const caption = captionAttr;
+    const copyright = creditAttr && { text: creditAttr, link: creditLinkAttr };
+
+    return (
+      <Image caption={caption} copyright={copyright}>
+        <span {...props} />
+      </Image>
+    );
+  }
+  return <span {...props} />;
+};
+
 const postComponents = {
   h1: _Heading(1),
   h2: _Heading(2),
@@ -38,6 +72,7 @@ const postComponents = {
   p: Paragraph,
   a: Link,
   div: _div,
+  span: spanResolver,
 };
 
 postComponents.h1.propTypes = {

@@ -23,7 +23,11 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
 
       options: {
-        plugins: ["gatsby-remark-unwrap-images", "gatsby-remark-images"], //becaiuse of this: https://github.com/cedricdelpoux/gatsby-remark-unwrap-images/issues/2#issuecomment-526953234
+        plugins: [
+          "gatsby-remark-unwrap-images",
+          "gatsby-remark-images",
+          "gatsby-remark-attr",
+        ], //because of this: https://github.com/cedricdelpoux/gatsby-remark-unwrap-images/issues/2#issuecomment-526953234
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
           default: path.resolve("./src/components/Page/Page--outer"),
@@ -44,17 +48,17 @@ module.exports = {
               elements: [`h2`, `h3`, `h4`, `h5`, `h6`],
             },
           },
+
+          {
+            resolve: `gatsby-remark-image-attributes`,
+            options: {
+              styleAttributes: false,
+              dataAttributes: true,
+            },
+          },
         ],
       },
     },
-    // {
-    //   // Prevent wrapping images with p tag, when parsing markdown.
-    //   // Wrapping is undesired bevause it affects style of images
-    //   resolve: "gatsby-transformer-remark",
-    //   options: {
-    //     plugins: ["gatsby-remark-unwrap-images"],
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
