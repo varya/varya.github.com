@@ -1,14 +1,14 @@
 import React from "react";
 
-import SEO from "../../components/Seo";
+import SEO from "../components/Seo";
 
 import { Text, Button } from "grommet";
-import Layout from "../../components/--Layout";
-import Paragraph from "../../components/--Paragraph";
-import Heading from "../../components/--Heading";
-import SocialLinks from "../../components/--SocialLinks";
+import Layout from "../components/--Layout";
+import Paragraph from "../components/--Paragraph";
+import Heading from "../components/--Heading";
+import SocialLinks from "../components/--SocialLinks";
 import { Box } from "grommet";
-import Hero from "../../components/--Hero";
+import Hero from "../components/--Hero";
 
 const Contact = () => (
   <Layout>
