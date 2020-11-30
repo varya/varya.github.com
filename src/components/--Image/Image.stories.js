@@ -5,7 +5,11 @@ export default {
   title: "Components/Image",
   component: Image,
 };
-export const Default = (args) => <Image {...args} />;
+export const Default = (args) => (
+  <Image {...args}>
+    <img src={args.src} alt={args.alt} />
+  </Image>
+);
 Default.args = {
   src: "https://source.unsplash.com/random",
   alt: "Sample alt text",

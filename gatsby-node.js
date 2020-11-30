@@ -105,6 +105,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const postsData = await graphql(`
     query {
       blogPosts: allMdx(
+        filter: {
+          fileAbsolutePath: { regex: "//posts//" }
+          fields: { lang: { eq: "en" } }
+        }
         sort: {
           fields: [fields___prefix, frontmatter___date]
           order: [DESC, DESC]
@@ -206,17 +210,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
   }
   const blogPosts = postsData.data.blogPosts.edges;
-  console.dir(
-    "🚀 ~ file: gatsby-node.js ~ line 209 ~ exports.createPages= ~ blogPosts",
-    blogPosts
-  );
+
   const otherPosts = [
     ...postsData.data.ruPosts.edges,
     ...postsData.data.lifePosts.edges,
   ];
-
-  // Create blog post pages.
-  const tagSet = new Set();
 
   blogPosts.forEach(({ node }, index) => {
     const slug = node.fields && node.fields.slug;
@@ -237,99 +235,35 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 
-  // // Create paginated blog index pages
-  // // consider only english posts, russian ones are not displayed at /blog page
-  // const postsEng = posts.filter((post) => post.node.fields.lang === "en");
-  // const postsPerPage = 10;
-  // const numPages = Math.ceil(postsEng.length / postsPerPage);
-  // Array.from({ length: numPages }).forEach((_, i) => {
-  //   createPage({
-  //     path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-  //     component: path.resolve("./src/components/Page/Page--blog.js"),
-  //     context: {
-  //       limit: postsPerPage,
-  //       skip: i * postsPerPage,
-  //       numPages,
-  //       currentPage: i + 1,
-  //       pathPrefix: "/blog/",
-  //     },
-  //   });
-  // });
+  // Create all the old post which only need to be served t the urls, but do not need to appear in blog index.
+  otherPosts.forEach(({ node }) => {
+    const slug = node.fields.slug;
 
-  // Create life  posts
-  // const lifePosts = items.filter((item) =>
-  //   /life/.test(item.node.fileAbsolutePath)
-  // );
-  // lifePosts.forEach(({ node }, index) => {
-  //   const slug = node.fields.slug;
-  //   const next = index === 0 ? undefined : lifePosts[index - 1].node;
-  //   const prev =
-  //     index === lifePosts.length - 1 ? undefined : lifePosts[index + 1].node;
+    createPage({
+      path: slug,
+      component: path.resolve(`./src/components/Page/Page--post.js`),
+      context: {
+        slug,
+      },
+    });
+  });
+};
 
-  //   const fileSourceUrl = `${REPO_URL}/edit/${REPO_BRANCH}/content/life/${node.fields.fileRelativePath}`;
+// This is a shortcut so MDX can import components without gross relative paths.
+// Example: import { Image } from '$components';
+// Borrowed from: https://github.com/jlengstorf/gatsby-theme-jason-blog/blob/57a13c119a4c23b3d7c14c971fb61a3625b9fb4a/gatsby-node.js
 
-  //   createPage({
-  //     path: slug,
-  //     component: path.resolve(`./src/components/Page/Page--post.js`),
-  //     context: {
-  //       slug,
-  //       prev,
-  //       next,
-  //       fileSourceUrl,
-  //     },
-  //   });
-  // });
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, "src"), "node_modules"],
+      alias: { $components: path.resolve(__dirname, "src/components") },
+    },
+  });
+};
 
-  // const pages = items.filter((item) =>
-  //   /pages/.test(item.node.fileAbsolutePath)
-  // );
-
-  // // you'll call `createPage` for each result
-  // pages.forEach(({ node }) => {
-  //   const slug = node.fields.slug;
-
-  //   let breadCrumbs = [];
-  //   /* making bread crumbs */
-  //   if (node.fields.level > 1) {
-  //     const slugItems = node.fields.slug
-  //       .split("/")
-  //       .filter((item) => item !== "");
-  //     slugItems.reduce((acc, val) => {
-  //       /* find parent page */
-  //       const p = pages.find((item) => item.node.fields.slug === acc) || {
-  //         node: {
-  //           fields: {
-  //             slug: "/",
-  //           },
-  //           frontmatter: {
-  //             title: "Home",
-  //           },
-  //         },
-  //       };
-  //       breadCrumbs.push(p);
-  //       return acc + val + "/";
-  //     }, "/");
-  //     breadCrumbs.push({ node, last: true });
-  //   }
-
-  // const fileSourceUrl = `${REPO_URL}/edit/${REPO_BRANCH}/content/pages/${node.fields.fileRelativePath}`;
-
-  // createPage({
-  //   // This is the slug you created before
-  //   // (or `node.frontmatter.slug`)
-  //   path: node.fields.slug,
-  //   // This component will wrap our MDX content
-  //   component: path.resolve(
-  //     node.frontmatter.layout || `./src/components/Page/Page--page.js`
-  //   ),
-  //   // You can use the values in this context in
-  //   // our page layout component
-  //   context: {
-  //     id: node.id,
-  //     slug,
-  //     breadCrumbs,
-  //     fileSourceUrl,
-  //   },
-  // });
-  // });
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPlugin({
+    name: "@babel/plugin-proposal-export-default-from",
+  });
 };

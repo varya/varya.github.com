@@ -2,9 +2,10 @@
 import React from "react";
 import GatsbyLink from "gatsby-link"; //keep like that because of https://github.com/gatsbyjs/gatsby/issues/10668#issuecomment-546596273
 import PropTypes from "prop-types";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { Anchor } from "grommet";
 
-const styleResetCss = css`
+const AnchorWithoutStyle = styled.div`
   &,
   &:visited,
   &:hover,
@@ -20,9 +21,12 @@ const styleResetCss = css`
     font-family: inherit;
   }
 `;
-const StyledLink = styled.div`
-  ${({ unstyled }) => unstyled && styleResetCss}
-`;
+
+const StyledLink = ({ unstyled, ...props }) =>
+  unstyled ? <AnchorWithoutStyle {...props} /> : <Anchor {...props} />;
+StyledLink.propTypes = {
+  unstyled: PropTypes.bool,
+};
 
 const Link = ({ children, to, activeClassName, partiallyActive, ...other }) => {
   // Assuming that any internal link will start with exactly one slash, and that anything else is external.
@@ -50,6 +54,7 @@ Link.propTypes = {
   children: PropTypes.node,
   activeClassName: PropTypes.string,
   partiallyActive: PropTypes.any,
+  unstyled: PropTypes.bool,
 };
 
 export default Link;

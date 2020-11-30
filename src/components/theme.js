@@ -1,6 +1,15 @@
 import { defaultProps } from "grommet";
 import { deepMerge } from "grommet/utils";
 
+import Roboto300Woff from "../../static/fonts/roboto-v20-latin_cyrillic-ext-300.woff";
+import Roboto300Woff2 from "../../static/fonts/roboto-v20-latin_cyrillic-ext-300.woff2";
+import Roboto300WoffItalic from "../../static/fonts/roboto-v20-latin_cyrillic-ext-300italic.woff";
+import Roboto300Woff2Italic from "../../static/fonts/roboto-v20-latin_cyrillic-ext-300italic.woff2";
+import RobotoRegWoff from "../../static/fonts/roboto-v20-latin_cyrillic-ext-regular.woff";
+import RobotoRegWoff2 from "../../static/fonts/roboto-v20-latin_cyrillic-ext-regular.woff2";
+import Roboto900Woff from "../../static/fonts/roboto-v20-latin_cyrillic-ext-900.woff";
+import Roboto900Woff2 from "../../static/fonts/roboto-v20-latin_cyrillic-ext-900.woff2";
+
 const theme = {
   name: "varya.me",
   rounding: 4,
@@ -45,41 +54,38 @@ const theme = {
     font: {
       family: "Roboto",
       weight: 300,
-      face: `/* roboto-300 - latin_cyrillic-ext */
+      face: `
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
   src: local(''),
-       url('../fonts/roboto-v20-latin_cyrillic-ext-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/roboto-v20-latin_cyrillic-ext-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url(${Roboto300Woff2}) format('woff2'), 
+       url(${Roboto300Woff}) format('woff');
 }
-/* roboto-300italic - latin_cyrillic-ext */
 @font-face {
   font-family: 'Roboto';
   font-style: italic;
   font-weight: 300;
   src: local(''),
-       url('../fonts/roboto-v20-latin_cyrillic-ext-300italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/roboto-v20-latin_cyrillic-ext-300italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url(${Roboto300Woff2Italic}) format('woff2'), 
+       url(${Roboto300WoffItalic}) format('woff');
 }
-/* roboto-regular - latin_cyrillic-ext */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   src: local(''),
-       url('../fonts/roboto-v20-latin_cyrillic-ext-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/roboto-v20-latin_cyrillic-ext-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url(${RobotoRegWoff2}) format('woff2'),
+       url(${RobotoRegWoff}) format('woff'); 
 }
-/* roboto-900 - latin_cyrillic-ext */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 900;
   src: local(''),
-       url('../fonts/roboto-v20-latin_cyrillic-ext-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/roboto-v20-latin_cyrillic-ext-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url(${Roboto900Woff2}) format('woff2'),
+       url(${Roboto900Woff}) format('woff');
 }`,
     },
     active: {
@@ -100,6 +106,7 @@ const theme = {
       dark: "accent",
       light: "brand",
     },
+    extend: () => `font-weight: 300;`,
   },
   heading: {
     font: {
@@ -119,7 +126,6 @@ const theme = {
       },
     },
   },
-
   button: {
     border: {
       radius: `5px`,

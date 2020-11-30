@@ -21,16 +21,23 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-mdx`,
+
       options: {
+        plugins: [
+          "gatsby-remark-unwrap-images",
+          "gatsby-remark-images",
+          "gatsby-remark-attr",
+        ], //because of this: https://github.com/cedricdelpoux/gatsby-remark-unwrap-images/issues/2#issuecomment-526953234
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
           default: path.resolve("./src/components/Page/Page--outer"),
         },
         gatsbyRemarkPlugins: [
+          "gatsby-remark-unwrap-images",
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
+              maxWidth: 1600,
               backgroundColor: "transparent",
             },
           },
@@ -39,6 +46,14 @@ module.exports = {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
               elements: [`h2`, `h3`, `h4`, `h5`, `h6`],
+            },
+          },
+
+          {
+            resolve: `gatsby-remark-image-attributes`,
+            options: {
+              styleAttributes: false,
+              dataAttributes: true,
             },
           },
         ],

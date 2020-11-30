@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Anchor, Nav, Box, Text } from "grommet";
+import { Nav, Box, Text } from "grommet";
 import Link from "../--Link";
 import Heading from "../--Heading";
 
@@ -67,16 +67,16 @@ const PrevNextNav = ({
             <Box align="start" flex={false} color="brand">
               ←
             </Box>
-            <Anchor as={Link} to={prevSlug}>
+            <Link to={prevSlug}>
               <StyledLinkText textAlign="start">{prevTitle}</StyledLinkText>
-            </Anchor>
+            </Link>
           </Box>
         )}
         {nextSlug && (
           <Box direction="row" textAlign="end" margin={{ left: "auto" }}>
-            <Anchor as={Link} to={nextSlug}>
+            <Link to={nextSlug}>
               <StyledLinkText textAlign="end">{nextTitle}</StyledLinkText>
-            </Anchor>
+            </Link>
             <Box align="end" flex={false} color="brand">
               →
             </Box>
