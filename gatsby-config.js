@@ -133,8 +133,6 @@ module.exports = {
         include: /src/,
       },
     },
-    "gatsby-plugin-antd",
-
     `gatsby-plugin-styled-components`,
     {
       resolve: "gatsby-plugin-no-sourcemaps",

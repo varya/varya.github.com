@@ -6,9 +6,9 @@ import styled from "styled-components";
 const HeroHeader = styled(Box)`
   background-image: url(${(props) => props.imageUrl});
   background-size: cover;
-  height: 320px;
   width: 100%;
   position: relative;
+
   &::after {
     content: "";
     height: 100%;
@@ -27,26 +27,30 @@ const HeroHeader = styled(Box)`
   }
 `;
 
-const HeroHeaderContent = styled.div`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+const HeroHeaderContent = styled(Box)`
   position: relative;
   z-index: 1;
   text-align: center;
   padding: 3rem;
-  color: ${(props) => props.hasOverlay && "#fff"};
+  color: ${({ hasOverlay }) => hasOverlay && "#fff"};
 `;
 
-const Hero = ({ hasOverlay, imageUrl, children, ...props }) => {
+const Hero = ({
+  hasOverlay,
+  imageUrl,
+  children,
+  height = "medium",
+  ...props
+}) => {
   return (
     <HeroHeader
       hasOverlay={hasOverlay}
       imageUrl={imageUrl}
       flex={false}
+      height={height}
       {...props}
     >
-      <HeroHeaderContent>{children}</HeroHeaderContent>
+      <HeroHeaderContent flex={{ grow: 1 }}>{children}</HeroHeaderContent>
     </HeroHeader>
   );
 };
@@ -54,6 +58,7 @@ const Hero = ({ hasOverlay, imageUrl, children, ...props }) => {
 Hero.propTypes = {
   hasOverlay: PropTypes.bool,
   imageUrl: PropTypes.string,
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   children: PropTypes.node,
 };
 Hero.defaultProps = {
