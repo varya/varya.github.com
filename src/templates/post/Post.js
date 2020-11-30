@@ -6,6 +6,8 @@ import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 
+import * as GlobalComponents from "../../components";
+
 import { Box } from "grommet";
 import Layout from "../../components/--Layout";
 import Paragraph from "../../components/--Paragraph";
@@ -68,7 +70,7 @@ const Post = ({
         pad="medium"
         direction="column"
       >
-        <MDXProvider components={postComponents}>
+        <MDXProvider components={{ ...postComponents, ...GlobalComponents }}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
 
