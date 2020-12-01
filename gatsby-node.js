@@ -248,22 +248,3 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 };
-
-// This is a shortcut so MDX can import components without gross relative paths.
-// Example: import { Image } from '$components';
-// Borrowed from: https://github.com/jlengstorf/gatsby-theme-jason-blog/blob/57a13c119a4c23b3d7c14c971fb61a3625b9fb4a/gatsby-node.js
-
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      modules: [path.resolve(__dirname, "src"), "node_modules"],
-      alias: { $components: path.resolve(__dirname, "src/components") },
-    },
-  });
-};
-
-exports.onCreateBabelConfig = ({ actions }) => {
-  actions.setBabelPlugin({
-    name: "@babel/plugin-proposal-export-default-from",
-  });
-};

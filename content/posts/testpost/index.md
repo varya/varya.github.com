@@ -16,8 +16,6 @@ meta:
     both academic and popular sources.
 ---
 
-import {Image} from '\$components';
-
 <div data-excerpt>
 Design systems standardise and simplify the process of interface design and development, they bring new
     approaches and form their own ecosystem. However, there is no solid understanding of the concepts and terms forming
