@@ -1,9 +1,7 @@
 ---
 title: Design Systems — review of vocabulary and terms
 subTitle: And why it is more than just a library or a style guide
-
 # tags: design systems
-
 date: 2018-07-19
 cover: thumb.jpg
 
@@ -18,14 +16,24 @@ meta:
     both academic and popular sources.
 ---
 
+import {Image} from '\$components';
+
 <div data-excerpt>
+Design systems standardise and simplify the process of interface design and development, they bring new
+    approaches and form their own ecosystem. However, there is no solid understanding of the concepts and terms forming
+    the design systems. To solve the term inconsistency and provide structured professional language, this article
+    focuses on the vocabulary used in the design systems domain by observing a range of materials on the topic, from
+    both academic and popular sources.
+        
+</div>
 
 ## Introduction
 
+<a href="google.com">Test external link</a>
+<a href="/">Test internal link</a>
+
 In general, _design systems_ is a systematic approach to creating and maintaining consistent user interfaces which
 coherently communicate the brand values and empower user experience.
-
-</div>
 
 Similarly to physical things, such as sewing a dress, a web application can be created not in a factory but by an
 amateur. To do this, a person certainly needs some skills but a systematic approach can be out of use. The situation
@@ -35,7 +43,7 @@ output and consistency of elements across different items, decrease the costs of
 cross-teams collaboration. In programming and management, such systematic approaches are actively produced and adopted
 by the web community. Currently, similar methodologies are being created for the design part.
 
-![](./thumbb.jpg)
+![](./thumb.jpg)
 
 Design systems are meant to standardise and simplify the process of interface design and development, they bring new
 approaches and form their own ecosystem. Currently, design systems are a separate domain in the area of making web and
@@ -142,7 +150,11 @@ clear hierarchy and no interconnections. The scheme defines such subclasses as
 “building blocks”, “pattern library”, “rules” and “style guide”. Each of these
 subclasses contains a set of terms.
 
-![Figure 1. Rutherford (2017) “The structure of a Design System”](./figure1.png#caption=Figure 1. Rutherford (2017) “The structure of a Design System”.;credit=UXpin;creditLink=https://www.uxpin.com/studio/blog/design-systems-vs-pattern-libraries-vs-style-guides-whats-difference/)
+<Image caption="Figure 1. Rutherford (2017) “The structure of a Design System”" copyright={{text: "Source", link: "https://www.uxpin.com/studio/blog/design-systems-vs-pattern-libraries-vs-style-guides-whats-difference/"}}>
+
+![Figure 1. Rutherford (2017) “The structure of a Design System”](./figure1.png)
+
+</Image>
 
 Jan Toman (2017) draws a different scheme (Figure 2). Besides altered
 structure, this scheme also uses the different words to name its components. In
@@ -151,18 +163,20 @@ them is called “component library” (not “pattern library” as Rutherford 
 proposes), and “styleguide” does not include the library but is connected to
 it.
 
-![Figure 2. Jan Toman (2017) The Design System Schema](./figure2.png#caption=Figure 2. Jan Toman (2017) The Design System Schema.;credit=Source;creditLink=https://product-unicorn.com/design-systems-style-guides-all-those-libraries-what-the-hell-is-the-difference-4c2741193fdc)
+<Image caption="Figure 2. Jan Toman (2017) The Design System Schema”" copyright={{text: "Source", link: "https://product-unicorn.com/design-systems-style-guides-all-those-libraries-what-the-hell-is-the-difference-4c2741193fdc"}}>
+
+![Figure 2. Jan Toman (2017) The Design System Schema](./figure2.png)<br/>
+
+</Image>
 
 Nate Baldwin (2016) provides the schema (Figure 3) with many intersections and includes additional components such as
 “development standards” and “processes”.
 
-<div class="small" markdown="1">
+<Image caption="Figure 3. Nate Baldwin (2016) Design System Schema”" copyright={{text: "Source", link: "https://blog.producthive.org/anatomy-of-a-design-system-7a6b0677bf5"}}>
 
 ![Figure 3. Nate Baldwin (2016) Design System Schema](./figure3.jpeg)<br/>
-Figure 3. Nate Baldwin (2016) Design System Schema.<br/>
-Source: https://blog.producthive.org/anatomy-of-a-design-system-7a6b0677bf5
 
-</div>
+</Image>
 
 In many other sources, authors do not provide schemas but operate the terms.
 This article introduces these sub-concepts and their naming, summarize them to
@@ -186,20 +200,16 @@ From a user perspective, components are meaningful elements of a web
 application, for example, buttons, form inputs, dropdowns. Figure 4
 demonstrates a dropdown as an example.
 
-<div class="small" markdown="1">
+<Image caption="Figure 4. Example of a component — dropdown UI element. Carbon Design System for IBM Cloud products”" copyright={{text: "Source", link: "http://carbondesignsystem.com/components/dropdown/code"}}>
 
 ![Figure 4. Example of a component — dropdown UI element](./figure4.png)<br/>
-Figure 4. Example of a component — dropdown UI element. Carbon Design System for IBM Cloud products.<br/>
-Source: http://carbondesignsystem.com/components/dropdown/code
 
-</div>
-
-<div class="small png--transparent" markdown="1">
+</Image>
+<Image caption="Figure 5. Components" copyright={{text: "Source", link: "http://carbondesignsystem.com/components/dropdown/code"}}>
 
 ![Figure 5. Components.](./figure5.png)<br/>
-Figure 5. Components.
 
-</div>
+</Image>
 
 ### 2.2 Pattern
 
@@ -223,21 +233,17 @@ Figures 6 and 7 demonstrate how a pattern can look for a designer. The exact
 representation may vary depending on the design system technical
 implementation.
 
-<div class="small" markdown="1">
+<Image caption="Figure 6. Example of a color pattern. Carbon Design System for IBM Cloud products." copyright={{text: "Carbon Design System", link: "http://carbondesignsystem.com/style/color/swatches"}}>
 
-![Figure 6. Example of a color pattern](./figure6.png)<br/>
-Figure 6. Example of a color pattern. Carbon Design System for IBM Cloud products.<br/>
-Source: http://carbondesignsystem.com/style/color/swatches
+![Figure 6. Example of a color pattern](./figure6.png)
 
-</div>
+</Image>
 
-<div class="small" markdown="1">
+<Image caption="Figure 7. Example of a Spacing pattern. Carbon Design System for IBM Cloud products" copyright={{text: "Carbon Design System", link: "http://carbondesignsystem.com/style/spacing"}}>
 
-![Figure 7. Example of a Spacing pattern](./figure7.png)<br/>
-Figure 7. Example of a Spacing pattern. Carbon Design System for IBM Cloud products.<br/>
-Source: http://carbondesignsystem.com/style/spacing
+![Figure 7. Example of a Spacing pattern](./figure7.png)
 
-</div>
+</Image>
 
 Some authors use the term “pattern” when speaking about components. However,
 they still face the need to distinguish solutions for repeatable UI elements
@@ -254,12 +260,11 @@ specific user interface solution and the term “component” as code
 representation of such pattern, this naming seems to be the most suitable to
 keep further.
 
-<div class="small png--transparent" markdown="1">
+<Image caption="Figure 8. Patterns">
 
-![Figure 8. Patterns](./figure8.png)<br/>
-Figure 8. Patterns.
+![Figure 8. Patterns](./figure8.png)
 
-</div>
+</Image>
 
 ### 2.3 Component library
 
@@ -306,12 +311,11 @@ interface into reusable building blocks, arrange and group them, name them,
 establish rules between them, generate an overview of all components, and make
 them available for the entire team to build and design with” (Lopes, 2017).
 
-<div class="small png--transparent" markdown="1">
+<Image caption="Figure 9. Pattern library">
 
-![Figure 9. Pattern library](./figure9.png)<br/>
-Figure 9. Pattern library.
+![Figure 9. Pattern library](./figure9.png)
 
-</div>
+</Image>
 
 ### 2.5 Visual language
 
@@ -369,12 +373,11 @@ compose texts for the product, technical code style ensures the quality of the
 code forming the product. Besides listed elements, a style guide may (or may
 not) include others in accord with the needs of the product.
 
-<div class="small png--transparent" markdown="1">
+<Image caption="Figure 10. Style guide">
 
-![Figure 10. Style guide](./figure10.png)<br/>
-Figure 10. Style guide.
+![Figure 10. Style guide](./figure10.png)
 
-</div>
+</Image>
 
 ### 2.7 Design system
 
@@ -391,12 +394,11 @@ decisions and reasoning behind the solutions via a style guide. Other,
 “abstract aspects” contain strategies for effective collaboration in
 multidisciplinary teams and processes established for the team activities.
 
-<div class="small png--transparent" markdown="1">
+<Image caption="Figure 11. Design systems">
 
-![Figure 11. Design systems](./figure11.png)<br/>
-Figure 11. Design systems.
+![Figure 11. Design systems](./figure11.png)
 
-</div>
+</Image>
 
 ## 3. Value of design systems
 
