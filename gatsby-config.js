@@ -23,11 +23,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
 
       options: {
-        plugins: [
-          "gatsby-remark-unwrap-images",
-          "gatsby-remark-images",
-          "gatsby-remark-attr",
-        ], //because of this: https://github.com/cedricdelpoux/gatsby-remark-unwrap-images/issues/2#issuecomment-526953234
+        plugins: ["gatsby-remark-unwrap-images", "gatsby-remark-images"], //because of this: https://github.com/cedricdelpoux/gatsby-remark-unwrap-images/issues/2#issuecomment-526953234
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
           default: path.resolve("./src/components/Page/Page--outer"),
