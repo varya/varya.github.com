@@ -1,4 +1,5 @@
 const path = require("path");
+const config = require("./content/meta/config");
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
@@ -101,6 +102,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions;
+  const postTemplate = path.resolve("./src/templates/post/Post.js");
+  const blogTemplate = path.resolve("./src/templates/blog/Blog.js");
 
   const postsData = await graphql(`
     query {
@@ -225,7 +228,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: slug,
-      component: path.resolve(`./src/templates/post/Post.js`),
+      component: postTemplate,
       context: {
         slug,
         prev,
@@ -241,9 +244,27 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: slug,
-      component: path.resolve(`./src/components/Page/Page--post.js`),
+      component: postTemplate,
       context: {
         slug,
+      },
+    });
+  });
+
+  // Create blog index pages
+  // Adapted from: https://github.com/Vagr9K/gatsby-advanced-starter/blob/master/gatsby-node.js
+  const { postsPerPage } = config || 10; //default value
+  const pageCount = Math.ceil(blogPosts.length / postsPerPage);
+
+  [...Array(pageCount)].forEach((_val, pageNum) => {
+    createPage({
+      path: pageNum === 0 ? `/blog` : `/blog/${pageNum + 1}/`,
+      component: blogTemplate,
+      context: {
+        limit: postsPerPage,
+        skip: pageNum * postsPerPage,
+        pageCount,
+        currentPage: pageNum + 1,
       },
     });
   });

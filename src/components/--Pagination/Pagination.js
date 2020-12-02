@@ -5,6 +5,8 @@ import { deepMerge } from "grommet/utils";
 import { clamp, range } from "../../utils";
 import theme from "../theme";
 import flattenChildren from "react-flatten-children";
+const path = require("path");
+import Link from "gatsby-link";
 
 /**
  * Responsive pagination component
@@ -49,6 +51,7 @@ const Pagination = ({
   maxVisiblePages = 15,
   size = "medium",
 }) => {
+  const basePath = "/blog";
   const visiblePages = clamp(maxVisiblePages, 1, totalPages); // number of pages to be displayed
 
   /* Adjust start/end values
@@ -67,26 +70,34 @@ const Pagination = ({
   const endPage = adjustEndValue(startPage + visiblePages);
 
   /* Button boilerplate */
-  const PageButton = ({ label }) => {
+  const PageButton = ({ label, to, ...props }) => {
     return (
       <Button
+        as={Link}
+        to={to && path.join(basePath, "/", to)}
         key={"page" + label}
         active={parseInt(label) === currentPage ? true : false}
         color="brand"
         label={label}
         size={size}
+        {...props}
       ></Button>
     );
   };
 
   PageButton.propTypes = {
+    to: PropTypes.string,
     label: PropTypes.string,
   };
 
   return (
     <Grommet theme={paginationTheme}>
       <Box direction="row" gap={size} justify="center">
-        <PageButton label="←" />
+        <PageButton
+          label="←"
+          to={currentPage > 1 ? (currentPage - 1).toString() : null}
+          disabled={currentPage <= 1}
+        />
         {startPage > 1 &&
           flattenChildren(
             /* flattening children let us have all buttons as a direct child of a box,
@@ -97,7 +108,13 @@ const Pagination = ({
             </>
           )}
         {range(startPage, endPage + 1).map((num) => {
-          return <PageButton label={num} key={"page" + num} />;
+          return (
+            <PageButton
+              label={num}
+              key={"page" + num}
+              to={num === 1 ? "/" : num.toString()}
+            />
+          );
         })}
         {endPage !== totalPages &&
           flattenChildren(
@@ -106,7 +123,13 @@ const Pagination = ({
               <PageButton label={totalPages} />
             </>
           )}
-        <PageButton label="→" />
+        <PageButton
+          label="→"
+          to={
+            currentPage < totalPages ? (currentPage + 1).toString() : undefined
+          }
+          disabled={currentPage >= totalPages}
+        />
       </Box>
     </Grommet>
   );

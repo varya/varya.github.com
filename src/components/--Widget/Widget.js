@@ -7,6 +7,7 @@ import Paragraph from "../--Paragraph";
 import Heading from "../--Heading";
 import Link from "../--Link";
 import { Calendar } from "grommet-icons";
+
 /**
  * Post Preview widget with cover image and excerpt
  * @param  {string} cover, title, excerpt, slug, readingTime, date - post data
@@ -16,14 +17,14 @@ import { Calendar } from "grommet-icons";
 
 const StyledWidget = styled(Box)`
   transition: all 0.2s ease;
-  img {
+  figure {
     transition: all 0.5s ease-out;
   }
   &:hover {
     background: ${({ background, theme }) =>
       !background && theme.global.colors["light-1"]};
     transform: scale(1.05);
-    img {
+    figure {
       transform: scale(1.3);
     }
   }
@@ -31,7 +32,7 @@ const StyledWidget = styled(Box)`
 
 const Widget = ({
   children,
-  cover,
+  image,
   title,
   excerpt,
   slug,
@@ -43,7 +44,7 @@ const Widget = ({
 }) => {
   return (
     <StyledWidget {...props} direction={direction} pad="medium">
-      <Link unstyled href={slug} style={{ width: "100%" }}>
+      <Link unstyled to={"/" + slug} style={{ width: "100%" }}>
         {title && (
           <Heading level="3" margin={{ top: "none", bottom: "small" }}>
             {title}
@@ -56,7 +57,7 @@ const Widget = ({
           overflow="hidden"
           gap="medium"
         >
-          {cover && (
+          {image && (
             <Box
               basis="1/3"
               flex={false}
@@ -66,7 +67,7 @@ const Widget = ({
             >
               {direction === "row" ? (
                 <Stack anchor="top-right">
-                  <Image src={cover} fit="contain" />
+                  <Image fit="contain">{image}</Image>
                   {readingTime && (
                     <Box
                       background="accent-75"
@@ -83,7 +84,9 @@ const Widget = ({
                   )}
                 </Stack>
               ) : (
-                <Image src={cover} fit="cover" height="medium" />
+                <Image fit="cover" height="medium">
+                  {image}
+                </Image>
               )}
             </Box>
           )}
@@ -117,7 +120,7 @@ const Widget = ({
 Widget.propTypes = {
   children: PropTypes.node,
   slug: PropTypes.string,
-  cover: PropTypes.string,
+  image: PropTypes.node,
   title: PropTypes.string,
   excerpt: PropTypes.string,
   date: PropTypes.string,
