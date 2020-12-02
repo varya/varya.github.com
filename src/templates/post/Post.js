@@ -6,18 +6,32 @@ import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 
-import * as GlobalComponents from "../../components";
-
-import { Box } from "grommet";
 import Layout from "../../components/--Layout";
 import Paragraph from "../../components/--Paragraph";
 import PostHeader from "../../components/--PostHeader";
 import Link from "../../components/--Link";
+import Image from "../../components/--Image";
 import Tag from "../../components/--Tag";
+import Hero from "../../components/--Hero";
+import Widget from "../../components/--Widget";
+import WidgetContainer from "../../components/--WidgetContainer";
 import Heading from "../../components/--Heading";
 import GithubEdit from "../../components/--GithubEdit";
 import PrevNextNav from "../../components/--PrevNextNav";
+import { Box, Button, Text } from "grommet";
 
+const globalMdxComponents = {
+  Box,
+  Button,
+  Text,
+  Heading,
+  Paragraph,
+  Hero,
+  Widget,
+  WidgetContainer,
+  Link,
+  Image,
+};
 const _Heading = (level) => {
   const component = ({ children }) => (
     <Heading level={level}>{children}</Heading>
@@ -56,7 +70,7 @@ const Post = ({
   return (
     <Layout>
       <PostHeader
-        imageUrl={cover.childImageSharp.fluid.src}
+        imageUrl={cover && cover.childImageSharp.fluid.src}
         tags={tags}
         date={date}
         readingTime={`${Math.round(readingTime.minutes)} min read`}
@@ -70,10 +84,9 @@ const Post = ({
         pad="medium"
         direction="column"
       >
-        <MDXProvider components={{ ...postComponents, ...GlobalComponents }}>
+        <MDXProvider components={{ ...postComponents, ...globalMdxComponents }}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
-
         <Box
           direction="row"
           fill="horizontal"
@@ -86,7 +99,6 @@ const Post = ({
             tags.length > 0 &&
             tags.map((tag) => <Tag key={tag} name={tag} margin="xsmall" />)}
         </Box>
-
         <PrevNextNav
           flex={false}
           prevSlug={`/${prev.fields.slug}`}
