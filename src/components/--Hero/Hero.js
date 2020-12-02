@@ -51,7 +51,9 @@ const Hero = ({
       background="neutral"
       {...props}
     >
-      <HeroHeaderContent flex={{ grow: 1 }}>{children}</HeroHeaderContent>
+      <HeroHeaderContent flex={{ grow: 1 }} justify="between">
+        {children}
+      </HeroHeaderContent>
     </HeroHeader>
   );
 };
