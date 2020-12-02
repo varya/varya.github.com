@@ -22,4 +22,6 @@ module.exports = {
     { name: "twitter", url: "https://twitter.com/varya_en" },
     { name: "facebook", url: "http://facebook.com/varyastepanova" },
   ],
+  // settings
+  postsPerPage: 6,
 };
