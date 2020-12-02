@@ -54,7 +54,7 @@ const Post = ({
   return (
     <Layout>
       <PostHeader
-        imageUrl={cover.childImageSharp.fluid.src}
+        imageUrl={cover && cover.childImageSharp.fluid.src}
         tags={tags}
         date={date}
         readingTime={`${Math.round(readingTime.minutes)} min read`}

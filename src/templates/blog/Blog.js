@@ -16,7 +16,6 @@ const visiblePages = {
   large: 10,
 };
 
-// const Blog = ({ posts, currentPage, totalPages }) => (
 const Blog = ({ data, pageContext }) => {
   const posts = data.posts.edges;
   const { currentPage, pageCount } = pageContext;

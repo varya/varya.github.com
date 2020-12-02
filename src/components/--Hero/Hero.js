@@ -48,6 +48,7 @@ const Hero = ({
       imageUrl={imageUrl}
       flex={false}
       height={height}
+      background="neutral"
       {...props}
     >
       <HeroHeaderContent flex={{ grow: 1 }}>{children}</HeroHeaderContent>
