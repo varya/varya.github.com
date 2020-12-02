@@ -44,7 +44,7 @@ const Widget = ({
 }) => {
   return (
     <StyledWidget {...props} direction={direction} pad="medium">
-      <Link unstyled href={slug} style={{ width: "100%" }}>
+      <Link unstyled to={"/" + slug} style={{ width: "100%" }}>
         {title && (
           <Heading level="3" margin={{ top: "none", bottom: "small" }}>
             {title}
