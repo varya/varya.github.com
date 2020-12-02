@@ -6,9 +6,10 @@ import { Text, Button } from "grommet";
 import Layout from "../components/--Layout";
 import Paragraph from "../components/--Paragraph";
 import Heading from "../components/--Heading";
-import SocialLinks from "../components/--SocialLinks";
+import Link from "../components/--Link";
 import { Box } from "grommet";
 import Hero from "../components/--Hero";
+import { InlineWidget } from "react-calendly";
 
 const Contact = () => (
   <Layout>
@@ -17,7 +18,7 @@ const Contact = () => (
       keywords={["design systems", "design system", "frontend"]}
       defer={false}
     />
-    <Hero background="neutral" align="center" justify="between">
+    <Hero height="small" background="neutral" align="center" justify="between">
       <Heading
         level={1}
         alignSelf="center"
@@ -32,26 +33,64 @@ const Contact = () => (
           Talk!
         </Text>
       </Heading>
-      <Paragraph size="large" textAlign="center">
-        I&apos;m always keen to hear from you.
-      </Paragraph>
-      <Button
-        primary
-        size="large"
-        pad="medium"
-        label="Email me at mail@varya.me"
-        href="mailto:mail@varya.me"
-        target="_blank"
-        rel="noopener"
-      ></Button>
     </Hero>
     <Box width="xlarge" margin={{ horizontal: "auto" }} pad="medium">
+      <Paragraph>You can contact me:</Paragraph>
+      <Box width="medium" margin={{ horizontal: "auto" }} gap="medium">
+        <Button
+          fill="horizontal"
+          alignSelf="center"
+          primary
+          pad="large"
+          label="By email mail@varya.me"
+          href="mailto:mail@varya.me"
+          target="_blank"
+          rel="noopener"
+          style={{ textAlign: "center" }}
+        ></Button>
+        <Button
+          alignSelf="center"
+          fill="horizontal"
+          pad="medium"
+          label="in Telegram"
+          href="http://t.me/var_ya"
+          target="_blank"
+          rel="noopener"
+          style={{ textAlign: "center" }}
+        ></Button>
+        <Button
+          alignSelf="center"
+          fill="horizontal"
+          pad="medium"
+          label="in Whatsapp"
+          href="http://wa.link/ou89i8"
+          target="_blank"
+          rel="noopener"
+          style={{ textAlign: "center" }}
+        ></Button>
+      </Box>
+
       <Paragraph>
-        Don&apos;t hesitate to get in touch with me if you have some project to
-        discuss or just want to say hi. You are also welcome to follow me if you
-        want to stay in touch.
+        Need to talk face2face? Book a video session with me via{" "}
+        <Link to="https://calendly.com/var_ya">Calendly</Link>: I keep my
+        calendar up to date, so you can easily see what times are available and
+        choose the one which is good for you.
       </Paragraph>
-      <SocialLinks pad="medium" align="center" />
+      <InlineWidget
+        styles={{ minWidth: "320px", height: "650px" }}
+        url="https://calendly.com/var_ya/30min"
+      />
+      {/* <Box>
+        <div
+          className="calendly-inline-widget"
+          data-url="https://calendly.com/var_ya/30min"
+          style={{ minWidth: "320px", height: "630px" }}
+        ></div>
+        <script
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+        ></script>
+      </Box> */}
     </Box>
   </Layout>
 );
