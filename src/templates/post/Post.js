@@ -34,6 +34,20 @@ const globalMdxComponents = {
   Image,
 };
 import { toKebabCase } from "utils";
+import { Box, Button, Text } from "grommet";
+
+const globalMdxComponents = {
+  Box,
+  Button,
+  Text,
+  Heading,
+  Paragraph,
+  Hero,
+  Widget,
+  WidgetContainer,
+  Link,
+  Image,
+};
 const _Heading = (level) => {
   const component = ({ children }) => (
     <Heading level={level}>{children}</Heading>
