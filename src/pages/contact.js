@@ -18,7 +18,7 @@ const Contact = () => (
       keywords={["design systems", "design system", "frontend"]}
       defer={false}
     />
-    <Hero height="small" background="neutral" align="center" justify="between">
+    <Hero background="neutral" align="center" justify="between">
       <Heading
         level={1}
         alignSelf="center"
@@ -33,43 +33,19 @@ const Contact = () => (
           Talk!
         </Text>
       </Heading>
-    </Hero>
-    <Box width="xlarge" margin={{ horizontal: "auto" }} pad="medium">
-      <Paragraph>You can contact me:</Paragraph>
-      <Box width="medium" margin={{ horizontal: "auto" }} gap="medium">
+      <Box>
         <Button
-          fill="horizontal"
-          alignSelf="center"
           primary
-          pad="large"
-          label="By email mail@varya.me"
+          size="large"
+          pad="medium"
+          label="Email me at mail@varya.me"
           href="mailto:mail@varya.me"
           target="_blank"
           rel="noopener"
-          style={{ textAlign: "center" }}
-        ></Button>
-        <Button
-          alignSelf="center"
-          fill="horizontal"
-          pad="medium"
-          label="in Telegram"
-          href="http://t.me/var_ya"
-          target="_blank"
-          rel="noopener"
-          style={{ textAlign: "center" }}
-        ></Button>
-        <Button
-          alignSelf="center"
-          fill="horizontal"
-          pad="medium"
-          label="in Whatsapp"
-          href="http://wa.link/ou89i8"
-          target="_blank"
-          rel="noopener"
-          style={{ textAlign: "center" }}
         ></Button>
       </Box>
-
+    </Hero>
+    <Box width="xlarge" margin={{ horizontal: "auto" }} pad="medium">
       <Paragraph>
         Need to talk face2face? Book a video session with me via{" "}
         <Link to="https://calendly.com/var_ya">Calendly</Link>: I keep my
@@ -77,20 +53,9 @@ const Contact = () => (
         choose the one which is good for you.
       </Paragraph>
       <InlineWidget
-        styles={{ minWidth: "320px", height: "650px" }}
+        styles={{ minWidth: "320px", height: "1000px" }}
         url="https://calendly.com/var_ya/30min"
       />
-      {/* <Box>
-        <div
-          className="calendly-inline-widget"
-          data-url="https://calendly.com/var_ya/30min"
-          style={{ minWidth: "320px", height: "630px" }}
-        ></div>
-        <script
-          type="text/javascript"
-          src="https://assets.calendly.com/assets/external/widget.js"
-        ></script>
-      </Box> */}
     </Box>
   </Layout>
 );
