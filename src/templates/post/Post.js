@@ -15,7 +15,7 @@ import Tag from "../../components/--Tag";
 import Heading from "../../components/--Heading";
 import GithubEdit from "../../components/--GithubEdit";
 import PrevNextNav from "../../components/--PrevNextNav";
-
+import { toKebabCase } from "utils";
 const _Heading = (level) => {
   const component = ({ children }) => (
     <Heading level={level}>{children}</Heading>
@@ -83,7 +83,12 @@ const Post = ({
           {tags &&
             tags.length > 0 &&
             tags.map((tag) => (
-              <Tag key={tag} name={tag.trim()} slug={tag} margin="xsmall" />
+              <Tag
+                key={tag}
+                name={tag.trim()}
+                slug={toKebabCase(tag)}
+                margin="xsmall"
+              />
             ))}
         </Box>
         <PrevNextNav
