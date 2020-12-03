@@ -6,6 +6,8 @@ cover: thumb.jpg
 
 layout: post
 
+tags: design systems, patterns, components
+
 meta:
   desc: >
     Design systems standardise and simplify the process of interface design and development, they bring new

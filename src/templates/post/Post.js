@@ -66,7 +66,7 @@ const Post = ({
 }) => {
   const { date, readingTime } = mdx.fields;
   const { title, subTitle, cover } = mdx.frontmatter;
-  const tags = mdx.frontmatter.tags.split(",");
+  const tags = mdx.frontmatter.tags && mdx.frontmatter.tags.split(",");
 
   return (
     <Layout>
