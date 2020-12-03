@@ -5,6 +5,17 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 
 const REPO_URL = "https://github.com/varya/varya.github.com";
 const REPO_BRANCH = "develop";
+
+// TODO: move to separate file
+//#Source https://bit.ly/2neWfJ2
+const toKebabCase = (str) =>
+  str &&
+  str
+    .trim()
+    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map((x) => x.toLowerCase())
+    .join("-");
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
@@ -104,6 +115,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
   const postTemplate = path.resolve("./src/templates/post/Post.js");
   const blogTemplate = path.resolve("./src/templates/blog/Blog.js");
+  const tagTemplate = path.resolve("./src/templates/tag/Tag.js");
 
   const postsData = await graphql(`
     query {
@@ -219,12 +231,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     ...postsData.data.lifePosts.edges,
   ];
 
+  const tagSet = new Set();
+
   blogPosts.forEach(({ node }, index) => {
     const slug = node.fields && node.fields.slug;
     const next = index === 0 ? undefined : blogPosts[index - 1].node;
     const prev =
       index === blogPosts.length - 1 ? undefined : blogPosts[index + 1].node;
     const fileSourceUrl = `${REPO_URL}/edit/${REPO_BRANCH}/content/posts/${node.fields.fileRelativePath}`;
+
+    // Generate a list of tags
+    const tags = node.frontmatter.tags && node.frontmatter.tags.split(",");
+    if (tags) {
+      tags.forEach((tag) => {
+        tagSet.add(tag);
+      });
+    }
 
     createPage({
       path: slug,
@@ -266,6 +288,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         pageCount,
         currentPage: pageNum + 1,
       },
+    });
+  });
+
+  //  Create tag pages
+  tagSet.forEach((tag) => {
+    const tagSlug = toKebabCase(tag);
+    createPage({
+      path: `/blog/${tagSlug}/`,
+      component: tagTemplate,
+      context: { tag, tagSlug },
     });
   });
 };

@@ -102,7 +102,7 @@ const Widget = ({
             {excerpt && (
               <Paragraph
                 fill
-                truncate={6}
+                truncate={7}
                 flex={false}
                 margin={{ vertical: "xsmall" }}
               >
