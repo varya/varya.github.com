@@ -33,7 +33,7 @@ const globalMdxComponents = {
   Link,
   Image,
 };
-
+import { toKebabCase } from "utils";
 const _Heading = (level) => {
   const component = ({ children }) => (
     <Heading level={level}>{children}</Heading>
