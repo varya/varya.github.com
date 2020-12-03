@@ -11,13 +11,19 @@ import { childrenWithProps, isObject } from "../../utils";
  * @example <WidgetContainer items={{"small": 3, "medium": 2, "large": 1}}
  */
 
-const WidgetContainer = ({ children, items = 1 }) => {
+const WidgetContainer = ({ children, items = 1, ...props }) => {
   return (
     <ResponsiveContext.Consumer>
       {(size) => {
         const itemsPerRow = isObject(items) ? items[size] : items;
         return (
-          <Box pad="medium" justify="start" direction="row" wrap={true}>
+          <Box
+            pad="medium"
+            justify="start"
+            direction="row"
+            wrap={true}
+            {...props}
+          >
             {childrenWithProps(children, {
               basis: itemsPerRow > 1 ? `1/${itemsPerRow}` : "full",
               direction: itemsPerRow > 1 || size === "small" ? "column" : "row",
