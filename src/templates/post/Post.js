@@ -49,7 +49,8 @@ const Post = ({
   pageContext: { next, prev, fileSourceUrl },
 }) => {
   const { date, readingTime } = mdx.fields;
-  const { title, subTitle, cover, tags } = mdx.frontmatter;
+  const { title, subTitle, cover } = mdx.frontmatter;
+  const tags = mdx.frontmatter.tags.split(",");
 
   return (
     <Layout>
@@ -71,7 +72,6 @@ const Post = ({
         <MDXProvider components={postComponents}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
-
         <Box
           direction="row"
           fill="horizontal"
@@ -82,9 +82,10 @@ const Post = ({
         >
           {tags &&
             tags.length > 0 &&
-            tags.map((tag) => <Tag key={tag} name={tag} margin="xsmall" />)}
+            tags.map((tag) => (
+              <Tag key={tag} name={tag.trim()} slug={tag} margin="xsmall" />
+            ))}
         </Box>
-
         <PrevNextNav
           flex={false}
           prevSlug={`/${prev.fields.slug}`}
