@@ -16,9 +16,13 @@ const menuData = [
   {
     label: "Services",
     children: [
-      { label: "Speaking", href: "/speaking" },
-      { label: "Consultancy", href: "/consultancy" },
-      { label: "Workshops", href: "/workshops" },
+      // { label: "Speaking", href: "/speaking" },
+      { label: "Consultancy", href: "/services/consultancy" },
+      { label: "Team supervision", href: "/services/supervision" },
+      { label: "Audit of design and development", href: "/services/audit" },
+      { label: "Design system services", href: "/services/design-systems" },
+      { label: "Development of UI components", href: "/services/development" },
+      { label: "Workshops", href: "/services/workshops" },
     ],
   },
   { label: "Projects", href: "/projects" },
