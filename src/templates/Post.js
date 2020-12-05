@@ -5,40 +5,6 @@ import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 import { Box, Button, Text } from "grommet";
-
-import GithubEdit from "../../components/--GithubEdit";
-import Heading from "../../components/--Heading";
-import Hero from "../../components/--Hero";
-import Image from "../../components/--Image";
-import Layout from "../../components/--Layout";
-import Link from "../../components/--Link";
-import Paragraph from "../../components/--Paragraph";
-import PostHeader from "../../components/--PostHeader";
-import PrevNextNav from "../../components/--PrevNextNav";
-import Tag from "../../components/--Tag";
-import Widget from "../../components/--Widget";
-import WidgetContainer from "../../components/--WidgetContainer";
-import Heading from "../../components/--Heading";
-import GithubEdit from "../../components/--GithubEdit";
-import PrevNextNav from "../../components/--PrevNextNav";
-import { toKebabCase } from "utils";
-import { Box, Button, Text } from "grommet";
-
-const globalMdxComponents = {
-  Box,
-  Button,
-  Text,
-  Heading,
-  Paragraph,
-  Hero,
-  Widget,
-  WidgetContainer,
-  Link,
-  Image,
-};
-import { toKebabCase } from "utils";
-import { Box, Button, Text } from "grommet";
-=======
 import {
   GithubEdit,
   Heading,
@@ -53,7 +19,8 @@ import {
   Widget,
   WidgetContainer,
 } from "@components";
->>>>>>> chore: flatten/clean templates folder:src/templates/Post.js
+
+import { toKebabCase } from "../common/utils";
 
 const globalMdxComponents = {
   Box,
@@ -145,10 +112,10 @@ const Post = ({
         </Box>
         <PrevNextNav
           flex={false}
-          prevSlug={`/${prev.fields.slug}`}
-          nextSlug={`/${next.fields.slug}`}
-          prevTitle={prev.frontmatter.title}
-          nextTitle={next.frontmatter.title}
+          prevSlug={`/${prev && prev.fields.slug}`}
+          nextSlug={`/${next && next.fields.slug}`}
+          prevTitle={prev && prev.frontmatter.title}
+          nextTitle={next && next.frontmatter.title}
           pad={{ vertical: "medium" }}
         />
         <GithubEdit link={fileSourceUrl} />

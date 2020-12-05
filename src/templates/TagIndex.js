@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import { graphql } from "gatsby";
-
-import Layout from "../../components/--Layout";
-
-import Heading from "../../components/--Heading";
-import Widget from "../../components/--Widget";
-import WidgetContainer from "../../components/--WidgetContainer";
-import { Box, Text } from "grommet";
 import Img from "gatsby-image";
+import { Box, Text } from "grommet";
+
+import Heading from "../components/--Heading";
+import Layout from "../components/--Layout";
+import Widget from "../components/--Widget";
+import WidgetContainer from "../components/--WidgetContainer";
 
 const Tag = ({ data, pageContext }) => {
   const posts = data.posts.edges;
