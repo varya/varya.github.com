@@ -1,8 +1,19 @@
-import React from "react";
-
+/**
+ * Clamp a number within min and max values
+ *
+ * @param {*} num
+ * @param {*} a
+ * @param {*} b
+ */
 export const clamp = (num, a, b) =>
   Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));
 
+/**
+ * Creates an array of numbers in range from start to end
+ *
+ * @param {number} start -inclusive
+ * @param {number} end - exclusive
+ */
 export const range = (start, end) =>
   Array(end - start)
     .fill()
@@ -17,16 +28,6 @@ export const range = (start, end) =>
  */
 export const isObject = (variable) =>
   Object.prototype.toString.call(variable) === "[object Object]";
-
-export const childrenWithProps = (children, props = {}) => {
-  if (!isObject(props)) return;
-  return React.Children.map(children, (child) => {
-    if (React.isValidElement(child)) {
-      return React.cloneElement(child, props);
-    }
-    return child;
-  });
-};
 
 //#Source https://bit.ly/2neWfJ2
 export const toKebabCase = (str) =>
