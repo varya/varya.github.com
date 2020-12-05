@@ -3,7 +3,6 @@ import React from "react";
 import Page from "../../templates/page/Page";
 import Paragraph from "../../components/--Paragraph";
 import Heading from "../../components/--Heading";
-import Link from "../../components/--Link";
 import { Text } from "grommet";
 
 import heroImage from "./hero-kickstart.jpg";
@@ -16,17 +15,13 @@ const HeroContent = () => (
     size="large"
     margin={{ top: "auto" }}
   >
-    <Text size="inherit" color="brand">
-      Design Systems
-    </Text>
     <Text size="inherit" color="accent">
-      {" "}
-      services
+      Design systems strategy
     </Text>
   </Heading>
 );
 
-const DesignSystems = () => (
+const Strategy = () => (
   <Page
     hero={{
       props: {
@@ -52,20 +47,6 @@ const DesignSystems = () => (
       cycle of your design system and provide your personnel with extensive
       guides for the future support.
     </Paragraph>
-    <Heading level={2}>Design system architecture and infrastructure</Heading>
-    <Paragraph>
-      Whenever you already have a design system or are looking for a technical
-      solution for the very first version of it, you will need foundational work
-      for it. Meaning, setting up the architecture and infrastructure of the
-      system that would support its operations and growth. Well done, such
-      foundational work{" "}
-      <Link to="https://www.abstract.com/blog/design-system-buy-in">
-        “contributes intangible, long-term results, such as increasing the
-        velocity of feature launches”
-      </Link>
-    </Paragraph>
-    <Heading level={2}>Design system production</Heading>
-    <Paragraph>_____TODO______</Paragraph>
     <Heading level={2}>Boosting a design system</Heading>
     <Paragraph>
       Leveling up an existing design system is one of the hardest but also my
@@ -84,4 +65,4 @@ const DesignSystems = () => (
   </Page>
 );
 
-export default DesignSystems;
+export default Strategy;

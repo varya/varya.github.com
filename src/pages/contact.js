@@ -17,11 +17,8 @@ const HeroContent = () => (
       size="large"
       margin="small"
     >
-      <Text size="inherit" color="accent">
-        Let&apos;s&nbsp;
-      </Text>
       <Text size="inherit" color="brand">
-        Talk!
+        Let&apos;s Talk!
       </Text>
     </Heading>
     <Box>
@@ -39,7 +36,7 @@ const HeroContent = () => (
 );
 
 const Contact = () => (
-  <Page hero={{ props: { background: "neutral" }, content: HeroContent }}>
+  <Page hero={{ props: { background: "light-8" }, content: HeroContent }}>
     <Paragraph>
       Need to talk face2face? Book a video session with me via{" "}
       <Link to="https://calendly.com/var_ya">Calendly</Link>: I keep my calendar
