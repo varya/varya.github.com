@@ -113,9 +113,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions;
-  const postTemplate = path.resolve("./src/templates/post/Post.js");
-  const blogTemplate = path.resolve("./src/templates/blog/Blog.js");
-  const tagTemplate = path.resolve("./src/templates/tag/TagIndex.js");
+  const postTemplate = path.resolve("./src/templates/Post.js");
+  const blogTemplate = path.resolve("./src/templates/BlogIndex.js");
+  const tagTemplate = path.resolve("./src/templates/TagIndex.js");
 
   const postsData = await graphql(`
     query {

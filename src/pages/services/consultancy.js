@@ -2,7 +2,7 @@ import React from "react";
 
 import { Text } from "grommet";
 import { Heading, Paragraph, Widget, WidgetContainer } from "@components";
-import Page from "@templates";
+import Page from "@templates/Page";
 
 import heroImage from "./hero-consultancy.jpg";
 

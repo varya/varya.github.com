@@ -2,7 +2,7 @@ import React from "react";
 
 import { Text } from "grommet";
 import { Heading, Link, Paragraph } from "@components";
-import Page from "@templates";
+import Page from "@templates/Page";
 
 import heroImage from "./hero-ui-components.jpg";
 

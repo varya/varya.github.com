@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Box, Text } from "grommet";
 import { Heading, Paragraph } from "@components";
-import Page from "@templates";
+import Page from "@templates/Page";
 
 import heroImage from "./hero-audit.jpg";
 
