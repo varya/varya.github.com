@@ -13,6 +13,7 @@ export { default as Pagination } from "./--Pagination";
 export { default as Paragraph } from "./--Paragraph";
 export { default as PostHeader } from "./--PostHeader";
 export { default as PrevNextNav } from "./--PrevNextNav";
+export { default as Seo } from "./Seo";
 export { default as SocialLinks } from "./--SocialLinks";
 export { default as Tag } from "./--Tag";
 export { default as Widget } from "./--Widget";

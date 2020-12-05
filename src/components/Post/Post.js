@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import TextBlock from "../TextBlock";
 import Comments from "../Comments";
+import TextBlock from "../TextBlock";
 import NextPrev from "./NextPrev";
 
 const Post = (props) => {

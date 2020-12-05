@@ -1,3 +1,6 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 import {
   Button,
   Grommet,
@@ -5,11 +8,10 @@ import {
   Nav,
   ResponsiveContext,
 } from "grommet";
-import PropTypes from "prop-types";
-import React from "react";
-import Link from "../--Link";
-import theme from "../theme";
 import { deepMerge } from "grommet/utils";
+import { Link } from "@components";
+
+import theme from "../theme";
 
 const menuData = [
   { label: "Home", href: "/" },

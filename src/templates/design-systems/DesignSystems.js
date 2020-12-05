@@ -2,13 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Text } from "grommet";
-import Layout from "../../components/--Layout";
-import Paragraph from "../../components/--Paragraph";
-import Heading from "../../components/--Heading";
-import Widget from "../../components/--Widget";
-import WidgetContainer from "../../components/--WidgetContainer";
-import Pagination from "../../components/--Pagination";
 import { Box } from "grommet";
+import {
+  Heading,
+  Layout,
+  Pagination,
+  Paragraph,
+  Widget,
+  WidgetContainer,
+} from "@components";
 
 const DesignSystems = ({ posts }) => (
   <Layout>

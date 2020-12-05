@@ -4,13 +4,12 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import Prompt from "../Prompt";
 import Article from "../Article";
-import TextBlock from "../TextBlock";
 import BreadCrumbs from "../BreadCrumbs";
 import GithubEdit from "../GithubEdit";
+import Prompt from "../Prompt";
 import Seo from "../Seo";
-
+import TextBlock from "../TextBlock";
 import PageCommon from "./Page--common";
 
 export default function PageTemplate({

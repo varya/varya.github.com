@@ -1,5 +1,7 @@
-import { Box } from "grommet";
 import React from "react";
+
+import { Box } from "grommet";
+
 import Logo from "./Logo";
 
 export default {

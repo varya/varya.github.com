@@ -1,6 +1,8 @@
 import React from "react";
+
+import { Box, Heading } from "grommet";
+
 import Paragraph from "./Paragraph.js";
-import { Heading, Box } from "grommet";
 
 export default {
   title: "Typography/Paragraph",

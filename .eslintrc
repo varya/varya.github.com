@@ -9,7 +9,17 @@
   "ignorePatterns": ["public", ".cache", "node_modules"],
   "rules": {
     "strict": 0,
-    "no-console": 1
+    "no-console": 1,
+     "simple-import-sort/imports": [
+      2,
+      {
+        "groups": [    
+          ["^react$", "^prop-types$"], ["^gatsby", "^@mdx", "^styled-components$", "^grommet", "^@components", "^@templates"], ["^\\.", "^"]
+        ]
+      }
+    ],
+    "sort-imports": 0,
+    "import/order": 0,
   },
   "extends": [
     "eslint:recommended",
@@ -19,6 +29,13 @@
   "settings": {
     "react": {
       "version": "detect"
+    }, 
+    "import/resolver": {
+      "alias": [
+        ["@components", "./src/components"]
+      ]
     }
-  }
+  },
+  "plugins": ["simple-import-sort"]
+
 }

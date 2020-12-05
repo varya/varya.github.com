@@ -1,8 +1,8 @@
 import React from "react";
 
+import { Heading, Paragraph } from "@components";
+
 import Hero from "./Hero";
-import Paragraph from "../--Paragraph";
-import Heading from "../--Heading";
 
 export default {
   title: "Components/Hero",

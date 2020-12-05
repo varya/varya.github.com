@@ -1,5 +1,7 @@
-import { Box } from "grommet";
 import React from "react";
+
+import { Box } from "grommet";
+
 import Header from "./Header.js";
 
 export default {

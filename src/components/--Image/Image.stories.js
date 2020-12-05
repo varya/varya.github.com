@@ -1,4 +1,5 @@
 import React from "react";
+
 import Image from "./Image.js";
 
 export default {
@@ -10,6 +11,7 @@ export const Default = (args) => (
     <img src={args.src} alt={args.alt} />
   </Image>
 );
+
 Default.args = {
   src: "https://source.unsplash.com/random",
   alt: "Sample alt text",

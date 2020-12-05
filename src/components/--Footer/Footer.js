@@ -1,15 +1,16 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 import {
-  Grid,
   Box,
   Button,
   Footer as GrommetFooter,
-  Text,
+  Grid,
   ResponsiveContext,
+  Text,
 } from "grommet";
-import React from "react";
-import PropTypes from "prop-types";
-import Paragraph from "../--Paragraph";
-import SocialLinks from "../--SocialLinks";
+import { Paragraph, SocialLinks } from "@components";
+
 /**
  * Footer component
  *

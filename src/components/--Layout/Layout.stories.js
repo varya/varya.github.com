@@ -1,5 +1,7 @@
-import { Paragraph } from "grommet";
 import React from "react";
+
+import { Paragraph } from "grommet";
+
 import Layout from "./Layout.js";
 
 export default {

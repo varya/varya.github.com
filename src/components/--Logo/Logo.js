@@ -1,6 +1,8 @@
+import React from "react";
+
 import { Box, Grommet, Text } from "grommet";
 import { deepMerge } from "grommet/utils";
-import React from "react";
+
 import theme from "../theme";
 /**
  * Logo

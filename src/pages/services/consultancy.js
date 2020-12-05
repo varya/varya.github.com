@@ -1,11 +1,8 @@
 import React from "react";
 
-import Page from "../../templates/page/Page";
-import WidgetContainer from "../../components/--WidgetContainer";
-import Widget from "../../components/--Widget";
-import Paragraph from "../../components/--Paragraph";
-import Heading from "../../components/--Heading";
 import { Text } from "grommet";
+import { Heading, Paragraph, Widget, WidgetContainer } from "@components";
+import Page from "@templates";
 
 import heroImage from "./hero-consultancy.jpg";
 

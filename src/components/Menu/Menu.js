@@ -2,10 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Link } from "gatsby";
-
 import styled from "styled-components";
-import { colorScheme } from "../Colors/Colors.js";
 
+import { colorScheme } from "../Colors/Colors.js";
 import FaHome from "react-icons/lib/fa/home";
 import FaTag from "react-icons/lib/fa/tag";
 

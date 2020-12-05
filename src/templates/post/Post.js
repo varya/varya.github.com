@@ -5,16 +5,21 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
+import { Box, Button, Text } from "grommet";
 
+import GithubEdit from "../../components/--GithubEdit";
+import Heading from "../../components/--Heading";
+import Hero from "../../components/--Hero";
+import Image from "../../components/--Image";
 import Layout from "../../components/--Layout";
+import Link from "../../components/--Link";
 import Paragraph from "../../components/--Paragraph";
 import PostHeader from "../../components/--PostHeader";
-import Link from "../../components/--Link";
-import Image from "../../components/--Image";
+import PrevNextNav from "../../components/--PrevNextNav";
 import Tag from "../../components/--Tag";
-import Hero from "../../components/--Hero";
 import Widget from "../../components/--Widget";
 import WidgetContainer from "../../components/--WidgetContainer";
+<<<<<<< HEAD
 import Heading from "../../components/--Heading";
 import GithubEdit from "../../components/--GithubEdit";
 import PrevNextNav from "../../components/--PrevNextNav";
@@ -35,6 +40,8 @@ const globalMdxComponents = {
 };
 import { toKebabCase } from "utils";
 import { Box, Button, Text } from "grommet";
+=======
+>>>>>>> refactor: sort imports and import reexported components
 
 const globalMdxComponents = {
   Box,

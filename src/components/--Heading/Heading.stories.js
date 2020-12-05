@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Heading from "./Heading.js";
+
 import { Box, Grid } from "grommet";
+
+import Heading from "./Heading.js";
 export default {
   title: "Typography/Heading",
   component: Heading,

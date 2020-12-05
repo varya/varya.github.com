@@ -1,20 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  FacebookShareButton,
-  GooglePlusShareButton,
-  LinkedinShareButton,
-  TwitterShareButton,
-  FacebookShareCount,
-  GooglePlusShareCount,
-  LinkedinShareCount,
-  FacebookIcon,
-  TwitterIcon,
-  GooglePlusIcon,
-  LinkedinIcon,
-} from "react-share";
 
 import config from "../../../content/meta/config";
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  FacebookShareCount,
+  GooglePlusIcon,
+  GooglePlusShareButton,
+  GooglePlusShareCount,
+  LinkedinIcon,
+  LinkedinShareButton,
+  LinkedinShareCount,
+  TwitterIcon,
+  TwitterShareButton,
+} from "react-share";
 
 const PostShare = (props) => {
   const {
