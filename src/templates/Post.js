@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -19,7 +18,6 @@ import PrevNextNav from "../../components/--PrevNextNav";
 import Tag from "../../components/--Tag";
 import Widget from "../../components/--Widget";
 import WidgetContainer from "../../components/--WidgetContainer";
-<<<<<<< HEAD
 import Heading from "../../components/--Heading";
 import GithubEdit from "../../components/--GithubEdit";
 import PrevNextNav from "../../components/--PrevNextNav";
@@ -41,7 +39,21 @@ const globalMdxComponents = {
 import { toKebabCase } from "utils";
 import { Box, Button, Text } from "grommet";
 =======
->>>>>>> refactor: sort imports and import reexported components
+import {
+  GithubEdit,
+  Heading,
+  Hero,
+  Image,
+  Layout,
+  Link,
+  Paragraph,
+  PostHeader,
+  PrevNextNav,
+  Tag,
+  Widget,
+  WidgetContainer,
+} from "@components";
+>>>>>>> chore: flatten/clean templates folder:src/templates/Post.js
 
 const globalMdxComponents = {
   Box,
@@ -55,6 +67,7 @@ const globalMdxComponents = {
   Link,
   Image,
 };
+
 const _Heading = (level) => {
   const component = ({ children }) => (
     <Heading level={level}>{children}</Heading>
