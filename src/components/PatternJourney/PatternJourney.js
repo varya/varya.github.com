@@ -1,11 +1,12 @@
 import React from "react";
+
 import styled from "styled-components";
-import breakpoint from "styled-components-breakpoint";
-import Spider from "rc-spider";
-import data from "./PatternJourney.data.js";
-import FaClose from "react-icons/lib/fa/close";
 
 import { colorScheme } from "../Colors/Colors.js";
+import data from "./PatternJourney.data.js";
+import Spider from "rc-spider";
+import FaClose from "react-icons/lib/fa/close";
+import breakpoint from "styled-components-breakpoint";
 
 const { Node, Text, Link, Rect } = Spider.Shape;
 const { darken } = Spider.Color;

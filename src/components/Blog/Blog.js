@@ -1,7 +1,8 @@
-import PropTypes from "prop-types";
 import React from "react";
+import PropTypes from "prop-types";
+
+import { graphql, StaticQuery } from "gatsby";
 import styled from "styled-components";
-import { StaticQuery, graphql } from "gatsby";
 
 import Item from "./Item";
 

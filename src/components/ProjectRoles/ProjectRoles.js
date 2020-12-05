@@ -1,14 +1,14 @@
 import React from "react";
 // eslint-disable-next-line
 import PropTypes from "prop-types";
+
 import styled from "styled-components";
 
 import { colorScheme } from "../Colors/Colors.js";
-
-import Developer from "./developer.svg";
-import Designer from "./designer.svg";
-import Owner from "./owner.svg";
 import Business from "./business.svg";
+import Designer from "./designer.svg";
+import Developer from "./developer.svg";
+import Owner from "./owner.svg";
 
 const Container = styled.span`
   width: 150px;

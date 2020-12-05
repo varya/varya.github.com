@@ -1,16 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { StaticQuery, graphql } from "gatsby";
-import styled from "styled-components";
-import breakpoint from "styled-components-breakpoint";
+
+import { graphql, StaticQuery } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
-import Children from "react-children-utilities";
-// eslint-disable-next-line
-import Typography from "../Typography";
-import Header from "../Header";
+import styled from "styled-components";
+
 import Footer from "../Footer";
+import Header from "../Header";
 import { LayoutSimple } from "../Layout/Layout";
 import Prompt from "../Prompt";
+// eslint-disable-next-line
+import Typography from "../Typography";
+import Children from "react-children-utilities";
+import breakpoint from "styled-components-breakpoint";
 
 export const SiteContainer = styled.div`
   ${breakpoint("desktop")`

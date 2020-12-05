@@ -1,7 +1,9 @@
 import React from "react";
+
 import { Box } from "grommet";
-import Tag from "./Tag";
+
 import theme from "../theme";
+import Tag from "./Tag";
 
 export default {
   title: "Components/Tag",

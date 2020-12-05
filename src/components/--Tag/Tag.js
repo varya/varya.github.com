@@ -1,9 +1,10 @@
-import { Button } from "grommet";
-import PropTypes from "prop-types";
 import React from "react";
-import Link from "../--Link";
+import PropTypes from "prop-types";
 
-const Tag = ({ name, slug = name, ...props }) => {
+import { Button } from "grommet";
+import { Link } from "@components";
+
+const Tag = ({ name, slug, ...props }) => {
   return (
     <Link to={`/blog/${slug}`}>
       <Button

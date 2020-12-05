@@ -1,10 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import SEO from "../../components/Seo";
-import Layout from "../../components/--Layout";
 import { Box } from "grommet";
-import Hero from "../../components/--Hero";
+import { Hero, Layout, SEO } from "@components";
 
 const Page = ({ children, hero, seo }) => {
   const { title, keywords } = { ...seo };

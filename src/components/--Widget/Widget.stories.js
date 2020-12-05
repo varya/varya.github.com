@@ -1,6 +1,7 @@
 import React from "react";
-import Widget from "./Widget.js";
+
 import WidgetContainer from "../--WidgetContainer";
+import Widget from "./Widget.js";
 
 export default {
   title: "Composed/Widget",

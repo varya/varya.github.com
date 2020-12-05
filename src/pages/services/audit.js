@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Page from "../../templates/page/Page";
-import Paragraph from "../../components/--Paragraph";
-import Heading from "../../components/--Heading";
-import { Text, Box } from "grommet";
+import { Box, Text } from "grommet";
+import { Heading, Paragraph } from "@components";
+import Page from "@templates";
 
 import heroImage from "./hero-audit.jpg";
 

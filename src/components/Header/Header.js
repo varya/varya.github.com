@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
-import { grid } from "styled-components-grid";
 
-import Menu from "../Menu";
+import styled from "styled-components";
+
 import Logo from "../Logo";
-import Header from "../--Header";
+import Menu from "../Menu";
+import { grid } from "styled-components-grid";
 const Container = styled.div`
   ${grid({})}
   margin-top: 1em;
@@ -27,25 +27,25 @@ const RightSide = styled.div`
   })}
 `;
 
-// class Header extends React.Component {
-//   render() {
-//     const { pages, path } = this.props;
+class Header extends React.Component {
+  render() {
+    const { pages, path } = this.props;
 
-//     return (
-//       <Container>
-//         <LeftSide>
-//           <Logo />
-//         </LeftSide>
-//         <RightSide>
-//           <Menu path={path} pages={pages} />
-//         </RightSide>
-//       </Container>
-//     );
-//   }
-// }
+    return (
+      <Container>
+        <LeftSide>
+          <Logo />
+        </LeftSide>
+        <RightSide>
+          <Menu path={path} pages={pages} />
+        </RightSide>
+      </Container>
+    );
+  }
+}
 
-// Header.propTypes = {
-//   pages: PropTypes.array,
-//   path: PropTypes.string,
-// };
+Header.propTypes = {
+  pages: PropTypes.array,
+  path: PropTypes.string,
+};
 export default Header;

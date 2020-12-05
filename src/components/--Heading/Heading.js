@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Heading as GrommetHeading } from "grommet";
+
 import styled from "styled-components";
+import { Heading as GrommetHeading } from "grommet";
 
 /**
  * A wrapper arounf Grommet heading with additional properties

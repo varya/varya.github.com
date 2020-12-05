@@ -1,8 +1,10 @@
 import React from "react";
-import theme from "../theme";
+
+import { Button, Grommet, Nav } from "grommet";
 import { deepMerge } from "grommet/utils";
 import { Facebook, Linkedin, Mail, Twitter } from "grommet-icons";
-import { Button, Nav, Grommet } from "grommet";
+
+import theme from "../theme";
 
 /**
  * Social buttons

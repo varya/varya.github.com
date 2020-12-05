@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Paragraph as GrommetParagraph } from "grommet";
+
 import styled from "styled-components";
+import { Paragraph as GrommetParagraph } from "grommet";
 
 /**
  * A paragraph of text inside the post

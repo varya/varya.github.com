@@ -1,6 +1,7 @@
-import { Box } from "grommet";
-import PropTypes from "prop-types";
 import React from "react";
+import PropTypes from "prop-types";
+
+import { Box } from "grommet";
 
 /**
  * A wrapper for meta tags, providing separators.

@@ -1,12 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import styled from "styled-components";
 import { Box, Stack, Text } from "grommet";
-import Image from "../--Image";
-import Paragraph from "../--Paragraph";
-import Heading from "../--Heading";
-import Link from "../--Link";
 import { Calendar } from "grommet-icons";
+import { Heading, Image, Link, Paragraph } from "@components";
 
 /**
  * Post Preview widget with cover image and excerpt
