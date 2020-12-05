@@ -301,3 +301,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 };
+
+// https://levelup.gitconnected.com/how-to-set-up-import-aliases-for-gatsby-32398ae67e7f
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "@components": path.resolve(__dirname, "src/components"),
+        "@templates": path.resolve(__dirname, "src/templates"),
+        "@static": path.resolve(__dirname, "static"),
+      },
+    },
+  });
+};
