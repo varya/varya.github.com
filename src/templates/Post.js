@@ -46,7 +46,18 @@ const _Heading = (level) => {
 
 // Apply styling to excerpt
 const _div = ({ "data-excerpt": dataExcerpt, children }) =>
-  dataExcerpt ? <Paragraph lead>{children}</Paragraph> : <div>{children}</div>;
+  dataExcerpt ? (
+    <Paragraph as="div" lead>
+      {children}
+    </Paragraph>
+  ) : (
+    <div>{children}</div>
+  );
+
+_div.propTypes = {
+  "data-excerpt": PropTypes.string,
+  children: PropTypes.node,
+};
 
 const postComponents = {
   h1: _Heading(1),
@@ -97,7 +108,6 @@ const Post = ({
           fill="horizontal"
           justify="center"
           margin={{ bottom: "auto" }}
-          wrap="true"
           pad={{ vertical: "medium" }}
         >
           {tags &&
@@ -113,8 +123,8 @@ const Post = ({
         </Box>
         <PrevNextNav
           flex={false}
-          prevSlug={`/${prev && prev.fields.slug}`}
-          nextSlug={`/${next && next.fields.slug}`}
+          prevSlug={prev && `/${prev.fields.slug}`}
+          nextSlug={next && `/${next.fields.slug}`}
           prevTitle={prev && prev.frontmatter.title}
           nextTitle={next && next.frontmatter.title}
           pad={{ vertical: "medium" }}
@@ -125,7 +135,12 @@ const Post = ({
   );
 };
 Post.propTypes = {
-  location: PropTypes.any,
+  data: PropTypes.object,
+  pageContext: PropTypes.shape({
+    prev: PropTypes.object,
+    next: PropTypes.object,
+    fileSourceUrl: PropTypes.string,
+  }),
 };
 
 export default Post;
