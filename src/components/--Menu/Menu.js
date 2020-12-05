@@ -145,7 +145,7 @@ MenuItem.propTypes = {
   item: PropTypes.shape({
     label: PropTypes.string.isRequired,
     href: PropTypes.string,
-    children: PropTypes.array,
+    children: PropTypes.node,
   }),
 };
 Menu.propTypes = {
@@ -153,7 +153,7 @@ Menu.propTypes = {
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       href: PropTypes.string,
-      children: PropTypes.array,
+      children: PropTypes.node,
     })
   ),
   current: PropTypes.string,

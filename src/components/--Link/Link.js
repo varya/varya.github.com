@@ -56,6 +56,7 @@ const Link = ({ children, to, activeClassName, partiallyActive, ...other }) => {
 };
 
 Link.propTypes = {
+  as: PropTypes.node,
   to: PropTypes.string,
   children: PropTypes.node,
   activeClassName: PropTypes.string,

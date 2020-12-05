@@ -83,5 +83,5 @@ export default Footer;
 
 ResponsiveGrid.propTypes = {
   children: PropTypes.node,
-  areas: PropTypes.array,
+  areas: PropTypes.object,
 };
