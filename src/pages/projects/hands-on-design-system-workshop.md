@@ -1,5 +1,6 @@
 ---
 title: Workshop “Hands on with a design system”
+type: workhop
 meta:
   desc: >
     A full-day workshop about building a design system and a pattern library in a multidisciplinary team

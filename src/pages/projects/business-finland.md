@@ -1,5 +1,6 @@
 ---
 title: Business Finland Design System
+type: job
 meta:
   desc: >
     TODO

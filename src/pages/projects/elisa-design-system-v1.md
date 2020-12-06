@@ -1,5 +1,6 @@
 ---
 title: Elisa design system (2017-2018)
+type: job
 meta:
   desc: >
     Design system for top telecommunication and digital company in Finland

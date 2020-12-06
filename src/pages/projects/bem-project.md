@@ -1,5 +1,6 @@
 ---
 title: BEM project
+type: study
 meta:
   desc: >
     My contribution to BEM project
