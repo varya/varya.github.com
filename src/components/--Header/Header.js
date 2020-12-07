@@ -11,17 +11,19 @@ const Header = () => {
   return (
     <ResponsiveContext.Consumer>
       {(size) => (
-        <GrommetHeader
-          responsive
-          pad="medium"
-          height={size === "small" ? "48px" : "62px"}
-          direction="row"
-          fill="horizontal"
-          elevation="medium"
-        >
-          <Logo size={size === "small" ? "small" : "medium"} />
-          <Menu />
-        </GrommetHeader>
+        <Box direction="row" fill="horizontal" elevation="medium">
+          <GrommetHeader
+            width="xlarge"
+            responsive
+            pad="medium"
+            height={size === "small" ? "48px" : "62px"}
+            direction="row"
+            margin={{ horizontal: "auto" }}
+          >
+            <Logo size={size === "small" ? "small" : "medium"} />
+            <Menu />
+          </GrommetHeader>
+        </Box>
       )}
     </ResponsiveContext.Consumer>
   );
