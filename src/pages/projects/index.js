@@ -22,11 +22,7 @@ const HeroContent = () => (
   </>
 );
 
-const colorByType = {
-  study: "accent",
-  workshop: "neutral",
-  job: "brand",
-};
+const colors = ["accent", "neutral", "brand"];
 const Projects = ({ data }) => {
   const posts = data.projects.edges;
   return (
@@ -36,18 +32,19 @@ const Projects = ({ data }) => {
         content: HeroContent,
       }}
     >
-      <WidgetContainer items={{ small: 1, medium: 2, large: 3 }}>
-        {posts.map((post) => {
-          const { title, type } = post.node.frontmatter;
+      <WidgetContainer items={{ small: 1, medium: 2, large: 2 }}>
+        {posts.map((post, index) => {
+          const { title } = post.node.frontmatter;
           const { slug } = post.node.fields;
           const excerpt = post.node.frontmatter.meta.desc || post.node.excerpt;
+          const background = colors[index % 3];
           return (
             <Widget
               key={title}
               title={title}
               slug={`/projects${slug}`}
               excerpt={excerpt}
-              background={colorByType[type]}
+              background={background}
             />
           );
         })}
@@ -78,7 +75,6 @@ export const projectsQuery = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM YYYY")
-            type
             meta {
               desc
             }
