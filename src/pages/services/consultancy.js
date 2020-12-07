@@ -17,7 +17,7 @@ const HeroContent = () => (
     size="large"
     margin={{ top: "auto" }}
   >
-    <Text size="inherit" color="brand">
+    <Text size="inherit" color="accent">
       Consultancy
     </Text>
   </Heading>

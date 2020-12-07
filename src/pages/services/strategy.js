@@ -16,7 +16,7 @@ const HeroContent = () => (
     margin={{ top: "auto" }}
   >
     <Text size="inherit" color="accent">
-      Design systems strategy
+      Design Systems Strategy
     </Text>
   </Heading>
 );

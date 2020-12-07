@@ -16,10 +16,7 @@ const HeroContent = () => (
     margin={{ top: "auto" }}
   >
     <Text size="inherit" color="accent">
-      Supervising{" "}
-    </Text>
-    <Text size="inherit" color="brand">
-      the teams
+      Supervising The Teams
     </Text>
   </Heading>
 );

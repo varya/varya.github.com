@@ -11,7 +11,7 @@ import heroImage from "./hero-ui-components.jpg";
 const HeroContent = () => (
   <Heading level={1} alignSelf="center" responsive margin={{ top: "auto" }}>
     <Text size="inherit" color="accent">
-      Design systems and components production
+      Design Systems and Components Production
     </Text>
   </Heading>
 );
