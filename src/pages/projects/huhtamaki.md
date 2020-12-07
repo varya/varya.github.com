@@ -1,6 +1,7 @@
 ---
 title: Huhtamaki project
 type: study
+date: 2019-01-01
 meta:
   desc: >
     --todo https://www.adithyadesign.com/work/delivery-packaging

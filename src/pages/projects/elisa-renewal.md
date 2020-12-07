@@ -1,6 +1,8 @@
 ---
 title: Elisa design System Renewal
 type: job
+date: 2020-12-01
+
 meta:
   desc: >
     Renewal of design system at Elisa which took place in 2020 and continues at the moment
