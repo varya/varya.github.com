@@ -1,6 +1,5 @@
 ---
 title: BEM project
-type: study
 date: 2016-12-01
 meta:
   desc: >

@@ -1,6 +1,5 @@
 ---
 title: Elisa design System Renewal
-type: job
 date: 2020-12-01
 
 meta:

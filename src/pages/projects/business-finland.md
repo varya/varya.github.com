@@ -1,6 +1,5 @@
 ---
 title: Business Finland Design System
-type: job
 date: 2018-12-01
 meta:
   desc: >

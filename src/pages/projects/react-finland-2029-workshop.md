@@ -1,7 +1,6 @@
 ---
 title: Workshop at React Finland 2020
 date: 2020-08-01
-type: workshop
 meta:
   desc: >
     A workshop covering all the main aspects of design system

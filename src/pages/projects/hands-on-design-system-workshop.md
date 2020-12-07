@@ -1,6 +1,5 @@
 ---
 title: Workshop “Hands on with a design system”
-type: workshop
 date: 2019-11-01
 meta:
   desc: >
