@@ -1,6 +1,6 @@
 ---
 title: BEM project
-date: 2016-12-01
+date: 2013-08-31
 meta:
   desc: >
     My contribution to BEM project

@@ -1,6 +1,6 @@
 ---
 title: Workshop “Hands on with a design system”
-date: 2019-11-01
+date: 2018-06-01
 meta:
   desc: >
     A full-day workshop about building a design system and a pattern library in a multidisciplinary team
