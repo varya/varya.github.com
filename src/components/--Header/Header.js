@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Header as GrommetHeader, ResponsiveContext } from "grommet";
+import { Box, Header as GrommetHeader, ResponsiveContext } from "grommet";
 import { Logo, Menu } from "@components";
 
 /**

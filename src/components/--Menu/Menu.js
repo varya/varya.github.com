@@ -1,8 +1,12 @@
 import React from "react";
+import { useRef, useState } from "react";
 import PropTypes from "prop-types";
 
+import styled from "styled-components";
 import {
+  Box,
   Button,
+  DropButton,
   Grommet,
   Menu as GrommetMenu,
   Nav,
@@ -13,10 +17,21 @@ import { Link } from "@components";
 
 import theme from "../theme";
 
+// https://github.com/grommet/grommet/blob/05f6d834dab28cea56d352460aa6f4ac6f041c3f/src/js/components/Menu/Menu.js#L19
+const ContainerBox = styled(Box)`
+  max-height: inherit;
+  /* IE11 hack to get drop contents to not overflow */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    width: 100%;
+  }
+  ${(props) => props.theme.menu.extend};
+`;
+
 const menuData = [
   { label: "Home", href: "/" },
   {
     label: "Services",
+    href: "/services",
     children: [
       // { label: "Speaking", href: "/speaking" },
       { label: "Consultancy", href: "/services/consultancy" },
@@ -94,7 +109,12 @@ const Menu = ({ items = menuData, current, mode = "horizontal", ...props }) => {
       <ResponsiveContext.Consumer>
         {(size) =>
           size === "small" ? (
-            <GrommetMenu label="Menu" items={flatten(items)} />
+            <GrommetMenu
+              justify="end"
+              items={flatten(items)}
+              label="Menu"
+              dropAlign={{ right: "right", top: "bottom" }}
+            ></GrommetMenu>
           ) : (
             <Nav
               align="center"
@@ -126,16 +146,54 @@ const Menu = ({ items = menuData, current, mode = "horizontal", ...props }) => {
  */
 const MenuItem = ({ item, ...props }) => {
   const { label, href, children = [] } = item;
+  const targetRef = useRef();
+  const [open, setOpen] = useState(false);
+
   return children.length > 0 ? (
-    <GrommetMenu
-      style={{ paddingRight: 0 }}
-      a11yTitle="Navigation Menu"
-      dropProps={{ align: { top: "bottom", left: "left" } }}
-      {...props}
-      items={children.map((child) => Object.assign(child, { plain: true }))}
+    <Box
+      onMouseOver={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      onFocus={() => setOpen(true)}
+      onBlur={() => setOpen(false)}
     >
-      <Button plain key={label} {...props} label={label} color="brand" />
-    </GrommetMenu>
+      <Box ref={targetRef}>
+        {
+          <DropButton
+            a11yTitle="Navigation Menu"
+            key={item.label}
+            open={open}
+            onClose={() => setOpen(false)}
+            onOpen={() => setOpen(true)}
+            dropProps={{ target: targetRef.current }}
+            dropAlign={{ top: "bottom", left: "left" }}
+            dropContent={
+              <ContainerBox>
+                {children.map((childprops) => (
+                  <Box
+                    key={childprops.label}
+                    align="start"
+                    pad="small"
+                    direction="row"
+                    gap="medium"
+                  >
+                    <Button plain {...childprops} />
+                  </Box>
+                ))}
+              </ContainerBox>
+            }
+          >
+            <Button
+              plain
+              as={Link}
+              key={label}
+              to={href}
+              label={label}
+              {...props}
+            />
+          </DropButton>
+        }
+      </Box>
+    </Box>
   ) : (
     <Button plain as={Link} key={label} to={href} {...props} label={label} />
   );
