@@ -19,7 +19,7 @@
       }
     ],
     "sort-imports": 0,
-    "import/order": 0,
+    "import/order": 0
   },
   "extends": [
     "eslint:recommended",

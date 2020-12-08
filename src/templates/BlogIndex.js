@@ -27,7 +27,7 @@ const Blog = ({ data, pageContext }) => {
                   key={post.node.frontmatter.title}
                   image={cover && <Img {...cover.childImageSharp} />}
                   title={post.node.frontmatter.title}
-                  slug={post.node.fields.slug}
+                  slug={`/${post.node.fields.slug}`}
                   excerpt={post.node.excerpt}
                 />
               );

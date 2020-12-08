@@ -26,7 +26,7 @@ module.exports = {
         plugins: ["gatsby-remark-unwrap-images", "gatsby-remark-images"], //because of this: https://github.com/cedricdelpoux/gatsby-remark-unwrap-images/issues/2#issuecomment-526953234
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
-          default: path.resolve("./src/templates/post/PostSimple.js"),
+          default: path.resolve("./src/templates/PostSimple.js"),
         },
         gatsbyRemarkPlugins: [
           "gatsby-remark-unwrap-images",

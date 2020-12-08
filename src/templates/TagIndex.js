@@ -4,11 +4,7 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import { Box, Text } from "grommet";
-
-import Heading from "../components/--Heading";
-import Layout from "../components/--Layout";
-import Widget from "../components/--Widget";
-import WidgetContainer from "../components/--WidgetContainer";
+import { Heading, Layout, Widget, WidgetContainer } from "@components";
 
 const Tag = ({ data, pageContext }) => {
   const posts = data.posts.edges;
