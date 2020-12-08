@@ -2,19 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { MDXProvider } from "@mdx-js/react";
-
-import Layout from "../../components/--Layout";
-import Paragraph from "../../components/--Paragraph";
-import PostHeader from "../../components/--PostHeader";
-import Link from "../../components/--Link";
-import Image from "../../components/--Image";
-import Tag from "../../components/--Tag";
-import Hero from "../../components/--Hero";
-import Widget from "../../components/--Widget";
-import WidgetContainer from "../../components/--WidgetContainer";
-import Heading from "../../components/--Heading";
-import PrevNextNav from "../../components/--PrevNextNav";
 import { Box, Button, Text } from "grommet";
+import {
+  Heading,
+  Hero,
+  Image,
+  Layout,
+  Link,
+  Paragraph,
+  PostHeader,
+  PrevNextNav,
+  Tag,
+  Widget,
+  WidgetContainer,
+} from "@components";
 
 const globalMdxComponents = {
   Box,
