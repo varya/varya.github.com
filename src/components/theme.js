@@ -125,6 +125,7 @@ const theme = {
         },
       },
     },
+    extend: () => `max-width: 100%`,
   },
   button: {
     border: {
