@@ -26,7 +26,8 @@ module.exports = {
         plugins: ["gatsby-remark-unwrap-images", "gatsby-remark-images"], //because of this: https://github.com/cedricdelpoux/gatsby-remark-unwrap-images/issues/2#issuecomment-526953234
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
-          default: path.resolve("./src/templates/PostSimple.js"),
+          default: path.resolve("./src/templates/Post.js"),
+          projects: path.resolve("./src/templates/ProjectPost.js"),
         },
         gatsbyRemarkPlugins: [
           "gatsby-remark-unwrap-images",
@@ -61,24 +62,24 @@ module.exports = {
         path: `${__dirname}/content/life`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `pages`,
-        path: `${__dirname}/content/pages`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `pages`,
+    //     path: `${__dirname}/content/pages`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects`,
-        path: `${__dirname}/src/pages/projects`,
+        path: `${__dirname}/content/projects`,
       },
     },
     {
       resolve: `gatsby-plugin-page-creator`,
       options: {
-        path: `${__dirname}/content/pages`,
+        path: `${__dirname}/content/projects`,
       },
     },
     `gatsby-plugin-sharp`,
