@@ -17,15 +17,8 @@ const HeroContent = () => (
     size="large"
     margin={{ top: "auto" }}
   >
-    <Text size="inherit" color="brand">
-      Workshops
-    </Text>
     <Text size="inherit" color="accent">
-      {" "}
-      and{" "}
-    </Text>
-    <Text size="inherit" color="brand">
-      training
+      Workshops and Training
     </Text>
   </Heading>
 );

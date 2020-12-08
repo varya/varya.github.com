@@ -6,15 +6,17 @@ import Layout from "../../components/--Layout";
 import { Box } from "grommet";
 import Hero from "../../components/--Hero";
 
-const Page = ({ children, hero = {}, seo = {} }) => {
-  const { title, keywords } = seo;
-  const { props: heroProps, content } = hero;
+const Page = ({ children, hero, seo }) => {
+  const { title, keywords } = { ...seo };
+  const { props: heroProps, content } = { ...hero };
   return (
     <Layout>
-      <SEO title={title} keywords={keywords} defer={false} />
-      <Hero align="center" justify="between" {...heroProps}>
-        {React.createElement(content)}
-      </Hero>
+      {seo && <SEO title={title} keywords={keywords} defer={false} />}
+      {hero && (
+        <Hero align="center" justify="between" {...heroProps}>
+          {React.createElement(content)}
+        </Hero>
+      )}
       <Box width="xlarge" margin={{ horizontal: "auto" }} pad="medium">
         {children}
       </Box>

@@ -1,8 +1,8 @@
 import {
   Button,
+  Grommet,
   Menu as GrommetMenu,
   Nav,
-  Grommet,
   ResponsiveContext,
 } from "grommet";
 import PropTypes from "prop-types";
@@ -20,8 +20,11 @@ const menuData = [
       { label: "Consultancy", href: "/services/consultancy" },
       { label: "Team supervision", href: "/services/supervision" },
       { label: "Audit of design and development", href: "/services/audit" },
-      { label: "Design system services", href: "/services/design-systems" },
-      { label: "Development of UI components", href: "/services/development" },
+      { label: "Design systems strategy", href: "/services/strategy" },
+      {
+        label: "Design system and components production",
+        href: "/services/development",
+      },
       { label: "Workshops", href: "/services/workshops" },
     ],
   },
