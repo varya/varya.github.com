@@ -61,7 +61,7 @@ postComponents.h1.propTypes = {
   children: PropTypes.node,
 };
 
-const PostSimple = ({
+const ProjectPost = ({
   children,
   pageContext: {
     frontmatter: { title, subTitle, cover, tags, prev, next },
@@ -113,7 +113,7 @@ const PostSimple = ({
     </Layout>
   );
 };
-PostSimple.propTypes = {
+ProjectPost.propTypes = {
   children: PropTypes.node,
   pageContext: PropTypes.shape({
     frontmatter: PropTypes.shape({
@@ -127,4 +127,4 @@ PostSimple.propTypes = {
   }),
 };
 
-export default PostSimple;
+export default ProjectPost;
