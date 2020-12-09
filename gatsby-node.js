@@ -153,6 +153,29 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
+      projectPosts: allMdx(
+        filter: { fileAbsolutePath: { regex: "//projects//" } }
+        sort: { fields: [frontmatter___date], order: [DESC] }
+      ) {
+        edges {
+          node {
+            id
+            fileAbsolutePath
+            fields {
+              slug
+              prefix
+              level
+              fileRelativePath
+              lang
+            }
+            frontmatter {
+              title
+              subTitle
+              date
+            }
+          }
+        }
+      }
       ruPosts: allMdx(
         filter: {
           fileAbsolutePath: { regex: "//posts//" }
@@ -225,6 +248,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
   }
   const blogPosts = postsData.data.blogPosts.edges;
+  const projectPosts = postsData.data.projectPosts.edges;
 
   const otherPosts = [
     ...postsData.data.ruPosts.edges,
@@ -266,6 +290,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: slug,
+      component: postTemplate,
+      context: {
+        slug,
+      },
+    });
+  });
+
+  // Create all the old post which only need to be served t the urls, but do not need to appear in blog index.
+  projectPosts.forEach(({ node }) => {
+    const slug = node.fields.slug;
+    console.log(
+      "🚀 ~ file: gatsby-node.js ~ line 302 ~ projectPosts.forEach ~ slug",
+      slug
+    );
+
+    createPage({
+      path: "/projects" + slug,
       component: postTemplate,
       context: {
         slug,
