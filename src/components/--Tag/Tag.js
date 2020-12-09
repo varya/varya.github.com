@@ -2,24 +2,27 @@ import { Button } from "grommet";
 import PropTypes from "prop-types";
 import React from "react";
 import Link from "../--Link";
-const Tag = ({ name, color = undefined, ...props }) => {
+
+const Tag = ({ name, slug = name, ...props }) => {
   return (
-    <Button
-      primary
-      color={color}
-      fill={false}
-      basis="small"
-      size="small"
-      label={name}
-      as={Link}
-      to={`/blog/${name.toLowerCase()}`}
-      {...props}
-    />
+    <Link to={`/blog/${slug}`}>
+      <Button
+        primary
+        size="small"
+        fill={false}
+        basis="small"
+        pad="medium"
+        style={{ borderRadius: "20px" }}
+        label={name}
+        {...props}
+      />
+    </Link>
   );
 };
 
 Tag.propTypes = {
   name: PropTypes.string,
+  slug: PropTypes.string,
   color: PropTypes.string,
 };
 

@@ -18,6 +18,7 @@ import WidgetContainer from "../../components/--WidgetContainer";
 import Heading from "../../components/--Heading";
 import GithubEdit from "../../components/--GithubEdit";
 import PrevNextNav from "../../components/--PrevNextNav";
+import { toKebabCase } from "utils";
 import { Box, Button, Text } from "grommet";
 
 const globalMdxComponents = {
@@ -32,6 +33,7 @@ const globalMdxComponents = {
   Link,
   Image,
 };
+
 const _Heading = (level) => {
   const component = ({ children }) => (
     <Heading level={level}>{children}</Heading>
@@ -65,7 +67,8 @@ const Post = ({
   pageContext: { next, prev, fileSourceUrl },
 }) => {
   const { date, readingTime } = mdx.fields;
-  const { title, subTitle, cover, tags } = mdx.frontmatter;
+  const { title, subTitle, cover } = mdx.frontmatter;
+  const tags = mdx.frontmatter.tags && mdx.frontmatter.tags.split(",");
 
   return (
     <Layout>
@@ -97,7 +100,14 @@ const Post = ({
         >
           {tags &&
             tags.length > 0 &&
-            tags.map((tag) => <Tag key={tag} name={tag} margin="xsmall" />)}
+            tags.map((tag) => (
+              <Tag
+                key={tag}
+                name={tag.trim()}
+                slug={toKebabCase(tag)}
+                margin="xsmall"
+              />
+            ))}
         </Box>
         <PrevNextNav
           flex={false}
