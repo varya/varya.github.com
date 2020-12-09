@@ -1,12 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Box, Grommet } from "grommet";
+
+import Link from "gatsby-link";
+import { Box, Button, Grommet } from "grommet";
 import { deepMerge } from "grommet/utils";
-import { clamp, range } from "../../utils";
+
+import { clamp, range } from "../../common/utils";
 import theme from "../theme";
 import flattenChildren from "react-flatten-children";
+
 const path = require("path");
-import Link from "gatsby-link";
 
 /**
  * Responsive pagination component

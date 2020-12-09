@@ -1,12 +1,10 @@
 import React from "react";
 
-import Page from "../templates/page/Page";
-import { InlineWidget } from "react-calendly";
+import { Box, Button, Text } from "grommet";
+import { Heading, Link, Paragraph } from "@components";
+import Page from "@templates/Page";
 
-import Paragraph from "../components/--Paragraph";
-import Heading from "../components/--Heading";
-import Link from "../components/--Link";
-import { Box, Text, Button } from "grommet";
+import { InlineWidget } from "react-calendly";
 
 const HeroContent = () => (
   <>

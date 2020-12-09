@@ -1,22 +1,15 @@
-import { Box } from "grommet";
-import PropTypes from "prop-types";
 import React from "react";
+import PropTypes from "prop-types";
+
+import { Box } from "grommet";
+
+import { childrenWithProps } from "../../common/reactUtils";
 
 /**
  * A wrapper for meta tags, providing separators.
  * To be placed in post header.
  */
 const MetaGroup = ({ children }) => {
-  const childrenWithProps = React.Children.map(children, (child) => {
-    if (React.isValidElement(child)) {
-      return React.cloneElement(child, {
-        color: "text-invert",
-        size: "small",
-        weight: "bold",
-      });
-    }
-    return child;
-  });
   return (
     <>
       <Box
@@ -28,7 +21,11 @@ const MetaGroup = ({ children }) => {
         color="text-invert"
         alignContent="center"
       >
-        {childrenWithProps}
+        {childrenWithProps(children, {
+          color: "text-invert",
+          size: "small",
+          weight: "bold",
+        })}
       </Box>
     </>
   );

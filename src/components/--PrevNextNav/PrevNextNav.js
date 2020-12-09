@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import styled from "styled-components";
-import { Nav, Box, Text } from "grommet";
-import Link from "../--Link";
-import Heading from "../--Heading";
+import { Box, Nav, Text } from "grommet";
+import { Heading, Link } from "@components";
 
 /**
  * Navigation to previous/next post in blog

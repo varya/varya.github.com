@@ -1,6 +1,8 @@
 import React from "react";
-import Layout from "../components/--Layout";
+
 import { Box } from "grommet";
+
+import Layout from "../components/--Layout";
 import Avatar from "../components/Avatar";
 import SEO from "../components/Seo";
 

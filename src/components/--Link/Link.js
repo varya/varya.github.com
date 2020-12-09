@@ -1,9 +1,15 @@
-// @see: https://www.gatsbyjs.com/docs/gatsby-link/#reminder-use-link-only-for-internal-links
 import React from "react";
-import GatsbyLink from "gatsby-link"; //keep like that because of https://github.com/gatsbyjs/gatsby/issues/10668#issuecomment-546596273
 import PropTypes from "prop-types";
+
+import GatsbyLink from "gatsby-link"; //keep like that because of https://github.com/gatsbyjs/gatsby/issues/10668#issuecomment-546596273
 import styled from "styled-components";
 import { Anchor } from "grommet";
+
+/**
+ * A component resolving internal links to gatsby-link, and external - to <a> tag
+ * @see: https://www.gatsbyjs.com/docs/gatsby-link/#reminder-use-link-only-for-internal-links
+ * @param {boolean} unstyled
+ */
 
 const AnchorWithoutStyle = styled.div`
   &,
@@ -50,6 +56,7 @@ const Link = ({ children, to, activeClassName, partiallyActive, ...other }) => {
 };
 
 Link.propTypes = {
+  as: PropTypes.node,
   to: PropTypes.string,
   children: PropTypes.node,
   activeClassName: PropTypes.string,

@@ -5,10 +5,10 @@ import Roboto300Woff from "../../static/fonts/roboto-v20-latin_cyrillic-ext-300.
 import Roboto300Woff2 from "../../static/fonts/roboto-v20-latin_cyrillic-ext-300.woff2";
 import Roboto300WoffItalic from "../../static/fonts/roboto-v20-latin_cyrillic-ext-300italic.woff";
 import Roboto300Woff2Italic from "../../static/fonts/roboto-v20-latin_cyrillic-ext-300italic.woff2";
-import RobotoRegWoff from "../../static/fonts/roboto-v20-latin_cyrillic-ext-regular.woff";
-import RobotoRegWoff2 from "../../static/fonts/roboto-v20-latin_cyrillic-ext-regular.woff2";
 import Roboto900Woff from "../../static/fonts/roboto-v20-latin_cyrillic-ext-900.woff";
 import Roboto900Woff2 from "../../static/fonts/roboto-v20-latin_cyrillic-ext-900.woff2";
+import RobotoRegWoff from "../../static/fonts/roboto-v20-latin_cyrillic-ext-regular.woff";
+import RobotoRegWoff2 from "../../static/fonts/roboto-v20-latin_cyrillic-ext-regular.woff2";
 
 const theme = {
   name: "varya.me",

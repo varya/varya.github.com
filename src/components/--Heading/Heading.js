@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Heading as GrommetHeading } from "grommet";
+
 import styled from "styled-components";
+import { Heading as GrommetHeading } from "grommet";
 
 /**
  * A wrapper arounf Grommet heading with additional properties
@@ -37,12 +38,12 @@ const StyledHeading = styled(GrommetHeading)`
   }`}
 `;
 
-const Heading = (props) => <StyledHeading fill={true} {...props} />;
+const Heading = (props) => <StyledHeading {...props} />;
 
 Heading.propTypes = {
   textCase: PropTypes.string,
-  spaced: PropTypes.boolean,
-  underline: PropTypes.boolean,
+  spaced: PropTypes.bool,
+  underline: PropTypes.bool,
 };
 
 export default Heading;

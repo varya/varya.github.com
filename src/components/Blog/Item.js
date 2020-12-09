@@ -1,12 +1,13 @@
-import FaCalendar from "react-icons/lib/fa/calendar";
+import React from "react";
+import PropTypes from "prop-types";
+
 import { Link } from "gatsby";
 import Img from "gatsby-image";
-import PropTypes from "prop-types";
-import React from "react";
-
-import styled from "styled-components";
-import { grid } from "styled-components-grid";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import styled from "styled-components";
+
+import FaCalendar from "react-icons/lib/fa/calendar";
+import { grid } from "styled-components-grid";
 
 export const Container = styled.div`
   ${grid({})}

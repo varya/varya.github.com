@@ -1,3 +1,6 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 import {
   Button,
   Grommet,
@@ -5,11 +8,10 @@ import {
   Nav,
   ResponsiveContext,
 } from "grommet";
-import PropTypes from "prop-types";
-import React from "react";
-import Link from "../--Link";
-import theme from "../theme";
 import { deepMerge } from "grommet/utils";
+import { Link } from "@components";
+
+import theme from "../theme";
 
 const menuData = [
   { label: "Home", href: "/" },
@@ -143,7 +145,7 @@ MenuItem.propTypes = {
   item: PropTypes.shape({
     label: PropTypes.string.isRequired,
     href: PropTypes.string,
-    children: PropTypes.array,
+    children: PropTypes.node,
   }),
 };
 Menu.propTypes = {
@@ -151,7 +153,7 @@ Menu.propTypes = {
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       href: PropTypes.string,
-      children: PropTypes.array,
+      children: PropTypes.node,
     })
   ),
   current: PropTypes.string,

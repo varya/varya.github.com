@@ -3,12 +3,11 @@ import PropTypes from "prop-types";
 
 import { graphql } from "gatsby";
 
-import Seo from "../Seo";
-import Prompt from "../Prompt";
 import Article from "../Article";
-import Post from "../Post";
 import GithubEdit from "../GithubEdit";
-
+import Post from "../Post";
+import Prompt from "../Prompt";
+import Seo from "../Seo";
 import PageCommon from "./Page--common";
 
 export default function PostTemplate({

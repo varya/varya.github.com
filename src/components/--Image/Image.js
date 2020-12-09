@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
 
-import { Text, Anchor, Box } from "grommet";
+import styled from "styled-components";
+import { Anchor, Box, Text } from "grommet";
 
 /**
  * An image with optional caption

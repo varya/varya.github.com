@@ -1,6 +1,9 @@
-import { Box, Text } from "grommet";
 import React from "react";
+
+import { Box, Text } from "grommet";
+
 import MetaGroup from "./MetaGroup";
+
 export default {
   title: "Components/Meta Group",
   component: MetaGroup,

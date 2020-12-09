@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import styled from "styled-components";
 
+import Community from "./community.svg";
+import Processes from "./processes.svg";
 import SharedPractices from "./shared-practices.svg";
 import Tools from "./tools.svg";
-import Processes from "./processes.svg";
-import Community from "./community.svg";
 
 const Container = styled.span`
   width: 150px;

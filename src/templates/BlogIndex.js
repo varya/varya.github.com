@@ -1,14 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import { graphql } from "gatsby";
-
-import Layout from "../../components/--Layout";
-
-import Widget from "../../components/--Widget";
-import WidgetContainer from "../../components/--WidgetContainer";
-import Pagination from "../../components/--Pagination";
-import { ResponsiveContext } from "grommet";
 import Img from "gatsby-image";
+import { ResponsiveContext } from "grommet";
+import { Layout, Pagination, Widget, WidgetContainer } from "@components";
 
 const visiblePages = {
   small: 2,
@@ -31,7 +27,7 @@ const Blog = ({ data, pageContext }) => {
                   key={post.node.frontmatter.title}
                   image={cover && <Img {...cover.childImageSharp} />}
                   title={post.node.frontmatter.title}
-                  slug={post.node.fields.slug}
+                  slug={`/${post.node.fields.slug}`}
                   excerpt={post.node.excerpt}
                 />
               );

@@ -1,25 +1,26 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
-
-import Layout from "../../components/--Layout";
-import Paragraph from "../../components/--Paragraph";
-import PostHeader from "../../components/--PostHeader";
-import Link from "../../components/--Link";
-import Image from "../../components/--Image";
-import Tag from "../../components/--Tag";
-import Hero from "../../components/--Hero";
-import Widget from "../../components/--Widget";
-import WidgetContainer from "../../components/--WidgetContainer";
-import Heading from "../../components/--Heading";
-import GithubEdit from "../../components/--GithubEdit";
-import PrevNextNav from "../../components/--PrevNextNav";
-import { toKebabCase } from "utils";
 import { Box, Button, Text } from "grommet";
+import {
+  GithubEdit,
+  Heading,
+  Hero,
+  Image,
+  Layout,
+  Link,
+  Paragraph,
+  PostHeader,
+  PrevNextNav,
+  Tag,
+  Widget,
+  WidgetContainer,
+} from "@components";
+
+import { toKebabCase } from "../common/utils";
 
 const globalMdxComponents = {
   Box,
@@ -44,7 +45,18 @@ const _Heading = (level) => {
 
 // Apply styling to excerpt
 const _div = ({ "data-excerpt": dataExcerpt, children }) =>
-  dataExcerpt ? <Paragraph lead>{children}</Paragraph> : <div>{children}</div>;
+  dataExcerpt ? (
+    <Paragraph as="div" lead>
+      {children}
+    </Paragraph>
+  ) : (
+    <div>{children}</div>
+  );
+
+_div.propTypes = {
+  "data-excerpt": PropTypes.string,
+  children: PropTypes.node,
+};
 
 const postComponents = {
   h1: _Heading(1),
@@ -95,7 +107,6 @@ const Post = ({
           fill="horizontal"
           justify="center"
           margin={{ bottom: "auto" }}
-          wrap="true"
           pad={{ vertical: "medium" }}
         >
           {tags &&
@@ -111,10 +122,10 @@ const Post = ({
         </Box>
         <PrevNextNav
           flex={false}
-          prevSlug={`/${prev.fields.slug}`}
-          nextSlug={`/${next.fields.slug}`}
-          prevTitle={prev.frontmatter.title}
-          nextTitle={next.frontmatter.title}
+          prevSlug={prev && `/${prev.fields.slug}`}
+          nextSlug={next && `/${next.fields.slug}`}
+          prevTitle={prev && prev.frontmatter.title}
+          nextTitle={next && next.frontmatter.title}
           pad={{ vertical: "medium" }}
         />
         <GithubEdit link={fileSourceUrl} />
@@ -123,7 +134,12 @@ const Post = ({
   );
 };
 Post.propTypes = {
-  location: PropTypes.any,
+  data: PropTypes.object,
+  pageContext: PropTypes.shape({
+    prev: PropTypes.object,
+    next: PropTypes.object,
+    fileSourceUrl: PropTypes.string,
+  }),
 };
 
 export default Post;

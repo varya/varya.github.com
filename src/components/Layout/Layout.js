@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Grid, Cell } from "styled-css-grid";
+
 import styled from "styled-components";
+
 import breakpoint from "styled-components-breakpoint";
+import { Cell, Grid } from "styled-css-grid";
 
 const MyGrid = styled(Grid)`
   grid-template-areas:

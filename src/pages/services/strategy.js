@@ -1,9 +1,8 @@
 import React from "react";
 
-import Page from "../../templates/page/Page";
-import Paragraph from "../../components/--Paragraph";
-import Heading from "../../components/--Heading";
 import { Text } from "grommet";
+import { Heading, Paragraph } from "@components";
+import Page from "@templates/Page";
 
 import heroImage from "./hero-kickstart.jpg";
 

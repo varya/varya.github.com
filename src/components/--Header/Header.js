@@ -1,7 +1,7 @@
-import { Header as GrommetHeader, ResponsiveContext } from "grommet";
 import React from "react";
-import Logo from "../--Logo";
-import Menu from "../--Menu";
+
+import { Header as GrommetHeader, ResponsiveContext } from "grommet";
+import { Logo, Menu } from "@components";
 
 /**
  * Header component based on Grommet Header

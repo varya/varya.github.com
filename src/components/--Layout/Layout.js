@@ -1,8 +1,9 @@
-import { Box, Grommet } from "grommet";
-import PropTypes from "prop-types";
 import React from "react";
-import Footer from "../--Footer";
-import Header from "../--Header";
+import PropTypes from "prop-types";
+
+import { Box, Grommet } from "grommet";
+import { Footer, Header } from "@components";
+
 import theme from "../theme";
 
 /**

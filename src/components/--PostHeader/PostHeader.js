@@ -1,9 +1,8 @@
-import { Text } from "grommet";
-import PropTypes from "prop-types";
 import React from "react";
-import Hero from "../--Hero";
-import Heading from "../--Heading";
-import MetaGroup from "../--MetaGroup";
+import PropTypes from "prop-types";
+
+import { Text } from "grommet";
+import { Heading, Hero, MetaGroup } from "@components";
 
 const PostHeader = ({ imageUrl, date, readingTime, title, subTitle }) => (
   <Hero imageUrl={imageUrl} hasOverlay>
@@ -28,7 +27,12 @@ const PostHeader = ({ imageUrl, date, readingTime, title, subTitle }) => (
 
     <MetaGroup>
       {[date, readingTime].map(
-        (metaitem) => metaitem && <Text color="text-invert">{metaitem}</Text>
+        (metaitem) =>
+          metaitem && (
+            <Text key={metaitem} color="text-invert">
+              {metaitem}
+            </Text>
+          )
       )}
     </MetaGroup>
   </Hero>

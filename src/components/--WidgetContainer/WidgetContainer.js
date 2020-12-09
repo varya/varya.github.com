@@ -1,7 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import { Box, ResponsiveContext } from "grommet";
-import { childrenWithProps, isObject } from "../../utils";
+
+import { childrenWithProps } from "../../common/reactUtils";
+import { isObject } from "../../common/utils";
 
 /**
  * A responsive container to hold post previews, based on grommet <Box>

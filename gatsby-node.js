@@ -113,9 +113,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions;
-  const postTemplate = path.resolve("./src/templates/post/Post.js");
-  const blogTemplate = path.resolve("./src/templates/blog/Blog.js");
-  const tagTemplate = path.resolve("./src/templates/tag/TagIndex.js");
+  const postTemplate = path.resolve("./src/templates/Post.js");
+  const blogTemplate = path.resolve("./src/templates/BlogIndex.js");
+  const tagTemplate = path.resolve("./src/templates/TagIndex.js");
 
   const postsData = await graphql(`
     query {
@@ -299,5 +299,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: tagTemplate,
       context: { tag, tagSlug },
     });
+  });
+};
+
+// https://levelup.gitconnected.com/how-to-set-up-import-aliases-for-gatsby-32398ae67e7f
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "@components": path.resolve(__dirname, "src/components"),
+        "@templates": path.resolve(__dirname, "src/templates"),
+        "@static": path.resolve(__dirname, "static"),
+      },
+    },
   });
 };
