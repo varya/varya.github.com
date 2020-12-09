@@ -1,63 +1,53 @@
 import React from "react";
 
-import SEO from "../components/Seo";
+import Page from "../templates/page/Page";
+import { InlineWidget } from "react-calendly";
 
-import { Text, Button } from "grommet";
-import Layout from "../components/--Layout";
 import Paragraph from "../components/--Paragraph";
 import Heading from "../components/--Heading";
 import Link from "../components/--Link";
-import { Box } from "grommet";
-import Hero from "../components/--Hero";
-import { InlineWidget } from "react-calendly";
+import { Box, Text, Button } from "grommet";
+
+const HeroContent = () => (
+  <>
+    <Heading
+      level={1}
+      alignSelf="center"
+      responsive
+      size="large"
+      margin="small"
+    >
+      <Text size="inherit" color="brand">
+        Let&apos;s Talk!
+      </Text>
+    </Heading>
+    <Box>
+      <Button
+        primary
+        size="large"
+        pad="medium"
+        label="Email me at mail@varya.me"
+        href="mailto:mail@varya.me"
+        target="_blank"
+        rel="noopener"
+      ></Button>
+    </Box>
+  </>
+);
 
 const Contact = () => (
-  <Layout>
-    <SEO
-      title="Varya Stepanova — design systems architect and engineering manager"
-      keywords={["design systems", "design system", "frontend"]}
-      defer={false}
+  <Page hero={{ props: { background: "light-8" }, content: HeroContent }}>
+    <Paragraph>
+      Need to talk face2face? Book a video session with me via{" "}
+      <Link to="https://calendly.com/var_ya">Calendly</Link>: I keep my calendar
+      up to date, so you can easily see what times are available and choose the
+      one which is good for you.
+    </Paragraph>
+    <InlineWidget
+      styles={{ minWidth: "320px", height: "1000px" }}
+      url="https://calendly.com/var_ya/30min"
     />
-    <Hero background="neutral" align="center" justify="between">
-      <Heading
-        level={1}
-        alignSelf="center"
-        responsive
-        size="large"
-        margin="small"
-      >
-        <Text size="inherit" color="accent">
-          Let&apos;s&nbsp;
-        </Text>
-        <Text size="inherit" color="brand">
-          Talk!
-        </Text>
-      </Heading>
-      <Box>
-        <Button
-          primary
-          size="large"
-          pad="medium"
-          label="Email me at mail@varya.me"
-          href="mailto:mail@varya.me"
-          target="_blank"
-          rel="noopener"
-        ></Button>
-      </Box>
-    </Hero>
-    <Box width="xlarge" margin={{ horizontal: "auto" }} pad="medium">
-      <Paragraph>
-        Need to talk face2face? Book a video session with me via{" "}
-        <Link to="https://calendly.com/var_ya">Calendly</Link>: I keep my
-        calendar up to date, so you can easily see what times are available and
-        choose the one which is good for you.
-      </Paragraph>
-      <InlineWidget
-        styles={{ minWidth: "320px", height: "1000px" }}
-        url="https://calendly.com/var_ya/30min"
-      />
-    </Box>
-  </Layout>
+  </Page>
 );
 
 export default Contact;

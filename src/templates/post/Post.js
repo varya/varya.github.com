@@ -6,16 +6,34 @@ import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 
-import { Box } from "grommet";
 import Layout from "../../components/--Layout";
 import Paragraph from "../../components/--Paragraph";
 import PostHeader from "../../components/--PostHeader";
 import Link from "../../components/--Link";
+import Image from "../../components/--Image";
 import Tag from "../../components/--Tag";
+import Hero from "../../components/--Hero";
+import Widget from "../../components/--Widget";
+import WidgetContainer from "../../components/--WidgetContainer";
 import Heading from "../../components/--Heading";
 import GithubEdit from "../../components/--GithubEdit";
 import PrevNextNav from "../../components/--PrevNextNav";
 import { toKebabCase } from "utils";
+import { Box, Button, Text } from "grommet";
+
+const globalMdxComponents = {
+  Box,
+  Button,
+  Text,
+  Heading,
+  Paragraph,
+  Hero,
+  Widget,
+  WidgetContainer,
+  Link,
+  Image,
+};
+
 const _Heading = (level) => {
   const component = ({ children }) => (
     <Heading level={level}>{children}</Heading>
@@ -69,7 +87,7 @@ const Post = ({
         pad="medium"
         direction="column"
       >
-        <MDXProvider components={postComponents}>
+        <MDXProvider components={{ ...postComponents, ...globalMdxComponents }}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
         <Box
