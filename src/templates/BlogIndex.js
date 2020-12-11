@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import { ResponsiveContext } from "grommet";
-import { Layout, Pagination, Widget, WidgetContainer } from "@components";
+import { Heading, Pagination, Widget, WidgetContainer } from "@components";
+import Page from "@templates/Page";
 
 const visiblePages = {
   small: 2,
@@ -12,13 +13,33 @@ const visiblePages = {
   large: 10,
 };
 
+const HeroContent = () => (
+  <>
+    <Heading
+      level={1}
+      alignSelf="center"
+      responsive
+      size="large"
+      margin="small"
+      color="brand"
+    >
+      Blog
+    </Heading>
+  </>
+);
+
 const Blog = ({ data, pageContext }) => {
   const posts = data.posts.edges;
   const { currentPage, pageCount } = pageContext;
   return (
     <ResponsiveContext.Consumer>
       {(size) => (
-        <Layout>
+        <Page
+          hero={{
+            props: { background: "transparent", height: "small" },
+            content: HeroContent,
+          }}
+        >
           <WidgetContainer>
             {posts.map((post) => {
               const cover = post.node.frontmatter.cover;
@@ -39,7 +60,7 @@ const Blog = ({ data, pageContext }) => {
             size={size}
             maxVisiblePages={visiblePages[size]}
           />
-        </Layout>
+        </Page>
       )}
     </ResponsiveContext.Consumer>
   );
