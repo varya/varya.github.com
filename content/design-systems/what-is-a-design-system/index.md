@@ -12,9 +12,6 @@ meta:
     about the community and collaboration.
 ---
 
-import ProjectRoles from '../../../../src/components/ProjectRoles'
-import DsAspects from '../../../../src/components/DsAspects'
-
 Let's start with a story.
 
 <i>
