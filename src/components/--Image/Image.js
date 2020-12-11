@@ -12,7 +12,7 @@ import { Anchor, Box, Text } from "grommet";
  * @param {string} copyright.link
  */
 
-const StyledFigure = styled.figure`
+const StyledFigure = styled(Box)`
   margin: 0;
   position: relative;
   overflow: hidden;
@@ -31,9 +31,14 @@ const StyledCaption = styled(Box)`
     margin-bottom: 0px;
   }
 `;
-const Image = ({ children, caption = undefined, copyright = undefined }) => {
+const Image = ({
+  children,
+  caption = undefined,
+  copyright = undefined,
+  ...props
+}) => {
   return (
-    <StyledFigure>
+    <StyledFigure {...props} as="figure">
       {children}
       {(caption || copyright) && (
         <figcaption>

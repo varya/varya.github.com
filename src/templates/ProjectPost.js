@@ -69,11 +69,7 @@ const ProjectPost = ({
 }) => {
   return (
     <Layout>
-      <PostHeader
-        imageUrl={cover && cover.childImageSharp.fluid.src}
-        title={title}
-        subTitle={subTitle}
-      />
+      <PostHeader imageUrl={cover} title={title} subTitle={subTitle} />
       <Box
         flex="grow"
         width="xlarge"
