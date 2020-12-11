@@ -38,7 +38,7 @@ const Image = ({
   ...props
 }) => {
   return (
-    <StyledFigure>
+    <StyledFigure as="figure">
       {imageSrc ? (
         <GrommetImage
           src={imageSrc}
