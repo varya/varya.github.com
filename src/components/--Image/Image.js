@@ -47,7 +47,7 @@ const Image = ({
           {...props}
         />
       ) : (
-        { children }
+        children
       )}
       {(caption || copyright) && (
         <figcaption>
