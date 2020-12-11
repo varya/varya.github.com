@@ -31,6 +31,7 @@ const StyledWidget = styled(Box)`
 const Widget = ({
   children,
   image,
+  imageSrc,
   title,
   excerpt,
   slug,
@@ -40,9 +41,20 @@ const Widget = ({
   direction = "row",
   ...props
 }) => {
+  const ResolvedImage = () =>
+    imageSrc ? (
+      <Image imageSrc={imageSrc} fit="contain" />
+    ) : (
+      <Image fit="contain">{image}</Image>
+    );
+
   return (
     <StyledWidget {...props} direction={direction} pad="medium">
-      <Link unstyled to={slug} style={{ width: "100%" }}>
+      <Link
+        unstyled
+        to={slug}
+        style={{ width: "100%", display: "block", height: "100%" }}
+      >
         {title && (
           <Heading level="3" margin={{ top: "none", bottom: "small" }}>
             {title}
@@ -55,7 +67,7 @@ const Widget = ({
           overflow="hidden"
           gap="medium"
         >
-          {image && (
+          {(image || imageSrc) && (
             <Box
               basis="1/3"
               flex={false}
@@ -65,7 +77,7 @@ const Widget = ({
             >
               {direction === "row" ? (
                 <Stack anchor="top-right">
-                  <Image fit="contain">{image}</Image>
+                  <ResolvedImage />
                   {readingTime && (
                     <Box
                       background="accent-75"
@@ -82,13 +94,11 @@ const Widget = ({
                   )}
                 </Stack>
               ) : (
-                <Image fit="cover" height="medium">
-                  {image}
-                </Image>
+                <ResolvedImage />
               )}
             </Box>
           )}
-          <Box direction="column">
+          <Box direction="column" fill="horizontal">
             {date && (
               <Box direction="row" align="baseline" size="small">
                 <Calendar size="small" color="brand" />
@@ -119,6 +129,7 @@ Widget.propTypes = {
   children: PropTypes.node,
   slug: PropTypes.string,
   image: PropTypes.node,
+  imageSrc: PropTypes.string,
   title: PropTypes.string,
   excerpt: PropTypes.string,
   date: PropTypes.string,
