@@ -38,7 +38,7 @@ const Image = ({
   ...props
 }) => {
   return (
-    <StyledFigure>
+    <StyledFigure as="figure">
       {imageSrc ? (
         <GrommetImage
           src={imageSrc}
@@ -47,7 +47,7 @@ const Image = ({
           {...props}
         />
       ) : (
-        { children }
+        children
       )}
       {(caption || copyright) && (
         <figcaption>
