@@ -12,8 +12,6 @@ meta:
     umbrella.
 ---
 
-import PatternJourney from '../../../../src/components/PatternJourney'
-
 Design System artifacts whether it is a library of components, UI kit in Sketch, description of UI tokens or pieces of
 documentation for the visual language are maintained and developed similarly to regular products. However, usually,
 there is a difference. A design system bridges the gap between disciplines and between the teams across the organization, so

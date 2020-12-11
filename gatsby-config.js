@@ -77,9 +77,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-page-creator`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/projects`,
+        name: `design-systems`,
+        path: `${__dirname}/content/design-systems`,
       },
     },
     `gatsby-plugin-sharp`,

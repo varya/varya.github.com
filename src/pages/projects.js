@@ -40,7 +40,7 @@ const Projects = ({ data }) => {
             <Widget
               key={title}
               title={title}
-              slug={`${slug}`}
+              slug={`/projects${slug}`}
               excerpt={excerpt}
               background={background}
             />
