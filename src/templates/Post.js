@@ -6,6 +6,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 import { Box, Button, Text } from "grommet";
 import {
+  DsAspects,
   GithubEdit,
   Heading,
   Hero,
@@ -13,8 +14,11 @@ import {
   Layout,
   Link,
   Paragraph,
+  PatternJourney,
   PostHeader,
   PrevNextNav,
+  ProjectRoles,
+  Section,
   Tag,
   Widget,
   WidgetContainer,
@@ -28,9 +32,13 @@ const globalMdxComponents = {
   Text,
   Heading,
   Paragraph,
+  PatternJourney,
+  Section,
   Hero,
   Widget,
   WidgetContainer,
+  ProjectRoles,
+  DsAspects,
   Link,
   Image,
 };

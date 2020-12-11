@@ -1,3 +1,5 @@
+export { default as Avatar } from "./Avatar";
+export { default as DsAspects } from "./DsAspects";
 export { default as Footer } from "./--Footer";
 export { default as GithubEdit } from "./--GithubEdit";
 export { default as Header } from "./--Header";
@@ -12,9 +14,12 @@ export { default as MetaGroup } from "./--MetaGroup";
 export { default as Pagination } from "./--Pagination";
 export { default as Paragraph } from "./--Paragraph";
 export { default as PostHeader } from "./--PostHeader";
+export { default as ProjectRoles } from "./ProjectRoles";
 export { default as PrevNextNav } from "./--PrevNextNav";
+export { default as Section } from "./--Section";
 export { default as SEO } from "./Seo";
 export { default as SocialLinks } from "./--SocialLinks";
 export { default as Tag } from "./--Tag";
 export { default as Widget } from "./--Widget";
 export { default as WidgetContainer } from "./--WidgetContainer";
+export { default as PatternJourney } from "./PatternJourney";

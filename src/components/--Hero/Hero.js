@@ -41,6 +41,7 @@ const Hero = ({
   imageUrl,
   children,
   height = "medium",
+  background = "neutral",
   ...props
 }) => {
   return (
@@ -49,7 +50,8 @@ const Hero = ({
       imageUrl={imageUrl}
       flex={false}
       height={height}
-      background="neutral"
+      background={background}
+      test="tst"
       {...props}
     >
       <HeroHeaderContent flex={{ grow: 1 }} justify="between">
@@ -62,6 +64,7 @@ const Hero = ({
 Hero.propTypes = {
   hasOverlay: PropTypes.bool,
   imageUrl: PropTypes.string,
+  background: PropTypes.string,
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   children: PropTypes.node,
 };

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import styled from "styled-components";
-import { Anchor, Box, Text } from "grommet";
+import { Anchor, Box, Image as GrommetImage, Text } from "grommet";
 
 /**
  * An image with optional caption
@@ -16,9 +16,6 @@ const StyledFigure = styled(Box)`
   margin: 0;
   position: relative;
   overflow: hidden;
-  & img {
-    background: white;
-  }
 `;
 const StyledCaption = styled(Box)`
   position: absolute;
@@ -35,11 +32,23 @@ const Image = ({
   children,
   caption = undefined,
   copyright = undefined,
+  imageSrc,
+  alt,
+  fill,
   ...props
 }) => {
   return (
-    <StyledFigure {...props} as="figure">
-      {children}
+    <StyledFigure>
+      {imageSrc ? (
+        <GrommetImage
+          src={imageSrc}
+          alt={alt || caption || ""}
+          fill={fill || true}
+          {...props}
+        />
+      ) : (
+        { children }
+      )}
       {(caption || copyright) && (
         <figcaption>
           <StyledCaption
@@ -68,6 +77,8 @@ const Image = ({
 };
 
 Image.propTypes = {
+  imageSrc: PropTypes.string,
+  alt: PropTypes.string,
   caption: PropTypes.string,
   copyright: PropTypes.shape({
     text: PropTypes.string.isRequired,
