@@ -76,12 +76,6 @@ module.exports = {
         path: `${__dirname}/content/projects`,
       },
     },
-    {
-      resolve: `gatsby-plugin-page-creator`,
-      options: {
-        path: `${__dirname}/content/projects`,
-      },
-    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
