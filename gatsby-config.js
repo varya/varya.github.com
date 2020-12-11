@@ -76,6 +76,13 @@ module.exports = {
         path: `${__dirname}/content/projects`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `design-systems`,
+        path: `${__dirname}/content/design-systems`,
+      },
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,

@@ -176,6 +176,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
+      designSystemsPosts: allMdx(
+        filter: { fileAbsolutePath: { regex: "//design-systems//" } }
+      ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+          }
+        }
+      }
       ruPosts: allMdx(
         filter: {
           fileAbsolutePath: { regex: "//posts//" }
@@ -249,6 +261,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
   const blogPosts = postsData.data.blogPosts.edges;
   const projectPosts = postsData.data.projectPosts.edges;
+  const designSystemsPosts = postsData.data.designSystemsPosts.edges;
 
   const otherPosts = [
     ...postsData.data.ruPosts.edges,
@@ -297,16 +310,25 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 
-  // Create all the old post which only need to be served t the urls, but do not need to appear in blog index.
+  // PROJECT POSTS
   projectPosts.forEach(({ node }) => {
     const slug = node.fields.slug;
-    console.log(
-      "🚀 ~ file: gatsby-node.js ~ line 302 ~ projectPosts.forEach ~ slug",
-      slug
-    );
 
     createPage({
       path: "/projects" + slug,
+      component: postTemplate,
+      context: {
+        slug,
+      },
+    });
+  });
+
+  // DESIGN SYSTEMS POSTS
+  designSystemsPosts.forEach(({ node }) => {
+    const slug = node.fields.slug;
+
+    createPage({
+      path: "/design-systems" + slug,
       component: postTemplate,
       context: {
         slug,
