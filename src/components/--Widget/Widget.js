@@ -61,7 +61,7 @@ const Widget = ({
           </Heading>
         )}
         <Box
-          height={direction === "row" ? height : "auto"}
+          height={direction === "row" ? height : "100%"}
           direction={direction}
           fill="horizontal"
           overflow="hidden"
@@ -98,7 +98,12 @@ const Widget = ({
               )}
             </Box>
           )}
-          <Box direction="column" fill="horizontal">
+          <Box
+            direction="column"
+            fill="horizontal"
+            justify="center"
+            height="100%"
+          >
             {date && (
               <Box direction="row" align="baseline" size="small">
                 <Calendar size="small" color="brand" />
