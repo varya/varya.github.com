@@ -58,7 +58,7 @@ const Consultancy = () => (
     <WidgetContainer items={{ small: 1, medium: 2, large: 2 }}>
       <Widget slug="/projects" background="brand" align="center">
         <Heading level={3} textAlign="center">
-          Case Studies
+          Projects
         </Heading>
       </Widget>
       <Widget slug="/services" background="neutral" align="center">

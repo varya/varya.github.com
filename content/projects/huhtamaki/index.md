@@ -5,12 +5,12 @@ date: 2018-05-31
 cover: packaging_flat.jpg
 meta:
   desc: >
-    --todo https://www.adithyadesign.com/work/delivery-packaging
+    This project was done during my master’s degree at Aalto, for the IDBM program’s Industry Project course. The clients, Huhtamaki, are global food packaging specialists, and were looking to enter the home delivery packaging space.  However, this was a new space for them, so they needed our team to help them understand the home delivery space in order to produce an optimal packaging solution to maintain their strong position in the packaging domain.
 ---
 
 import image1 from "./packaging_flat.jpg";
 
-This project was done during my master’s degree at Aalto, for the IDBM program’s Industry Project course. The clients, Huhtamaki, are global food packaging specialists, and were looking to enter the home delivery packaging space.  However, this was a new space for them, so they needed our team to help them understand the home delivery space in order to produce an optimal packaging solution to maintain their strong position in the packaging domain.
+This project was done during my master’s degree at Aalto, for the IDBM program’s Industry Project course. The clients, Huhtamaki, are global food packaging specialists, and were looking to enter the home delivery packaging space. However, this was a new space for them, so they needed our team to help them understand the home delivery space in order to produce an optimal packaging solution to maintain their strong position in the packaging domain.
 
 Over the span of 6 months, our team did a deep dive into all the aspects of food delivery. Our research led us to conclude that a strategic solution was needed, not a product one. Thus we proceeded to craft an ecosystem map and based on what we learned from our research, created a road map of concepts to lead our clients to a systemic solution that could succeed within the rapidly growing home delivery space.
 
@@ -22,16 +22,18 @@ Over the span of 6 months, our team did a deep dive into all the aspects of food
 <Box basis="1/2">
 
 #### MY ROLE
-____CHECK____ I played the role of design strategist on the team and worked on all the phases of the project, from planning and executing research to ideation and delivering the final concept. Since I had extensive prior experience in conducting user research, trends analysis, and extracti____ng insights from research data, I took the lead for the research elements of the project. I’ve also had experience leading design workshops and ideation sessions, so I took the lead on facilitating those for the team as well.
+
+\_**\_CHECK\_\_** I played the role of design strategist on the team and worked on all the phases of the project, from planning and executing research to ideation and delivering the final concept. Since I had extensive prior experience in conducting user research, trends analysis, and extracti\_\_\_\_ng insights from research data, I took the lead for the research elements of the project. I’ve also had experience leading design workshops and ideation sessions, so I took the lead on facilitating those for the team as well.
 
 </Box>
 <Box basis="1/2">
 
 #### WORK AND DELIVERABLES
+
 - Domain and Future Trends Analysis
 - Long Term Strategic Approach
 - Extensive Research into User Behavior
-- Competitive Benchmarking & Design Concept 
+- Competitive Benchmarking & Design Concept
 - Design Workshops and Ideation
 - Deep dive into client’s manufacturing capabilities and existing product pipeline
 
@@ -40,7 +42,6 @@ ____CHECK____ I played the role of design strategist on the team and worked on a
 
 ### The Team
 
-
 <Image caption="From L to R - Varya Stepanova, Adithya Varadarajan, Juho Viironen, Jialai Qian. We were a wonderfully diverse and multidisciplinary team with a mix of backgrounds ranging from a design strategist to a packaging designer and a material science expert.">
 
 ![](Huhtamaki_Team.jpg)
@@ -48,7 +49,6 @@ ____CHECK____ I played the role of design strategist on the team and worked on a
 </Image>
 
 ## Overall Process
-
 
 <Box direction="row" gap="medium">
 <Box flex={true}>
@@ -119,15 +119,12 @@ This also helped us understand their current product offerings and the kind of c
 </Box>
 </Box>
 
-
-
 <Box background="accent-50" pad="medium" width="large" margin={{horizontal: "auto"}}>
 
 #### BASED ON OUR RESEARCH, OUR APPROACH CHANGED
 
 <Paragraph standout>The optimal solution wasn’t just about creating better packaging for home delivery as the client originally intended, it needed something much more comprehensive.</Paragraph>
 </Box>
-
 
 <Box direction="row" gap="medium">
 <Box flex={{"grow": 1}} margin={{top: "medium"}} pad="small">
@@ -141,7 +138,7 @@ This also helped us understand their current product offerings and the kind of c
 
 ### Crafting a Future Focused Strategic Solution
 
-Once we had this understanding, we put on our ideation hats with our clients on board. We first put together a clear picture of the entire delivery ecosystem that helped visualize all the potential touch points that could be influenced via a strategic solution. Then we crafted a multi-step concept road map which included elements from product design, service design, internet of things (IoT) and co-creation. 
+Once we had this understanding, we put on our ideation hats with our clients on board. We first put together a clear picture of the entire delivery ecosystem that helped visualize all the potential touch points that could be influenced via a strategic solution. Then we crafted a multi-step concept road map which included elements from product design, service design, internet of things (IoT) and co-creation.
 
 The intent of this roadmap was to provide a strategic approach for the client that ensured they weren’t just catching up or reacting to the current state of the domain, but rather aligning with trends and setting themselves up for sustainable, long term, success.
 
@@ -159,7 +156,6 @@ If you’d like to know more about the project, get in touch! You can also check
 <Button primary href="https://www.huhtamaki.com/en/highlights/recent/understanding-food-delivery-on-a-local-level/" label="Huhtamaki Article"/>
 <Button primary href="https://www.idbm.aalto.fi/industry-projects/2018/5/31/huhtamaki-idbm" label="IDBM Impact Feature"/>
 </Box>
-
 
 <Image>
 

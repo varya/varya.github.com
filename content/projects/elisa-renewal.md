@@ -1,5 +1,5 @@
 ---
-title: Elisa design System Renewal
+title: Elisa Design System Renewal
 date: 2020-12-01
 
 meta:
