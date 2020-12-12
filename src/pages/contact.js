@@ -43,7 +43,7 @@ const Contact = () => (
     </Paragraph>
     <InlineWidget
       styles={{ minWidth: "320px", height: "1000px" }}
-      url="https://calendly.com/var_ya/30min"
+      url="https://calendly.com/var_ya/60min"
     />
   </Page>
 );
