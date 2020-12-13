@@ -33,7 +33,6 @@ const menuData = [
     label: "Services",
     href: "/services",
     children: [
-      // { label: "Speaking", href: "/speaking" },
       { label: "Consultancy", href: "/services/consultancy" },
       { label: "Team supervision", href: "/services/supervision" },
       { label: "Audit of design and development", href: "/services/audit" },
@@ -43,10 +42,10 @@ const menuData = [
         href: "/services/development",
       },
       { label: "Workshops", href: "/services/workshops" },
+      { label: "Speaking", href: "/speaking" },
     ],
   },
   { label: "Projects", href: "/projects" },
-  { label: "Design systems", href: "/design-systems" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
@@ -150,15 +149,11 @@ const MenuItem = ({ item, ...props }) => {
   const [open, setOpen] = useState(false);
 
   return children.length > 0 ? (
-    <Box
-      onMouseOver={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-      onFocus={() => setOpen(true)}
-      onBlur={() => setOpen(false)}
-    >
+    <Box onMouseOver={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
       <Box ref={targetRef}>
         {
           <DropButton
+            as="div"
             a11yTitle="Navigation Menu"
             key={item.label}
             open={open}
