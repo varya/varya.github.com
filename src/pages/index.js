@@ -35,68 +35,47 @@ const Index = () => {
       seo={{
         title:
           "Varya Stepanova — design systems architect and engineering manager",
-        keywords: ["design systems", "design system", "frontend"],
+        keywords: [
+          "design systems",
+          "design system",
+          "frontend",
+          "contractor",
+          "consulting",
+          "consulter",
+        ],
       }}
     >
       <Box direction="row" gap="large">
         <Box>
           <Paragraph size="large" standout lead>
-            I am Varya Stepanova, a <b>design systems architect</b> with nearly
-            15 years of experience in frontend development, component-focused UI
-            design and development, creating helpful tooling for the subject and
-            spreading the practices across large organizations. I have two
-            Master degrees — in physics and service design (Aalto University,{" "}
+            I am Varya Stepanova, a <b>design systems architect</b> with an
+            extensive experience in management, design, and technical side. In
+            the 15+ years of technical career, my major focus was
+            component-focused UI design and development, creating helpful
+            tooling for the subject and spreading the practices across large or
+            regular organizations. I have two Master degrees — in physics and
+            service design (Aalto University,{" "}
             <Link to="https://www.idbm.aalto.fi/">IDBM</Link> program), years of
             engineering experience and several leading roles behind.
+          </Paragraph>
+          <Paragraph>
+            Nowadays my focus is on bringing design systems to the next level of
+            success which includes cooperative work in the company development
+            community and bridging the gap for designers, developers, and
+            business specialists.
           </Paragraph>
         </Box>
         <Box flex={false}>
           <Avatar align="right" />
         </Box>
       </Box>
-      <Paragraph>
-        Nowadays my focus is on bringing design systems to the next level of
-        success which includes cooperative work in the company development
-        community and bridging the gap for designers, developers, and business
-        specialists.
-      </Paragraph>
-
-      <Paragraph>
-        At the moment, I am working as an independent consultant open for new
-        projects. My roles include team leading of the design systems projects,
-        technical leadership in frontend and building development
-        infrastructure, evangelism and advocacy. You can find out more at my{" "}
-        <Link to="/projects">projects page</Link>. My experience offers to
-        launch and maintain design systems projects, run{" "}
-        <Link to="/services/workshops">training sessions and workshops</Link>,
-        cherish in-house design and development culture in the organizations and
-        so on. I am based in Helsinki (Finland), flexible for both on-site and
-        remote projects and dont mind traveling.
-      </Paragraph>
-
-      <Paragraph>
-        Besides, I frequently speak at tech and design conferences and meetups.
-        The topics I cover are related to my own experience. You can find here{" "}
-        <Link to="/services/speaking">the list of my articles and talks</Link>.
-      </Paragraph>
-
-      <Paragraph>
-        My work as a <Text weight="bold">design system architect</Text> includes
-        running the processes related to the design and development in large or
-        regular organizations. It means inventing and shaping the processes
-        through user interviews and data analysis, tuning the management tools
-        and running new ones, working on company culture and increasing
-        people&apos;s involvement, providing the technical infrastructure and
-        guiding in design and development. In this way, I make a lot of research
-        and discoveries in technical, design and managing aspects. On this page,
-        I present the public artifacts of my design-systems activity.
-      </Paragraph>
 
       <Section heading="Services">
         <Box direction="row" gap="large">
           <Box basis="1/2">
-            As an independent consultant, I am offering a wide range of
-            design-systems and front-end related services:
+            I am working as an independent consultant open for new projects. My
+            roles include team leading of the design systems projects, technical
+            leadership in frontend and building development.
             <ul>
               <li>Audit of existing products and development processes</li>
               <li>
@@ -107,6 +86,8 @@ const Index = () => {
               <li>Design systems production</li>
               <li>Development of the UI components</li>
             </ul>
+            I am based in Helsinki (Finland), flexible for both on-site and
+            remote projects and dont mind traveling.
           </Box>
           <Box basis="1/2">
             <Widget slug="/services" background="brand">
@@ -117,7 +98,21 @@ const Index = () => {
           </Box>
         </Box>
       </Section>
+
       <Section heading="Concepts">
+        <Paragraph>
+          My work as a <Text weight="bold">design system architect</Text>{" "}
+          includes running the processes related to the design and development
+          in large or regular organizations. It means inventing and shaping the
+          processes through user interviews and data analysis, tuning the
+          management tools and running new ones, working on company culture and
+          increasing people&apos;s involvement, providing the technical
+          infrastructure and guiding in design and development. In this way, I
+          make a lot of research and discoveries in technical, design and
+          managing aspects. On this page, I present the public artifacts of my
+          design-systems activity.
+        </Paragraph>
+
         <WidgetContainer items={{ small: 1, medium: 2, large: 2 }}>
           <Widget
             background="neutral"
@@ -137,7 +132,16 @@ const Index = () => {
           />
         </WidgetContainer>
       </Section>
+
       <Section heading="Workshops">
+        <Paragraph>
+          My experience offers to launch and maintain design systems projects,
+          run{" "}
+          <Link to="/services/workshops">training sessions and workshops</Link>,
+          cherish in-house design and development culture in the organizations
+          and so on.
+        </Paragraph>
+
         <WidgetContainer items={{ small: 1, medium: 3, large: 3 }}>
           <Widget
             background="accent"
@@ -170,7 +174,16 @@ const Index = () => {
           </Paragraph>
         </Box>
       </Section>
+
       <Section heading="Talks, articles and posts">
+        <Paragraph>
+          Besides, I frequently speak at tech and design conferences and
+          meetups. The topics I cover are related to my own experience. You can
+          find here{" "}
+          <Link to="/services/speaking">the list of my articles and talks</Link>
+          .
+        </Paragraph>
+
         <WidgetContainer>
           <Widget
             background="accent"
