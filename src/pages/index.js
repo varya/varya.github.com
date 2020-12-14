@@ -58,7 +58,7 @@ const Index = () => {
             <Link to="https://www.idbm.aalto.fi/">IDBM</Link> program), years of
             engineering experience and several leading roles behind.
           </Paragraph>
-          <Paragraph>
+          <Paragraph size="large" standout lead>
             Nowadays my focus is on bringing design systems to the next level of
             success which includes cooperative work in the company development
             community and bridging the gap for designers, developers, and
