@@ -56,8 +56,9 @@ const Footer = () => {
           gap="large"
         >
           <Paragraph size="small">
-            I am available for hire to consult, advise, and develop with
-            passionate product teams across the globe. (Replace text)
+            You can hire me to set up, manage, develop, and champion your design
+            system. I can align the design and development processes in your
+            organisation for a larger business impact.
           </Paragraph>
           <Button
             primary
@@ -71,7 +72,7 @@ const Footer = () => {
 
         <Box gridArea="copyright" align="center" margin={{ top: "medium" }}>
           <Text color="text-xweak" size="small">
-            © Varvara Stepanova {new Date().getFullYear()}
+            © Varya Stepanova {new Date().getFullYear()}
           </Text>
         </Box>
       </ResponsiveGrid>
