@@ -1,10 +1,8 @@
 ---
 title: Elisa Design System Renewal
 date: 2020-12-01
-
-meta:
-  desc: >
-    Renewal of design system at Elisa which took place in 2020 and continues at the moment
+description: >
+  Renewal of design system at Elisa which took place in 2020 and continues at the moment
 ---
 
 Renewal design system project at Elisa took place in 2020 and continues at the moment. New design system is:
