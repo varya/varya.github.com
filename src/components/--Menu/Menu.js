@@ -1,8 +1,12 @@
 import React from "react";
+import { useRef, useState } from "react";
 import PropTypes from "prop-types";
 
+import styled from "styled-components";
 import {
+  Box,
   Button,
+  DropButton,
   Grommet,
   Menu as GrommetMenu,
   Nav,
@@ -13,12 +17,24 @@ import { Link } from "@components";
 
 import theme from "../theme";
 
+// https://github.com/grommet/grommet/blob/05f6d834dab28cea56d352460aa6f4ac6f041c3f/src/js/components/Menu/Menu.js#L19
+const ContainerBox = styled(Box)`
+  max-width: 300px;
+  max-height: inherit;
+  /* IE11 hack to get drop contents to not overflow */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    width: 100%;
+  }
+
+  ${(props) => props.theme.menu.extend};
+`;
+
 const menuData = [
   { label: "Home", href: "/" },
   {
     label: "Services",
+    href: "/services",
     children: [
-      // { label: "Speaking", href: "/speaking" },
       { label: "Consultancy", href: "/services/consultancy" },
       { label: "Team supervision", href: "/services/supervision" },
       { label: "Audit of design and development", href: "/services/audit" },
@@ -28,10 +44,10 @@ const menuData = [
         href: "/services/development",
       },
       { label: "Workshops", href: "/services/workshops" },
+      { label: "Speaking", href: "/speaking" },
     ],
   },
   { label: "Projects", href: "/projects" },
-  { label: "Design systems", href: "/design-systems" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
@@ -94,19 +110,28 @@ const Menu = ({ items = menuData, current, mode = "horizontal", ...props }) => {
       <ResponsiveContext.Consumer>
         {(size) =>
           size === "small" ? (
-            <GrommetMenu label="Menu" items={flatten(items)} />
+            <GrommetMenu
+              justify="end"
+              items={flatten(items)}
+              label="Menu"
+              dropAlign={{ right: "right", top: "bottom" }}
+            ></GrommetMenu>
           ) : (
             <Nav
               align="center"
               justify="end"
               direction="row"
-              gap="medium"
               selectedKeys={current}
               mode={mode}
+              gap="none"
               {...props}
             >
               {items.map((item) => (
-                <MenuItem item={item} key={item.label} />
+                <MenuItem
+                  item={item}
+                  key={item.label}
+                  margin={{ horizontal: "small" }}
+                />
               ))}
             </Nav>
           )
@@ -126,16 +151,49 @@ const Menu = ({ items = menuData, current, mode = "horizontal", ...props }) => {
  */
 const MenuItem = ({ item, ...props }) => {
   const { label, href, children = [] } = item;
+  const targetRef = useRef();
+  const [open, setOpen] = useState(false);
+
   return children.length > 0 ? (
-    <GrommetMenu
-      style={{ paddingRight: 0 }}
-      a11yTitle="Navigation Menu"
-      dropProps={{ align: { top: "bottom", left: "left" } }}
-      {...props}
-      items={children.map((child) => Object.assign(child, { plain: true }))}
-    >
-      <Button plain key={label} {...props} label={label} color="brand" />
-    </GrommetMenu>
+    <Box onMouseOver={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+      <Box ref={targetRef}>
+        {
+          <DropButton
+            as="div"
+            a11yTitle="Navigation Menu"
+            key={item.label}
+            open={open}
+            onClose={() => setOpen(false)}
+            onOpen={() => setOpen(true)}
+            dropProps={{ target: targetRef.current }}
+            dropAlign={{ top: "bottom", left: "left" }}
+            dropContent={
+              <ContainerBox>
+                {children.map((childprops) => (
+                  <Box
+                    key={childprops.label}
+                    align="start"
+                    pad="small"
+                    gap="medium"
+                  >
+                    <Button plain {...childprops} />
+                  </Box>
+                ))}
+              </ContainerBox>
+            }
+          >
+            <Button
+              plain
+              as={Link}
+              key={label}
+              to={href}
+              label={label}
+              {...props}
+            />
+          </DropButton>
+        }
+      </Box>
+    </Box>
   ) : (
     <Button plain as={Link} key={label} to={href} {...props} label={label} />
   );
