@@ -19,11 +19,13 @@ import theme from "../theme";
 
 // https://github.com/grommet/grommet/blob/05f6d834dab28cea56d352460aa6f4ac6f041c3f/src/js/components/Menu/Menu.js#L19
 const ContainerBox = styled(Box)`
+  max-width: 300px;
   max-height: inherit;
   /* IE11 hack to get drop contents to not overflow */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     width: 100%;
   }
+
   ${(props) => props.theme.menu.extend};
 `;
 
@@ -119,13 +121,17 @@ const Menu = ({ items = menuData, current, mode = "horizontal", ...props }) => {
               align="center"
               justify="end"
               direction="row"
-              gap="medium"
               selectedKeys={current}
               mode={mode}
+              gap="none"
               {...props}
             >
               {items.map((item) => (
-                <MenuItem item={item} key={item.label} />
+                <MenuItem
+                  item={item}
+                  key={item.label}
+                  margin={{ horizontal: "small" }}
+                />
               ))}
             </Nav>
           )
@@ -168,7 +174,6 @@ const MenuItem = ({ item, ...props }) => {
                     key={childprops.label}
                     align="start"
                     pad="small"
-                    direction="row"
                     gap="medium"
                   >
                     <Button plain {...childprops} />
