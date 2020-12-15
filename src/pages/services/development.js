@@ -36,8 +36,6 @@ const Development = () => (
         velocity of feature launches”
       </Link>
     </Paragraph>
-    <Heading level={2}>Design system production</Heading>
-    <Paragraph>_____TODO______</Paragraph>
     <Heading level={2}> Development of UI components</Heading>
     <Paragraph>
       If you need well-designed and bulletproof-developed UI components, I will
@@ -45,6 +43,17 @@ const Development = () => (
       high level expertise allowing me to produce the components which are
       stable and can be easily integrated into the products with different
       architectural solutions behind the scenes.
+    </Paragraph>
+    <Heading level={2}>Design system production</Heading>
+    <Paragraph>
+      I can take care of all the technical aspects for your design system. That
+      includes foundational archtecture set up, infrastucture machinery, and
+      implementing of UI components. With the experience of setting up and
+      manitaining different design systems with various technical solutions
+      behind, I can help you to select frameworks and tools aligned with the
+      requirements of your products and development teams. Well-managed, the
+      process ensures both sucessful initial manufactoring and further smooth
+      manitaining of your design system.
     </Paragraph>
   </Page>
 );
