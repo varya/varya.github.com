@@ -23,8 +23,14 @@ Over the span of 6 months, our team did a deep dive into all the aspects of food
 
 #### MY ROLE
 
-\_**\_CHECK\_\_** I played the role of design strategist on the team and worked on all the phases of the project, from planning and executing research to ideation and delivering the final concept. Since I had extensive prior experience in conducting user research, trends analysis, and extracti\_\_\_\_ng insights from research data, I took the lead for the research elements of the project. I’ve also had experience leading design workshops and ideation sessions, so I took the lead on facilitating those for the team as well.
-
+In this project, I was involed into collecting and alalysing qualitative data, processing
+the quantitative data, organising the industry research (including connection to the industry
+top players).<br/>
+As an experienced public speaker, I conducted a full day workshop to sharpen the final
+presentation of the project.<br/>
+From the technical perspective, I took the part of preparing a Huhtamaki internal website which
+presented the results of both research and design phases of the project as well as an extensive
+description of how the project was going.
 </Box>
 <Box basis="1/2">
 
@@ -195,3 +201,5 @@ If you’d like to know more about the project, get in touch! You can also check
 </Box>
 
 </Box>
+
+The description is made by the project teammate [Adithya Varadarajan](https://www.adithyadesign.com/work/delivery-packaging).
