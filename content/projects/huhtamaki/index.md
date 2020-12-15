@@ -5,7 +5,7 @@ date: 2018-05-31
 cover: packaging_flat.jpg
 meta:
   desc: >
-    --todo https://www.adithyadesign.com/work/delivery-packaging
+    This project was done during my master’s degree at Aalto, for the IDBM program’s Industry Project course. The clients, Huhtamaki, are global food packaging specialists, and were looking to enter the home delivery packaging space.  However, this was a new space for them, so they needed our team to help them understand the home delivery space in order to produce an optimal packaging solution to maintain their strong position in the packaging domain.
 ---
 
 import image1 from "./packaging_flat.jpg";

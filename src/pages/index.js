@@ -77,14 +77,22 @@ const Index = () => {
             roles include team leading of the design systems projects, technical
             leadership in frontend and building development.
             <ul>
-              <li>Audit of existing products and development processes</li>
               <li>
-                Coaching to boots your design operations and development to the
-                next level
+                <Link to="/audit">Audit</Link> of existing products and
+                development processes
               </li>
-              <li>Custom-tailored workshops on the related topics</li>
-              <li>Design systems production</li>
-              <li>Development of the UI components</li>
+              <li>
+                <Link to="/strategy">Coaching</Link> to boots your design
+                operations and development to the next level
+              </li>
+              <li>
+                Custom-tailored <Link to="/workshops">workshops</Link> on the
+                related topics
+              </li>
+              <li>
+                Design systems and UI components{" "}
+                <Link to="/development">production</Link>
+              </li>
             </ul>
             I am based in Helsinki (Finland), flexible for both on-site and
             remote projects and dont mind traveling.
@@ -263,7 +271,7 @@ const Index = () => {
             slug="/projects/elisa-design-system-v1/"
           >
             <Heading textAlign="center" fill level={3}>
-              Design system at Elisa
+              Design System at Elisa
             </Heading>
           </Widget>
           <Widget
@@ -292,14 +300,8 @@ const Index = () => {
             </Heading>
           </Widget>
 
-          <Widget basis="2/3" slug="/services" background="brand">
-            <Heading
-              textAlign="center"
-              level={3}
-              size="large"
-              fill={true}
-              margin={{ vertical: "30%" }}
-            >
+          <Widget direction="row" slug="/projects" background="brand">
+            <Heading textAlign="center" level={3} size="large" fill={true}>
               More Projects&nbsp;→
             </Heading>
           </Widget>
