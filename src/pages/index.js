@@ -58,17 +58,18 @@ const Index = () => {
             <Link to="https://www.idbm.aalto.fi/">IDBM</Link> program), years of
             engineering experience and several leading roles behind.
           </Paragraph>
-          <Paragraph size="large" standout lead>
-            Nowadays my focus is on bringing design systems to the next level of
-            success which includes cooperative work in the company development
-            community and bridging the gap for designers, developers, and
-            business specialists.
-          </Paragraph>
         </Box>
+
         <Box flex={false}>
           <Avatar align="right" />
         </Box>
       </Box>
+      <Paragraph size="large" standout lead>
+        Nowadays my focus is on bringing design systems to the next level of
+        success which includes cooperative work in the company development
+        community and bridging the gap for designers, developers, and business
+        specialists.
+      </Paragraph>
 
       <Section heading="Services">
         <Box gap="large">
@@ -304,21 +305,13 @@ const Index = () => {
           </Widget>
 
           <Widget
-            // direction="column"
             alignContent="center"
             justify="center"
             slug="/projects"
             background="brand"
             // title="More"
           >
-            <Heading
-              // textAlign="center"
-              // align="center"
-              level={3}
-              size="large"
-              // fill={true}
-              margin={{ vertical: "auto" }}
-            >
+            <Heading level={3} size="large" margin={{ vertical: "auto" }}>
               More Projects&nbsp;→
             </Heading>
           </Widget>
