@@ -37,7 +37,7 @@ const Widget = ({
   slug,
   readingTime,
   date,
-  height = "small",
+  height = "auto",
   direction = "row",
   ...props
 }) => {
@@ -53,7 +53,13 @@ const Widget = ({
       <Link
         unstyled
         to={slug}
-        style={{ width: "100%", display: "block", height: "100%" }}
+        style={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "start",
+          height: "100%",
+        }}
       >
         {title && (
           <Heading level="3" margin={{ top: "none", bottom: "small" }}>
@@ -61,7 +67,7 @@ const Widget = ({
           </Heading>
         )}
         <Box
-          height={direction === "row" ? height : "100%"}
+          height={direction === "row" ? height : "auto"}
           direction={direction}
           fill="horizontal"
           overflow="hidden"
