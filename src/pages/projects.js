@@ -34,7 +34,8 @@ const Projects = ({ data }) => {
         {posts.map((post, index) => {
           const { title } = post.node.frontmatter;
           const { slug } = post.node.fields;
-          const excerpt = post.node.frontmatter.meta.desc || post.node.excerpt;
+          const excerpt =
+            post.node.frontmatter.description || post.node.excerpt;
           const background = colors[index % 3];
           return (
             <Widget
@@ -73,6 +74,7 @@ export const projectsQuery = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM YYYY")
+            description
             meta {
               desc
             }

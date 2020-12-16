@@ -1,9 +1,8 @@
 ---
 title: BEM project
 date: 2013-08-31
-meta:
-  desc: >
-    My contribution to BEM project
+description: >
+  My contribution to BEM project
 ---
 
 TODO: links to talks and articles
