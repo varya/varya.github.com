@@ -1,0 +1,4 @@
+import Index from "./index";
+
+// keep copy of index page at design-systems path
+export default Index;
