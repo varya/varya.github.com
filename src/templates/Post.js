@@ -6,6 +6,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 import { Box, Button, Text } from "grommet";
 import {
+  Comments,
   DsAspects,
   GithubEdit,
   Heading,
@@ -83,11 +84,16 @@ postComponents.h1.propTypes = {
 };
 
 const Post = ({
-  data: { mdx },
+  data: {
+    mdx,
+    site: {
+      siteMetadata: { siteUrl },
+    },
+  },
   pageContext: { next, prev, fileSourceUrl },
 }) => {
-  const { date, readingTime } = mdx.fields;
-  const { title, subTitle, cover } = mdx.frontmatter;
+  const { date, readingTime, slug, disqusIdentifier } = mdx.fields;
+  const { title, subTitle, cover, tumblr } = mdx.frontmatter;
   const tags = mdx.frontmatter.tags && mdx.frontmatter.tags.split(",");
 
   return (
@@ -137,6 +143,7 @@ const Post = ({
           pad={{ vertical: "medium" }}
         />
         <GithubEdit link={fileSourceUrl} />
+        <Comments {...{ slug, title, disqusIdentifier, tumblr, siteUrl }} />
       </Box>
     </Layout>
   );
@@ -183,6 +190,11 @@ export const query = graphql`
             }
           }
         }
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }
