@@ -50,6 +50,7 @@ const Blog = ({ data, pageContext }) => {
                   title={post.node.frontmatter.title}
                   slug={`/${post.node.fields.slug}`}
                   excerpt={post.node.excerpt}
+                  height="small"
                 />
               );
             })}
