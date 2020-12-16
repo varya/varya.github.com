@@ -58,21 +58,22 @@ const Index = () => {
             <Link to="https://www.idbm.aalto.fi/">IDBM</Link> program), years of
             engineering experience and several leading roles behind.
           </Paragraph>
-          <Paragraph size="large" standout lead>
-            Nowadays my focus is on bringing design systems to the next level of
-            success which includes cooperative work in the company development
-            community and bridging the gap for designers, developers, and
-            business specialists.
-          </Paragraph>
         </Box>
+
         <Box flex={false}>
           <Avatar align="right" />
         </Box>
       </Box>
+      <Paragraph size="large" standout lead>
+        Nowadays my focus is on bringing design systems to the next level of
+        success which includes cooperative work in the company development
+        community and bridging the gap for designers, developers, and business
+        specialists.
+      </Paragraph>
 
       <Section heading="Services">
-        <Box direction="row" gap="large">
-          <Box basis="1/2">
+        <Box gap="large">
+          <Box>
             I am working as an independent consultant open for new projects. My
             roles include team leading of the design systems projects, technical
             leadership in frontend and building development.
@@ -97,8 +98,8 @@ const Index = () => {
             I am based in Helsinki (Finland), flexible for both on-site and
             remote projects and dont mind traveling.
           </Box>
-          <Box basis="1/2">
-            <Widget slug="/services" background="brand">
+          <Box>
+            <Widget slug="/services" background="brand" height="small">
               <Heading textAlign="center" level={3} size="large" fill={true}>
                 Services&nbsp;→
               </Heading>
@@ -152,6 +153,7 @@ const Index = () => {
 
         <WidgetContainer items={{ small: 1, medium: 3, large: 3 }}>
           <Widget
+            truncate={5}
             background="accent"
             title="Design systems 101"
             slug="/design-systems/design-systems-101/"
@@ -159,6 +161,7 @@ const Index = () => {
   on the concept of design systems and figure out the first steps towards your own."
           />
           <Widget
+            truncate={5}
             background="brand"
             title="Hands-on with Design Systems"
             slug="/design-systems/hands-on-workshop/"
@@ -166,6 +169,7 @@ const Index = () => {
   given twice - as a part of DSConf Helsinki, and the second time on its own."
           />
           <Widget
+            truncate={5}
             background="neutral"
             title="How to build a Design System as a team"
             slug="/design-systems/team-process-workshop/"
@@ -300,8 +304,13 @@ const Index = () => {
             </Heading>
           </Widget>
 
-          <Widget direction="row" slug="/projects" background="brand">
-            <Heading textAlign="center" level={3} size="large" fill={true}>
+          <Widget
+            alignContent="center"
+            justify="center"
+            slug="/projects"
+            background="brand"
+          >
+            <Heading level={3} size="large" margin={{ vertical: "auto" }}>
               More Projects&nbsp;→
             </Heading>
           </Widget>

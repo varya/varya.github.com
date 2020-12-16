@@ -29,7 +29,7 @@ const ContainerBox = styled(Box)`
   ${(props) => props.theme.menu.extend};
 `;
 
-const menuData = [
+export const menuData = [
   { label: "Home", href: "/" },
   {
     label: "Services",
@@ -44,7 +44,7 @@ const menuData = [
         href: "/services/development",
       },
       { label: "Workshops", href: "/services/workshops" },
-      { label: "Speaking", href: "/speaking" },
+      { label: "Speaking", href: "/services/speaking" },
     ],
   },
   { label: "Projects", href: "/projects" },
