@@ -39,6 +39,7 @@ const Widget = ({
   date,
   height = "auto",
   direction = "row",
+  alignContent,
   ...props
 }) => {
   const ResolvedImage = () =>
@@ -50,16 +51,13 @@ const Widget = ({
 
   return (
     <StyledWidget {...props} direction={direction} pad="medium">
-      <Link
+      <Box
+        align={alignContent}
+        as={Link}
         unstyled
         to={slug}
-        style={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "start",
-          height: "100%",
-        }}
+        fill
+        justify="center"
       >
         {title && (
           <Heading level="3" margin={{ top: "none", bottom: "small" }}>
@@ -131,7 +129,7 @@ const Widget = ({
             {children}
           </Box>
         </Box>
-      </Link>
+      </Box>
     </StyledWidget>
   );
 };
@@ -147,6 +145,7 @@ Widget.propTypes = {
   readingTime: PropTypes.number,
   height: PropTypes.string,
   direction: PropTypes.oneOf(["row", "column"]),
+  alignContent: PropTypes.string,
 };
 
 export default Widget;

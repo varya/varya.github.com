@@ -309,7 +309,6 @@ const Index = () => {
             justify="center"
             slug="/projects"
             background="brand"
-            // title="More"
           >
             <Heading level={3} size="large" margin={{ vertical: "auto" }}>
               More Projects&nbsp;→
