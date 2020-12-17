@@ -162,7 +162,6 @@ export const query = graphql`
           minutes
         }
         slug
-        prefix
         disqusIdentifier
       }
       frontmatter {
