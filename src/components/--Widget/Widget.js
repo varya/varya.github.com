@@ -40,6 +40,7 @@ const Widget = ({
   height = "auto",
   direction = "row",
   alignContent,
+  justify = "start",
   ...props
 }) => {
   const ResolvedImage = () =>
@@ -60,7 +61,11 @@ const Widget = ({
         justify="center"
       >
         {title && (
-          <Heading level="3" margin={{ top: "none", bottom: "small" }}>
+          <Heading
+            level="3"
+            textAlign={justify}
+            margin={{ top: "none", bottom: "small" }}
+          >
             {title}
           </Heading>
         )}
@@ -146,6 +151,7 @@ Widget.propTypes = {
   height: PropTypes.string,
   direction: PropTypes.oneOf(["row", "column"]),
   alignContent: PropTypes.string,
+  justify: PropTypes.string,
 };
 
 export default Widget;
