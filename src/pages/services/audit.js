@@ -69,18 +69,32 @@ const Audit = () => (
       Such a project could be a pre-phase for a supervised transformation or
       work on its own.
     </Paragraph>
-    <Heading level={3}>Here is how it works:</Heading>
-    <Step num={1}>We jump on a phone or zoom call and discuss the brief</Step>
-    <Step num={2}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
+    <Heading level={3}>Here is how it happens:</Heading>
+    <Step num={1}>
+      We have a remote video meeting to discuss your organisation, projects, and
+      goals. Chatting with you, I get all the context needed for further steps.
     </Step>
-    <Step num={3}>!! Do not forget to change this texts :)</Step>
+    <Step num={2}>
+      I interview your designers, developers, managers, and all people related
+      to creating, using, and supporting your design system.
+    </Step>
+    <Step num={3}>
+      I examine the artifacts you have such as design documentation, codebase,
+      tools, and the ways these tools are used.
+    </Step>
+    <Step num={4}>
+      I gather all the information and analyse it to form the full picture of
+      your design system structure and status, outline the issues and the areas
+      for potential improvement. The report I provide you with contains certain
+      suggestions, steps, and tricks to apply for overcoming the revealed issues
+      and implementing the impact-generating improvements.
+    </Step>
+    <Step num={5}>
+      When you read the report, we have a remote video meeting once again, and I
+      present you with the findings and suggestions from the report. In this
+      session, we can discuss your perspective and plans towards an enchanced
+      design system and well-tailored processes.
+    </Step>
   </Page>
 );
 
