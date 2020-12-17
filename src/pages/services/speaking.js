@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styled from "styled-components";
-import { Box, Button, Text } from "grommet";
-import { Heading, Paragraph, Widget, WidgetContainer } from "@components";
+import { Text } from "grommet";
+import { Heading, Paragraph, WidgetContainer, WidgetMulti } from "@components";
 import Page from "@templates/Page";
 
 import heroImage from "./hero-speaking.jpg";
@@ -245,44 +244,21 @@ const HeroContent = () => (
 
 const colors = ["brand", "accent", "neutral"];
 
-const StyledLink = styled(Button)`
-  border: none;
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
 const TalkWidget = ({
   index,
-  talk: { title, description, slug, links },
+  talk: { title, description, links },
   ...props
 }) => {
   return (
-    <Widget
+    <WidgetMulti
       alignContent="center"
       justify="center"
       background={colors[index % 3]}
       title={title}
       excerpt={description}
-      slug={slug}
+      links={links}
       {...props}
-    >
-      {!slug && links && (
-        <Box direction="row" justify="start" gap="large">
-          {Object.entries(links).map(([label, href]) => (
-            <StyledLink
-              margin={{ top: "medium" }}
-              plain
-              key={label}
-              label={label}
-              href={href}
-              target="_blank"
-              rel="noopener"
-            />
-          ))}
-        </Box>
-      )}
-    </Widget>
+    />
   );
 };
 
@@ -311,7 +287,7 @@ const Speaking = () => (
     <Paragraph>
       At this page you can find links on my articles, workshops and talks.
     </Paragraph>
-    <WidgetContainer>
+    <WidgetContainer items={{ small: 1, medium: 1, large: 1 }}>
       {talks.map((talk, index) => (
         <TalkWidget index={index} key={index + talk.title} talk={talk} />
       ))}
