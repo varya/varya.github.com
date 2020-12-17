@@ -2,10 +2,8 @@
 title: BEM project
 date: 2013-08-31
 description: >
-  My contribution to BEM project
+  Legendary BEM methodology, component, and tools developed at Yandex back in 2008. I worked leading a team of five in tight collaboration with 2 other teams creating components, documentation, and supporting dozens of frontend developers. Popularising BEM, especially abroad, was another huge aspect. I managed to tear down the iron curtain.
 ---
-
-TODO: links to talks and articles
 
 At Yandex, I worked in BEM team on methodology, technologies, libraries and a toolbox of [BEM](https://en.bem.info/).
 

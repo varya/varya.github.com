@@ -2,7 +2,7 @@
 title: Elisa design system (2017-2018)
 date: 2018-06-01
 description: >
-  Design system for top telecommunication and digital company in Finland
+  Design system for top telecommunication and digital company in Finland. The project raised a lot of managerial, technical, and community building challenges. Elisa's design system was successfully built and maintained for internal use and generated significant business impact.
 ---
 
 Elisa design system v1 was represented by several UI libraries implemented in plain HTML/CSS and ReactJs, UI kit in Sketch, shared design and development tools, and tailored collaboration processes. My role there was to lead a multidisciplinary team which crafts, standardised and champions the company-wide UI solutions and approaches. In particular, this meant aligning the strategy of the design system project together with Elisa Design Lead, organizing inner user researches, developing detailed project plans and managing their implementation. Altogether, the achievements of the project were:
