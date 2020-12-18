@@ -269,7 +269,10 @@ const Speaking = () => (
     }}
   >
     <Paragraph>
-      At this page you can find links on my articles, workshops and talks.
+      At this page you can find links on my articles, workshops and talks. If
+      you would like me to speak at your conference, give a workshop or
+      participate in a panel discussion, I will be more than happy to do it.
+      Drop me an email to discuss the details.
     </Paragraph>
     <WidgetContainer>
       {talks.map((talk, index) => (
