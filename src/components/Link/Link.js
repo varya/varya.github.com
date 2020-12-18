@@ -30,6 +30,7 @@ const AnchorWithoutStyle = styled.div`
 
 const StyledLink = ({ unstyled, ...props }) =>
   unstyled ? <AnchorWithoutStyle {...props} /> : <Anchor {...props} />;
+
 StyledLink.propTypes = {
   unstyled: PropTypes.bool,
 };

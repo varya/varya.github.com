@@ -1,35 +1,50 @@
 import React from "react";
 
-import styled from "styled-components";
+import { Box, Grommet, Text } from "grommet";
+import { deepMerge } from "grommet/utils";
 
-import { colorScheme } from "../Colors/Colors.js";
+import theme from "../theme";
+/**
+ * Logo
+ *
+ * @param {"small" | "medium" | "large"} size
+ */
 
-const LogoContainer = styled.div`
-  font-size: 2em;
-  font-weight: bold;
-`;
-const LogoVar = styled.b`
-  color: ${colorScheme.primary};
-  font-family: "Monaco";
-  &:after {
-    content: " ";
-  }
-`;
-const LogoYa = styled.b`
-  color: ${colorScheme.highlight};
-  font-family: "Monaco";
-  &:after {
-    content: ";";
-    color: ${colorScheme.shadow};
-  }
-`;
+const logoTheme = deepMerge(theme, {
+  text: {
+    font: {
+      family: "Monaco",
+    },
+    small: {
+      size: "30px",
+      height: "30px",
+    },
+    medium: {
+      size: "40px",
+      height: "40px",
+    },
+    large: {
+      size: "50px",
+      height: "50px",
+    },
+  },
+});
 
-const Logo = () => {
+const Logo = ({ size = "medium" }) => {
   return (
-    <LogoContainer>
-      <LogoVar>var</LogoVar>
-      <LogoYa>ya</LogoYa>
-    </LogoContainer>
+    <Grommet theme={logoTheme}>
+      <Box direction="row" size="large">
+        <Text weight="bold" color="brand" size={size}>
+          var&nbsp;
+        </Text>
+        <Text weight="bold" color="accent" size={size}>
+          ya
+        </Text>
+        <Text weight="bold" color="text-xweak" size={size}>
+          ;
+        </Text>
+      </Box>
+    </Grommet>
   );
 };
 

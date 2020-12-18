@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Heading, Paragraph, Widget, WidgetContainer } from "@components";
-import { menuData } from "@components/--Menu/Menu.js";
+import { menuData } from "@components/Menu/Menu.js";
 import Page from "@templates/Page";
 
 const HeroContent = () => (

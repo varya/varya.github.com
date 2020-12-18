@@ -1,10 +1,9 @@
 import React from "react";
-// eslint-disable-next-line
 import PropTypes from "prop-types";
 
 import styled from "styled-components";
 
-import { colorScheme } from "../Colors/Colors.js";
+import theme from "../theme";
 import Business from "./business.svg";
 import Designer from "./designer.svg";
 import Developer from "./developer.svg";
@@ -32,10 +31,10 @@ class ProjectRoles extends React.Component {
 
     const color =
       {
-        developer: colorScheme.secondary,
-        designer: colorScheme.highlight,
-        owner: colorScheme.shadow,
-      }[this.props.role] || colorScheme.primary;
+        developer: theme.global.color.accent,
+        designer: theme.global.color.neutral,
+        owner: theme.global.color["text-xxweak"],
+      }[this.props.role] || theme.global.color.brand;
 
     return (
       <Container color={color} side={this.props.side || "left"}>

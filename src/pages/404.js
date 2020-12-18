@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Page from "../components/Page/Page--outer";
+import Page from "@templates/Page";
+
 import SEO from "../components/Seo";
 
 const NotFoundPage = ({ location }) => (
