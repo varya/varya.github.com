@@ -19,23 +19,27 @@ const toKebabCase = (str) =>
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
-  const createNewSlug = (fileNode, filePath) => {
+  const isOldPost = (node) => node.frontmatter.v2 || node.frontmatter.old;
+  const createNewSlug = (fileNode, filePath, isOld) => {
     const slugBase = fileNode.relativeDirectory;
-    const slugPrefix = fileNode.sourceInstanceName;
+    const slugPrefix =
+      // for newer posts replace "posts" in path to "blog" to match previous urls
+      !isOld && fileNode.sourceInstanceName === "posts"
+        ? "blog"
+        : fileNode.sourceInstanceName;
 
-    if (slugPrefix === "posts" || slugPrefix === "life") {
+    if (isOld) {
       const langPrefix = filePath.split("index_")[1] || "";
-
-      return `${langPrefix}${slugPrefix}/${slugBase}`;
+      return `${langPrefix}${slugPrefix}/${slugBase}/`;
     }
-    return `${slugPrefix}/${slugBase}`;
+    return `${slugPrefix}/${slugBase}/`;
   };
 
   if (node.internal.type === "Mdx") {
     const fileNode = getNode(node.parent);
     const filePath = createFilePath({ node, getNode, basePath: `/` });
 
-    let slug = createNewSlug(fileNode, filePath);
+    let slug = createNewSlug(fileNode, filePath, isOldPost(node));
 
     createNodeField({
       node,
