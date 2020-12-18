@@ -2,7 +2,8 @@
 title: Workshop at React Finland 2020
 date: 2020-05-25
 description: >
-  A workshop covering all the main aspects of design system
+  A remote workshop on the design, managerial, and communication aspects of design systems.
+  During this workshop, the participants got hands-on experience with basic design processes while creating and maintaining their own design system.
 ---
 
 React super start Andrey Okonechnikov and I gave the workshop introducing the design, managerial and communication aspects of design systems. In the workshop, the participants saw the value of common language and well-organized co-creation process, practiced UI inventory, and learned the different shapes of design systems as well as how to choose the most suitable one.
