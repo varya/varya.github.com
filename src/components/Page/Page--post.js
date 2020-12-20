@@ -56,7 +56,6 @@ export const pageQuery = graphql`
           minutes
         }
         slug
-        prefix
         disqusIdentifier
       }
       frontmatter {

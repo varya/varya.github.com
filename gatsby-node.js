@@ -19,48 +19,32 @@ const toKebabCase = (str) =>
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
+  const isOldPost = (node) => node.frontmatter.v2 || node.frontmatter.old;
+  const createNewSlug = (fileNode, filePath, isOld) => {
+    const slugBase = fileNode.relativeDirectory;
+    const slugPrefix =
+      // for newer posts replace "posts" in path to "blog" to match previous urls
+      !isOld && fileNode.sourceInstanceName === "posts"
+        ? "blog"
+        : fileNode.sourceInstanceName;
+
+    if (isOld) {
+      const langPrefix = filePath.split("index_")[1] || "";
+      return `${langPrefix}${slugPrefix}/${slugBase}/`;
+    }
+    return `${slugPrefix}/${slugBase}/`;
+  };
+
   if (node.internal.type === "Mdx") {
     const fileNode = getNode(node.parent);
-    let slug = createFilePath({ node, getNode, basePath: `pages` });
+    const filePath = createFilePath({ node, getNode, basePath: `/` });
 
-    const separtorIndex = ~slug.indexOf("--") ? slug.indexOf("--") : 0;
-    const shortSlugStart = separtorIndex ? separtorIndex + 2 : 0;
+    let slug = createNewSlug(fileNode, filePath, isOldPost(node));
 
-    // only for posts
-    if (
-      fileNode.sourceInstanceName === "posts" ||
-      fileNode.sourceInstanceName === "life"
-    ) {
-      //const folder = node.frontmatter.old ? 'issues' : fileNode.sourceInstanceName;
-      const folder = fileNode.sourceInstanceName;
-
-      if (node.frontmatter.v2 || node.frontmatter.old) {
-        let paths = fileNode.relativePath.split("index_en.md");
-        if (paths[1] === "") {
-          slug = `en/${folder}/${paths[0]}`;
-        }
-        paths = fileNode.relativePath.split("index_ru.md");
-        if (paths[1] === "") {
-          slug = `ru/${folder}/${paths[0]}`;
-        }
-      } else {
-        slug = `blog${slug}`;
-      }
-    }
-
-    const newSlug = `${separtorIndex ? "/" : ""}${slug.substring(
-      shortSlugStart
-    )}`;
     createNodeField({
       node,
       name: `slug`,
-      value: newSlug,
-    });
-
-    createNodeField({
-      node,
-      name: `prefix`,
-      value: separtorIndex ? slug.substring(1, separtorIndex) : "",
+      value: slug,
     });
 
     // detect Node language
@@ -124,10 +108,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           fileAbsolutePath: { regex: "//posts//" }
           fields: { lang: { eq: "en" } }
         }
-        sort: {
-          fields: [fields___prefix, frontmatter___date]
-          order: [DESC, DESC]
-        }
+        sort: { fields: [frontmatter___date], order: [DESC, DESC] }
       ) {
         edges {
           node {
@@ -135,7 +116,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fileAbsolutePath
             fields {
               slug
-              prefix
               disqusIdentifier
               level
               fileRelativePath
@@ -163,7 +143,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fileAbsolutePath
             fields {
               slug
-              prefix
               level
               fileRelativePath
               lang
@@ -193,10 +172,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           fileAbsolutePath: { regex: "//posts//" }
           fields: { lang: { ne: "en" } }
         }
-        sort: {
-          fields: [fields___prefix, frontmatter___date]
-          order: [DESC, DESC]
-        }
+        sort: { fields: [frontmatter___date], order: [DESC, DESC] }
       ) {
         edges {
           node {
@@ -204,7 +180,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fileAbsolutePath
             fields {
               slug
-              prefix
               disqusIdentifier
               level
               fileRelativePath
@@ -224,10 +199,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
       lifePosts: allMdx(
         filter: { fileAbsolutePath: { regex: "//life//" } }
-        sort: {
-          fields: [fields___prefix, frontmatter___date]
-          order: [DESC, DESC]
-        }
+        sort: { fields: [frontmatter___date], order: [DESC, DESC] }
       ) {
         edges {
           node {
@@ -235,7 +207,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fileAbsolutePath
             fields {
               slug
-              prefix
               disqusIdentifier
               level
               fileRelativePath
@@ -260,12 +231,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
   }
   const blogPosts = postsData.data.blogPosts.edges;
-  const projectPosts = postsData.data.projectPosts.edges;
-  const designSystemsPosts = postsData.data.designSystemsPosts.edges;
 
   const otherPosts = [
     ...postsData.data.ruPosts.edges,
     ...postsData.data.lifePosts.edges,
+    ...postsData.data.projectPosts.edges,
+    ...postsData.data.designSystemsPosts.edges,
   ];
 
   const tagSet = new Set();
@@ -303,32 +274,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: slug,
-      component: postTemplate,
-      context: {
-        slug,
-      },
-    });
-  });
-
-  // PROJECT POSTS
-  projectPosts.forEach(({ node }) => {
-    const slug = node.fields.slug;
-
-    createPage({
-      path: "/projects" + slug,
-      component: postTemplate,
-      context: {
-        slug,
-      },
-    });
-  });
-
-  // DESIGN SYSTEMS POSTS
-  designSystemsPosts.forEach(({ node }) => {
-    const slug = node.fields.slug;
-
-    createPage({
-      path: "/design-systems" + slug,
       component: postTemplate,
       context: {
         slug,
