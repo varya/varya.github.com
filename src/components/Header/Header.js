@@ -1,51 +1,32 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-import styled from "styled-components";
+import { Box, Header as GrommetHeader, ResponsiveContext } from "grommet";
+import { Logo, Menu } from "@components";
 
-import Logo from "../Logo";
-import Menu from "../Menu";
-import { grid } from "styled-components-grid";
-const Container = styled.div`
-  ${grid({})}
-  margin-top: 1em;
-  margin-bottom: 2em;
-`;
-
-const LeftSide = styled.div`
-  ${grid.unit({
-    size: {
-      desktop: 4 / 12,
-    },
-  })}
-`;
-const RightSide = styled.div`
-  ${grid.unit({
-    size: {
-      desktop: 8 / 12,
-    },
-  })}
-`;
-
-class Header extends React.Component {
-  render() {
-    const { pages, path } = this.props;
-
-    return (
-      <Container>
-        <LeftSide>
-          <Logo />
-        </LeftSide>
-        <RightSide>
-          <Menu path={path} pages={pages} />
-        </RightSide>
-      </Container>
-    );
-  }
-}
-
-Header.propTypes = {
-  pages: PropTypes.array,
-  path: PropTypes.string,
+/**
+ * Header component based on Grommet Header
+ *
+ */
+const Header = () => {
+  return (
+    <ResponsiveContext.Consumer>
+      {(size) => (
+        <Box direction="row" fill="horizontal" elevation="medium">
+          <GrommetHeader
+            width="xlarge"
+            responsive
+            pad="medium"
+            height={size === "small" ? "48px" : "62px"}
+            direction="row"
+            margin={{ horizontal: "auto" }}
+          >
+            <Logo size={size === "small" ? "small" : "medium"} />
+            <Menu />
+          </GrommetHeader>
+        </Box>
+      )}
+    </ResponsiveContext.Consumer>
+  );
 };
+
 export default Header;

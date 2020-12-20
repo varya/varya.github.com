@@ -46,7 +46,7 @@ const Workshops = () => (
     {/* TODO: store workshop list in marksown and query for them */}
     <WidgetContainer>
       <Widget
-        slug="/workshops/design-systems-101"
+        slug="/design-systems/design-systems-101"
         background="neutral"
         align="center"
         title="Design Systems 101"
@@ -54,7 +54,7 @@ const Workshops = () => (
         excerpt="Introductary non-technical workshop for all the specialists (designers, developers, managers) to get common understanding on the concept of design systems and figure out the first steps towards your own."
       />
       <Widget
-        slug="/workshops/hands-on-design-system"
+        slug="/design-systems/hands-on-design-system"
         background="brand"
         align="center"
         title="Hands-on with Design Systems"
@@ -62,7 +62,7 @@ const Workshops = () => (
         excerpt="Full-day workshop about building design system and pattern library (React) in multidisciplinary team. This workshop was given twice - as a part of DSConf Helsinki, and the second time on its own.Introductary non-technical workshop for all the specialists (designers, developers, managers) to get common understanding on the concept of design systems and figure out the first steps towards your own."
       />
       <Widget
-        slug="/workshops/how-to-build"
+        slug="/design-systems/how-to-build"
         background="accent"
         align="center"
         title="How to build a Design System as a team"

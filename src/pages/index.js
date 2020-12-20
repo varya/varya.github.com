@@ -281,7 +281,11 @@ const Index = () => {
               BEM project by Yandex
             </Heading>
           </Widget>
-          <Widget direction="column" imageSrc={yandexLogo}>
+          <Widget
+            direction="column"
+            imageSrc={yandexLogo}
+            slug="projects/lego-project"
+          >
             <Heading textAlign="center" fill level={3}>
               Lego Project By Yandex
             </Heading>

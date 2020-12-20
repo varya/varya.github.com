@@ -7,7 +7,7 @@ const [name] = process.argv.slice(2);
 if (!name) throw new Error("You must include a component name.");
 
 // folder prefix to be removed
-const dir = `./src/components/--${name}/`;
+const dir = `./src/components/${name}/`;
 
 // throw an error if the file already exists
 if (fs.existsSync(dir))

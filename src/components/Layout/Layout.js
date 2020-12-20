@@ -1,55 +1,45 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styled from "styled-components";
+import { Box, Grommet } from "grommet";
+import { Footer, Header } from "@components";
 
-import breakpoint from "styled-components-breakpoint";
-import { Cell, Grid } from "styled-css-grid";
+import theme from "../theme";
 
-const MyGrid = styled(Grid)`
-  grid-template-areas:
-    "header header"
-    "content content"
-    "prompt prompt"
-    "footer footer";
+/**
+ * A container component for layout partials
+ *
+ */
 
-  ${breakpoint("mobile")`
-    grid-gap: 8px;
-  `}
-  ${breakpoint("tablet")`
-    grid-template-areas:
-      "header header"
-      "prompt content"
-      "footer footer";
-    grid-gap: 16px;
-  `}
-  ${breakpoint("desktop")`
-    grid-gap: 24px;
-  `}
-`;
-
-export const LayoutSimple = (props) => (
-  <MyGrid columns={"48px 1fr"} rows={"minmax(48px,auto) 1fr minmax(48px,auto)"}>
-    <Cell area="header" width={2}>
-      {props.header}
-    </Cell>
-
-    <Cell area="content" width={1}>
-      {props.content}
-    </Cell>
-    <Cell area="prompt" width={1}>
-      {props.prompt}
-    </Cell>
-
-    <Cell area="footer" width={2}>
-      {props.footer}
-    </Cell>
-  </MyGrid>
+const Layout = ({ children }) => (
+  <Grommet theme={theme} full>
+    <Box fill>
+      <Header
+        background="brand"
+        pad="small"
+        elevation="small"
+        justify="between"
+        direction="row"
+        align="center"
+        flex={false}
+      />
+      <Box
+        flex="grow"
+        direction="column"
+        overflow="auto"
+        height="90%" // Real height is 100% - header height. Any value less then that will work because of flex-grow
+      >
+        <Box as="main" flex="grow" pad={{ bottom: "medium" }}>
+          {children}
+        </Box>
+        <Footer />
+      </Box>
+    </Box>
+  </Grommet>
 );
 
-LayoutSimple.propTypes = {
-  header: PropTypes.node,
-  content: PropTypes.node,
-  prompt: PropTypes.node,
-  footer: PropTypes.node,
+Layout.propTypes = {
+  children: PropTypes.node,
 };
+
+export default Layout;
