@@ -31,10 +31,10 @@ class ProjectRoles extends React.Component {
 
     const color =
       {
-        developer: theme.global.color.accent,
-        designer: theme.global.color.neutral,
-        owner: theme.global.color["text-xxweak"],
-      }[this.props.role] || theme.global.color.brand;
+        developer: theme.global.colors.accent,
+        designer: theme.global.colors.neutral,
+        owner: theme.global.colors["text-xxweak"],
+      }[this.props.role] || theme.global.colors.brand;
 
     return (
       <Container color={color} side={this.props.side || "left"}>
