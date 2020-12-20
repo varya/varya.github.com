@@ -23,4 +23,5 @@ export { default as SocialLinks } from "./--SocialLinks";
 export { default as Tag } from "./--Tag";
 export { default as Widget } from "./--Widget";
 export { default as WidgetContainer } from "./--WidgetContainer";
+export { default as WidgetMulti } from "./--WidgetMulti";
 export { default as PatternJourney } from "./PatternJourney";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box, Button, Text } from "grommet";
+import { Box, Text } from "grommet";
 import {
   Avatar,
   Heading,
@@ -9,6 +9,7 @@ import {
   Section,
   Widget,
   WidgetContainer,
+  WidgetMulti,
 } from "@components";
 import Page from "@templates/Page";
 
@@ -195,69 +196,51 @@ const Index = () => {
           <Link to="/services/speaking">the list of my articles and talks</Link>
           .
         </Paragraph>
-
         <WidgetContainer>
-          <Widget
+          <WidgetMulti
             background="accent"
             title="A practical guide to building your design system infrastructure"
             height="auto"
-          >
-            <Paragraph>
-              Design systems bridge the gap between designers and developers,
+            links={{
+              Slides: "https://varya.me/react-finland-2019",
+              Video: "https://youtu.be/gDkUpx0dVc0",
+            }}
+            excerpt="Design systems bridge the gap between designers and developers,
               communicate shared practices to all the company levels and
               significantly decrease production costs. We all have heard this
-              but how to achieve that in practice?{" "}
-            </Paragraph>
-            <Paragraph>
-              {" "}
-              React ecosystem and community already provide a lot of efficient
+              but how to achieve that in practice? React ecosystem and community already provide a lot of efficient
               open source tools which can be used for building your design
               system infrastructure. With them, you can have the most automated
               development process, high-level interactive documentation for the
               libraries in your system and support contribution practices within
-              your organisation.
-            </Paragraph>
-
-            <Box direction="row" justify="around">
-              <Button
-                primary
-                label="Slides"
-                as="Link"
-                to="https://varya.me/react-finland-2019"
-              />
-              <Button
-                primary
-                label="Video"
-                href="https://youtu.be/gDkUpx0dVc0"
-                target="_blank"
-                rel="noopener"
-              />
-            </Box>
-          </Widget>
-
-          <Widget
+              your organisation."
+          />
+          <WidgetMulti
             background="brand"
             title="Maintaining design systems with proper user
   research"
-            slug="https://medium.com/elisa-design/maintaining-design-systems-with-user-research-3ba5feafc336"
+            links={{
+              "Read on Medium":
+                "https://medium.com/elisa-design/maintaining-design-systems-with-user-research-3ba5feafc336",
+            }}
             excerpt="Article in Elisa's Medium Publication about the design thinking methods to help when choosing the next steps for the
   design system development and growth."
           />
-          <Widget
+          <WidgetMulti
             background="neutral"
             title="Building design systems that leverage your designers, developers and
   products"
-            slug="/blog/design-systems-thinking/"
+            links={{ "Read in my blog": "/blog/design-systems-thinking/" }}
             excerpt="If we compare design systems of several companies, it is visible that this concept has different meanings to different
   people. So, how to decide which path to follow and what aspects of design systems should be in focus at your
   organisation? In this talk given at WEBdeLDN meetup in London I told a story of managing a design system in a large
   company, making decision on its further focus and approaches behind the implementing which include design thinking
   methods, community management, and technical tips."
           />
-          <Widget
+          <WidgetMulti
             background="accent"
             title="Design Systems — review of vocabulary and terms"
-            slug="/blog/design-systems-review/"
+            links={{ "Read in my blog": "/blog/design-systems-review/" }}
             excerpt="Design systems standardise and simplify the process of interface design and development, they bring new
   approaches and form their own ecosystem. However, there is no solid understanding of the concepts and terms forming
   the design systems. To solve the term inconsistency and provide structured professional language, this article
