@@ -29,6 +29,10 @@ const Projects = ({ data }) => {
         props: { background: "transparent", height: "small" },
         content: HeroContent,
       }}
+      seo={{
+        title: "Projects",
+        description: `My recent works`,
+      }}
     >
       <WidgetContainer items={{ small: 1, medium: 2, large: 2 }}>
         {posts.map((post, index) => {

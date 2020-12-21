@@ -2,14 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Box } from "grommet";
-import { Hero, Layout, SEO } from "@components";
+import { Hero, Layout, Seo } from "@components";
 
 const Page = ({ children, hero, seo }) => {
-  const { title, keywords } = { ...seo };
+  // const { title, keywords } = { ...seo };
   const { props: heroProps, content } = { ...hero };
   return (
     <Layout>
-      {seo && <SEO title={title} keywords={keywords} defer={false} />}
+      {seo && <Seo {...seo} location={location} defer={false} />}
       {hero && (
         <Hero align="center" justify="between" {...heroProps}>
           {React.createElement(content)}

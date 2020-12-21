@@ -29,6 +29,12 @@ const Strategy = () => (
       },
       content: HeroContent,
     }}
+    seo={{
+      title: "Design Systems Strategy",
+      description: `I can help you to analyze your business and product situation, take into account the given resources and identify the shape for the design system which would serve best in your case.`,
+      cover: heroImage,
+      keywords: ["design system"],
+    }}
   >
     <Heading level={2}>Kickstart a design system</Heading>
     <Paragraph>

@@ -29,6 +29,12 @@ const Supervision = () => (
       },
       content: HeroContent,
     }}
+    seo={{
+      title: "Supervision",
+      description: `As an experienced team leader, I can offer my help in supervising the teams of designers and developers.`,
+      cover: heroImage,
+      keywords: ["supervision", "team leading"],
+    }}
   >
     <Paragraph>
       As an experienced team leader, I can offer my help in supervising the

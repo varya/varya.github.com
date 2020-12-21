@@ -39,6 +39,10 @@ const Blog = ({ data, pageContext }) => {
             props: { background: "transparent", height: "small" },
             content: HeroContent,
           }}
+          seo={{
+            title: "Blog - Varya Stepanova, design systems expert",
+            description: `Read my articles and notes on design systems and development`,
+          }}
         >
           <WidgetContainer>
             {posts.map((post) => {
