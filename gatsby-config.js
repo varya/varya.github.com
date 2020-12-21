@@ -21,16 +21,20 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-mdx`,
+
       options: {
+        plugins: ["gatsby-remark-unwrap-images", "gatsby-remark-images"], //because of this: https://github.com/cedricdelpoux/gatsby-remark-unwrap-images/issues/2#issuecomment-526953234
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
-          default: path.resolve("./src/components/Page/Page--outer"),
+          default: path.resolve("./src/templates/Post.js"),
+          projects: path.resolve("./src/templates/ProjectPost.js"),
         },
         gatsbyRemarkPlugins: [
+          "gatsby-remark-unwrap-images",
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
+              maxWidth: 1600,
               backgroundColor: "transparent",
             },
           },
@@ -61,14 +65,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/content/pages`,
+        name: `projects`,
+        path: `${__dirname}/content/projects`,
       },
     },
     {
-      resolve: `gatsby-plugin-page-creator`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/pages`,
+        name: `design-systems`,
+        path: `${__dirname}/content/design-systems`,
       },
     },
     `gatsby-plugin-sharp`,
@@ -124,9 +129,6 @@ module.exports = {
         ],
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
@@ -137,5 +139,6 @@ module.exports = {
     {
       resolve: "gatsby-plugin-no-sourcemaps",
     },
+    `gatsby-plugin-sitemap`,
   ],
 };

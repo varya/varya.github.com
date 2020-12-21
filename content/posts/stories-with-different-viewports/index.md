@@ -3,6 +3,7 @@ title: Generic Storybook stories with different viewports
 
 date: 2020-08-12
 cover: thumb.png
+tags: storybook
 
 layout: post
 

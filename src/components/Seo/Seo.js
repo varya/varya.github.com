@@ -1,33 +1,39 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Helmet from "react-helmet";
+const path = require("path");
 import config from "../../../content/meta/config";
+import Helmet from "react-helmet";
 
-const Seo = (props) => {
-  const { data, title, keywords } = props;
-  const postTitle = ((data || {}).frontmatter || {}).title;
-  const postDescription =
+const Seo = ({ data, title, description, keywords, cover, location }) => {
+  const pageTitle = ((data || {}).frontmatter || {}).title;
+  const dataDescription =
     ((data || {}).frontmatter || {}).description ||
     (((data || {}).frontmatter || {}).meta || {}).desc;
-  const postCover = ((data || {}).frontmatter || {}).cover;
-  const postSlug = ((data || {}).fields || {}).slug;
+
+  const pageDescription = dataDescription
+    ? dataDescription
+    : description || config.siteDescription;
+  const pageCover = ((data || {}).frontmatter || {}).cover;
+  const pageSlug =
+    ((data || {}).fields || {}).slug || (location ? location.pathname : "");
 
   let fullTitle;
   if (!title) {
-    fullTitle = postTitle
-      ? `${postTitle} - ${config.shortSiteTitle}`
+    fullTitle = pageTitle
+      ? `${pageTitle} - ${config.shortSiteTitle}`
       : config.siteTitle;
   } else {
     fullTitle = title;
   }
-  const description = postDescription
-    ? postDescription
-    : config.siteDescription;
-  const image = postCover
-    ? postCover.childImageSharp.resize.src
-    : config.siteImage;
-  const url = config.siteUrl + config.pathPrefix + postSlug;
 
+  const image = pageCover
+    ? pageCover.childImageSharp.fluid.src
+    : cover || config.siteImage;
+
+  const imageUrl = path.join(config.siteUrl, image);
+  const url = path.join(config.siteUrl, config.pathPrefix, pageSlug);
+
+  const pageKeywords = keywords || config.defaultKeywords;
   return (
     <Helmet
       htmlAttributes={{
@@ -35,22 +41,22 @@ const Seo = (props) => {
         prefix: "og: http://ogp.me/ns#",
       }}
       meta={[].concat(
-        keywords && keywords.length > 0
+        pageKeywords && pageKeywords.length > 0
           ? {
               name: "keywords",
-              content: keywords.join(", "),
+              content: pageKeywords.join(", "),
             }
           : []
       )}
     >
       {/* General tags */}
       <title>{title}</title>
-      <meta name="description" content={description} />
+      <meta name="description" content={pageDescription} />
       {/* OpenGraph tags */}
       <meta property="og:url" content={url} />
       <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property="og:description" content={pageDescription} />
+      <meta property="og:image" content={imageUrl} />
       <meta property="og:type" content="website" />
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary" />
@@ -58,6 +64,9 @@ const Seo = (props) => {
         name="twitter:creator"
         content={config.authorTwitterAccount ? config.authorTwitterAccount : ""}
       />
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={pageDescription} />
+      <meta name="twitter:image" content={imageUrl} />
     </Helmet>
   );
 };
@@ -65,7 +74,10 @@ const Seo = (props) => {
 Seo.propTypes = {
   data: PropTypes.object,
   title: PropTypes.string,
-  keywords: PropTypes.any,
+  description: PropTypes.string,
+  keywords: PropTypes.array,
+  cover: PropTypes.string,
+  location: PropTypes.object,
 };
 
 export default Seo;

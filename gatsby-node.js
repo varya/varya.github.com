@@ -1,55 +1,50 @@
 const path = require("path");
+const config = require("./content/meta/config");
+
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 const REPO_URL = "https://github.com/varya/varya.github.com";
 const REPO_BRANCH = "develop";
-``;
+
+// TODO: move to separate file
+//#Source https://bit.ly/2neWfJ2
+const toKebabCase = (str) =>
+  str &&
+  str
+    .trim()
+    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map((x) => x.toLowerCase())
+    .join("-");
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
+  const isOldPost = (node) => node.frontmatter.v2 || node.frontmatter.old;
+  const createNewSlug = (fileNode, filePath, isOld) => {
+    const slugBase = fileNode.relativeDirectory;
+    const slugPrefix =
+      // for newer posts replace "posts" in path to "blog" to match previous urls
+      !isOld && fileNode.sourceInstanceName === "posts"
+        ? "blog"
+        : fileNode.sourceInstanceName;
+
+    if (isOld) {
+      const langPrefix = filePath.split("index_")[1] || "";
+      return `${langPrefix}${slugPrefix}/${slugBase}/`;
+    }
+    return `${slugPrefix}/${slugBase}/`;
+  };
+
   if (node.internal.type === "Mdx") {
     const fileNode = getNode(node.parent);
-    let slug = createFilePath({ node, getNode, basePath: `pages` });
+    const filePath = createFilePath({ node, getNode, basePath: `/` });
 
-    const separtorIndex = ~slug.indexOf("--") ? slug.indexOf("--") : 0;
-    const shortSlugStart = separtorIndex ? separtorIndex + 2 : 0;
+    let slug = createNewSlug(fileNode, filePath, isOldPost(node));
 
-    // only for posts
-    if (
-      fileNode.sourceInstanceName === "posts" ||
-      fileNode.sourceInstanceName === "life"
-    ) {
-      //const folder = node.frontmatter.old ? 'issues' : fileNode.sourceInstanceName;
-      const folder = fileNode.sourceInstanceName;
-
-      if (node.frontmatter.v2 || node.frontmatter.old) {
-        let paths = fileNode.relativePath.split("index_en.md");
-        if (paths[1] === "") {
-          slug = `en/${folder}/${paths[0]}`;
-        }
-        paths = fileNode.relativePath.split("index_ru.md");
-        if (paths[1] === "") {
-          slug = `ru/${folder}/${paths[0]}`;
-        }
-      } else {
-        slug = `blog${slug}`;
-      }
-    }
-
-    const newSlug = `${separtorIndex ? "/" : ""}${slug.substring(
-      shortSlugStart
-    )}`;
     createNodeField({
       node,
       name: `slug`,
-      value: newSlug,
-    });
-
-    createNodeField({
-      node,
-      name: `prefix`,
-      value: separtorIndex ? slug.substring(1, separtorIndex) : "",
+      value: slug,
     });
 
     // detect Node language
@@ -102,14 +97,18 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions;
-  const result = await graphql(`
+  const postTemplate = path.resolve("./src/templates/Post.js");
+  const blogTemplate = path.resolve("./src/templates/BlogIndex.js");
+  const tagTemplate = path.resolve("./src/templates/TagIndex.js");
+
+  const postsData = await graphql(`
     query {
-      allMdx(
-        filter: { fileAbsolutePath: { regex: "//posts|pages|life//" } }
-        sort: {
-          fields: [fields___prefix, frontmatter___date]
-          order: [DESC, DESC]
+      blogPosts: allMdx(
+        filter: {
+          fileAbsolutePath: { regex: "//posts//" }
+          fields: { lang: { eq: "en" } }
         }
+        sort: { fields: [frontmatter___date], order: [DESC, DESC] }
       ) {
         edges {
           node {
@@ -117,11 +116,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fileAbsolutePath
             fields {
               slug
-              prefix
-              lang
               disqusIdentifier
               level
               fileRelativePath
+              lang
             }
             frontmatter {
               title
@@ -130,133 +128,197 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               old
               date
               layout
+              tags
+            }
+          }
+        }
+      }
+      projectPosts: allMdx(
+        filter: { fileAbsolutePath: { regex: "//projects//" } }
+        sort: { fields: [frontmatter___date], order: [DESC] }
+      ) {
+        edges {
+          node {
+            id
+            fileAbsolutePath
+            fields {
+              slug
+              level
+              fileRelativePath
+              lang
+            }
+            frontmatter {
+              title
+              subTitle
+              date
+            }
+          }
+        }
+      }
+      designSystemsPosts: allMdx(
+        filter: { fileAbsolutePath: { regex: "//design-systems//" } }
+      ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+          }
+        }
+      }
+      ruPosts: allMdx(
+        filter: {
+          fileAbsolutePath: { regex: "//posts//" }
+          fields: { lang: { ne: "en" } }
+        }
+        sort: { fields: [frontmatter___date], order: [DESC, DESC] }
+      ) {
+        edges {
+          node {
+            id
+            fileAbsolutePath
+            fields {
+              slug
+              disqusIdentifier
+              level
+              fileRelativePath
+              lang
+            }
+            frontmatter {
+              title
+              subTitle
+              v2
+              old
+              date
+              layout
+              tags
+            }
+          }
+        }
+      }
+      lifePosts: allMdx(
+        filter: { fileAbsolutePath: { regex: "//life//" } }
+        sort: { fields: [frontmatter___date], order: [DESC, DESC] }
+      ) {
+        edges {
+          node {
+            id
+            fileAbsolutePath
+            fields {
+              slug
+              disqusIdentifier
+              level
+              fileRelativePath
+              lang
+            }
+            frontmatter {
+              title
+              subTitle
+              v2
+              old
+              date
+              layout
+              tags
             }
           }
         }
       }
     }
   `);
-  if (result.errors) {
+
+  if (postsData.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
   }
+  const blogPosts = postsData.data.blogPosts.edges;
 
-  // Create blog post pages.
-  const items = result.data.allMdx.edges;
+  const otherPosts = [
+    ...postsData.data.ruPosts.edges,
+    ...postsData.data.lifePosts.edges,
+    ...postsData.data.projectPosts.edges,
+    ...postsData.data.designSystemsPosts.edges,
+  ];
 
-  const posts = items.filter((item) =>
-    /posts/.test(item.node.fileAbsolutePath)
-  );
-  posts.forEach(({ node }, index) => {
+  const tagSet = new Set();
+
+  blogPosts.forEach(({ node }, index) => {
     const slug = node.fields && node.fields.slug;
-    const next = index === 0 ? undefined : posts[index - 1].node;
-    const prev = index === posts.length - 1 ? undefined : posts[index + 1].node;
+    const next = index === 0 ? undefined : blogPosts[index - 1].node;
+    const prev =
+      index === blogPosts.length - 1 ? undefined : blogPosts[index + 1].node;
     const fileSourceUrl = `${REPO_URL}/edit/${REPO_BRANCH}/content/posts/${node.fields.fileRelativePath}`;
 
-    createPage({
-      path: slug,
-      component: path.resolve(`./src/components/Page/Page--post.js`),
-      context: {
-        slug,
-        prev,
-        next,
-        fileSourceUrl,
-      },
-    });
-  });
-
-  // Create paginated blog index pages
-  // consider only english posts, russian ones are not displayed at /blog page
-  const postsEng = posts.filter((post) => post.node.fields.lang === "en");
-  const postsPerPage = 10;
-  const numPages = Math.ceil(postsEng.length / postsPerPage);
-  Array.from({ length: numPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-      component: path.resolve("./src/components/Page/Page--blog.js"),
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages,
-        currentPage: i + 1,
-        pathPrefix: "/blog/",
-      },
-    });
-  });
-
-  // Create life  posts
-  const lifePosts = items.filter((item) =>
-    /life/.test(item.node.fileAbsolutePath)
-  );
-  lifePosts.forEach(({ node }, index) => {
-    const slug = node.fields.slug;
-    const next = index === 0 ? undefined : lifePosts[index - 1].node;
-    const prev =
-      index === lifePosts.length - 1 ? undefined : lifePosts[index + 1].node;
-
-    const fileSourceUrl = `${REPO_URL}/edit/${REPO_BRANCH}/content/life/${node.fields.fileRelativePath}`;
-
-    createPage({
-      path: slug,
-      component: path.resolve(`./src/components/Page/Page--post.js`),
-      context: {
-        slug,
-        prev,
-        next,
-        fileSourceUrl,
-      },
-    });
-  });
-
-  const pages = items.filter((item) =>
-    /pages/.test(item.node.fileAbsolutePath)
-  );
-
-  // you'll call `createPage` for each result
-  pages.forEach(({ node }) => {
-    const slug = node.fields.slug;
-
-    let breadCrumbs = [];
-    /* making bread crumbs */
-    if (node.fields.level > 1) {
-      const slugItems = node.fields.slug
-        .split("/")
-        .filter((item) => item !== "");
-      slugItems.reduce((acc, val) => {
-        /* find parent page */
-        const p = pages.find((item) => item.node.fields.slug === acc) || {
-          node: {
-            fields: {
-              slug: "/",
-            },
-            frontmatter: {
-              title: "Home",
-            },
-          },
-        };
-        breadCrumbs.push(p);
-        return acc + val + "/";
-      }, "/");
-      breadCrumbs.push({ node, last: true });
+    // Generate a list of tags
+    const tags = node.frontmatter.tags && node.frontmatter.tags.split(",");
+    if (tags) {
+      tags.forEach((tag) => {
+        tagSet.add(tag);
+      });
     }
 
-    const fileSourceUrl = `${REPO_URL}/edit/${REPO_BRANCH}/content/pages/${node.fields.fileRelativePath}`;
-
     createPage({
-      // This is the slug you created before
-      // (or `node.frontmatter.slug`)
-      path: node.fields.slug,
-      // This component will wrap our MDX content
-      component: path.resolve(
-        node.frontmatter.layout || `./src/components/Page/Page--page.js`
-      ),
-      // You can use the values in this context in
-      // our page layout component
+      path: slug,
+      component: postTemplate,
       context: {
-        id: node.id,
         slug,
-        breadCrumbs,
+        prev,
+        next,
         fileSourceUrl,
       },
     });
+  });
+
+  // Create all the old post which only need to be served t the urls, but do not need to appear in blog index.
+  otherPosts.forEach(({ node }) => {
+    const slug = node.fields.slug;
+
+    createPage({
+      path: slug,
+      component: postTemplate,
+      context: {
+        slug,
+      },
+    });
+  });
+
+  // Create blog index pages
+  // Adapted from: https://github.com/Vagr9K/gatsby-advanced-starter/blob/master/gatsby-node.js
+  const { postsPerPage } = config || 10; //default value
+  const pageCount = Math.ceil(blogPosts.length / postsPerPage);
+
+  [...Array(pageCount)].forEach((_val, pageNum) => {
+    createPage({
+      path: pageNum === 0 ? `/blog` : `/blog/${pageNum + 1}/`,
+      component: blogTemplate,
+      context: {
+        limit: postsPerPage,
+        skip: pageNum * postsPerPage,
+        pageCount,
+        currentPage: pageNum + 1,
+      },
+    });
+  });
+
+  //  Create tag pages
+  tagSet.forEach((tag) => {
+    const tagSlug = toKebabCase(tag);
+    createPage({
+      path: `/blog/${tagSlug}/`,
+      component: tagTemplate,
+      context: { tag, tagSlug },
+    });
+  });
+};
+
+// https://levelup.gitconnected.com/how-to-set-up-import-aliases-for-gatsby-32398ae67e7f
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "@components": path.resolve(__dirname, "src/components"),
+        "@templates": path.resolve(__dirname, "src/templates"),
+        "@static": path.resolve(__dirname, "static"),
+      },
+    },
   });
 };

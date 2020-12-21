@@ -5,6 +5,7 @@ date: 2020-05-12
 cover: thumb.png
 
 layout: post
+tags: webpack
 
 meta:
   desc: >

@@ -1,11 +1,12 @@
 import React from "react";
-import styled from "styled-components";
-import breakpoint from "styled-components-breakpoint";
-import Spider from "rc-spider";
-import data from "./PatternJourney.data.js";
-import FaClose from "react-icons/lib/fa/close";
 
-import { colorScheme } from "../Colors/Colors.js";
+import styled from "styled-components";
+
+import theme from "../theme";
+import data from "./PatternJourney.data.js";
+import Spider from "rc-spider";
+import FaClose from "react-icons/lib/fa/close";
+import breakpoint from "styled-components-breakpoint";
 
 const { Node, Text, Link, Rect } = Spider.Shape;
 const { darken } = Spider.Color;
@@ -33,9 +34,9 @@ const ModalContent = styled.div`
     width: 50%;
   `}
   margin: 1.5em auto;
-  background-color: ${colorScheme.light};
+  background-color: ${theme.global.colors["text-xweak"]};
   padding: 2em;
-  border: ${colorScheme.shadow} 1px solid;
+  border: ${theme.global.colors.text} 1px solid;
 `;
 
 const Close = styled.a`

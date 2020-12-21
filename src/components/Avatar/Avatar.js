@@ -1,7 +1,9 @@
 import React from "react";
-import styled from "styled-components";
-import breakpoint from "styled-components-breakpoint";
 import PropTypes from "prop-types";
+
+import styled from "styled-components";
+
+import breakpoint from "styled-components-breakpoint";
 
 const Image = styled.div`
   width: 300px;
