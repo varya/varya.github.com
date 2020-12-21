@@ -4,8 +4,7 @@ import PropTypes from "prop-types";
 import { Box } from "grommet";
 import { Hero, Layout, Seo } from "@components";
 
-const Page = ({ children, hero, seo }) => {
-  // const { title, keywords } = { ...seo };
+const Page = ({ children, hero, seo, location }) => {
   const { props: heroProps, content } = { ...hero };
   return (
     <Layout>
@@ -32,6 +31,7 @@ Page.propTypes = {
     keywords: PropTypes.array,
   }),
   children: PropTypes.node,
+  location: PropTypes.object,
 };
 
 export default Page;

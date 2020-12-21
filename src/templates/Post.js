@@ -107,7 +107,7 @@ const Post = ({
         title={title}
         subTitle={subTitle}
       />
-      <Seo data={mdx} location={location} />
+      <Seo data={mdx} />
       <Box
         flex="grow"
         width="xlarge"

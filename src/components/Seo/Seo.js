@@ -14,7 +14,8 @@ const Seo = ({ data, title, description, keywords, cover, location }) => {
     ? dataDescription
     : description || config.siteDescription;
   const pageCover = ((data || {}).frontmatter || {}).cover;
-  const pageSlug = ((data || {}).fields || {}).slug || location.pathname;
+  const pageSlug =
+    ((data || {}).fields || {}).slug || (location ? location.pathname : "");
 
   let fullTitle;
   if (!title) {

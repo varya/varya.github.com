@@ -16,5 +16,4 @@ design-system implementation in code and design tools.
 
 With the knowledge of communicational practises and modern design and developer's tools you too should be able to introduce a design system in your company and star working smarter, not harder.
 
-https://www.component-driven.dev/offerings/ds101
-https://ds101.component-driven.io/
+<Link to="https://www.component-driven.dev/offerings/ds101" target="_blank" rel="noopener">Workshop description at component-driven.io</Link>
