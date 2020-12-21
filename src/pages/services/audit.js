@@ -55,6 +55,11 @@ const Audit = () => (
       },
       content: HeroContent,
     }}
+    seo={{
+      title: " Audit of design and development processes",
+      description: ` You are looking into more effective working processes between your design and development teams? I can help with it.`,
+      cover: heroImage,
+    }}
   >
     <Paragraph>
       You are looking into more effective working processes between your design

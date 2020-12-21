@@ -59,14 +59,8 @@ const Services = () => {
       seo={{
         title:
           "Varya Stepanova — design systems architect and engineering manager",
-        keywords: [
-          "design systems",
-          "design system",
-          "frontend",
-          "contractor",
-          "consulting",
-          "consulter",
-        ],
+        description:
+          " I am working as an independent consultant open for new projects. My roles include team leading of the design systems projects, technical leadership in frontend and building development.",
       }}
     >
       <Paragraph>

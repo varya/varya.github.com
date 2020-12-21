@@ -29,6 +29,12 @@ const Workshops = () => (
       },
       content: HeroContent,
     }}
+    seo={{
+      title: "Workshops",
+      description: `Most of the projects I ran included workshops and trainings. As a consultant, I see it as a part of my job to keep the client well-informed and provide the hands-on teams with enough information for maintaining the projects.`,
+      cover: heroImage,
+      keywords: ["workshops", "training"],
+    }}
   >
     <Paragraph>
       Most of the projects I ran included workshops and trainings. As a
@@ -54,7 +60,7 @@ const Workshops = () => (
         excerpt="Introductary non-technical workshop for all the specialists (designers, developers, managers) to get common understanding on the concept of design systems and figure out the first steps towards your own."
       />
       <Widget
-        slug="/design-systems/hands-on-design-system"
+        slug="/design-systems/hands-on-workshop"
         background="brand"
         align="center"
         title="Hands-on with Design Systems"
@@ -62,7 +68,7 @@ const Workshops = () => (
         excerpt="Full-day workshop about building design system and pattern library (React) in multidisciplinary team. This workshop was given twice - as a part of DSConf Helsinki, and the second time on its own.Introductary non-technical workshop for all the specialists (designers, developers, managers) to get common understanding on the concept of design systems and figure out the first steps towards your own."
       />
       <Widget
-        slug="/design-systems/how-to-build"
+        slug="/design-systems/team-process-workshop"
         background="accent"
         align="center"
         title="How to build a Design System as a team"

@@ -9,7 +9,7 @@ import {
   ResponsiveContext,
   Text,
 } from "grommet";
-import { Paragraph, SocialLinks } from "@components";
+import { Link, Paragraph, SocialLinks } from "@components";
 
 /**
  * Footer component
@@ -34,17 +34,20 @@ const Footer = () => {
           rows={["auto", "auto", "auto"]}
           areas={{
             small: [
-              { name: "call-to-action", start: [0, 0], end: [3, 0] },
+              { name: "call-to-action", start: [0, 0], end: [2, 0] },
+              { name: "button", start: [3, 0], end: [3, 0] },
               { name: "social", start: [0, 1], end: [3, 1] },
               { name: "copyright", start: [0, 2], end: [3, 2] },
             ],
             medium: [
-              { name: "call-to-action", start: [0, 0], end: [2, 0] },
+              { name: "call-to-action", start: [0, 0], end: [1, 0] },
+              { name: "button", start: [2, 0], end: [2, 0] },
               { name: "social", start: [3, 0], end: [3, 0] },
               { name: "copyright", start: [0, 1], end: [3, 1] },
             ],
             large: [
-              { name: "call-to-action", start: [0, 0], end: [2, 0] },
+              { name: "call-to-action", start: [0, 0], end: [1, 0] },
+              { name: "button", start: [2, 0], end: [2, 0] },
               { name: "social", start: [3, 0], end: [3, 0] },
               { name: "copyright", start: [0, 1], end: [3, 1] },
             ],
@@ -61,11 +64,21 @@ const Footer = () => {
               design system. I can align the design and development processes in
               your organisation for a larger business impact.
             </Paragraph>
-            <Button
-              primary
-              label="Get in touch"
-              margin={{ horizontal: "xxsmall" }}
-            />
+          </Box>
+
+          <Box gridArea="button" pad="medium" align="center">
+            <Link unstyled to="/contact" width={{ min: "120px" }}>
+              <Button
+                as="div"
+                // to="/contact"
+                // as={Link}
+                // unstyled
+                primary
+                label="Get in touch"
+                fill={true}
+                margin={{ horizontal: "xxsmall" }}
+              />
+            </Link>
           </Box>
           <Box gridArea="social" alignSelf="center" justify="end">
             <SocialLinks background="light-1" />

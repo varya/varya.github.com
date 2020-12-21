@@ -2,9 +2,17 @@ module.exports = {
   siteTitle: "Varya.me — design and development", // <title>
   shortSiteTitle: "Varya.me", // <title> ending for posts and pages
   siteDescription: "Varya.me — design and development",
+  siteKeywords: [
+    "design systems",
+    "design system",
+    "frontend",
+    "contractor",
+    "consulting",
+    "consulter",
+  ],
   siteUrl: "http://varya.me/",
   pathPrefix: "",
-  siteImage: "preview.jpg",
+  siteImage: "/preview.jpg",
   siteLanguage: "en",
   // author
   authorName: "Varya Stepanova",

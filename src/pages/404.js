@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 
 import Page from "@templates/Page";
 
-import SEO from "../components/Seo";
+import Seo from "../components/Seo";
 
 const NotFoundPage = ({ location }) => (
   <Page location={location}>
-    <SEO title="404: Not found" />
+    <Seo title="404: Not found" />
     <h1>NOT FOUND</h1>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
   </Page>

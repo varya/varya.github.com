@@ -56,8 +56,15 @@ const Index = () => {
             tooling for the subject and spreading the practices across large or
             regular organizations. I have two Master degrees — in physics and
             service design (Aalto University,{" "}
-            <Link to="https://www.idbm.aalto.fi/">IDBM</Link> program), years of
-            engineering experience and several leading roles behind.
+            <Link
+              to="https://www.idbm.aalto.fi/"
+              target="_blank"
+              rel="noopener"
+            >
+              IDBM
+            </Link>{" "}
+            program), years of engineering experience and several leading roles
+            behind.
           </Paragraph>
         </Box>
 
@@ -80,20 +87,20 @@ const Index = () => {
             leadership in frontend and building development.
             <ul>
               <li>
-                <Link to="/audit">Audit</Link> of existing products and
+                <Link to="services/audit">Audit</Link> of existing products and
                 development processes
               </li>
               <li>
-                <Link to="/strategy">Coaching</Link> to boots your design
-                operations and development to the next level
+                <Link to="services/strategy">Coaching</Link> to boots your
+                design operations and development to the next level
               </li>
               <li>
-                Custom-tailored <Link to="/workshops">workshops</Link> on the
-                related topics
+                Custom-tailored <Link to="services/workshops">workshops</Link>{" "}
+                on the related topics
               </li>
               <li>
                 Design systems and UI components{" "}
-                <Link to="/development">production</Link>
+                <Link to="services/development">production</Link>
               </li>
             </ul>
             I am based in Helsinki (Finland), flexible for both on-site and

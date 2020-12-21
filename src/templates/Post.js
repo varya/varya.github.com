@@ -20,6 +20,7 @@ import {
   PrevNextNav,
   ProjectRoles,
   Section,
+  Seo,
   Tag,
   Widget,
   WidgetContainer,
@@ -106,6 +107,7 @@ const Post = ({
         title={title}
         subTitle={subTitle}
       />
+      <Seo data={mdx} />
       <Box
         flex="grow"
         width="xlarge"

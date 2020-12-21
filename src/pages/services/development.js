@@ -23,6 +23,11 @@ const Development = () => (
       },
       content: HeroContent,
     }}
+    seo={{
+      title: "Design Systems and Components Production",
+      description: `Whenever you already have a design system or are looking for a technical solution for the very first version of it, you will need foundational work for it. Meaning, setting up the architecture and infrastructure of the system that would support its operations and growth. Well done, such foundational work{" "}`,
+      cover: heroImage,
+    }}
   >
     <Heading level={2}>Design system architecture and infrastructure</Heading>
     <Paragraph>

@@ -34,7 +34,13 @@ const HeroContent = () => (
 );
 
 const Contact = () => (
-  <Page hero={{ props: { background: "light-8" }, content: HeroContent }}>
+  <Page
+    hero={{ props: { background: "light-8" }, content: HeroContent }}
+    seo={{
+      title: "Contact - Varya Stepanova, design systems expert",
+      description: `Get in touch to discuss our next project`,
+    }}
+  >
     <Paragraph>
       Need to talk face2face? Book a video session with me via{" "}
       <Link to="https://calendly.com/var_ya">Calendly</Link>: I keep my calendar

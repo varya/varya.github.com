@@ -29,6 +29,12 @@ const Consultancy = () => (
       },
       content: HeroContent,
     }}
+    seo={{
+      title: "Consultancy",
+      description: `I offer a wide range of consulting services related to design systems (or design operations) and frontend development.`,
+      cover: heroImage,
+      keywords: ["consultancy", "design systems", "consulting"],
+    }}
   >
     <Paragraph>
       My work as a design system architect includes running the processes
