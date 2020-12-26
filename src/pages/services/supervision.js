@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Text } from "grommet";
-import { Heading, Paragraph } from "@components";
+import { Heading, Paragraph, Team } from "@components";
 import Page from "@templates/Page";
 
 import heroImage from "./hero-supervision.jpg";
@@ -42,9 +42,10 @@ const Supervision = () => (
     </Paragraph>
     <Paragraph>
       If you do not have your own specialists but are interested in getting a
-      bunch of professionals working together, my partners and I can offer a
-      well-worked team proven itself at many other projects.
+      bunch of professionals working together, my business partners and I can
+      offer a well-worked team that has proved itself at many projects.
     </Paragraph>
+    <Team />
   </Page>
 );
 

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Text } from "grommet";
-import { Heading, Link, Paragraph } from "@components";
+import { Heading, Link, Paragraph, Team } from "@components";
 import Page from "@templates/Page";
 
 import heroImage from "./hero-ui-components.jpg";
@@ -60,6 +60,7 @@ const Development = () => (
       process ensures both sucessful initial manufactoring and further smooth
       manitaining of your design system.
     </Paragraph>
+    <Team />
   </Page>
 );
 
