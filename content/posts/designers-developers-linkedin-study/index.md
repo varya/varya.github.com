@@ -1,23 +1,22 @@
 ---
-title: What UX designers and UI developers value in each other — LinkedIn study
+title: What UX designers and UI developers value in each other. LinkedIn research study
 
 date: 2021-01-12
 cover: thumb.jpg
 
-layout: post
-
 meta:
   desc: >
-    XXX
+    What do UX designers and UI developers value in each other? This research study on
+    LinkedIn data analyses recommendation texts and bridges the results to the existing
+    scientific and industry knowledge.
 ---
 
 <div data-excerpt>
 
-Both User Centered Design (UCD) and Agile Software Development (ASD) are widely used methods in the production of user interfaces (UI). However, they “frequently putting contradictory demands on people working with the respective processes” (Jones, 2019). Trying to match different disciplines, the designers and developers are supposed to conduct alignment work which brings them to mutual understanding in the context of their work, revealing “design breakdowns” (Maudet, Leiva, Beaudouin-Lafon & Mackay 2017) early enough.
+Both User Centered Design (UCD) and Agile Software Development (ASD) are widely used methods in the production of user interfaces (UI). However, they “frequently putting contradictory demands on people working with the respective processes” (Jones, 2019). Trying to match different disciplines, the designers and developers are supposed to conduct alignment work which brings them to mutual understanding in the context of their work, revealing “design breakdowns” (Maudet, Leiva, Beaudouin-Lafon & Mackay 2017) early enough.<br/>
+This research aims to find what designers and developers who consider their collaboration process as successful value in each other.
 
 </div>
-
-This research aims to find what designers and developers who consider their collaboration process as successful value in each other.
 
 ## Research design
 
@@ -52,7 +51,7 @@ Overall research findings complement the studies which outline that “successfu
 
 ## Conclusion
 
-The conducted analysis demonstrated correlation with the existing studies. Even though the obtained data was selected randomly and was less than 20 short recommendation texts in total, it allowed to categorize the valuable attributes of designers and developers and showed the match in valuing cross-disciplinary knowledge. The research approach and the method of obtaining data look as a permission contribution into the following study of positive factors for designers’ and developers’ alignment work.
+The conducted analysis demonstrated correlation with the existing studies. Even though the obtained data was selected randomly and was less than 20 short recommendation texts in total, it allowed to categorize the valuable attributes of designers and developers and showed the match in valuing cross-disciplinary knowledge. The research approach and the method of obtaining data look as a promising contribution into the following study of positive factors for designers’ and developers’ alignment work.
 
 - [Appendix 1. Raw data](./Varya-Stepanova__What-UX-designers-and-UI-developers-value-in-each-other__LinkedIn-study__appendix-1.pdf)
 - [Appendix 2. 1st-level concepts and themes](./Varya-Stepanova__What-UX-designers-and-UI-developers-value-in-each-other__LinkedIn-study__appendix-2.pdf)
