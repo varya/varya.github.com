@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Box, Header as GrommetHeader, ResponsiveContext } from "grommet";
-import { Logo, Menu } from "@components";
+import { Link, Logo, Menu } from "@components";
 
 /**
  * Header component based on Grommet Header
@@ -20,7 +20,9 @@ const Header = () => {
             direction="row"
             margin={{ horizontal: "auto" }}
           >
-            <Logo size={size === "small" ? "small" : "medium"} />
+            <Link unstyled to="/">
+              <Logo size={size === "small" ? "small" : "medium"} />
+            </Link>
             <Menu />
           </GrommetHeader>
         </Box>
