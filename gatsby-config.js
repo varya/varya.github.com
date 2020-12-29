@@ -36,6 +36,7 @@ module.exports = {
             options: {
               maxWidth: 1600,
               backgroundColor: "transparent",
+              wrapperStyle: "width: 100%;",
             },
           },
           `gatsby-remark-prismjs`,
