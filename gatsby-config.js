@@ -30,7 +30,6 @@ module.exports = {
           projects: path.resolve("./src/templates/ProjectPost.js"),
         },
         gatsbyRemarkPlugins: [
-          "gatsby-remark-unwrap-images",
           {
             resolve: `gatsby-remark-images`,
             options: {
