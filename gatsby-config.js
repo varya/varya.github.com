@@ -38,6 +38,7 @@ module.exports = {
               wrapperStyle: "width: 100%;",
             },
           },
+          `gatsby-remark-copy-relative-linked-files`,
           `gatsby-remark-prismjs`,
           {
             resolve: `gatsby-remark-autolink-headers`,
