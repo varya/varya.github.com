@@ -29,6 +29,12 @@ const ContainerBox = styled(Box)`
   ${(props) => props.theme.menu.extend};
 `;
 
+const StyledButton = styled(Button)`
+  &.active {
+    text-decoration: underline;
+  }
+`;
+
 export const menuData = [
   { label: "Home", href: "/" },
   {
@@ -104,7 +110,7 @@ function flatten(arr, isSecondLevel = false) {
  * @param {Array} items - array of objects, representing menu items. Items can be nested (will be rendered as submenu)
  *
  */
-const Menu = ({ items = menuData, current, mode = "horizontal", ...props }) => {
+const Menu = ({ items = menuData, mode = "horizontal", ...props }) => {
   return (
     <Grommet theme={menuTheme}>
       <ResponsiveContext.Consumer>
@@ -121,7 +127,6 @@ const Menu = ({ items = menuData, current, mode = "horizontal", ...props }) => {
               align="center"
               justify="end"
               direction="row"
-              selectedKeys={current}
               mode={mode}
               gap="none"
               {...props}
@@ -176,13 +181,14 @@ const MenuItem = ({ item, ...props }) => {
                     pad="small"
                     gap="medium"
                   >
-                    <Button plain {...childprops} />
+                    <StyledButton plain {...childprops} />
                   </Box>
                 ))}
               </ContainerBox>
             }
           >
-            <Button
+            <StyledButton
+              activeClassName="active"
               plain
               as={Link}
               key={label}
@@ -195,7 +201,15 @@ const MenuItem = ({ item, ...props }) => {
       </Box>
     </Box>
   ) : (
-    <Button plain as={Link} key={label} to={href} {...props} label={label} />
+    <StyledButton
+      plain
+      as={Link}
+      key={label}
+      to={href}
+      {...props}
+      label={label}
+      activeClassName="active"
+    />
   );
 };
 
