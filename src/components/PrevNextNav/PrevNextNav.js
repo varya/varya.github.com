@@ -35,30 +35,34 @@ const PrevNextNav = ({
         pad={{ bottom: "small" }}
       >
         {prevSlug && (
-          <Heading
-            color="text-weak"
-            level="6"
-            margin="none"
-            textAlign="start"
-            spaced
-            underline
-            textCase="uppercase"
-          >
-            Previous Post
-          </Heading>
+          <Box>
+            <Heading
+              color="text-weak"
+              level="6"
+              margin="none"
+              textAlign="start"
+              spaced
+              underline
+              textCase="uppercase"
+            >
+              Previous Post
+            </Heading>
+          </Box>
         )}
         {nextSlug && (
-          <Heading
-            color="text-weak"
-            level="6"
-            margin="none"
-            textAlign="start"
-            spaced
-            underline
-            textCase="uppercase"
-          >
-            Next Post
-          </Heading>
+          <Box margin={{ left: "auto" }}>
+            <Heading
+              color="text-weak"
+              level="6"
+              margin="none"
+              textAlign="start"
+              spaced
+              underline
+              textCase="uppercase"
+            >
+              Next Post
+            </Heading>
+          </Box>
         )}
       </Box>
       <Nav direction="row" justify="between" gap="large" fill="horizontal">
