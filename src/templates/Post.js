@@ -19,6 +19,7 @@ import {
   PostHeader,
   PrevNextNav,
   ProjectRoles,
+  PureHtml,
   Section,
   Seo,
   Tag,
@@ -35,6 +36,7 @@ const globalMdxComponents = {
   Heading,
   Paragraph,
   PatternJourney,
+  PureHtml,
   Section,
   Hero,
   Widget,
@@ -54,13 +56,13 @@ const _Heading = (level) => {
 };
 
 // Apply styling to excerpt
-const _div = ({ "data-excerpt": dataExcerpt, children }) =>
+const _div = ({ "data-excerpt": dataExcerpt, children, ...props }) =>
   dataExcerpt ? (
     <Paragraph as="div" lead>
       {children}
     </Paragraph>
   ) : (
-    <div>{children}</div>
+    <div {...props}>{children}</div>
   );
 
 _div.propTypes = {
