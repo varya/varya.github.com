@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Box, Header as GrommetHeader, ResponsiveContext } from "grommet";
 import { Logo, Menu } from "@components";
@@ -7,7 +8,7 @@ import { Logo, Menu } from "@components";
  * Header component based on Grommet Header
  *
  */
-const Header = () => {
+const Header = ({ location }) => {
   return (
     <ResponsiveContext.Consumer>
       {(size) => (
@@ -21,12 +22,16 @@ const Header = () => {
             margin={{ horizontal: "auto" }}
           >
             <Logo size={size === "small" ? "small" : "medium"} />
-            <Menu />
+            <Menu location={location} />
           </GrommetHeader>
         </Box>
       )}
     </ResponsiveContext.Consumer>
   );
+};
+
+Header.propTypes = {
+  location: PropTypes.object,
 };
 
 export default Header;

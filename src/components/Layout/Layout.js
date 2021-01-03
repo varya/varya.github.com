@@ -11,7 +11,7 @@ import theme from "../theme";
  *
  */
 
-const Layout = ({ children }) => (
+const Layout = ({ location, children }) => (
   <Grommet theme={theme} full>
     <Box fill>
       <Header
@@ -22,6 +22,7 @@ const Layout = ({ children }) => (
         direction="row"
         align="center"
         flex={false}
+        location={location}
       />
       <Box
         flex="grow"
@@ -40,6 +41,7 @@ const Layout = ({ children }) => (
 
 Layout.propTypes = {
   children: PropTypes.node,
+  location: PropTypes.object,
 };
 
 export default Layout;

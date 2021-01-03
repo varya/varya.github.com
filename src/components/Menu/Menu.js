@@ -32,6 +32,7 @@ const ContainerBox = styled(Box)`
 const StyledButton = styled(Button)`
   &.active {
     text-decoration: underline;
+    color: ${(props) => props.theme.global.colors.brand};
   }
 `;
 
@@ -110,7 +111,12 @@ function flatten(arr, isSecondLevel = false) {
  * @param {Array} items - array of objects, representing menu items. Items can be nested (will be rendered as submenu)
  *
  */
-const Menu = ({ items = menuData, mode = "horizontal", ...props }) => {
+const Menu = ({
+  items = menuData,
+  mode = "horizontal",
+  location,
+  ...props
+}) => {
   return (
     <Grommet theme={menuTheme}>
       <ResponsiveContext.Consumer>
@@ -136,6 +142,7 @@ const Menu = ({ items = menuData, mode = "horizontal", ...props }) => {
                   item={item}
                   key={item.label}
                   margin={{ horizontal: "small" }}
+                  location={location}
                 />
               ))}
             </Nav>
@@ -154,11 +161,11 @@ const Menu = ({ items = menuData, mode = "horizontal", ...props }) => {
  * @param {Array} item.childen - array of objects, representing nested menu items
  *
  */
-const MenuItem = ({ item, ...props }) => {
+const MenuItem = ({ item, location, ...props }) => {
   const { label, href, children = [] } = item;
   const targetRef = useRef();
   const [open, setOpen] = useState(false);
-
+  const { pathname } = { location };
   return children.length > 0 ? (
     <Box onMouseOver={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
       <Box ref={targetRef}>
@@ -181,7 +188,13 @@ const MenuItem = ({ item, ...props }) => {
                     pad="small"
                     gap="medium"
                   >
-                    <StyledButton plain {...childprops} />
+                    <StyledButton
+                      plain
+                      className={
+                        pathname && pathname === childprops.href && "active"
+                      }
+                      {...childprops}
+                    />
                   </Box>
                 ))}
               </ContainerBox>
@@ -189,6 +202,7 @@ const MenuItem = ({ item, ...props }) => {
           >
             <StyledButton
               activeClassName="active"
+              className={pathname && pathname.startsWith(href) && "active"}
               plain
               as={Link}
               key={label}
@@ -219,6 +233,7 @@ MenuItem.propTypes = {
     href: PropTypes.string,
     children: PropTypes.node,
   }),
+  location: PropTypes.object,
 };
 Menu.propTypes = {
   items: PropTypes.arrayOf(
@@ -230,6 +245,7 @@ Menu.propTypes = {
   ),
   current: PropTypes.string,
   mode: PropTypes.string,
+  location: PropTypes.object,
 };
 
 export default Menu;

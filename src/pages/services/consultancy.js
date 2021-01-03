@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Text } from "grommet";
 import { Heading, Paragraph, Widget, WidgetContainer } from "@components";
@@ -20,7 +21,7 @@ const HeroContent = () => (
   </Heading>
 );
 
-const Consultancy = () => (
+const Consultancy = ({ location }) => (
   <Page
     hero={{
       props: {
@@ -35,6 +36,7 @@ const Consultancy = () => (
       cover: heroImage,
       keywords: ["consultancy", "design systems", "consulting"],
     }}
+    location={location}
   >
     <Paragraph>
       My work as a design system architect includes running the processes
@@ -75,5 +77,9 @@ const Consultancy = () => (
     </WidgetContainer>
   </Page>
 );
+
+Consultancy.propTypes = {
+  location: PropTypes.object,
+};
 
 export default Consultancy;

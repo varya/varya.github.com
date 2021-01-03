@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Text } from "grommet";
 import { Heading, Paragraph } from "@components";
@@ -20,7 +21,7 @@ const HeroContent = () => (
   </Heading>
 );
 
-const Strategy = () => (
+const Strategy = ({ location }) => (
   <Page
     hero={{
       props: {
@@ -35,6 +36,7 @@ const Strategy = () => (
       cover: heroImage,
       keywords: ["design system"],
     }}
+    location={location}
   >
     <Heading level={2}>Kickstart a design system</Heading>
     <Paragraph>
@@ -69,5 +71,9 @@ const Strategy = () => (
     </Paragraph>
   </Page>
 );
+
+Strategy.propTypes = {
+  location: PropTypes.object,
+};
 
 export default Strategy;
