@@ -97,13 +97,18 @@ const Post = ({
   const { title, subTitle, cover, tumblr } = mdx.frontmatter;
   const tags = mdx.frontmatter.tags && mdx.frontmatter.tags.split(",");
 
+  // specify if blog-sopecific meta should be shown or hidden
+  const showBlogMeta = slug.startsWith("blog/");
+
   return (
     <Layout>
       <PostHeader
         imageUrl={cover && cover.childImageSharp.fluid.src}
         tags={tags}
         date={date}
-        readingTime={`${Math.round(readingTime.minutes)} min read`}
+        readingTime={
+          showBlogMeta && `${Math.round(readingTime.minutes)} min read`
+        }
         title={title}
         subTitle={subTitle}
       />
@@ -136,16 +141,20 @@ const Post = ({
               />
             ))}
         </Box>
-        <PrevNextNav
-          flex={false}
-          prevSlug={prev && `/${prev.fields.slug}`}
-          nextSlug={next && `/${next.fields.slug}`}
-          prevTitle={prev && prev.frontmatter.title}
-          nextTitle={next && next.frontmatter.title}
-          pad={{ vertical: "medium" }}
-        />
-        <GithubEdit link={fileSourceUrl} />
-        <Comments {...{ slug, title, disqusIdentifier, tumblr, siteUrl }} />
+        {showBlogMeta && (
+          <>
+            <PrevNextNav
+              flex={false}
+              prevSlug={prev && `/${prev.fields.slug}`}
+              nextSlug={next && `/${next.fields.slug}`}
+              prevTitle={prev && prev.frontmatter.title}
+              nextTitle={next && next.frontmatter.title}
+              pad={{ vertical: "medium" }}
+            />
+            <GithubEdit link={fileSourceUrl} />
+            <Comments {...{ slug, title, disqusIdentifier, tumblr, siteUrl }} />
+          </>
+        )}
       </Box>
     </Layout>
   );
