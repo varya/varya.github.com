@@ -35,11 +35,7 @@ different perspectives: design, development, project and even business.
 We can have a look at who are the actual or potential users of design systems, and what are their professional needs in
 this context.
 
-#### Developes
-
-<div class="clearfix">
-
-<ProjectRoles role="developer" side="left"/>
+<ProjectRoles role="developer" side="left"/><div class="clearfix">
 Design systems are often understood as libraries of components. In this regard, the developers are seeing the system
 mostly from this perspective. Developers would like to have documentation for every component, examples of usage and
 maybe explanation of the implementation details. Apart from that, they would need information related to the whole
@@ -48,11 +44,7 @@ know what is the library code style and contribution policy. To give feedback, t
 
 </div>
 
-#### Designers
-
-<div class="clearfix">
-
-<ProjectRoles role="designer" side="right"/>
+<ProjectRoles role="designer" side="right"/><div class="clearfix">
 Designers also need documentation for every pattern, especially the reasons behind them. Other design-related
 documentation such as color palette, spacing examples, tone of voice, and many more helps them to create new patterns
 which are coherent with the rest of the system. They also need information about how to collaborate with other fellow
@@ -61,11 +53,7 @@ need to know how the process goes further on the development and later stages.
 
 </div>
 
-#### Project owners
-
-<div class="clearfix">
-
-<ProjectRoles role="owner" side="left"/>
+<ProjectRoles role="owner" side="left"/><div class="clearfix">
 Project managers or owners need to have a basic representation of the design system since this is what is used to build the
 interface for their product. They are also interested in release notes as in something that has been implemented. Apart from that, managers need to know the design system's nearest future or, in particular, what new components are going to be
 released and what are the upcoming changes to the existing ones. For that, managers need to see the design system's
@@ -73,11 +61,7 @@ roadmap and learn its strategy as well as be able to discuss this with the relev
 
 </div>
 
-#### Business people
-
-<div class="clearfix">
-
-<ProjectRoles role="business" side="right"/>
+<ProjectRoles role="business" side="right"/><div class="clearfix">
 On the business levels of the company, especially if speaking about mid-size or large companies, design systems are seen
 as internal products and tools. People of this specialization need to have a larger scale picture of the system.
 Also, they must be especially interested into design system's meta information such as what is its impact, how it helps
@@ -106,9 +90,7 @@ style).
 
 #### Tools
 
-<div class="clearfix">
-
-<DsAspects aspect="tools" side="left"/>
+<DsAspects aspect="tools" side="left"/><div class="clearfix">
 This brings us to the tools which our company could have for all the developers and designers to share. This means
 professional software to use and its plugins, scripts for processing and optimizing visuals and code, development and
 design environment, etc.
@@ -117,9 +99,7 @@ design environment, etc.
 
 #### Processes
 
-<div class="clearfix">
-
-<DsAspects aspect="processes" side="left"/>
+<DsAspects aspect="processes" side="left"/><div class="clearfix">
 At the next level, design systems would mean the processes which are followed in the company to achieve the outlined
 goals. Often spoken that design systems bridge the gap between specializations. This means that the design system should
 establish the processes in teams or even on the company level.
@@ -128,9 +108,7 @@ establish the processes in teams or even on the company level.
 
 #### Community
 
-<div class="clearfix">
-
-<DsAspects aspect="community" side="left"/>
+<DsAspects aspect="community" side="left"/><div class="clearfix">
 The processes bring us to those for whom they are created, or to the people. As mentioned above, design systems ensure multidisciplinary collaboration and are meant to help the working collective as a whole. In this regard, having a design
 system implies constant work with our fellow developers, designers and project owners as with a community.
 
