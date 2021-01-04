@@ -23,7 +23,7 @@ const StyledHeading = styled(GrommetHeading)`
   position: relative;
   & > a.anchor {
     position: absolute;
-    left: -16px;
+    left: -24px;
     display: none;
     height: 100%;
   }
