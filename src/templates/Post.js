@@ -12,6 +12,7 @@ import {
   Heading,
   Hero,
   Image,
+  ImageBlock,
   Layout,
   Link,
   Paragraph,
@@ -43,6 +44,7 @@ const globalMdxComponents = {
   DsAspects,
   Link,
   Image,
+  ImageBlock,
 };
 
 const _Heading = (level) => {

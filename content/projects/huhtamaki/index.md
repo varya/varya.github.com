@@ -55,8 +55,11 @@ description of how the project was going.
 
 ## Overall Process
 
-<Box direction="row" gap="medium">
-<Box flex={true}>
+<ImageBlock imageRight imageBasis="1/2" image={<Box margin={{top: "medium"}} pad="small"><Image>
+
+![](Huhtamaki_Research.jpg)
+
+</Image></Box>}>
 
 ### Extensive Field Research to Understand Consumers
 
@@ -64,25 +67,13 @@ Our very first step was to understand the food consumer perspective on delivery 
 
 This helped us to really understand their behavior and preferences around food delivery. We also did extensive observational research of restaurant and store takeaway practices to understand preferences and trends there as well. Lastly, we also had a chance to speak to operators in the food delivery services domain, to understand their perspective as well.
 
-</Box>
-<Box flex={{"grow": 1}}  margin={{top: "medium"}} pad="small">
-<Image >
+</ImageBlock>
 
-![](Huhtamaki_Research.jpg)
-
-</Image>
-</Box>
-</Box>
-
-<Box direction="row" gap="medium">
-<Box flex={{"grow": 1}} margin={{top: "medium"}} pad="small">
-<Image>
+<ImageBlock imageBasis="1/2" image={<Box margin={{top: "medium"}} pad="small"><Image>
 
 ![](Huhtamaki_Conferences.jpg)
 
-</Image>
-</Box>
-<Box  flex={true}>
+</Image></Box>}>
 
 ### Conferences for a Deep Dive into the Delivery Industry
 
@@ -90,8 +81,7 @@ We understood that a successful solution would need a thorough understanding of 
 
 These conferences also helped us get an understanding of what to expect from the home delivery space in the future, both short and medium term, while getting an idea of what the big players in the space were doing. These future trends really enhanced our understanding of what the domain needed.
 
-</Box>
-</Box>
+</ImageBlock>
 
 <Box background="accent-50" pad="medium" textAlign="center" margin={{horizontal: "auto", vertica: "medium"}}>
 
@@ -104,9 +94,11 @@ These conferences also helped us get an understanding of what to expect from the
 <Paragraph standout>In addition, companies like Deliveroo, in order to ensure they maintained the optimal consumer experience which was a huge factor for their growth, were actually taking over the logistics of testing, procuring and supplying optimal packaging to the restaurants, thus becoming a one stop delivery enabler.</Paragraph>
 </Box>
 
-<Box direction="row" gap="medium">
+<ImageBlock imageBasis="1/2" image={<Box margin={{top: "medium"}} pad="small"><Image>
 
-<Box  flex={true}>
+![](Huhtamaki_Factory.jpg)
+
+</Image></Box>}>
 
 ### Understanding Huhtamaki’s Capabilities on Site
 
@@ -114,15 +106,7 @@ We visited one of our client’s production facilities in Finland as well as a s
 
 This also helped us understand their current product offerings and the kind of customers they currently had. This allowed us to think of potential ways in which their existing technology and solutions could translate into the delivery space while also giving us a business perspective on their capabilities.
 
-</Box>
-<Box flex={{"grow": 1}} margin={{top: "medium"}} pad="small">
-<Image>
-
-![](Huhtamaki_Factory.jpg)
-
-</Image>
-</Box>
-</Box>
+</ImageBlock>
 
 <Box background="accent-50" pad="medium" width="large" margin={{horizontal: "auto"}}>
 
@@ -131,15 +115,11 @@ This also helped us understand their current product offerings and the kind of c
 <Paragraph standout>The optimal solution wasn’t just about creating better packaging for home delivery as the client originally intended, it needed something much more comprehensive.</Paragraph>
 </Box>
 
-<Box direction="row" gap="medium">
-<Box flex={{"grow": 1}} margin={{top: "medium"}} pad="small">
-<Image>
+<ImageBlock imageRight imageBasis="1/2" image={<Box margin={{top: "medium"}} pad="small"><Image>
 
 ![](Huhtamaki_Ideation.jpg)
 
-</Image>
-</Box>
-<Box  flex={true}>
+</Image></Box>}>
 
 ### Crafting a Future Focused Strategic Solution
 
@@ -147,8 +127,7 @@ Once we had this understanding, we put on our ideation hats with our clients on 
 
 The intent of this roadmap was to provide a strategic approach for the client that ensured they weren’t just catching up or reacting to the current state of the domain, but rather aligning with trends and setting themselves up for sustainable, long term, success.
 
-</Box>
-</Box>
+</ImageBlock>
 
 ## Final Outcome
 
