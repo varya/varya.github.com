@@ -5,9 +5,11 @@ import styled from "styled-components";
 
 import breakpoint from "styled-components-breakpoint";
 
+const defaultImage = require("./avatar.jpg");
+
 const Image = styled.div`
-  width: 300px;
-  height: 300px;
+  width: ${(props) => props.size}px;
+  height: ${(props) => props.size}px;
   display: block;
   margin: 0.5em 0;
   border-radius: 50%;
@@ -23,13 +25,30 @@ const Image = styled.div`
 `;
 
 const Avatar = (props) => {
-  const image = require("./avatar.jpg");
+  let sizePx;
+  switch (props.size) {
+    case "l":
+      sizePx = 300;
+      break;
+    case "m":
+      sizePx = 200;
+      break;
+    default:
+      sizePx = 300;
+  }
 
-  return <Image image={image} align={props.align} />;
+  return <Image image={props.image} align={props.align} size={sizePx} />;
 };
 
 Avatar.propTypes = {
   align: PropTypes.string,
+  size: PropTypes.string,
+  image: PropTypes.node,
+};
+
+Avatar.defaultProps = {
+  image: defaultImage,
+  size: "l",
 };
 
 export default Avatar;

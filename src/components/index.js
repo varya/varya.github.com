@@ -21,6 +21,7 @@ export { default as Section } from "./Section";
 export { default as Seo } from "./Seo";
 export { default as SocialLinks } from "./SocialLinks";
 export { default as Tag } from "./Tag";
+export { default as Team } from "./Team";
 export { default as Widget } from "./Widget";
 export { default as WidgetContainer } from "./WidgetContainer";
 export { default as WidgetMulti } from "./WidgetMulti";
