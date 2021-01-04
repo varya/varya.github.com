@@ -11,7 +11,12 @@ const Header = () => {
   return (
     <ResponsiveContext.Consumer>
       {(size) => (
-        <Box direction="row" fill="horizontal" elevation="medium">
+        <Box
+          direction="row"
+          fill="horizontal"
+          elevation="medium"
+          flex={{ shrink: 0 }}
+        >
           <GrommetHeader
             width="xlarge"
             responsive
