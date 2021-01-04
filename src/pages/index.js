@@ -4,6 +4,7 @@ import { Box, Text } from "grommet";
 import {
   Avatar,
   Heading,
+  ImageBlock,
   Link,
   Paragraph,
   Section,
@@ -46,32 +47,21 @@ const Index = () => {
         ],
       }}
     >
-      <Box direction="row" gap="large">
-        <Box>
-          <Paragraph size="large" standout lead>
-            I am Varya Stepanova, a <b>design systems architect</b> with an
-            extensive experience in management, design, and technical side. In
-            the 15+ years of technical career, my major focus was
-            component-focused UI design and development, creating helpful
-            tooling for the subject and spreading the practices across large or
-            regular organizations. I have two Master degrees — in physics and
-            service design (Aalto University,{" "}
-            <Link
-              to="https://www.idbm.aalto.fi/"
-              target="_blank"
-              rel="noopener"
-            >
-              IDBM
-            </Link>{" "}
-            program), years of engineering experience and several leading roles
-            behind.
-          </Paragraph>
-        </Box>
-
-        <Box flex={false}>
-          <Avatar align="right" />
-        </Box>
-      </Box>
+      <ImageBlock imageRight image={<Avatar />} margin={{ top: "medium" }}>
+        <Paragraph size="large" standout lead margin={{ vertical: "none" }}>
+          I am Varya Stepanova, a <b>design systems architect</b> with an
+          extensive experience in management, design, and technical side. In the
+          15+ years of technical career, my major focus was component-focused UI
+          design and development, creating helpful tooling for the subject and
+          spreading the practices across large or regular organizations. I have
+          two Master degrees — in physics and service design (Aalto University,{" "}
+          <Link to="https://www.idbm.aalto.fi/" target="_blank" rel="noopener">
+            IDBM
+          </Link>{" "}
+          program), years of engineering experience and several leading roles
+          behind.
+        </Paragraph>
+      </ImageBlock>
       <Paragraph size="large" standout lead>
         Nowadays my focus is on bringing design systems to the next level of
         success which includes cooperative work in the company development
