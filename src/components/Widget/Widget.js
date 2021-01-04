@@ -89,7 +89,7 @@ const Widget = ({
                   <ResolvedImage />
                   {readingTime && (
                     <Box
-                      background="accent-75"
+                      background="accent"
                       margin="small"
                       pad="xsmall"
                       size="small"
@@ -124,7 +124,7 @@ const Widget = ({
             {excerpt && (
               <Paragraph
                 fill
-                truncate={7}
+                truncate={6}
                 flex={false}
                 margin={{ vertical: "xsmall" }}
               >
