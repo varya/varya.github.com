@@ -47,6 +47,8 @@ const Blog = ({ data, pageContext }) => {
           <WidgetContainer>
             {posts.map((post) => {
               const cover = post.node.frontmatter.cover;
+              const date = post.node.frontmatter.date;
+              const readingTime = post.node.fields.readingTime;
               return (
                 <Widget
                   key={post.node.frontmatter.title}
@@ -55,6 +57,8 @@ const Blog = ({ data, pageContext }) => {
                   slug={`/${post.node.fields.slug}`}
                   excerpt={post.node.excerpt}
                   height="small"
+                  date={date}
+                  readingTime={`${Math.round(readingTime.minutes)} min read`}
                 />
               );
             })}
@@ -97,6 +101,9 @@ export const blogQuery = graphql`
           excerpt(pruneLength: 600)
           fields {
             slug
+            readingTime {
+              minutes
+            }
           }
           frontmatter {
             title
