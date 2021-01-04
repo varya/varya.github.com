@@ -17,6 +17,7 @@ const Seo = ({ data, title, description, keywords, cover, location }) => {
   const pageSlug =
     ((data || {}).fields || {}).slug || (location ? location.pathname : "");
 
+  const canonical = ((data || {}).frontmatter || {}).canonical;
   let fullTitle;
   if (!title) {
     fullTitle = pageTitle
@@ -67,6 +68,7 @@ const Seo = ({ data, title, description, keywords, cover, location }) => {
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={pageDescription} />
       <meta name="twitter:image" content={imageUrl} />
+      {canonical && <link rel="canonical" href={canonical} />}
     </Helmet>
   );
 };
