@@ -20,7 +20,7 @@ const talks = [
   },
 
   {
-    title: "Maintaining design systems with proper user research",
+    title: "A practical guide to building your design system infrastructur",
     description: `Design systems bridge the gap between designers and developers,
               communicate shared practices to all the company levels and
               significantly decrease production costs. We all have heard this
@@ -35,14 +35,6 @@ const talks = [
       "React Finland 2019": "https://react-finland.fi/",
       Video: "https://youtu.be/gDkUpx0dVc0?t=9987",
     },
-  },
-  {
-    title: "A practical guide to building your design system infrastructure",
-    links: {
-      Medium:
-        "https://medium.com/elisa-design/maintaining-design-systems-with-user-research-3ba5feafc336",
-    },
-    description: `Article in Elisa's Medium Publication about the design thinking methods to help when choosing the next steps for the design system development and growth.`,
   },
   {
     title:
@@ -101,14 +93,6 @@ const talks = [
     },
   },
   {
-    title: "To BEM or not to BEM",
-    description: `Interview to Cristiano Rastelli about using BEM in developing frontend.`,
-    links: {
-      Read:
-        "http://www.didoo.net/to-bem-or-not-to-bem/05__interview-with--varya__stepanova.html",
-    },
-  },
-  {
     title: "ReactJS Hackathon @ SC5",
     description: `Materials for making a hackathon on React for a beginner level.`,
     links: { Slides: "http://varya.me/reactjs-hackathon/" },
@@ -133,15 +117,6 @@ const talks = [
     },
   },
   {
-    title: "Automating Style-Guide-Driven Development",
-    description: `This article at SmashingMagazine was published on 5th March 2105. It explained the motivation and benefits
-  of style-guide-driven development and component-based approach in frontend.`,
-    links: {
-      Read:
-        "http://www.smashingmagazine.com/2015/03/05/automating-style-guide-driven-development/",
-    },
-  },
-  {
     title: "Styleguide generator by SC5",
     description: `With this presentation I introduced SC5 StyleGuide to frontend developers at Veikkaus and Elisa in December 2014 and January 2015 and Frontend.fi on January 2015.`,
     links: {
@@ -150,24 +125,10 @@ const talks = [
     },
   },
   {
-    title: "BEM FAQ",
-    description: `A list of frequently asked questions about BEM and detailed answers to them.`,
-    links: {
-      Read: "http://getbem.com/faq/",
-    },
-  },
-  {
     title: "JSCS in use at SC5 Online",
     description: `This talk given 18th on November at HelsinkiJS meetup presents JSCS, a tool for checking JavaScript code style, and describes experience of using it in SC5 Online.`,
     links: {
       Slides: "http://varya.me/jscs-talk/",
-    },
-  },
-  {
-    title: "Tutorial on JavaScript components with i-bem.js",
-    description: `This set of well-explained examples demonstrates how to create JavaScript components using the basic features of i-bem.js.`,
-    links: {
-      Read: "http://bem.info/tutorials/bem-js-tutorial/",
     },
   },
   {
@@ -188,12 +149,6 @@ const talks = [
     },
   },
   {
-    title: "Quick start with full BEM stack",
-    description: `This tutorial shows how to run a BEM-project and enjoy helpful bem tools,
-  efficient BEMHTML templates and declarative JavaScript i-bem.js.`,
-    links: { Read: "http://bem.info/articles/start-with-project-stub/" },
-  },
-  {
     title: "What you can borrow from Yandex frontend dev",
     description: `The talk about BEM at WebConf Riga on 10 November 2012.
   Here it's explained at length what is BEM in terms of CSS. BEM-styled JavaScript
@@ -210,14 +165,6 @@ const talks = [
   Session, October 2012 in Amsterdam.`,
     links: {
       Video: "https://vimeo.com/51897014",
-    },
-  },
-  {
-    title: "A New Frontend Methodology: BEM",
-    description: `The first article about BEM in English.`,
-    links: {
-      Read:
-        "http://coding.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/",
     },
   },
   {
