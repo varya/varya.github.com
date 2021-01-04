@@ -57,9 +57,16 @@ const Audit = ({ location }) => {
         content: HeroContent,
       }}
       seo={{
-        title: " Audit of design and development processes",
-        description: ` You are looking into more effective working processes between your design and development teams? I can help with it.`,
+        title: "Audit for design and development processes",
+        description: `Are you looking into more effective working
+        processes between your design and development teams? I can help with it.`,
         cover: heroImage,
+        keywords: [
+          "design operations",
+          "design and development",
+          "development processes",
+          "software development",
+        ],
       }}
       location={location}
     >

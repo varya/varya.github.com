@@ -31,10 +31,16 @@ const Supervision = ({ location }) => (
       content: HeroContent,
     }}
     seo={{
-      title: "Supervision",
-      description: `As an experienced team leader, I can offer my help in supervising the teams of designers and developers.`,
+      title: "Supervision for software development teams",
+      description: `As an experienced team leader, I can offer
+      my help in supervising the teams of designers and developers.`,
       cover: heroImage,
-      keywords: ["supervision", "team leading"],
+      keywords: [
+        "team supervision",
+        "team leading",
+        "engineering manager",
+        "software development",
+      ],
     }}
     location={location}
   >
