@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Text } from "grommet";
 import { Heading, Paragraph, Widget, WidgetContainer } from "@components";
@@ -20,7 +21,7 @@ const HeroContent = () => (
   </Heading>
 );
 
-const Workshops = () => (
+const Workshops = ({ location }) => (
   <Page
     hero={{
       props: {
@@ -35,6 +36,7 @@ const Workshops = () => (
       cover: heroImage,
       keywords: ["workshops", "training"],
     }}
+    location={location}
   >
     <Paragraph>
       Most of the projects I ran included workshops and trainings. As a
@@ -78,5 +80,9 @@ const Workshops = () => (
     </WidgetContainer>
   </Page>
 );
+
+Workshops.propTypes = {
+  location: PropTypes.object,
+};
 
 export default Workshops;

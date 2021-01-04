@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Text } from "grommet";
 import { Heading, Link, Paragraph, Team } from "@components";
@@ -14,7 +15,7 @@ const HeroContent = () => (
   </Heading>
 );
 
-const Development = () => (
+const Development = ({ location }) => (
   <Page
     hero={{
       props: {
@@ -28,6 +29,7 @@ const Development = () => (
       description: `Whenever you already have a design system or are looking for a technical solution for the very first version of it, you will need foundational work for it. Meaning, setting up the architecture and infrastructure of the system that would support its operations and growth. Well done, such foundational work{" "}`,
       cover: heroImage,
     }}
+    location={location}
   >
     <Heading level={2}>Design system architecture and infrastructure</Heading>
     <Paragraph>
@@ -63,5 +65,9 @@ const Development = () => (
     <Team />
   </Page>
 );
+
+Development.propTypes = {
+  location: PropTypes.object,
+};
 
 export default Development;

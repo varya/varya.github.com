@@ -41,7 +41,7 @@ ServiceWidget.propTypes = {
   slug: PropTypes.string,
 };
 
-const Services = () => {
+const Services = ({ location }) => {
   // get list of services from menu component
   const services = menuData.find(
     (item) => item.label.toLowerCase() === "services"
@@ -62,6 +62,7 @@ const Services = () => {
         description:
           " I am working as an independent consultant open for new projects. My roles include team leading of the design systems projects, technical leadership in frontend and building development.",
       }}
+      location={location}
     >
       <Paragraph>
         I am working as an independent consultant open for new projects. My
@@ -89,6 +90,10 @@ const Services = () => {
       </WidgetContainer>
     </Page>
   );
+};
+
+Services.propTypes = {
+  location: PropTypes.object,
 };
 
 export default Services;

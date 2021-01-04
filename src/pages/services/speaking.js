@@ -274,7 +274,7 @@ TalkWidget.propTypes = {
   children: PropTypes.node,
 };
 
-const Speaking = () => (
+const Speaking = ({ location }) => (
   <Page
     hero={{
       props: {
@@ -289,6 +289,7 @@ const Speaking = () => (
       cover: heroImage,
       keywords: ["speaking", "talks", "articles"],
     }}
+    location={location}
   >
     <Paragraph>
       At this page you can find links on my articles, workshops and talks. If
@@ -303,5 +304,9 @@ const Speaking = () => (
     </WidgetContainer>
   </Page>
 );
+
+Speaking.propTypes = {
+  location: PropTypes.object,
+};
 
 export default Speaking;

@@ -4,10 +4,11 @@ import PropTypes from "prop-types";
 import { Box } from "grommet";
 import { Hero, Layout, Seo } from "@components";
 
-const Page = ({ children, hero, seo, location }) => {
+const Page = (props) => {
+  const { children, hero, seo, location } = props;
   const { props: heroProps, content } = { ...hero };
   return (
-    <Layout>
+    <Layout location={location}>
       {seo && <Seo {...seo} location={location} defer={false} />}
       {hero && (
         <Hero align="center" justify="between" {...heroProps}>

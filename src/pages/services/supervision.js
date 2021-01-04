@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Text } from "grommet";
 import { Heading, Paragraph, Team } from "@components";
@@ -20,7 +21,7 @@ const HeroContent = () => (
   </Heading>
 );
 
-const Supervision = () => (
+const Supervision = ({ location }) => (
   <Page
     hero={{
       props: {
@@ -35,6 +36,7 @@ const Supervision = () => (
       cover: heroImage,
       keywords: ["supervision", "team leading"],
     }}
+    location={location}
   >
     <Paragraph>
       As an experienced team leader, I can offer my help in supervising the
@@ -49,4 +51,7 @@ const Supervision = () => (
   </Page>
 );
 
+Supervision.propTypes = {
+  location: PropTypes.object,
+};
 export default Supervision;
