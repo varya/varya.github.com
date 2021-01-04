@@ -58,7 +58,10 @@ const Blog = ({ data, pageContext }) => {
                   excerpt={post.node.excerpt}
                   height="small"
                   date={date}
-                  readingTime={`${Math.round(readingTime.minutes)} min read`}
+                  readingTime={
+                    parseInt(readingTime.minutes) > 0 &&
+                    `${Math.round(readingTime.minutes)} min read`
+                  }
                 />
               );
             })}

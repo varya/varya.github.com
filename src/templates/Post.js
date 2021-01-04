@@ -101,7 +101,7 @@ const Post = ({
   const { title, subTitle, cover, tumblr } = mdx.frontmatter;
   const tags = mdx.frontmatter.tags && mdx.frontmatter.tags.split(",");
 
-  // specify if blog-sopecific meta should be shown or hidden
+  // specify if blog-specific meta should be shown or hidden
   const showBlogMeta = slug.startsWith("blog/");
 
   return (
@@ -111,7 +111,9 @@ const Post = ({
         tags={tags}
         date={date}
         readingTime={
-          showBlogMeta && `${Math.round(readingTime.minutes)} min read`
+          showBlogMeta &&
+          parseInt(readingTime.minutes) > 0 &&
+          `${Math.round(readingTime.minutes)} min read`
         }
         title={title}
         subTitle={subTitle}
@@ -197,6 +199,7 @@ export const query = graphql`
         meta {
           desc
         }
+        canonical
         cover {
           childImageSharp {
             fluid(maxWidth: 1200) {
