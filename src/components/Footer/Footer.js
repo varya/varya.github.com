@@ -31,13 +31,13 @@ const Footer = () => {
       <Box width="xlarge" margin={{ horizontal: "auto" }}>
         <ResponsiveGrid
           columns={["25%", "25%", "25%", "25%"]}
-          rows={["auto", "auto", "auto"]}
+          rows={["auto", "auto", "auto", "auto"]}
           areas={{
             small: [
-              { name: "call-to-action", start: [0, 0], end: [2, 0] },
-              { name: "button", start: [3, 0], end: [3, 0] },
-              { name: "social", start: [0, 1], end: [3, 1] },
-              { name: "copyright", start: [0, 2], end: [3, 2] },
+              { name: "call-to-action", start: [0, 0], end: [3, 0] },
+              { name: "button", start: [0, 1], end: [3, 1] },
+              { name: "social", start: [0, 2], end: [3, 2] },
+              { name: "copyright", start: [0, 3], end: [3, 3] },
             ],
             medium: [
               { name: "call-to-action", start: [0, 0], end: [1, 0] },
@@ -66,16 +66,14 @@ const Footer = () => {
             </Paragraph>
           </Box>
 
-          <Box gridArea="button" pad="medium" align="center">
+          <Box gridArea="button" pad="medium" align="center" margin="medium">
             <Link unstyled to="/contact" width={{ min: "120px" }}>
               <Button
                 as="div"
-                // to="/contact"
-                // as={Link}
-                // unstyled
                 primary
                 label="Get in touch"
                 fill={true}
+                style={{ textAlign: "center" }}
                 margin={{ horizontal: "xxsmall" }}
               />
             </Link>
