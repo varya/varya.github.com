@@ -25,9 +25,17 @@ const Development = ({ location }) => (
       content: HeroContent,
     }}
     seo={{
-      title: "Design Systems and Components Production",
-      description: `Whenever you already have a design system or are looking for a technical solution for the very first version of it, you will need foundational work for it. Meaning, setting up the architecture and infrastructure of the system that would support its operations and growth. Well done, such foundational work{" "}`,
+      title: "Design Systems and UI Components Production",
+      description: `I offer a wide range of technical solutions for design systems,
+      starting from foundational work for architecture and infrastructure and down to
+      producing well-tailored UI components.`,
       cover: heroImage,
+      keywords: [
+        "team supervision",
+        "team leading",
+        "engineering manager",
+        "software development",
+      ],
     }}
     location={location}
   >

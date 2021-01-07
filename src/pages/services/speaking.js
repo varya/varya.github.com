@@ -231,10 +231,20 @@ const Speaking = ({ location }) => (
       content: HeroContent,
     }}
     seo={{
-      title: "Speaking",
-      description: `If you would like me to speak at your conference, give a workshop or participate in a panel discussion, I will be more than happy to do it.`,
+      title: "Speaking at conferences — Varya Stepanova",
+      description: `If you would like me to speak at your conference, give a
+      workshop or participate in a panel discussion, I will be more than happy to do it.
+      Find below the list of my talks.
+      `,
       cover: heroImage,
-      keywords: ["speaking", "talks", "articles"],
+      keywords: [
+        "design systems talk",
+        "design systems presentation",
+        "design systems speaking",
+        "design systems conference",
+        "speaking",
+        "talks",
+      ],
     }}
     location={location}
   >

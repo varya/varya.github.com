@@ -31,10 +31,18 @@ const Workshops = ({ location }) => (
       content: HeroContent,
     }}
     seo={{
-      title: "Workshops",
-      description: `Most of the projects I ran included workshops and trainings. As a consultant, I see it as a part of my job to keep the client well-informed and provide the hands-on teams with enough information for maintaining the projects.`,
+      title: "Workshops on design systems and frontend development",
+      description: `I ran private and public workshops related to
+      design systems production and design operations focusing on both
+      technical and manegerial aspects. The workshops can be ready-made
+      or custom-tailored, the choice is yours.`,
       cover: heroImage,
-      keywords: ["workshops", "training"],
+      keywords: [
+        "design systems workshops",
+        "design systems training",
+        "workshops",
+        "training",
+      ],
     }}
     location={location}
   >

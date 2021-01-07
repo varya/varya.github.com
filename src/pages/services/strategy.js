@@ -32,9 +32,17 @@ const Strategy = ({ location }) => (
     }}
     seo={{
       title: "Design Systems Strategy",
-      description: `I can help you to analyze your business and product situation, take into account the given resources and identify the shape for the design system which would serve best in your case.`,
+      description: `I can help you to kick start or boost your design system.
+       I analyze your business and product situation,
+       take into account the given resources and identify the shape for the design 
+       system which would serve best in your case.`,
       cover: heroImage,
-      keywords: ["design system"],
+      keywords: [
+        "design system",
+        "start design system",
+        "boost design system",
+        "maintain design system",
+      ],
     }}
     location={location}
   >
