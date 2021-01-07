@@ -50,7 +50,7 @@ const Link = ({ children, to, activeClassName, partiallyActive, ...other }) => {
       {children}
     </StyledLink>
   ) : (
-    <StyledLink as="a" href={to} {...other}>
+    <StyledLink as="a" href={to} target="_blank" rel="noopener" {...other}>
       {children}
     </StyledLink>
   );
