@@ -37,6 +37,9 @@ const Index = () => {
       seo={{
         title:
           "Varya Stepanova — design systems architect and engineering manager",
+        description: `Component-focused UI design and development, infrastructure and tooling,
+modern development practices, managing the development and multidisciplinary teams. Check varya.me
+for the articles on the topic, sneak peeks of the projects or to hire me.`,
         keywords: [
           "design systems",
           "design system",
