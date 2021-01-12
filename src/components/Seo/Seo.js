@@ -65,9 +65,16 @@ const Seo = ({ data, title, description, keywords, cover, location }) => {
         name="twitter:creator"
         content={config.authorTwitterAccount ? config.authorTwitterAccount : ""}
       />
+      <meta
+        name="twitter:site"
+        content={
+          config.authorTwitterAccount ? `@${config.authorTwitterAccount}` : ""
+        }
+      />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={pageDescription} />
       <meta name="twitter:image" content={imageUrl} />
+      <meta name="twitter:image:alt" content={fullTitle} />
       {canonical && <link rel="canonical" href={canonical} />}
     </Helmet>
   );
