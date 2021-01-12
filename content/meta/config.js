@@ -10,7 +10,7 @@ module.exports = {
     "consulting",
     "consulter",
   ],
-  siteUrl: "http://varya.me/",
+  siteUrl: "https://varya.me/",
   pathPrefix: "",
   siteImage: "/preview.jpg",
   siteLanguage: "en",
