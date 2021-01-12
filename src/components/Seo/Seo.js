@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-const path = require("path");
+
 import config from "../../../content/meta/config";
 import Helmet from "react-helmet";
 
@@ -31,8 +31,8 @@ const Seo = ({ data, title, description, keywords, cover, location }) => {
     ? pageCover.childImageSharp.fluid.src
     : cover || config.siteImage;
 
-  const imageUrl = path.join(config.siteUrl, image);
-  const url = path.join(config.siteUrl, config.pathPrefix, pageSlug);
+  const imageUrl = config.siteUrl + image;
+  const url = config.siteUrl + "/" + config.pathPrefix + pageSlug;
 
   const pageKeywords = keywords || config.defaultKeywords;
   return (
