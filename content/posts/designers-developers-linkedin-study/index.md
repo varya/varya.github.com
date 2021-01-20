@@ -1,7 +1,7 @@
 ---
 title: What UX designers and UI developers value in each other. LinkedIn research study
 
-date: 2021-01-12
+date: 2021-01-26
 cover: thumb.jpg
 
 meta:
@@ -22,8 +22,11 @@ This research aims to find what designers and developers who consider their coll
 
 To obtain data of what is designers’ and developers’ perceptions of working with each other, the researcher collected recommendations from LinkedIn profiles. For the final data analysis, there were selected profiles of _7 designers_ and _9 developers_. The recommendations were filtered so that for developers it was only recommendations from designers (and not from people with other roles), and for designers it was only recommendations from developers. The roles of the people were taken as they identify themselves in their LinkedIn Profiles.
 
-![](./recommendation-example.png)<br/>
-Figure 1.
+<Image caption="Figure 1">
+
+![](./recommendation-example.png)
+
+</Image>
 
 ## Codifying
 
@@ -33,8 +36,11 @@ In the text of recommendations, the researcher outlined _1st level concepts_ —
 
 The themes were aggregated into _dimensions_ forming the following scheme.
 
-![](./codifying.png)<br/>
-Figure 2.
+<Image caption="Figure 2">
+
+![](./codifying.png)
+
+</Image>
 
 The dimentions are 1) Wideness of expertise, 2) Hard skills, 3) Professional attributes, 4) Soft skills, and 5) Personal attributes.
 
