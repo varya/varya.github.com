@@ -30,7 +30,6 @@ module.exports = {
           projects: path.resolve("./src/templates/ProjectPost.js"),
         },
         gatsbyRemarkPlugins: [
-          "gatsby-remark-unwrap-images",
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -39,6 +38,7 @@ module.exports = {
               wrapperStyle: "width: 100%;",
             },
           },
+          `gatsby-remark-copy-relative-linked-files`,
           `gatsby-remark-prismjs`,
           {
             resolve: `gatsby-remark-autolink-headers`,
