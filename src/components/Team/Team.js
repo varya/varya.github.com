@@ -6,6 +6,7 @@ import { Avatar, Heading, Paragraph } from "@components";
 const Team = () => {
   const nikita = require("./nikita.jpg");
   const ira = require("./ira.jpg");
+  const sherif = require("./sherif.jpg");
 
   return (
     <>
@@ -48,6 +49,18 @@ const Team = () => {
             Irina Illustrova
             <br />
             mid-level frontend developer
+          </Paragraph>
+        </Box>
+      </Box>
+      <Box direction="row" gap="large">
+        <Box flex={false}>
+          <Avatar align="left" size="m" image={sherif} />
+        </Box>
+        <Box>
+          <Paragraph size="large" standout lead>
+            Sherif Saleh
+            <br />
+            Senior product designer and UX designer
           </Paragraph>
         </Box>
       </Box>
