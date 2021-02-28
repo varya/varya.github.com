@@ -97,8 +97,8 @@ const Post = ({
   },
   pageContext: { next, prev, fileSourceUrl },
 }) => {
-  const { date, readingTime, slug, disqusIdentifier } = mdx.fields;
-  const { title, subTitle, cover, tumblr } = mdx.frontmatter;
+  const { readingTime, slug, disqusIdentifier } = mdx.fields;
+  const { date, title, subTitle, cover, tumblr } = mdx.frontmatter;
   const tags = mdx.frontmatter.tags && mdx.frontmatter.tags.split(",");
 
   // specify if blog-specific meta should be shown or hidden
