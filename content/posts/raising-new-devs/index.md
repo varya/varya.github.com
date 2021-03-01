@@ -6,10 +6,7 @@ cover: thumb.jpg
 
 meta:
   desc: >
-    A story of discovering unique skills that form competitive advantage
-    for both develpoing my small business and making extra value to the clients.
-    How I met my first business partner and raised her into a senior frontend
-    developer.
+    First, we worked together on my internal projects and lately on open-source products and for commercial gigs. By now, we came to a "tandem model" offering more value to the clients and at the same time committing to our own competencies.
 ---
 
 <div data-excerpt>
