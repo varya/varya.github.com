@@ -6,16 +6,19 @@ cover: thumb.jpg
 
 meta:
   desc: >
-    desc
+    A story of discovering unique skills that form competitive advantage
+    for both develpoing my small business and making extra value to the clients.
+    How I met my first business partner and raised her into a senior frontend
+    developer.
 ---
 
 <div data-excerpt>
 
-Last year, I started my own consulting business. I have expertise and experience to offer for my clients who are willing to enhance their design and development operations and, in particular, start or boost their design systems. For many months, I was working alone. And then I began to think: how can I scale? Usually, new entrepreneurs work day and night without any holiday, get clients to occupy 16 hours of their time every day, gain credibility, and partner with spin-off projects. I immensely enjoy what I am doing, and dedicating all my time to it would be only a pleasure, but as a mother of a 1-year-old, I do not have this luxurious opportunity.
+Last year, I started my own consulting business. I have expertise and experience to offer for my clients who are willing to enhance their design and development operations and, in particular, kick-off or boost their design systems. For many months, I was working alone. And then I began to think: how can I scale? Usually, new entrepreneurs work day and night without any holiday, get clients to occupy 16 hours of their time every day, gain credibility, and partner with spin-off projects. I immensely enjoy what I am doing, and dedicating all my time to it would be only a pleasure, but as a mother of a 1-year-old, I do not have this luxurious opportunity.
 
 </div>
 
-That made me think: is there anything unique I can offer that not only helps clients but also boosts my business? Are there any skills and experience that could be turned into competitive advantage? And yes, there are! Besides technical and design achievements in my past career, I understand how to raise the people in our professional field. At my previous jobs, I used to be a team leader for up to 18 people, often guiding them through their professional development. Of course, as a new entrepreneur, I could not hire that many, but I still can use the gained knowledge and experience to work with people and for people.
+That made me think: is there anything unique I can offer that not only helps clients but also develops my business? Are there any skills and experience that could be turned into competitive advantage? And yes, there are! Besides technical and design achievements in my past career, I understand how to raise the people in our professional field. At my previous jobs, I used to be a team leader for up to 18 people, often guiding them through their professional development. Of course, as a new entrepreneur, I could not hire that many, but I still can use the gained knowledge and experience to work with people and for people.
 
 ## Searching for helping hands
 
@@ -38,6 +41,8 @@ By today, ourlast technically completed project is a landing page of Nikita’s 
 Now, half a year after our start, I believe that training on my own projects is over. It is time to move on!
 
 However, I am very much encouraged by the progress we made in such a short time. The current plan is to continue the training but on the client projects. Thinking of that, I came to a "tandem model” for our clients. The idea is that the client gets a middle-level engineer full-time and an experienced leader for, say, two days a week. Guided with the leader, the middle-level engineer uses their time the most effectively. My experience as a leader guarantees that together, we can overcome all the challenges. At the same time, the average rate is lower. This way, the client gets the expected quality of work but for a competitive price. In Ira’s case, I trained her myself, so we have a history of working together, I know how to lead her, I see what she can do entirely on her own and what she still needs guidance with. This knowledge very much helps to plan the work and later meet that plan.
+
+![](./timeline.png)
 
 We managed to deliver this proposition to one of the clients, and they appreciated the dramatic (cannot say how much but impressive) cost savings ensured by this model. At the same time, having a “real” project for Ira contributes to her speedy growth. My gut feeling, that by the end of this year she may gain a title of senior frontend engineer!
 I do not share here the tandem model details, but I have sales materials that explain it in numbers. If interested, just contact me for it.
