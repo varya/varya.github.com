@@ -24,7 +24,7 @@ const Team = () => {
           <Paragraph size="large" standout lead>
             Varya Stepanova
             <br />
-            engineering manager & team lead
+            Engineering manager & team lead
           </Paragraph>
         </Box>
       </Box>
@@ -36,7 +36,7 @@ const Team = () => {
           <Paragraph size="large" standout lead>
             Nikita Sherbakov
             <br />
-            software architect & senior frontend engineer
+            Software architect & senior frontend engineer
           </Paragraph>
         </Box>
       </Box>
@@ -48,7 +48,7 @@ const Team = () => {
           <Paragraph size="large" standout lead>
             Irina Illustrova
             <br />
-            mid-level frontend developer
+            Mid-level frontend developer
           </Paragraph>
         </Box>
       </Box>
@@ -60,7 +60,7 @@ const Team = () => {
           <Paragraph size="large" standout lead>
             Sherif Saleh
             <br />
-            Senior product designer and UX designer
+            Senior product designer
           </Paragraph>
         </Box>
       </Box>
