@@ -6,7 +6,7 @@
     "es6": true
   },
   "parser": "babel-eslint",
-  "ignorePatterns": ["public", ".cache", "node_modules"],
+  "ignorePatterns": ["public", ".cache", "node_modules", "src/libs"],
   "rules": {
     "strict": 0,
     "no-console": 1,
