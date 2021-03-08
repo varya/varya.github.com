@@ -2,9 +2,9 @@ import React from "react";
 
 import styled from "styled-components";
 
-import Spider from "../../libs/rc-spider";
 import theme from "../theme";
 import data from "./PatternJourney.data.js";
+import Spider from "rc-spider";
 import FaClose from "react-icons/lib/fa/close";
 import breakpoint from "styled-components-breakpoint";
 
