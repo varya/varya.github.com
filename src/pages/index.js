@@ -230,7 +230,9 @@ for the articles on the topic, sneak peeks of the projects or to hire me.`,
             background="neutral"
             title="Building design systems that leverage your designers, developers and
   products"
-            links={{ "Read in my blog": "/blog/design-systems-thinking/" }}
+            links={{
+              "See Slides": "https://varya.me/design-systems-thinking/",
+            }}
             excerpt="If we compare design systems of several companies, it is visible that this concept has different meanings to different
   people. So, how to decide which path to follow and what aspects of design systems should be in focus at your
   organisation? In this talk given at WEBdeLDN meetup in London I told a story of managing a design system in a large

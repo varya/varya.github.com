@@ -98,7 +98,11 @@ const Pagination = ({
       <Box direction="row" gap={size} justify="center">
         <PageButton
           label="←"
-          to={currentPage > 1 ? (currentPage - 1).toString() : null}
+          to={
+            currentPage > 2
+              ? (currentPage - 1).toString()
+              : currentPage === 2 && "/"
+          }
           disabled={currentPage <= 1}
         />
         {startPage > 1 &&
