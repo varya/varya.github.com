@@ -1,8 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Text } from "grommet";
-import { Heading, Paragraph, Widget, WidgetContainer } from "@components";
+import { Box, Button, Text } from "grommet";
+import {
+  Heading,
+  Image,
+  Paragraph,
+  Widget,
+  WidgetContainer,
+} from "@components";
 import Page from "@templates/Page";
 
 import heroImage from "./hero-workshops.jpg";
@@ -58,7 +64,33 @@ const Workshops = ({ location }) => (
       so that it responds to the specific needs and is aligned with the upcoming
       plans and goals.
     </Paragraph>
-    <Heading level={2}>Some of my workshops:</Heading>
+    <Box border={{ color: "accent", size: "large" }} pad="medium">
+      <Heading
+        level="2"
+        standout
+        alignContent="center"
+        style={{ textAlign: "center" }}
+      >
+        Hands-on with design systems
+      </Heading>
+      <Paragraph>
+        I will be running a workshop &quot;Hands-on with design systems&quot; on{" "}
+        <b>April 8-9</b>. You can join as a designer or developer - we will be
+        working in the teams. We will create a design system in Figma and code a
+        library of React components, make them integrated and build a real
+        product together.
+      </Paragraph>
+      <Button
+        as="a"
+        primary
+        alignSelf="center"
+        margin={{ bottom: "medium" }}
+        href="https://hands-on-workshop.varya.me"
+        label="More info and Registration"
+      />
+      <Image imageSrc="/hands-on-workshop.png" />
+    </Box>
+    <Heading level={2}>Other possible workshops:</Heading>
     {/* TODO: store workshop list in marksown and query for them */}
     <WidgetContainer>
       <Widget
