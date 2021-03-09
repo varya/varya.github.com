@@ -84,10 +84,10 @@ for the articles on the topic, sneak peeks of the projects or to hire me.`,
         </Heading>
         <Paragraph>
           I will be running a workshop &quot;Hands-on with design systems&quot;
-          on April 8-9. You can join as a designer or developer - we will be
-          working in the teams. We will create a design system in Figma and code
-          a library of React components, make them integrated and build a real
-          product together.
+          on <b>April 8-9</b>. You can join as a designer or developer - we will
+          be working in the teams. We will create a design system in Figma and
+          code a library of React components, make them integrated and build a
+          real product together.
         </Paragraph>
         <Button
           as="a"
@@ -95,7 +95,7 @@ for the articles on the topic, sneak peeks of the projects or to hire me.`,
           alignSelf="center"
           margin={{ bottom: "medium" }}
           href="https://hands-on-workshop.varya.me"
-          label="Registration"
+          label="More info and Registration"
         />
         <Image imageSrc="/hands-on-workshop.png" />
       </Box>
