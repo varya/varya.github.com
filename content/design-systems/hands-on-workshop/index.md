@@ -35,17 +35,15 @@ standout
 alignContent="center"
 style={{ textAlign: "center" }}
 
->
+> Available as a public workshop</Heading>
+> <Paragraph>
 
-    Available as a public workshop
-
-  </Heading>
-  <Paragraph>
     I will be running a workshop &quot;Hands-on with design systems&quot;
     on <b>April 8-9</b>. You can join as a designer or developer - we will be
     working in the teams. We will create a design system in Figma and code
     a library of React components, make them integrated and build a real
     product together.
+
   </Paragraph>
   <Button
     as="a"
