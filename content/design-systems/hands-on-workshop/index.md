@@ -33,10 +33,8 @@ Paragraph,
 level="2"
 standout
 alignContent="center"
-style={{ textAlign: "center" }}
-
-> Available as a public workshop</Heading>
-> <Paragraph>
+style={{ textAlign: "center" }}>Available as a public workshop</Heading>
+<Paragraph>
 
     I will be running a workshop &quot;Hands-on with design systems&quot;
     on <b>April 8-9</b>. You can join as a designer or developer - we will be
