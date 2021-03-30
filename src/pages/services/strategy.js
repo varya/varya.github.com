@@ -71,7 +71,7 @@ const Strategy = ({ location }) => (
     <Paragraph>
       I analyze the existing design systems from design, technical and
       managerial perspectives. All the three aspects may be provided with
-      changes which boots the whole system to the next level. My work in this
+      changes which boost the whole system to the next level. My work in this
       regard will include deep study of the structure of your organization and
       its workflows, design and technical audit of existing artefacts and tools
       as well as providing game-changing additions and modifications to all of
