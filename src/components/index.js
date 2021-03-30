@@ -26,4 +26,5 @@ export { default as Team } from "./Team";
 export { default as Widget } from "./Widget";
 export { default as WidgetContainer } from "./WidgetContainer";
 export { default as WidgetMulti } from "./WidgetMulti";
+export { default as Workshop } from "./Workshop";
 export { default as PatternJourney } from "./PatternJourney";

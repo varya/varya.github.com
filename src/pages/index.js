@@ -1,10 +1,9 @@
 import React from "react";
 
-import { Box, Button, Text } from "grommet";
+import { Box, Text } from "grommet";
 import {
   Avatar,
   Heading,
-  Image,
   ImageBlock,
   Link,
   Paragraph,
@@ -12,6 +11,7 @@ import {
   Widget,
   WidgetContainer,
   WidgetMulti,
+  Workshop,
 } from "@components";
 import Page from "@templates/Page";
 
@@ -73,32 +73,8 @@ for the articles on the topic, sneak peeks of the projects or to hire me.`,
         specialists.
       </Paragraph>
 
-      <Box border={{ color: "accent", size: "large" }} pad="medium">
-        <Heading
-          level="2"
-          standout
-          alignContent="center"
-          style={{ textAlign: "center" }}
-        >
-          Don&apos;t miss my workshop!
-        </Heading>
-        <Paragraph>
-          I will be running a workshop &quot;Hands-on with design systems&quot;
-          on <b>April 8-9</b>. You can join as a designer or developer - we will
-          be working in the teams. We will create a design system in Figma and
-          code a library of React components, make them integrated and build a
-          real product together.
-        </Paragraph>
-        <Button
-          as="a"
-          primary
-          alignSelf="center"
-          margin={{ bottom: "medium" }}
-          href="https://hands-on-workshop.varya.me"
-          label="More info and Registration"
-        />
-        <Image imageSrc="/hands-on-workshop.png" />
-      </Box>
+      <Workshop />
+
       <Section heading="Services">
         <Box gap="large">
           <Box>
