@@ -69,7 +69,7 @@
     "generate-app-icons": "sh ./scripts/generate-app-icons.sh",
     "add-component": "node ./scripts/generate-component $1",
     "deploy:build": "gatsby build --prefix-paths",
-    "deploy:release": "git-directory-deploy --directory ./public --repo varya --branch master",
+    "deploy:release": "git-directory-deploy --directory ./public --repo varya --branch gh-pages",
     "deploy": "run-s deploy:build deploy:release",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
