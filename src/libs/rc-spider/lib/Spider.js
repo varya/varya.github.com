@@ -170,7 +170,7 @@ var Spider = function (_SpiderBase) {
   };
 
   Spider.prototype.componentDidMount = function componentDidMount() {
-    if (this.props.moveable) {
+    if (this.props.moveable && typeof window !== 'undefined') {
       window.addEventListener('mousedown', this.enableDrag.bind(this));
       window.addEventListener('mousemove', this.handleMouseMove.bind(this));
       window.addEventListener('mouseup', this.handleDragStop.bind(this));
