@@ -151,6 +151,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               title
               subTitle
               date
+              link
             }
           }
         }
