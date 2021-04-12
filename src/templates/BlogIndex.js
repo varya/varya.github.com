@@ -46,15 +46,15 @@ const Blog = ({ data, pageContext }) => {
         >
           <WidgetContainer>
             {posts.map((post) => {
-              const cover = post.node.frontmatter.cover;
-              const date = post.node.frontmatter.date;
-              const readingTime = post.node.fields.readingTime;
+              const { cover, date, link } = post.node.frontmatter;
+              const { readingTime, slug } = post.node.fields;
+              const resolvedSlug = link ? link : `/${slug}`;
               return (
                 <Widget
                   key={post.node.frontmatter.title}
                   image={cover && <Img {...cover.childImageSharp} />}
                   title={post.node.frontmatter.title}
-                  slug={`/${post.node.fields.slug}`}
+                  slug={resolvedSlug}
                   excerpt={post.node.excerpt}
                   height="small"
                   date={date}
@@ -110,6 +110,7 @@ export const blogQuery = graphql`
           }
           frontmatter {
             title
+            link
             date(formatString: "DD MMMM YYYY")
             cover {
               childImageSharp {
