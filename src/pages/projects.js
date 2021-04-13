@@ -36,8 +36,9 @@ const Projects = ({ data }) => {
     >
       <WidgetContainer items={{ small: 1, medium: 2, large: 2 }}>
         {posts.map((post, index) => {
-          const { title } = post.node.frontmatter;
+          const { title, link } = post.node.frontmatter;
           const { slug } = post.node.fields;
+          const resolvedSlug = link ? link : `/${slug}`;
           const excerpt =
             post.node.frontmatter.description || post.node.excerpt;
           const background = colors[index % 3];
@@ -45,7 +46,7 @@ const Projects = ({ data }) => {
             <Widget
               key={title}
               title={title}
-              slug={`/${slug}`}
+              slug={resolvedSlug}
               excerpt={excerpt}
               background={background}
             />
@@ -79,6 +80,7 @@ export const projectsQuery = graphql`
             title
             date(formatString: "DD MMMM YYYY")
             description
+            link
             meta {
               desc
             }

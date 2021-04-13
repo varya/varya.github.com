@@ -124,6 +124,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             frontmatter {
               title
               subTitle
+              link
               v2
               old
               date
@@ -151,6 +152,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               title
               subTitle
               date
+              link
             }
           }
         }
