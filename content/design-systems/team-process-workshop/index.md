@@ -30,7 +30,7 @@ office](https://www.intergalactico.io/workshops/building-design-systems-london) 
 London. With 10 attendees we formed 2 very diversed and multidisciplinary teams which worked very enthusiasticaly and
 creatively inventing the very best design system processes.
 
-### Hands-on workshop for you
+### Workshop on team processes for you
 
 If you are interested in editions of this workshop for your company or conference, feel free to
 [email me to mail@varya.me](mailto:mail@varya.me).
