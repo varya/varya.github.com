@@ -21,6 +21,8 @@ export { default as PrevNextNav } from "./PrevNextNav";
 export { default as Section } from "./Section";
 export { default as Seo } from "./Seo";
 export { default as SocialLinks } from "./SocialLinks";
+export { default as Step } from "./Step";
+export { default as Timetable } from "./Timetable";
 export { default as Tag } from "./Tag";
 export { default as Team } from "./Team";
 export { default as Widget } from "./Widget";

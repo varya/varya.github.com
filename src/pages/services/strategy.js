@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Text } from "grommet";
-import { Heading, Paragraph } from "@components";
+import { Heading, Link, Paragraph, Widget, WidgetContainer } from "@components";
 import Page from "@templates/Page";
 
 import heroImage from "./hero-kickstart.jpg";
@@ -77,6 +77,32 @@ const Strategy = ({ location }) => (
       as well as providing game-changing additions and modifications to all of
       these aspects.
     </Paragraph>
+    <Paragraph>
+      The
+      <Link to="/design-systems/boosting-workshop">
+        Design Systems — what else we can do?
+      </Link>
+      is a perfect start for this research and the following boost.
+    </Paragraph>
+    <WidgetContainer>
+      <Widget
+        slug="/design-systems/boosting-workshop"
+        background="accent"
+        align="center"
+        title="Design Systems — what else we can do?"
+        height="auto"
+        excerpt={
+          <>
+            The one-day workshop focused on managerial and strategic aspects of
+            design system production and promotion. The workshop is shaped for
+            product owners, project managers, and{" "}
+            <b>the whole design system team</b>. If there is wish and
+            possibility, you can also include relevant people from other company
+            departments.
+          </>
+        }
+      />
+    </WidgetContainer>
   </Page>
 );
 

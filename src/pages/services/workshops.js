@@ -69,6 +69,23 @@ const Workshops = ({ location }) => (
     {/* TODO: store workshop list in marksown and query for them */}
     <WidgetContainer>
       <Widget
+        slug="/design-systems/boosting-workshop"
+        background="accent"
+        align="center"
+        title="Design Systems — what else we can do?"
+        height="auto"
+        excerpt={
+          <>
+            The one-day workshop focused on managerial and strategic aspects of
+            design system production and promotion. The workshop is shaped for
+            product owners, project managers, and{" "}
+            <b>the whole design system team</b>. If there is wish and
+            possibility, you can also include relevant people from other company
+            departments.
+          </>
+        }
+      />
+      <Widget
         slug="/design-systems/design-systems-101"
         background="neutral"
         align="center"
