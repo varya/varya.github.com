@@ -78,7 +78,7 @@ content: "Design system adoption and onboarding"
 },
 {
 time: "13.45",
-content: "Collaboration models and workflows"
+content: "Contribution models and workflows"
 },
 {
 time: "14.45",
