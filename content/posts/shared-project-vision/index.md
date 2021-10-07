@@ -52,7 +52,7 @@ Working in pairs helped us to focus on each other more than in our group convers
 
 It was possible to run all the exersices in one session using the breakout rooms but we
 had them separately on different days, and for a reason. In all the exersices each of us needed to communicate our vision. We also needed to be very specific on that because it was our pair who wrote down the outcome. It happened, and I noticed that myself, that own
-understanding of the environment and the goals ahead crystalizes (sometimes even changes) when pronounced again and again. It was a good thing to slept over with the ideas that had been just articulated, so that the next day they are more clear for its own author.
+understanding of the environment and the goals ahead crystalizes (sometimes even changes) when pronounced again and again. It was a good thing to sleep over with the ideas that had been just articulated, so that the next day they are more clear for its own author.
 
 ## Exercise 1. The Context Onion
 
@@ -60,9 +60,9 @@ Before we came to the goals, it was useful to undestand our context.
 
 _Where are we as
 individuals and our team on the organization map? Does our project belong to some
-bigger stratural unit or serve larger goal? What is its environment?_
+bigger strutural unit or serve larger goal? What is its environment?_
 
-While the one was sharing their view, the ther team member drew an onion diagram to reflect
+While the one was sharing their view, the other team member drew an onion diagram to reflect
 the pronounced. In the outcome, we should see the whole context and also the highlighed
 actions on the different levels that affect the actor and the project.
 
@@ -79,7 +79,7 @@ speaking on the topic, the facilitator guided them with the questions and drew a
 
 ## Exercise 3. Success criteria
 
-The last exersice didn't require much drawing as the timeline could borrowed from the previous one. However, since the workshop schedule assumed a different pair, it still required to explain the whole picture. After that, we needed to define the success criteria
+The last exersice didn't require much drawing as the timeline could be borrowed from the previous one. However, since the workshop schedule assumed a different pair, it still required to explain the whole picture. After that, we needed to define the success criteria
 for all the steps.
 
 _What exactly do you have to achieve in order to pronounce your "project" complete? What should be the success criteria on the go: in 6 months, in 3 months, in 1 month?_
