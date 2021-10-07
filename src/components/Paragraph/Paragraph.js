@@ -13,7 +13,7 @@ import { Paragraph as GrommetParagraph } from "grommet";
 
 /* css line-clamp trick: https://css-tricks.com/line-clampin/ */
 const StyledParagraph = styled(GrommetParagraph)`
-  line-height: ${({ standout }) => standout && "200%"};
+  line-height: ${({ standout }) => standout && "175%"};
   font-weight: ${({ lead }) => (lead ? "bold" : "inherit")};
   font-style: ${({ lead }) => (lead ? "italic" : "normal")};
   text-align: justify;

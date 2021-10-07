@@ -57,6 +57,14 @@ const _Heading = (level) => {
   return component;
 };
 
+const _Paragraph = () => {
+  const component = ({ children }) => (
+    <Paragraph standout>{children}</Paragraph>
+  );
+  component.propTypes = { children: PropTypes.node };
+  return component;
+};
+
 // Apply styling to excerpt
 const _div = ({ "data-excerpt": dataExcerpt, children, ...props }) =>
   dataExcerpt ? (
@@ -79,7 +87,7 @@ const postComponents = {
   h4: _Heading(4),
   h5: _Heading(5),
   h6: _Heading(6),
-  p: Paragraph,
+  p: _Paragraph(),
   a: Link,
   div: _div,
 };
