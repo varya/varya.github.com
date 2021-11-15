@@ -18,6 +18,7 @@ import Page from "@templates/Page";
 import bemLogo from "../images/png/bem-logo-margin.png";
 import bfLogo from "../images/png/bf-logo-margin.png";
 import elisaLogo from "../images/png/elisa-logo-margin.png";
+import metroLogo from "../images/png/metro-logo-margin.png";
 import yandexLogo from "../images/png/yandex-logo-margin.png";
 
 const HeroContent = () => (
@@ -259,8 +260,23 @@ for the articles on the topic, sneak peeks of the projects or to hire me.`,
           <Widget
             margin={{ bottom: "medium" }}
             direction="column"
+            imageSrc={metroLogo}
+            slug="/projects/metro-design-system/"
+          >
+            <Heading
+              textAlign="center"
+              fill
+              level={3}
+              style={{ marginTop: "1.75em" }}
+            >
+              Design System at METRO
+            </Heading>
+          </Widget>
+          <Widget
+            margin={{ bottom: "medium" }}
+            direction="column"
             imageSrc={elisaLogo}
-            slug="/projects/elisa-design-system-v1/"
+            slug="/projects/elisa-renewal/"
           >
             <Heading textAlign="center" fill level={3}>
               Design System at Elisa

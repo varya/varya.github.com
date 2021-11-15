@@ -2,12 +2,12 @@
 title: Elisa Design System Renewal
 date: 2020-12-01
 description: >
-  Renewal of the design system at Elisa took place in 2020 and continues at the moment. The
+  Renewal of the design system at Elisa took place in the years 2020 and 2021. The
   the project included complete re-design and re-coding of 35 components and solid foundational
   work in design, development, infrastructure, and community managing areas.
 ---
 
-Renewal design system project at Elisa took place in 2020 and continues at the moment. New design system is:
+Renewal design system project at Elisa took place in 2020 and 2021. New design system is:
 
 - Well-structured Figma document with defined designed tokens, all the patterns gathered, rethought, and re-designed;
 - Library of React components to be used across dozens of Elisa products;
