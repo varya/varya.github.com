@@ -59,12 +59,13 @@ for the articles on the topic, sneak peeks of the projects or to hire me.`,
           15+ years of technical career, my major focus was component-focused UI
           design and development, creating helpful tooling for the subject and
           spreading the practices across large or regular organizations. I have
-          two Master degrees — in physics and service design (Aalto University,{" "}
+          two Master degrees — in physics and computer science (Aalto
+          University,{" "}
           <Link to="https://www.idbm.aalto.fi/" target="_blank" rel="noopener">
             IDBM
           </Link>{" "}
-          program), years of engineering experience and several leading roles
-          behind.
+          program focused on service design and business), years of engineering
+          experience and several leading roles behind.
         </Paragraph>
       </ImageBlock>
       <Paragraph size="large" standout lead>

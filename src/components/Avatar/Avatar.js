@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import breakpoint from "styled-components-breakpoint";
 
-const defaultImage = require("./avatar.jpg");
+const defaultImage = require("./avatar-2021.jpg");
 
 const Image = styled.div`
   width: ${(props) => props.size}px;
