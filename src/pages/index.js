@@ -203,6 +203,16 @@ for the articles on the topic, sneak peeks of the projects or to hire me.`,
         </Paragraph>
         <WidgetContainer>
           <WidgetMulti
+            background="neutral"
+            title="Design system: from bookkeeping to championing"
+            height="auto"
+            links={{
+              Slides: "https://varya.me/into-design-systems-2021/",
+              Video: "https://youtu.be/OaqBxIp15hg",
+            }}
+            excerpt="How an impact measuring tool turned into a stakeholder management system."
+          />
+          <WidgetMulti
             background="accent"
             title="A practical guide to building your design system infrastructure"
             height="auto"
