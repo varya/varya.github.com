@@ -9,6 +9,15 @@ import heroImage from "./hero-speaking.jpg";
 
 const talks = [
   {
+    title: "Design system: from bookkeeping to championing",
+    description: `How an impact measuring tool turned into a stakeholder management system.`,
+    links: {
+      Slides: "https://varya.me/into-design-systems-2021/",
+      "Into Design Systems #1 2021": "https://intodesignsystems.com/",
+      Video: "https://youtu.be/OaqBxIp15hg",
+    },
+  },
+  {
     title: "A practical guide to building your design system infrastructure",
     description:
       "A bunch of ideas and suggestions about implementing infrastructure and tools for building your design system, presented at Patterns Day 2019 in Brighton, England.",
