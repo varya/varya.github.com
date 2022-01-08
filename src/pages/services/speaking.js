@@ -9,6 +9,22 @@ import heroImage from "./hero-speaking.jpg";
 
 const talks = [
   {
+    title:
+      "Increasing Design System Quality and Adoption by Proper Stakeholder Management",
+    description: `
+    Let's talk about stakeholder management when building and maintaining design systems.
+    Through the whole design system workflow, its team communicates to the people across
+    the whole company: designers and developers, product managers, and business people.
+    I am sharing how we, the design system techies, might make these people happy.
+   `,
+    links: {
+      Slides: "https://varya.me/devtalks-2021/",
+      "Smartly DevTalks":
+        "https://www.youtube.com/channel/UCI3zkNSpdrBxYk9DWB_GfWA",
+      Video: "https://youtu.be/8u032Qq4aV4",
+    },
+  },
+  {
     title: "Design system: from bookkeeping to championing",
     description: `How an impact measuring tool turned into a stakeholder management system.`,
     links: {

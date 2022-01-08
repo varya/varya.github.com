@@ -11,7 +11,7 @@ import {
   Widget,
   WidgetContainer,
   WidgetMulti,
-  Workshop,
+  // Workshop,
 } from "@components";
 import Page from "@templates/Page";
 
@@ -75,7 +75,7 @@ for the articles on the topic, sneak peeks of the projects or to hire me.`,
         specialists.
       </Paragraph>
 
-      <Workshop />
+      {/* <Workshop /> */}
 
       <Section heading="Services">
         <Box gap="large">
