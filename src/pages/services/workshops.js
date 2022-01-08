@@ -7,7 +7,7 @@ import {
   Paragraph,
   Widget,
   WidgetContainer,
-  Workshop,
+  // Workshop,
 } from "@components";
 import Page from "@templates/Page";
 
@@ -64,7 +64,7 @@ const Workshops = ({ location }) => (
       so that it responds to the specific needs and is aligned with the upcoming
       plans and goals.
     </Paragraph>
-    <Workshop />
+    {/* <Workshop /> */}
     <Heading level={2}>Other possible workshops:</Heading>
     {/* TODO: store workshop list in marksown and query for them */}
     <WidgetContainer>
