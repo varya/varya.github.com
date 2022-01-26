@@ -76,7 +76,6 @@ for the articles on the topic, sneak peeks of the projects or to hire me.`,
       </Paragraph>
 
       {/* <Workshop /> */}
-
       <Section heading="Services">
         <Box gap="large">
           <Box>
@@ -89,7 +88,7 @@ for the articles on the topic, sneak peeks of the projects or to hire me.`,
                 development processes
               </li>
               <li>
-                <Link to="services/strategy">Coaching</Link> to boots your
+                <Link to="services/strategy">Coaching</Link> to boost your
                 design operations and development to the next level
               </li>
               <li>
