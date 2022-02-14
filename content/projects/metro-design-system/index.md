@@ -36,3 +36,10 @@ get familiar with it. As specific actions towards this goal, I commit the follow
 - Processing the other teams' request to meet their expectations
 
 ## Service design for a design system
+
+## Achivements and the overcome challenges
+
+- Onboarding as a regular activity<br/>
+  Through constant enganging activity, [the onboarding session has became a known regular
+  event in the company calendar](https://www.linkedin.com/feed/update/urn:li:activity:6896797119584329728/). Gradual update of the presented materials ensures meeting
+  the needs of the newcomers so that they get relevant information about a design system which makes their working path with it easier and smoother. In turn, that ensures that the design system is known among the developers and widely adopted in the product codebases.
