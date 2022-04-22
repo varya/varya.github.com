@@ -144,6 +144,15 @@ for the articles on the topic, sneak peeks of the projects or to hire me.`,
   more people in the organization involved into co-creation of design and development value under the Design Systems
   umbrella."
           />
+          <Widget
+            background="brand"
+            title="Aligning UX designers and UI developers work with design systems"
+            slug="/design-systems/aligning-ux-designers-and-ui-developers/"
+            excerpt="The aim of this thesis was to study the role of design systems
+  (as an approach and as an artefact) for the UI creation. This research specifically
+  focuses on the alignment between UX interface designers and UI software developers
+  and the impact of design systems on that process. "
+          />
         </WidgetContainer>
       </Section>
 
