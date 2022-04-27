@@ -43,3 +43,6 @@ get familiar with it. As specific actions towards this goal, I commit the follow
   Through constant enganging activity, [the onboarding session has became a known regular
   event in the company calendar](https://www.linkedin.com/feed/update/urn:li:activity:6896797119584329728/). Gradual update of the presented materials ensures meeting
   the needs of the newcomers so that they get relevant information about a design system which makes their working path with it easier and smoother. In turn, that ensures that the design system is known among the developers and widely adopted in the product codebases.
+- Outlined security policy<br/>
+  In a series of workshops, the team has made initial audit of resources and tools in
+  the context of potential security threats. The structed representation of the artifacts, risks, their impacts, countermeasures to them and respond actions clearly communicates to all the team members what they should be aware of and how they should act in different scenarios.
