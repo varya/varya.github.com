@@ -37,8 +37,21 @@ get familiar with it. As specific actions towards this goal, I commit the follow
 
 ## Service design for a design system
 
+Project innovations are driven and tackled by applying service design techniques such as:
+
+- User research
+- Ideation
+- Prototyping
+- Facilitation
+
 ## Achivements and the overcome challenges
 
+- New library of Web Components<br/>
+  The team has sucessfully built a library of Web Components that enabled products to
+  integrate them regardless of a framework they are using on the frontend.
+- Defined workflows<br/>
+  The workflows for both design system team operations and contributions are now defined,
+  visualised and documented. These artifacts are huge help in guidance for the new and old team members. They also enable and encorage contributions to the design system.
 - Onboarding as a regular activity<br/>
   Through constant enganging activity, [the onboarding session has became a known regular
   event in the company calendar](https://www.linkedin.com/feed/update/urn:li:activity:6896797119584329728/). Gradual update of the presented materials ensures meeting
