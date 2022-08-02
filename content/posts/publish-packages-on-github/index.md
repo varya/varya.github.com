@@ -11,7 +11,7 @@ meta:
 
 <div data-excerpt>
 
-Often happens that an npm package should be published to a secure registry. In many cases, organizations have their own and all the internal stuff goes there. But what to do if your oranization does not have anything like that? Apparently, [Github Packages](https://docs.github.com/en/packages) are the way to go. In case your repository is private, its packages will be too! Below, I describe a simple workflow that I set today.
+Often happens that an npm package should be published to a secure registry. In many cases, organizations have their own and all the internal stuff goes there. But what to do if your organization does not have anything like that? Apparently, [Github Packages](https://docs.github.com/en/packages) are the way to go. In case your repository is private, its packages will be too! Below, I describe a simple workflow that I set today.
 
 </div>
 
