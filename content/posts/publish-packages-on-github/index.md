@@ -6,7 +6,7 @@ cover: storage.jpg
 
 meta:
   desc: >
-    Step-by-step guide on how to use a free GitHub package registry to store private npm packages (often needed for he design systems). The article shows how to set up an automatic workflow for publishing and how to get the packages in use.
+    Step-by-step guide on how to use a free GitHub package registry to store private npm packages (often needed for the design systems). The article shows how to set up an automatic workflow for publishing and how to get the packages in use.
 ---
 
 <div data-excerpt>
