@@ -15,7 +15,7 @@ Often happens that an npm package should be published to a secure registry. In m
 
 </div>
 
-In this case, the packages are build and published in a pipeline operated by [Github Actions](https://github.com/features/actions). To set a workflow there, you would need to create a YAML file in the `.github/workflows/` folder. This is mine, for a packaged called `@yourscope/design-library`.
+In this case, the packages are built and published in a pipeline operated by [Github Actions](https://github.com/features/actions). To set a workflow there, you would need to create a YAML file in the `.github/workflows/` folder. This is mine, for a package called `@yourscope/design-library`.
 
 ```
 name: Release library
@@ -49,19 +49,19 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-Note that when publishing, there should be the `NODE_AUTH_TOKEN` environmental variable available. However, it's valee is `GITHUB_TOKEN` taken from secrets. You don't need to generate such a secret, your respoitory already has it in the background.
+Note that when publishing, there should be the `NODE_AUTH_TOKEN` environmental variable available. However, its value is `GITHUB_TOKEN` taken from secrets. You don't need to generate such a secret, your repository already has it in the background.
 
-Another thing to spot is that when installing Node, you should define the npm registry and the scope. That can be done with addtional parameters as shown in the code example.
+Another thing to spot is that when installing Node, you should define the npm registry and the scope. That can be done with additional parameters as shown in the code example.
 
 ## How to release?
 
-Releases are happening in a pipeline via GitHub Actions once the `main` branch is updated. Releases are successful if the version number is unique. Practically, that means that a design-system developer needs to change version number in order to trigger the release. There is room for improvement — it would be much nicer not to run the publishing job if the package of such version already exists.
+Releases are happening in a pipeline via GitHub Actions once the `main` branch is updated. Releases are successful if the version number is unique. Practically, that means that a design-system developer needs to change the version number to trigger the release. There is room for improvement — it would be much nicer not to run the publishing job if the package of such a version already exists.
 
 ## How to get the package?
 
 ### Authentification at GitHub Packages
 
-The GitHub Package registry is not open, you should get an access to it. For that, you need to authentificate.
+The GitHub Package registry is not open, you should get an access to it. For that, you need to authenticate.
 
 1. Create your _Personal Access Token_ at GitHub here https://github.com/settings/tokens
    - It's a good habit to have a separate token for each project
