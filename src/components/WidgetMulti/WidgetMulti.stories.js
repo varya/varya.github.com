@@ -1,6 +1,6 @@
 import React from "react";
 
-import WidgetContainer from "../--WidgetContainer";
+import WidgetContainer from "../WidgetContainer";
 import Widget from "./WidgetMulti.js";
 
 export default {
