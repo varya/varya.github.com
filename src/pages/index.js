@@ -39,9 +39,10 @@ const Index = () => {
       seo={{
         title:
           "Varya Stepanova — design systems architect and engineering manager",
-        description: `Component-focused UI design and development, infrastructure and tooling,
-modern development practices, managing the development and multidisciplinary teams. Check varya.me
-for the articles on the topic, sneak peeks of the projects or to hire me.`,
+        description: `Independent consultant specializing in component-focused UI design
+        and development, modern development practices, infrastructure and tooling, and
+        managing development teams. Visit the website to read articles on these topics,
+        get a sneak peek of past projects, and hire the consultant for your team's needs.`,
         keywords: [
           "design systems",
           "design system",
@@ -77,29 +78,32 @@ for the articles on the topic, sneak peeks of the projects or to hire me.`,
       <Section heading="Services">
         <Box gap="large">
           <Box>
-            I am working as an independent consultant open for new projects. My
-            roles include team leading of the design systems projects, technical
-            leadership in frontend and building development.
+            As an independent consultant, I specialize in design systems
+            and offer a range of services including team leadership, technical
+            leadership in frontend and building development, and custom-tailored
+            workshops. Some of the specific services I offer include:
             <ul>
               <li>
-                <Link to="services/audit">Audit</Link> of existing products and
+                <Link to="services/audit">Auditing</Link> existing products and
                 development processes
               </li>
               <li>
-                <Link to="services/strategy">Coaching</Link> to boost your
-                design operations and development to the next level
+                <Link to="services/strategy">Coaching</Link> to help your team
+                improve their design operations and development skills
               </li>
               <li>
                 Custom-tailored <Link to="services/workshops">workshops</Link>{" "}
-                on the related topics
+                on design systems and related topics
               </li>
               <li>
-                Design systems and UI components{" "}
-                <Link to="services/development">production</Link>
+                <Link to="services/development">Production</Link>
+                {" "}of design systems and UI components
               </li>
             </ul>
-            I am based in Helsinki (Finland), flexible for both on-site and
-            remote projects and dont mind traveling.
+            I am based in Helsinki, Finland, but am open to both on-site and remote projects,
+            and don't mind traveling for the right opportunity. Although I am busy
+            with current projects, I am always open to discussing potential opportunities
+            and how I can help your team succeed.
           </Box>
           <Box>
             <Widget slug="/services" background="brand" height="small">
@@ -113,16 +117,15 @@ for the articles on the topic, sneak peeks of the projects or to hire me.`,
 
       <Section heading="Concepts">
         <Paragraph>
-          My work as a <Text weight="bold">design system architect</Text>{" "}
-          includes running the processes related to the design and development
-          in large or regular organizations. It means inventing and shaping the
-          processes through user interviews and data analysis, tuning the
-          management tools and running new ones, working on company culture and
-          increasing people&apos;s involvement, providing the technical
-          infrastructure and guiding in design and development. In this way, I
-          make a lot of research and discoveries in technical, design and
-          managing aspects. On this page, I present the public artifacts of my
-          design-systems activity.
+          As a <Text weight="bold">design system architect</Text>{" "}, I am
+          responsible for managing the processes
+          related to design and development in organizations of all sizes.
+          This involves conducting user interviews and analyzing data to shape
+          and improve processes, implementing and managing tools, fostering a
+          positive company culture, and providing technical infrastructure and
+          guidance to design and development teams. Through this work, I have
+          gained expertise in technical, design, and management aspects and am
+          excited to share the results of my design systems activity on this page.
         </Paragraph>
 
         <WidgetContainer items={{ small: 1, medium: 2, large: 2 }}>
@@ -130,26 +133,33 @@ for the articles on the topic, sneak peeks of the projects or to hire me.`,
             background="neutral"
             title="What is a design system?"
             slug="/design-systems/what-is-a-design-system/"
-            excerpt="Experience-proven explanation on what is (or should be) a design system from design, development and business
-  perspective. If we want to shape the product so that it is useful, first we must understand it on all its levels."
-          />
+            excerpt="Comprehensive explanation of what a design system is from
+            the perspectives of design, development, and business. With this
+            understanding, you will be better equipped to create useful and
+            successful products. Whether you are new to design systems or have
+            experience in the field, this page offers valuable insights and information."
+            />
           <Widget
             background="accent"
             title="Pattern journey"
             slug="/design-systems/pattern-journey/"
-            excerpt="Visual illustration and explanation of what happens to a pattern on its way from identifying to actual implementation
-  and how different the path might be depending on the situation. The Pattern Journey interactive tool helps to make
-  more people in the organization involved into co-creation of design and development value under the Design Systems
-  umbrella."
+            excerpt="Visual illustration of the journey that a pattern takes from identification
+            to implementation, and how this process can vary depending on the situation.
+            The Pattern Journey interactive tool is designed to help organizations involve
+            more people in the co-creation of design and development value as part of their
+            design systems efforts. Whether you are new to design systems or have experience
+            in the field, this page offers valuable insights and information."
           />
           <Widget
             background="brand"
             title="Aligning UX designers and UI developers work with design systems"
             slug="/design-systems/aligning-ux-designers-and-ui-developers/"
-            excerpt="The aim of this thesis was to study the role of design systems
-  (as an approach and as an artefact) for the UI creation. This research specifically
-  focuses on the alignment between UX interface designers and UI software developers
-  and the impact of design systems on that process. "
+            excerpt="This thesis explores the role of design systems as both an approach
+            and an artifact in the creation of user interfaces (UI). The research focuses
+            on the alignment between UX interface designers and UI software developers,
+            and the impact of design systems on this process. The findings of this study
+            have important implications for organizations looking to improve their UI
+            creation process and foster collaboration between design and development teams. "
           />
         </WidgetContainer>
       </Section>
