@@ -54,25 +54,23 @@ for the articles on the topic, sneak peeks of the projects or to hire me.`,
     >
       <ImageBlock imageRight image={<Avatar />} margin={{ top: "medium" }}>
         <Paragraph size="large" standout lead margin={{ vertical: "none" }}>
-          I am Varya Stepanova, a <b>design systems architect</b> with an
-          extensive experience in management, design, and technical side. In the
-          15+ years of technical career, my major focus was component-focused UI
-          design and development, creating helpful tooling for the subject and
-          spreading the practices across large or regular organizations. I have
-          two Master degrees — in physics and computer science (Aalto
-          University,{" "}
+          I am Varya Stepanova, a <b>design systems architect</b> with extensive
+          experience in management, design, and the technical side. In my ~20 years
+          of technical career, my focus has been on component-focused UI design
+          and development, creating helpful tools for the subject, and spreading best
+          practices across large organizations. I hold two Master's degrees -
+          one in physics and one in computer science from Aalto University's{" "}
           <Link to="https://www.idbm.aalto.fi/" target="_blank" rel="noopener">
             IDBM
-          </Link>{" "}
-          program focused on service design and business), years of engineering
-          experience and several leading roles behind.
+          </Link>{" "}program,
+          which focuses on service design and business. I also have 15+ years of engineering
+          experience and have held several leading roles.
         </Paragraph>
       </ImageBlock>
       <Paragraph size="large" standout lead>
-        Nowadays my focus is on bringing design systems to the next level of
-        success which includes cooperative work in the company development
-        community and bridging the gap for designers, developers, and business
-        specialists.
+        Currently, my focus is on bringing design systems to the next level of success,
+        which includes working cooperatively with a company's development community and
+        bridging the gap between designers, developers, and business specialists.
       </Paragraph>
 
       {/* <Workshop /> */}
