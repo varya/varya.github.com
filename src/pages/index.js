@@ -226,49 +226,54 @@ const Index = () => {
               Slides: "https://varya.me/into-design-systems-2021/",
               Video: "https://youtu.be/OaqBxIp15hg",
             }}
-            excerpt="How an impact measuring tool turned into a stakeholder management system."
+            excerpt="Watch the presentation on how a simple impact measuring tool
+            turned into a comprehensive stakeholder management system for design teams.
+            I share about the challenges and opportunities I faced along the way, and
+            share insights and lessons learned from my journey. By the end of this
+            presentation, you'll have a better understanding of the role of design
+            systems in modern organizations and how to leverage them to drive success."
           />
           <WidgetMulti
             background="accent"
-            title="A practical guide to building your design system infrastructure"
+            title="Building Your Design System Infrastructure — A Practical Guide"
             height="auto"
             links={{
               Slides: "https://varya.me/react-finland-2019",
               Video: "https://youtu.be/gDkUpx0dVc0",
             }}
-            excerpt="Design systems bridge the gap between designers and developers,
-              communicate shared practices to all the company levels and
-              significantly decrease production costs. We all have heard this
-              but how to achieve that in practice? React ecosystem and community already provide a lot of efficient
-              open source tools which can be used for building your design
-              system infrastructure. With them, you can have the most automated
-              development process, high-level interactive documentation for the
-              libraries in your system and support contribution practices within
-              your organisation."
+            excerpt="Design systems can help bridge the gap between designers and developers,
+            communicate shared practices across an organization, and reduce production costs.
+            But how do you actually implement a design system in practice? In this article
+             I provide a practical guide to building your design system infrastructure using
+             open source tools from the React ecosystem. With these tools, you can automate your
+             development process, create high-level interactive documentation for the libraries
+             in your system, and support collaboration within your organization."
           />
           <WidgetMulti
             background="brand"
-            title="Maintaining design systems with proper user
-  research"
+            title="Design Thinking for Maintaining a Successful Design System — The Importance of User Research"
             links={{
               "Read on Medium":
                 "https://medium.com/elisa-design/maintaining-design-systems-with-user-research-3ba5feafc336",
             }}
-            excerpt="Article in Elisa's Medium Publication about the design thinking methods to help when choosing the next steps for the
-  design system development and growth."
+            excerpt="In this article for Elisa's Medium Publication, I explore the role of design
+            thinking in maintaining a successful design system. By incorporating user research into
+            the design process, we can better understand the needs and wants of our users and use
+            this information to guide the development and growth of our design system. I provide
+            tips and strategies for incorporating user research into the design process and discuss
+            the benefits of this approach."
           />
           <WidgetMulti
             background="neutral"
-            title="Building design systems that leverage your designers, developers and
-  products"
+            title="Building a Successful Design System — Tips and Strategies for Leveraging Your Designers, Developers, and Products"
             links={{
               "See Slides": "https://varya.me/design-systems-thinking/",
             }}
-            excerpt="If we compare design systems of several companies, it is visible that this concept has different meanings to different
-  people. So, how to decide which path to follow and what aspects of design systems should be in focus at your
-  organisation? In this talk given at WEBdeLDN meetup in London I told a story of managing a design system in a large
-  company, making decision on its further focus and approaches behind the implementing which include design thinking
-  methods, community management, and technical tips."
+            excerpt="Design systems are a hot topic in the world of design and development, but
+            the concept can mean different things to different people. In this talk, given at the
+            WEBdeLDN meetup in London, I share my experience managing a design system at a large company and provide
+            insight into the decision-making process, design thinking methods, community management,
+            and technical tips that can help your organization build a successful design system."
           />
           <WidgetMulti
             background="accent"
