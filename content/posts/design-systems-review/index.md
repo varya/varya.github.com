@@ -1,5 +1,5 @@
 ---
-title: Design Systems — review of vocabulary and terms
+title: Design Systems Vocabulary — A Review of Key Terms and Concepts
 
 date: 2018-07-19
 cover: thumb.jpg
@@ -10,11 +10,13 @@ tags: design systems, patterns, components
 
 meta:
   desc: >
-    Design systems standardise and simplify the process of interface design and development, they bring new
-    approaches and form their own ecosystem. However, there is no solid understanding of the concepts and terms forming
-    the design systems. To solve the term inconsistency and provide structured professional language, this article
-    focuses on the vocabulary used in the design systems domain by observing a range of materials on the topic, from
-    both academic and popular sources.
+    Design systems are a powerful tool for standardizing and simplifying
+    the process of interface design and development. They bring new approaches and form
+    their own ecosystem, but there is often confusion about the concepts and terms used
+    in the field. In order to address this issue and provide a more structured and professional
+    language, this article will review the vocabulary used in the design systems domain.
+    We will draw from a range of materials, including academic and popular sources, to
+    provide a comprehensive overview of the key terms and concepts.
 ---
 
 <div data-excerpt>
