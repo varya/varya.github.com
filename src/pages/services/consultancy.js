@@ -31,10 +31,10 @@ const Consultancy = ({ location }) => (
       content: HeroContent,
     }}
     seo={{
-      title: "Consulting services in design systems and frontend development",
-      description: `I offer a wide range of consulting
-      services related to design systems (or design operations)
-      and frontend development.`,
+      title: "Expert consulting in design systems and frontend development",
+      description: `Expert consulting services for design operations,
+      frontend architecture, and design systems. A way to align your designers
+      and developers and ensure consistent branding and visuals in your products.`,
       cover: heroImage,
       keywords: [
         "consultancy",
@@ -48,29 +48,27 @@ const Consultancy = ({ location }) => (
     location={location}
   >
     <Paragraph>
-      My work as a design system architect includes running the processes
-      related to the design and development in large or regular organizations.
-      It means inventing and shaping the processes through user interviews and
-      data analysis, tuning the management tools and running new ones, working
-      on company culture and increasing people&apos;s involvement, providing the
-      technical infrastructure and guiding in design and development.
+      As an IT consultant and design system architect, I specialize in helping
+      large and regular organizations improve their design and development
+      processes. This includes conducting user interviews and analyzing data,
+      optimizing management tools and implementing new ones, fostering a
+      positive company culture, and providing technical infrastructure and
+      guidance for design and development.
     </Paragraph>
     <Paragraph>
-      I offer a wide range of consulting services related to design systems (or
-      design operations) and frontend development. Here are some examples of the
-      roles I could take:
+      I offer a wide range of consulting services related to design systems and
+      frontend development, including:
       <ul>
         <li>Engineering manager</li>
         <li>Design system architect</li>
         <li>Frontend architecture expert</li>
         <li> Senior frontend developer</li>
       </ul>
-      Regardless of the role you have in mind, contact me if you have a need to
-      effectively align the work of your designers and developers, ensure brand
-      and visual consistency in your products, and have a well-structured
-      seamlessly working design system (all design, technical, or managerial
-      aspects). You can find examples of possible projects among services or
-      case studies at this website.
+      Whether you need help aligning the work of your designers and developers,
+      ensuring consistent branding and visuals across your products, or building
+      a well-structured and efficient design system, I can help. Please feel
+      free to contact me to discuss your specific needs and how I may be able to
+      assist you. Examples of my past work can be found on this website.
     </Paragraph>
     <WidgetContainer items={{ small: 1, medium: 2, large: 2 }}>
       <Widget slug="/projects" background="brand" align="center">
