@@ -56,30 +56,32 @@ const Index = () => {
       <ImageBlock imageRight image={<Avatar />} margin={{ top: "medium" }}>
         <Paragraph size="large" standout lead margin={{ vertical: "none" }}>
           I am Varya Stepanova, a <b>design systems architect</b> with extensive
-          experience in management, design, and the technical side. In my ~20 years
-          of technical career, my focus has been on component-focused UI design
-          and development, creating helpful tools for the subject, and spreading best
-          practices across large organizations. I hold two Master's degrees -
-          one in physics and one in computer science from Aalto University's{" "}
+          experience in management, design, and the technical side. In my ~20
+          years of technical career, my focus has been on component-focused UI
+          design and development, creating helpful tools for the subject, and
+          spreading best practices across large organizations. I hold two
+          Master&apos;s degrees - one in physics and one in computer science
+          from Aalto University&apos;s{" "}
           <Link to="https://www.idbm.aalto.fi/" target="_blank" rel="noopener">
             IDBM
-          </Link>{" "}program,
-          which focuses on service design and business. I also have 15+ years of engineering
-          experience and have held several leading roles.
+          </Link>{" "}
+          program, which focuses on service design and business. I also have 15+
+          years of engineering experience and have held several leading roles.
         </Paragraph>
       </ImageBlock>
       <Paragraph size="large" standout lead>
-        Currently, my focus is on bringing design systems to the next level of success,
-        which includes working cooperatively with a company's development community and
-        bridging the gap between designers, developers, and business specialists.
+        Currently, my focus is on bringing design systems to the next level of
+        success, which includes working cooperatively with a company&apos;s
+        development community and bridging the gap between designers,
+        developers, and business specialists.
       </Paragraph>
 
       {/* <Workshop /> */}
       <Section heading="Services">
         <Box gap="large">
           <Box>
-            As an independent consultant, I specialize in design systems
-            and offer a range of services including team leadership, technical
+            As an independent consultant, I specialize in design systems and
+            offer a range of services including team leadership, technical
             leadership in frontend and building development, and custom-tailored
             workshops. Some of the specific services I offer include:
             <ul>
@@ -96,14 +98,15 @@ const Index = () => {
                 on design systems and related topics
               </li>
               <li>
-                <Link to="services/development">Production</Link>
-                {" "}of design systems and UI components
+                <Link to="services/development">Production</Link> of design
+                systems and UI components
               </li>
             </ul>
-            I am based in Helsinki, Finland, but am open to both on-site and remote projects,
-            and don't mind traveling for the right opportunity. Although I am busy
-            with current projects, I am always open to discussing potential opportunities
-            and how I can help your team succeed.
+            I am based in Helsinki, Finland, but am open to both on-site and
+            remote projects, and don&apos;t mind traveling for the right
+            opportunity. Although I am busy with current projects, I am always
+            open to discussing potential opportunities and how I can help your
+            team succeed.
           </Box>
           <Box>
             <Widget slug="/services" background="brand" height="small">
@@ -117,15 +120,15 @@ const Index = () => {
 
       <Section heading="Concepts">
         <Paragraph>
-          As a <Text weight="bold">design system architect</Text>{" "}, I am
-          responsible for managing the processes
-          related to design and development in organizations of all sizes.
-          This involves conducting user interviews and analyzing data to shape
-          and improve processes, implementing and managing tools, fostering a
-          positive company culture, and providing technical infrastructure and
-          guidance to design and development teams. Through this work, I have
-          gained expertise in technical, design, and management aspects and am
-          excited to share the results of my design systems activity on this page.
+          As a <Text weight="bold">design system architect</Text> , I am
+          responsible for managing the processes related to design and
+          development in organizations of all sizes. This involves conducting
+          user interviews and analyzing data to shape and improve processes,
+          implementing and managing tools, fostering a positive company culture,
+          and providing technical infrastructure and guidance to design and
+          development teams. Through this work, I have gained expertise in
+          technical, design, and management aspects and am excited to share the
+          results of my design systems activity on this page.
         </Paragraph>
 
         <WidgetContainer items={{ small: 1, medium: 2, large: 2 }}>
@@ -138,7 +141,7 @@ const Index = () => {
             understanding, you will be better equipped to create useful and
             successful products. Whether you are new to design systems or have
             experience in the field, this page offers valuable insights and information."
-            />
+          />
           <Widget
             background="accent"
             title="Pattern journey"
@@ -160,6 +163,16 @@ const Index = () => {
             and the impact of design systems on this process. The findings of this study
             have important implications for organizations looking to improve their UI
             creation process and foster collaboration between design and development teams. "
+          />
+          <Widget
+            background="neutral"
+            title="Design System Gems"
+            slug="/design-systems/gems/"
+            excerpt="Curated collection of the most useful resources related to design
+            systems.  Whether you are a designer, developer, or product
+            manager, you will find valuable articles, tutorials, and tools that cover all
+            aspects of design systems, from creating a design system from scratch to
+            maintaining and scaling it up to your organization's needs."
           />
         </WidgetContainer>
       </Section>
