@@ -60,7 +60,7 @@ const Seo = ({ data, title, description, keywords, cover, location }) => {
       <meta property="og:image" content={imageUrl} />
       <meta property="og:type" content="website" />
       {/* Twitter Card tags */}
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:creator"
         content={config.authorTwitterAccount ? config.authorTwitterAccount : ""}
