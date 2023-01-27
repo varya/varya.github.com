@@ -25,6 +25,13 @@ Finally, it is important to strive for backwards compatibility with each new rel
 
 In conclusion, versioning your design system can seem like an intimidating task, but by following these best practices, you can have confidence knowing that everything will run smoothly when it comes time for making updates. Remember to use unique version numbers and semantic versioning conventions; create useful changelogs; communicate effectively with development teams; document life cycles; and strive for backwards compatibility will help ensure everything runs as smoothly as possible throughout every stage of production. With these strategies in place, you can rest assured knowing that every new iteration of your design system will be just as successful, if not more so, than its predecessor.
 
+### More articles on the topic
+
+- [Versioning Design Systems. Communicating Change Clearly to People Using Systems](https://medium.com/eightshapes-llc/versioning-design-systems-48cceb5ace4d) by Nathan Curtis
+- [Version control best practices for design systems](https://www.knapsack.cloud/blog/version-control-for-design-systems) by Michael J. Fordham
+- [Versioning Design Systems: Best Practices](https://intodesignsystems.medium.com/versioning-design-systems-best-practices-ca8508653480) by Intodesignsystems
+- [Design system versioning: single library or individual components?](https://bradfrost.com/blog/post/design-system-versioning-single-library-or-individual-components/) by Brad Frost
+
 <div style="text-align: right;"><small>
 Cover photo by <a href="https://unsplash.com/@dnevozhai?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Denys Nevozhai</a> on <a href="https://unsplash.com/photos/k5w21D7PgMk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 </small>
