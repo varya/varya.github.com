@@ -1,7 +1,7 @@
 ---
 title: Exploring Contribution Models for Design Systems
 
-date: 2023-01-31
+date: 2023-02-07
 cover: pull.jpg
 
 meta:
