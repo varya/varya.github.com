@@ -1,15 +1,18 @@
 {
-  "name": "var-ya",
-  "version": "1.0.0",
-  "private": true,
-  "description": "var-ya",
-  "author": "Kotkoa",
+  "name": "varya.me",
+  "version": "4.0.0",
+  "author": "Varya Stepanova <mail@varya.me>",
+  "license": "MIT",
+  "description": "var ya;",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "varya",
+    "blog",
+    "design systems"
   ],
   "scripts": {
     "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "start": "npm run develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"

@@ -9,7 +9,7 @@ module.exports = {
   plugins: ["gatsby-plugin-postcss", {
     resolve: 'gatsby-plugin-google-analytics',
     options: {
-      "trackingId": ""
+      "trackingId": "G-VNR46J539J"
     }
   }, "gatsby-plugin-image", {
     resolve: 'gatsby-plugin-manifest',
