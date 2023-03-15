@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Box, Stack, Text } from "grommet";
 import { Calendar } from "grommet-icons";
-import { Heading } from "../../components/Heading";
-import { Image } from "../../components/Image/index";
-import { Link } from "../../components/Link";
-import { Paragraph } from "../../components/Paragraph";
+import { Heading } from "../../components";
+import { Image } from "../../components";
+import { Link } from "../../components";
+import { Paragraph } from "../../components";
 /**
  * Post Preview widget with cover image and excerpt
  * @param  {string} cover, title, excerpt, slug, readingTime, date - post data

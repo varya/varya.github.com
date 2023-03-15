@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { Box, Button } from "grommet";
 // import { Calendar } from "grommet-icons";
 // import { Heading, Image, Link, Paragraph } from "@components";
-import { Widget } from "../../components/Widget";
+import { Widget } from "../../components";
 
 /**
  * Post Preview widget with multiple links

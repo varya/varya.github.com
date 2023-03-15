@@ -1,1 +1,1 @@
-export { default as WidgetMulti } from "./WidgetMulti";
+export { default } from "./WidgetMulti";

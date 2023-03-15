@@ -1,1 +1,1 @@
-export { default as WidgetContainer } from "./WidgetContainer";
+export { default } from "./WidgetContainer";

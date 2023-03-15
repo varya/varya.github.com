@@ -1,17 +1,18 @@
 import * as React from "react";
-import { Page } from "../templates/Page";
 
 import { Box, Text } from "grommet";
 
-import { Heading } from "../components/Heading";
-import { ImageBlock } from "../components/ImageBlock";
-import { Avatar } from "../components/Avatar";
-import { Paragraph } from "../components/Paragraph";
-import { Link } from "../components/Link";
-import { Section } from "../components/Section";
-import { Widget } from "../components/Widget";
-import { WidgetContainer } from "../components/WidgetContainer";
-import { WidgetMulti } from "../components/WidgetMulti";
+import { Page } from "../templates/Page";
+
+import { Heading } from "../components";
+import { ImageBlock } from "../components";
+import { Avatar } from "../components";
+import { Paragraph } from "../components";
+import { Link } from "../components";
+import { Section } from "../components";
+import { Widget } from "../components";
+import { WidgetContainer } from "../components";
+import { WidgetMulti } from "../components";
 
 import bemLogo from "../images/png/bem-logo-margin.png";
 import bfLogo from "../images/png/bf-logo-margin.png";
