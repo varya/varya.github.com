@@ -1,0 +1,3 @@
+```js
+<PatternJourney />
+```

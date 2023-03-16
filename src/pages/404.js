@@ -1,49 +1,50 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import * as React from "react";
+import PropTypes from "prop-types";
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+import { Text } from "grommet";
+import { Heading, Paragraph, Link } from "../components";
+import { Page } from "../templates/Page";
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+const HeroContent = () => (
+  <>
+    <Heading
+      level={1}
+      alignSelf="center"
+      responsive
+      size="large"
+      margin="small"
+    >
+      <Text size="inherit" color="brand">
+        404: Not Found
+      </Text>
+    </Heading>
+  </>
+);
 
-const NotFoundPage = () => {
+const NotFoundPage = ({ location }) => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <Page
+      location={location}
+      hero={{ props: { background: "light-8" }, content: HeroContent }}
+      seo={{
+        title: "Not Found - Varya Stepanova, design systems expert",
+        description: `Page is not available`,
+      }}
+    >
+      <Heading align="center" level={3}>
+        Sorry, this page isn&apos;t available
+      </Heading>
+      <Paragraph>
+        The link you followed might be broken, or the page have been removed.
+        Try to browse my <Link to="/blog">blog</Link> to find what you&apos;re
+        looking for or <Link to="/services">check what I do</Link>.
+      </Paragraph>
+    </Page>
+  );
+};
 
-export default NotFoundPage
+NotFoundPage.propTypes = {
+  location: PropTypes.object,
+};
 
-export const Head = () => <title>Not found</title>
+export default NotFoundPage;
