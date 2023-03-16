@@ -21,6 +21,7 @@
     "@mdx-js/react": "^2.3.0",
     "disqus-react": "^1.1.5",
     "gatsby": "^5.7.0",
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-google-analytics": "^5.7.0",
     "gatsby-plugin-image": "^3.7.0",
     "gatsby-plugin-manifest": "^5.7.0",
