@@ -2,8 +2,8 @@ import * as React from "react";
 import PropTypes from "prop-types";
 
 import { Text } from "grommet";
-import { Heading, Paragraph, Link } from "../components";
-import { Page } from "../templates/Page";
+import { Heading, Paragraph, Link } from "@components";
+import { Page } from "@templates/Page";
 
 const HeroContent = () => (
   <>

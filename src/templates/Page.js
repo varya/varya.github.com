@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Box } from "grommet";
-import { Hero } from "../components";
-import { Layout } from "../components";
-import { Seo } from "../components";
+import { Hero } from "@components";
+import { Layout } from "@components";
+import { Seo } from "@components";
 
 export const Page = (props) => {
   const { children, hero, seo, location } = props;

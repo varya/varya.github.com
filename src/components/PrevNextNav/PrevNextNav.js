@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import styled from "styled-components";
 import { Box, Nav, Text } from "grommet";
-import { Heading, Link } from "../../components";
+import { Heading, Link } from "@components";
 
 /**
  * Navigation to previous/next post in blog

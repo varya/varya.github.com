@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Box, Text } from "grommet";
-import { Paragraph } from "../../components";
+import { Paragraph } from "@components";
 
 const Step = ({ num, children }) => (
   <Box direction="row" margin={{ vertical: "medium" }} align="start">

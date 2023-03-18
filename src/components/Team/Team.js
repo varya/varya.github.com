@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Box } from "grommet";
-import { Avatar, Heading, Paragraph } from "../../components";
+import { Avatar, Heading, Paragraph } from "@components";
 
 const Team = () => {
   const nikita = require("./nikita.jpg");

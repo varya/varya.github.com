@@ -2,14 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Text } from "grommet";
-import {
-  Heading,
-  Link,
-  Paragraph,
-  Widget,
-  WidgetContainer,
-} from "../../components";
-import { Page } from "../../templates/Page";
+import { Heading, Link, Paragraph, Widget, WidgetContainer } from "@components";
+import { Page } from "@templates/Page";
 
 import heroImage from "./hero-kickstart.jpg";
 

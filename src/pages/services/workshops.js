@@ -8,8 +8,8 @@ import {
   Widget,
   WidgetContainer,
   // Workshop,
-} from "../../components";
-import { Page } from "../../templates/Page";
+} from "@components";
+import { Page } from "@templates/Page";
 
 import heroImage from "./hero-workshops.jpg";
 

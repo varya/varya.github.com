@@ -9,7 +9,7 @@ import {
   ResponsiveContext,
   Text,
 } from "grommet";
-import { Link, Paragraph, SocialLinks } from "../../components";
+import { Link, Paragraph, SocialLinks } from "@components";
 
 /**
  * Footer component

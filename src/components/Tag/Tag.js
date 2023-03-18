@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Button } from "grommet";
-import { Link } from "../../components";
+import { Link } from "@components";
 
 const Tag = ({ name, slug, ...props }) => {
   return (

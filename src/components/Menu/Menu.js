@@ -13,7 +13,7 @@ import {
   ResponsiveContext,
 } from "grommet";
 import { deepMerge } from "grommet/utils";
-import { Link } from "../../components";
+import { Link } from "@components";
 
 import theme from "../theme";
 

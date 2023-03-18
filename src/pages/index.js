@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { Box, Text } from "grommet";
-import { Page } from "../templates/Page";
+import { Page } from "@templates/Page";
 import {
   Heading,
   ImageBlock,
@@ -12,7 +12,7 @@ import {
   Widget,
   WidgetContainer,
   WidgetMulti,
-} from "../components";
+} from "@components";
 
 import bemLogo from "../images/png/bem-logo-margin.png";
 import bfLogo from "../images/png/bf-logo-margin.png";

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Box, Grommet } from "grommet";
-import { Footer, Header } from "../../components";
+import { Footer, Header } from "@components";
 
 import theme from "../theme";
 

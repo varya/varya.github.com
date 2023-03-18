@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Anchor, Box } from "grommet";
-import { Paragraph } from "../../components";
+import { Paragraph } from "@components";
 
 const GithubEdit = (props) => {
   const { link } = props;

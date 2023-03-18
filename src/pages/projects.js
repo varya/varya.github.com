@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 //import { graphql } from "gatsby";
-import { Heading, Widget, WidgetContainer } from "../components";
-import { Page } from "../templates/Page";
+import { Heading, Widget, WidgetContainer } from "@components";
+import { Page } from "@templates/Page";
 
 const HeroContent = () => (
   <>

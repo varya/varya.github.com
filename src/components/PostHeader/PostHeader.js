@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Text } from "grommet";
-import { Heading, Hero, MetaGroup } from "../../components";
+import { Heading, Hero, MetaGroup } from "@components";
 
 const PostHeader = ({ imageUrl, date, readingTime, title, subTitle }) => (
   <Hero imageUrl={imageUrl} hasOverlay>
