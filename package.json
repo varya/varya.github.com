@@ -47,6 +47,7 @@
     "postcss": "^8.4.21",
     "postcss-preset-env": "^8.0.1",
     "prismjs": "^1.29.0",
+    "prop-types": "^15.8.1",
     "rc-spider-intergalactico": "^0.0.8",
     "react": "^18.2.0",
     "react-calendly": "^4.1.1",
