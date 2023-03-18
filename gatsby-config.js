@@ -15,14 +15,103 @@ module.exports = {
     author: "Varya Stepanova",
   },
   plugins: [
-    "gatsby-plugin-postcss",
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1600,
+              backgroundColor: "transparent",
+              wrapperStyle: "width: 100%;",
+            },
+          },
+          `gatsby-remark-copy-relative-linked-files`,
+          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              elements: [`h2`, `h3`, `h4`, `h5`, `h6`],
+            },
+          },
+        ],
+        extensions: [`.mdx`, `.md`],
+      },
+    },
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          "gatsby-remark-unwrap-images",
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: "G-VNR46J539J",
       },
     },
-    "gatsby-plugin-image",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/content/projects`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/content/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `life`,
+        path: `${__dirname}/content/life`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `design-systems`,
+        path: `${__dirname}/content/design-systems`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -71,24 +160,11 @@ module.exports = {
         ],
       },
     },
-    "gatsby-plugin-mdx",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: "gatsby-plugin-react-svg",
       options: {
-        name: "images",
-        path: "./src/images/",
+        include: /src/,
       },
-      __key: "images",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "pages",
-        path: "./src/pages/",
-      },
-      __key: "pages",
     },
     {
       resolve: `gatsby-plugin-alias-imports`,
@@ -102,5 +178,13 @@ module.exports = {
         extensions: ["js"],
       },
     },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-image",
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-catch-links`,
+    `gatsby-remark-reading-time`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sitemap`,
   ],
 };
