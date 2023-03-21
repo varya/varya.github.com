@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-//import { graphql } from "gatsby";
+import { graphql } from "gatsby";
 import { Heading, Widget, WidgetContainer } from "@components";
 import { Page } from "@templates/Page";
 
@@ -63,30 +63,32 @@ Projects.propTypes = {
 
 export default Projects;
 
-// export const projectsQuery = graphql`
-//   query ProjectsIndexQuery {
-//     projects: allMdx(
-//       filter: { fileAbsolutePath: { regex: "//projects//" } }
-//       sort: { fields: [frontmatter___date], order: DESC }
-//     ) {
-//       edges {
-//         node {
-//           body
-//           excerpt(pruneLength: 600)
-//           fields {
-//             slug
-//           }
-//           frontmatter {
-//             title
-//             date(formatString: "DD MMMM YYYY")
-//             description
-//             link
-//             meta {
-//               desc
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const projectsQuery = graphql`
+  query ProjectsIndexQuery {
+    projects: allMdx(
+      filter: { internal: { contentFilePath: { regex: "//projects//" } } }
+      sort: { frontmatter: { date: DESC } }
+    ) {
+      edges {
+        node {
+          body
+          excerpt(pruneLength: 600)
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "DD MMMM YYYY")
+            description
+            link
+            meta {
+              desc
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+console.log("projectsQuery", projectsQuery);
