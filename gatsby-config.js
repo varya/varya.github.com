@@ -183,7 +183,6 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-image",
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
     `gatsby-remark-reading-time`,
     `gatsby-plugin-styled-components`,
