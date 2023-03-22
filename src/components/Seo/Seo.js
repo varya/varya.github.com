@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import config from "../../../content/meta/config";
+import config from "@content/meta/config";
 import Helmet from "react-helmet";
 
 const Seo = ({ data, title, description, keywords, cover, location }) => {

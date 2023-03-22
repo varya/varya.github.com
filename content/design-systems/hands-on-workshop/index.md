@@ -23,7 +23,7 @@ help of their library, and driven by an effective process to ensure smooth updat
 
 import {
 Workshop
-} from "../../../src/components";
+} from "@components";
 
 <Workshop/>
 

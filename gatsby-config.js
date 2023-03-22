@@ -174,6 +174,8 @@ module.exports = {
           "@pages": "src/pages",
           "@templates": "src/templates",
           "@static": "static",
+          "@common": "src/common",
+          "@content": "content",
         },
         extensions: ["js"],
       },

@@ -5,7 +5,7 @@ import { Link } from "gatsby-link";
 import { Box, Button, Grommet } from "grommet";
 import { deepMerge } from "grommet/utils";
 
-import { clamp, range } from "../../common/utils";
+import { clamp, range } from "@common/utils";
 import theme from "../theme";
 import flattenChildren from "react-flatten-children";
 
