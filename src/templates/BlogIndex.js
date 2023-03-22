@@ -59,7 +59,7 @@ const Blog = ({ data, pageContext }) => {
                   height="small"
                   date={date}
                   readingTime={
-                    parseInt(readingTime.minutes) > 0 &&
+                    parseInt(readingTime?.minutes) > 0 &&
                     `${Math.round(readingTime.minutes)} min read`
                   }
                 />

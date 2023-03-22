@@ -13,7 +13,7 @@ export { default as Link } from "./Link";
 export { default as Logo } from "./Logo";
 export { default as Menu } from "./Menu";
 export { default as MetaGroup } from "./MetaGroup";
-// export { default as Pagination } from "./Pagination";
+export { default as Pagination } from "./Pagination";
 export { default as PureHtml } from "./PureHtml";
 export { default as Paragraph } from "./Paragraph";
 export { default as PatternJourney } from "./PatternJourney";
