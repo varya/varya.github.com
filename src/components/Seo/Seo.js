@@ -28,7 +28,7 @@ const Seo = ({ data, title, description, keywords, cover, location }) => {
   }
 
   const image = pageCover
-    ? pageCover.childImageSharp.fluid.src
+    ? pageCover.childImageSharp.gatsbyImageData
     : cover || config.siteImage;
 
   const imageUrl = config.siteUrl + image;

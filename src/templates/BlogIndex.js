@@ -52,7 +52,11 @@ const Blog = ({ data, pageContext }) => {
               return (
                 <Widget
                   key={post.node.frontmatter.title}
-                  image={cover && <GatsbyImage {...cover.childImageSharp} />}
+                  image={
+                    cover && (
+                      <GatsbyImage {...cover.childImageSharp.gatsbyImageData} />
+                    )
+                  }
                   title={post.node.frontmatter.title}
                   slug={resolvedSlug}
                   excerpt={post.node.excerpt}
@@ -104,6 +108,9 @@ export const blogQuery = graphql`
           excerpt(pruneLength: 600)
           fields {
             slug
+            readingTime {
+              minutes
+            }
           }
           frontmatter {
             title
@@ -111,9 +118,7 @@ export const blogQuery = graphql`
             date(formatString: "DD MMMM YYYY")
             cover {
               childImageSharp {
-                fluid(maxWidth: 640) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(layout: FIXED)
               }
             }
           }

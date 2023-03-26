@@ -184,7 +184,6 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-image",
     `gatsby-plugin-catch-links`,
-    `gatsby-remark-reading-time`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
   ],

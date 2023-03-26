@@ -1,5 +1,6 @@
 const path = require("path");
 const config = require("./content/meta/config");
+const readingTime = require("reading-time");
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
@@ -56,6 +57,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       node,
       name: `lang`,
       value: lang,
+    });
+
+    createNodeField({
+      node,
+      name: `readingTime`,
+      value: readingTime(node.body),
     });
 
     let disqusIdentifier = slug.split("/").filter((item) => item != "");
@@ -141,6 +148,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             id
             fields {
               slug
+              readingTime {
+                minutes
+              }
             }
           }
         }
@@ -166,6 +176,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               level
               fileRelativePath
               lang
+              readingTime {
+                minutes
+              }
             }
             frontmatter {
               title
@@ -201,6 +214,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               level
               fileRelativePath
               lang
+              readingTime {
+                minutes
+              }
             }
             frontmatter {
               title
@@ -232,6 +248,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               level
               fileRelativePath
               lang
+              readingTime {
+                minutes
+              }
             }
             frontmatter {
               title

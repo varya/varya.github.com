@@ -36,7 +36,6 @@
     "gatsby-remark-copy-relative-linked-files": "^1.5.0",
     "gatsby-remark-images": "^7.7.0",
     "gatsby-remark-prismjs": "^7.7.0",
-    "gatsby-remark-reading-time": "^1.1.0",
     "gatsby-remark-unwrap-images": "^1.0.2",
     "gatsby-source-filesystem": "^5.7.0",
     "gatsby-transformer-remark": "^6.7.0",
@@ -54,6 +53,7 @@
     "react-flatten-children": "^1.1.2",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.8.0",
+    "reading-time": "^1.5.0",
     "styled-components": "^5.3.9",
     "styled-components-breakpoint": "^3.0.0-preview.20"
   },

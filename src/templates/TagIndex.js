@@ -32,7 +32,11 @@ const Tag = ({ data, pageContext }) => {
             return (
               <Widget
                 key={post.node.frontmatter.title}
-                image={cover && <GatsbyImage {...cover.childImageSharp} />}
+                image={
+                  cover && (
+                    <GatsbyImage {...cover.childImageSharp.gatsbyImageData} />
+                  )
+                }
                 title={post.node.frontmatter.title}
                 slug={post.node.fields.slug}
                 excerpt={post.node.excerpt}
@@ -76,9 +80,7 @@ export const tagQuery = graphql`
             date(formatString: "DD MMMM YYYY")
             cover {
               childImageSharp {
-                fluid(maxWidth: 640) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(layout: FIXED)
               }
             }
           }
