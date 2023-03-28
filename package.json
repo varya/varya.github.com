@@ -18,8 +18,10 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@mdx-js/mdx": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "disqus-react": "^1.1.5",
+    "eslint-mdx": "^2.0.5",
     "gatsby": "^5.7.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-catch-links": "^5.7.0",
@@ -38,7 +40,6 @@
     "gatsby-remark-prismjs": "^7.7.0",
     "gatsby-remark-unwrap-images": "^1.0.2",
     "gatsby-source-filesystem": "^5.7.0",
-    "gatsby-transformer-remark": "^6.7.0",
     "gatsby-transformer-sharp": "^5.7.0",
     "grommet": "^2.30.0",
     "grommet-icons": "^4.10.0",

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { graphql } from "gatsby";
-// import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 import { Box, Button, Text } from "grommet";
 import {
@@ -103,6 +103,7 @@ const Post = ({
       siteMetadata: { siteUrl },
     },
   },
+  children,
   pageContext: { next, prev, fileSourceUrl },
 }) => {
   const { readingTime, slug, disqusIdentifier } = mdx.fields;
@@ -139,8 +140,11 @@ const Post = ({
         direction="column"
       >
         <MDXProvider components={{ ...postComponents, ...globalMdxComponents }}>
-          {/* <MDXRenderer> {mdx.body}</MDXRenderer> */}
-          {mdx.body}
+          {/* <MDXRenderer>
+            <Link>tss</Link>
+          </MDXRenderer> */}
+          {/* {mdx.body} */}
+          {children}
         </MDXProvider>
         <Box
           direction="row"

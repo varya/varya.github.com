@@ -33,6 +33,7 @@ module.exports = {
               wrapperStyle: "width: 100%;",
             },
           },
+          "gatsby-remark-unwrap-images",
           `gatsby-remark-copy-relative-linked-files`,
           `gatsby-remark-prismjs`,
           {
@@ -45,23 +46,23 @@ module.exports = {
         extensions: [`.mdx`, `.md`],
       },
     },
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
-          "gatsby-remark-unwrap-images",
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 590,
-            },
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: "gatsby-transformer-remark",
+    //   options: {
+    //     plugins: [
+    //       "gatsby-remark-unwrap-images",
+    //       {
+    //         resolve: `gatsby-remark-images`,
+    //         options: {
+    //           // It's important to specify the maxWidth (in pixels) of
+    //           // the content container as this plugin uses this as the
+    //           // base for generating different widths of each image.
+    //           maxWidth: 590,
+    //         },
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
