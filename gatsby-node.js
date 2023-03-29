@@ -129,6 +129,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               date
               link
             }
+            internal {
+              contentFilePath
+            }
           }
         }
       }
@@ -278,11 +281,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const blogPosts = postsBlogData.data.blogPosts.edges;
+  const projectPosts = postsProjectsData.data.projectPosts.edges;
 
   const otherPosts = [
     ...postsRuData.data.ruPosts.edges,
     ...postsLifeData.data.lifePosts.edges,
-    ...postsProjectsData.data.projectPosts.edges,
+    // ...postsProjectsData.data.projectPosts.edges,
     ...postsDesignSystemData.data.designSystemsPosts.edges,
   ];
 
@@ -311,6 +315,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         prev,
         next,
         fileSourceUrl,
+      },
+    });
+  });
+
+  projectPosts.forEach(({ node }) => {
+    const slug = node.fields.slug;
+
+
+    createPage({
+      path: slug,
+      component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+      context: {
+        slug,
       },
     });
   });
