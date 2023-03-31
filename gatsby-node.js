@@ -155,6 +155,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 minutes
               }
             }
+            internal {
+              contentFilePath
+            }
           }
         }
       }
@@ -192,6 +195,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               date
               layout
               tags
+            }
+            internal {
+              contentFilePath
             }
           }
         }
@@ -282,12 +288,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const blogPosts = postsBlogData.data.blogPosts.edges;
   const projectPosts = postsProjectsData.data.projectPosts.edges;
+  const designSystemsPosts =
+    postsDesignSystemData.data.designSystemsPosts.edges;
 
   const otherPosts = [
     ...postsRuData.data.ruPosts.edges,
     ...postsLifeData.data.lifePosts.edges,
     // ...postsProjectsData.data.projectPosts.edges,
-    ...postsDesignSystemData.data.designSystemsPosts.edges,
+    // ...postsDesignSystemData.data.designSystemsPosts.edges,
   ];
 
   const tagSet = new Set();
@@ -309,7 +317,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: slug,
-      component: postTemplate,
+      component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         slug,
         prev,
@@ -322,10 +330,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   projectPosts.forEach(({ node }) => {
     const slug = node.fields.slug;
 
-
     createPage({
       path: slug,
       component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+      context: {
+        slug,
+      },
+    });
+  });
+
+  designSystemsPosts.forEach(({ node }) => {
+    const slug = node.fields.slug;
+
+    createPage({
+      path: slug,
+      component: postTemplate,
+      // `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         slug,
       },
@@ -339,6 +359,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     createPage({
       path: slug,
       component: postTemplate,
+      // `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         slug,
       },
