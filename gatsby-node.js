@@ -141,7 +141,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const postsDesignSystemData = await graphql(`
     query {
       designSystemsPosts: allMdx(
-        # filter: { fileAbsolutePath: { regex: "//design-systems//" } }
         filter: {
           internal: { contentFilePath: { regex: "//design-systems//" } }
         }
@@ -357,7 +356,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: slug,
-      component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+      component: postTemplate,
+      // `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         slug,
       },
