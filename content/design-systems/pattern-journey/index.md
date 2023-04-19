@@ -43,8 +43,6 @@ This process is called **Pattern Journey**.
 
 ## Pattern Journey - Interactive Scheme
 
-<PatternJourney/>
-
 The scheme shows possible paths from identifying the need in a pattern to implementing it. Answers to the displayed questions help to
 choose the right way. Note that **you can click on the questions** to get additional guidance on how to get the answer.
 For a specific project, the instructions can be more detailed and contain links to communication channels, pages of

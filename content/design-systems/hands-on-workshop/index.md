@@ -21,12 +21,6 @@ styled-components, and document it with Storybook. The exercise contains managin
 the code in sync with the design reality. By the end of the day, each team has the product ready, built with the
 help of their library, and driven by an effective process to ensure smooth updates.
 
-import {
-Workshop
-} from "@components";
-
-<Workshop/>
-
 ### Workshop contains
 
 - Introduction to the topic of design systems;
@@ -39,8 +33,8 @@ Workshop
 - Building a product based on the given design system;
 - Providing brand changes to the product via the design system.
 
-<details><summary>Open full workshop description</summary>
-<div>
+<summary>Open full workshop description</summary>
+
 
 ##### Workshop Details
 
@@ -98,9 +92,6 @@ anyone with interest in pattern libraries is welcome.
 - How to make changes to a pattern library in a coordinated fashion
 
 ##### Source: [Original workshop page](https://dsconference.com/ws-intergalactico/)
-
-</div>
-</details>
 
 Publically, this workshop was
 given twice - as a part of DFConf Helsinki, and the second time on its own.

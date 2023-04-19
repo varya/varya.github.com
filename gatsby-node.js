@@ -295,7 +295,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     ...postsRuData.data.ruPosts.edges,
     ...postsLifeData.data.lifePosts.edges,
     // ...postsProjectsData.data.projectPosts.edges,
-    // ...postsDesignSystemData.data.designSystemsPosts.edges,
+    ...postsDesignSystemData.data.designSystemsPosts.edges,
   ];
 
   const tagSet = new Set();
@@ -344,8 +344,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: slug,
-      component: postTemplate,
-      // `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+      component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         slug,
       },
@@ -358,8 +357,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: slug,
-      component: postTemplate,
-      // `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+      component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         slug,
       },
