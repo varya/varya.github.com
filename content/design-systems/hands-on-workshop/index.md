@@ -21,6 +21,8 @@ styled-components, and document it with Storybook. The exercise contains managin
 the code in sync with the design reality. By the end of the day, each team has the product ready, built with the
 help of their library, and driven by an effective process to ensure smooth updates.
 
+<Workshop/>
+
 ### Workshop contains
 
 - Introduction to the topic of design systems;
@@ -34,7 +36,6 @@ help of their library, and driven by an effective process to ensure smooth updat
 - Providing brand changes to the product via the design system.
 
 <summary>Open full workshop description</summary>
-
 
 ##### Workshop Details
 

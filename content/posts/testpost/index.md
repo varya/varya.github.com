@@ -343,8 +343,8 @@ The following content forms visual language:
 Unlike the pattern libraries which instruct what are the patterns to form a
 good product, visual language also articulates why these patterns should be
 used (Robson, 2016). The Design Systems Handbook names visual language “a core
-part of [...]\{.zero\}
- design standards” (Suarez, Anne, Sylor-Miller, Mounter, and
+part of [...](.zero)
+design standards” (Suarez, Anne, Sylor-Miller, Mounter, and
 Stanfield, 2017) which ensures user experience and empowers the components not
 only provide specific designs but also “play an integral role in expressing the
 personality of your brand” (Suarez, Anne, Sylor-Miller, Mounter, and Stanfield, 2017). Visual language helps to make a step from static rules and individual
@@ -450,60 +450,60 @@ products.
 
 ## References
 
-Baldwin, N. (2016). Anatomy of a Design System. Product Hive online blog. [online]\{.zero\}
- Available at: https://blog.producthive.org/anatomy-of-a-design-system-7a6b0677bf5 [Accessed 27 March 2018]\{.zero\}
+Baldwin, N. (2016). Anatomy of a Design System. Product Hive online blog. [online](.zero)
+Available at: https://blog.producthive.org/anatomy-of-a-design-system-7a6b0677bf5 [Accessed 27 March 2018](.zero)
 .
 
-Baskanderi, N. (2018). How to Build a Design System with a Small Team. freeCodeCamp, online community. [online]\{.zero\}
- Available at: https://medium.freecodecamp.org/how-to-build-a-design-system-with-a-small-team-53a3276d44ac [Accessed 27 March 2018]\{.zero\}
+Baskanderi, N. (2018). How to Build a Design System with a Small Team. freeCodeCamp, online community. [online](.zero)
+Available at: https://medium.freecodecamp.org/how-to-build-a-design-system-with-a-small-team-53a3276d44ac [Accessed 27 March 2018](.zero)
 .
 
-Braga, G. (2017). Pattern library, Style guides, Design Systems. Do you need one? Prototypr online blog. [online]\{.zero\}
- Available at: https://blog.prototypr.io/pattern-library-style-guides-design-systems-do-you-need-one-b7857af0f255 [Accessed 27 March 2018]\{.zero\}
+Braga, G. (2017). Pattern library, Style guides, Design Systems. Do you need one? Prototypr online blog. [online](.zero)
+Available at: https://blog.prototypr.io/pattern-library-style-guides-design-systems-do-you-need-one-b7857af0f255 [Accessed 27 March 2018](.zero)
 .
 
-Carbon Design System for IBM Cloud products (2018). [online]\{.zero\}
- Available at: http://carbondesignsystem.com/ [Accessed 27 March 2018]\{.zero\}
+Carbon Design System for IBM Cloud products (2018). [online](.zero)
+Available at: http://carbondesignsystem.com/ [Accessed 27 March 2018](.zero)
 .
 
-Fanguy, W. (2017). A comprehensive guide to design systems. InVision design blog. [online]\{.zero\}
- Available at: https://www.invisionapp.com/blog/guide-to-design-systems/ [Accessed 27 March 2018]\{.zero\}
+Fanguy, W. (2017). A comprehensive guide to design systems. InVision design blog. [online](.zero)
+Available at: https://www.invisionapp.com/blog/guide-to-design-systems/ [Accessed 27 March 2018](.zero)
 .
 
-Federman, S. (2017). Distilling How We Think About Design Systems. Design Systems Publications. [online]\{.zero\}
- Available at: https://publication.design.systems/distilling-how-we-think-about-design-systems-b26432eefef9 [Accessed 27 March 2018]\{.zero\}
+Federman, S. (2017). Distilling How We Think About Design Systems. Design Systems Publications. [online](.zero)
+Available at: https://publication.design.systems/distilling-how-we-think-about-design-systems-b26432eefef9 [Accessed 27 March 2018](.zero)
 .
 
-Grainer, S. (2017). Design Systems, Style Guides, and Pattern Libraries: Oh My! UXcellence journal. [online]\{.zero\}
- Available at: https://uxcellence.com/2017/design-systems-style-guides-pattern-libraries [Accessed 27 March 2018]\{.zero\}
+Grainer, S. (2017). Design Systems, Style Guides, and Pattern Libraries: Oh My! UXcellence journal. [online](.zero)
+Available at: https://uxcellence.com/2017/design-systems-style-guides-pattern-libraries [Accessed 27 March 2018](.zero)
 .
 
 Granlund., Å, Lafrenière D. and Carr, D. (2001). A Pattern-Supported Approach to the User Interface Design Process. Proceedings of HCI International 2001 9th International Conference on Human-Computer Interaction, August 5-10, 2001, New Orleans, USA.
 
-Grundhoefer, A. (2016). Design Systems: Enterprise UX Evolution. [online]\{.zero\}
- Available at: https://speakerdeck.com/annegrundhoefer/design-systems-enterprise-ux-evolution [Accessed 27 March 2018]\{.zero\}
+Grundhoefer, A. (2016). Design Systems: Enterprise UX Evolution. [online](.zero)
+Available at: https://speakerdeck.com/annegrundhoefer/design-systems-enterprise-ux-evolution [Accessed 27 March 2018](.zero)
 .
 
 Kholmatova, A. (2017). Design Systems. A practical guide to creating design languages for digital products. Freiburg, Germany: Smashing Media AG.
 
-Lopes, M. (2017). Setup a design system. Prototypr online blog. [online]\{.zero\}
- Available at: https://blog.prototypr.io/design-system-ac88c6740f53 [Accessed 27 March 2018]\{.zero\}
+Lopes, M. (2017). Setup a design system. Prototypr online blog. [online](.zero)
+Available at: https://blog.prototypr.io/design-system-ac88c6740f53 [Accessed 27 March 2018](.zero)
 .
 
-Robson, S. (2016). Styleguides, Pattern Libraries and Design Languages. Medium blog. [online]\{.zero\}
- Available at: https://medium.com/@sturobson/styleguides-pattern-libraries-and-design-languages-84746902c51c [Accessed 27 March 2018]\{.zero\}
+Robson, S. (2016). Styleguides, Pattern Libraries and Design Languages. Medium blog. [online](.zero)
+Available at: https://medium.com/@sturobson/styleguides-pattern-libraries-and-design-languages-84746902c51c [Accessed 27 March 2018](.zero)
 .
 
-Rutherford, Z. (2017). Design Systems vs. Pattern Libraries vs. Style Guides – What’s the Difference? Studio by UxPin design blog. [online]\{.zero\}
- Available at: https://www.uxpin.com/studio/blog/design-systems-vs-pattern-libraries-vs-style-guides-whats-difference/ [Accessed 27 March 2018]\{.zero\}
+Rutherford, Z. (2017). Design Systems vs. Pattern Libraries vs. Style Guides – What’s the Difference? Studio by UxPin design blog. [online](.zero)
+Available at: https://www.uxpin.com/studio/blog/design-systems-vs-pattern-libraries-vs-style-guides-whats-difference/ [Accessed 27 March 2018](.zero)
 .
 
-Saarinen, K. (2016). Building a Visual Language. AirBNB Design, online portal.[online]\{.zero\}
- Available at: https://airbnb.design/building-a-visual-language/ [Accessed 27 March 2018]\{.zero\}
+Saarinen, K. (2016). Building a Visual Language. AirBNB Design, online portal.[online](.zero)
+Available at: https://airbnb.design/building-a-visual-language/ [Accessed 27 March 2018](.zero)
 .
 
 Simpson, N. (1999). Managing the use of style guides in an organisational setting: practical lessons in ensuring UI consistency. Interacting with Computers 11 (1999) 323–351.
 
-Suarez, M., Anne, J., Sylor-Miller, K., Mounter, D., and Stanfield, R. (2017). Design Systems Handbook. DesignBetter.Co, online journal. [online]\{.zero\}
- Available at: https://www.designbetter.co/design-systems-handbook [Accessed 27 March 2018]\{.zero\}
+Suarez, M., Anne, J., Sylor-Miller, K., Mounter, D., and Stanfield, R. (2017). Design Systems Handbook. DesignBetter.Co, online journal. [online](.zero)
+Available at: https://www.designbetter.co/design-systems-handbook [Accessed 27 March 2018](.zero)
 .

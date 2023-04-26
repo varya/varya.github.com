@@ -20,6 +20,7 @@ import {
   PostHeader,
   PrevNextNav,
   ProjectRoles,
+  Workshop,
   PureHtml,
   Section,
   Seo,
@@ -41,7 +42,9 @@ const globalMdxComponents = {
   Section,
   Hero,
   Widget,
+  PatternJourney,
   WidgetContainer,
+  Workshop,
   ProjectRoles,
   DsAspects,
   Link,
@@ -140,10 +143,6 @@ const Post = ({
         direction="column"
       >
         <MDXProvider components={{ ...postComponents, ...globalMdxComponents }}>
-          {/* <MDXRenderer>
-            <Link>tss</Link>
-          </MDXRenderer> */}
-          {/* {mdx.body} */}
           {children}
         </MDXProvider>
         <Box
