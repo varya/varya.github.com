@@ -54,7 +54,9 @@ const Blog = ({ data, pageContext }) => {
                   key={post.node.frontmatter.title}
                   image={
                     cover && (
-                      <GatsbyImage {...cover.childImageSharp.gatsbyImageData} />
+                      <GatsbyImage
+                        image={cover.childImageSharp.gatsbyImageData}
+                      />
                     )
                   }
                   title={post.node.frontmatter.title}
