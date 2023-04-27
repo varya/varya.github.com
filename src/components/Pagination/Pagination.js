@@ -78,7 +78,7 @@ const Pagination = ({
       <Button
         as={Link}
         // to={to && path.join(basePath, "/", to)}
-        to={to && basePath + "/" + to}
+        to={to && basePath + to}
         key={"page" + label}
         active={parseInt(label) === currentPage ? true : false}
         color="brand"
@@ -101,7 +101,7 @@ const Pagination = ({
           label="←"
           to={
             currentPage > 2
-              ? (currentPage - 1).toString()
+              ? `/${(currentPage - 1).toString()}`
               : currentPage === 2 && "/"
           }
           disabled={currentPage <= 1}
@@ -120,7 +120,7 @@ const Pagination = ({
             <PageButton
               label={num}
               key={"page" + num}
-              to={num === 1 ? "/" : num.toString()}
+              to={num === 1 ? "/" : `/${num.toString()}`}
             />
           );
         })}
@@ -134,7 +134,9 @@ const Pagination = ({
         <PageButton
           label="→"
           to={
-            currentPage < totalPages ? (currentPage + 1).toString() : undefined
+            currentPage < totalPages
+              ? `/${(currentPage + 1).toString()}`
+              : undefined
           }
           disabled={currentPage >= totalPages}
         />
