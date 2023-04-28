@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Box, Button } from "grommet";
 import { Heading, Image, Link, Paragraph } from "@components";
 
-const banner = require("./hands-on-workshop.png");
+import banner from "./hands-on-workshop.png";
 
 const StyledLink = styled(Link)`
   color: black;
