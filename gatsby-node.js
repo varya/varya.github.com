@@ -150,6 +150,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             id
             fields {
               slug
+              fileRelativePath
               readingTime {
                 minutes
               }
@@ -294,7 +295,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     ...postsRuData.data.ruPosts.edges,
     ...postsLifeData.data.lifePosts.edges,
     // ...postsProjectsData.data.projectPosts.edges,
-    ...postsDesignSystemData.data.designSystemsPosts.edges,
+    // ...postsDesignSystemData.data.designSystemsPosts.edges,
   ];
 
   const tagSet = new Set();
