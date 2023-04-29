@@ -123,7 +123,9 @@ const Post = ({
   return (
     <Layout>
       <PostHeader
-        imageUrl={cover && cover.childImageSharp.gatsbyImageData}
+        imageUrl={
+          cover && cover.childImageSharp.gatsbyImageData.images.fallback.src
+        }
         tags={tags}
         date={date}
         readingTime={
@@ -182,6 +184,7 @@ const Post = ({
   );
 };
 Post.propTypes = {
+  imageUrl: PropTypes.string,
   data: PropTypes.object,
   pageContext: PropTypes.shape({
     prev: PropTypes.object,
