@@ -52,12 +52,8 @@ const Blog = ({ data, pageContext }) => {
               return (
                 <Widget
                   key={post.node.frontmatter.title}
-                  image={
-                    cover && (
-                      <GatsbyImage
-                        image={cover.childImageSharp.gatsbyImageData}
-                      />
-                    )
+                  imageSrc={
+                    cover.childImageSharp.gatsbyImageData.images.fallback.src
                   }
                   title={post.node.frontmatter.title}
                   slug={resolvedSlug}
