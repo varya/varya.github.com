@@ -84,11 +84,14 @@ export const projectsQuery = graphql`
             meta {
               desc
             }
+            cover {
+              childImageSharp {
+                gatsbyImageData(layout: FIXED)
+              }
+            }
           }
         }
       }
     }
   }
 `;
-
-console.log("projectsQuery", projectsQuery);

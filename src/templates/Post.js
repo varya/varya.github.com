@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 import { Box, Button, Text } from "grommet";
 import {
@@ -123,9 +122,7 @@ const Post = ({
   return (
     <Layout>
       <PostHeader
-        imageUrl={
-          cover && cover.childImageSharp.gatsbyImageData.images.fallback.src
-        }
+        imageSrc={cover.childImageSharp.gatsbyImageData}
         tags={tags}
         date={date}
         readingTime={
@@ -135,6 +132,10 @@ const Post = ({
         }
         title={title}
         subTitle={subTitle}
+      />
+      <Image
+        imageSrc={cover.childImageSharp.gatsbyImageData.images.fallback.src}
+        fit="cover"
       />
       <Seo data={mdx} />
       <Box
@@ -183,6 +184,7 @@ const Post = ({
     </Layout>
   );
 };
+
 Post.propTypes = {
   imageUrl: PropTypes.string,
   data: PropTypes.object,
