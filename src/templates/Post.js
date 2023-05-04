@@ -122,7 +122,9 @@ const Post = ({
   return (
     <Layout>
       <PostHeader
-        imageSrc={cover.childImageSharp.gatsbyImageData}
+        imageUrl={
+          cover && cover.childImageSharp.gatsbyImageData.images.fallback.src
+        }
         tags={tags}
         date={date}
         readingTime={
@@ -133,8 +135,11 @@ const Post = ({
         title={title}
         subTitle={subTitle}
       />
+      {cover && cover.childImageSharp.gatsbyImageData.images.fallback.src}
       <Image
-        imageSrc={cover.childImageSharp.gatsbyImageData.images.fallback.src}
+        imageUrl={
+          cover && cover.childImageSharp.gatsbyImageData.images.fallback.src
+        }
         fit="cover"
       />
       <Seo data={mdx} />

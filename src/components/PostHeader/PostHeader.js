@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 import { Text } from "grommet";
 import { Heading, Hero, MetaGroup } from "@components";
-import { Image } from "@components";
 
 const PostHeader = ({ imageUrl, date, readingTime, title, subTitle }) => {
   return (
