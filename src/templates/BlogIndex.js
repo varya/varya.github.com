@@ -7,6 +7,8 @@ import { ResponsiveContext } from "grommet";
 import { Heading, Pagination, Widget, WidgetContainer } from "@components";
 import { Page } from "@templates/Page";
 
+const removeMd = require('remove-markdown');
+
 const visiblePages = {
   small: 2,
   medium: 5,
@@ -49,15 +51,17 @@ const Blog = ({ data, pageContext }) => {
               const { cover, date, link } = post.node.frontmatter;
               const { readingTime, slug } = post.node.fields;
               const resolvedSlug = link ? link : `/${slug}`;
+              const match = post.node.body.match( new RegExp(`${'<div data-excerpt>'}([\\s\\S]*?)${'</div>'}`, 'i'))
+              const snippet = match && match[1] ? removeMd(match[1].trim()) : post.node.excerpt;
               return (
                 <Widget
                   key={post.node.frontmatter.title}
                   imageSrc={
-                    cover.childImageSharp.gatsbyImageData.images.fallback.src
+                    cover && cover.childImageSharp.gatsbyImageData.images.fallback.src
                   }
                   title={post.node.frontmatter.title}
                   slug={resolvedSlug}
-                  excerpt={post.node.excerpt}
+                  excerpt={snippet}
                   height="small"
                   date={date}
                   readingTime={
