@@ -135,13 +135,6 @@ const Post = ({
         title={title}
         subTitle={subTitle}
       />
-      {cover && cover.childImageSharp.gatsbyImageData.images.fallback.src}
-      <Image
-        imageUrl={
-          cover && cover.childImageSharp.gatsbyImageData.images.fallback.src
-        }
-        fit="cover"
-      />
       <Seo data={mdx} />
       <Box
         flex="grow"
