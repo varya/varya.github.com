@@ -15,7 +15,21 @@
     "start": "npm run develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "devhost": "gatsby develop --host 192.168.0.112",
+    "format": "prettier --write '**/*.{js,jsx, json, md, mdx}'",
+    "lint-errors": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --fix",
+    "stylelint": "stylelint src/**/*.js",
+    "generate-app-icons": "sh ./scripts/generate-app-icons.sh",
+    "add-component": "node ./scripts/generate-component $1",
+    "deploy:build": "gatsby build --prefix-paths",
+    "deploy:release": "git-directory-deploy --directory ./public --repo varya --branch gh-pages",
+    "deploy": "run-s deploy:build deploy:release",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "npx chromatic --project-token=skp9osmq6dc",
+    "chromatic": "npx chromatic --project-token skp9osmq6dc"
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
@@ -73,5 +87,19 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "prettier": "2.8.4",
     "remove-markdown": "^0.5.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{md,mdx}": [
+      "prettier --write"
+    ]
   }
 }
