@@ -1,0 +1,48 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "ignorePatterns": ["public", ".cache", "node_modules", "src/libs"],
+  "rules": {
+    "strict": 0,
+    "no-console": 1,
+    "simple-import-sort/imports": [
+      2,
+      {
+        "groups": [
+          ["^react$", "^prop-types$"],
+          [
+            "^gatsby",
+            "^@mdx",
+            "^styled-components$",
+            "^grommet",
+            "^@components",
+            "^@templates"
+          ],
+          ["^\\.", "^"]
+        ]
+      }
+    ],
+    "sort-imports": 0,
+    "import/order": 0
+  },
+  "extends": [
+    "airbnb",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:markdown/recommended"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "alias": [["@components", "./src/components"]]
+    }
+  },
+  "plugins": ["simple-import-sort"]
+}
