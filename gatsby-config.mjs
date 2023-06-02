@@ -1,14 +1,16 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
-const config = require("./content/meta/config");
+import remarkGfm from "remark-gfm";
+import configuration from "./content/meta/config.js";
+import postcssPresetEnv from "postcss-preset-env";
 
-module.exports = {
+const config = {
   siteMetadata: {
-    title: config.siteTitle,
-    description: config.siteDescription,
-    siteUrl: config.siteUrl,
-    pathPrefix: config.pathPrefix,
+    title: configuration.siteTitle,
+    description: configuration.siteDescription,
+    siteUrl: configuration.siteUrl,
+    pathPrefix: configuration.pathPrefix,
     facebook: {
       appId: process.env.FB_APP_ID ? process.env.FB_APP_ID : "",
     },
@@ -18,12 +20,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
+        postCssPlugins: [postcssPresetEnv({ stage: 0 })],
       },
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
+        mdxOptions: {
+          remarkPlugins: [remarkGfm],
+        },
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -73,28 +78,28 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects`,
-        path: `${__dirname}/content/projects`,
+        path: `./content/projects`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: `${__dirname}/content/posts`,
+        path: `./content/posts`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `life`,
-        path: `${__dirname}/content/life`,
+        path: `./content/life`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `design-systems`,
-        path: `${__dirname}/content/design-systems`,
+        path: `./content/design-systems`,
       },
     },
     {
@@ -116,12 +121,12 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: config.manifestName,
-        short_name: config.manifestShortName,
-        start_url: config.manifestStartUrl,
-        background_color: config.manifestBackgroundColor,
-        theme_color: config.manifestThemeColor,
-        display: config.manifestDisplay,
+        name: configuration.manifestName,
+        short_name: configuration.manifestShortName,
+        start_url: configuration.manifestStartUrl,
+        background_color: configuration.manifestBackgroundColor,
+        theme_color: configuration.manifestThemeColor,
+        display: configuration.manifestDisplay,
         icons: [
           {
             src: "/icons/icon-48x48.png",
@@ -189,3 +194,5 @@ module.exports = {
     `gatsby-plugin-sitemap`,
   ],
 };
+
+export default config;
