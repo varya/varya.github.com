@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://varya.me/blog/ppl-centric-design-systems/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://varya.me/blog/pulling-the-contributions/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://varya.me/blog/design-system-versioning-basics/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://varya.me/blog/publish-packages-on-github/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -142,11 +143,11 @@
 <url> <loc>https://varya.me/projects/bem-project/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://varya.me/projects/lego-project/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://varya.me/design-systems/boosting-workshop/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://varya.me/design-systems/design-systems-101/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://varya.me/design-systems/gems/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://varya.me/design-systems/design-systems-101/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://varya.me/design-systems/hands-on-workshop/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://varya.me/design-systems/pattern-journey/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://varya.me/design-systems/team-process-workshop/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://varya.me/design-systems/pattern-journey/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://varya.me/design-systems/what-is-a-design-system/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://varya.me/design-systems/aligning-ux-designers-and-ui-developers/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://varya.me/blog</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
