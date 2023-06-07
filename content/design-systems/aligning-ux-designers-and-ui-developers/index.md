@@ -11,12 +11,11 @@ meta:
 
 ### Abstract
 
-<small>There is a lot of evidence of a significant gap between design and development processes and applied approaches. However, applied together, they form the nowadays’ reality of the UI creation. At the same time, design systems — a relatively new concept emerged in the industry — affects the workflows of designers and developers. It is meant to ensure the implementation of designs and guide the teams through multidisciplinary collaboration.</small>
+There is a lot of evidence of a significant gap between design and development processes and applied approaches. However, applied together, they form the nowadays’ reality of the UI creation. At the same time, design systems — a relatively new concept emerged in the industry — affects the workflows of designers and developers. It is meant to ensure the implementation of designs and guide the teams through multidisciplinary collaboration.
 
-<small>The aim of this thesis was to study the role of design systems (as an approach and as an artefact) for the UI creation. This research specifically focuses on the alignment between UX interface designers and UI software developers and the impact of design systems on that process.</small>
+The aim of this thesis was to study the role of design systems (as an approach and as an artefact) for the UI creation. This research specifically focuses on the alignment between UX interface designers and UI software developers and the impact of design systems on that process.
 
-<small>The results of the research illustrate the new workflow practicing by the design-and-development teams, describe in detail the impact of design systems on the sub-processes of this workflow, and show that using design systems as a part of the software creation process brings the projects and organizations to the highest levels of maturity according to CMMI-DEV representation. These results have both scientific and practical meanings. Using design systems is recommended to speed up the design-and-development process and enhance the maturity level of this process and the organization.
-</small>
+The results of the research illustrate the new workflow practicing by the design-and-development teams, describe in detail the impact of design systems on the sub-processes of this workflow, and show that using design systems as a part of the software creation process brings the projects and organizations to the highest levels of maturity according to CMMI-DEV representation. These results have both scientific and practical meanings. Using design systems is recommended to speed up the design-and-development process and enhance the maturity level of this process and the organization.
 
 ## 1. Introduction
 
@@ -157,9 +156,7 @@ At the same time, there is a common understanding that UX/UI projects lack early
 Looking for a general solution responding to the problem of miscommunicated design and development, many companies nowadays are using a dual-track agile workflow. This workflow has many visualisations and representations by both researchers and practitioners. The one illustrated in Figure 1 shows how dual-track agile merges the design thinking and ASD processes. The method proposes a shared prototyping phase which is meant “to transform the ideas into a tangible form to experience and interact with the proposed solutions” (Yalcinkaya, 2017). This approach complements the results of research by Jones and Thoma who mentioned “co-creation and prototyping” as one of the characheristics for “successful collaboration between designers and developers” (Jones and Thoma, 2019).
 
 <Image caption="Figure 1: Applied design thinking and agile development methodology. (Yalcinkaya, 2017)">
-
-![](./dual-track-agile.png)
-
+![img](./dual-track-agile.png)
 </Image>
 
 ##### Design breakdowns
@@ -173,9 +170,7 @@ Describing the methods to overcome design breakdowns, most of the literature men
 The literature describes the co-creation process of designers and developers as “implicit joint alignment work” (Brown, Lindgaard and Biddle, 2012). Brown et al. studied the alignment meetings and offered a “model of implicit joining alignment work” (Brown, Lindgaard and Biddle, 2012), illustrated in Figure 2.
 
 <Image caption="Figure 2: A model of implicit joint alignment work involving designers and developers depicting the concrete nature of commonly occurring collaborative events. (Brown, Lindgaard and Biddle, 2012)">
-
-![](./implicit-alignment-work.png)
-
+![img](./implicit-alignment-work.png)
 </Image>
 
 The model of implicit joint alignment work outlines the following phases of this process: presenting, exploring, simulating, considering implementability, re-enacting, assessing the project, closing. (Brown, Lindgaard and Biddle, 2012) This process meant to be an action in a multidisciplinary team, involving “designer and developer (and often other team members as well)” (Brown, Lindgaard and Biddle, 2012).
@@ -204,123 +199,33 @@ The CMMI levels correspond to the certain process areas adopted (or not) in the 
 
 Table 1: Levels of maturity and key process areas (staged representation). (SEI CMMI Tutorial, 2021)
 
-<table>
-  <tr>
-   <td><strong>Level</strong>
-   </td>
-   <td><strong>Focus</strong>
-   </td>
-   <td><strong>Key Process Area</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Level 1:
-Initial
-   </td>
-   <td>Process is informal and Ad-Hoc
-   </td>
-   <td>(not applicable)
-   </td>
-  </tr>
-  <tr>
-   <td>Level 2:
-Managed
-   </td>
-   <td>Basic Project Management	
-   </td>
-   <td>
-<ul>
-
-<li>Configuration Management
-
-</li><li>Measurement and Analysis Product
-
-</li><li>Monitoring and Control
-
-</li><li>Project Planning
-
-</li><li>Process and Product Quality Assurance
-
-</li><li>Requirements Management
-
-</li><li>Supplier Agreement Management
-</li>
-</ul>
-   </td>
-  </tr>
-  <tr>
-   <td>Level 3:
-Defined
-   </td>
-   <td>Process Standardization
-   </td>
-   <td>
-<ul>
-
-<li>Decision Analysis and Resolution
-
-</li><li>Integrated Teaming
-
-</li><li>Integrated Product Management
-
-</li><li>Organizational Environment for Integration
-
-</li><li>Organizational Process Definition
-
-</li><li>Organizational Process Focus
-
-</li><li>Organizational Training
-
-</li><li>Product Integration
-
-</li><li>Requirements Development
-
-</li><li>Risk Management
-
-</li><li>Technical Solution
-
-</li><li>Validation
-
-</li><li>Verification
-</li>
-</ul>
-   </td>
-  </tr>
-  <tr>
-   <td>Level 4:
-
-Quantitatively managed
-
-   </td>
-   <td>Quantitatively Managed
-   </td>
-   <td>
-<ul>
-
-<li>Organizational Process Performance
-
-</li><li>Quantitative Project Management
-</li>
-</ul>
-   </td>
-  </tr>
-  <tr>
-   <td>Level 5:
-Optimizing
-   </td>
-   <td>Continuous Process Improvement
-   </td>
-   <td>
-<ul>
-
-<li>Causal Analysis and Resolution
-
-</li><li>Organizational Innovation and Deployment
-</li>
-</ul>
-   </td>
-  </tr>
-</table>
+| Level                           | Focus                          | Key Process Area                             |
+| ------------------------------- | ------------------------------ | -------------------------------------------- |
+| Level 1: Initial                | Process is informal and Ad-Hoc | (not applicable)                             |
+| Level 2: Managed                | Basic Project Management       | - Configuration Management                   |
+|                                 |                                | - Measurement and Analysis Product           |
+|                                 |                                | - Monitoring and Control                     |
+|                                 |                                | - Project Planning                           |
+|                                 |                                | - Process and Product Quality Assurance      |
+|                                 |                                | - Requirements Management                    |
+|                                 |                                | - Supplier Agreement Management              |
+| Level 3: Defined                | Process Standardization        | - Decision Analysis and Resolution           |
+|                                 |                                | - Integrated Teaming                         |
+|                                 |                                | - Integrated Product Management              |
+|                                 |                                | - Organizational Environment for Integration |
+|                                 |                                | - Organizational Process Definition          |
+|                                 |                                | - Organizational Process Focus               |
+|                                 |                                | - Organizational Training                    |
+|                                 |                                | - Product Integration                        |
+|                                 |                                | - Requirements Development                   |
+|                                 |                                | - Risk Management                            |
+|                                 |                                | - Technical Solution                         |
+|                                 |                                | - Validation                                 |
+|                                 |                                | - Verification                               |
+| Level 4: Quantitatively managed | Quantitatively Managed         | - Organizational Process Performance         |
+|                                 |                                | - Quantitative Project Management            |
+| Level 5: Optimizing             | Continuous Process Improvement | - Causal Analysis and Resolution             |
+|                                 |                                | - Organizational Innovation and Deployment   |
 
 The related research studies demonstrate that the Agile techniques — nowadays de-facto the standard approach in the software development — “mostly fit on maturity levels 2 and 3” (Torrecilla-Salinas et al., 2016). This is explained by the fact that the maturity levels 2 and 3 key areas address the software development issues and this correspond to the scope of Agile practices. (Torrecilla-Salinas et al., 2016) However, the maturity levels 4 and 5 are process-focused areas and cannot be covered by these methods. Thus, Selleri Silva et al. (2015) say that “agile methodologies alone, according to the studies, were not sufficient to obtain the level desired, it being necessary to resort to additional practices” (Selleri Silva et al., 2015).
 
@@ -362,9 +267,8 @@ The structured part of semi-structured interviews is kept by following the inter
 The obtained data is coded and processed with the methods suggested by the grounded theory. The process of building the theory following these methods is illustrated in Figure 3. In the process of codifying the rich data and categorizing the codes into themes, emerges the explanatory model based on the revealed connections between the found out themes. Aligned with the current knowledge base obtained from the preliminary literature review, this explanatory model forms a theory.
 
 <Image caption="Figure 3: Grounded Theory Data Analysis Steps. (O’Hagan and O’Connor, 2015)">
-
-![](./grounded-theory.png)
-
+![img](./grounded-theory.png)
+{/* TODO: fix image */}
 </Image>
 
 Practically, the codifying process was conducted in two steps. In the pre-phase, the recorded interviews were transcribed and cleaned from nonrelevant (mostly colloquial) content pieces.
@@ -380,17 +284,13 @@ To process the emerged codes, the researcher applied own-made grouping technique
 The codes of each participant were represented as sticky notes on a Miro online whiteboard (RealtimeBoard, Inc, 2021) and were assigned a color by the profession of interviewees: the codes from the developers’ interviews there assigned blue color, and the codes from the designers’ interviews were assigned yellow color (Figure 4).
 
 <Image caption="Figure 4: The color-coded sticky notes with emerged themes.">
-
-![](./color-coded-codes.png)
-
+![img](./color-coded-codes.png)
 </Image>
 
 The codes were grouped into themes based on the conceptual similarity of the codes or belonging to the same topic following the affinity diagram method (Beyer and Holtzblatt, 1998). The themes and their codes were visually presented on the titled whiteboard sections (Figure 5).
 
 <Image caption="Figure 5: Color-coded codes grouped into themes.">
-
-![](./groups-of-themes.png)
-
+![img](./groups-of-themes.png)
 </Image>
 
 The color-coded grouping made it possible to process the data of all the participants together but keep its connection to who was the source of this data and which side (design or development) he or she represented.
@@ -410,9 +310,7 @@ Building the theoretical framework onto the emerged themes was conducted in thre
 There were 20 30-minute interviews with UX designers and UI developers. For further analysis, there were selected the 12 most substantive and relevant interviews: 6 interviews of UX designers and 6 interviews of UI developers. In ATLAS.ti (ATLAS.ti, 2019), the documents were organized into groups according to what was the profile of an interviewee (Figure 6).
 
 <Image caption="Figure 6: The groups of documents and interviews belonging to the groups. The titles of the documents are changed to ensure the anonymity of the respondents.">
-
-![](./groups-of-documents.png)
-
+![img](./groups-of-documents.png)
 </Image>
 
 ### 4.1. The process of identifying themes
@@ -431,33 +329,25 @@ From the XLXS sheets, the codes of each interview were exported into a virtual w
 To keep the knowledge of which code belongs to which interviewee, the sticky notes were assigned labels: des1, des2, des3, des4, des5, and des6 — for the designers’ interviews; and dev1, dev2, dev3, dev4, dev5, and dev 6 — for the developers’ interviews (Figure 7).
 
 <Image caption="Figure 7: An example of some codes emerged at a developer’s interview. The sticky notes have labels “dev5” that shows that they belong to a the interview #5 of a developer.">
-
-![](./examples-of-codes.png)
-
+![img](./examples-of-codes.png)
 </Image>
 
 The combination of color and assigned label gives full information about the context of the code. The following section shows how it is used to validate the emerged themes.
 
-To ensure objectivity when processing the codes, the sticky notes were randomly mixed in a Pool (Figures 8 and Figure 9). From the tool perspective, the Pool is a frame on the Miro whiteboard that contains all the sticky notes and organizes them by its grid.
+To ensure objectivity when processing the codes, the sticky notes were randomly mixed in a Pool (Figures 8 and Figure 9). From the tool perspective, the Pool is a frame on the Miro whiteboard that contains all the sticky notes and organizes them by its grid
 
 <Image caption="Figure 8: The Pool of all the emerged codes presented as color-coded and labeled sticky notes.">
-
-![](./pool-of-codes.png)
-
+![img](./pool-of-codes.png)
 </Image>
 
 <Image caption="Figure 9: A fragment of the Pool on a larger scale.">
-
-![](./pool-fragment.png)
-
+![img](./pool-fragment.png)
 </Image>
 
 According to the mentos of grounded theory, the codes were grouped into the themes and the themes were arranged into the theme groups by the topic they belong to. Altogether, there were 8 theme groups of 3 to 18 themes in them (Figure 10).
 
 <Image caption="Figure 10: The emerged themes assembled into theme groups.">
-
-![](./theme-groups/png)
-
+![img](./theme-groups/png)
 </Image>
 
 The further analysis was conducted onto the 4 the most relevant theme groups:
@@ -470,17 +360,13 @@ The further analysis was conducted onto the 4 the most relevant theme groups:
 _Feature flow_ contained only the codes that describe the process. The codes inside the themes are validated, the whole flow is made into a diagram reflecting the process (Figure 11). The position of the themes on the flow reflects their interrelations — the suggested method of processing data by contextual design (Beyer and Holtzblatt, 1998). It is important to note that this flow does not the reflect the whole picture of software creation but only its subprocesses that include design and development alignment.
 
 <Image caption="Figure 11: The new workflow formed of the themes that belong to describing the process.">
-
-![](./feature-flow.png)
-
+![img](./feature-flow.png)
 </Image>
 
 The codes that provide information on how different methods of doing work play for the process efficiency etc — they are processed aside, in the next group of themes that was called _Changes in the workflow_. Its themes described the impact that using a design system makes on different stages of the flow. Visually it was presented the way that the “impact” themes were placed under the “workflow” themes in accordance to what part of the flow they describe (Figure 12).
 
 <Image caption="Figure 12: The themes that describe the workflow and the themes that describe the impact made on the sub-process level.">
-
-![](./flow-and-impact/.png)
-
+![img](./flow-and-impact/.png)
 </Image>
 
 Some of the emerged themes described the impact of design systems in global context, without specifying to what particular stage of the process is affected. Such themes were grouped under the name “Global design system impact”. The themes that described the traditional design and development process and its pain points were grouped as describing the challenges that arise in the case of not using a design system.
@@ -517,9 +403,7 @@ The following group of emerged themes illustrates the design and development wor
 Altogether, the workflow-related themes were organized into a sequence that provides the full illustration of the process. Figure 13 demonstrates a compact picture of themes interrelated positions.
 
 <Image caption="Figure 13: Interrelated positions of the themes that describe the workflow of UI creation.">
-
-![](./themes-interrelated-positions.png)
-
+![img](./themes-interrelated-positions.png)
 </Image>
 
 ##### Theme “Mini project”
@@ -651,7 +535,8 @@ The process reliability has increased as using a design system ensures less erro
 
 ##### Theme“Increased productivity”
 
-Increased productivity was named as one of the main drives behind introducing a design system to the work process [dev2, dev3, dev4, dev5, des3, des5]. It “speeds up the development” [dev1] and makes “move fast” [des5]. For example, live prototyping helps designers to provide “5 design ideas by the end of the day” [dev5]. On the opposite, not using a design system “costs a lot more money” [dev2].
+Increased productivity was named as one of the main drives behind introducing a design system to the work process [dev2, dev3, dev4, dev5, des3, des5]. It “speeds up the development” [dev1] and makes “move fast” [des5].
+For example, live prototyping helps designers to provide “5 design ideas by the end of the day” [dev5]. On the opposite, not using a design system “costs a lot more money” [dev2].y
 
 ##### Theme“Decreased design and technical debt”
 
@@ -670,9 +555,7 @@ Overall, both designers and developers are in general very happy with using desi
 #### 4.2.1. Mutual design and development workflow
 
 <Image caption="Figure 14: The schema of the mutual design and development workflow (MDDW).">
-
-![](./mddw.png)
-
+![img](./mddw.png)
 </Image>
 
 The themes related to the describing of the workflow, were organized into a schema following their position in the UI creation process (Figure 14). The schema shows the _mutual design and development workflow_ (MDDW) and so illustrates the design and development processes and their interconnection via a design system as one of the artifacts. As it was highlighted in the interviews, the two major steps of the workflow — UX/UI design and UX/UI implementation – have iterative nature. Important to note that the workflow schema reflects the process from the design and development alignment perspective and omits the well-known parts of UI creation that belong to the design or to the development only, such as user research (for the design) or testing (for the development).
@@ -689,124 +572,25 @@ Overall, the alignment is not anymore focused on the specific alignment events b
 
 Table 2: Mapping MDDW elements to JIAW elements and the themes that characterise design systems’ impact onto the workflow.
 
-<table>
-  <tr>
-   <td><strong>MDDW elements</strong>
-   </td>
-   <td><strong>Correlating JIAW elements</strong>
-   </td>
-   <td><strong>Corresponding design system impact themes</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Planing
-   </td>
-   <td>Presenting
-   </td>
-   <td>Design system is a common language
-
-Design system as a communication tool
-
-   </td>
-  </tr>
-  <tr>
-   <td>Early co-creation
-   </td>
-   <td>Exploring
-   </td>
-   <td>Value of co-creation
-
-Gaining team’s shared knowledge
-
-   </td>
-  </tr>
-  <tr>
-   <td>Modularising
-   </td>
-   <td>Simulating
-
-Considering implementability
-
-   </td>
-   <td>Manageable small chunks
-   </td>
-  </tr>
-  <tr>
-   <td>Design foundation
-   </td>
-   <td>
-   </td>
-   <td>Guiding the developers
-   </td>
-  </tr>
-  <tr>
-   <td>UI composition
-   </td>
-   <td>Simulating
-   </td>
-   <td>Real work instead of UI work
-   </td>
-  </tr>
-  <tr>
-   <td>Using high-fidelity mockups
-   </td>
-   <td>Simulating
-   </td>
-   <td>Design system as a communication tool
-   </td>
-  </tr>
-  <tr>
-   <td>Implementability evaluation
-   </td>
-   <td>Considering implementability
-
-Re-enacting
-
-   </td>
-   <td>Increased level of alignment
-
-Gaining team’s shared knowledge
-
-Decreasing the amount of design breakdowns
-
-   </td>
-  </tr>
-  <tr>
-   <td>Implementing the designs
-   </td>
-   <td>
-   </td>
-   <td>Design system as a bottleneck
-
-Guiding the developers
-
-   </td>
-  </tr>
-  <tr>
-   <td>Identifying design breakdowns
-   </td>
-   <td>Meeting project tensions
-   </td>
-   <td>Decreasing the amount of design breakdowns
-   </td>
-  </tr>
-  <tr>
-   <td>Solving design breakdowns
-   </td>
-   <td>Meeting project tensions
-   </td>
-   <td>Real work instead of UI work
-   </td>
-  </tr>
-  <tr>
-   <td>Design review
-   </td>
-   <td>Re-enacting
-   </td>
-   <td>Increased level of alignment
-   </td>
-  </tr>
-</table>
+| MDDW elements                 | Correlating JIAW elements    | Corresponding design system impact themes  |
+| ----------------------------- | ---------------------------- | ------------------------------------------ |
+| Planing                       | Presenting                   | Design system is a common language         |
+|                               |                              | Design system as a communication tool      |
+| Early co-creation             | Exploring                    | Value of co-creation                       |
+|                               |                              | Gaining team’s shared knowledge            |
+| Modularising                  | Simulating                   | Manageable small chunks                    |
+|                               | Considering implementability |                                            |
+| Design foundation             |                              | Guiding the developers                     |
+| UI composition                | Simulating                   | Real work instead of UI work               |
+| Using high-fidelity mockups   | Simulating                   | Design system as a communication tool      |
+| Implementability evaluation   | Considering implementability | Increased level of alignment               |
+|                               | Re-enacting                  | Gaining team’s shared knowledge            |
+|                               |                              | Decreasing the amount of design breakdowns |
+| Implementing the designs      |                              | Design system as a bottleneck              |
+|                               |                              | Guiding the developers                     |
+| Identifying design breakdowns | Meeting project tensions     | Decreasing the amount of design breakdowns |
+| Solving design breakdowns     | Meeting project tensions     | Real work instead of UI work               |
+| Design review                 | Re-enacting                  | Increased level of alignment               |
 
 With the mapping of the JIAW elements to the elements of MDDW and the related workflow-impact themes, it becomes visible what transformations happen to the phases of the alignment process.
 
@@ -841,68 +625,22 @@ Describing their working experience when using design systems, the participants 
 
 Table 3: Mapping CMMI Process Areas and the themes that characterise design systems’ global.
 
-<table>
-  <tr>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td><strong>Themes related to the Process Areas</strong>
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="2" ><strong>ML4</strong>
-   </td>
-   <td><strong>OPP</strong>
-   </td>
-   <td>Increasing UI consistency
-
-Increased productivity
-
-Decreased design and technical debt
-
-Increased reliability
-
-Ensured design implementation
-
-   </td>
-  </tr>
-  <tr>
-   <td><strong>QRM</strong>
-   </td>
-   <td>Increasing UI consistency
-
-Increased productivity
-
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="2" ><strong>ML5</strong>
-   </td>
-   <td><strong>CAR</strong>
-   </td>
-   <td>Increased reliability
-
-Decreased design and technical debt
-
-Enhanced team satisfaction
-
-Ensured design implementation
-
-   </td>
-  </tr>
-  <tr>
-   <td><strong>OID</strong>
-   </td>
-   <td>Design system is good
-
-Making the whole process easier
-
-Cultural shift in team and organization
-
-   </td>
-  </tr>
-</table>
+|     |     | Themes related to the Process Areas     |
+| --- | --- | --------------------------------------- |
+| ML4 | OPP | Increasing UI consistency               |
+|     |     | Increased productivity                  |
+|     |     | Decreased design and technical debt     |
+|     |     | Increased reliability                   |
+|     |     | Ensured design implementation           |
+| QRM |     | Increasing UI consistency               |
+|     |     | Increased productivity                  |
+| ML5 | CAR | Increased reliability                   |
+|     |     | Decreased design and technical debt     |
+|     |     | Enhanced team satisfaction              |
+|     |     | Ensured design implementation           |
+| OID |     | Design system is good                   |
+|     |     | Making the whole process easier         |
+|     |     | Cultural shift in team and organization |
 
 ##### Organizational Process Performance
 
@@ -1067,79 +805,34 @@ Zaina, L.A.M., Sharp, H. and Barroca, L. (2021) ‘UX information in the daily w
 
 ### Appendix 1. Interview guideline
 
-<table>
-  <tr>
-   <td><strong>designers </strong>
-   </td>
-   <td><strong>developers</strong>
-   </td>
-  </tr>
-  <tr>
-   <td colspan="2" >Personal and context
-   </td>
-  </tr>
-  <tr>
-   <td colspan="2" >
-<ul>
-
-<li>Describe your work profile.</li>
-<li>What is your role in the company and/or at the current project?</li>
-</ul>
-   </td>
-  </tr>
-
-<tr>
-   <td colspan="2" >Alignment work of designers and developers
-   </td>
-  </tr>
-  <tr>
-   <td>
-<ul>
-
-<li>What is the shape of your team?</li>
-<li>What meetings do you have during the day? What tools do you use for them?</li>
-<li>Please describe how you start working on a new thing (new page, new interface).</li>
-<li>Please describe the process of communicating your design to a developer. What tools do you use?</li>
-<li>What do you align the new designs with? Website/mockups/design system?</li>
-<li>What happens if developers would like you to re-do something?</li>
-<li>How do you keep the brand and UI consistent?</li>
-<li>What are the problems you faced when communicating with developers?</li>
-<li>Please draw a scheme of alignment work with a designer.</li>
-</ul>
-   </td>
-   <td>
-<ul>
-<li>What is the shape of your team?</li>
-<li>What meetings do you have during the day? What tools do you use for them?</li>
-<li>Please describe how you start working on a new feature.</li>
-<li>How does a designer communicate their designs to you? What tools are involved?</li>
-<li>Do you need to translate the design to your own domain before implementing?</li>
-<li>What happens if you face a breakdown (something cannot be implemented, etc)?</li>
-<li>How do you keep UI consistency?</li>
-<li>What are the problems you faced when communicating with?</li>
-<li>Please draw a scheme of alignment work with a designer.</li>
-</ul>
-   </td>
-  </tr>
-  <tr>
-   <td colspan="2" >The role of design systems
-   </td>
-  </tr>
-  <tr>
-   <td colspan="2" >
-<ul>
-
-<li>Does your company have a design system? What exactly is it?</li>
-<li>What is a single source of truth - design or development of a design system?</li>
-<li>What was the reason why you started to build a design system?</li>
-<li>What was the difference in this design communicating process in the times when your company did not have a design system?</li>
-<li>What and how do you do if you need to change the existing patterns in your design system?</li>
-<li>Do you have pain points regarding your design system?</li>
-<li>What is your vision of the design system in your company? What changes it needs?</li>
-</ul>
-   </td>
-  </tr>
-</table>
+| designers                                                                                                                   | developers                                                                     |
+| --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Personal and context                                                                                                        |                                                                                |
+| - Describe your work profile.                                                                                               |                                                                                |
+| - What is your role in the company and/or at the current project?                                                           |                                                                                |
+| Alignment work of designers and developers                                                                                  |                                                                                |
+| - What is the shape of your team?                                                                                           | - What is the shape of your team?                                              |
+| - What meetings do you have during the day?                                                                                 | - What meetings do you have during the day?                                    |
+| What tools do you use for them?                                                                                             | What tools do you use for them?                                                |
+| - Please describe how you start working on a new thing (new page, new interface).                                           | - Please describe how you start working on a new feature.                      |
+| - Please describe the process of communicating your design to a developer.                                                  | - How does a designer communicate their designs to you?                        |
+| What tools do you use?                                                                                                      | What tools are involved?                                                       |
+| - What do you align the new designs with?                                                                                   | - Do you need to translate the design to your own domain before implementing?  |
+| Website/mockups/design system?                                                                                              |                                                                                |
+| - What happens if developers would like you to re-do something?                                                             | - What happens if you face a breakdown (something cannot be implemented, etc)? |
+| - How do you keep the brand and UI consistent?                                                                              | - How do you keep UI consistency?                                              |
+| - What are the problems you faced when communicating with developers?                                                       | - What are the problems you faced when communicating with?                     |
+| - Please draw a scheme of alignment work with a designer.                                                                   | - Please draw a scheme of alignment work with a designer.                      |
+| The role of design systems                                                                                                  |                                                                                |
+| - Does your company have a design system?                                                                                   |                                                                                |
+| What exactly is it?                                                                                                         |                                                                                |
+| - What is a single source of truth - design or development of a design system?                                              |                                                                                |
+| - What was the reason why you started to build a design system?                                                             |                                                                                |
+| - What was the difference in this design communicating process in the times when your company did not have a design system? |                                                                                |
+| - What and how do you do if you need to change the existing patterns in your design system?                                 |                                                                                |
+| - Do you have pain points regarding your design system?                                                                     |                                                                                |
+| - What is your vision of the design system in your company?                                                                 |                                                                                |
+| What changes it needs?                                                                                                      |                                                                                |
 
 ## Aalto University. International Design Business Management
 

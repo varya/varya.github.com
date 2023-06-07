@@ -21,7 +21,7 @@ layout: post
 Приложение у меня пока "игрушечное" — это всего одна страница, где озвучены
 случайные числительные на финском языке.
 
-<div style="text-align:center;">
+<div Style="text-align:center;">
 <img
 src="http://img-fotki.yandex.ru/get/9827/14441195.30/0_81ae7_60ff43b1_L.png"
 width="282" height="500" title="" alt="" border="0"/>
@@ -30,7 +30,7 @@ width="282" height="500" title="" alt="" border="0"/>
 Сейчас увидеть работающее приложение в телефоне можно только через `Appgyver Scaner` — вспомогательную программу для обмена Steroids-based мобильными
 приложениями до релиза. Поставьте сейчас, чтобы позже загрузить моё приложение:
 
-<div style="text-align:center;">
+<div Style="text-align:center;">
 <a href="https://itunes.apple.com/us/app/appgyver-scanner/id575076515?mt=8"
 target="_blank"><img alt="Appstore" class="appstore_icon"
 src="https://share.appgyver.com/assets/appstore-df950585b54bd081a7826913fc715cd4.png"/></a>

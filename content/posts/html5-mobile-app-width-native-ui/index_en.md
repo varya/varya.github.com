@@ -64,7 +64,7 @@ You can connect a physical smartphone to the project. After running
 Use `AppGyver Scanner` to read this QR code, it will bring the application
 into your phone and keep it connected.
 
-<div style="text-align:center;">
+<div Style="text-align:center;">
 <a href="https://itunes.apple.com/us/app/appgyver-scanner/id575076515?mt=8"
 target="_blank"><img alt="Appstore" class="appstore_icon"
 src="https://share.appgyver.com/assets/appstore-df950585b54bd081a7826913fc715cd4.png"/></a>
@@ -147,7 +147,7 @@ folder](https://github.com/varya/steroids-fronttrends2014/tree/master/www/icons)
 
 After making the change wait for rebuild and check.
 
-<div style="text-align:center;">
+<div Style="text-align:center;">
 <img src="http://img-fotki.yandex.ru/get/9088/14441195.32/0_84262_ae854cb8_orig.png" width="340" height="89" border="0" title="" alt=""/>
 </div>
 
@@ -230,7 +230,7 @@ This will bring the button to the right side of the
 navigation bar. Tapping on it you can see a notification; one
 of those you studied recently.
 
-<div style="text-align:center;">
+<div Style="text-align:center;">
 <img src="http://img-fotki.yandex.ru/get/9115/14441195.32/0_84264_7f27d435_L.png" width="282" height="500" border="0" title="" alt=""/>
 </div>
 
@@ -291,7 +291,7 @@ web interface at [cloud.appgyver.com](https://cloud.appgyver.com/applications).
 
 From there you also push the app into AppStore and GooglePlay.
 
-<div style="text-align:center;">
+<div Style="text-align:center;">
 <img src="http://img-fotki.yandex.ru/get/9062/14441195.32/0_84265_d03d686e_orig.png" width="500" height="327" border="0" title="" alt=""/>
 </div>
 

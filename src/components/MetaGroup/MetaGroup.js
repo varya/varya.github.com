@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Box } from "grommet";
 
-import { childrenWithProps } from "../../common/reactUtils";
+import { childrenWithProps } from "@common/reactUtils";
 
 /**
  * A wrapper for meta tags, providing separators.

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import config from "../../../content/meta/config";
+import config from "@content/meta/config";
 import Helmet from "react-helmet";
 
 const Seo = ({ data, title, description, keywords, cover, location }) => {
@@ -27,8 +27,8 @@ const Seo = ({ data, title, description, keywords, cover, location }) => {
     fullTitle = title;
   }
 
-  const image = pageCover
-    ? pageCover.childImageSharp.fluid.src
+  const image = pageCover && pageCover.childImageSharp
+    ? pageCover.childImageSharp.gatsbyImageData
     : cover || config.siteImage;
 
   const imageUrl = config.siteUrl + image;

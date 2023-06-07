@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { Box, Text } from "grommet";
 import { Heading, Layout, Widget, WidgetContainer } from "@components";
 
@@ -32,7 +32,11 @@ const Tag = ({ data, pageContext }) => {
             return (
               <Widget
                 key={post.node.frontmatter.title}
-                image={cover && <Img {...cover.childImageSharp} />}
+                image={
+                  cover && (
+                    <GatsbyImage {...cover.childImageSharp.gatsbyImageData} />
+                  )
+                }
                 title={post.node.frontmatter.title}
                 slug={post.node.fields.slug}
                 excerpt={post.node.excerpt}
@@ -58,11 +62,11 @@ export const tagQuery = graphql`
   query TagIndexQuery($tag: String) {
     posts: allMdx(
       filter: {
-        fileAbsolutePath: { regex: "//posts//" }
+        internal: { contentFilePath: { regex: "//posts//" } }
         fields: { lang: { eq: "en" } }
         frontmatter: { tags: { in: [$tag] } }
       }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
     ) {
       edges {
         node {
@@ -76,9 +80,7 @@ export const tagQuery = graphql`
             date(formatString: "DD MMMM YYYY")
             cover {
               childImageSharp {
-                fluid(maxWidth: 640) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(layout: FIXED)
               }
             }
           }

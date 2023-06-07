@@ -32,7 +32,7 @@ In conclusion, versioning your design system can seem like an intimidating task,
 - [Versioning Design Systems: Best Practices](https://intodesignsystems.medium.com/versioning-design-systems-best-practices-ca8508653480) by Intodesignsystems
 - [Design system versioning: single library or individual components?](https://bradfrost.com/blog/post/design-system-versioning-single-library-or-individual-components/) by Brad Frost
 
-<div style="text-align: right;"><small>
+<div Style="text-align: right;"><small>
 Cover photo by <a href="https://unsplash.com/@dnevozhai?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Denys Nevozhai</a> on <a href="https://unsplash.com/photos/k5w21D7PgMk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 </small>
 </div>

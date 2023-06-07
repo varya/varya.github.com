@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Link from "gatsby-link";
+import { Link } from "gatsby-link";
 import { Box, Button, Grommet } from "grommet";
 import { deepMerge } from "grommet/utils";
 
-import { clamp, range } from "../../common/utils";
+import { clamp, range } from "@common/utils";
 import theme from "../theme";
 import flattenChildren from "react-flatten-children";
 
-const path = require("path");
+// import path from "path";
 
 /**
  * Responsive pagination component
@@ -77,7 +77,8 @@ const Pagination = ({
     return (
       <Button
         as={Link}
-        to={to && path.join(basePath, "/", to)}
+        // to={to && path.join(basePath, "/", to)}
+        to={to && basePath + to}
         key={"page" + label}
         active={parseInt(label) === currentPage ? true : false}
         color="brand"
@@ -100,7 +101,7 @@ const Pagination = ({
           label="←"
           to={
             currentPage > 2
-              ? (currentPage - 1).toString()
+              ? `/${(currentPage - 1).toString()}`
               : currentPage === 2 && "/"
           }
           disabled={currentPage <= 1}
@@ -119,7 +120,7 @@ const Pagination = ({
             <PageButton
               label={num}
               key={"page" + num}
-              to={num === 1 ? "/" : num.toString()}
+              to={num === 1 ? "/" : `/${num.toString()}`}
             />
           );
         })}
@@ -133,7 +134,9 @@ const Pagination = ({
         <PageButton
           label="→"
           to={
-            currentPage < totalPages ? (currentPage + 1).toString() : undefined
+            currentPage < totalPages
+              ? `/${(currentPage + 1).toString()}`
+              : undefined
           }
           disabled={currentPage >= totalPages}
         />

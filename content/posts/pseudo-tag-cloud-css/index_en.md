@@ -12,7 +12,7 @@ meta:
     Tag cloud of different with random sizes of the words with pure CSS.
 ---
 
-import PureHtml from '../../../src/components/PureHtml'
+import PureHtml from '@components/PureHtml'
 
 <div data-excerpt>
 

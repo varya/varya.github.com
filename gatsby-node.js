@@ -1,5 +1,6 @@
 const path = require("path");
 const config = require("./content/meta/config");
+const readingTime = require("reading-time");
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
@@ -58,6 +59,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       value: lang,
     });
 
+    createNodeField({
+      node,
+      name: `readingTime`,
+      value: readingTime(node.body),
+    });
+
     let disqusIdentifier = slug.split("/").filter((item) => item != "");
     if (node.frontmatter.v2) {
       if (disqusIdentifier[0] === "en" || disqusIdentifier[0] === "ru") {
@@ -101,25 +108,83 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const blogTemplate = path.resolve("./src/templates/BlogIndex.js");
   const tagTemplate = path.resolve("./src/templates/TagIndex.js");
 
-  const postsData = await graphql(`
+  const postsProjectsData = await graphql(`
+    query {
+      projectPosts: allMdx(
+        filter: { internal: { contentFilePath: { regex: "//projects//" } } }
+        sort: { frontmatter: { date: DESC } }
+      ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+              level
+              fileRelativePath
+              lang
+            }
+            frontmatter {
+              title
+              subTitle
+              date
+              link
+            }
+            internal {
+              contentFilePath
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const postsDesignSystemData = await graphql(`
+    query {
+      designSystemsPosts: allMdx(
+        filter: {
+          internal: { contentFilePath: { regex: "//design-systems//" } }
+        }
+      ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+              fileRelativePath
+              readingTime {
+                minutes
+              }
+            }
+            internal {
+              contentFilePath
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const postsBlogData = await graphql(`
     query {
       blogPosts: allMdx(
         filter: {
-          fileAbsolutePath: { regex: "//posts//" }
+          internal: { contentFilePath: { regex: "//posts//" } }
           fields: { lang: { eq: "en" } }
         }
-        sort: { fields: [frontmatter___date], order: [DESC, DESC] }
+        sort: { frontmatter: { date: DESC } }
       ) {
         edges {
           node {
             id
-            fileAbsolutePath
             fields {
               slug
               disqusIdentifier
               level
               fileRelativePath
               lang
+              readingTime {
+                minutes
+              }
             }
             frontmatter {
               title
@@ -131,88 +196,36 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               layout
               tags
             }
-          }
-        }
-      }
-      projectPosts: allMdx(
-        filter: { fileAbsolutePath: { regex: "//projects//" } }
-        sort: { fields: [frontmatter___date], order: [DESC] }
-      ) {
-        edges {
-          node {
-            id
-            fileAbsolutePath
-            fields {
-              slug
-              level
-              fileRelativePath
-              lang
-            }
-            frontmatter {
-              title
-              subTitle
-              date
-              link
+            internal {
+              contentFilePath
             }
           }
         }
       }
-      designSystemsPosts: allMdx(
-        filter: { fileAbsolutePath: { regex: "//design-systems//" } }
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-          }
-        }
-      }
+    }
+  `);
+
+  const postsRuData = await graphql(`
+    query {
       ruPosts: allMdx(
         filter: {
-          fileAbsolutePath: { regex: "//posts//" }
+          internal: { contentFilePath: { regex: "//posts//" } }
           fields: { lang: { ne: "en" } }
         }
-        sort: { fields: [frontmatter___date], order: [DESC, DESC] }
+        sort: { frontmatter: { date: DESC } }
       ) {
         edges {
           node {
             id
-            fileAbsolutePath
             fields {
               slug
               disqusIdentifier
               level
               fileRelativePath
               lang
-            }
-            frontmatter {
-              title
-              subTitle
-              v2
-              old
-              date
-              layout
-              tags
-            }
-          }
-        }
-      }
-      lifePosts: allMdx(
-        filter: { fileAbsolutePath: { regex: "//life//" } }
-        sort: { fields: [frontmatter___date], order: [DESC, DESC] }
-      ) {
-        edges {
-          node {
-            id
-            fileAbsolutePath
-            fields {
-              slug
-              disqusIdentifier
-              level
-              fileRelativePath
-              lang
+              readingTime {
+                minutes
+              }
             }
             frontmatter {
               title
@@ -229,16 +242,60 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   `);
 
-  if (postsData.errors) {
+  const postsLifeData = await graphql(`
+    query {
+      lifePosts: allMdx(
+        filter: { internal: { contentFilePath: { regex: "//life//" } } }
+        sort: { frontmatter: { date: DESC } }
+      ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+              disqusIdentifier
+              level
+              fileRelativePath
+              lang
+              readingTime {
+                minutes
+              }
+            }
+            frontmatter {
+              title
+              subTitle
+              v2
+              old
+              date
+              layout
+              tags
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (
+    postsRuData.errors ||
+    postsLifeData.errors ||
+    postsProjectsData.errors ||
+    postsDesignSystemData.errors ||
+    postsBlogData.errors
+  ) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
   }
-  const blogPosts = postsData.data.blogPosts.edges;
+
+  const blogPosts = postsBlogData.data.blogPosts.edges;
+  const projectPosts = postsProjectsData.data.projectPosts.edges;
+  const designSystemsPosts =
+    postsDesignSystemData.data.designSystemsPosts.edges;
 
   const otherPosts = [
-    ...postsData.data.ruPosts.edges,
-    ...postsData.data.lifePosts.edges,
-    ...postsData.data.projectPosts.edges,
-    ...postsData.data.designSystemsPosts.edges,
+    ...postsRuData.data.ruPosts.edges,
+    ...postsLifeData.data.lifePosts.edges,
+    // ...postsProjectsData.data.projectPosts.edges,
+    // ...postsDesignSystemData.data.designSystemsPosts.edges,
   ];
 
   const tagSet = new Set();
@@ -260,12 +317,36 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: slug,
-      component: postTemplate,
+      component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         slug,
         prev,
         next,
         fileSourceUrl,
+      },
+    });
+  });
+
+  projectPosts.forEach(({ node }) => {
+    const slug = node.fields.slug;
+
+    createPage({
+      path: slug,
+      component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+      context: {
+        slug,
+      },
+    });
+  });
+
+  designSystemsPosts.forEach(({ node }) => {
+    const slug = node.fields.slug;
+
+    createPage({
+      path: slug,
+      component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+      context: {
+        slug,
       },
     });
   });
@@ -277,6 +358,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     createPage({
       path: slug,
       component: postTemplate,
+      // `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         slug,
       },
@@ -309,18 +391,5 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: tagTemplate,
       context: { tag, tagSlug },
     });
-  });
-};
-
-// https://levelup.gitconnected.com/how-to-set-up-import-aliases-for-gatsby-32398ae67e7f
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      alias: {
-        "@components": path.resolve(__dirname, "src/components"),
-        "@templates": path.resolve(__dirname, "src/templates"),
-        "@static": path.resolve(__dirname, "static"),
-      },
-    },
   });
 };

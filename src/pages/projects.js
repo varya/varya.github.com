@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { graphql } from "gatsby";
 import { Heading, Widget, WidgetContainer } from "@components";
-import Page from "@templates/Page";
+import { Page } from "@templates/Page";
 
 const HeroContent = () => (
   <>
@@ -66,8 +66,8 @@ export default Projects;
 export const projectsQuery = graphql`
   query ProjectsIndexQuery {
     projects: allMdx(
-      filter: { fileAbsolutePath: { regex: "//projects//" } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { internal: { contentFilePath: { regex: "//projects//" } } }
+      sort: { frontmatter: { date: DESC } }
     ) {
       edges {
         node {
@@ -83,6 +83,11 @@ export const projectsQuery = graphql`
             link
             meta {
               desc
+            }
+            cover {
+              childImageSharp {
+                gatsbyImageData(layout: FIXED)
+              }
             }
           }
         }

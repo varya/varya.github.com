@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import GatsbyLink from "gatsby-link"; //keep like that because of https://github.com/gatsbyjs/gatsby/issues/10668#issuecomment-546596273
+import { Link as GatsbyLink } from "gatsby"; //keep like that because of https://github.com/gatsbyjs/gatsby/issues/10668#issuecomment-546596273
+// fixed by https://github.com/gatsbyjs/gatsby/issues/10668
 import styled from "styled-components";
 import { Anchor } from "grommet";
 

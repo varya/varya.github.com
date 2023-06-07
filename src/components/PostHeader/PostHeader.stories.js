@@ -8,7 +8,7 @@ export default {
 };
 
 const fakeProps = {
-  imageUrl: require("./../../../content/posts/webfonts-with-sass-and-webpack/thumb.png"),
+  imageUrl: require("@content/posts/webfonts-with-sass-and-webpack/thumb.png"),
   title: "Using web fonts with SASS and Webpack",
   tags: ["sass", "webpack", "frontend"],
   readingTime: "15 min",

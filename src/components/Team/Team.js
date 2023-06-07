@@ -3,11 +3,11 @@ import React from "react";
 import { Box } from "grommet";
 import { Avatar, Heading, Paragraph } from "@components";
 
-const Team = () => {
-  const nikita = require("./nikita.jpg");
-  const ira = require("./ira.jpg");
-  const sherif = require("./sherif.jpg");
+import nikita from "./nikita.jpg";
+import ira from "./ira.jpg";
+import sherif from "./sherif.jpg";
 
+const Team = () => {
   return (
     <>
       <Heading level={2}>Need a whole team? I have one for you!</Heading>
