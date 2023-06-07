@@ -1,7 +1,7 @@
 ---
 title: A People-Centric Approach to Boosting Performance and Engagement in Design Systems
 
-date: 2023-05-29
+date: 2023-06-07
 cover: people.jpg
 
 meta:
