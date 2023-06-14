@@ -15,6 +15,7 @@ import {
 } from "@components";
 import Page from "@templates/Page";
 
+import appomniLogo from "../images/png/appomni-logo.png";
 import bemLogo from "../images/png/bem-logo-margin.png";
 import bfLogo from "../images/png/bf-logo-margin.png";
 import elisaLogo from "../images/png/elisa-logo-margin.png";
@@ -317,6 +318,16 @@ const Index = () => {
               style={{ marginTop: "1.75em" }}
             >
               Design System at METRO
+            </Heading>
+          </Widget>
+          <Widget
+            margin={{ bottom: "medium" }}
+            direction="column"
+            imageSrc={appomniLogo}
+            slug="/projects/appomni/"
+          >
+            <Heading textAlign="center" fill level={3}>
+              Design System at AppOmni
             </Heading>
           </Widget>
           <Widget
