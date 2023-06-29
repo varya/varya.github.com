@@ -1,16 +1,12 @@
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
-import remarkGfm from "remark-gfm";
-import configuration from "./content/meta/config.js";
-import postcssPresetEnv from "postcss-preset-env";
+const path = require("path");
+const config = require("./content/meta/config");
 
-const config = {
+module.exports = {
   siteMetadata: {
-    title: configuration.siteTitle,
-    description: configuration.siteDescription,
-    siteUrl: configuration.siteUrl,
-    pathPrefix: configuration.pathPrefix,
+    title: config.siteTitle,
+    description: config.siteDescription,
+    siteUrl: config.siteUrl,
+    pathPrefix: config.pathPrefix,
     facebook: {
       appId: process.env.FB_APP_ID ? process.env.FB_APP_ID : "",
     },
@@ -20,14 +16,18 @@ const config = {
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        postCssPlugins: [postcssPresetEnv({ stage: 0 })],
+        postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
       },
     },
     {
       resolve: `gatsby-plugin-mdx`,
+
       options: {
-        mdxOptions: {
-          remarkPlugins: [remarkGfm],
+        plugins: ["gatsby-remark-unwrap-images", "gatsby-remark-images"], //because of this: https://github.com/cedricdelpoux/gatsby-remark-unwrap-images/issues/2#issuecomment-526953234
+        extensions: [`.mdx`, `.md`],
+        defaultLayouts: {
+          default: path.resolve("./src/templates/Post.js"),
+          projects: path.resolve("./src/templates/ProjectPost.js"),
         },
         gatsbyRemarkPlugins: [
           {
@@ -38,8 +38,7 @@ const config = {
               wrapperStyle: "width: 100%;",
             },
           },
-          "gatsby-remark-unwrap-images",
-          `gatsby-remark-copy-relative-linked-files`,
+          // `gatsby-remark-copy-relative-linked-files`,
           `gatsby-remark-prismjs`,
           {
             resolve: `gatsby-remark-autolink-headers`,
@@ -48,85 +47,61 @@ const config = {
             },
           },
         ],
-        extensions: [`.mdx`, `.md`],
-      },
-    },
-    // {
-    //   resolve: "gatsby-transformer-remark",
-    //   options: {
-    //     plugins: [
-    //       "gatsby-remark-unwrap-images",
-    //       {
-    //         resolve: `gatsby-remark-images`,
-    //         options: {
-    //           // It's important to specify the maxWidth (in pixels) of
-    //           // the content container as this plugin uses this as the
-    //           // base for generating different widths of each image.
-    //           maxWidth: 590,
-    //         },
-    //       },
-    //     ],
-    //   },
-    // },
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "G-VNR46J539J",
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `projects`,
-        path: `./content/projects`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: `./content/posts`,
+        path: `${__dirname}/content/posts`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `life`,
-        path: `./content/life`,
+        path: `${__dirname}/content/life`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/content/projects`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `design-systems`,
-        path: `./content/design-systems`,
+        path: `${__dirname}/content/design-systems`,
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-catch-links`,
+    `gatsby-remark-reading-time`,
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-VNR46J539J", // Google Analytics / GA
+          // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
+          // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
+        ],
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "images",
-        path: "./src/images/",
-      },
-      __key: "images",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "pages",
-        path: "./src/pages/",
-      },
-      __key: "pages",
-    },
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        name: configuration.manifestName,
-        short_name: configuration.manifestShortName,
-        start_url: configuration.manifestStartUrl,
-        background_color: configuration.manifestBackgroundColor,
-        theme_color: configuration.manifestThemeColor,
-        display: configuration.manifestDisplay,
+        name: config.manifestName,
+        short_name: config.manifestShortName,
+        start_url: config.manifestStartUrl,
+        background_color: config.manifestBackgroundColor,
+        theme_color: config.manifestThemeColor,
+        display: config.manifestDisplay,
         icons: [
           {
             src: "/icons/icon-48x48.png",
@@ -172,27 +147,10 @@ const config = {
         include: /src/,
       },
     },
-    {
-      resolve: `gatsby-plugin-alias-imports`,
-      options: {
-        alias: {
-          "@components": "src/components",
-          "@pages": "src/pages",
-          "@templates": "src/templates",
-          "@static": "static",
-          "@common": "src/common",
-          "@content": "content",
-        },
-        extensions: ["js"],
-      },
-    },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-image",
-    `gatsby-plugin-catch-links`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: "gatsby-plugin-no-sourcemaps",
+    },
     `gatsby-plugin-sitemap`,
   ],
 };
-
-export default config;
