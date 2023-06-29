@@ -9,6 +9,26 @@ import heroImage from "./hero-speaking.jpg";
 
 const talks = [
   {
+    title: "Data-Driven Design System Management",
+    description: `
+    In this talk, my colleague Daniel and I take the audience on a deep dive into
+    harnessing the power of data to effectively manage a design system.
+    We show how data is collected through GitHub API,
+    reveal a real-world dashboard, albeit anonymized, that serves as the core tool
+    for data analysis. We further explore how the design system is used, the extent
+    of adoption, and the insights gained from this data, enabling design teams to
+    proactively address user needs. Notably, we point how analyzing data on a daily
+    basis can become a routine that ultimately leads to the development of meaningful KPIs.
+    The talk culminates with a glimpse into how design system teams can communicate value
+    to business stakeholders by assessing the resources saved through the design system’s use.
+   `,
+    links: {
+      Slides:
+        "https://app.pitch.com/app/presentation/0129222e-f298-4492-a00b-7705ae85c17e/3899f1a0-cd01-45b5-baab-51cc83fab3e7",
+      // Video: "https://youtu.be/8u032Qq4aV4",
+    },
+  },
+  {
     title:
       "Increasing Design System Quality and Adoption by Proper Stakeholder Management",
     description: `
