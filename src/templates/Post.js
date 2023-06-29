@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 import { Box, Button, Text } from "grommet";
 import {
@@ -20,6 +19,7 @@ import {
   PostHeader,
   PrevNextNav,
   ProjectRoles,
+  Workshop,
   PureHtml,
   Section,
   Seo,
@@ -41,7 +41,9 @@ const globalMdxComponents = {
   Section,
   Hero,
   Widget,
+  PatternJourney,
   WidgetContainer,
+  Workshop,
   ProjectRoles,
   DsAspects,
   Link,
@@ -103,6 +105,7 @@ const Post = ({
       siteMetadata: { siteUrl },
     },
   },
+  children,
   pageContext: { next, prev, fileSourceUrl },
 }) => {
   const { readingTime, slug, disqusIdentifier } = mdx.fields;
@@ -112,16 +115,22 @@ const Post = ({
   // specify if blog-specific meta should be shown or hidden
   const showBlogMeta = slug.startsWith("blog/");
 
+  if (!mdx) {
+    return null;
+  }
+
   return (
     <Layout>
       <PostHeader
-        imageUrl={cover && cover.childImageSharp.fluid.src}
+        imageUrl={
+          cover && cover.childImageSharp.gatsbyImageData.images.fallback.src
+        }
         tags={tags}
         date={date}
         readingTime={
-          showBlogMeta &&
-          parseInt(readingTime.minutes) > 0 &&
-          `${Math.round(readingTime.minutes)} min read`
+          showBlogMeta && parseInt(readingTime.minutes) > 0
+            ? `${Math.round(readingTime.minutes).toFixed(1)} min read`
+            : null
         }
         title={title}
         subTitle={subTitle}
@@ -135,7 +144,7 @@ const Post = ({
         direction="column"
       >
         <MDXProvider components={{ ...postComponents, ...globalMdxComponents }}>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
+          {children}
         </MDXProvider>
         <Box
           direction="row"
@@ -173,7 +182,9 @@ const Post = ({
     </Layout>
   );
 };
+
 Post.propTypes = {
+  imageUrl: PropTypes.string,
   data: PropTypes.object,
   pageContext: PropTypes.shape({
     prev: PropTypes.object,
@@ -190,11 +201,11 @@ export const query = graphql`
       id
       body
       fields {
+        slug
+        disqusIdentifier
         readingTime {
           minutes
         }
-        slug
-        disqusIdentifier
       }
       frontmatter {
         title
@@ -210,9 +221,7 @@ export const query = graphql`
         canonical
         cover {
           childImageSharp {
-            fluid(maxWidth: 1200) {
-              src
-            }
+            gatsbyImageData(layout: FIXED)
           }
         }
       }

@@ -1,19 +1,18 @@
-import React from "react";
+import * as React from "react";
 
 import { Box, Text } from "grommet";
+import { Page } from "@templates/Page";
 import {
-  Avatar,
   Heading,
   ImageBlock,
-  Link,
+  Avatar,
   Paragraph,
+  Link,
   Section,
   Widget,
   WidgetContainer,
   WidgetMulti,
-  // Workshop,
 } from "@components";
-import Page from "@templates/Page";
 
 import appomniLogo from "../images/png/appomni-logo.png";
 import bemLogo from "../images/png/bem-logo-margin.png";
@@ -26,7 +25,7 @@ const HeroContent = () => (
   <Heading>Varya Stepanova — a design systems architect</Heading>
 );
 
-const Index = () => {
+const IndexPage = () => {
   return (
     <Page
       hero={{
@@ -386,4 +385,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default IndexPage;

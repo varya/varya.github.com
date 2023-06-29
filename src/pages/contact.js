@@ -2,7 +2,7 @@ import React from "react";
 
 import { Box, Button, Text } from "grommet";
 import { Heading, Link, Paragraph } from "@components";
-import Page from "@templates/Page";
+import { Page } from "@templates/Page";
 
 import { InlineWidget } from "react-calendly";
 

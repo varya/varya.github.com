@@ -4,8 +4,10 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Box, Stack, Text } from "grommet";
 import { Calendar } from "grommet-icons";
-import { Heading, Image, Link, Paragraph } from "@components";
-
+import { Heading } from "@components";
+import { Image } from "@components";
+import { Link } from "@components";
+import { Paragraph } from "@components";
 /**
  * Post Preview widget with cover image and excerpt
  * @param  {string} cover, title, excerpt, slug, readingTime, date - post data
@@ -45,9 +47,9 @@ const Widget = ({
 }) => {
   const ResolvedImage = () =>
     imageSrc ? (
-      <Image imageSrc={imageSrc} fit="contain" />
+      <Image imageSrc={imageSrc} fit="cover" />
     ) : (
-      <Image fit="contain">{image}</Image>
+      <Image fit="cover">{image}</Image>
     );
 
   return (

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Text } from "grommet";
 import { Heading, Paragraph, Widget, WidgetContainer } from "@components";
-import Page from "@templates/Page";
+import { Page } from "@templates/Page";
 
 import heroImage from "./hero-consultancy.jpg";
 

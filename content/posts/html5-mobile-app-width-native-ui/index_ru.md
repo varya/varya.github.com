@@ -65,7 +65,7 @@ Guide](http://academy.appgyver.com/categories/1/contents/1)
 `AppGyver Scanner` — и проект окажется в вашем телефоне (а кроме того — будет
 обновляться).
 
-<div style="text-align:center;">
+<div Style="text-align:center;">
 <a href="https://itunes.apple.com/us/app/appgyver-scanner/id575076515?mt=8"
 target="_blank"><img alt="Appstore" class="appstore_icon"
 src="https://share.appgyver.com/assets/appstore-df950585b54bd081a7826913fc715cd4.png"/></a>
@@ -151,7 +151,7 @@ folder](https://github.com/varya/steroids-fronttrends2014/tree/master/www/icons)
 После того как все изменения будут сделаны, подождите пересборки и
 убедитесь в результате.
 
-<div style="text-align:center;">
+<div Style="text-align:center;">
 <img src="http://img-fotki.yandex.ru/get/9088/14441195.32/0_84262_ae854cb8_orig.png" width="340" height="89" border="0" title="" alt=""/>
 </div>
 
@@ -237,7 +237,7 @@ steroids.view.navigationBar.update({
 Касание кнопки запустит нотификацию, уже знакомую вам по предыдущему
 примеру.
 
-<div style="text-align:center;">
+<div Style="text-align:center;">
 <img src="http://img-fotki.yandex.ru/get/9115/14441195.32/0_84264_7f27d435_L.png" width="282" height="500" border="0" title="" alt=""/>
 </div>
 
@@ -301,7 +301,7 @@ function showModal() {
 
 Отсюда же приложения можно отправлять в AppStore и GooglePlay.
 
-<div style="text-align:center;">
+<div Style="text-align:center;">
 <img src="http://img-fotki.yandex.ru/get/9062/14441195.32/0_84265_d03d686e_orig.png" width="500" height="327" border="0" title="" alt=""/>
 </div>
 

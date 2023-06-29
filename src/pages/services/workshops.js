@@ -9,7 +9,7 @@ import {
   WidgetContainer,
   // Workshop,
 } from "@components";
-import Page from "@templates/Page";
+import { Page } from "@templates/Page";
 
 import heroImage from "./hero-workshops.jpg";
 

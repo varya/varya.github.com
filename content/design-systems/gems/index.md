@@ -37,7 +37,7 @@ The step-by-step guideline on how to set up your own design system and make your
 
 https://thedesignsystem.guide/ by [Romina Kavcic](https://www.linkedin.com/in/rominakavcic/)
 
-<div style="text-align: right;"><small>
+<div Style="text-align: right;"><small>
 Cover photo by <a href="https://unsplash.com/@venczakjanos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">János Venczák</a> on <a href="https://unsplash.com/s/photos/treasure?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 </small>
 </div>

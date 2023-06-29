@@ -2,10 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { ResponsiveContext } from "grommet";
 import { Heading, Pagination, Widget, WidgetContainer } from "@components";
-import Page from "@templates/Page";
+import { Page } from "@templates/Page";
+
+const removeMd = require('remove-markdown');
 
 const visiblePages = {
   small: 2,
@@ -49,17 +51,21 @@ const Blog = ({ data, pageContext }) => {
               const { cover, date, link } = post.node.frontmatter;
               const { readingTime, slug } = post.node.fields;
               const resolvedSlug = link ? link : `/${slug}`;
+              const match = post.node.body.match( new RegExp(`${'<div data-excerpt>'}([\\s\\S]*?)${'</div>'}`, 'i'))
+              const snippet = match && match[1] ? removeMd(match[1].trim()) : post.node.excerpt;
               return (
                 <Widget
                   key={post.node.frontmatter.title}
-                  image={cover && <Img {...cover.childImageSharp} />}
+                  imageSrc={
+                    cover && cover.childImageSharp.gatsbyImageData.images.fallback.src
+                  }
                   title={post.node.frontmatter.title}
                   slug={resolvedSlug}
-                  excerpt={post.node.excerpt}
+                  excerpt={snippet}
                   height="small"
                   date={date}
                   readingTime={
-                    parseInt(readingTime.minutes) > 0 &&
+                    parseInt(readingTime?.minutes) > 0 &&
                     `${Math.round(readingTime.minutes)} min read`
                   }
                 />
@@ -91,10 +97,10 @@ export const blogQuery = graphql`
   query BlogIndexQuery($skip: Int!, $limit: Int!) {
     posts: allMdx(
       filter: {
-        fileAbsolutePath: { regex: "//posts//" }
+        internal: { contentFilePath: { regex: "//posts//" } }
         fields: { lang: { eq: "en" } }
       }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       limit: $limit
       skip: $skip
     ) {
@@ -114,9 +120,7 @@ export const blogQuery = graphql`
             date(formatString: "DD MMMM YYYY")
             cover {
               childImageSharp {
-                fluid(maxWidth: 640) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(layout: FIXED)
               }
             }
           }

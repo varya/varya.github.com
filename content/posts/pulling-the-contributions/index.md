@@ -83,7 +83,7 @@ Despite these drawbacks, the "pulling the contributions" model offers unique ben
 
 In conclusion, there are several approaches to designing a successful contribution model for a design system. The traditional model, where product teams are expected to contribute components on their own, has limited scalability and may not effectively address the unique requirements of each product. An alternative approach is "pulling the contributions", where product teams are given the autonomy to develop their own design systems and the design system team can later integrate the best components. This model has the potential to address the requirements of each product more effectively and promote collaboration across teams, but it also requires resources and tools for analysis and tracking. Ultimately, the right contribution model will depend on the specific needs and resources of each company and can be adjusted as the design system evolves. Regardless of the approach, a successful design system should be flexible, scalable, and aligned with the needs of the product teams and the overall business goals.
 
-<div style="text-align: right;"><small>
+<div Style="text-align: right;"><small>
 Cover photo by <a href="https://unsplash.com/@stijnswinnen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Stijn Swinnen</a> on <a href="https://unsplash.com/photos/Q8FHN3qSq2w?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 </small>
 </div>

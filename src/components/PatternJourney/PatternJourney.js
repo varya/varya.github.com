@@ -5,7 +5,7 @@ import styled from "styled-components";
 import theme from "../theme";
 import data from "./PatternJourney.data.js";
 import Spider from "rc-spider-intergalactico";
-import FaClose from "react-icons/lib/fa/close";
+import { CgCloseO } from "react-icons/cg";
 import breakpoint from "styled-components-breakpoint";
 
 const { Node, Text, Link, Rect } = Spider.Shape;
@@ -134,7 +134,7 @@ class PatternJourney extends React.Component {
                   this.setState({ toggleNotification: false });
                 }}
               >
-                <FaClose />
+                <CgCloseO />
               </Close>
               <div dangerouslySetInnerHTML={{ __html: this.state.text }}></div>
             </ModalContent>
