@@ -44,18 +44,16 @@ Project innovations are driven and tackled by applying service design techniques
 - Prototyping
 - Facilitation
 
-## Achivements and the overcome challenges
+## Accomplishments and Overcoming Challenges
 
-- New library of Web Components<br/>
-  The team has sucessfully built a library of Web Components that enabled products to
-  integrate them regardless of a framework they are using on the frontend.
-- Defined workflows<br/>
-  The workflows for both design system team operations and contributions are now defined,
-  visualised and documented. These artifacts are huge help in guidance for the new and old team members. They also enable and encorage contributions to the design system.
-- Onboarding as a regular activity<br/>
-  Through constant enganging activity, [the onboarding session has became a known regular
-  event in the company calendar](https://www.linkedin.com/feed/update/urn:li:activity:6896797119584329728/). Gradual update of the presented materials ensures meeting
-  the needs of the newcomers so that they get relevant information about a design system which makes their working path with it easier and smoother. In turn, that ensures that the design system is known among the developers and widely adopted in the product codebases.
-- Outlined security policy<br/>
-  In a series of workshops, the team has made initial audit of resources and tools in
-  the context of potential security threats. The structed representation of the artifacts, risks, their impacts, countermeasures to them and respond actions clearly communicates to all the team members what they should be aware of and how they should act in different scenarios.
+- Creation of a New Web Components Library<br/> 
+As a product owner and project manager, I guided my team to successfully engineer a comprehensive library of Web Components, enabling seamless integration into products regardless of the frontend framework they employ.
+
+- Workflow Definitions<br/>
+  I took the initiative to define and document the workflows for both our design system team operations and contribution. These visual and written artifacts provide vital guidance for both new and established team members, fostering a collaborative environment and encouraging contributions to the design system.
+
+- Regular Onboarding Sessions<br/>
+  Thanks to our continuous engagement, [the onboarding session has become a recognized recurring event on the company calendar](https://www.linkedin.com/feed/update/urn:li:activity:6896797119584329728/).  regularly review and update the materials presented ensure the needs of newcomers are met, providing them with relevant information about our design system. This in turn facilitates their integration into our workflow and promotes wide adoption of the design system within product codebases.
+
+- Security Policy Development<br/>
+  Recognizing the importance of security, I organized a series of workshops where our team performed an initial audit of resources and tools in relation to potential security threats. By creating a structured representation of artifacts, risks, impacts, countermeasures, and response actions, I have enabled all team members to understand and effectively manage various security scenarios.
