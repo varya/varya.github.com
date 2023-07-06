@@ -47,7 +47,7 @@ const Widget = ({
 }) => {
   const ResolvedImage = () =>
     imageSrc ? (
-      <Image imageSrc={imageSrc} fit="cover" />
+      <Image imageSrc={imageSrc} fit="contain" />
     ) : (
       <Image fit="cover">{image}</Image>
     );
