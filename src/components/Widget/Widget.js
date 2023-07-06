@@ -49,7 +49,7 @@ const Widget = ({
     imageSrc ? (
       <Image imageSrc={imageSrc} fit="contain" />
     ) : (
-      <Image fit="cover">{image}</Image>
+      <Image fit="contain">{image}</Image>
     );
 
   return (
