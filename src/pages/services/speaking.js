@@ -54,6 +54,20 @@ const talks = [
     },
   },
   {
+    title: "Product Bakery #48: Managing Design System Projects",
+    description: `In this episode, I discuss my evolution from a Frontend Developer to a
+    Design Systems Expert, emphasizing the close relationship between technical expertise and
+    design passion. I delve into how my technical background influences my approach to design
+    systems, both aiding and sometimes posing challenges. I share insights on the importance of
+    balancing modularized components with a holistic design view and touch on strategies for
+    convincing leadership teams about the value of design projects using data. Dive in to
+    explore the blend of coding and design from my perspective!`,
+    links: {
+      "Product Bakery": "https://www.product-bakery.com/episodes/design-system",
+      "Spotify": "https://open.spotify.com/episode/6Y4P3Kthhkazim0K720H4Y",
+    },
+  },
+  {
     title: "A practical guide to building your design system infrastructure",
     description:
       "A bunch of ideas and suggestions about implementing infrastructure and tools for building your design system, presented at Patterns Day 2019 in Brighton, England.",
