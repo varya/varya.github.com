@@ -57,7 +57,7 @@
     "gatsby-transformer-sharp": "5.7.0",
     "grommet": "2.30.0",
     "grommet-icons": "4.10.0",
-    "postcss": "8.4.21",
+    "postcss": "8.4.31",
     "postcss-preset-env": "8.0.1",
     "prismjs": "1.29.0",
     "prop-types": "15.8.1",
