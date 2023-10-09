@@ -55,33 +55,52 @@ description of how the project was going.
 
 ## Overall Process
 
-<ImageBlock imageRight imageBasis="1/2" image={<Box margin={{top: "medium"}} pad="small"><Image>
-
-![](Huhtamaki_Research.jpg)
-
-</Image></Box>}>
-
 ### Extensive Field Research to Understand Consumers
+
+<Box direction="row" gap="large">
+
+<Box basis="1/2">
 
 Our very first step was to understand the food consumer perspective on delivery and packaging. To do this, our team took a deep dive into delivery and takeaway food in London, Berlin and Helsinki. We studied different delivery companies, take out from restaurants and stores, and also the various packaging types on offer through observations, secondary research and video observations of the delivery process. We also conducted interviews, both in person and remote, with people from 30 different countries, ranging from India to Kenya to Japan to the USA.
 
 This helped us to really understand their behavior and preferences around food delivery. We also did extensive observational research of restaurant and store takeaway practices to understand preferences and trends there as well. Lastly, we also had a chance to speak to operators in the food delivery services domain, to understand their perspective as well.
 
-</ImageBlock>
+</Box>
 
-<ImageBlock imageBasis="1/2" image={<Box margin={{top: "medium"}} pad="small"><Image>
+<Box basis="1/2">
+<Image>
+
+![](Huhtamaki_Research.jpg)
+
+</Image>
+</Box>
+
+</Box>
+
+### Extensive Field Research to Understand Industry
+
+<Box direction="row" gap="large">
+
+<Box basis="1/2">
+
+
+TODO: find text
+
+</Box>
+
+<Box basis="1/2">
+<Image>
 
 ![](Huhtamaki_Conferences.jpg)
 
-</Image></Box>}>
+</Image>
+</Box>
 
-### Conferences for a Deep Dive into the Delivery Industry
+</Box>
 
-We understood that a successful solution would need a thorough understanding of the domain even beyond the consumer, and to enable this, we approached this three different perspectives: food delivery platform, food producer and packaging producer. We attended two conferences in London as well as a packaging seminar at Slush to understand more about the industry side. These were very useful to understand industry trends, as well as to identify potential strategic partners, depending on the solution.
+<p>&nbsp;</p>
 
-These conferences also helped us get an understanding of what to expect from the home delivery space in the future, both short and medium term, while getting an idea of what the big players in the space were doing. These future trends really enhanced our understanding of what the domain needed.
-
-</ImageBlock>
+<Box direction="row" gap="large">
 
 <Box background="accent-50" pad="medium" textAlign="center" margin={{horizontal: "auto", vertica: "medium"}}>
 
@@ -94,11 +113,21 @@ These conferences also helped us get an understanding of what to expect from the
 <Paragraph standout>In addition, companies like Deliveroo, in order to ensure they maintained the optimal consumer experience which was a huge factor for their growth, were actually taking over the logistics of testing, procuring and supplying optimal packaging to the restaurants, thus becoming a one stop delivery enabler.</Paragraph>
 </Box>
 
-<ImageBlock imageBasis="1/2" image={<Box margin={{top: "medium"}} pad="small"><Image>
+</Box>
+
+<p>&nbsp;</p>
+
+<Box direction="row" gap="large">
+
+<Box basis="1/2">
+<Image>
 
 ![](Huhtamaki_Factory.jpg)
 
-</Image></Box>}>
+</Image>
+</Box>
+
+<Box basis="1/2">
 
 ### Understanding Huhtamaki’s Capabilities on Site
 
@@ -106,20 +135,31 @@ We visited one of our client’s production facilities in Finland as well as a s
 
 This also helped us understand their current product offerings and the kind of customers they currently had. This allowed us to think of potential ways in which their existing technology and solutions could translate into the delivery space while also giving us a business perspective on their capabilities.
 
-</ImageBlock>
+</Box>
 
-<Box background="accent-50" pad="medium" width="large" margin={{horizontal: "auto"}}>
+</Box>
+
+<p>&nbsp;</p>
+
+<Box direction="row" gap="large">
+
+<Box  background="accent-50" pad="medium" width="large" margin={{horizontal: "auto"}}>
 
 #### BASED ON OUR RESEARCH, OUR APPROACH CHANGED
 
 <Paragraph standout>The optimal solution wasn’t just about creating better packaging for home delivery as the client originally intended, it needed something much more comprehensive.</Paragraph>
 </Box>
 
-<ImageBlock imageRight imageBasis="1/2" image={<Box margin={{top: "medium"}} pad="small"><Image>
+<Box basis="1/2">
+<Image>
 
 ![](Huhtamaki_Ideation.jpg)
 
-</Image></Box>}>
+</Image>
+</Box>
+
+</Box>
+
 
 ### Crafting a Future Focused Strategic Solution
 
@@ -127,7 +167,6 @@ Once we had this understanding, we put on our ideation hats with our clients on 
 
 The intent of this roadmap was to provide a strategic approach for the client that ensured they weren’t just catching up or reacting to the current state of the domain, but rather aligning with trends and setting themselves up for sustainable, long term, success.
 
-</ImageBlock>
 
 ## Final Outcome
 
