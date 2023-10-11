@@ -23,9 +23,9 @@ once and forever. Thus, to achieve and keep their business success, companies ne
 
 <div class="small" markdown="1">
 
-![](thumb.jpg)<br/>
-Image source:
-[https://designbusinesscouncil.com/workshops/building-a-business-model/](https://designbusinesscouncil.com/workshops/building-a-business-model/)
+<Image caption="Image source: https://designbusinesscouncil.com/workshops/building-a-business-model/">
+![](thumb.jpg)
+</Image>
 
 </div>
 

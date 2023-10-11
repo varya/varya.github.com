@@ -21,9 +21,9 @@ Linking web fonts in SASS when using Webpack might not work as expected. The mos
 
 <div class="small" markdown="1">
 
-![](thumb.png)<br/>
-Image source:
-[https://processtypefoundry.com/blog/2011/02/five-new-webfonts/](https://processtypefoundry.com/blog/2011/02/five-new-webfonts/)
+<Image caption="Image source: https://processtypefoundry.com/blog/2011/02/five-new-webfonts/">
+![](thumb.png)
+</Image>
 
 </div>
 

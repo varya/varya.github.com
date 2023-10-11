@@ -33,8 +33,9 @@ To start contribution, it is crucial to have a clear vision what to do in specif
 making decisions. This aspect is being actively discussed in the community and some offer their solutions, for example,
 Brad Frost presents a decision tree:
 
-![](./pattern-addition-flowchart.png)<br/>
-Source: "Maintaining Design Systems" http://atomicdesign.bradfrost.com/chapter-5/
+<Image caption="Image source: Maintaining Design Systems, http://atomicdesign.bradfrost.com/chapter-5/">
+![](./pattern-addition-flowchart.png)
+</Image>
 
 Below, I show an altered version in a form of an interactive component. This is a visual illustration of what happens to a
 pattern on its way from identifying the need to actual implementation and how different the path might be depending on the

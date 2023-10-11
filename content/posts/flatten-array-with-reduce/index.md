@@ -23,9 +23,9 @@ a flat structure which probably preserves the depth of the items. In JavaScript,
 
 <div class="small" markdown="1">
 
-![](thumb.jpg)<br/>
-Image source:
-[https://macwright.org/2015/01/03/reduce-juice.html](https://macwright.org/2015/01/03/reduce-juice.html)
+<Image caption="Image source: https://macwright.org/2015/01/03/reduce-juice.html">
+![](thumb.jpg)
+</Image>
 
 </div>
 

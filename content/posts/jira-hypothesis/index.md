@@ -22,9 +22,9 @@ It may happen that default JIRA project settings or board does not fully respond
 
 <div class="small" markdown="1">
 
-![](thumb.jpg)<br/>
-Image source:
-[https://www.freepik.com/free-photos-vectors/business](https://www.freepik.com/free-photos-vectors/business)
+<Image caption="Image source: https://www.freepik.com/free-photos-vectors/business">
+![](thumb.jpg)
+</Image>
 
 </div>
 

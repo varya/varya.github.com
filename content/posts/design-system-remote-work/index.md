@@ -21,9 +21,9 @@ In these unique times, well-organized remote work becomes one of the key factors
 
 <div class="small" markdown="1">
 
-![](thumb.png)<br/>
-Image source:
-[https://medium.com/@WebdesignerDepot/2-essential-rules-for-working-with-remote-clients-e7e289a6cb3d](https://medium.com/@WebdesignerDepot/2-essential-rules-for-working-with-remote-clients-e7e289a6cb3d)
+<Image caption="Image source: https://medium.com/@WebdesignerDepot/2-essential-rules-for-working-with-remote-clients-e7e289a6cb3d">
+![](thumb.png)
+</Image>
 
 </div>
 

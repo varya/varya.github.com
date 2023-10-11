@@ -27,9 +27,9 @@ pattern is very common for the modern Internet platforms.
 
 <div class="small" markdown="1">
 
-![](thumb.jpg)<br/>
-Image source:
-[http://www.acc-group.co.uk/cloud-computing-businesses-taking-business-applications-cloud/](http://www.acc-group.co.uk/cloud-computing-businesses-taking-business-applications-cloud/)
+<Image caption="Image source: http://www.acc-group.co.uk/cloud-computing-businesses-taking-business-applications-cloud/">
+![](thumb.jpg)
+</Image>
 
 </div>
 

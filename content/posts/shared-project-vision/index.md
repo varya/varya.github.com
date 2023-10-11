@@ -34,9 +34,9 @@ to complete them. But we made it extended in time, and this had a special meanin
 Our team is 4 people, and we worked on 3 exercises in pairs. Such combination made it
 possible that every team member works with each and every of their fellows.
 
+<Image caption="Image source: https://www.africanbusinessreview.co.za/the-best-outdoor-team-building-activities.html">
 ![](./team.jpeg)
-
-Image source: https://www.africanbusinessreview.co.za/the-best-outdoor-team-building-activities.html
+</Image>
 
 The pair combinations were as the following:
 
