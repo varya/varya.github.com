@@ -71,8 +71,8 @@ const IndexPage = () => {
       </ImageBlock>
       <Paragraph size="large" standout lead>
         Currently, my focus is on bringing design systems to the next level of
-        success, which includes working cooperatively with a company&apos;s
-        development community and bridging the gap between designers,
+        success, which includes working cooperatively with a client company&apos;s
+        design & development community and bridging the gap between designers,
         developers, and business specialists.
       </Paragraph>
 
