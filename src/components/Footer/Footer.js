@@ -60,7 +60,7 @@ const Footer = () => {
             gap="large"
           >
             <Paragraph size="small">
-              You can hire me to set up, manage, develop, and champion your
+              You can hire me and the whole <a href="https://bridge-the-gap.dev/">Bridge-the-Gap team</a> to set up, manage, develop, and champion your
               design system. I can align the design and development processes in
               your organisation for a larger business impact.
             </Paragraph>
