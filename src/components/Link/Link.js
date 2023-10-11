@@ -29,6 +29,13 @@ const AnchorWithoutStyle = styled.div`
   }
 `;
 
+const StyledWrapper = styled.span`
+  span {
+    padding-right: 1em;
+    margin-right: -1em;
+  }
+`;
+
 const StyledLink = ({ unstyled, ...props }) =>
   unstyled ? <AnchorWithoutStyle {...props} /> : <Anchor {...props} />;
 
@@ -52,7 +59,9 @@ const Link = ({ children, to, activeClassName, partiallyActive, ...other }) => {
     </StyledLink>
   ) : (
     <StyledLink as="a" href={to} target="_blank" rel="noopener" {...other}>
-      {children}
+      <StyledWrapper>
+        {children}
+      </StyledWrapper>
     </StyledLink>
   );
 };
