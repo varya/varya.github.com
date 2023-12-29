@@ -14,6 +14,8 @@ import {
   WidgetMulti,
 } from "@components";
 
+import yaraLogo from "../images/png/yara-logo.png";
+import fSecureLogo from "../images/png/f-secure-logo.png";
 import appomniLogo from "../images/png/appomni-logo.png";
 import bemLogo from "../images/png/bem-logo-margin.png";
 import bfLogo from "../images/png/bf-logo-margin.png";
@@ -304,6 +306,36 @@ const IndexPage = () => {
       </Section>
       <Section heading="Projects">
         <WidgetContainer items={{ small: 1, medium: 3, large: 3 }}>
+        <Widget
+            margin={{ bottom: "medium" }}
+            direction="column"
+            imageSrc={yaraLogo}
+            slug="/projects/yara/"
+          >
+            <Heading
+              textAlign="center"
+              fill
+              level={3}
+              style={{ marginTop: "0em" }}
+            >
+              Yara International Design System
+            </Heading>
+          </Widget>
+          <Widget
+            margin={{ bottom: "medium" }}
+            direction="column"
+            imageSrc={fSecureLogo}
+            slug="/projects/f-secure-ds-strategy/"
+          >
+            <Heading
+              textAlign="center"
+              fill
+              level={3}
+              style={{ marginTop: "2em" }}
+            >
+              F-Secure's Design System Strategy
+            </Heading>
+          </Widget>
           <Widget
             margin={{ bottom: "medium" }}
             direction="column"
@@ -314,7 +346,7 @@ const IndexPage = () => {
               textAlign="center"
               fill
               level={3}
-              style={{ marginTop: "1.75em" }}
+              style={{ marginTop: "1em" }}
             >
               Design System at METRO
             </Heading>
@@ -335,7 +367,10 @@ const IndexPage = () => {
             imageSrc={elisaLogo}
             slug="/projects/elisa-renewal/"
           >
-            <Heading textAlign="center" fill level={3}>
+            <Heading
+              textAlign="center" fill level={3}
+              style={{ marginTop: "-0.5em" }}
+              >
               Design System at Elisa
             </Heading>
           </Widget>
@@ -345,7 +380,10 @@ const IndexPage = () => {
             imageSrc={bfLogo}
             slug="/projects/business-finland/"
           >
-            <Heading textAlign="center" fill level={3}>
+            <Heading
+              textAlign="center" fill level={3}
+              style={{ marginTop: "0" }}
+              >
               Business Finland Design System
             </Heading>
           </Widget>
