@@ -1,0 +1,1 @@
+{"version":3,"file":"component---src-pages-design-systems-js-b1ffffe436b56f2fb72b.js","mappings":"+HAGA,UAAeA,EAAK,O","sources":["webpack://varya.me/./src/pages/design-systems.js"],"sourcesContent":["import Index from \"./\";\n\n// keep copy of index page at design-systems path\nexport default Index;\n"],"names":["Index"],"sourceRoot":""}
