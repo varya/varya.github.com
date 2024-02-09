@@ -344,10 +344,10 @@ To ensure objectivity when processing the codes, the sticky notes were randomly 
 ![img](./pool-fragment.png)
 </Image>
 
-According to the mentos of grounded theory, the codes were grouped into the themes and the themes were arranged into the theme groups by the topic they belong to. Altogether, there were 8 theme groups of 3 to 18 themes in them (Figure 10).
+According to the methods of grounded theory, the codes were grouped into the themes and the themes were arranged into the theme groups by the topic they belong to. Altogether, there were 8 theme groups of 3 to 18 themes in them (Figure 10).
 
 <Image caption="Figure 10: The emerged themes assembled into theme groups.">
-![img](./theme-groups/png)
+![img](./theme-groups.png)
 </Image>
 
 The further analysis was conducted onto the 4 the most relevant theme groups:
@@ -366,7 +366,7 @@ _Feature flow_ contained only the codes that describe the process. The codes ins
 The codes that provide information on how different methods of doing work play for the process efficiency etc — they are processed aside, in the next group of themes that was called _Changes in the workflow_. Its themes described the impact that using a design system makes on different stages of the flow. Visually it was presented the way that the “impact” themes were placed under the “workflow” themes in accordance to what part of the flow they describe (Figure 12).
 
 <Image caption="Figure 12: The themes that describe the workflow and the themes that describe the impact made on the sub-process level.">
-![img](./flow-and-impact/.png)
+![img](./flow-and-impact.png)
 </Image>
 
 Some of the emerged themes described the impact of design systems in global context, without specifying to what particular stage of the process is affected. Such themes were grouped under the name “Global design system impact”. The themes that described the traditional design and development process and its pain points were grouped as describing the challenges that arise in the case of not using a design system.
