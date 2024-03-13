@@ -14,12 +14,12 @@ const talks = [
     In this talk, my colleague Daniel and I take the audience on a deep dive into
     harnessing the power of data to effectively manage a design system.
     We show how data is collected through GitHub API,
-    reveal a real-world dashboard, albeit anonymized, that serves as the core tool
+    reveal a real-world dashboard that serves as the core tool
     for data analysis. We further explore how the design system is used, the extent
     of adoption, and the insights gained from this data, enabling design teams to
-    proactively address user needs. Notably, we point how analyzing data on a daily
+    proactively address user needs. We point how analyzing data on a daily
     basis can become a routine that ultimately leads to the development of meaningful KPIs.
-    The talk culminates with a glimpse into how design system teams can communicate value
+    The talk underlines how design system teams can communicate value
     to business stakeholders by assessing the resources saved through the design system’s use.
    `,
     links: {
