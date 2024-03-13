@@ -15,6 +15,8 @@ In the digital age, effective collaboration is the backbone of any successful pr
 
 </div>
 
+![](cover.jpg)
+
 ### Why Use a Company Email with GitHub?
 
 Imagine you're working on a project for a company. To maintain a unified front and ensure seamless collaboration, it's practical to use an email address under the company's domain for all project-related correspondence. It is also logical to sign your commits with the company email.
