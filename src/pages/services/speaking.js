@@ -58,7 +58,12 @@ const talks = [
   },
   {
     title: "Design system: from bookkeeping to championing",
-    description: `How an impact measuring tool turned into a stakeholder management system.`,
+    description: `How a simple impact measuring tool
+    turned into a comprehensive stakeholder management system for design teams.
+    I share about the challenges and opportunities I faced along the way, and
+    share insights and lessons learned from my journey. By the end of this
+    presentation, you'll have a better understanding of the role of design
+    systems in modern organizations and how to leverage them to drive success`,
     links: {
       Slides: "https://varya.me/into-design-systems-2021/",
       "Into Design Systems #1 2021": "https://intodesignsystems.com/",
