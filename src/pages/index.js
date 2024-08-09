@@ -73,9 +73,9 @@ const IndexPage = () => {
       </ImageBlock>
       <Paragraph size="large" standout lead>
         Currently, my focus is on bringing design systems to the next level of
-        success, which includes working cooperatively with a client company&apos;s
-        design & development community and bridging the gap between designers,
-        developers, and business specialists.
+        success, which includes working cooperatively with a client
+        company&apos;s design & development community and bridging the gap
+        between designers, developers, and business specialists.
       </Paragraph>
 
       {/* <Workshop /> */}
@@ -234,6 +234,59 @@ const IndexPage = () => {
         </Paragraph>
         <WidgetContainer>
           <WidgetMulti
+            background="brand"
+            title="From Survival to Growth: Enhancing Design Systems via Seamless Collaboration"
+            height="auto"
+            links={{
+              Slides:
+                "https://bridge-the-gap.dev/static/talks/into-ds-2024/from-survival-to-growth-design-systems-collaboration.pdf",
+              // Video: "https://www.youtube.com/watch?v=XRHe3rCqTT4",
+            }}
+            excerpt="This talk explores how effective collaboration can transform design systems from basic tools into vital products within organizations. My colleague Irina and I are sharing insights from their research and experience, offering practical strategies for enhancing collaboration with stakeholders and across teams. We stress the importance of treating the design system as a product in its own right. The presentation is packed with real-world examples, practical advice, and innovative ideas."
+          />
+          <WidgetMulti
+            background="neutral"
+            title="Define your Rock-Solid Design System Components"
+            height="auto"
+            links={{
+              Post: "https://bridge-the-gap.dev/blog/design-system-define-components",
+            }}
+            excerpt="This article discusses the importance of clearly defining components in a design system to ensure smooth collaboration between designers and developers. The process involves thorough research, detailed blueprints, and team discussions to create components that are visually consistent, functionally strong, and easy to maintain. By investing time upfront in defining components, teams can enhance communication, accelerate development, and build reliable, scalable products. This approach also supports Test-Driven Development, ensuring components meet high standards from the outset."
+          />
+          <WidgetMulti
+            background="accent"
+            title="Data-Driven Design System Management"
+            height="auto"
+            links={{
+              Slides:
+                "https://app.pitch.com/app/presentation/0129222e-f298-4492-a00b-7705ae85c17e/3899f1a0-cd01-45b5-baab-51cc83fab3e7",
+              Video: "https://www.youtube.com/watch?v=XRHe3rCqTT4",
+            }}
+            excerpt="In this talk, my colleague Daniel and I take the audience on a deep dive into
+    harnessing the power of data to effectively manage a design system.
+    We show how data is collected through GitHub API,
+    reveal a real-world dashboard that serves as the core tool
+    for data analysis. We further explore how the design system is used, the extent
+    of adoption, and the insights gained from this data, enabling design teams to
+    proactively address user needs. We point how analyzing data on a daily
+    basis can become a routine that ultimately leads to the development of meaningful KPIs.
+    The talk underlines how design system teams can communicate value
+    to business stakeholders by assessing the resources saved through the design system’s use."
+          />
+          <WidgetMulti
+            background="brand"
+            title="Increasing Design System Quality and Adoption by Proper Stakeholder Management"
+            height="auto"
+            links={{
+              Slides: "https://varya.me/devtalks-2021/",
+              Video: "https://youtu.be/8u032Qq4aV4",
+            }}
+            excerpt="Let's talk about stakeholder management when building and maintaining design systems.
+    Through the whole design system workflow, its team communicates to the people across
+    the whole company: designers and developers, product managers, and business people.
+    I am sharing how we, the design system techies, might make these people happy."
+          />
+          <WidgetMulti
             background="neutral"
             title="Design system: from bookkeeping to championing"
             height="auto"
@@ -306,7 +359,7 @@ const IndexPage = () => {
       </Section>
       <Section heading="Projects">
         <WidgetContainer items={{ small: 1, medium: 3, large: 3 }}>
-        <Widget
+          <Widget
             margin={{ bottom: "medium" }}
             direction="column"
             imageSrc={yaraLogo}
@@ -368,9 +421,11 @@ const IndexPage = () => {
             slug="/projects/elisa-renewal/"
           >
             <Heading
-              textAlign="center" fill level={3}
+              textAlign="center"
+              fill
+              level={3}
               style={{ marginTop: "-0.5em" }}
-              >
+            >
               Design System at Elisa
             </Heading>
           </Widget>
@@ -381,9 +436,11 @@ const IndexPage = () => {
             slug="/projects/business-finland/"
           >
             <Heading
-              textAlign="center" fill level={3}
+              textAlign="center"
+              fill
+              level={3}
               style={{ marginTop: "0" }}
-              >
+            >
               Business Finland Design System
             </Heading>
           </Widget>

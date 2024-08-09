@@ -9,6 +9,18 @@ import heroImage from "./hero-speaking.jpg";
 
 const talks = [
   {
+    title:
+      "From Survival to Growth: Enhancing Design Systems via Seamless Collaboration",
+    description: `
+    This talk explores how effective collaboration can transform design systems from basic tools into vital products within organizations. My colleague Irina and I are sharing insights from their research and experience, offering practical strategies for enhancing collaboration with stakeholders and across teams. We stress the importance of treating the design system as a product in its own right. The presentation is packed with real-world examples, practical advice, and innovative ideas. 
+   `,
+    links: {
+      Slides:
+        "https://bridge-the-gap.dev/static/talks/into-ds-2024/from-survival-to-growth-design-systems-collaboration.pdf",
+      // Video: "https://www.youtube.com/watch?v=XRHe3rCqTT4",
+    },
+  },
+  {
     title: "Data-Driven Design System Management",
     description: `
     In this talk, my colleague Daniel and I take the audience on a deep dive into
@@ -25,7 +37,7 @@ const talks = [
     links: {
       Slides:
         "https://app.pitch.com/app/presentation/0129222e-f298-4492-a00b-7705ae85c17e/3899f1a0-cd01-45b5-baab-51cc83fab3e7",
-      // Video: "https://youtu.be/8u032Qq4aV4",
+      Video: "https://www.youtube.com/watch?v=XRHe3rCqTT4",
     },
   },
   {
@@ -64,7 +76,7 @@ const talks = [
     explore the blend of coding and design from my perspective!`,
     links: {
       "Product Bakery": "https://www.product-bakery.com/episodes/design-system",
-      "Spotify": "https://open.spotify.com/episode/6Y4P3Kthhkazim0K720H4Y",
+      Spotify: "https://open.spotify.com/episode/6Y4P3Kthhkazim0K720H4Y",
     },
   },
   {
