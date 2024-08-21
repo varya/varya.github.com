@@ -275,6 +275,16 @@ const IndexPage = () => {
           />
           <WidgetMulti
             background="brand"
+            title="The complete design system: what and how we could learn from the others"
+            height="brand"
+            links={{
+              Slides: "https://miro.com/app/board/uXjVPXCoofw=/",
+              Video: "https://www.youtube.com/watch?v=oFj2aLxDaTs",
+            }}
+            excerpt="Benchmarking is one of the recommended practices when you are looking for what could be the next steps for your design system. But there are so many design systems, and they are very much different — it is confusing what should be the standard to benchmark with. Varya has studied dozens of design systems and committed reversive analysis on their features and attributes. This talk sheds light on the method and the results that help make strategic product decisions and suggest specific implementation approaches."
+          />
+          <WidgetMulti
+            background="neutral"
             title="Increasing Design System Quality and Adoption by Proper Stakeholder Management"
             height="auto"
             links={{
@@ -287,7 +297,7 @@ const IndexPage = () => {
     I am sharing how we, the design system techies, might make these people happy."
           />
           <WidgetMulti
-            background="neutral"
+            background="accent"
             title="Design system: from bookkeeping to championing"
             height="auto"
             links={{
@@ -302,7 +312,7 @@ const IndexPage = () => {
             systems in modern organizations and how to leverage them to drive success."
           />
           <WidgetMulti
-            background="accent"
+            background="brand"
             title="Building Your Design System Infrastructure — A Practical Guide"
             height="auto"
             links={{
@@ -318,7 +328,7 @@ const IndexPage = () => {
              in your system, and support collaboration within your organization."
           />
           <WidgetMulti
-            background="brand"
+            background="neutral"
             title="Design Thinking for Maintaining a Successful Design System — The Importance of User Research"
             links={{
               "Read on Medium":
@@ -332,7 +342,7 @@ const IndexPage = () => {
             the benefits of this approach."
           />
           <WidgetMulti
-            background="neutral"
+            background="accent"
             title="Building a Successful Design System — Tips and Strategies for Leveraging Your Designers, Developers, and Products"
             links={{
               "See Slides": "https://varya.me/design-systems-thinking/",
@@ -344,7 +354,7 @@ const IndexPage = () => {
             and technical tips that can help your organization build a successful design system."
           />
           <WidgetMulti
-            background="accent"
+            background="brand"
             title="Design Systems Vocabulary — A Review of Key Terms and Concepts"
             links={{ "Read in my blog": "/blog/design-systems-review/" }}
             excerpt="Design systems are a powerful tool for standardizing and simplifying
