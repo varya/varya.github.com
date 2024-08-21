@@ -42,6 +42,18 @@ const talks = [
   },
   {
     title:
+      "The complete design system: what and how we could learn from the others",
+    description: `
+    Benchmarking is one of the recommended practices when you are looking for what could be the next steps for your design system. But there are so many design systems, and they are very much different — it is confusing what should be the standard to benchmark with. Varya has studied dozens of design systems and committed reversive analysis on their features and attributes. This talk sheds light on the method and the results that help make strategic product decisions and suggest specific implementation approaches.
+    `,
+    links: {
+      "Miro/Slides": "https://miro.com/app/board/uXjVPXCoofw=/",
+      Video: "https://www.youtube.com/watch?v=oFj2aLxDaTs",
+      Sketch: "https://api.react-finland.fi/media/drawings/2022/varya.png",
+    },
+  },
+  {
+    title:
       "Increasing Design System Quality and Adoption by Proper Stakeholder Management",
     description: `
     Let's talk about stakeholder management when building and maintaining design systems.
