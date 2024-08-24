@@ -1,1 +1,1 @@
-export { default } from "./Seo";
+export { default, SeoImage } from "./Seo";

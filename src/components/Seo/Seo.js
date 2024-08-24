@@ -4,6 +4,16 @@ import PropTypes from "prop-types";
 import config from "@content/meta/config";
 import Helmet from "react-helmet";
 
+const getImageUrl = ({ data, cover }) => {
+  const pageCover = ((data || {}).frontmatter || {}).cover;
+  const image =
+    pageCover && pageCover.childImageSharp
+      ? pageCover.childImageSharp.gatsbyImageData
+      : cover || config.siteImage;
+
+  return config.siteUrl + image;
+};
+
 const Seo = ({ data, title, description, keywords, cover, location }) => {
   const pageTitle = ((data || {}).frontmatter || {}).title;
   const dataDescription =
@@ -27,11 +37,7 @@ const Seo = ({ data, title, description, keywords, cover, location }) => {
     fullTitle = title;
   }
 
-  const image = pageCover && pageCover.childImageSharp
-    ? pageCover.childImageSharp.gatsbyImageData
-    : cover || config.siteImage;
-
-  const imageUrl = config.siteUrl + image;
+  const imageUrl = getImageUrl({ data, cover });
   const url = config.siteUrl + "/" + config.pathPrefix + pageSlug;
 
   const pageKeywords = keywords || config.defaultKeywords;
@@ -90,3 +96,16 @@ Seo.propTypes = {
 };
 
 export default Seo;
+
+export const SeoImage = ({ data, cover }) => {
+  const imageUrl = getImageUrl({ data, cover });
+  return (
+    <img
+      src={imageUrl}
+      width="0"
+      height="0"
+      alt="Preview image"
+      aria-hidden="true"
+    />
+  );
+};
