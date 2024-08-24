@@ -4,13 +4,14 @@ import PropTypes from "prop-types";
 import { Box } from "grommet";
 import { Hero } from "@components";
 import { Layout } from "@components";
-import { Seo } from "@components";
+import { Seo, SeoImage } from "@components";
 
 export const Page = (props) => {
   const { children, hero, seo, location } = props;
   const { props: heroProps, content } = { ...hero };
   return (
     <Layout location={location}>
+      <SeoImage {...seo} />
       {seo && <Seo {...seo} location={location} defer={false} />}
       {hero && (
         <Hero align="center" justify="between" {...heroProps}>

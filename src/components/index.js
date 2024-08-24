@@ -22,6 +22,7 @@ export { default as PrevNextNav } from "./PrevNextNav";
 export { default as ProjectRoles } from "./ProjectRoles";
 export { default as Section } from "./Section";
 export { default as Seo } from "./Seo";
+export { SeoImage } from "./Seo";
 export { default as SocialLinks } from "./SocialLinks";
 export { default as Step } from "./Step";
 export { default as Timetable } from "./Timetable";
