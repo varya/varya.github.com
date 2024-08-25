@@ -39,6 +39,7 @@ const Contact = () => (
     seo={{
       title: "Contact - Varya Stepanova, design systems expert",
       description: `Get in touch to discuss our next project`,
+      cover: "/preview/contact.jpg",
     }}
   >
     <Paragraph>

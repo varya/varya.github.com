@@ -44,6 +44,7 @@ const Blog = ({ data, pageContext }) => {
           seo={{
             title: "Blog - Varya Stepanova, design systems expert",
             description: `Read my articles and notes on design systems and development`,
+            cover: "/preview/blog.jpg",
           }}
         >
           <WidgetContainer>
