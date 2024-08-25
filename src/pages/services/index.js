@@ -62,6 +62,7 @@ const Services = ({ location }) => {
         description: `Independent consultant open for new projects.
           My roles include team leading of the design systems projects, technical
           leadership in frontend and building development.`,
+        cover: "/preview/services.jpg",
       }}
       location={location}
     >

@@ -32,6 +32,7 @@ const Projects = ({ data }) => {
       seo={{
         title: "Projects",
         description: `My recent works`,
+        cover: "/preview/projects.jpg",
       }}
     >
       <WidgetContainer items={{ small: 1, medium: 2, large: 2 }}>

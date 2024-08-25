@@ -15,6 +15,7 @@ const config = {
       appId: process.env.FB_APP_ID ? process.env.FB_APP_ID : "",
     },
     author: "Varya Stepanova",
+    image: "/preview.jpg",
   },
   plugins: [
     {
