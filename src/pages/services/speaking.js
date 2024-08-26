@@ -319,12 +319,11 @@ const Speaking = ({ location }) => (
       content: HeroContent,
     }}
     seo={{
-      title: "Speaking at conferences — Varya Stepanova",
-      description: `If you would like me to speak at your conference, give a
-      workshop or participate in a panel discussion, I will be more than happy to do it.
-      Find below the list of my talks.
+      title:
+        "Insightful Talks and Knowledge Base on Design Systems by Varya Stepanova",
+      description: `Discover a collection of insightful talks by Varya Stepanova on design systems, frontend development, and engineering management. Explore a rich knowledge base, and consider inviting Varya to share her expertise at your next conference or event.
       `,
-      cover: heroImage,
+      cover: "/preview/talks.jpg",
       keywords: [
         "design systems talk",
         "design systems presentation",
