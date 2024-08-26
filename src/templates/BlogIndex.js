@@ -42,8 +42,9 @@ const Blog = ({ data, pageContext }) => {
             content: HeroContent,
           }}
           seo={{
-            title: "Blog - Varya Stepanova, design systems expert",
-            description: `Read my articles and notes on design systems and development`,
+            title:
+              "Design Systems, Frontend Development, and Team Collaboration Blog by Varya Stepanova",
+            description: `Explore Varya Stepanova's blog for expert insights on design systems, frontend development, engineering, and team collaboration. Stay updated on best practices, emerging trends, and strategies to optimize workflows, enhance system architecture, and drive team success.`,
             cover: "/preview/blog.jpg",
           }}
         >

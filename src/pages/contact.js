@@ -37,8 +37,9 @@ const Contact = () => (
   <Page
     hero={{ props: { background: "light-8" }, content: HeroContent }}
     seo={{
-      title: "Contact - Varya Stepanova, design systems expert",
-      description: `Get in touch to discuss our next project`,
+      title:
+        "Contact Varya Stepanova: Expert in Design Systems, Frontend Development, and Engineering Management",
+      description: `Get in touch with Varya Stepanova for expert consultation on design systems, frontend development, and engineering management. Whether you need advice, collaboration, or custom solutions, Varya is ready to assist with your project needs.`,
       cover: "/preview/contact.jpg",
     }}
   >

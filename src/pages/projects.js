@@ -30,8 +30,9 @@ const Projects = ({ data }) => {
         content: HeroContent,
       }}
       seo={{
-        title: "Projects",
-        description: `My recent works`,
+        title:
+          "Portfolio of Design Systems Projects: Tailored Solutions by Varya Stepanova",
+        description: `Explore Varya Stepanova's portfolio of design systems projects, showcasing her expertise in creating, enhancing, and managing scalable systems across various industries. See how Varya's tailored solutions drive innovation, efficiency, and seamless collaboration.`,
         cover: "/preview/projects.jpg",
       }}
     >
