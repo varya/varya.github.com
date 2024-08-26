@@ -58,10 +58,8 @@ const Services = ({ location }) => {
       }}
       seo={{
         title:
-          "Varya Stepanova — design systems architect and engineering manager",
-        description: `Independent consultant open for new projects.
-          My roles include team leading of the design systems projects, technical
-          leadership in frontend and building development.`,
+          "Design Systems Services: Expert Architecture, Management, and Consultation by Varya Stepanova",
+        description: `Varya Stepanova elevates your design system with expert services, including audits, streamlined processes, team management, and scalable architecture development. Whether you need to start or enhance your design system, Varya guides you every step of the way.`,
         cover: "/preview/services.jpg",
       }}
       location={location}
