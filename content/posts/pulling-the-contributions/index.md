@@ -11,7 +11,7 @@ meta:
 
 <div data-excerpt>
 
-Design systems play a crucial role in ensuring consistency and efficiency in product development. They provide a centralized repository of components, guidelines, and best practices that can be reused across projects. However, creating and maintaining a design system is not a one-person job and requires collaboration from multiple teams, including product development teams. One challenge in this process is how to effectively involve product teams in the contribution of components and updates to the design system.
+Design systems play a crucial role in ensuring consistency and efficiency in product development. They provide a centralized repository of components, guidelines, and best practices that can be reused across projects. However, creating and maintaining a design system is not a one-person job and requires collaboration from multiple teams, including product development teams. One challenge in this process is determining how to effectively involve product teams in the contribution of components and updates to the design system.
 
 </div>
 
@@ -23,9 +23,9 @@ The self-contribution model is based on the idea that product teams build compon
 
 First, the model doesn't scale well. It assumes that product teams will have the time and motivation to contribute to the design system, but in reality, it's rare to have more than one or two enthusiastic contributors. This can lead to a lack of diversity in components and a slow pace of updates to the design system.
 
-Second, the requirements of components in the design system are often different from those of individual projects. Design system components need to fulfill more requirements, such as accessibility, performance, and scalability, to ensure consistency across products. On the other hand, components in individual projects may prioritize different requirements, such as unique branding or functionalities. This can create a disconnect between the design system and product development teams and demotivate product developers from contributing.
+Second, the requirements of components in the design system are often different from those of individual projects. Design system components need to fulfill more requirements, such as accessibility, performance, and scalability, to ensure consistency across products. Meanwhile, components in individual projects may prioritize different requirements, such as unique branding or functionalities. This can create a disconnect between the design system and product development teams and demotivate product developers from contributing.
 
-Finally, product development teams may not have the necessary skills and resources to contribute to the design system. They may lack the understanding of design system components and guidelines, or they may not have the tools and processes to integrate their components into the design system.
+Finally, product development teams may not have the necessary skills and resources to contribute to the design system. They may lack an understanding of design system components and guidelines, or they may not have the tools and processes to integrate their components into the design system.
 
 #### Pros:
 
