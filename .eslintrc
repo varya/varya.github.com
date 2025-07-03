@@ -5,7 +5,13 @@
     "commonjs": true,
     "es6": true
   },
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  },
   "ignorePatterns": ["public", ".cache", "node_modules", "src/libs"],
   "rules": {
     "strict": 0,
