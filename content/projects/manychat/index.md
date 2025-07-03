@@ -1,6 +1,6 @@
 ---
 title: Manychat Design System
-date: 2024-12-31
+date: 2025-06-30
 description: >
   Revamped Manychat's design system through extensive component architecture and documentation upgrades. The project delivered 16 new React components, accessibility-driven refactoring, Storybook 8 migration, and established a strong design system community. The collaboration between Bridge the Gap and Manychat's team resulted in a scalable foundation for form elements and an improved developer experience through ultra-defined components.
 ---
@@ -56,3 +56,5 @@ Our team was:
 Our work enhanced Manychat's design system, introducing new components, improving accessibility, and establishing robust processes for ongoing system development and maintenance. By focusing on thorough research, collaborative definition, and quality implementation, we not only delivered immediate improvements but also set a foundation for sustainable design system growth at Manychat.
 
 This project showcases [Bridge-the-Gap](https://bridge-the-gap.dev/)'s ability to seamlessly integrate with existing teams, provide high-quality development support, and implement best practices in design system management.
+
+Read the [Building Better Together — The Revamp of Manychat’s Design System](https://bridge-the-gap.dev/blog/manychat-design-system/) article to learn more about the project, including technical details.
