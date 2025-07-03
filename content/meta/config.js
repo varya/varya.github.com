@@ -18,8 +18,8 @@ module.exports = {
   authorName: "Varya Stepanova",
   authorTwitterAccount: "varya_en",
   // manifest.json
-  manifestName: "HeroBlog - a GatsbyJS starter",
-  manifestShortName: "HeroBlog", // max 12 characters
+  manifestName: "Varya.me — design and development",
+  manifestShortName: "Varya Stepanova", // max 12 characters
   manifestStartUrl: "/index.html",
   manifestBackgroundColor: "white",
   manifestThemeColor: "#666",
