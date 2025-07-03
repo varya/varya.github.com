@@ -12,49 +12,46 @@ layout: post
 Как и обещала, фото из университета. Это мастерская в Design Factory Aalto. Ещё не уверена, для чего все это
 оборудование, но скоро узнаю.
 
-<a href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648236?page=0" target="_blank"><img
-src="https://img-fotki.yandex.ru/get/897139/14441195.52/0_9e42c_d7c386f9_L.jpg" width="375" height="500"
-border="0"/></a>
+<YandexImage
+  src="https://img-fotki.yandex.ru/get/897139/14441195.52/0_9e42c_d7c386f9_L.jpg"
+  width="375"
+  height="500"
+  href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648236?page=0"
+/>
 
 <excerpt/>
 
 Студенты в Финляндии получают в подтверждение специальную карточку. Она либо пластиковая, либо как приложение в телефоне, и
 даёт много скидок. Это хорошее подспорье в студенческой жизни.
 
-<a href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648235?page=0" target="_blank"><img
-src="https://img-fotki.yandex.ru/get/898391/14441195.52/0_9e42b_2c796e1e_L.jpg" width="282" height="500"
-border="0"/></a>
+<YandexImage
+  src="https://img-fotki.yandex.ru/get/898391/14441195.52/0_9e42b_2c796e1e_L.jpg"
+  width="282"
+  height="500"
+  href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648235?page=0"
+/>
 
 # Транспорт
 
 Таймхоп напомнил. Да, у нас в автобусах есть USB розетки, и пассажиры могут заряжать телефоны. Во время покемоно-истерии
 было очень удобно ездить и ловить их.
 
-<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="7" style=" background:#FFF; border:0;
-border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px;
-padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div Style="padding:8px;"> <div
-style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div
-style="
-background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC);
-display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style="
-margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/BJkCrNdhV3c/" style=" color:#000;
-font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;
-text-decoration:none; word-wrap:break-word;" target="_blank">Helsinki has an ambitious program to make owning a car
-useless in 10 years. Every single detail serves this purpose. This month, the route from my area to the city center got
-new busses with USB sockets. And I guess there are many other things to discover :-)</a></p> <p style=" color:#c9c8cd;
-font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden;
-padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A post shared by Varya Stepanova
-(@toivonens) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;"
-datetime="2016-08-26T07:14:50+00:00">Aug 26, 2016 at 12:14am PDT</time></p></div></blockquote> <script async defer
-src="//platform.instagram.com/en_US/embeds.js"></script>
+<Instagram id="BJkCrNdhV3c" />
 
 ### Транспортный лайфхак :-)
 
-<a href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648233?page=0" target="_blank"><img
-src="https://img-fotki.yandex.ru/get/893753/14441195.52/0_9e429_aa91e53c_L.jpg" width="282" height="500"
-border="0"/></a> <a href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648234?page=0"
-target="_blank"><img src="https://img-fotki.yandex.ru/get/368754/14441195.52/0_9e42a_7b90736c_L.jpg" width="500"
-height="375" border="0"/></a>
+<YandexImage
+  src="https://img-fotki.yandex.ru/get/893753/14441195.52/0_9e429_aa91e53c_L.jpg"
+  width="282"
+  height="500"
+  href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648233?page=0"
+/>
+<YandexImage
+  src="https://img-fotki.yandex.ru/get/368754/14441195.52/0_9e42a_7b90736c_L.jpg"
+  width="500"
+  height="375"
+  href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648234?page=0"
+/>
 
 В Хельсинки, Ванта и Эспо у каждой остановки есть свой номер. Он написан на самой остановке, и его показывает
 приложение, которое строит маршруты. Очень удобно в незнакомой местности: иногда бывает, что две-три остановки стоят
@@ -138,9 +135,12 @@ Yle](https://yle.fi/uutiset/osasto/novosti/espoo_sdelaet_angliiskii_tretim_ofits
 которую никак не могут открыть, всё ещё самый большой реализованные в стране строительный проект, так что тоннель под
 морем кажется ту мач.
 
-<a href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648232?page=0" target="_blank"><img
-src="https://img-fotki.yandex.ru/get/872977/14441195.52/0_9e428_53071679_L.jpg" width="500" height="282"
-border="0"/></a>
+<YandexImage
+  src="https://img-fotki.yandex.ru/get/872977/14441195.52/0_9e428_53071679_L.jpg"
+  width="500"
+  height="282"
+  href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648232?page=0"
+/>
 
 Однако, в отличие от многих других идей, когда поговорили и забыли, разговоры про тоннель иногда вспыхивают с новой
 силой. Когда оказалось, что гиперлуп Хельсинки-Стокгольм скорее всего не полетит (да, такой проект тоже был), внимание

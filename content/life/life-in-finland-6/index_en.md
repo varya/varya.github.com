@@ -1,5 +1,5 @@
 ---
-title:  Life in Finland, part 6
+title:  Life in Finland, part 6
 
 date: 2017-10-24
 v2: true
@@ -12,49 +12,46 @@ layout: post
 As I promised, here is some university photos. This is one of the workspaces in the Design Factory of Aalto. Not sure
 what the equipment is for but I will soon learn.
 
-<a href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648236?page=0" target="_blank"><img
-src="https://img-fotki.yandex.ru/get/897139/14441195.52/0_9e42c_d7c386f9_L.jpg" width="375" height="500"
-border="0"/></a>
+<YandexImage
+  src="https://img-fotki.yandex.ru/get/897139/14441195.52/0_9e42c_d7c386f9_L.jpg"
+  width="375"
+  height="500"
+  href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648236?page=0"
+/>
 
 <excerpt/>
 
 Students in Finland get a student card. It can be physical plastic card or an application in a smartphone. With such ID,
 a student can get different discounts. It makes their life much easier :-)
 
-<a href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648235?page=0" target="_blank"><img
-src="https://img-fotki.yandex.ru/get/898391/14441195.52/0_9e42b_2c796e1e_L.jpg" width="282" height="500"
-border="0"/></a>
+<YandexImage
+  src="https://img-fotki.yandex.ru/get/898391/14441195.52/0_9e42b_2c796e1e_L.jpg"
+  width="282"
+  height="500"
+  href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648235?page=0"
+/>
 
 # Transport
 
 Timehop brought me some memories. Yes, we have busses with USB sockets and passengers can charge their devices. It was
 quite handy when catching Pokémons!
 
-<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="7" style=" background:#FFF; border:0;
-border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px;
-padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div Style="padding:8px;"> <div
-style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div
-style="
-background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC);
-display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style="
-margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/BJkCrNdhV3c/" style=" color:#000;
-font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;
-text-decoration:none; word-wrap:break-word;" target="_blank">Helsinki has an ambitious program to make owning a car
-useless in 10 years. Every single detail serves this purpose. This month, the route from my area to the city center got
-new busses with USB sockets. And I guess there are many other things to discover :-)</a></p> <p style=" color:#c9c8cd;
-font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden;
-padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A post shared by Varya Stepanova
-(@toivonens) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;"
-datetime="2016-08-26T07:14:50+00:00">Aug 26, 2016 at 12:14am PDT</time></p></div></blockquote> <script async defer
-src="//platform.instagram.com/en_US/embeds.js"></script>
+<Instagram id="BJkCrNdhV3c" />
 
 ### Transport lifehack
 
-<a href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648233?page=0" target="_blank"><img
-src="https://img-fotki.yandex.ru/get/893753/14441195.52/0_9e429_aa91e53c_L.jpg" width="282" height="500"
-border="0"/></a> <a href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648234?page=0"
-target="_blank"><img src="https://img-fotki.yandex.ru/get/368754/14441195.52/0_9e42a_7b90736c_L.jpg" width="500"
-height="375" border="0"/></a>
+<YandexImage
+  src="https://img-fotki.yandex.ru/get/893753/14441195.52/0_9e429_aa91e53c_L.jpg"
+  width="282"
+  height="500"
+  href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648233?page=0"
+/>
+<YandexImage
+  src="https://img-fotki.yandex.ru/get/368754/14441195.52/0_9e42a_7b90736c_L.jpg"
+  width="500"
+  height="375"
+  href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648234?page=0"
+/>
 
 In Helsinki, Vantaa and Espoo, every bus stop has its number. You can see it written on the table, and also you will see
 it in route planning application. It is very useful, especially in some new places. Sometimes happens that a couple of
@@ -121,15 +118,15 @@ Espoo City council has approved an ambitious plan to make English the third offi
 In a late night vote, local councilors decided by a margin of 70-4 to greenlight a sweeping future plan for the region,
 which includes provisions to give English official language status.
 
-Almost 270,000 people live in Espoo, making it Finland’s second largest city.
+Almost 270,000 people live in Espoo, making it Finland's second largest city.
 
-“We cannot make it an official language of Finland, but to my knowledge this is the first city in the country taking a
-decision like this, to make English an official language” says Markku Markkula (NCP), Chair of the Espoo City Board.
+"We cannot make it an official language of Finland, but to my knowledge this is the first city in the country taking a
+decision like this, to make English an official language" says Markku Markkula (NCP), Chair of the Espoo City Board.
 
 The council hopes the move will help attract more international business to the region, giving it a competitive edge for
 companies who want to bring in specialist foreign workers.
 
-In practical terms, making English one of Espoo’s official languages will mean that services like local health care,
+In practical terms, making English one of Espoo's official languages will mean that services like local health care,
 local government websites and forms will all need to be available in English.
 
 Search for more infomation [at Yle
@@ -143,9 +140,12 @@ It seemed utopia just recently. There is little traffic, ferry companies will no
 cannot be opened yet is still the biggest construction project in Finland. Given this, a tunnel under the sea seems too
 much.
 
-<a href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648232?page=0" target="_blank"><img
-src="https://img-fotki.yandex.ru/get/872977/14441195.52/0_9e428_53071679_L.jpg" width="500" height="282"
-border="0"/></a>
+<YandexImage
+  src="https://img-fotki.yandex.ru/get/872977/14441195.52/0_9e428_53071679_L.jpg"
+  width="500"
+  height="282"
+  href="https://fotki.yandex.ru/next/users/toivonens/album/169023/view/648232?page=0"
+/>
 
 However, despite many other ideas when talks disappear after a while, information about the tunnel appears again and
 again. When it turned out that Hyperloop Helsinki-Stockholm (yeah, we had such a project as well) most likely will not
