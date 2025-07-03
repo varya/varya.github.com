@@ -236,6 +236,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               layout
               tags
             }
+            internal {
+              contentFilePath
+            }
           }
         }
       }
@@ -269,6 +272,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               date
               layout
               tags
+            }
+            internal {
+              contentFilePath
             }
           }
         }
@@ -354,11 +360,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Create all the old post which only need to be served t the urls, but do not need to appear in blog index.
   otherPosts.forEach(({ node }) => {
     const slug = node.fields.slug;
+    const contentFilePath = node.internal?.contentFilePath;
+
+    if (!contentFilePath) {
+      reporter.warn(`No contentFilePath found for post with slug: ${slug}`);
+      return;
+    }
 
     createPage({
       path: slug,
-      component: postTemplate,
-      // `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+      component: `${postTemplate}?__contentFilePath=${contentFilePath}`,
       context: {
         slug,
       },
