@@ -45,9 +45,7 @@ The recommended route from Helsinki region is like that:
 Helsinki — Lahti — Lappeenranta — Kitee — Niirala (cross the border here) — Lyaskelya (Läskelä) — Kolatselga (Kolatselkä) —
 Pryazha (Prääsä) — Petrozavodsk (Petroskoi).
 
-<iframe
-src="https://www.google.com/maps/embed?pb=!1m58!1m12!1m3!1d3945977.173735904!2d24.92763507997702!3d61.12398277225209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m43!3e0!4m5!1s0x46920bc796210691%3A0xcd4ebd843be2f763!2sHelsinki!3m2!1d60.1733244!2d24.941024799999997!4m5!1s0x468e2090ecf624f5%3A0x366ea5de0a7e15d7!2sNeste+Oil+Orimattila+Tuuliharja%2C+Orimattila!3m2!1d60.825630499999995!2d25.5279597!4m5!1s0x4690be3c263e712b%3A0x12804594829a161!2sABC+Viipurinportti+Lappeenranta%2C+Hirsim%C3%A4enkatu%2C+Lappeenranta!3m2!1d61.052775999999994!2d28.260175!4m5!1s0x469bc539bef430b9%3A0x40146d63c75b200!2sKitee!3m2!1d62.0984379!2d30.138004499999997!4m5!1s0x46995f4d08a2a6d3%3A0x62d9b7196c7fc150!2sNiiralan+rajanylityspaikka%2C+Tohmaj%C3%A4rvi!3m2!1d62.1719819!2d30.613665599999997!4m5!1s0x4698c269b1f5e4ff%3A0x63754189a5492f48!2sKolatselga%2C+Republic+of+Karelia%2C+Russia!3m2!1d61.678122599999995!2d32.230222!4m5!1s0x46a1ec3dd7bf1fe7%3A0xe49db0d89a0485d4!2sPetrozavodsk%2C+Republic+of+Karelia%2C+Russia!3m2!1d61.7781617!2d34.3640396!5e0!3m2!1sen!2sfi!4v1444217488751"
-width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+<Map src="https://www.google.com/maps/embed?pb=!1m58!1m12!1m3!1d3945977.173735904!2d24.92763507997702!3d61.12398277225209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m43!3e0!4m5!1s0x46920bc796210691%3A0xcd4ebd843be2f763!2sHelsinki!3m2!1d60.1733244!2d24.941024799999997!4m5!1s0x468e2090ecf624f5%3A0x366ea5de0a7e15d7!2sNeste+Oil+Orimattila+Tuuliharja%2C+Orimattila!3m2!1d60.825630499999995!2d25.5279597!4m5!1s0x4690be3c263e712b%3A0x12804594829a161!2sABC+Viipurinportti+Lappeenranta%2C+Hirsim%C3%A4enkatu%2C+Lappeenranta!3m2!1d61.052775999999994!2d28.260175!4m5!1s0x469bc539bef430b9%3A0x40146d63c75b200!2sKitee!3m2!1d62.0984379!2d30.138004499999997!4m5!1s0x46995f4d08a2a6d3%3A0x62d9b7196c7fc150!2sNiiralan+rajanylityspaikka%2C+Tohmaj%C3%A4rvi!3m2!1d62.1719819!2d30.613665599999997!4m5!1s0x4698c269b1f5e4ff%3A0x63754189a5492f48!2sKolatselga%2C+Republic+of+Karelia%2C+Russia!3m2!1d61.678122599999995!2d32.230222!4m5!1s0x46a1ec3dd7bf1fe7%3A0xe49db0d89a0485d4!2sPetrozavodsk%2C+Republic+of+Karelia%2C+Russia!3m2!1d61.7781617!2d34.3640396!5e0!3m2!1sen!2sfi!4v1444217488751" />
 
 Your navigator or Google may build another route. Do not believe them.
 
@@ -73,9 +71,7 @@ Such a long drive requires several stops. Here are the recommended:
   Kolatselga](https://www.google.fi/maps/place/61%C2%B040'43.4%22N+32%C2%B013'43.6%22E/@61.6786594,32.2283338,17z/data=!4m2!3m1!1s0x0:0x0?hl=en)<br/>
   It's not even in map, take the coordinates `[61.678716, 32.228778]`. You will have the cafe to the right side of the
   road. Don't miss. This might be your only chance to go to normal toilet before you reach Petrozavodsk. Not a joke.<br/>
-  <iframe
-  src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sfi!4v1444218993019!6m8!1m7!1sIGjS9gau7GMHZUId7w41Hg!2m2!1d61.67863099087004!2d32.2275131205651!3f175.7603285715304!4f-0.4981698847528975!5f1.9587109090973311"
-  width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+  <Map src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sfi!4v1444218993019!6m8!1m7!1sIGjS9gau7GMHZUId7w41Hg!2m2!1d61.67863099087004!2d32.2275131205651!3f175.7603285715304!4f-0.4981698847528975!5f1.9587109090973311" />
 
 ## At the border
 
@@ -127,9 +123,7 @@ That's it. You are in Russia.
 
 When arriving to Petrozavodsk, you may be suggested to go right at this point.
 
-<iframe
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30135.855822307833!2d34.181461116699225!3d61.830966848808906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNjHCsDQ5JzE3LjEiTiAzNMKwMDgnMzEuMSJF!5e0!3m2!1sen!2sfi!4v1444291359939"
-width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+<Map src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30135.855822307833!2d34.181461116699225!3d61.830966848808906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNjHCsDQ5JzE3LjEiTiAzNMKwMDgnMzEuMSJF!5e0!3m2!1sen!2sfi!4v1444291359939" />
 
 I recommend to keep driving to the big road junction and then move towards the city. Better road, you know.
 

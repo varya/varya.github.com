@@ -12,8 +12,10 @@ import {
   Hero,
   Image,
   ImageBlock,
+  Instagram,
   Layout,
   Link,
+  Map,
   Paragraph,
   PatternJourney,
   PostHeader,
@@ -26,6 +28,7 @@ import {
   Tag,
   Widget,
   WidgetContainer,
+  YandexImage,
 } from "@components";
 
 import { toKebabCase } from "../common/utils";
@@ -49,6 +52,9 @@ const globalMdxComponents = {
   Link,
   Image,
   ImageBlock,
+  Map,
+  YandexImage,
+  Instagram,
 };
 
 const _Heading = (level) => {

@@ -32,3 +32,6 @@ export { default as Widget } from "./Widget";
 export { default as WidgetContainer } from "./WidgetContainer";
 export { default as WidgetMulti } from "./WidgetMulti";
 export { default as Workshop } from "./Workshop";
+export { default as Instagram } from './4oldposts/Instagram';
+export { default as Map } from './4oldposts/Map';
+export { default as YandexImage } from './4oldposts/YandexImage';
