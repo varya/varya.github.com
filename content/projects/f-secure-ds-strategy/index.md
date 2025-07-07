@@ -1,6 +1,8 @@
 ---
 title: F-Secure's Design System Strategy
 date: 2023-06-05
+logo: ./logo.png
+feat: true
 description: >
   Exploring the collaborative journey of developing a design system strategy at F-Secure,
   highlighting the principles, roadmap, and tool recommendations aimed at fostering

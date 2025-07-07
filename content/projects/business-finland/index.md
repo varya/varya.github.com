@@ -1,6 +1,8 @@
 ---
 title: Business Finland Design System
 date: 2018-12-01
+logo: ./logo.png
+feat: true
 description: >
   A short-term but fun project that included co-creation sessions with Business Finland designers
   and managers during which the shared understanding of design systems was gained and followed

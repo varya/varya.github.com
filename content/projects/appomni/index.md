@@ -1,6 +1,8 @@
 ---
 title: AppOmni Design System
 date: 2023-03-31
+logo: ./logo.png
+feat: true
 description: >
   Transformed AppOmni's user interfaces with an innovative design system. Web Components, tokens, comprehensive documentation, and seamless integration.
 ---
