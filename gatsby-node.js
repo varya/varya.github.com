@@ -31,9 +31,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
     if (isOld) {
       const langPrefix = filePath.split("index_")[1] || "";
-      return `${langPrefix}${slugPrefix}/${slugBase}/`;
+      return `${langPrefix}${slugPrefix}/${slugBase}/`.replace(/\/+/g, '/');
     }
-    return `${slugPrefix}/${slugBase}/`;
+    return `${slugPrefix}/${slugBase}/`.replace(/\/+/g, '/');
   };
 
   if (node.internal.type === "Mdx") {
