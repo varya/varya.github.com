@@ -20,7 +20,7 @@ const HeroContent = () => (
 );
 
 const IndexPage = ({ data }) => {
-  const projects = data.projects.edges;
+  const projects = data?.projects?.edges || [];
 
   return (
     <Page
@@ -361,44 +361,46 @@ const IndexPage = ({ data }) => {
           />
         </WidgetContainer>
       </Section>
-      <Section heading="Featured Projects">
-        <WidgetContainer items={{ small: 1, medium: 3, large: 3 }}>
-          {projects.map((project, index) => {
-            const { title, logo } = project.node.frontmatter;
-            const { slug } = project.node.fields;
+      {projects.length > 0 && (
+        <Section heading="Featured Projects">
+          <WidgetContainer items={{ small: 1, medium: 3, large: 3 }}>
+            {projects.map((project, index) => {
+              const { title, logo } = project.node.frontmatter;
+              const { slug } = project.node.fields;
 
-            return (
-              <Widget
-                key={slug}
-                margin={{ bottom: "medium" }}
-                direction="column"
-                imageSrc={logo?.publicURL}
-                slug={`/${slug}`}
-              >
-                <Heading
-                  textAlign="center"
-                  fill
-                  level={3}
-                  style={{ marginTop: "0em" }}
+              return (
+                <Widget
+                  key={slug}
+                  margin={{ bottom: "medium" }}
+                  direction="column"
+                  imageSrc={logo?.publicURL}
+                  slug={`/${slug}`}
                 >
-                  {title}
-                </Heading>
-              </Widget>
-            );
-          })}
+                  <Heading
+                    textAlign="center"
+                    fill
+                    level={3}
+                    style={{ marginTop: "0em" }}
+                  >
+                    {title}
+                  </Heading>
+                </Widget>
+              );
+            })}
 
-          <Widget
-            alignContent="center"
-            justify="center"
-            slug="/projects"
-            background="brand"
-          >
-            <Heading level={3} size="large" margin={{ vertical: "auto" }}>
-              More Projects&nbsp;→
-            </Heading>
-          </Widget>
-        </WidgetContainer>
-      </Section>
+            <Widget
+              alignContent="center"
+              justify="center"
+              slug="/projects"
+              background="brand"
+            >
+              <Heading level={3} size="large" margin={{ vertical: "auto" }}>
+                More Projects&nbsp;→
+              </Heading>
+            </Widget>
+          </WidgetContainer>
+        </Section>
+      )}
     </Page>
   );
 };
