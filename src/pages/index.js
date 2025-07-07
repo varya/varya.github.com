@@ -1,4 +1,5 @@
 import * as React from "react";
+import { graphql } from "gatsby";
 
 import { Box, Text } from "grommet";
 import { Page } from "@templates/Page";
@@ -14,20 +15,13 @@ import {
   WidgetMulti,
 } from "@components";
 
-import yaraLogo from "../images/png/yara-logo.png";
-import fSecureLogo from "../images/png/f-secure-logo.png";
-import appomniLogo from "../images/png/appomni-logo.png";
-import bemLogo from "../images/png/bem-logo-margin.png";
-import bfLogo from "../images/png/bf-logo-margin.png";
-import elisaLogo from "../images/png/elisa-logo-margin.png";
-import metroLogo from "../images/png/metro-logo-margin.png";
-import yandexLogo from "../images/png/yandex-logo-margin.png";
-
 const HeroContent = () => (
   <Heading>Varya Stepanova — a design systems architect</Heading>
 );
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const projects = data.projects.edges;
+
   return (
     <Page
       hero={{
@@ -367,112 +361,31 @@ const IndexPage = () => {
           />
         </WidgetContainer>
       </Section>
-      <Section heading="Projects">
+      <Section heading="Featured Projects">
         <WidgetContainer items={{ small: 1, medium: 3, large: 3 }}>
-          <Widget
-            margin={{ bottom: "medium" }}
-            direction="column"
-            imageSrc={yaraLogo}
-            slug="/projects/yara/"
-          >
-            <Heading
-              textAlign="center"
-              fill
-              level={3}
-              style={{ marginTop: "0em" }}
-            >
-              Yara International Design System
-            </Heading>
-          </Widget>
-          <Widget
-            margin={{ bottom: "medium" }}
-            direction="column"
-            imageSrc={fSecureLogo}
-            slug="/projects/f-secure-ds-strategy/"
-          >
-            <Heading
-              textAlign="center"
-              fill
-              level={3}
-              style={{ marginTop: "2em" }}
-            >
-              F-Secure's Design System Strategy
-            </Heading>
-          </Widget>
-          <Widget
-            margin={{ bottom: "medium" }}
-            direction="column"
-            imageSrc={metroLogo}
-            slug="/projects/metro-design-system/"
-          >
-            <Heading
-              textAlign="center"
-              fill
-              level={3}
-              style={{ marginTop: "1em" }}
-            >
-              Design System at METRO
-            </Heading>
-          </Widget>
-          <Widget
-            margin={{ bottom: "medium" }}
-            direction="column"
-            imageSrc={appomniLogo}
-            slug="/projects/appomni/"
-          >
-            <Heading textAlign="center" fill level={3}>
-              Design System at AppOmni
-            </Heading>
-          </Widget>
-          <Widget
-            margin={{ bottom: "medium" }}
-            direction="column"
-            imageSrc={elisaLogo}
-            slug="/projects/elisa-renewal/"
-          >
-            <Heading
-              textAlign="center"
-              fill
-              level={3}
-              style={{ marginTop: "-0.5em" }}
-            >
-              Design System at Elisa
-            </Heading>
-          </Widget>
-          <Widget
-            margin={{ bottom: "medium" }}
-            direction="column"
-            imageSrc={bfLogo}
-            slug="/projects/business-finland/"
-          >
-            <Heading
-              textAlign="center"
-              fill
-              level={3}
-              style={{ marginTop: "0" }}
-            >
-              Business Finland Design System
-            </Heading>
-          </Widget>
-          <Widget
-            margin={{ bottom: "medium" }}
-            direction="column"
-            imageSrc={bemLogo}
-            slug="/projects/bem-project/"
-          >
-            <Heading textAlign="center" fill level={3}>
-              BEM project by Yandex
-            </Heading>
-          </Widget>
-          <Widget
-            direction="column"
-            imageSrc={yandexLogo}
-            slug="projects/lego-project"
-          >
-            <Heading textAlign="center" fill level={3}>
-              Lego Project By Yandex
-            </Heading>
-          </Widget>
+          {projects.map((project, index) => {
+            const { title, logo } = project.node.frontmatter;
+            const { slug } = project.node.fields;
+
+            return (
+              <Widget
+                key={slug}
+                margin={{ bottom: "medium" }}
+                direction="column"
+                imageSrc={logo?.publicURL}
+                slug={`/${slug}`}
+              >
+                <Heading
+                  textAlign="center"
+                  fill
+                  level={3}
+                  style={{ marginTop: "0em" }}
+                >
+                  {title}
+                </Heading>
+              </Widget>
+            );
+          })}
 
           <Widget
             alignContent="center"
@@ -491,3 +404,31 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export const pageQuery = graphql`
+  query IndexPageQuery {
+    projects: allMdx(
+      filter: {
+        internal: { contentFilePath: { regex: "//projects//" } }
+        frontmatter: { feat: { eq: true } }
+      }
+      sort: { frontmatter: { date: DESC } }
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "DD MMMM YYYY")
+            logo {
+              publicURL
+            }
+          }
+        }
+      }
+    }
+  }
+`;

@@ -1,6 +1,8 @@
 ---
 title: METRO Design System
 date: 2021-06-01
+logo: ./images/logo.png
+feat: true
 description: >
   Metro Design System is a multiperspective product for designers and developers that
   helps them create digital experience for millions of METRO customers in 22 countries.

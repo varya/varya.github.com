@@ -1,8 +1,10 @@
 ---
 title: Yara International Design System
 date: 2024-01-19
+feat: true
 description: >
   In this project, I led Bridge-the-Gap team. Together we enriched a React library with more than 10 new components and refactored many others. We also conducted an accessibility audit, devveloped new tokens structure and migrated design system documentation to Storybook@7. Key efforts included infrastructure optimization, thorough documentation overhaul, and customizing the Storybook UI based on user feedback.
+logo: ./images/logo.png
 ---
 
 My recent project for [Yara International](https://www.yara.com/) (and together with [Bridge-the-Gap](https://bridge-the-gap.dev/) team) stands as a testament to our team's ability to deliver

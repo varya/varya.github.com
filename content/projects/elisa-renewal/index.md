@@ -1,6 +1,8 @@
 ---
 title: Elisa Design System Renewal
 date: 2020-12-01
+logo: ./logo.png
+feat: true
 description: >
   Renewal of the design system at Elisa took place in the years 2020 and 2021. The
   the project included complete re-design and re-coding of 35 components and solid foundational
