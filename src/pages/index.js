@@ -16,7 +16,10 @@ import {
 } from "@components";
 
 const HeroContent = () => (
-  <Heading>Varya Stepanova — a design systems architect</Heading>
+  <>
+  <Heading>Varya Stepanova</Heading>
+  <Heading level={2} margin={{ top: "none" }}>Design Systems, Engineering, and Leadership</Heading>
+  </>
 );
 
 const IndexPage = ({ data }) => {
