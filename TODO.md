@@ -4,7 +4,7 @@ This document outlines proposed technical improvements for the varya.github.com 
 
 ## 🟢 Easy Fixes (Quick Wins)
 
-### 1. Update Node.js version in CI/CD
+### ✅ 1. Update Node.js version in CI/CD
 - **File**: `.github/workflows/cd.yml`
 - **Issue**: Using Node 18, but package.json suggests compatibility with newer versions
 - **Action**: Update to Node 20 (LTS) for better performance and security
@@ -15,11 +15,6 @@ This document outlines proposed technical improvements for the varya.github.com 
 - **Issue**: Cache key references `yarn.lock` but project uses npm
 - **Action**: Change cache key to reference `package-lock.json` or switch to yarn
 - **Effort**: 5 minutes
-
-### 3. Add package-lock.json to version control
-- **Issue**: `package-lock.json` is missing but should be committed for dependency consistency
-- **Action**: Remove from `.gitignore` and commit lock file
-- **Effort**: 2 minutes
 
 ### 4. ✅ Update manifest configuration
 - **File**: `content/meta/config.js`
