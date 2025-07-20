@@ -184,7 +184,7 @@ const config = {
           "@common": "src/common",
           "@content": "content",
         },
-        extensions: ["js"],
+        extensions: ["js", "jsx", "ts", "tsx"],
       },
     },
     "gatsby-plugin-sharp",
@@ -193,6 +193,15 @@ const config = {
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-typescript`,
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true,
+        jsxPragma: `jsx`,
+        allExtensions: true
+      }
+    },
   ],
 };
 
