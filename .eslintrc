@@ -5,12 +5,14 @@
     "commonjs": true,
     "es6": true
   },
-  "parser": "@babel/eslint-parser",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "requireConfigFile": false,
-    "babelOptions": {
-      "presets": ["@babel/preset-react"]
-    }
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json"
   },
   "ignorePatterns": ["public", ".cache", "node_modules", "src/libs"],
   "rules": {
@@ -34,21 +36,64 @@
       }
     ],
     "sort-imports": 0,
-    "import/order": 0
+    "import/order": 0,
+    // TypeScript specific rules
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    // Disable rules that conflict with TypeScript
+    "react/prop-types": 0,
+    "react/require-default-props": 0,
+    "no-unused-vars": 0,
+    "no-shadow": 0,
+    "@typescript-eslint/no-shadow": ["error"],
+    // Import extensions for TypeScript
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
   },
   "extends": [
     "airbnb",
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:markdown/recommended"
+    "plugin:markdown/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
   "settings": {
     "react": {
       "version": "detect"
     },
     "import/resolver": {
+      "typescript": {},
       "alias": [["@components", "./src/components"]]
     }
   },
-  "plugins": ["simple-import-sort"]
+  "plugins": [
+    "simple-import-sort",
+    "@typescript-eslint",
+    "import"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-undef": "off" // TypeScript handles this
+      }
+    }
+  ]
 }

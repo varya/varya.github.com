@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    // Language and Environment
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+
+    // Module Resolution
+    "baseUrl": ".",
+    "paths": {
+      "@components": ["src/components"],
+      "@components/*": ["src/components/*"],
+      "@templates/*": ["src/templates/*"],
+      "@common/*": ["src/common/*"],
+      "@libs/*": ["src/libs/*"],
+      "@images/*": ["src/images/*"]
+    },
+
+    // Type Checking
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    // Emit
+    "noEmit": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Interop Constraints
+    "isolatedModules": true,
+    "allowJs": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "src/**/*",
+    "gatsby-*.ts",
+    "gatsby-*.js",
+    "gatsby-*.mjs"
+  ],
+  "exclude": [
+    "node_modules",
+    "public",
+    ".cache",
+    "dist"
+  ]
+} 
