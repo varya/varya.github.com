@@ -33,7 +33,7 @@ layout: post
 Подчеркиваю - **xpath**.
 Т.е. внутри тега xsl:stylesheet должен быть один примерно такой шаблон:
 
-```xslt
+```xml
 <xsl:template match="/">
   <xsl:copy-of select="......."/>
 </xsl:template>
@@ -53,7 +53,7 @@ layout: post
 
 Решение следующее:
 
-```xslt
+```xml
 <xsl:template match="/">
   <items>
     <xsl:copy-of
@@ -83,7 +83,7 @@ layout: post
 
 Решение:
 
-```xslt
+```xml
 <xsl:template match="/">
   <items>
     <xsl:copy-of select="items/item[

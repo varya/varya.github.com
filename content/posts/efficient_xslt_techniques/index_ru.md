@@ -97,7 +97,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 **`data.xsl`:**
 
-```xslt
+```xml
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0"
 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
@@ -158,7 +158,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 **`header.xsl`:**
 
-```xslt
+```xml
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
@@ -178,7 +178,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 **`data.xsl`:**
 
-```xslt
+```xml
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0"
 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
@@ -220,7 +220,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 Этот способ был открыт Майклом Каем (Michael Kay) и известен как метод Кая
 (Kaysian method).
 
-```xslt
+```xml
 <xsl:variable name="intersection" select="$ns[count(.|$ns2) = count ($ns2)]"/>
 
 <xsl:variable name="set-difference" select="$ns1[count(.|$ns2) != count($ns2)]"/>
@@ -228,7 +228,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 Пример:
 
-```xslt
+```xml
 <?xml version="1.0"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:data="crane" version="1.0">
@@ -305,7 +305,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 обобщение, которое не зависит от числа узлов в исходном XML-документе и
 использует вместо этого число узлов в преобразовании:
 
-```xslt
+```xml
 <xsl:template match="TAG">
 <TABLE>
   <TR ID="@ID">
@@ -320,7 +320,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 Здесь используется количество элементов в преобразовании. Это количество будет
 значительно превышено, если мы будем проверять на разные типы узлов, например:
 
-```xslt
+```xml
 <xsl:for-each
   select="($st//node()| $st//@* | $st//namespace::*) [position() &lt;= Value]">
 ```
@@ -397,7 +397,7 @@ concat(
 
 Пример кода:
 
-```xslt
+```xml
 <?xml version="1.0"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:data="crane" version="1.0">
@@ -482,14 +482,14 @@ concat(
 Один способ найти их - это взять тех сотрудников, которые не относятся к
 департаменту из множества департаментов предыдущих сотрудников.
 
-```xslt
+```xml
 employee[not(department = preceding-sibling::employee/department)]
 ```
 
 Определив таких сотрудников, легко найти их департаменты и собрать вместе всех
 сотрудников из одного и того же департамента:
 
-```xslt
+```xml
 <xsl:apply-template
   select="data/employee[department = current()/department]"/>
 ```
@@ -516,7 +516,7 @@ employee[not(department = preceding-sibling::employee/department)]
 сгруппировать должны быть подставлены в атрибут "match". Значение ключа, которые
 мы хотим использовать записывается в атрибут "use".
 
-```xslt
+```xml
 <xsl:key name="employees-by-department" match="employee" use="department"/>
 ```
 
@@ -540,7 +540,7 @@ employee[not(department = preceding-sibling::employee/department)]
 - Сравнить уникальные идентификаторы, сгенерированные для узлов (используя
   `generate-id()`):
 
-```xslt
+```xml
 employee[generate-id() = generate-id(key('employees-by-department', department)[1])]
 ```
 
@@ -548,7 +548,7 @@ employee[generate-id() = generate-id(key('employees-by-department', department)[
   один или два - узлы не могут повторяться во множестве, так что если там
   только один узел, то они должны быть одним и тем же узлом:
 
-```xslt
+```xml
 employee[count(.|key('employees-by-department', department)[1]) = 1]
 ```
 
@@ -557,7 +557,7 @@ employee[count(.|key('employees-by-department', department)[1]) = 1]
 шаблон, который создаёт результат, который мы описали, из XML, полученного из
 базы данных:
 
-```xslt
+```xml
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
@@ -633,7 +633,7 @@ call-template.
 узлов со значением атрибута type - 'Book', один - для 'CD', и один для всех
 остальных.
 
-```xslt
+```xml
 <xsl:template match="item[@type='Book']"/>
 <xsl:template match="item[@type='CD']"/>
 <xsl:template match="item"/>
@@ -668,6 +668,6 @@ xsl-файлах. Так что сэкономьте своё время с эт
 `<xsl:output/>`. Этот атрибут сообщает XSLT-процессору не делать отступы в
 HTML-документе, что делает файлы меньше и они грузятся быстрее.
 
-```xslt
+```xml
 <xsl:output method="html" indent="no"/>
 ```
