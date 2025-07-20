@@ -48,6 +48,105 @@ This document outlines proposed technical improvements for the varya.github.com 
 - **Benefits**: Better developer experience, fewer runtime errors
 - **Effort**: 2-4 hours initially, ongoing
 
+#### Phase 1: Setup and Configuration (1 hour)
+1. Add TypeScript dependencies:
+   ```bash
+   yarn add -D typescript @types/react @types/react-dom @types/node @types/jest @types/styled-components @types/grommet
+   ```
+2. Create `tsconfig.json` with Gatsby-specific settings
+3. Update ESLint config for TypeScript
+4. Add TypeScript plugin to Gatsby config
+
+#### Phase 2: Type Definitions (2 hours)
+1. Create type definitions for common utilities:
+   - `src/common/utils.d.ts` - Define types for utility functions
+   - `src/common/reactUtils.d.ts` - Define types for React-specific utilities
+
+2. Add type definitions for third-party modules:
+   - Create `src/types/grommet.d.ts` for Grommet-specific types
+   - Create `src/types/gatsby.d.ts` for Gatsby-specific types
+
+#### Phase 3: Component Migration (Iterative, 30 mins per component)
+Migrate components in the following order based on dependencies:
+
+1. Atomic Components (No internal dependencies):
+   - `src/components/Link/Link.tsx`
+   - `src/components/Logo/Logo.tsx`
+   - `src/components/Avatar/Avatar.tsx`
+   - `src/components/Image/Image.tsx`
+   - `src/components/PureHtml/PureHtml.tsx`
+
+2. Simple Composed Components:
+   - `src/components/Menu/Menu.tsx`
+   - `src/components/Header/Header.tsx`
+   - `src/components/Footer/Footer.tsx`
+   - `src/components/Hero/Hero.tsx`
+   - `src/components/Comments/Comments.tsx`
+
+3. Complex Components:
+   - `src/components/Layout/Layout.tsx`
+   - `src/components/Workshop/Workshop.tsx`
+   - `src/components/PatternJourney/PatternJourney.tsx`
+
+4. Template Components:
+   - `src/templates/Page.tsx`
+   - `src/templates/Post.tsx`
+   - `src/templates/BlogIndex.tsx`
+   - `src/templates/TagIndex.tsx`
+
+#### Phase 4: Page Components (2 hours)
+1. Create types for page props and GraphQL data
+2. Migrate page components:
+   - `src/pages/index.tsx`
+   - `src/pages/blog.tsx`
+   - `src/pages/contact.tsx`
+   - Service pages in `src/pages/services/`
+
+#### Phase 5: Build System Updates (1 hour)
+1. Update Gatsby config files to TypeScript:
+   - `gatsby-config.mjs` → `gatsby-config.ts`
+   - `gatsby-node.js` → `gatsby-node.ts`
+   - `gatsby-browser.js` → `gatsby-browser.ts`
+
+#### Migration Strategy for Each Component:
+1. Create `.tsx` file alongside existing `.js`
+2. Add Props interface:
+   ```typescript
+   interface ComponentProps {
+     // Define props
+   }
+   ```
+3. Convert component to TypeScript:
+   ```typescript
+   const Component: React.FC<ComponentProps> = ({ prop1, prop2 }) => {
+     // Implementation
+   }
+   ```
+4. Update imports in `index.js` to point to new `.tsx` file
+5. Remove old `.js` file once tested
+
+#### Testing Strategy:
+1. Add Jest configuration for TypeScript
+2. Create test files with `.test.tsx` extension
+3. Add type checking to CI pipeline
+
+#### Completion Criteria:
+- All `.js` files migrated to `.tsx`
+- No TypeScript errors or warnings
+- All tests passing
+- Build process successful
+- No runtime errors in development or production
+
+#### Rollback Strategy:
+- Keep `.js` files until TypeScript version is verified
+- Use feature branches for each component migration
+- Test thoroughly before merging to develop
+
+**Total Estimated Effort**: 
+- Initial setup: 3 hours
+- Per-component migration: ~30 minutes each
+- Total: ~15-20 hours spread across multiple PRs
+
 ### 9. Add comprehensive testing setup
 - **Issue**: No testing framework configured
 - **Action**: Add Jest + React Testing Library for component tests
