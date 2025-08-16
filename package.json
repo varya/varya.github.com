@@ -11,6 +11,7 @@
     "design systems"
   ],
   "scripts": {
+    "dev": "gatsby develop",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "build": "gatsby build",
