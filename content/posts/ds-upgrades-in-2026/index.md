@@ -25,8 +25,8 @@ You've got a design system team. They're shipping components, maintaining docs, 
 AI coding assistants are everywhere, but without guidance, they generate code that ignores your standards. The result? Inconsistent UIs and rework. Enter a Model Context Protocol (MCP) server tailored to your system. It exposes components, tokens, and usage rules to AI agents, ensuring outputs align with your patterns. Pair it with an evaluation grid to test prompts across models whenever your system updates. 
 
 - **Why it matters**: Teams waste time fixing AI-generated code. This setup makes AI a force multiplier, boosting adoption without sacrificing quality.
-- **- **Key elements****: MCP server with component mappings, prompt templates, multi-model testing in CI, and dashboards for monitoring.
-- **- **Impact***: Higher pass rates on design system lints, faster feature scaffolding, and measurable ROI in development time. Having such system set, you ensure that "generate a form" now means "generate a form that fits our system".
+- **Key elements**: MCP server with component mappings, prompt templates, multi-model testing in CI, and dashboards for monitoring.
+- **Impact***: Higher pass rates on design system lints, faster feature scaffolding, and measurable ROI in development time. Having such system set, you ensure that "generate a form" now means "generate a form that fits our system".
 
 ## 2. Tokens Pipeline as Code: GitOps, Policy, and Staged Rollouts
 
@@ -80,7 +80,7 @@ This has caught subtle regressions that manual QA missed, saving hours of firefi
 
 Design Systems have became a solid industry standard. So, the companies hire more to the design system teams. But how to do that right? Especially if in-house experience is limited to one or two design systems. Again, someone with more design systems behind can help a lot.
 
-- **Why it matters**: The right team structure scales your - **Impact* without growing headcount exponentially.
+- **Why it matters**: The right team structure scales your impact without growing headcount exponentially.
 - **Key elements**: Topology recommendations, role definitions, and gap analysis.
 - **Impact**: Smoother collaboration, faster contributions, and targeted hiring.
 
