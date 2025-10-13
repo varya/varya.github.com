@@ -17,7 +17,7 @@ const talks = [
     links: {
       Slides:
         "https://bridge-the-gap.dev/static/talks/into-ds-2024/from-survival-to-growth-design-systems-collaboration.pdf",
-      // Video: "https://www.youtube.com/watch?v=XRHe3rCqTT4",
+      Video: "https://www.youtube.com/live/BDZNdt9IQM0?si=ec5YyIhXrt4n-Tfw",
     },
   },
   {
