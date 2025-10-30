@@ -7,7 +7,7 @@ import { Page } from "@templates/Page";
 
 import { InlineWidget } from "react-calendly";
 
-import heroImage from "./hero-supervision.jpg"; // Using supervision hero image as placeholder
+import heroImage from "./hero-varya-board.jpg"; // Using supervision hero image as placeholder
 
 const HeroContent = () => (
   <Heading
@@ -33,16 +33,20 @@ const Mentorship = ({ location }) => (
       content: HeroContent,
     }}
     seo={{
-      title: "Design Systems and Frontend Development Mentorship",
-      description: `Expert mentorship for designers and developers looking to advance their skills in design systems, frontend development, and team collaboration. Get personalized guidance from an experienced professional.`,
+      title: "Design systems mentorship with Varya Stepanova",
+      description: `Get personalized mentorship from Varya Stepanova, a design systems architect with 20+ years of experience. Learn design systems strategy, team leadership, UI architecture, and advance your career with hands-on guidance from someone who has built and scaled design systems across multiple industries.`,
       cover: heroImage,
       keywords: [
-        "mentorship",
-        "design systems mentoring",
-        "frontend development mentor",
-        "career guidance",
+        "design systems mentorship",
+        "design systems mentor",
+        "frontend development mentoring",
+        "UI architecture guidance",
+        "design systems career",
+        "team leadership mentorship",
+        "design systems strategy",
         "professional development",
         "design systems expert",
+        "career guidance",
       ],
     }}
     location={location}
