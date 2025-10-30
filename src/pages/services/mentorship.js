@@ -18,6 +18,9 @@ const HeroContent = () => (
     size="large"
     margin={{ top: "auto" }}
   >
+    <Text size="inherit" color="accent" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
+      Design systems mentorship with Varya Stepanova —
+    </Text>
     <Text size="inherit" color="accent">
       Mentorship
     </Text>

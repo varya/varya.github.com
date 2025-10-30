@@ -62,6 +62,7 @@ const Seo = ({ data, title, description, keywords, cover, location }) => {
     >
       {/* General tags */}
       <title>{title}</title>
+      <meta name="title" content={fullTitle} />
       <meta name="description" content={pageDescription} />
       {/* OpenGraph tags */}
       <meta property="og:url" content={url} />
