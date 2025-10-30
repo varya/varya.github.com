@@ -14,7 +14,7 @@ const getImageUrl = ({ data, cover }) => {
   return config.siteUrl + image;
 };
 
-const Seo = ({ data, title, description, keywords, cover, location }) => {
+const Seo = ({ data, title, description, keywords, cover, location, imageWidth, imageHeight }) => {
   const pageTitle = ((data || {}).frontmatter || {}).title;
   const dataDescription =
     ((data || {}).frontmatter || {}).description ||
@@ -69,6 +69,9 @@ const Seo = ({ data, title, description, keywords, cover, location }) => {
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={pageDescription} />
       <meta property="og:image" content={imageUrl} />
+      {imageWidth && <meta property="og:image:width" content={String(imageWidth)} />}
+      {imageHeight && <meta property="og:image:height" content={String(imageHeight)} />}
+      <meta property="og:image:alt" content={fullTitle} />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={config.shortSiteTitle} />
       {/* Twitter Card tags */}

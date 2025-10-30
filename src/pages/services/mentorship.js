@@ -49,6 +49,8 @@ const Mentorship = ({ location }) => (
       title: seoTitle,
       description: seoDescription,
       cover: ogImage,
+      imageWidth: 1200,
+      imageHeight: 630,
       keywords: [
         "design systems mentorship",
         "design systems mentor",
