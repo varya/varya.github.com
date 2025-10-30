@@ -137,6 +137,7 @@ const Mentorship = ({ location }) => (
         href="mailto:mail@varya.me"
         target="_blank"
         rel="noopener"
+        margin={{ bottom: "small" }}
       />
       <Button
         secondary
@@ -145,6 +146,7 @@ const Mentorship = ({ location }) => (
         href="https://www.linkedin.com/in/varyastepanova/"
         target="_blank"
         rel="noopener"
+        margin={{ bottom: "small" }}
       />
     </Box>
     

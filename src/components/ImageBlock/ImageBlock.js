@@ -27,7 +27,7 @@ const ImageBlock = ({ children, image, imageRight, imageBasis, ...props }) => {
           <Box
             basis={imageBasis}
             style={{ order: size === "small" && -1 }}
-            alignItems="center"
+            align={size === "small" ? "center" : undefined}
           >
             {image}
           </Box>
