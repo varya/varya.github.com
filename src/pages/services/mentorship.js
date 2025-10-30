@@ -7,7 +7,8 @@ import { Page } from "@templates/Page";
 
 import { InlineWidget } from "react-calendly";
 
-import heroImage from "./hero-varya-board.jpg"; // Using supervision hero image as placeholder
+import heroImage from "./hero-varya-board.jpg";
+import ogImage from "./hero-varya-board-og.jpg";
 
 const HeroContent = () => (
   <Heading
@@ -34,8 +35,8 @@ const Mentorship = ({ location }) => (
     }}
     seo={{
       title: "Design systems mentorship with Varya Stepanova",
-      description: `Get personalized mentorship from Varya Stepanova, a design systems architect with 20+ years of experience. Learn design systems strategy, team leadership, UI architecture, and advance your career with hands-on guidance from someone who has built and scaled design systems across multiple industries.`,
-      cover: heroImage,
+      description: `Get personalized mentorship from Varya Stepanova. 20+ years of experience in team leadership, UI architecture, and scaling design systems across global organizations.`,
+      cover: ogImage,
       keywords: [
         "design systems mentorship",
         "design systems mentor",
