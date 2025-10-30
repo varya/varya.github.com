@@ -51,6 +51,7 @@ export const menuData = [
         href: "/services/development",
       },
       { label: "Workshops", href: "/services/workshops" },
+      { label: "Mentorship", href: "/services/mentorship" },
       { label: "Speaking", href: "/services/speaking" },
     ],
   },
