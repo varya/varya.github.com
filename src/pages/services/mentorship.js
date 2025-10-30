@@ -63,11 +63,12 @@ const Mentorship = ({ location }) => (
         multiple countries and cultures.
       </Paragraph>
       <Paragraph size="large" standout lead>
-        I've successfully grown teams from 1 to 7 people, managed design system adoption 
-        across large retail organizations that ship products to multiple markets, and led 
+        I've successfully grown teams from 1 person to many people, managed design system adoption 
+        across large organizations that ship products to multiple markets, and led 
         comprehensive design system implementations for SaaS platforms, messaging services, 
-        and international agricultural technology companies. My approach combines technical 
-        expertise with strong people management and cross-cultural collaboration skills.
+        telecommunication companies, agricultural technology companies and other industries.
+        My approach combines technical 
+        expertise with strong people management (with heart!) and cross-cultural collaboration skills.
       </Paragraph>
     </ImageBlock>
     <Paragraph>
@@ -88,13 +89,12 @@ const Mentorship = ({ location }) => (
     <Paragraph>
       Mentorship takes place through semi-regular online meetings where we discuss your current 
       challenges, review your progress, and plan next steps. Between sessions, you'll receive 
-      practical homework assignments designed to help you apply what we've discussed and build 
-      real-world experience.
+      practical homework assignments that help you apply what we've discussed.
     </Paragraph>
     <Paragraph>
       The frequency of our meetings depends entirely on your needs and availability. Some mentees 
       benefit from sessions a couple of times per month for intensive guidance during critical 
-      projects or career transitions, while others prefer quarterly check-ins to maintain momentum 
+      projects or career transitions, but others prefer quarterly check-ins to maintain momentum 
       and get strategic advice. We'll find a rhythm that works best for your challenges and 
       schedule.
     </Paragraph>
