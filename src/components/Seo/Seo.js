@@ -38,7 +38,11 @@ const Seo = ({ data, title, description, keywords, cover, location }) => {
   }
 
   const imageUrl = getImageUrl({ data, cover });
-  const url = config.siteUrl + "/" + config.pathPrefix + pageSlug;
+  // Fix URL construction to avoid double slashes
+  const cleanSlug = pageSlug.startsWith('/') ? pageSlug : `/${pageSlug}`;
+  const url = config.pathPrefix 
+    ? `${config.siteUrl}/${config.pathPrefix}${cleanSlug}`
+    : `${config.siteUrl}${cleanSlug}`;
 
   const pageKeywords = keywords || config.defaultKeywords;
   return (
@@ -65,6 +69,7 @@ const Seo = ({ data, title, description, keywords, cover, location }) => {
       <meta property="og:description" content={pageDescription} />
       <meta property="og:image" content={imageUrl} />
       <meta property="og:type" content="website" />
+      <meta property="og:site_name" content={config.shortSiteTitle} />
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta
