@@ -54,26 +54,24 @@ const IndexPage = ({ data }) => {
     >
       <ImageBlock imageRight image={<Avatar />} margin={{ top: "medium" }}>
         <Paragraph size="large" standout lead margin={{ vertical: "none" }}>
-          I am Varya Stepanova, a <b>design systems architect</b> with extensive
-          experience in management, design, and the technical side. In my ~20
-          years of technical career, my focus has been on component-focused UI
-          design and development, creating helpful tools for the subject, and
-          spreading best practices across large organizations. I hold two
-          Master&apos;s degrees - one in physics and one in computer science
-          from Aalto University&apos;s{" "}
+          I am Varya Stepanova, a <b>design systems architect and engineering manager</b> with 
+          20+ years in tech and 15+ years leading engineering teams. My expertise spans 
+          component-focused UI design and development, creating helpful tools for the subject, 
+          and spreading best practices across large organizations while managing distributed 
+          teams and scaling design system operations. I hold two Master&apos;s degrees - one 
+          in physics and one in computer science from Aalto University&apos;s{" "}
           <Link to="https://www.idbm.aalto.fi/" target="_blank" rel="noopener">
             IDBM
           </Link>{" "}
-          program, which focuses on service design and business. I also have 15+
-          years of engineering experience and have held several leading roles.
+          program, which focuses on service design and business.
+        </Paragraph>
+        <Paragraph size="large" standout lead>
+          Currently, my focus is on bringing design systems to the next level of
+          success, which includes working cooperatively with a client
+          company&apos;s design & development community and bridging the gap
+          between designers, developers, and business specialists.
         </Paragraph>
       </ImageBlock>
-      <Paragraph size="large" standout lead>
-        Currently, my focus is on bringing design systems to the next level of
-        success, which includes working cooperatively with a client
-        company&apos;s design & development community and bridging the gap
-        between designers, developers, and business specialists.
-      </Paragraph>
 
       {/* <Workshop /> */}
       <Section heading="Services">
