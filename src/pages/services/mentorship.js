@@ -10,11 +10,6 @@ import { InlineWidget } from "react-calendly";
 import heroImage from "./hero-varya-board.jpg";
 import ogImage from "./hero-varya-board-og.jpg";
 
-// Reusable SEO variables
-const seoTitle = "Design systems mentorship with Varya Stepanova";
-const seoDescription =
-  "Get personalized mentorship from Varya Stepanova. 20+ years of experience in team leadership, UI architecture, and scaling design systems across global organizations.";
-
 const HeroContent = () => (
   <Heading
     level={1}
@@ -23,13 +18,6 @@ const HeroContent = () => (
     size="large"
     margin={{ top: "auto" }}
   >
-    <Text
-      size="inherit"
-      color="accent"
-      style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}
-    >
-      {seoTitle} —
-    </Text>
     <Text size="inherit" color="accent">
       Mentorship
     </Text>
@@ -46,8 +34,8 @@ const Mentorship = ({ location }) => (
       content: HeroContent,
     }}
     seo={{
-      title: seoTitle,
-      description: seoDescription,
+      title: "Design systems mentorship with Varya Stepanova",
+      description: "Get personalized mentorship from Varya Stepanova. 20+ years of experience in team leadership, UI architecture, and scaling design systems across global organizations.",
       cover: ogImage,
       imageWidth: 1200,
       imageHeight: 630,
@@ -66,13 +54,6 @@ const Mentorship = ({ location }) => (
     }}
     location={location}
   >
-    {/* Invisible SEO description for parsers, placed before visible content */}
-    <Paragraph
-      style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}
-    >
-      {seoDescription}
-    </Paragraph>
-
     <ImageBlock imageLeft image={<Avatar />} margin={{ top: "medium" }}>
       <Paragraph size="large" standout lead margin={{ vertical: "none" }}>
         With 20+ years in tech and 15+ years leading engineering teams, I offer personalized 
