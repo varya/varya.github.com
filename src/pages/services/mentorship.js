@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Text } from "grommet";
-import { Heading, Paragraph, Avatar, ImageBlock } from "@components";
+import { Box, Button, Text } from "grommet";
+import { Heading, Paragraph, Avatar, ImageBlock, Link } from "@components";
 import { Page } from "@templates/Page";
+
+import { InlineWidget } from "react-calendly";
 
 import heroImage from "./hero-supervision.jpg"; // Using supervision hero image as placeholder
 
@@ -74,12 +76,81 @@ const Mentorship = ({ location }) => (
       </ul>
     </Paragraph>
     <Paragraph>
-      Whether you're a designer looking to understand the technical aspects of design systems, 
-      a developer transitioning into design system work, or a team lead scaling design system 
-      operations, I provide guidance based on hands-on experience managing teams and delivering 
-      results in complex, distributed environments. Sessions are conducted remotely and tailored 
-      to your specific goals and organizational context.
+      <strong>How mentorship works:</strong>
     </Paragraph>
+    <Paragraph>
+      Mentorship takes place through semi-regular online meetings where we discuss your current 
+      challenges, review your progress, and plan next steps. Between sessions, you'll receive 
+      practical homework assignments designed to help you apply what we've discussed and build 
+      real-world experience.
+    </Paragraph>
+    <Paragraph>
+      The frequency of our meetings depends entirely on your needs and availability. Some mentees 
+      benefit from sessions a couple of times per month for intensive guidance during critical 
+      projects or career transitions, while others prefer quarterly check-ins to maintain momentum 
+      and get strategic advice. We'll find a rhythm that works best for your challenges and 
+      schedule.
+    </Paragraph>
+    <Paragraph>
+      <strong>What exactly could I ask as a mentee?</strong>
+    </Paragraph>
+    <Paragraph>
+      You can ask anything you feel relevant. Here are a few ideas — these are real questions 
+      I've discussed with my mentees. Maybe they're similar to your challenges:
+    </Paragraph>
+    <Paragraph>
+      <ul>
+        <li>"This is the status of my design system now, where do I invest time to make the best progress right now?"</li>
+        <li>"How do I organize sync with designers?"</li>
+        <li>"How exactly could I improve our documentation in Storybook?"</li>
+        <li>"How to display what are our available CSS utilities so that a designer sees it?"</li>
+        <li>"What to start with if we want visual regression testing in our specific setup?"</li>
+        <li>"How do we increase adoption of design system in our product?"</li>
+        <li>"What topics should I learn for my next interview to a design system position?"</li>
+      </ul>
+    </Paragraph>
+    <Paragraph>
+      Topics are not limited to this list — bring whatever challenges you're facing, and we'll 
+      work through them together.
+    </Paragraph>
+    
+    <Heading level={2} margin={{ top: "large", bottom: "medium" }}>
+      Get in Touch
+    </Heading>
+    
+    <Paragraph>
+      Ready to start your mentorship journey? I'd love to hear about your challenges and goals.
+    </Paragraph>
+    
+    <Box direction="row" gap="medium" wrap margin={{ bottom: "medium" }}>
+      <Button
+        primary
+        size="medium"
+        label="Email me at mail@varya.me"
+        href="mailto:mail@varya.me"
+        target="_blank"
+        rel="noopener"
+      />
+      <Button
+        secondary
+        size="medium"
+        label="Connect on LinkedIn"
+        href="https://www.linkedin.com/in/varyastepanova/"
+        target="_blank"
+        rel="noopener"
+      />
+    </Box>
+    
+    <Paragraph>
+      Or book a video session directly via{" "}
+      <Link to="https://calendly.com/var_ya">Calendly</Link> — I keep my calendar
+      up to date, so you can easily see available times and choose what works best for you.
+    </Paragraph>
+    
+    <InlineWidget
+      styles={{ minWidth: "320px", height: "700px" }}
+      url="https://calendly.com/var_ya/30min"
+    />
   </Page>
 );
 
