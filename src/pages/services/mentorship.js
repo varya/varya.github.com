@@ -83,9 +83,9 @@ const Mentorship = ({ location }) => (
         <li><strong>Community Building:</strong> Championing design system adoption, organizing knowledge sharing, and building internal communities</li>
       </ul>
     </Paragraph>
-    <Paragraph>
-      <strong>How mentorship works:</strong>
-    </Paragraph>
+    <Heading level={2} margin={{ top: "medium", bottom: "medium" }}>
+      How mentorship works:
+    </Heading>
     <Paragraph>
       Mentorship takes place through semi-regular online meetings where we discuss your current 
       challenges, review your progress, and plan next steps. Between sessions, you'll receive 
@@ -98,9 +98,16 @@ const Mentorship = ({ location }) => (
       and get strategic advice. We'll find a rhythm that works best for your challenges and 
       schedule.
     </Paragraph>
+    <Heading level={2} margin={{ top: "medium", bottom: "medium" }}>
+      First meeting
+    </Heading>
     <Paragraph>
-      <strong>What exactly could I ask as a mentee?</strong>
+      Regular mentorship sessions are paid, but the first meeting is of course free. You can book 
+      a call in a widget below, and we discuss your challenges, schedule and terms.
     </Paragraph>
+    <Heading level={2} margin={{ top: "medium", bottom: "medium" }}>
+      What exactly could I ask as a mentee?
+    </Heading>
     <Paragraph>
       You can ask anything you feel relevant. Here are a few ideas — these are real questions 
       I've discussed with my mentees. Maybe they're similar to your challenges:
@@ -121,7 +128,7 @@ const Mentorship = ({ location }) => (
       work through them together.
     </Paragraph>
     
-    <Heading level={2} margin={{ top: "large", bottom: "medium" }}>
+    <Heading level={2} margin={{ top: "medium", bottom: "medium" }}>
       Get in Touch
     </Heading>
     
