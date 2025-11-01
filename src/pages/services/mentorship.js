@@ -99,11 +99,11 @@ const Mentorship = ({ location }) => (
       schedule.
     </Paragraph>
     <Heading level={2} margin={{ top: "medium", bottom: "medium" }}>
-      First meeting
+      Terms and conditions
     </Heading>
     <Paragraph>
-      Regular mentorship sessions are paid, but the first meeting is of course free. You can book 
-      a call in a widget below, and we discuss your challenges, schedule and terms.
+      Is it a paid mentorship? In general, yes, but depends. The first meeting is of course free. You can book 
+      a call in a widget below, and we discuss your challenges, schedule and details.
     </Paragraph>
     <Heading level={2} margin={{ top: "medium", bottom: "medium" }}>
       What exactly could I ask as a mentee?
