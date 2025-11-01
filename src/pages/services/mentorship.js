@@ -99,13 +99,6 @@ const Mentorship = ({ location }) => (
       schedule.
     </Paragraph>
     <Heading level={2} margin={{ top: "medium", bottom: "medium" }}>
-      Terms and conditions
-    </Heading>
-    <Paragraph>
-      Is it a paid mentorship? In general, yes, but depends. The first meeting is of course free. You can book 
-      a call in a widget below, and we discuss your challenges, schedule and details.
-    </Paragraph>
-    <Heading level={2} margin={{ top: "medium", bottom: "medium" }}>
       What exactly could I ask as a mentee?
     </Heading>
     <Paragraph>
@@ -126,6 +119,14 @@ const Mentorship = ({ location }) => (
     <Paragraph>
       Topics are not limited to this list — bring whatever challenges you're facing, and we'll 
       work through them together.
+    </Paragraph>
+
+    <Heading level={2} margin={{ top: "medium", bottom: "medium" }}>
+      Terms and conditions
+    </Heading>
+    <Paragraph>
+      Is it a paid mentorship? In general, yes, but depends. The first meeting is of course free. You can book 
+      a call in a widget below, and we discuss your challenges, schedule and details.
     </Paragraph>
     
     <Heading level={2} margin={{ top: "medium", bottom: "medium" }}>
