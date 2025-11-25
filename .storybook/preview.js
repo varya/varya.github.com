@@ -1,9 +1,9 @@
-import { addDecorator } from "@storybook/react";
 import { withGrommet } from "storybook-addon-grommet";
 import theme from "../src/components/theme.js";
 import { grommet } from "grommet";
+import { action } from "@storybook/addon-actions";
 
-addDecorator(
+export const decorators = [
   withGrommet({
     theme: "theme",
     themes: {
@@ -16,13 +16,12 @@ addDecorator(
     grommetProps: {
       full: true,
     },
-  })
-);
-
-addDecorator((story) => {
-  document.body.style.padding = 0; //remove story container padding
-  return story();
-});
+  }),
+  (story) => {
+    document.body.style.padding = 0; //remove story container padding
+    return story();
+  },
+];
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
