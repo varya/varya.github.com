@@ -7,6 +7,9 @@ module.exports = {
     // { name: "@storybook/addon-essentials", options: { docs: false } },
     "storybook-addon-grommet",
   ],
+  core: {
+    builder: "webpack5",
+  },
   webpackFinal: async (config) => {
     // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
     config.module.rules[0].exclude = [/node_modules\/(?!(gatsby)\/)/];
@@ -32,8 +35,11 @@ module.exports = {
 
     config.resolve.alias = {
       "@components": path.resolve(__dirname, "../src/components"),
+      "@pages": path.resolve(__dirname, "../src/pages"),
       "@templates": path.resolve(__dirname, "../src/templates"),
       "@static": path.resolve(__dirname, "../static"),
+      "@common": path.resolve(__dirname, "../src/common"),
+      "@content": path.resolve(__dirname, "../content"),
     };
 
     return config;
