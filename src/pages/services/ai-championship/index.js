@@ -5,7 +5,7 @@ import { Box, Button, Text } from "grommet";
 import { Heading, Paragraph, ImageBlock, Avatar, Link } from "@components";
 import { Page } from "@templates/Page";
 
-import heroImage from "./hero-workshops.jpg";
+import heroImage from "../hero-workshops.jpg";
 
 const HeroContent = () => (
   <Heading
