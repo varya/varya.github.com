@@ -43,6 +43,7 @@ export const menuData = [
     href: "/services",
     children: [
       { label: "Consultancy", href: "/services/consultancy" },
+      { label: "AI Championship", href: "/services/ai-championship" },
       { label: "Team supervision", href: "/services/supervision" },
       { label: "Audit of design and development", href: "/services/audit" },
       { label: "Design systems strategy", href: "/services/strategy" },
