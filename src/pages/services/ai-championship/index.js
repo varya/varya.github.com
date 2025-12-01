@@ -2,10 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Box, Button, Text } from "grommet";
-import { Heading, Paragraph, ImageBlock, Avatar, Link } from "@components";
+import { Heading, Paragraph, ImageBlock, Avatar, Link, Image } from "@components";
 import { Page } from "@templates/Page";
 
 import heroImage from "../hero-workshops.jpg";
+import beforeAIImage from "./dddd-before.png";
+import unstructuredAIImage from "./dddd-unstructured-ai.png";
+import structuredAIImage from "./dddd-structured-ai.png";
 
 const HeroContent = () => (
   <Heading
@@ -77,6 +80,62 @@ const AIChampionship = ({ location }) => (
     </Paragraph>
 
     <Heading level={2} margin={{ top: "medium", bottom: "medium" }}>
+      The Transformation: From Traditional to AI-Native Workflows
+    </Heading>
+    
+    <Paragraph>
+      The journey to AI-native development isn't just about adopting new tools, it's about fundamentally 
+      restructuring how teams approach the entire product development lifecycle. Let me show you the three 
+      stages of this evolution:
+    </Paragraph>
+
+    <Heading level={3} margin={{ top: "medium", bottom: "small" }}>
+      1. Traditional Workflow: Before AI
+    </Heading>
+    <Paragraph>
+      The conventional approach relies heavily on manual processes across all phases: from discovery research 
+      to final code release. While structured, it's time-intensive and prone to handoff friction between 
+      design and development teams.
+    </Paragraph>
+    <Image 
+      imageSrc={beforeAIImage} 
+      alt="Traditional DDDD workflow before AI integration"
+      caption="Traditional workflow: Manual processes across all phases"
+      margin={{ vertical: "medium" }}
+    />
+
+    <Heading level={3} margin={{ top: "medium", bottom: "small" }}>
+      2. Unstructured AI Adoption: The Pitfall
+    </Heading>
+    <Paragraph>
+      Many teams jump into AI tools without changing their underlying processes. This leads to fragmented 
+      workflows, inconsistent outputs, and technical debt. Teams get caught in cycles of re-prompting and 
+      manual fixes, often ending up with more work than before.
+    </Paragraph>
+    <Image 
+      imageSrc={unstructuredAIImage} 
+      alt="Unstructured AI workflow showing common pitfalls and inefficiencies"
+      caption="Unstructured AI adoption: Creates more problems than it solves"
+      margin={{ vertical: "medium" }}
+    />
+
+    <Heading level={3} margin={{ top: "medium", bottom: "small" }}>
+      3. Structured AI-Native Approach: The Solution
+    </Heading>
+    <Paragraph>
+      The optimal approach integrates AI strategically across all phases while maintaining quality and 
+      consistency. AI handles research synthesis, specification generation, and code production, while 
+      humans focus on strategic decisions and quality assurance. Notice the "Coffee Time" 😜, it is an
+      opportunity for your team to celebrate success and for your company to win the competition.
+    </Paragraph>
+    <Image 
+      imageSrc={structuredAIImage} 
+      alt="Structured AI-native workflow with optimized human-AI collaboration"
+      caption="Structured AI-native approach: Strategic integration with quality assurance"
+      margin={{ vertical: "medium" }}
+    />
+
+    <Heading level={2} margin={{ top: "medium", bottom: "medium" }}>
       What I Offer
     </Heading>
     <Paragraph>
@@ -140,7 +199,7 @@ const AIChampionship = ({ location }) => (
       />
     </Box>
      <Paragraph>
-      Or book a video session directly via{" "}
+      Or book a call session directly via{" "}
       <Link to="https://calendly.com/var_ya">Calendly</Link>.
     </Paragraph>
 
