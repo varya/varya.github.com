@@ -36,6 +36,7 @@ const AIChampionship = ({ location }) => (
     seo={{
       title: "AI Championship & AI-Native Development Services",
       description: "Accelerate your team's AI adoption with Varya Stepanova. Hands-on AI championship, agentic coding workflows, and spec-driven development for design and engineering teams.",
+      cover: structuredAIImage,
       keywords: [
         "AI champion",
         "AI-native developer",
