@@ -1,0 +1,47 @@
+<svg viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Spec-driven flow — spec, walkthrough, test plan, implementation">
+  <style>
+    .box { fill: #ffffff; stroke: #2a2a2a; stroke-width: 1.5; }
+    .accent { fill: #fff6e0; stroke: #2a2a2a; stroke-width: 1.5; }
+    .arrow { stroke: #2a2a2a; stroke-width: 1.5; fill: none; }
+    .title { fill: #1a1a1a; font: 600 12px -apple-system, BlinkMacSystemFont, sans-serif; letter-spacing: 0.05em; }
+    .sub { fill: #555; font: 13px -apple-system, BlinkMacSystemFont, sans-serif; }
+    .caption { fill: #888; font: italic 13px -apple-system, BlinkMacSystemFont, sans-serif; }
+  </style>
+  <defs>
+    <marker id="arr1" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#2a2a2a"/>
+    </marker>
+  </defs>
+
+  <rect class="accent" x="20" y="50" width="180" height="120" rx="6"/>
+  <text class="title" x="110" y="83" text-anchor="middle">SPEC</text>
+  <text class="sub" x="110" y="110" text-anchor="middle">Interface, behaviour,</text>
+  <text class="sub" x="110" y="128" text-anchor="middle">edge cases — written</text>
+  <text class="sub" x="110" y="146" text-anchor="middle">in plain language</text>
+
+  <line class="arrow" x1="200" y1="110" x2="236" y2="110" marker-end="url(#arr1)"/>
+
+  <rect class="box" x="240" y="50" width="180" height="120" rx="6"/>
+  <text class="title" x="330" y="83" text-anchor="middle">WALKTHROUGH</text>
+  <text class="sub" x="330" y="110" text-anchor="middle">Designer + tech lead</text>
+  <text class="sub" x="330" y="128" text-anchor="middle">+ developers argue</text>
+  <text class="sub" x="330" y="146" text-anchor="middle">about the spec</text>
+
+  <line class="arrow" x1="420" y1="110" x2="456" y2="110" marker-end="url(#arr1)"/>
+
+  <rect class="box" x="460" y="50" width="180" height="120" rx="6"/>
+  <text class="title" x="550" y="83" text-anchor="middle">TEST PLAN</text>
+  <text class="sub" x="550" y="110" text-anchor="middle">Plain-English list</text>
+  <text class="sub" x="550" y="128" text-anchor="middle">becomes the test file</text>
+  <text class="sub" x="550" y="146" text-anchor="middle">almost verbatim</text>
+
+  <line class="arrow" x1="640" y1="110" x2="676" y2="110" marker-end="url(#arr1)"/>
+
+  <rect class="box" x="680" y="50" width="200" height="120" rx="6"/>
+  <text class="title" x="780" y="83" text-anchor="middle">IMPLEMENTATION</text>
+  <text class="sub" x="780" y="110" text-anchor="middle">Often a no-op once</text>
+  <text class="sub" x="780" y="128" text-anchor="middle">the conversation</text>
+  <text class="sub" x="780" y="146" text-anchor="middle">is done</text>
+
+  <text class="caption" x="450" y="210" text-anchor="middle">Disagreements surface and resolve before any code is written.</text>
+</svg>
