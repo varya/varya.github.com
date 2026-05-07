@@ -138,6 +138,38 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   `);
 
+  const postsProjectsPortfolioData = await graphql(`
+    query {
+      projectPortfolioPosts: allMdx(
+        filter: {
+          internal: { contentFilePath: { regex: "//projects-portfolio//" } }
+        }
+        sort: { frontmatter: { date: DESC } }
+      ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+              level
+              fileRelativePath
+              lang
+            }
+            frontmatter {
+              title
+              subTitle
+              date
+              link
+            }
+            internal {
+              contentFilePath
+            }
+          }
+        }
+      }
+    }
+  `);
+
   const postsDesignSystemData = await graphql(`
     query {
       designSystemsPosts: allMdx(
@@ -286,6 +318,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     postsRuData.errors ||
     postsLifeData.errors ||
     postsProjectsData.errors ||
+    postsProjectsPortfolioData.errors ||
     postsDesignSystemData.errors ||
     postsBlogData.errors
   ) {
@@ -294,6 +327,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const blogPosts = postsBlogData.data.blogPosts.edges;
   const projectPosts = postsProjectsData.data.projectPosts.edges;
+  const projectPortfolioPosts =
+    postsProjectsPortfolioData.data.projectPortfolioPosts.edges;
   const designSystemsPosts =
     postsDesignSystemData.data.designSystemsPosts.edges;
 
@@ -334,6 +369,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   });
 
   projectPosts.forEach(({ node }) => {
+    const slug = node.fields.slug;
+
+    createPage({
+      path: slug,
+      component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+      context: {
+        slug,
+      },
+    });
+  });
+
+  projectPortfolioPosts.forEach(({ node }) => {
     const slug = node.fields.slug;
 
     createPage({

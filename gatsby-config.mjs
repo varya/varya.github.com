@@ -85,6 +85,13 @@ const config = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `projects-portfolio`,
+        path: `./content/projects-portfolio`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `posts`,
         path: `./content/posts`,
       },
