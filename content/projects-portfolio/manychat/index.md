@@ -10,7 +10,7 @@ description: >
   designers and developers read together.
 ---
 
-<BorderedTable>
+<BorderedTable bodyFont>
 
 | | |
 | --- | --- |

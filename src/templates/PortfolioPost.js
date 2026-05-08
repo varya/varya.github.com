@@ -7,19 +7,23 @@ import { Box, Button, Text } from "grommet";
 import {
   BorderedImage,
   BorderedTable,
+  BrowserWindow,
   DsAspects,
   Heading,
   Hero,
   Image,
   ImageBlock,
-  Layout,
   Link,
+  Ol,
   Paragraph,
+  Ul,
   PatternJourney,
   PortfolioBreadcrumb,
+  PortfolioLayout,
   PostHeader,
   ProjectRoles,
   ScreenshotGrid,
+  ScrollingBrowserWindow,
   TokenAnatomy,
   Workshop,
   PureHtml,
@@ -49,7 +53,9 @@ const globalMdxComponents = {
   ImageBlock,
   BorderedImage,
   BorderedTable,
+  BrowserWindow,
   ScreenshotGrid,
+  ScrollingBrowserWindow,
   TokenAnatomy,
 };
 
@@ -92,6 +98,8 @@ const postComponents = {
   h6: _Heading(6),
   p: _Paragraph(),
   a: Link,
+  ul: Ul,
+  ol: Ol,
   div: _div,
 };
 
@@ -110,7 +118,7 @@ const PortfolioPost = ({
   }
 
   return (
-    <Layout>
+    <PortfolioLayout>
       <PostHeader
         imageUrl={
           cover && cover.childImageSharp.gatsbyImageData.images.fallback.src
@@ -132,7 +140,7 @@ const PortfolioPost = ({
         </MDXProvider>
         <PortfolioBreadcrumb />
       </Box>
-    </Layout>
+    </PortfolioLayout>
   );
 };
 
