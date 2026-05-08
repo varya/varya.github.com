@@ -10,6 +10,8 @@ description: >
   designers and developers read together.
 ---
 
+<BorderedTable>
+
 | | |
 | --- | --- |
 | **Company** | [Manychat](https://www.linkedin.com/company/manychat/posts/?feedView=all) |
@@ -18,6 +20,8 @@ description: >
 | **Role** | Design System Architect & Lead Developer |
 | **Team** | Bridge the Gap (my consultancy team) — three engineers including me — partnering with Manychat's design-system tech lead, in-house design-system designer, and a second in-house lead engineer who joined mid-engagement |
 | **Stack** | Figma, React, TypeScript, CSS Modules, Storybook (6.5 → 8.x), Vite, semantic-release |
+
+</BorderedTable>
 
 ## Executive summary
 
@@ -118,7 +122,11 @@ Pairing the type-system rule with our test convention (queries by ARIA role, not
 
 Designers and product engineers don't browse Storybook the way design-system engineers do. They want to see *all the variants of a component on one page* — not a single canvas with a switcher. We built a custom Docs layout that arranges stories in a compact grid, applied once at the global Storybook level so every component (and every component added in the future) inherits it for free.
 
+<BorderedImage>
+
 ![Custom grid layout in Storybook docs — variants laid out side-by-side](images/grid-layout.png)
+
+</BorderedImage>
 
 The change is small in code, but it shifts how the system gets *read*. A design reviewer scanning a PR can take in twelve states of a button at a glance. A product engineer checking which size of Card to pick sees the whole family at once. Storybook went from "click into each story" to "scan a page".
 
@@ -126,7 +134,11 @@ The change is small in code, but it shifts how the system gets *read*. A design 
 
 Component lifecycle (Beta, Stable, Deprecated) lives in story metadata as a tag, and a custom sidebar renderer reads those tags via Storybook's Manager-API and shows a coloured badge next to the component name in the navigation. We built this when Storybook didn't yet have it natively — the same idea has since become a convention on the platform.
 
+<BorderedImage>
+
 ![Status tags shown next to component names in the Storybook sidebar](images/sidebar-tags.png)
+
+</BorderedImage>
 
 The point isn't the badge — it's that anyone scanning the sidebar knows where each component is in its lifecycle without consulting a separate document. Visible state beats governance pages.
 
@@ -154,19 +166,35 @@ Tokens (colours, spacings, typography) used to sit on the page as visual swatche
 
 Before — colours were illustrated as a swatch grid with end values only:
 
+<BorderedImage>
+
 ![Colour foundations before — only the resolved hex shown](images/colors--before.png)
+
+</BorderedImage>
 
 After — every colour now surfaces its design-token name and CSS / JavaScript variables alongside the swatch:
 
+<BorderedImage>
+
 ![Colour foundations after — token name, CSS variable, JS variable, and swatch on the same row](images/colors--after.png)
+
+</BorderedImage>
 
 The same shift on the spacing page. Before, spacing was nicely illustrated but the way of *using* it was implicit:
 
+<BorderedImage>
+
 ![Spacing foundations before — visual representation only](images/spaces--before.png)
+
+</BorderedImage>
 
 After, every spacing value shows its visual scale, the utility class to apply it, and the underlying value:
 
+<BorderedImage>
+
 ![Spacing foundations after — utility class, value, and visual scale together](images/spaces--after.png)
+
+</BorderedImage>
 
 This change came directly out of a feedback loop with product engineers at the first in-house design-system community meeting. They'd been navigating tokens by guessing class names. The fix was a documentation re-shape, not a token change — but the effect was that designers and developers stopped speaking different languages about colour and spacing.
 
@@ -188,7 +216,11 @@ A handful from the catalogue — chosen for the visual range of the system, not 
 
 ### Form family — text, number, search, textarea
 
+<BorderedImage>
+
 ![TextInputV2, NumberInputV2, SearchInput, and TextArea in their default and error states](./images/comp-form-family.png)
+
+</BorderedImage>
 
 Four inputs, one shared layout. Label position, help-text spacing, and error message placement are owned by `FormTextField`, so the family stays consistent and a styling change ships in one place.
 
@@ -196,19 +228,13 @@ Four inputs, one shared layout. Label position, help-text spacing, and error mes
 
 Select started life as a dropdown replacement for Autocomplete, but it ended up as the system's most flexible picker — anywhere a product team needs to choose one thing from a list, this is the component they reach for. The design intent: keep the *anchor* (the visible field) and the *list* (the popover content) loosely coupled, so the same component can be a plain dropdown in one place and a rich account picker in another, without forking the implementation.
 
-What product teams reach for it for:
+Three uses cover most of how product teams reach for it. **Search through long lists** — toggle the search slot and a search field appears above the options; the list filters as the user types and arrow-key navigation keeps working without losing focus. **Group related options** — options can be flat or grouped, with labels at the group level and items inside; the component handles the visual hierarchy and skips over group labels in keyboard navigation, the consumer just shapes the data. **Render whatever the design requires** — two slots (`renderOption` and `renderAnchor`) let designers replace the default option row and the collapsed anchor with anything: avatars, lozenges, multi-line layouts, helper text. The third screenshot below is an account picker built entirely through `renderOption`.
 
-**Search through long lists.** Toggle the search slot and a search field appears above the options. As the user types, the list filters and arrow-key navigation continues to work without losing focus. This is the variant most product surfaces use when the choice is "pick one from many".
-
-![Select with the search slot enabled — a search field at the top of the popover and a filtered options list below](images/comp-select-with-search.png)
-
-**Group related options.** Options can be flat or grouped — labels at the group level, items inside. The visual hierarchy and the keyboard navigation skipping over group labels are both handled by the component; the consumer just shapes the data.
-
-![Select with grouped options — group labels visually separated from the items beneath them](images/comp-select-grouped.png)
-
-**Render whatever the design requires.** Two slots — `renderOption` and `renderAnchor` — let designers replace the default option row and the collapsed anchor with anything: avatars, lozenges, multi-line layouts, helper text. The example below is an account picker built entirely through `renderOption` — avatar, account name, and meta line, all from the same Select component.
-
-![Select with custom-rendered options — an account picker showing avatars, account names, and meta information](images/comp-select-account.png)
+<ScreenshotGrid images={[
+  { src: require('./images/comp-select-with-search.png').default, alt: 'Select with the search slot enabled — a search field at the top of the popover and a filtered options list below' },
+  { src: require('./images/comp-select-grouped.png').default, alt: 'Select with grouped options — group labels visually separated from the items beneath them' },
+  { src: require('./images/comp-select-account.png').default, alt: 'Select with custom-rendered options — an account picker showing avatars, account names, and meta information' },
+]} />
 
 Underneath all the surface variants is a single component that handles keyboard navigation (rove-focus through the options, Escape to close, Enter to select), scroll-into-view for the focused option, accessibility plumbing (the labelling rule from the form family applies here too), and the empty / loading states. By the end of the engagement, Select had replaced Autocomplete in most product code — same picker affordance everywhere, regardless of how rich the rendering is on top.
 
@@ -224,7 +250,11 @@ The design-system payoff is dual-use. The same primitive renders standalone prod
 
 ### Lozenge — a closed semantic vocabulary
 
+<BorderedImage>
+
 ![Lozenge in its full set of types — FREE, PRO, BETA, AI, LIVE, STOPPED, POPULAR, NEW, SOON — across small, medium, and large sizes](images/comp-lozenge.png)
+
+</BorderedImage>
 
 Lozenge is intentionally a *closed* component. There's no `text` or `children` prop — consumers pick from a fixed vocabulary of nine types: plan tiers (`free`, `pro`), capability indicators (`beta`, `ai`), status states (`live`, `stopped`, `soon`), and social-proof tags (`popular`, `new`). Each type has a fixed label and a fixed colour. If the product needs a new badge category, the system gets extended; product code can't invent one. That constraint *is* the design — it's how the visual language stays tight at scale.
 
@@ -236,22 +266,22 @@ I introduced this component in 2024 (originally as `Badge`); the in-house team g
 
 ### SectionMessage
 
+<BorderedImage>
 
 ![SectionMessage in info, warning, error, and success states](images/comp-section-message.png)
 
+</BorderedImage>
+
 A page- or section-level message component covering info, warning, error, and success. I owned the full cycle: spec through implementation, then migrating product code off the older `SystemMessage` in the same release window.
 
-### Modal — with the redesigned close button
+### Modal and Toast — overlay surfaces
 
-![Modal with the new close-button affordance in the top-right corner](images/comp-modal.png)
+Both components live above the main canvas and have to behave well as transient surfaces. The **Modal** got a redesigned close-button affordance that I led, rolled out across ~10 consumer modals in the same commit window so the visual update landed everywhere at once. The **Toast** is a feedback overlay with timed dismissal, an `isTemporary` flag, and inner-button accessibility via React Context — so an action button inside a Toast can dismiss its parent without prop drilling.
 
-I led the close-button redesign and rolled it out across ~10 consumer modals in the same commit window, so the visual update landed everywhere at once.
-
-### Toast
-
-![Toast](images/comp-toast.png)
-
-Feedback overlay with timed dismissal, an `isTemporary` flag, and inner-button accessibility via React Context — so an action button inside a Toast can dismiss its parent without prop drilling.
+<ScreenshotGrid images={[
+  { src: require('./images/comp-modal.png').default, alt: 'Modal with the redesigned close-button affordance in the top-right corner' },
+  { src: require('./images/comp-toast.png').default, alt: 'Toast — feedback overlay with timed dismissal and an inner action button' },
+]} />
 
 ## Open-source contribution: storybook-addon-code-editor
 

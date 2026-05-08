@@ -105,6 +105,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions;
   const postTemplate = path.resolve("./src/templates/Post.js");
+  const portfolioPostTemplate = path.resolve("./src/templates/PortfolioPost.js");
   const blogTemplate = path.resolve("./src/templates/BlogIndex.js");
   const tagTemplate = path.resolve("./src/templates/TagIndex.js");
 
@@ -385,7 +386,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: slug,
-      component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+      component: `${portfolioPostTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         slug,
       },
