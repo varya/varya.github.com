@@ -28,6 +28,8 @@ export { default as Step } from "./Step";
 export { default as Timetable } from "./Timetable";
 export { default as Tag } from "./Tag";
 export { default as Team } from "./Team";
+export { default as PortfolioBreadcrumb } from "./PortfolioBreadcrumb";
+export { default as PortfolioNotice } from "./PortfolioNotice";
 export { default as Widget } from "./Widget";
 export { default as WidgetContainer } from "./WidgetContainer";
 export { default as WidgetMulti } from "./WidgetMulti";
