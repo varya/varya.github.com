@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 import { Box, Text } from "grommet";
-import { Heading, Link } from "@components";
+import { Link } from "@components";
 
 const StyledLinkText = styled(Text)`
   text-transform: uppercase;
@@ -12,27 +12,13 @@ const StyledLinkText = styled(Text)`
 `;
 
 const PortfolioBreadcrumb = () => (
-  <Box direction="column" flex={false} pad={{ vertical: "small" }}>
-    <Box pad={{ bottom: "small" }}>
-      <Heading
-        color="text-weak"
-        level="6"
-        margin="none"
-        spaced
-        underline
-        textCase="uppercase"
-      >
-        Unlisted page — shared by link only, please don&apos;t forward
-      </Heading>
+  <Box direction="row" align="center" flex={false} pad={{ vertical: "small" }}>
+    <Box flex={false} color="brand">
+      ←
     </Box>
-    <Box direction="row" align="center">
-      <Box flex={false} color="brand">
-        ←
-      </Box>
-      <Link to="/projects-portfolio/">
-        <StyledLinkText>All projects</StyledLinkText>
-      </Link>
-    </Box>
+    <Link to="/projects-portfolio/">
+      <StyledLinkText>All projects</StyledLinkText>
+    </Link>
   </Box>
 );
 

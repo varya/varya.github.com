@@ -16,7 +16,9 @@ import {
   Layout,
   Link,
   Map,
+  Ol,
   Paragraph,
+  Ul,
   PatternJourney,
   PostHeader,
   PrevNextNav,
@@ -97,6 +99,8 @@ const postComponents = {
   h6: _Heading(6),
   p: _Paragraph(),
   a: Link,
+  ul: Ul,
+  ol: Ol,
   div: _div,
 };
 

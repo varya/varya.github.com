@@ -1,8 +1,10 @@
 ---
-title: Yara — Modernising the Ahua Design System for Web and React Native
+title: Design System for Yara International
+subTitle: Modernising tokens, components and pages by user research
 date: 2024-01-19
 feat: true
 logo: ./images/logo.png
+cover: ./images/yara-building.jpg
 description: >
   Six-month engagement leading the architectural and documentation direction
   of Yara's Ahua design system: a compound-component composition pattern,
@@ -10,7 +12,7 @@ description: >
   tier-based token system across web and React Native.
 ---
 
-<BorderedTable>
+<BorderedTable bodyFont>
 
 | | |
 | --- | --- |
@@ -27,13 +29,19 @@ description: >
 
 Yara International — the multinational crop-nutrient and digital-agriculture company — runs a multi-product UI surface on top of an internal design system called **Ahua**, shipped as two production libraries (React for web, React Native for mobile). When we joined, the system was visible to product engineers, but the developer experience was uneven: Storybook 6 with hand-authored MDX1 stories, no shared composition pattern across compound components, parallel token systems for web and React Native that drifted from each other, and a documentation surface that didn't quite reflect how product engineers actually used it.
 
+<BrowserWindow>
+
+![Yara | Leader in crop nutrition, ammonia and industrial solutions](images/page-company.png)
+
+</BrowserWindow>
+
 Over six months, Bridge the Gap (my consultancy team) partnered with Yara's design-system lead, the in-house designers, the in-house UX designer, and engineers across the wider product organisation. As the design-system architect on our side, I led the technical and documentation direction across the engagement. Together with my team, we shipped 10 new components on a shared compound-component pattern, brought 20+ legacy components onto a single dotted-display-name convention, migrated both libraries from Storybook 6 to 7, and rebuilt the Storybook surface — driven by user research with Yara product engineers — into a branded, scannable documentation experience. We also designed and delivered the new tier-based token system: vocabulary, naming convention, Figma re-organisation, and the cross-library codegen plan.
 
-<BorderedImage>
+<BrowserWindow>
 
 ![Ahua at a glance — Banner, Card, Accordion, Button variants and Chip cluster, all on the same shared foundation](images/swatch-component-grid.png)
 
-</BorderedImage>
+</BrowserWindow>
 
 The end result is a design system that product teams reach for first, that has consistent component APIs across the catalogue, and whose Storybook pages designers and engineers navigate together.
 
@@ -195,17 +203,17 @@ The right column reads consistently: `ahua` → category → group → entity �
 
 Tokens are authored once — in a single source-of-truth file — and codegen emits the three things three audiences consume:
 
-```
-  ahua.tokens.json   ← single source of truth (in the design-system repo)
-         │
-         ├─►  Figma library      ahua/color/concept/brand/base
-         │     (designers reference this)
-         │
-         ├─►  JavaScript          ahua.color.concept.brand.base
-         │     (web React + React Native both import this)
-         │
-         └─►  SCSS                $ahua-color-concept-brand-base
-               (product code that consumes via stylesheets)
+```shell
+ahua.tokens.json   ← single source of truth (in the design-system repo)
+        │
+        ├─►  Figma library      ahua/color/concept/brand/base
+        │     (designers reference this)
+        │
+        ├─►  JavaScript          ahua.color.concept.brand.base
+        │     (web React + React Native both import this)
+        │
+        └─►  SCSS                $ahua-color-concept-brand-base
+              (product code that consumes via stylesheets)
 ```
 
 Adding `ahua.color.global.blue.55` becomes a one-PR change. The new value flows into Figma, the web library, the React Native library, and any SCSS-consuming app — same name, same value, no manual translation. Cross-platform drift becomes structurally impossible.
@@ -268,11 +276,11 @@ The Storybook chrome that product engineers see today is the result of three coo
 - **Doc-page best practices.** Conventions from open-source design systems we'd surveyed — table of contents, tabbed canvas, code-snippet block, jump links — informed the UI vocabulary.
 - **Sprint-end demos and feedback events.** What product engineers asked for during demos got rolled directly into the next sprint's UI work.
 
-<BorderedImage>
+<BrowserWindow>
 
 ![Ahua Storybook](images/page-storybook.png)
 
-</BorderedImage>
+</BrowserWindow>
 
 The implementation was three coordinated PRs across the team:
 
@@ -282,19 +290,18 @@ The implementation was three coordinated PRs across the team:
 
 All three landed identically in both libraries — the `.storybook/custom-components/` folder is byte-for-byte parallel between web and React Native, so the docs surface looks and behaves the same regardless of which library a product engineer is browsing.
 
-<BorderedImage>
+<BrowserWindow>
 
 ![A component page in the custom Storybook UI — Github / Figma / Guidelines source links at the top, a copy-ready import snippet, the component preview with zoom and "show code" controls, a Table of Contents on the right, and the custom props table below](images/storybook-component-page.png)
 
-</BorderedImage>
+</BrowserWindow>
 
 Below is what a full docs page looks like end-to-end — the Stack component, top to bottom. Every element on it is derived from the component's source code, not from a separately-maintained doc file.
 
-<BorderedImage>
-
-![The full Stack component docs page — title and description, GitHub and Figma source links, import snippet, props table, component options, children components, and a gallery of every Stack story with its own caption](images/page-docs.png)
-
-</BorderedImage>
+<ScrollingBrowserWindow
+  src={require('./images/page-docs.png').default}
+  alt="The full Stack component docs page — title and description, GitHub and Figma source links, import snippet, props table, component options, children components, and a gallery of every Stack story with its own caption"
+/>
 
 What's on the page, and where each piece comes from:
 
@@ -311,7 +318,10 @@ A few pages from the docs surface are worth calling out specifically. The **Welc
 <ScreenshotGrid images={[
   require('./images/page-welcome.png').default,
   require('./images/page-how-to-use-storybook.png').default,
+]} />
+<ScreenshotGrid images={[
   require('./images/page-fonts.png').default,
+  require('./images/page-packages.png').default,
 ]} />
 
 ### Two libraries, one Storybook

@@ -7,13 +7,13 @@ import { Heading, Hero, MetaGroup } from "@components";
 const PostHeader = ({ imageUrl, date, readingTime, title, subTitle }) => {
   return (
     <Hero imageUrl={imageUrl} hasOverlay>
-      <Heading
-        margin={{ top: "auto", left: "auto", right: "auto" }}
-        color="text-invert"
-      >
-        {title}
-      </Heading>
-      {subTitle && (
+        <Heading
+          margin={{ top: "auto", left: "auto", right: "auto" }}
+          color="text-invert"
+        >
+          {title}
+        </Heading>
+        {subTitle && (
         <Heading
           level={4}
           spaced
