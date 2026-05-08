@@ -5,6 +5,8 @@ import { graphql } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import { Box, Button, Text } from "grommet";
 import {
+  BorderedImage,
+  BorderedTable,
   DsAspects,
   Heading,
   Hero,
@@ -17,6 +19,8 @@ import {
   PortfolioBreadcrumb,
   PostHeader,
   ProjectRoles,
+  ScreenshotGrid,
+  TokenAnatomy,
   Workshop,
   PureHtml,
   Section,
@@ -43,6 +47,10 @@ const globalMdxComponents = {
   Link,
   Image,
   ImageBlock,
+  BorderedImage,
+  BorderedTable,
+  ScreenshotGrid,
+  TokenAnatomy,
 };
 
 const _Heading = (level) => {
