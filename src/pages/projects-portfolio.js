@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { graphql } from "gatsby";
-import { Heading, Widget, WidgetContainer } from "@components";
+import { Heading, PortfolioNotice, Widget, WidgetContainer } from "@components";
 import { Page } from "@templates/Page";
 
 const HeroContent = () => (
@@ -35,6 +35,7 @@ const ProjectsPortfolio = ({ data }) => {
           "Extended case studies of Varya Stepanova's design systems projects.",
       }}
     >
+      <PortfolioNotice />
       <WidgetContainer items={{ small: 1, medium: 2, large: 2 }}>
         {posts.map((post, index) => {
           const { title, link } = post.node.frontmatter;
