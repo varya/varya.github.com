@@ -1,0 +1,150 @@
+/*
+ * Prism theme for fenced code blocks (rendered by gatsby-remark-prismjs).
+ *
+ * Colour scheme aligned with the site's grommet theme:
+ *   brand   = rgb(236, 78, 75)   — coral, used for keywords / control flow
+ *   accent  = #f8d179            — yellow, deeper variants used for numbers
+ *   neutral = #85d8f3            — cyan, deeper variant used for functions / class names
+ *   text    = rgba(0, 0, 0, 0.85)
+ *
+ * Inline code (single backticks) uses a soft grey pill so it sits inside
+ * paragraph rhythm without dominating.
+ */
+
+/* Container — every fenced block produces a `.gatsby-highlight` wrapper
+   around `<pre><code>...</code></pre>` */
+.gatsby-highlight {
+  position: relative;
+  margin: 24px 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: #faf9f6;
+  overflow: hidden;
+}
+
+.gatsby-highlight pre[class*="language-"] {
+  background: transparent;
+  margin: 0;
+  padding: 18px 22px;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+  color: rgba(0, 0, 0, 0.85);
+  overflow-x: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-shadow: none;
+}
+
+.gatsby-highlight code[class*="language-"] {
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  padding: 0;
+  text-shadow: none;
+}
+
+/* Language tag in top-right corner — pulls from `data-language` */
+.gatsby-highlight[data-language]::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.35);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  pointer-events: none;
+  background: rgba(250, 249, 246, 0.85);
+  padding: 2px 4px;
+  border-bottom-left-radius: 4px;
+}
+
+/* ---------- Token colours ---------- */
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: rgba(0, 0, 0, 0.45);
+  font-style: italic;
+}
+
+.token.punctuation,
+.token.operator {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.token.keyword,
+.token.boolean,
+.token.builtin,
+.token.atrule,
+.token.important {
+  color: rgb(236, 78, 75); /* brand — coral */
+  font-weight: 500;
+}
+
+.token.string,
+.token.char,
+.token.regex,
+.token.attr-value,
+.token.url {
+  color: #7a5d2b; /* warm gold/amber — sibling of accent yellow */
+}
+
+.token.number,
+.token.hexcode,
+.token.symbol {
+  color: rgb(184, 134, 31); /* deeper accent */
+}
+
+.token.function,
+.token.class-name,
+.token.tag {
+  color: rgb(20, 90, 165); /* deeper neutral cyan */
+}
+
+.token.attr-name,
+.token.property,
+.token.namespace,
+.token.selector {
+  color: rgb(0, 103, 187);
+}
+
+.token.variable,
+.token.parameter {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.token.deleted {
+  color: rgb(190, 60, 58);
+  background: rgba(236, 78, 75, 0.08);
+}
+
+.token.inserted {
+  color: rgb(38, 138, 90);
+}
+
+.token.bold {
+  font-weight: 600;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+/* ---------- Inline code (`like-this` in prose) ---------- */
+
+:not(pre) > code[class*="language-"],
+:not(pre) > code:not([class]) {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+  font-size: 0.92em;
+  color: rgba(0, 0, 0, 0.85);
+  white-space: nowrap;
+}

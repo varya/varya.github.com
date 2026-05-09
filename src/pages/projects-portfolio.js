@@ -5,13 +5,15 @@ import { graphql } from "gatsby";
 import { Box } from "grommet";
 import {
   Heading,
+  Hero,
   Link,
   Paragraph,
+  PortfolioLayout,
   PortfolioNotice,
+  Seo,
   Widget,
   WidgetContainer,
 } from "@components";
-import { Page } from "@templates/Page";
 
 const HeroContent = () => (
   <>
@@ -47,17 +49,20 @@ const ProjectsPortfolio = ({ data }) => {
   });
 
   return (
-    <Page
-      hero={{
-        props: { background: "transparent", height: "small" },
-        content: HeroContent,
-      }}
-      seo={{
-        title: "Projects Portfolio — Varya Stepanova",
-        description:
-          "Extended case studies of Varya Stepanova's design systems projects.",
-      }}
-    >
+    <PortfolioLayout>
+      <Seo
+        title="Projects Portfolio — Varya Stepanova"
+        description="Extended case studies of Varya Stepanova's design systems projects."
+      />
+      <Hero
+        align="center"
+        justify="between"
+        background="transparent"
+        height="small"
+      >
+        <HeroContent />
+      </Hero>
+      <Box width="xlarge" margin={{ horizontal: "auto" }} pad="medium">
       <PortfolioNotice />
       <WidgetContainer items={{ small: 1, medium: 2, large: 2 }}>
         {posts.map((post, index) => {
@@ -109,7 +114,8 @@ const ProjectsPortfolio = ({ data }) => {
           })}
         </WidgetContainer>
       </Box>
-    </Page>
+      </Box>
+    </PortfolioLayout>
   );
 };
 

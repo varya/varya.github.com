@@ -17,6 +17,9 @@ const StyledHeading = styled(GrommetHeading)`
   text-decoration: ${({ underline }) => underline && "underline"};
   letter-spacing: ${({ spaced }) => (spaced ? "0.2em" : "normal")};
 
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+
   ${({ level }) =>
     level !== 1 &&
     `

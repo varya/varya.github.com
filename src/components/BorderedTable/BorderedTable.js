@@ -14,14 +14,14 @@ const Wrap = styled.div`
   table {
     border-collapse: collapse;
     width: 100%;
-    font-size: 14px;
-    line-height: 1.45;
+    ${({ $bodyFont }) =>
+      $bodyFont ? "" : "font-size: 14px; line-height: 1.45;"}
   }
 
   th,
   td {
     border: 1px solid rgba(0, 0, 0, 0.12);
-    padding: 10px 14px;
+    padding: ${({ $bodyFont }) => ($bodyFont ? "12px 16px" : "10px 14px")};
     text-align: left;
     vertical-align: top;
   }
@@ -44,6 +44,8 @@ const Wrap = styled.div`
   }
 `;
 
-const BorderedTable = ({ children }) => <Wrap>{children}</Wrap>;
+const BorderedTable = ({ children, bodyFont = false }) => (
+  <Wrap $bodyFont={bodyFont}>{children}</Wrap>
+);
 
 export default BorderedTable;
