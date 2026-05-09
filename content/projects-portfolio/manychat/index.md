@@ -84,7 +84,7 @@ I'd bring the research back to the designer alongside the technical constraints 
 
 That rhythm — designer's initial framing → industry-and-codebase research → designer's informed proposal → joint spec — was the working loop. It ran several dozen times across the engagement. Slower than "design first, build second", but it almost never produced a component we wanted to redesign three months later.
 
-![The research loop — designer's framing, research, designer's informed proposal, joint spec, repeated](/projects-portfolio/manychat/manychat-research-loop.svg)
+<ResearchLoop />
 
 ### Embedded, not handed-off
 
@@ -195,37 +195,35 @@ Every component now has an "interactive" story alongside its variants. A product
 
 Tokens (colours, spacings, typography) used to sit on the page as visual swatches alone — pretty, but you had to ask in Slack which CSS variable produced them. We rewrote the foundation pages to surface, on the same row: the swatch, the design-token name, the CSS variable, the JavaScript variable name, and (for spacing) the utility class.
 
-Before — colours were illustrated as a swatch grid with end values only:
+Before — colours were illustrated as a swatch grid with end values only. After — every colour now surfaces its design-token name and CSS / JavaScript variables alongside the swatch.
 
-<BorderedImage>
+<ScreenshotGrid images={[
+  {
+    src: require('./images/colors--before.png').default,
+    title: 'Before',
+    alt: 'Colour foundations before — only the resolved hex shown',
+  },
+  {
+    src: require('./images/colors--after.png').default,
+    title: 'After',
+    alt: 'Colour foundations after — token name, CSS variable, JS variable, and swatch on the same row',
+  },
+]} />
 
-![Colour foundations before — only the resolved hex shown](images/colors--before.png)
+The same shift on the spacing page. Before, spacing was nicely illustrated but the way of *using* it was implicit. After, every spacing value shows its visual scale, the utility class to apply it, and the underlying value:
 
-</BorderedImage>
-
-After — every colour now surfaces its design-token name and CSS / JavaScript variables alongside the swatch:
-
-<BorderedImage>
-
-![Colour foundations after — token name, CSS variable, JS variable, and swatch on the same row](images/colors--after.png)
-
-</BorderedImage>
-
-The same shift on the spacing page. Before, spacing was nicely illustrated but the way of *using* it was implicit:
-
-<BorderedImage>
-
-![Spacing foundations before — visual representation only](images/spaces--before.png)
-
-</BorderedImage>
-
-After, every spacing value shows its visual scale, the utility class to apply it, and the underlying value:
-
-<BorderedImage>
-
-![Spacing foundations after — utility class, value, and visual scale together](images/spaces--after.png)
-
-</BorderedImage>
+<ScreenshotGrid images={[
+  {
+    src: require('./images/spaces--before.png').default,
+    title: 'Before',
+    alt: 'Spacing foundations before — visual representation only',
+  },
+  {
+    src: require('./images/spaces--after.png').default,
+    title: 'After',
+    alt: 'Spacing foundations after — utility class, value, and visual scale together',
+  },
+]} />
 
 This change came directly out of a feedback loop with product engineers at the first in-house design-system community meeting. They'd been navigating tokens by guessing class names. The fix was a documentation re-shape, not a token change — but the effect was that designers and developers stopped speaking different languages about colour and spacing.
 

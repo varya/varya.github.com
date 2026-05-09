@@ -16,6 +16,21 @@ const Grid = styled(Box)`
   }
 `;
 
+const Cell = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
+
+const Title = styled.div`
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.85);
+  text-align: center;
+`;
+
 const ImageWrapper = styled.a`
   display: block;
   overflow: hidden;
@@ -44,21 +59,24 @@ const ScreenshotGrid = ({ images }) => {
   return (
     <Grid margin={{ vertical: "medium" }} $count={images.length}>
       {images.map((item, index) => {
-        const src = typeof item === "string" ? item : item.src;
-        const alt =
-          typeof item === "string"
-            ? `Screenshot ${index + 1}`
-            : item.alt || `Screenshot ${index + 1}`;
+        const isString = typeof item === "string";
+        const src = isString ? item : item.src;
+        const title = isString ? null : item.title || null;
+        const alt = isString
+          ? `Screenshot ${index + 1}`
+          : item.alt || item.title || `Screenshot ${index + 1}`;
         return (
-          <ImageWrapper
-            key={index}
-            href={src}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={alt}
-          >
-            <img src={src} alt={alt} />
-          </ImageWrapper>
+          <Cell key={index}>
+            {title && <Title>{title}</Title>}
+            <ImageWrapper
+              href={src}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={alt}
+            >
+              <img src={src} alt={alt} />
+            </ImageWrapper>
+          </Cell>
         );
       })}
     </Grid>
@@ -72,6 +90,7 @@ ScreenshotGrid.propTypes = {
       PropTypes.shape({
         src: PropTypes.string.isRequired,
         alt: PropTypes.string,
+        title: PropTypes.string,
       }),
     ]),
   ).isRequired,
