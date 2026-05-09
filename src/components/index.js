@@ -37,6 +37,7 @@ export { default as BorderedTable } from "./BorderedTable";
 export { default as BrowserWindow } from "./BrowserWindow";
 export { default as ScreenshotGrid } from "./ScreenshotGrid";
 export { default as ScrollingBrowserWindow } from "./ScrollingBrowserWindow";
+export { default as SpecDrivenFlow } from "./SpecDrivenFlow";
 export { default as TokenAnatomy } from "./TokenAnatomy";
 export { default as Widget } from "./Widget";
 export { default as WidgetContainer } from "./WidgetContainer";

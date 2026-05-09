@@ -24,6 +24,7 @@ import {
   ProjectRoles,
   ScreenshotGrid,
   ScrollingBrowserWindow,
+  SpecDrivenFlow,
   TokenAnatomy,
   Workshop,
   PureHtml,
@@ -56,6 +57,7 @@ const globalMdxComponents = {
   BrowserWindow,
   ScreenshotGrid,
   ScrollingBrowserWindow,
+  SpecDrivenFlow,
   TokenAnatomy,
 };
 

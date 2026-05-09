@@ -1,8 +1,10 @@
 ---
-title: Manychat — Revamping a Design System That Scales With the Product
+title: Manychat Foundation, Components, and Docs
+subTitle: Revamping a Design System That Scales With the Product
 date: 2025-06-30
 feat: true
 logo: ./images/manychat-design-system-thumb.png
+cover: ./images/manychat-barcelona.jpg
 description: >
   Seventeen-month engagement leading the architectural and documentation
   direction of Manychat's React design system: form scaffolding,
@@ -27,7 +29,11 @@ description: >
 
 Manychat (a conversational-marketing platform used by over a million businesses) was outgrowing its in-house React component library. The product team kept shipping, but the design system underneath was uneven: gaps in the form family, an aging Storybook setup, and a foundations layer that designers and developers consulted in different mental models. They didn't lack skill; they lacked the *capacity* to invest in foundations while still serving a fast-moving product roadmap.
 
-![Manychat](/projects-portfolio/manychat/manychat-logo.svg)
+<BrowserWindow>
+
+![Chat Marketing Made Easy with Manychat: Automate two-way, interactive conversations in Instagram Direct Messages, Facebook Messenger, and SMS to grow your brand](images/page-company.png)
+
+</BrowserWindow>
 
 For seventeen months, Bridge the Gap (my consultancy team) partnered with Manychat's in-house design-system folks. As the design-system architect on our side, I led the technical and documentation direction across components, accessibility, Storybook, and the foundation pages designers and engineers actually use. Together with my team, we shipped 25+ new components, rewrote the form scaffolding, modernised Storybook through three major versions, and rebuilt the surfaces: sidebar tags, custom Docs grid, props categories, token pages.
 
@@ -57,7 +63,7 @@ Two things make this method work:
 1. **The spec is written for humans first.** A designer who never reads TypeScript can argue with a sentence like "the popover anchors to its trigger and avoids the viewport edge." They cannot argue with a type signature. So the discussion stays where the disagreements actually live: behaviour, not syntax.
 2. **The test plan precedes implementation.** Once the spec is signed off, the test list often becomes the test file almost verbatim. The component itself is then frequently a no-op for the developer — sometimes Copilot finishes it on the first try.
 
-![Spec-driven flow — written spec, walkthrough, plain-English test plan, implementation](/projects-portfolio/manychat/manychat-spec-flow.svg)
+<SpecDrivenFlow />
 
 I wrote up the method publicly on the Bridge the Gap blog: [Define your rock-solid design system components](https://bridge-the-gap.dev/blog/design-system-define-components/). Manychat was the engagement where I refined it most.
 
@@ -96,6 +102,25 @@ Bridge the Gap added extra capacity and patterns we'd seen work elsewhere; the i
 
 The system has multiple competent owners inside Manychat. That's the design.
 
+### Component lifecycle
+
+The catalogue isn't a static set — it's a system that has to grow with the product, accept new patterns from product teams, and retire components that no longer fit. We codified four explicit lifecycle stages so the system's own state is visible to everyone consuming it, in the sidebar and on every component's docs page.
+
+<BrowserWindow>
+
+![Component lifecycle docs page in Storybook — four stages from Candidate to Beta, Stable, and Deprecated, each with characteristics and next steps](images/page-component-lifecycle.png)
+
+</BrowserWindow>
+
+The stages map a clear renewal flow:
+
+- **⚪ Candidate.** A reusable UI pattern that emerges in a product team's code and could become part of `manyui`. The catalogue door is open: anything recurring across surfaces is a Candidate. The DS team validates design, accessibility, and API shape before promotion — so new components arrive with usage evidence, not from guesses.
+- **🔵 Beta.** A component that has shipped into `manyui` but is still evolving. It carries a **Beta** tag in the sidebar, has working Storybook docs, and meets the baseline accessibility / design / API standards — but its surface may still change. Adopters know what they're signing up for; the team can iterate publicly without freezing the catalogue.
+- **🟢 Stable.** Production-ready. No special label in the sidebar — Stable is the default. Comprehensive tests (unit, accessibility, visual regression) pin the behaviour; only minor updates and bug fixes from here. This is the contract product teams rely on.
+- **🔴 Deprecated.** Marked with a **Deprecated** tag and a notice on the docs page that points to the replacement. The component still works but stops getting new features. A clear migration path is published; the component is removed in a future major version.
+
+The renewal pattern is the point. Every component flows through these four stages, in the open. New patterns can enter from product teams; mature ones earn the unlabelled "Stable" default; replaced ones leave on a schedule with a migration path. Nothing rots in place; nothing freezes; nothing surprises product teams. The lifecycle is **visible governance** — surfaced as sidebar status tags so any engineer can read the catalogue's health at a glance, without consulting a separate document.
+
 ### Adoption is part of the design system team's job
 
 We treated migrating product code onto new components as our work, not the product team's. When CheckboxV2 was ready, we rolled it out. When a legacy `SystemMessage` was replaced by a new `SectionMessage`, we updated the consumers in the same week. By the end of the engagement, ~1,500 product file-touches sit on the design-system team's commits.
@@ -103,6 +128,12 @@ We treated migrating product code onto new components as our work, not the produ
 This is a different operating model from "publish the library and consult." It's slower in raw component-throughput, but it dramatically tightens the feedback loop between *what we built* and *whether it actually fits the product*. Several mid-course corrections came directly from migration friction we hit ourselves.
 
 ## Signature work
+
+<BrowserWindow>
+
+![](images/components-grid.png)
+
+</BrowserWindow>
 
 ### A form family that composes
 
@@ -216,11 +247,10 @@ A handful from the catalogue — chosen for the visual range of the system, not 
 
 ### Form family — text, number, search, textarea
 
-<BorderedImage>
-
-![TextInputV2, NumberInputV2, SearchInput, and TextArea in their default and error states](./images/comp-form-family.png)
-
-</BorderedImage>
+<ScreenshotGrid images={[
+  require('./images/comp-form-family.png').default,
+  require('./images/comp-number-input.png').default,
+]} />
 
 Four inputs, one shared layout. Label position, help-text spacing, and error message placement are owned by `FormTextField`, so the family stays consistent and a styling change ships in one place.
 
@@ -238,7 +268,7 @@ Three uses cover most of how product teams reach for it. **Search through long l
 
 Underneath all the surface variants is a single component that handles keyboard navigation (rove-focus through the options, Escape to close, Enter to select), scroll-into-view for the focused option, accessibility plumbing (the labelling rule from the form family applies here too), and the empty / loading states. By the end of the engagement, Select had replaced Autocomplete in most product code — same picker affordance everywhere, regardless of how rich the rendering is on top.
 
-### List — one primitive, two surfaces
+### List — one primitive, two surfaces`
 
 ![A complex List with left icons, group headings, lozenges, and a selected item](images/comp-list-complex.png)
 
@@ -266,11 +296,11 @@ I introduced this component in 2024 (originally as `Badge`); the in-house team g
 
 ### SectionMessage
 
-<BorderedImage>
+<BrowserWindow>
 
 ![SectionMessage in info, warning, error, and success states](images/comp-section-message.png)
 
-</BorderedImage>
+</BrowserWindow>
 
 A page- or section-level message component covering info, warning, error, and success. I owned the full cycle: spec through implementation, then migrating product code off the older `SystemMessage` in the same release window.
 
