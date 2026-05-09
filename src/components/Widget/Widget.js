@@ -35,6 +35,7 @@ const Widget = ({
   image,
   imageSrc,
   title,
+  subTitle,
   excerpt,
   slug,
   readingTime,
@@ -66,10 +67,20 @@ const Widget = ({
           <Heading
             level="3"
             textAlign={justify}
-            margin={{ top: "none", bottom: "small" }}
+            margin={{ top: "none", bottom: subTitle ? "xsmall" : "small" }}
           >
             {title}
           </Heading>
+        )}
+        {subTitle && (
+          <Text
+            textAlign={justify}
+            size="medium"
+            margin={{ top: "none", bottom: "small" }}
+            style={{ opacity: 0.75, fontStyle: "italic" }}
+          >
+            {subTitle}
+          </Text>
         )}
         <Box
           height={direction === "row" ? height : "auto"}
@@ -147,6 +158,7 @@ Widget.propTypes = {
   image: PropTypes.node,
   imageSrc: PropTypes.string,
   title: PropTypes.string,
+  subTitle: PropTypes.string,
   excerpt: PropTypes.string,
   date: PropTypes.string,
   readingTime: PropTypes.number,

@@ -7,9 +7,9 @@ logo: ./images/logo.png
 cover: ./images/yara-building.jpg
 description: >
   Six-month engagement leading the architectural and documentation direction
-  of Yara's Ahua design system: a compound-component composition pattern,
-  Storybook 7 migration, a custom Storybook UI from user research, and a new
-  tier-based token system across web and React Native.
+  of Yara's Ahua design system: a tier-based token system designers specify
+  against, a compound-component pattern that mirrors how designers compose,
+  and an internal Storybook shaped by user research with the in-house team.
 ---
 
 <BorderedTable bodyFont>
@@ -76,7 +76,7 @@ Two things make this method work:
 1. **The spec is written for humans first.** A designer who never reads TypeScript can argue with a sentence like "the dialog closes on overlay click unless it's modal." They cannot argue with a type signature. So the discussion stays where the disagreements actually live: behaviour, not syntax.
 2. **The test plan precedes implementation.** Once the spec is signed off, the test list often becomes the test file almost verbatim. The component itself is then frequently a no-op for the developer — sometimes Copilot finishes it on the first try.
 
-![Spec-driven flow — written spec, walkthrough, plain-English test plan, implementation](/projects-portfolio/yara/yara-spec-flow.svg)
+<SpecDrivenFlow />
 
 I wrote up the method publicly on the Bridge the Gap blog: [Define your rock-solid design system components](https://bridge-the-gap.dev/blog/design-system-define-components/).
 
@@ -237,7 +237,7 @@ The team's pilot component was EmptyState, shipped in two intense days at the en
 
 I led EmptyState. The architectural payoff: every later compound component the team shipped — CheckBoxGroup, BottomSheet, NavigationRail, Accordion, Calendar, SelectGroup — followed the same shape. One root export, a small ecosystem of dotted sub-elements, and stories that read like consumer code.
 
-![Anatomy of a compound component — Card as Root with Card.Head, Card.Body and Card.Tail sub-components, each with its dotted display name; the same pattern ships in CheckBoxGroup, BottomSheet, Banner, Accordion, and every other compound in the catalogue](/projects-portfolio/yara/yara-compound-component.svg)
+<CompoundComponent />
 
 ### API consistency — design and code share one shape
 

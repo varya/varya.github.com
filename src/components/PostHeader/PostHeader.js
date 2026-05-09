@@ -2,39 +2,30 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import styled from "styled-components";
-import { Box, Text } from "grommet";
+import { Text } from "grommet";
 import { Heading, Hero, MetaGroup } from "@components";
-
-const Title = styled(Heading)`
-  margin-bottom: 0;
-`;
-
-const Subtitle = styled(Heading)`
-  margin-top: 0;
-`;
 
 const PostHeader = ({ imageUrl, date, readingTime, title, subTitle }) => {
   return (
     <Hero imageUrl={imageUrl} hasOverlay>
-      <Box margin={{ top: "auto" }}>
-        <Title
-          margin={{ left: "auto", right: "auto" }}
+        <Heading
+          margin={{ top: "auto", left: "auto", right: "auto" }}
           color="text-invert"
         >
           {title}
-        </Title>
+        </Heading>
         {subTitle && (
-          <Subtitle
-            level={2}
-            margin={{ left: "auto", right: "auto" }}
-            color="text-invert"
-            fill="horizontal"
-          >
-            {subTitle}
-          </Subtitle>
+        <Heading
+          level={4}
+          spaced
+          margin={{ left: "auto", right: "auto" }}
+          color="text-invert"
+          fill="horizontal"
+          textCase="uppercase"
+        >
+          {title}
+        </Heading>
         )}
-      </Box>
-
       <MetaGroup>
         {[date, readingTime].map(
           (metaitem) =>

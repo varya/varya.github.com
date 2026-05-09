@@ -8,7 +8,9 @@ import {
   BorderedImage,
   BorderedTable,
   BrowserWindow,
+  CompoundComponent,
   DsAspects,
+  FloatRightImage,
   Heading,
   Hero,
   Image,
@@ -22,8 +24,10 @@ import {
   PortfolioLayout,
   PostHeader,
   ProjectRoles,
+  ResearchLoop,
   ScreenshotGrid,
   ScrollingBrowserWindow,
+  SpecDrivenFlow,
   TokenAnatomy,
   Workshop,
   PureHtml,
@@ -54,14 +58,20 @@ const globalMdxComponents = {
   BorderedImage,
   BorderedTable,
   BrowserWindow,
+  CompoundComponent,
+  FloatRightImage,
+  ResearchLoop,
   ScreenshotGrid,
   ScrollingBrowserWindow,
+  SpecDrivenFlow,
   TokenAnatomy,
 };
 
 const _Heading = (level) => {
   const component = ({ children }) => (
-    <Heading level={level}>{children}</Heading>
+    <Heading level={level} margin={{ top: "1.5em", bottom: "0.5em" }}>
+      {children}
+    </Heading>
   );
   component.propTypes = { children: PropTypes.node };
   return component;
