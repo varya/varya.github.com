@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import styled from "styled-components";
 import { Text } from "grommet";
 import { Heading, Hero, MetaGroup } from "@components";
 
@@ -22,10 +23,9 @@ const PostHeader = ({ imageUrl, date, readingTime, title, subTitle }) => {
           fill="horizontal"
           textCase="uppercase"
         >
-          {subTitle}
+          {title}
         </Heading>
-      )}
-
+        )}
       <MetaGroup>
         {[date, readingTime].map(
           (metaitem) =>
