@@ -1,27 +1,311 @@
 ---
-title: AppOmni Design System (Extended Case Study)
+title: AppOmni Design System
+subTitle: A framework-agnostic component library that designers can theme without forking
 date: 2023-03-31
 feat: true
 logo: ./logo.png
+cover: ./images/san-francisco.jpg
 description: >
-  Extended case study of Varya Stepanova's work on AppOmni's design system.
-  Role, decisions, problems, and outcomes — beyond the public summary.
+  Eleven-month engagement leading the architecture of AppOmni's design
+  system: a framework-agnostic component library built for risk dashboards
+  and configuration tables, themable per surface without forking, tokens
+  flowing from Figma, and a anatomy details (properties, slots,
+  events, and CSS variables) aligned between designers and engineers.
 ---
 
-> Lorem ipsum — placeholder body. The extended case study will live here.
+<BorderedTable bodyFont>
 
-## My Role
+| | |
+| --- | --- |
+| **Company** | [AppOmni](https://www.linkedin.com/company/appomni/) |
+| **Industry** | SaaS Security Posture Management (enterprise security) |
+| **Year** | 2022 – 2023 |
+| **Role** | Design System Architect & Technical Project Manager |
+| **Team** | Bridge the Gap (my consultancy team) — three engineers including me — partnering with AppOmni's in-house design lead, the in-house design team, and the in-house UI engineers |
+| **Stack** | Figma, Web Components, Lit, TypeScript, PostCSS, CSS custom properties, Style Dictionary, Storybook 6.5, Vite, GitHub Packages |
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</BorderedTable>
 
-## The Challenge
+## Executive summary
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+AppOmni (a SaaS security platform monitoring critical SaaS environments for over a quarter of the Fortune 100) needed a design system that would survive being consumed by more than one front-end framework — and that designers could re-skin per-surface without going back to engineering each time. The product is **data-heavy** end to end: posture dashboards, finding lists with severity and risk markers, configuration tables, compliance forms, and the filter chains that narrow them. Components had to compose into dense surfaces and stay legible at scale. The brief was technical, but the constraint underneath it was design-operational: cut down the slow ping-pong between a designer wanting *this badge to be a little taller in this dashboard* and a developer needing to fork the component to make it happen.
 
-## Decisions and Trade-offs
+<BrowserWindow>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+![](images/page-dashboard.png)
 
-## Outcome
+</BrowserWindow>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+For eleven months I led the architecture of `@appomni/design-system` — a library of 25 Web Components on Lit, themable end-to-end via CSS custom properties, with tokens authored in Figma and built through Style Dictionary, and a Storybook documentation surface where every property, slot, event, and CSS variable is generated from the component's own source. I also served as technical project manager: I built and ran the release pipeline, the per-PR Storybook previews, the contribution workflow, and the release cadence (63 published releases in nine visible months).
+
+The result is a component library that consumers can theme without forking, that designers can specify against without ambiguity, and that the in-house team continues to own and evolve.
+
+## Context — what AppOmni was solving for
+
+Three constraints shaped the engagement before any code was written:
+
+- **Multiple consumer surfaces.** AppOmni's product runs across several front-ends. A React-only library would have left part of the surface unstyled or inconsistent. The system needed to be framework-agnostic at the component level — Web Components were the structural answer.
+- **Per-surface visual variation.** Different dashboards inside the product have legitimately different visual densities and emphases. The design team didn't want one rigid component; they wanted a component that designers could re-tune per context without filing a change request.
+- **Designer–developer round-trips were slowing the team down.** When a designer wanted a slightly different padding, colour or radius for a single instance, the cost was a ticket, a developer cycle, and often a "we can't do that without a new variant" answer. The pattern was visible enough that addressing it was part of the architectural brief.
+
+These weren't crises — they were the friction patterns that make a product team conservative about using its own design system.
+
+## How we worked
+
+### Spec-driven definition before code
+
+I work with a method I call **ultra-defined components** — closely related to *spec-driven development*, but with a stronger emphasis on the human side of the conversation.
+
+Before any component code is written, I produce a written spec listing everything the component does: its interface, its accessibility behaviour, its edge cases, and a *natural-language* test plan ("the badge announces its label when focused, even when the visible text is omitted"). The spec is then walked through together — designer, tech lead, developers — until disagreements surface and resolve *upfront*, in language anyone in the room can argue with.
+
+<SpecDrivenFlow />
+
+I wrote up the method publicly on the Bridge the Gap blog: [Define your rock-solid design system components](https://bridge-the-gap.dev/blog/design-system-define-components/). AppOmni was the first engagement where I ran it at scale across an entire library.
+
+### Distributed ownership
+
+The design system is AppOmni's, not Bridge the Gap's. From the first month, the AppOmni in-house UI team contributed back into the same repository: a TypeScript-definitions PR, a pull-request template, runtime-dependency cleanup, a yarn-to-npm migration, and — most tellingly — the first version of the Select component, written by an AppOmni in-house engineer because that team had the product context for it. My team and I provided architecture, foundations, governance, and the heavy lifting on form scaffolding and infrastructure; the in-house UI team owned consumer integration and pushed fixes back upstream.
+
+We held the cadence with a weekly sync, a Slack channel for daily questions, a Jira board for refinement, and a Miro board with the contribution workflow visualised so any new contributor could see the path from Figma to release.
+
+### Design–code parity through documentation
+
+Every component documents itself. Each `<ao-component>` declares its properties, its slots, its events, and its CSS custom properties as JSDoc tags directly in source code. The Custom Elements Manifest analyser reads those tags and emits a manifest file. Storybook reads the manifest and renders the component's docs page from it — argTable, slot list, event list, and (the part that matters most for design) a complete table of customisable CSS variables with their defaults and descriptions.
+
+This means designers and engineers consult the same surface for the same answer. There's no "what props does this take?" Slack question that isn't answered on the docs page next to a live, editable example.
+
+## Signature work
+
+### A Web-Components library on Lit, end-to-end
+
+The library ships as a single ES bundle (`@appomni/design-system`) of 25 components — Button, Badge, Checkbox, Radio, Input, Select, Tabs, Tooltip, Popover, and so on. Each is a custom element with the `ao-` prefix (`<ao-button>`, `<ao-badge>`) that any HTML page, any framework, any rendering pipeline can use without adapter glue.
+
+<BrowserWindow>
+
+![A grid of AppOmni components — buttons, badges, chips, inputs, choice controls, select, feedback indicators](images/components-grid.png)
+
+</BrowserWindow>
+
+The architectural decisions that paid off across the engagement:
+
+- **Lit over Stencil or vanilla** — Lit gave us reactive lifecycles and decorators without compile-time tooling we'd have to maintain.
+- **`formAssociated = true` on every form-control** — buttons, inputs, checkboxes, radios participate in HTML forms natively (`<form>` submit, `FormData`, native validation). The polyfill (`element-internals-polyfill`) covers older Safari.
+- **Aria proxy via a custom decorator** — the `@ariaProperty` decorator removes aria attributes from the host element at runtime and proxies them to a `data-aria-*` attribute. This solves the Web-Components quirk of screen readers double-announcing the same label on host and inner element. A docs source-transform strips the `data-` prefix back out so consumers see clean `aria-*` in copy-paste examples.
+- **Typed events via a custom decorator** — `@event('focus')` declares a typed event dispatcher that also self-registers in the Custom Elements Manifest. Storybook's actions panel pre-populates from that manifest at startup.
+
+### Full theming via scoped CSS custom properties — and why this matters for design
+
+This is the part of the system I want to dwell on, because it's where the design–development friction story actually lives.
+
+Almost every component exposes its own CSS custom properties, scoped to the component's `:host` (its shadow root). Think of them as *typed handles*: each one names a specific role inside the component (a background, a border-radius, a padding), with a documented default that points at a token. A consumer can override any of them, on any instance, without forking the component.
+
+Take `<ao-badge>` as an example. Its public CSS variables include:
+
+```css
+--ao-badge__bg              /* default background */
+--ao-badge__bg--selected    /* background when selected */
+--ao-badge__bg--blue-600    /* background for color="blue-600" variant */
+--ao-badge__bg--hover       /* background on hover */
+--ao-badge__text-color
+--ao-badge__padding
+--ao-badge__border-radius
+--ao-badge__font-family
+--ao-badge__font-size
+--ao-badge__font-weight
+--ao-badge__line-height
+```
+
+<BrowserWindow>
+
+![Storybook user-guide page on custom properties — explains scoped :host CSS variables, how to find them, and three ways consumers can override them](images/custom-properties-guide.png)
+
+</BrowserWindow>
+
+A designer says "in this dashboard, badges need to be a little taller and use the monospace font tokens". An engineer writes:
+
+```css
+.security-events-table ao-badge {
+  --ao-badge__padding: var(--ao-spacing-12);
+  --ao-badge__line-height: var(--ao-spacing-20);
+}
+```
+
+That's it. No new variant, no fork, no upstream PR, no negotiation about whether this counts as "in the system" or "off the system". The component still references the token system underneath — the override stays on-system because it points at tokens, not raw values.
+
+Every component does this. `<ao-button>` exposes 30+ custom properties. `<ao-input>` exposes ~25. Padding, colour, radius, font, line-height, hover/disabled/focus state colours — all themable per-instance, all named consistently (`--ao-<component>[-<variant>]__<role>[_<state>]`), all documented.
+
+**Why this matters from the design side:**
+
+- **Designers can specify at the granularity reality demands** — including "for this surface, this component is slightly different" — without those specifications becoming exceptions to the system.
+- **Round-trips collapse.** The conversation moves from *"can we add a variant?"* to *"set this variable to this token."* Variants are reserved for genuinely new behaviour; visual tuning is a one-line CSS change.
+- **Audit becomes easier, not harder.** Because overrides reference tokens (not hex values), a future tokens change still propagates through every override. The system stays load-bearing.
+- **Designers and engineers consult the same docs.** Every component's customisable CSS variables are listed on its Storybook docs page, with names, defaults and descriptions. No separate "theming guide" that drifts out of date.
+
+I structured the naming convention, wrote the JSDoc-driven documentation pipeline, and led the foundation components (Button, Icon, Header, Loader, Hr, Checkbox, Radio, Textarea, Form Element, Link, Typography) where the convention was first proven.
+
+### A token pipeline driven from Figma
+
+Tokens originate in Figma (via the Figma Tokens plugin) and pass through a Style Dictionary pipeline I configured during the proof-of-concept phase and wrote up in source. The configuration registers:
+
+- **Custom transforms** — names normalised, font families quoted, numeric sizes get `px` (except opacity and font weights), shadows unwrapped from Figma's structured form into CSS strings.
+- **A renames map** that absorbs Figma-side spelling drift without forcing designers to round-trip through token files.
+- **Two emit formats per category** — a CSS file that lands in the runtime bundle, and a JSON-with-docs file that powers Storybook's token-table custom components.
+
+The build emits per-category CSS files (`_colors.css`, `_typography.css`, `_spacing.css`, `_sizing.css`, `_shadow.css`, `_border.css`, `_z-index.css`) and a generated utility-classes file (`.ao-m-8`, `.ao-mt-12`, etc.) for spacing helpers.
+
+<ScrollingBrowserWindow
+  src={require('./images/tokens-colors.png').default}
+  alt="Storybook colour tokens page — semantic colours, palette, and the underlying CSS custom-property names listed together"
+/>
+
+Alongside the token tables, the same documentation surface lists the **CSS mixins and utility classes** the system ships — the resets, the typography mixins (`@mixin paragraph-typography`), the risk-marker mixin used for severity colour swatches across the product, and the spacing utilities. Designers and engineers can find any visual primitive on a single page with a copy-paste snippet next to it.
+
+<ScrollingBrowserWindow
+  src={require('./images/utilities-mixins.png').default}
+  alt="Storybook page documenting CSS resets, typography mixins, the risk-marker mixin, and spacing utility classes — each shown with usage example and rendered output"
+/>
+
+The token pipeline answers a long-running Web-Components question: how do you give every shadow-rooted component access to a shared theme? My team and I solved it by importing the token CSS files as **strings** at build time, then injecting them as a single `<style>` tag in the host page's `<head>` at module init. CSS custom properties pierce shadow DOM boundaries — so once the tokens are in `:root`, every component's shadow root reads them via `var(--ao-...)`. One source of truth, no per-component boilerplate.
+
+### Form scaffolding — the architectural anchor
+
+The library's centre of gravity is forms. Six of the ten most-touched component folders are form-related: input, button, checkbox, radio, textarea, and the shared base `<ao-form-element>`.
+
+I introduced `<ao-form-element>` mid-engagement as the anchor: a base class that owns label, helper text, error message, required marker, and id-linkage between label and control. After it landed, every form control (input, textarea, checkbox, radio, select) migrated onto it. From that point, label rendering, accessibility wiring, and error-state behaviour stopped being a per-component concern. Adding a new form control means inheriting `<ao-form-element>` and writing the input shape — not re-implementing the chrome each time.
+
+The `id` linking label to control is generated via `nanoid` so consumers don't have to think about it; aria-describedby for help text and error messages is wired by the base class.
+
+<BrowserWindow>
+
+![A composed connector form built entirely from AppOmni components — text, email, password, date, tel, number, file and search inputs; single and multi select; radio group; checkbox group; textarea; primary/secondary/tertiary/link buttons](images/form-composition.png)
+
+</BrowserWindow>
+
+### A popover primitive that absorbed three components
+
+<FloatRightImage
+  src={require('./images/popover.png').default}
+  alt="The <ao-popover> primitive with arrow — the floating element used by Tooltip, Select, and Button-Combo"
+>
+
+By month nine, three components — Tooltip, Select, Button-Combo — each had their own copy of floating-UI positioning code. In the final sprint, my teammate refactored the new `<ao-popover>` primitive to absorb them: tooltip and select both became consumers of popover, sharing one positioning implementation with optional arrow rendering and consistent focus management.
+
+This is the kind of architectural simplification that only becomes obvious once you have enough components to see the shape. We didn't try to predict it on day one; we let three components teach us what the shared primitive needed to be, then refactored once.
+
+</FloatRightImage>
+
+### Self-documenting components — and why every facet matters
+
+Each component carries its own documentation in source — JSDoc tags above the class. Take `<ao-badge>`:
+
+```ts
+/**
+ * @slot InnerText - The text slot
+ *
+ * @cssproperty [--ao-badge__padding=--ao-spacing-8] - The padding to use for badge.
+ * @cssproperty [--ao-badge__bg=--ao-color-gray-600] - The default badge background-color.
+ * @cssproperty [--ao-badge__bg--selected=--ao-color-appomni-blue] -
+ *   The badge background-color when it has `selected` attribute.
+ * @cssproperty [--ao-badge__border-radius=--ao-border-radius-8] - The badge border-radius size.
+ * ...
+ */
+```
+
+The `@custom-elements-manifest/analyzer` reads these tags and emits a manifest file. Storybook reads the manifest at boot and renders four tabs on every component's docs page — **Properties**, **Slots**, **Events**, **CSS Custom Properties**. Each tab answers a different question that designers and developers genuinely ask, and each has to be there for the system to feel complete.
+
+<ScreenshotGrid images={[
+  {
+    src: require('./images/button-combo-docs-properties.png').default,
+    title: 'Properties',
+    alt: 'Properties tab on the Button-Combo docs page — every property listed with name, attribute, type, default, and description',
+  },
+  {
+    src: require('./images/button-combo-docs-slots.png').default,
+    title: 'Slots',
+    alt: 'Slots tab on the Button-Combo docs page — InnerText, prefix, suffix slots described',
+  },
+]} />
+
+<ScreenshotGrid images={[
+  {
+    src: require('./images/button-combo-docs-events.png').default,
+    title: 'Events',
+    alt: 'Events tab on the Button-Combo docs page — onFocus, onBlur, onExpand, onUnexpand events with typed dispatchers',
+  },
+  {
+    src: require('./images/button-combo-docs-custom-css.png').default,
+    title: 'CSS Custom Properties',
+    alt: 'CSS Custom Properties tab on the Button-Combo docs page — every public CSS variable listed with name, default token, and description',
+  },
+]} />
+
+**Properties** are the typed inputs the component expects — its variants, its boolean states, its labels, its size. A designer reading this page sees exactly which knobs exist, what type each one takes, and what the default is. There's no "we don't know if this prop is supported" Slack question; the source of truth is the same page the developer is reading.
+
+**Slots** are the placeholders inside the component where the consumer puts their own content. A button has `prefix`, `suffix`, and the text slot — meaning "icon left, text, icon right" is a composition, not a new variant. The Slots tab is what tells a designer *which areas of the component the system is willing to leave to the consumer's content* and which are part of the component's own anatomy. It removes the most common ambiguity in any component spec: "is this content or chrome?"
+
+**Events** are the moments the component announces something happened — focus, blur, expand, value change. The Events tab is the contract for behaviour: it's what makes a designer's behavioural spec ("when the popover opens, the trigger announces 'expanded' to assistive tech") testable and implementable without translation. The events are typed and self-register, so when a developer adds a new one, Storybook's actions panel picks it up automatically.
+
+**CSS Custom Properties** are the visual override surface — the table of every `--ao-*` variable a consumer can set on this component, with the default it falls back to and a one-line description. This is the design–development friction reducer in concrete form: a designer can read this list and know exactly how far the component is willing to flex without a code change.
+
+Each of the four tabs answers a *different* question, and each is the same surface the component itself enforces. When a contributor adds a new property, slot, event, or `@cssproperty` line in source, the next manifest build updates the docs automatically. Documentation isn't a side activity that drifts out of date; it *is* the contract the component commits to, and the in-house team continues to consume it without me in the room.
+
+I led the documentation tooling: the manifest pipeline (`npm run manifest`, `npm run manifest:storybook`, `npm run manifest:build`), the source-code transform that strips `data-` from aria attributes in rendered code snippets, and the gating that only refreshes the public Storybook on a published release.
+
+### A release pipeline that earns its complexity
+
+There's no semantic-release in the system. There's no changesets. The release model is **manual, version-bump-controlled, with a human-in-the-loop changelog edit.**
+
+I wrote the release script chain (`release:version` → `release:changelog` → `release:commit`). It bumps `package.json`, reads merged-PR titles since the last tag, writes them to `CHANGELOG_LATEST.md`, and **opens the user's editor** so the releaser curates the user-visible changelog before commit. After save, it prepends to `CHANGELOG.md` and commits.
+
+The human-in-the-loop edit is intentional: it forces the releaser to think about the user-visible changelog rather than dumping commit messages. PR title hygiene becomes the implicit contribution-style enforcement — what you write in the PR title is what consumers read.
+
+The library publishes to **GitHub Packages** (`npm.pkg.github.com`) — security-conscious, no separate npm-org admin, access control inherited from the existing GitHub organisation. Per-PR Storybook previews deploy to `gh-pages/pr:NNN/` and post the link as a PR comment, so reviewers always look at live behaviour, not screenshots.
+
+In nine visible months, **63 releases** shipped through this pipeline.
+
+### Web Components that participate in real HTML forms
+
+A small but load-bearing detail: the form controls (Button, Input, Checkbox, Radio, Textarea, Select) declare `static formAssociated = true` and use `attachInternals()` to participate in HTML forms natively. A consumer can write:
+
+```html
+<form>
+  <ao-input name="email" type="email" required></ao-input>
+  <ao-button type="submit">Save</ao-button>
+</form>
+```
+
+…and submit, validate, and serialise just like native form controls. No FormProvider context wrapper, no library-specific form helper. The element-internals-polyfill (pinned in dependencies) covers older Safari. From the consumer's point of view, these are HTML form controls that happen to be branded.
+
+## My contribution
+
+In a three-person team, I posted the highest commit volume of the engagement and wore several hats throughout — design-system architect, technical project manager, engineering lead, and the team's connective tissue with AppOmni's design and engineering organisations. Concretely:
+
+- **Engineering team lead.** I ran the Bridge the Gap engineering side day to day — work breakdown, technical direction, code review, sequencing across token, component and infrastructure tracks. I held the bar on architectural consistency so the system grew in one shape rather than three.
+- **Component specifications.** I authored the written specification for every component in the library — interface, accessibility behaviour, edge cases, natural-language test plan — before any code was written. The spec was the artefact a designer, a tech lead and a developer could all argue with in the same language. Every component shipped under one was walked through it together first.
+- **Workshops with the blended team.** I ran workshops jointly attended by my team, AppOmni's in-house designers, and AppOmni's in-house engineers and engineering leads. They were how we converged on the working method — what a component spec should contain, how design tokens should be reasoned about, what counts as a system-level decision versus a product-level one. The workshops were the moment the *blended team* became one team, with one vocabulary.
+- **Educating design and engineering on design-system specifics.** I worked directly with the AppOmni design team and engineering team on what living with a design system actually looks like — how to read the docs, when a request is a token change versus a component change, how to file something the system can absorb rather than something that has to be forked. This was ongoing, not a one-off training. Most of it happened in working sessions and review threads.
+- **Advocating for a tokens-first approach.** I argued the case for tokens with AppOmni's design team — why a token layer pays off for the system over time, what gets harder when there isn't one, how to specify against tokens rather than raw values. The team aligned on the approach, and we shaped the structure together.
+- **Auditing and aligning the token structure.** I audited the token structure as it stood, surfaced where it was inconsistent or under-specified, and aligned it with the design team into the structure that ended up in the system. The renames map in the Style Dictionary configuration came directly out of that audit — it absorbs Figma-side spelling drift without forcing designers to round-trip through token files.
+- **Architecture & foundations.** I designed the token pipeline (Style Dictionary configuration, the `json/with-docs` format, the renames map, the per-category emit), the per-component CSS-custom-properties theming convention, and the `<ao-form-element>` shared base class.
+- **Foundation components.** I led from-scratch on Typography (`<ao-h1..6>`, `<ao-typography>`), Icon, Button, Header, Loader, Hr, Checkbox, Radio, Checkbox-Group, Radio-Group, Textarea, Form Element, and Link — 13 of 25 published components.
+- **Documentation pipeline.** I introduced the JSDoc-driven Custom Elements Manifest pipeline into Storybook, the auto-actions wiring from manifest events, the source-code transform for clean aria-* in code snippets, and the gating that ties public Storybook updates to released versions.
+- **Release pipeline.** I wrote the custom release-script chain, the GitHub Actions workflow for GitHub Packages publishing (gated on version bump), the per-PR Storybook deployment workflow, and the cleanup workflow that removes PR previews on close. ~50 of 63 releases were authored by me.
+- **Test infrastructure.** I introduced Jest in the final month (DS-396), wrote the configuration for Lit's ESM-only distribution, and seeded thirteen component test suites in the closing sprint.
+- **Process & documentation.** I authored the README's contribution workflow, the tokens README, the release-process docs, and the per-component generator script's templates. I merged the majority of the cross-team PRs, including the AppOmni-internal yarn-to-npm migration where same-day fixes kept main green.
+
+My team and I worked alongside the AppOmni in-house UI engineers and design team throughout — every load-bearing decision (the Web-Components choice, Lit over alternatives, the per-component custom-properties theming, the token pipeline, the manifest-driven documentation) was made jointly with their product context informing the architecture.
+
+## Outcomes
+
+- **25 published components** delivered as `@appomni/design-system`, framework-agnostic, fully themable per-instance, fully documented from source.
+- **63 published releases** in nine visible months — a steady cadence the team could rely on. The AppOmni in-house team continued releasing after the engagement on the same pipeline.
+- **Cross-team contribution working in both directions.** The AppOmni in-house team authored PRs back into the design system repository — TypeScript definitions, dependency cleanup, the first Select component, build-system migrations. Adoption was visible in the data flow, not just claimed.
+- **One vocabulary across Figma, code, and docs.** A designer naming `--ao-badge__bg--selected` in a spec is naming the same thing an engineer overrides in a stylesheet and an onboarding contributor finds in Storybook. No translation step.
+
+## What I'd carry forward
+
+- **Per-component CSS custom properties as the default unit of theming.** The pattern paid off in every conversation — designer-to-engineer, system-to-product, current to future. I'd reach for it again on the next platform-scale system.
+- **Documentation generated from source, not maintained alongside it.** The manifest-driven docs pipeline meant docs never went stale. I'd insist on this from day one on a new engagement.
+- **Manual releases with human-curated changelogs.** Counter-trend, but the changelogs that came out of it were consistently readable. Worth the friction.
+- **Let architectural simplifications emerge.** The popover convergence wasn't predicted; it became visible after three components were built. Building first, refactoring once is often faster than designing the perfect primitive up front.
+- **Web Components as the framework-agnostic answer when the question is real.** They aren't a default, but when consumer surfaces span more than one framework — or might in future — the structural argument is hard to beat.
