@@ -36,6 +36,7 @@ export { default as BorderedImage } from "./BorderedImage";
 export { default as BorderedTable } from "./BorderedTable";
 export { default as BrowserWindow } from "./BrowserWindow";
 export { default as CompoundComponent } from "./CompoundComponent";
+export { default as FloatRightImage } from "./FloatRightImage";
 export { default as ResearchLoop } from "./ResearchLoop";
 export { default as ScreenshotGrid } from "./ScreenshotGrid";
 export { default as ScrollingBrowserWindow } from "./ScrollingBrowserWindow";

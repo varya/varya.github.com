@@ -6,10 +6,10 @@ feat: true
 logo: ./images/manychat-design-system-thumb.png
 cover: ./images/manychat-barcelona.jpg
 description: >
-  Seventeen-month engagement leading the architectural and documentation
-  direction of Manychat's React design system: form scaffolding,
-  accessibility-via-types, a customised Storybook surface, and foundations
-  designers and developers read together.
+  Seventeen-month engagement leading Manychat's React design system: a form
+  family that holds up at data-heavy density, visible component governance
+  product teams trust, and foundations designers and developers actually
+  share.
 ---
 
 <BorderedTable bodyFont>
@@ -27,7 +27,7 @@ description: >
 
 ## Executive summary
 
-Manychat (a conversational-marketing platform used by over a million businesses) was outgrowing its in-house React component library. The product team kept shipping, but the design system underneath was uneven: gaps in the form family, an aging Storybook setup, and a foundations layer that designers and developers consulted in different mental models. They didn't lack skill; they lacked the *capacity* to invest in foundations while still serving a fast-moving product roadmap.
+Manychat (a conversational-marketing platform used by over a million businesses) was outgrowing its in-house React component library. The product surfaces are **data-heavy**: automation flows, subscriber lists, broadcast dashboards, audience filters, analytics views, and the long forms behind every flow node. The component library had to hold up at that density — and the system underneath was uneven: gaps in the form family, an aging Storybook setup, and a foundations layer that designers and developers consulted in different mental models. The team didn't lack skill; they lacked the *capacity* to invest in foundations while still serving a fast-moving product roadmap.
 
 <BrowserWindow>
 
@@ -161,17 +161,18 @@ Designers and product engineers don't browse Storybook the way design-system eng
 
 The change is small in code, but it shifts how the system gets *read*. A design reviewer scanning a PR can take in twelve states of a button at a glance. A product engineer checking which size of Card to pick sees the whole family at once. Storybook went from "click into each story" to "scan a page".
 
+<FloatRightImage
+  src={require('./images/sidebar-tags.png').default}
+  alt="Status tags shown next to component names in the Storybook sidebar"
+>
+
 ### Status tags in the Storybook sidebar
 
 Component lifecycle (Beta, Stable, Deprecated) lives in story metadata as a tag, and a custom sidebar renderer reads those tags via Storybook's Manager-API and shows a coloured badge next to the component name in the navigation. We built this when Storybook didn't yet have it natively — the same idea has since become a convention on the platform.
 
-<BorderedImage>
-
-![Status tags shown next to component names in the Storybook sidebar](images/sidebar-tags.png)
-
-</BorderedImage>
-
 The point isn't the badge — it's that anyone scanning the sidebar knows where each component is in its lifecycle without consulting a separate document. Visible state beats governance pages.
+
+</FloatRightImage>
 
 ### A categorised props panel
 
@@ -268,13 +269,18 @@ Underneath all the surface variants is a single component that handles keyboard 
 
 ### List — one primitive, two surfaces`
 
-![A complex List with left icons, group headings, lozenges, and a selected item](images/comp-list-complex.png)
+<FloatRightImage
+  src={require('./images/comp-list-complex.png').default}
+  alt="A complex List with left icons, group headings, lozenges, and a selected item"
+>
 
 List is shaped around a small, predictable slot vocabulary so its visual rhythm stays consistent everywhere it appears. Each `ListItem` exposes four areas: a left slot (24px, typically an icon or avatar), the main text or arbitrary children, an optional Lozenge anchored to the text, and a right slot (24px) for an action affordance or a secondary indicator. Two sizes (`default`, `large`) tune density; `selected`, `focused`, `loading`, and `danger` cover the common interaction states.
 
 For information architecture, `ListGroupHeading` introduces a cluster of items and `ListDivider` separates clusters — both used inline with `ListItem`, so the list itself owns its hierarchy rather than asking consumers to wrap items in extra containers.
 
 The design-system payoff is dual-use. The same primitive renders standalone product lists — wherever a screen needs a scannable column of items — *and* it's the popover content of Select. One component, two surfaces, identical visual language. So a settings list and a Select dropdown look "right" in the same way: the system has one mental model for "a list of things you can act on", not two.
+
+</FloatRightImage>
 
 ### Lozenge — a closed semantic vocabulary
 

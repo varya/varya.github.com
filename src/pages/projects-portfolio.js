@@ -66,7 +66,7 @@ const ProjectsPortfolio = ({ data }) => {
       <PortfolioNotice />
       <WidgetContainer items={{ small: 1, medium: 2, large: 2 }}>
         {posts.map((post, index) => {
-          const { title, link } = post.node.frontmatter;
+          const { title, subTitle, link } = post.node.frontmatter;
           const { slug } = post.node.fields;
           const resolvedSlug = link ? link : `/${slug}`;
           const excerpt =
@@ -76,6 +76,7 @@ const ProjectsPortfolio = ({ data }) => {
             <Widget
               key={title}
               title={title}
+              subTitle={subTitle}
               slug={resolvedSlug}
               excerpt={excerpt}
               background={background}
@@ -92,12 +93,10 @@ const ProjectsPortfolio = ({ data }) => {
         </Paragraph>
         <WidgetContainer items={{ small: 2, medium: 3, large: 4 }}>
           {otherProjects.map(({ node }) => {
-            const { title, link } = node.frontmatter;
-            const { slug } = node.fields;
-            const resolvedSlug = link ? link : `/${slug}`;
+            const { title } = node.frontmatter;
             return (
               <Box key={title} pad="small">
-                <Link to={resolvedSlug} unstyled>
+                <Link to="/projects/" unstyled>
                   <Box
                     background="light-2"
                     pad="small"
@@ -142,6 +141,7 @@ export const projectsPortfolioQuery = graphql`
           }
           frontmatter {
             title
+            subTitle
             date(formatString: "DD MMMM YYYY")
             description
             link

@@ -7,9 +7,9 @@ logo: ./images/logo.png
 cover: ./images/yara-building.jpg
 description: >
   Six-month engagement leading the architectural and documentation direction
-  of Yara's Ahua design system: a compound-component composition pattern,
-  Storybook 7 migration, a custom Storybook UI from user research, and a new
-  tier-based token system across web and React Native.
+  of Yara's Ahua design system: a tier-based token system designers specify
+  against, a compound-component pattern that mirrors how designers compose,
+  and an internal Storybook shaped by user research with the in-house team.
 ---
 
 <BorderedTable bodyFont>

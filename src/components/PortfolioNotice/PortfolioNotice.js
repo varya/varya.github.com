@@ -3,10 +3,7 @@ import { Box } from "grommet";
 import { Heading, Paragraph } from "@components";
 
 const PortfolioNotice = () => (
-  <Box background="accent-25" justify="center" pad="medium" margin={{ bottom: "large" }}>
-    <Heading level={4} margin={{ top: "none", bottom: "xsmall" }}>
-      Unlisted portfolio page
-    </Heading>
+  <Box margin={{ bottom: "large" }}>
     <Paragraph margin="none">
       This page is not publicly linked. It is intended for specific people to
       see detailed information about my work on selected projects. Please do not
