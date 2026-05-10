@@ -14,7 +14,7 @@ const getImageUrl = ({ data, cover }) => {
   return config.siteUrl + image;
 };
 
-const Seo = ({ data, title, description, keywords, cover, location, imageWidth, imageHeight }) => {
+const Seo = ({ data, title, description, keywords, cover, location, imageWidth, imageHeight, noindex }) => {
   const pageTitle = ((data || {}).frontmatter || {}).title;
   const dataDescription =
     ((data || {}).frontmatter || {}).description ||
@@ -91,6 +91,28 @@ const Seo = ({ data, title, description, keywords, cover, location, imageWidth, 
       <meta name="twitter:image" content={imageUrl} />
       <meta name="twitter:image:alt" content={fullTitle} />
       {canonical && <link rel="canonical" href={canonical} />}
+      {noindex && (
+        <meta
+          name="robots"
+          content="noindex, nofollow, noarchive, nosnippet, noimageindex"
+        />
+      )}
+      {noindex && (
+        <meta
+          name="googlebot"
+          content="noindex, nofollow, noarchive, nosnippet, noimageindex"
+        />
+      )}
+      {noindex && <meta name="bingbot" content="noindex, nofollow, noarchive" />}
+      {noindex && <meta name="GPTBot" content="noindex, nofollow" />}
+      {noindex && <meta name="ChatGPT-User" content="noindex, nofollow" />}
+      {noindex && <meta name="ClaudeBot" content="noindex, nofollow" />}
+      {noindex && <meta name="anthropic-ai" content="noindex, nofollow" />}
+      {noindex && <meta name="Google-Extended" content="noindex, nofollow" />}
+      {noindex && <meta name="PerplexityBot" content="noindex, nofollow" />}
+      {noindex && <meta name="CCBot" content="noindex, nofollow" />}
+      {/* DeviantArt / Mojeek convention for AI-training opt-out */}
+      {noindex && <meta name="robots" content="noai, noimageai" />}
     </Helmet>
   );
 };
@@ -102,6 +124,7 @@ Seo.propTypes = {
   keywords: PropTypes.array,
   cover: PropTypes.string,
   location: PropTypes.object,
+  noindex: PropTypes.bool,
 };
 
 export default Seo;

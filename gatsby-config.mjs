@@ -200,7 +200,16 @@ const config = {
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        // Keep portfolio case studies out of the sitemap so search engines
+        // don't discover them through the sitemap. Combined with the
+        // robots.txt Disallow and the per-page <meta name="robots" noindex>,
+        // this is defence in depth against indexing.
+        excludes: [`/projects-portfolio`, `/projects-portfolio/*`],
+      },
+    },
     `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-plugin-typescript`,

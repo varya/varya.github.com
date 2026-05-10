@@ -1,1 +1,66 @@
 User-agent: *
+Disallow: /projects-portfolio/
+Disallow: /projects-portfolio
+
+# AI/LLM crawlers — same scope: only the portfolio paths are off-limits.
+# These bots respect User-agent directives in robots.txt.
+
+User-agent: GPTBot
+Disallow: /projects-portfolio/
+Disallow: /projects-portfolio
+
+User-agent: ChatGPT-User
+Disallow: /projects-portfolio/
+Disallow: /projects-portfolio
+
+User-agent: OAI-SearchBot
+Disallow: /projects-portfolio/
+Disallow: /projects-portfolio
+
+User-agent: ClaudeBot
+Disallow: /projects-portfolio/
+Disallow: /projects-portfolio
+
+User-agent: Claude-Web
+Disallow: /projects-portfolio/
+Disallow: /projects-portfolio
+
+User-agent: anthropic-ai
+Disallow: /projects-portfolio/
+Disallow: /projects-portfolio
+
+User-agent: Google-Extended
+Disallow: /projects-portfolio/
+Disallow: /projects-portfolio
+
+User-agent: PerplexityBot
+Disallow: /projects-portfolio/
+Disallow: /projects-portfolio
+
+User-agent: Perplexity-User
+Disallow: /projects-portfolio/
+Disallow: /projects-portfolio
+
+User-agent: CCBot
+Disallow: /projects-portfolio/
+Disallow: /projects-portfolio
+
+User-agent: Bytespider
+Disallow: /projects-portfolio/
+Disallow: /projects-portfolio
+
+User-agent: Amazonbot
+Disallow: /projects-portfolio/
+Disallow: /projects-portfolio
+
+User-agent: Applebot-Extended
+Disallow: /projects-portfolio/
+Disallow: /projects-portfolio
+
+User-agent: Meta-ExternalAgent
+Disallow: /projects-portfolio/
+Disallow: /projects-portfolio
+
+User-agent: cohere-ai
+Disallow: /projects-portfolio/
+Disallow: /projects-portfolio
