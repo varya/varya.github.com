@@ -53,6 +53,7 @@ const ProjectsPortfolio = ({ data }) => {
       <Seo
         title="Projects Portfolio — Varya Stepanova"
         description="Extended case studies of Varya Stepanova's design systems projects."
+        noindex
       />
       <Hero
         align="center"

@@ -136,7 +136,7 @@ const PortfolioPost = ({
         title={title}
         subTitle={subTitle}
       />
-      <Seo data={mdx} />
+      <Seo data={mdx} noindex />
       <Box
         flex="grow"
         width="xlarge"
