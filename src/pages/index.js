@@ -174,6 +174,57 @@ const IndexPage = ({ data }) => {
         </WidgetContainer>
       </Section>
 
+      <Section heading="Highlights">
+        <Paragraph>
+          A few current things I run and publish: a consultancy, a community
+          breakfast series, a talk on where design systems are heading, and a
+          practical playbook for getting AI to actually adopt your components.
+        </Paragraph>
+
+        <WidgetContainer items={{ small: 1, medium: 2, large: 2 }}>
+          <Widget
+            background="brand"
+            title="Bridge the Gap"
+            slug="https://bridge-the-gap.dev/"
+            excerpt="Design systems consultancy I founded and lead. We team up with
+            designers and developers to audit, architect, implement, and scale
+            design systems — including AI-native workflows. The work covers
+            strategy and roadmaps, component libraries, CI and testing, and
+            training so the in-house team can run the system after we leave."
+          />
+          <Widget
+            background="accent"
+            title="Casual Breakfasts"
+            slug="https://bridge-the-gap.dev/events/breakfasts/"
+            excerpt="A free morning meetup series I started in 2021 and still host.
+            Designers and engineers gather over coffee to discuss early-stage
+            ideas that are not yet conference talks. I facilitate the sessions,
+            invite speakers, and keep the format casual and discussion-first —
+            we do not record, on purpose."
+          />
+          <Widget
+            background="neutral"
+            title="Design Systems in 2026"
+            slug="https://varya.me/ds-trends-2026/"
+            excerpt="A talk on how we build, ship, and consume design systems now.
+            It covers the shift from adoption metrics to time-to-ship, leaner
+            embedded teams, headless foundations, tokens as the design–engineering
+            contract, accessibility as compliance, Storybook as infrastructure
+            for AI agents, and AI as a new consumer of the system."
+          />
+          <Widget
+            background="brand"
+            title="MCP + RAG for design systems"
+            slug="https://bridge-the-gap.dev/blog/mcp-rag-ds-adoption/"
+            excerpt="Shipping components is only half the work; getting them into
+            legacy code is the rest. Naive AI agents grep, guess at prop names,
+            and spend tokens on migrations nobody merges. This playbook indexes
+            past adoption diffs and serves them through MCP, so the agent follows
+            your real import paths and mappings instead of exploring from scratch."
+          />
+        </WidgetContainer>
+      </Section>
+
       <Section heading="Workshops">
         <Paragraph>
           My experience offers to launch and maintain design systems projects,
