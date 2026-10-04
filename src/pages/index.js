@@ -74,6 +74,24 @@ const IndexPage = ({ data }) => {
       </ImageBlock>
 
       {/* <Workshop /> */}
+      <Section heading="Projects">
+        <Box gap="large">
+          <Paragraph margin={{ vertical: "none" }}>
+            The{" "}
+            <Link to="/projects">projects</Link> page is the place to see the
+            work up close: what I did on each engagement, how I led the teams,
+            and how the strategies and design systems were built. It also
+            covers the technical and managerial solutions to the challenges
+            those teams were facing.
+          </Paragraph>
+          <Widget slug="/projects" background="accent" height="small">
+            <Heading textAlign="center" level={3} size="large" fill={true}>
+              See the case studies&nbsp;→
+            </Heading>
+          </Widget>
+        </Box>
+      </Section>
+
       <Section heading="Services">
         <Box gap="large">
           <Box>

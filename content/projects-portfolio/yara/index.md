@@ -19,15 +19,21 @@ description: >
 | **Company** | [Yara International](https://www.linkedin.com/company/yara/) |
 | **Industry** | Industrial agriculture, AgriTech |
 | **Year** | 2023 – 2024 |
-| **Role** | Design System Architect, Lead Design System Engineer, Engineering Manager|
-| **Team** | Bridge the Gap (my consultancy team) — four engineers including me — partnering with Yara's design-system lead, in-house designers, an in-house UX designer focused on engineer experience, in-house and consultant React Native engineers, and product engineers across multiple Yara product teams |
-| **Stack** | React, React Native, TypeScript, Stitches, NX monorepo, Storybook (6 → 7), Jest, Chromatic, Detox |
+| **Role** | Design System Architect, Lead Design System Engineer, Engineering Manager |
+| **Team** | Bridge the Gap — Varya Stepanova, Irina Samoylova, Andriy Kotko, and Alexandra Urberg — partnering with Yara's design-system lead, in-house designers, an in-house UX designer focused on engineer experience, in-house and consultant React Native engineers, and product engineers across multiple Yara product teams |
+| **Stack** | React, React Native, TypeScript, Stitches, NX monorepo, Storybook (6 → 7), Jest, React Testing Library, axe-core, Chromatic, Detox |
 
 </BorderedTable>
 
+## My role
+
+I joined as design-system architect, lead engineer, and engineering manager on the Bridge the Gap side. The work was hands-on and managerial at once. Yara's design-system lead managed me directly. I set the architecture — the token system, the compound-component pattern, the Storybook direction — and I wrote a large part of it. I also ran the team: roles and ownership, 1:1s, professional development, sprint planning and retrospectives, and hiring and onboarding. The four of us were distributed across six countries.
+
+Adoption was voluntary. A standing part of the role was design-system coaching and governance, so product teams would choose Ahua rather than be told to. That meant agreeing the token vocabulary with the design leads, cross-company demos, the Slack changelog after each sprint, and the day-to-day conversations with product engineers. I was the person aligning those engineering decisions with product and with leadership.
+
 ## Executive summary
 
-Yara International — the multinational crop-nutrient and digital-agriculture company — runs a multi-product UI surface on top of an internal design system called **Ahua**, shipped as two production libraries (React for web, React Native for mobile). When we joined, the system was visible to product engineers, but the developer experience was uneven: Storybook 6 with hand-authored MDX1 stories, no shared composition pattern across compound components, parallel token systems for web and React Native that drifted from each other, and a documentation surface that didn't quite reflect how product engineers actually used it.
+Yara International — the multinational crop-nutrient and digital-agriculture company — runs a multi-product UI surface on top of an internal design system called **Ahua**, shipped as two production libraries (React for web, React Native for mobile). The product views are data-heavy: long forms, tables, and operational screens. When we joined, the system was visible to product engineers, but the developer experience was uneven: Storybook 6 with hand-authored MDX1 stories, no shared composition pattern across compound components, parallel token systems for web and React Native that drifted from each other, and a documentation surface that didn't quite reflect how product engineers actually used it.
 
 <BrowserWindow>
 
@@ -231,6 +237,10 @@ The audit surfaced one concrete cost from the old setup worth naming: a small fo
 
 We delivered the new Ahua token system across audit, vocabulary, naming convention, Figma re-organisation, and cross-library codegen plan — the foundation a future phase can build the codegen pipeline on without renegotiating any of the design.
 
+I designed the system and agreed the vocabulary with Yara's design leads. Products already had tokens; they were not one system. The three tiers were the shared framework for that portfolio — about 50 products — and the rules for adding a token so it would sit in the same logic as the ones already there.
+
+I also built a proof of concept that opened a pull request for a human to review when a token changed as a Figma variable. It showed the path from design to code. I don't know whether Yara kept that automation after we left: the engagement ended when the budget was cut. The design system, and its Storybook, stayed in use.
+
 ### EmptyState — the pilot and the composition pattern
 
 The team's pilot component was EmptyState, shipped in two intense days at the end of August. Twenty-five commits later it set the codebase conventions used by every later compound component: composition with a `Root`, slots like `Image`, `Description`, and `Action`, an orientation prop carried through React context, and stories composed of those primitives directly so the docs page showed exactly how a consumer would assemble it.
@@ -249,9 +259,9 @@ Keeping that alignment honest across 50+ components was its own discipline. I pa
 
 The defining engineering effort of the engagement. Storybook 7 isn't a dependency bump — its docs surface is auto-generated from the component's runtime, and the story format moves from MDX1 (`.stories.mdx`) to CSF3 (`.stories.tsx`). Every existing story had to be re-authored.
 
-The migration shipped as a single mega-PR — 555 files, hundreds of thousands of lines moved — with extensive pair-review across the team. Both libraries (web and React Native) made the jump together, and the same PR introduced a small but load-bearing utility, `withDisplayNames`, that fixes a Storybook 7 problem: by default, compound components like `Card.Header` render as plain `Header` in code snippets because Storybook reads the runtime function name. The utility walks a root component's enumerable properties and assigns the dotted name on each.
+I led the migration. It shipped as a single mega-PR — 555 files, hundreds of thousands of lines moved — with extensive pair-review across the team. Both libraries (web and React Native) made the jump together, and the same PR introduced a small but load-bearing utility, `withDisplayNames`, that fixes a Storybook 7 problem: by default, compound components like `Card.Header` render as plain `Header` in code snippets because Storybook reads the runtime function name. The utility walks a root component's enumerable properties and assigns the dotted name on each.
 
-I led the post-migration follow-ups: pipeline-image upgrades for CircleCI compatibility, story-type fixes for the new CSF3 format, and the long-tail standardisation work below.
+I led the follow-ups after it landed: pipeline-image upgrades for CircleCI compatibility, story-type fixes for the new CSF3 format, typings hardening for `withDisplayNames`, and the long-tail standardisation work below.
 
 ### The withDisplayNames adoption sweep
 
@@ -334,6 +344,10 @@ Coordinating two libraries doubles the cost of every infrastructure decision. Th
 
 Visual regression on every PR for both libraries. Two GitHub Actions workflows (`chromatic-web.yaml` and `chromatic-native.yaml`), separate so previews run independently. The wiring took multi-day effort to negotiate Yara's GitHub Actions secrets policy across the forked organisation, but once done every component change shipped with a visual diff attached. Reviewers stopped having to clone the branch to see what changed.
 
+### Accessibility in the library
+
+Accessibility sat inside component delivery. Existing and new components reached clean axe-core scans — full accessibility compliance across the catalogue — and a11y tests landed in the library next to Jest and React Testing Library, so a regression fails in CI beside the unit tests and the Chromatic diffs.
+
 ### Ten new components
 
 Across the engagement we shipped ten new components on the Root + slots composition pattern: **EmptyState**, **Stack**, **BottomSheet**, **NavigationRail**, **Popover**, **CheckBoxGroup**, **Accordion**, **Calendar**, **SelectItem**, **SelectGroup**. Each shipped with stories, tests, and a Storybook docs page. The Calendar component is the largest single component the team built — two months from exploration through implementation, backed by `@h6s/calendar` and `date-fns`, with a skeleton loading state and a prop to customise input label texts.
@@ -359,11 +373,11 @@ Bridge the Gap brought four engineers to the engagement, including me, and I led
 
 **Practice and coaching.** With Yara's design-system lead — who managed me directly across the engagement — the relationship was a senior-engineer partnership. They held the architectural authority on the Yara side; I brought patterns I'd seen work on prior DS engagements (component governance, contribution flow, communication, lifecycle conventions), and they brought the product, organisational, and customer context that made those patterns fit. Across the wider Yara design-system community I evangelised the system: continuous Slack contact with product engineers (in-house and consultant), recurring sprint-end demos, a Slack changelog after each one, and direct support for product teams adopting components.
 
-**Leading my team.** On the Bridge the Gap side I led four engineers — running our planning and pairings, coordinating with the in-house team, holding the line on quality and cadence, and merging cross-cutting infrastructure PRs as the team-lead final reviewer.
+**Leading my team.** On the Bridge the Gap side I led four engineers across six countries. I set the structure, ran 1:1s and professional-development planning, facilitated sprint planning and retrospectives, and took part in hiring and onboarding. I coordinated with the in-house team, held the line on quality and cadence, and merged cross-cutting infrastructure PRs as the team-lead final reviewer.
 
 **Hands-on.** What I personally built or rebuilt:
 
-- **Tier-based token system architecture** — vocabulary, naming convention, Figma re-organisation, codegen plan.
+- **Tier-based token system architecture** — vocabulary, naming convention agreed with the design leads, Figma re-organisation, codegen plan, and a Figma-to-pull-request proof of concept.
 - **Engagement docs** — workflows, contributing guidelines, library introduction, and the changelog Storybook page.
 - **EmptyState** — the team's pilot and the composition pattern's first home.
 - **CheckBoxGroup + the root-checkbox refactor** — re-shaping the existing `CheckBox` from a single input into a Radix-style compound, the pattern every later compound followed.
@@ -382,6 +396,8 @@ The shape of my contributions is foundational rather than feature-by-feature: th
 - **A new tier-based token system delivered**: three-tier vocabulary (global / semantic / component & group), a naming convention spec, a Figma re-organisation, and a cross-library codegen plan.
 - **Storybook upgraded from 6 → 7** across both web and React Native, including a custom Storybook UI built from user research with product engineers.
 - **Per-PR visual regression** through Chromatic for both libraries.
+- **Full accessibility compliance** on existing and new components: clean axe-core scans, with a11y tests in CI.
+- **A docs version switcher**, routing between separately hosted versions of the system, and **icon bundles** trimmed so products can import them tree-shakable.
 - **Symmetric documentation pages** (Welcome, Get Started, Library Setup, Storybook Guide, Contribute, Changelog) across web and React Native, mirrored in single PRs.
 - **Sprint-end demos + a Slack changelog** as a recurring product-team-facing surface — the design system became something engineers tracked, not a thing they rediscovered.
 
