@@ -5,8 +5,13 @@ import { graphql } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import { Box, Button, Text } from "grommet";
 import {
+  BorderedImage,
+  BorderedTable,
+  BrowserWindow,
   Comments,
+  CompoundComponent,
   DsAspects,
+  FloatRightImage,
   GithubEdit,
   Heading,
   Hero,
@@ -23,6 +28,11 @@ import {
   PostHeader,
   PrevNextNav,
   ProjectRoles,
+  ResearchLoop,
+  ScreenshotGrid,
+  ScrollingBrowserWindow,
+  SpecDrivenFlow,
+  TokenAnatomy,
   Workshop,
   PureHtml,
   Section,
@@ -57,6 +67,16 @@ const globalMdxComponents = {
   Map,
   YandexImage,
   Instagram,
+  BorderedImage,
+  BorderedTable,
+  BrowserWindow,
+  FloatRightImage,
+  ResearchLoop,
+  ScreenshotGrid,
+  ScrollingBrowserWindow,
+  SpecDrivenFlow,
+  TokenAnatomy,
+  CompoundComponent,
 };
 
 const _Heading = (level) => {

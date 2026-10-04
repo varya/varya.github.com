@@ -84,6 +84,13 @@ const ProjectsPortfolio = ({ data }) => {
             />
           );
         })}
+        <Widget
+          title="More projects"
+          subTitle="This page is a shortlist"
+          slug="/projects/"
+          excerpt="This unlisted portfolio highlights certain projects in detail. I have many more on the public projects page."
+          background={colors[posts.length % colors.length]}
+        />
       </WidgetContainer>
 
       <Box margin={{ top: "large" }}>

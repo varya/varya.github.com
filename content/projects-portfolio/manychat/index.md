@@ -19,11 +19,17 @@ description: >
 | **Company** | [Manychat](https://www.linkedin.com/company/manychat/posts/?feedView=all) |
 | **Industry** | SaaS, Conversational Marketing |
 | **Year** | 2024 – 2025 |
-| **Role** | Design System Architect & Lead Developer |
+| **Role** | Design System Architect & Hands-on Engineering Manager |
 | **Team** | Bridge the Gap (my consultancy team) — three engineers including me — partnering with Manychat's design-system tech lead, in-house design-system designer, and a second in-house lead engineer who joined mid-engagement |
 | **Stack** | Figma, React, TypeScript, CSS Modules, Storybook (6.5 → 8.x), Vite, semantic-release |
 
 </BorderedTable>
+
+## My role
+
+I joined as design-system architect and hands-on engineering manager. I led the Bridge the Gap engineers and wrote a large part of the library myself. Manychat's design-system tech lead chaired the cadence and held architectural authority on their side. I brought the architecture, the spec-driven method, and the day-to-day engineering management. Specs were written and walked through with the designer and the tech lead before any code, so design and development moved together.
+
+The system lives in the product repository, and the UI is data-heavy: tables, lists, and the long forms behind every flow. I worked with a design organisation of about 10 to 20 designers. Adoption into product code was part of my job. Documentation stayed in Markdown inside that repo, so engineers — and later agents — could read it where the code already lived. I used Copilot in the delivery. I also built a proof of concept, not shipped into production, for AI-assisted adoption: past product changes taken from Git history, so a later agent can retrieve how a migration was done instead of exploring the codebase from scratch.
 
 ## Executive summary
 
